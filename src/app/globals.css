@@ -509,12 +509,14 @@ footer {
   }
   .hero-bg {
     position: relative;
-    height: 55vw;
-    min-height: 260px;
-    max-height: 380px;
+    height: 120vw;
+    min-height: 360px;
+    max-height: 560px;
     flex-shrink: 0;
+    margin-top: 64px; /* clear the fixed nav */
   }
   .hero-bg img {
+    object-fit: cover;
     object-position: center top;
   }
   .hero-overlay {
