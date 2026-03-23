@@ -14,7 +14,6 @@
   --warm:    #F0EAE0;
   --mist:    #DDD8CF;
   --mid:     #5A5550;
-  --terra:   #743622;
   --serif:   'Cormorant Garamond', Georgia, serif;
 }
 
@@ -50,6 +49,8 @@ a { color: inherit; }
 
 /* ─────────────────────────────────────────────────────────────
    NAV
+   Dark navy bar. Logos use mix-blend-mode:screen so their
+   black backgrounds disappear against --deep.
 ───────────────────────────────────────────────────────────── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
@@ -89,88 +90,62 @@ nav {
 
 /* ─────────────────────────────────────────────────────────────
    HERO
-   ann-cover-hero.jpg: 1800×900
-   Layout: chess king silhouette LEFT, Ann poem figure CENTER,
-           terracotta fill RIGHT (where copy sits)
-   Overlay: cream fades in from RIGHT so copy is legible
-   Image: object-position left so king is never cropped
+   ann-cover.jpg used as full-bleed background.
+   Cream gradient overlay fades left→right so copy is legible
+   and the artwork (right side) shows through completely.
 ───────────────────────────────────────────────────────────── */
 .hero {
   min-height: 100svh;
   position: relative;
-  display: flex;
-  align-items: center;
+  display: flex; align-items: center;
   overflow: hidden;
 }
-
-/* Full-bleed background image */
 .hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+  position: absolute; inset: 0; z-index: 0;
 }
 .hero-bg img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
-  /* top center — preserves heads/crowns, crops bottom if needed */
-  object-position: center top;
+  width: 100% !important; height: 100% !important;
+  object-fit: cover; object-position: center right;
   display: block;
 }
-
-/* Cream gradient fades in from the RIGHT over the terracotta fill area.
-   The chess king and Ann figure on the left stay fully visible. */
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(
-    to left,
+    to right,
     rgba(250,247,242,.97) 0%,
-    rgba(250,247,242,.92) 28%,
-    rgba(250,247,242,.50) 50%,
-    rgba(250,247,242,.0)  68%
+    rgba(250,247,242,.92) 38%,
+    rgba(250,247,242,.55) 62%,
+    rgba(250,247,242,.0)  100%
   );
 }
-
-/* Copy block sits on the RIGHT side, over the cream overlay */
 .hero-left {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  padding: 9rem 5rem 6rem 2rem;
-  width: 46%;
-  min-width: 400px;
+  position: relative; z-index: 2;
+  display: flex; align-items: center;
+  padding: 9rem 3rem 6rem 6rem;
+  width: 60%; min-width: 480px;
 }
 .hero-left::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
+  content: ''; position: absolute; left: 6rem; top: 0; bottom: 0;
   width: 1px;
   background: linear-gradient(
     to bottom,
     transparent,
-    rgba(201,168,76,.3) 25%,
-    rgba(201,168,76,.3) 75%,
+    rgba(201,168,76,.4) 25%,
+    rgba(201,168,76,.4) 75%,
     transparent
   );
 }
-.hero-inner { max-width: 520px; width: 100%; }
+.hero-inner { max-width: 560px; width: 100%; }
 .hero .eyebrow { margin-bottom: 2.25rem; }
 .hero h1 {
-  font-size: clamp(2.8rem, 4.5vw, 5rem);
-  font-weight: 300;
-  line-height: 1.06;
-  letter-spacing: -.015em;
-  margin-bottom: 2rem;
-  color: var(--deep);
+  font-size: clamp(2.8rem, 5.5vw, 5rem); font-weight: 300;
+  line-height: 1.06; letter-spacing: -.015em;
+  margin-bottom: 2rem; color: var(--deep);
 }
 .hero h1 em { font-style: italic; color: var(--rose); }
 .hero-sub {
   font-size: 1.15rem; font-weight: 300; line-height: 1.7;
-  color: var(--mid); max-width: 46ch; margin-bottom: 2.75rem;
+  color: var(--mid); max-width: 48ch; margin-bottom: 2.75rem;
 }
 .hero-cta {
   display: inline-flex; align-items: center; gap: .7rem;
@@ -197,6 +172,8 @@ nav {
 
 /* ─────────────────────────────────────────────────────────────
    PATH TILES
+   Asymmetric grid: large Guidance Deck tile left (spans 2 rows),
+   4 smaller tiles right. Card-flip hover on main tile.
 ───────────────────────────────────────────────────────────── */
 .tiles-section { padding: 7rem 4rem 8rem; background: var(--cream); }
 .tiles-header  { padding-left: 5rem; margin-bottom: 4rem; }
@@ -220,6 +197,7 @@ nav {
 .tile:first-child { grid-row: span 2; min-height: 560px; }
 .tile-sm          { min-height: 200px; }
 .tile:hover       { background: var(--mist); }
+
 .tile-eyebrow {
   font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
   color: var(--gold); margin-bottom: .6rem;
@@ -240,8 +218,10 @@ nav {
   display: inline-flex; align-items: center; gap: .4rem;
   border-bottom: 1px solid transparent; transition: border-color .2s;
 }
-.tile-link:hover  { border-color: var(--gold); }
-.tile-link::after { content: '→'; }
+.tile-link:hover    { border-color: var(--gold); }
+.tile-link::after   { content: '→'; }
+
+/* Card-flip dark overlay on main tile (hover) */
 .tile-flip {
   position: absolute; inset: 0; background: var(--deep);
   display: flex; flex-direction: column; justify-content: center;
@@ -285,7 +265,9 @@ nav {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   GUIDANCE DECK
+   GUIDANCE DECK SECTION
+   Dark navy panel. Card previews use formatted/ images.
+   Placeholder navy boxes show until images are placed.
 ───────────────────────────────────────────────────────────── */
 .deck-section {
   padding: 8rem 4rem; background: var(--deep); color: var(--cream);
@@ -312,16 +294,19 @@ nav {
 .btn-gold:hover { background: var(--gold-bg); }
 .btn-gold span  { transition: transform .2s; display: inline-block; }
 .btn-gold:hover span { transform: translateX(4px); }
+
 .deck-cards {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 6px; aspect-ratio: 1 / .95;
 }
 .card-preview {
   border-radius: 2px; overflow: hidden; position: relative;
-  background: var(--slate);
+  background: var(--slate);  /* placeholder until card images placed */
 }
 .card-preview:nth-child(3) { grid-column: span 2; }
-.card-preview img { width: 100%; height: 100%; object-fit: cover; }
+.card-preview img {
+  width: 100%; height: 100%; object-fit: cover;
+}
 .card-preview-label {
   position: absolute; bottom: 0; left: 0; right: 0;
   padding: .75rem 1rem;
@@ -349,6 +334,7 @@ nav {
 }
 .path-intro h2 em { font-style: italic; color: var(--rose); }
 .path-intro p     { font-size: 1rem; line-height: 1.75; color: var(--mid); margin-bottom: 2rem; }
+
 .btn-outline {
   display: inline-flex; align-items: center; gap: .7rem;
   text-decoration: none; font-size: .72rem;
@@ -359,6 +345,7 @@ nav {
 .btn-outline:hover { background: var(--deep); color: var(--cream); }
 .btn-outline span  { transition: transform .2s; display: inline-block; }
 .btn-outline:hover span { transform: translateX(4px); }
+
 .path-streams { display: flex; flex-direction: column; }
 .stream {
   border-top: 1px solid var(--mist); padding: 2rem 0;
@@ -387,7 +374,8 @@ nav {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   BEGIN HERE
+   BEGIN HERE — email capture
+   No sidebar. No competing CTAs. Typography slows the reader.
 ───────────────────────────────────────────────────────────── */
 .begin-section {
   padding: 8rem 4rem; background: var(--cream);
@@ -407,8 +395,9 @@ nav {
 .begin-form-wrap     { background: var(--warm); padding: 3rem 2.5rem; }
 .begin-form-wrap h3  { font-size: 1.4rem; font-weight: 400; margin-bottom: .5rem; }
 .begin-form-wrap > p { font-size: .875rem; line-height: 1.6; color: var(--mid); margin-bottom: 2rem; }
-.form-field { margin-bottom: 1rem; }
-.form-field label {
+
+.form-field        { margin-bottom: 1rem; }
+.form-field label  {
   display: block; font-size: .68rem; letter-spacing: .16em;
   text-transform: uppercase; color: var(--mid); margin-bottom: .45rem;
 }
@@ -420,11 +409,13 @@ nav {
   -webkit-appearance: none;
 }
 .form-field input:focus { border-color: var(--gold); }
+
 .btn-submit {
   width: 100%; padding: 1rem; margin-top: .5rem;
-  background: var(--deep); color: var(--cream); border: none; cursor: pointer;
-  font-family: var(--serif); font-size: .72rem; letter-spacing: .18em;
-  text-transform: uppercase; transition: background .2s;
+  background: var(--deep); color: var(--cream);
+  border: none; cursor: pointer; font-family: var(--serif);
+  font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+  transition: background .2s;
 }
 .btn-submit:hover { background: var(--slate); }
 .form-note  { font-size: .72rem; color: var(--mid); opacity: .6; margin-top: 1rem; text-align: center; }
@@ -468,20 +459,23 @@ footer {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   RESPONSIVE — 1024px
+   RESPONSIVE — 1024px tablet
 ───────────────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   nav { padding: 1rem 2.5rem; }
-  .hero-left { width: 52%; padding: 8rem 3rem 5rem 2rem; }
+
+  .hero-left { padding: 7rem 2rem 5rem 3rem; width: 68%; min-width: 0; }
+  .hero-left::before { left: 3rem; }
   .hero-overlay {
     background: linear-gradient(
-      to left,
-      rgba(250,247,242,.97) 0%,
-      rgba(250,247,242,.93) 30%,
-      rgba(250,247,242,.55) 55%,
-      rgba(250,247,242,0)   72%
+      to right,
+      rgba(250,247,242,.98) 0%,
+      rgba(250,247,242,.92) 45%,
+      rgba(250,247,242,.5)  70%,
+      rgba(250,247,242,.0)  100%
     );
   }
+
   .tiles-section { padding: 5rem 2.5rem; }
   .tiles-header  { padding-left: 0; }
   .deck-section  { gap: 3rem; padding: 6rem 2.5rem; }
@@ -495,62 +489,82 @@ footer {
 ───────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   nav { padding: .9rem 1.5rem; }
+
+  /* Mobile nav drawer */
   .nav-links {
     display: none; position: fixed; inset: 0; top: 60px;
     flex-direction: column; background: var(--deep); z-index: 199;
     padding: 3rem 2rem; gap: 2rem; align-items: flex-start;
     border-top: 1px solid rgba(201,168,76,.15);
   }
-  .nav-links.open { display: flex; }
-  .nav-links a    { font-size: .9rem; }
-  .nav-toggle     { display: flex; }
+  .nav-links.open  { display: flex; }
+  .nav-links a     { font-size: .9rem; }
+  .nav-toggle      { display: flex; }
 
-  /* Mobile hero: image fills top, copy sits below with bottom overlay */
+  /* Hero mobile: image on top, copy below with solid cream bg */
   .hero {
-    align-items: flex-end;
-    min-height: 100svh;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: auto;
+  }
+  .hero-bg {
+    position: relative;
+    height: 55vw;
+    min-height: 260px;
+    max-height: 380px;
+    flex-shrink: 0;
   }
   .hero-bg img {
     object-position: center top;
   }
   .hero-overlay {
     background: linear-gradient(
-      to top,
-      rgba(250,247,242,.98) 0%,
-      rgba(250,247,242,.85) 35%,
-      rgba(250,247,242,.20) 60%,
-      rgba(250,247,242,0)   80%
+      to bottom,
+      rgba(250,247,242,0) 0%,
+      rgba(250,247,242,0) 60%,
+      rgba(250,247,242,.8) 85%,
+      rgba(250,247,242,1) 100%
     );
   }
   .hero-left {
+    position: relative;
+    z-index: 2;
     width: 100%;
     margin-left: 0;
     padding: 2rem 1.5rem 3rem;
+    background: var(--cream);
   }
   .hero-left::before { display: none; }
 
   .gold-rule      { padding: 0 1.5rem; }
+
   .tiles-section  { padding: 4rem 1.5rem; }
   .tiles-grid     { grid-template-columns: 1fr; }
   .tile:first-child { grid-row: auto; min-height: 320px; }
   .tile-body      { display: block; }
   .tile-flip      { display: none; }
+
   .marquee-item   { font-size: .875rem; padding: 0 1.5rem; }
+
   .deck-section   { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
   .deck-cards     { grid-template-columns: 1fr 1fr; }
   .card-preview:nth-child(3) { grid-column: span 2; }
+
   .path-section   { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
+
   .quote-section  { padding: 5rem 1.5rem; }
   .quote-text     { font-size: clamp(1.35rem, 5vw, 2rem); }
+
   .begin-section  { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
   .begin-form-wrap { padding: 2rem 1.5rem; }
+
   .footer-grid    { grid-template-columns: 1fr; gap: 2rem; }
   .footer-bottom  { flex-direction: column; gap: .75rem; text-align: center; }
   footer          { padding: 3.5rem 1.5rem 2rem; }
 }
 
 /* ─────────────────────────────────────────────────────────────
-   RESPONSIVE — 480px
+   RESPONSIVE — 480px small phone
 ───────────────────────────────────────────────────────────── */
 @media (max-width: 480px) {
   .hero h1        { font-size: 2.2rem; }
@@ -561,7 +575,7 @@ footer {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   REDUCED MOTION
+   ACCESSIBILITY — reduced motion
 ───────────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
