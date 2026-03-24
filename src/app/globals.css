@@ -101,7 +101,7 @@ nav {
   overflow: hidden;
 }
 .hero-bg {
-  position: absolute; top: 0; right: 0; bottom: 0; width: 62%; left: auto; z-index: 0;
+  position: absolute; inset: 0; z-index: 0;
 }
 .hero-bg img {
   width: 100% !important; height: 100% !important;
