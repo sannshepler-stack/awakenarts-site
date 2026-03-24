@@ -40,7 +40,7 @@ export default function HomePage() {
             src="/images/brand/ann-cover-hero.jpg"
             alt=""
             width={1600}
-            height={1329}
+            height={1685}
             priority
             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
           />
