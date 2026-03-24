@@ -113,3 +113,125 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── MARQUEE ── */}
+      <div className="marquee" aria-hidden="true">
+        <div className="marquee-track">
+          {[...marqueeItems, ...marqueeItems].flatMap((item, i) => [
+            <span key={`i${i}`} className="marquee-item">{item}</span>,
+            <span key={`s${i}`} className="marquee-item marquee-sep">✦</span>,
+          ])}
+        </div>
+      </div>
+
+      {/* ── GUIDANCE DECK ── */}
+      <section className="deck-section" id="deck" aria-label="Guidance Deck">
+        <div className="deck-copy">
+          <p className="eyebrow">Illustrated Awakening</p>
+          <h2>These cards did not begin<br />as guidance. They began<br />as <em>poems.</em></h2>
+          <p>Each of the 52 cards originates in a poem written by Susan Ann Shepler — not written as spiritual guidance but written as a poem, arriving the way poems arrive.</p>
+          <p>What emerged was not planned. It <em>manifested.</em> The cards are stepping stones, not a map. Draw a card. Meet what is already moving in you.</p>
+          <Link href="#begin" className="btn-gold">Draw a Card <span aria-hidden="true">→</span></Link>
+        </div>
+        <div className="deck-cards" aria-label="Sample cards">
+          {deckPreviews.map(card => (
+            <div key={card.name} className="card-preview">
+              <Image src={card.src} alt={`${card.name} — ${card.phrase}`} width={1427} height={2000} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="card-preview-label">
+                <span className="card-preview-name">{card.name}</span>
+                <span className="card-preview-phrase">{card.phrase}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── FOUR STREAMS ── */}
+      <section className="path-section" id="library" aria-label="The Four Streams">
+        <div className="path-intro">
+          <p className="eyebrow">The Framework</p>
+          <h2>Four streams.<br /><em>One river.</em></h2>
+          <p>AwakenArts draws from four traditions that have always been describing the same territory — the soul&apos;s movement toward its own depth, which is simultaneously a movement toward God.</p>
+          <Link href="#begin" className="btn-outline">Enter the Path <span aria-hidden="true">→</span></Link>
+        </div>
+        <div className="path-streams">
+          {streams.map(s => (
+            <div key={s.num} className="stream">
+              <div className="stream-num">{s.num}</div>
+              <div>
+                <div className="stream-title">{s.title}</div>
+                <p className="stream-body">{s.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── QUOTE ── */}
+      <section className="quote-section" aria-label="Founding quote">
+        <span className="quote-mark" aria-hidden="true">&ldquo;</span>
+        <p className="quote-text">Words acquiesced to shapes and shapes to words — so that the unconscious material had a playground to work and appear.</p>
+        <p className="quote-attr">— Susan Ann Shepler, AwakenArts</p>
+      </section>
+
+      {/* ── BEGIN HERE ── */}
+      <section className="begin-section" id="begin" aria-label="Begin Here">
+        <div className="begin-copy">
+          <p className="eyebrow">Begin Here</p>
+          <h2>You have seen<br /><em>something.</em></h2>
+          <p>A dream that stayed with you longer than dreams stay. An image that appeared in prayer or in silence and did not leave. A symbol that kept returning — in Scripture, in life, in the margins of your own thinking.</p>
+          <blockquote>It belongs to your tradition. It always has.</blockquote>
+          <p>Enter your name and email to receive a free symbolic interpretation guide — and a welcome into the territory AwakenArts was built to accompany.</p>
+        </div>
+        <div className="begin-form-wrap" id="offerings">
+          <h3>Receive the Free Guide</h3>
+          <p>A symbolic interpretation guide for those who have seen something they could not name.</p>
+          <SignupForm />
+        </div>
+      </section>
+
+      {/* ── FOOTER ── */}
+      <footer id="about" aria-label="Site footer">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <Link href="/">
+              <Image src="/images/brand/logo-nav.png" alt="AwakenArts" width={700} height={336} className="footer-logo-img" />
+            </Link>
+            <p>A platform at the intersection of the Christian tradition, Jungian Individuation, Transformational Language Arts, and original symbolic imagery.</p>
+          </div>
+          <div className="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><Link href="#path">The Path</Link></li>
+              <li><Link href="#deck">Guidance Deck</Link></li>
+              <li><Link href="#library">The Library</Link></li>
+              <li><Link href="#offerings">Offerings</Link></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>The Work</h4>
+            <ul>
+              <li><Link href="#deck">Illustrated Awakening</Link></li>
+              <li><Link href="#offerings">Whispers of Awareness</Link></li>
+              <li><Link href="#library">Concrete Poetry</Link></li>
+              <li><Link href="#library">Maiden Archetype Series</Link></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>About</h4>
+            <ul>
+              <li><Link href="#about">Formation &amp; Provenance</Link></li>
+              <li><Link href="#begin">Begin Here</Link></li>
+              <li><Link href="/privacy">Privacy Policy</Link></li>
+              <li><Link href="/terms">Terms of Use</Link></li>
+            </ul>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <span>© 2025 AwakenArts · AwakenArts.com · All Rights Reserved</span>
+          <span>© Susan Ann Shepler · Confidential</span>
+        </div>
+      </footer>
+    </>
+  )
+}
