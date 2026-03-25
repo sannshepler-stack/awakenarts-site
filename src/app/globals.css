@@ -94,69 +94,81 @@ nav {
    Cream gradient overlay fades left→right so copy is legible
    and the artwork (right side) shows through completely.
 ───────────────────────────────────────────────────────────── */
-.hero {
-  min-height: 100svh;
-  position: relative;
-  display: flex; align-items: center;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute; inset: 0; z-index: 0;
-}
-.hero-bg img {
-  width: 100% !important; height: 100% !important;
-  object-fit: contain; object-position: 55% center;
-  display: block;
-}
 .hero-overlay {
-  position: absolute; inset: 0; z-index: 1;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background: linear-gradient(
     to right,
-    rgba(250,247,242,.97) 0%,
-    rgba(250,247,242,.92) 38%,
-    rgba(250,247,242,.55) 62%,
-    rgba(250,247,242,.0)  100%
+    rgba(250,247,242,0.55) 0%,
+    rgba(250,247,242,0.30) 25%,
+    rgba(250,247,242,0) 42%
   );
 }
-.hero-left {
-  position: relative; z-index: 2;
-  display: flex; align-items: center;
-  padding: 9rem 3rem 6rem 6rem;
-  width: 60%; min-width: 480px;
+@media (max-width: 1100px) {
+  .hero-left {
+    padding: 6.5rem 0 3rem 1.5rem;
+  }
+
+  .hero-inner {
+    width: min(28rem, 88vw);
+    padding: 2.25rem 2rem 2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+  }
 }
-.hero-left::before {
-  content: ''; position: absolute; left: 6rem; top: 0; bottom: 0;
-  width: 1px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(201,168,76,.4) 25%,
-    rgba(201,168,76,.4) 75%,
-    transparent
-  );
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
-.hero-inner { max-width: 560px; width: 100%; }
-.hero .eyebrow { margin-bottom: 2.25rem; }
-.hero h1 {
-  font-size: clamp(2.8rem, 5.5vw, 5rem); font-weight: 300;
-  line-height: 1.06; letter-spacing: -.015em;
-  margin-bottom: 2rem; color: var(--deep);
+
+  .hero-bg img {
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(250,247,242,0) 0%,
+      rgba(250,247,242,0) 64%,
+      rgba(250,247,242,0.72) 84%,
+      rgba(250,247,242,1) 100%
+    );
+  }
+
+  .hero-left {
+    min-height: auto;
+    padding: 0;
+    display: block;
+  }
+
+  .hero-inner {
+    width: 100%;
+    max-width: none;
+    background: var(--cream);
+    box-shadow: none;
+    padding: 2rem 1.5rem 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.04;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+  }
 }
-.hero h1 em { font-style: italic; color: var(--rose); }
-.hero-sub {
-  font-size: 1.15rem; font-weight: 300; line-height: 1.7;
-  color: var(--mid); max-width: 48ch; margin-bottom: 2.75rem;
-}
-.hero-cta {
-  display: inline-flex; align-items: center; gap: .7rem;
-  text-decoration: none; font-size: .72rem;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--deep); border-bottom: 1px solid var(--gold);
-  padding-bottom: 3px; transition: color .2s;
-}
-.hero-cta:hover { color: var(--gold); }
-.hero-cta span { transition: transform .2s; display: inline-block; }
-.hero-cta:hover span { transform: translateX(5px); }
 
 /* ─────────────────────────────────────────────────────────────
    GOLD RULE

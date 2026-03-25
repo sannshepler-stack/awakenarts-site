@@ -34,38 +34,43 @@ export default function HomePage() {
           Overlay fades right→left — cream over copy area, clear over artwork
       ─────────────────────────────────────────────────────────────── */}
       <section className="hero" aria-label="Hero">
+  <div className="hero-bg" aria-hidden="true">
+    <Image
+      src="/images/brand/queen-ann-hero-desktop.jpg"
+      alt=""
+      fill
+      priority
+      style={{
+        objectFit: 'cover',
+        objectPosition: '72% top',
+      }}
+    />
+  </div>
 
-        <div className="hero-bg" aria-hidden="true">
-          <Image
-            src="/images/brand/ann-cover-hero.jpg"
-            alt=""
-            width={1600}
-            height={1685}
-            priority
-            style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: '55% center' }}
-          />
-        </div>
+  <div className="hero-overlay" aria-hidden="true" />
 
-        <div className="hero-overlay" aria-hidden="true" />
+  <div className="hero-left">
+    <div className="hero-inner">
+      <p className="eyebrow">Where Symbol Meets Soul</p>
 
-        <div className="hero-left">
-          <div className="hero-inner">
-            <p className="eyebrow">Where Symbol Meets Soul</p>
-            <h1>Where <em>Symbol</em><br />Meets Soul</h1>
-            <p className="hero-sub">
-              AwakenArts guides seekers through the symbolic landscape of the
-              psyche — drawing from the living depths of the Christian tradition,
-              Jungian individuation, and the language of myth and archetype. For
-              those who sense that the sacred story goes deeper than they have
-              yet been shown.
-            </p>
-            <Link href="#path" className="hero-cta">
-              Enter the Path <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </div>
+      <h1>
+        Where <em>Symbol</em>
+        <br />
+        Meets Soul
+      </h1>
 
-      </section>
+      <p className="hero-sub">
+        AwakenArts guides seekers through the symbolic landscape of the psyche
+        — drawing from the living depths of the Christian tradition, Jungian
+        individuation, and the language of myth and archetype.
+      </p>
+
+      <Link href="#path" className="hero-cta">
+        Enter the Path <span aria-hidden="true">→</span>
+      </Link>
+    </div>
+  </div>
+</section>
 
       {/* ── GOLD RULE ── */}
       <div className="gold-rule" aria-hidden="true">
