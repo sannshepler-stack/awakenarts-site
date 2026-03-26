@@ -4,9 +4,12 @@ import Nav from '@/components/Nav'
 import SignupForm from '@/components/SignupForm'
 
 const deckPreviews = [
-  { src: '/images/cards/formatted/crossroad.jpg', name: 'Crossroad', phrase: 'An intersection between heaven and earth' },
-  { src: '/images/cards/formatted/grace.jpg',     name: 'Grace',     phrase: 'Our souls are made for life everlasting' },
-  { src: '/images/cards/formatted/fear.jpg',      name: 'Fear',      phrase: 'Overcome fears with confidence, courage, and faith' },
+  { src: '/images/cards/formatted/crossroad.jpg', name: 'Crossroad', phrase: 'An intersection between heaven and earth', variant: 'full' },
+  { src: '/images/cards/formatted/grace.jpg',     name: 'Grace',     phrase: 'Our souls are made for life everlasting', variant: 'full' },
+  { src: '/images/cards/formatted/illusion.jpg',  name: 'Illusion',  phrase: 'Look beyond the ordinary', variant: 'full' },
+  { src: '/images/cards/formatted/nurture.jpg',   name: 'Nurture',   phrase: '', variant: 'full' },
+  { src: '/images/cards/formatted/secrets.jpg',   name: 'Secrets',   phrase: '', variant: 'full' },
+  { src: '/images/cards/formatted/thoughts.jpg',  name: 'Thoughts',  phrase: '', variant: 'full' },
 ]
 
 const marqueeItems = [
@@ -34,19 +37,24 @@ export default function HomePage() {
           Overlay fades right→left — cream over copy area, clear over artwork
       ─────────────────────────────────────────────────────────────── */}
       <section className="hero" aria-label="Hero">
-  <div className="hero-bg" aria-hidden="true">
-    <Image
+  
+<div className="hero-bg" aria-hidden="true">
+  <picture>
+    <source
+      media="(max-width: 768px)"
+      srcSet="/images/brand/queen-ann-hero-mobile.jpg"
+    />
+    <source
+      media="(max-width: 1100px)"
+      srcSet="/images/brand/queen-ann-hero-tablet.jpg"
+    />
+    <img
       src="/images/brand/queen-ann-hero-desktop.jpg"
       alt=""
-      fill
-      priority
-      style={{
-        objectFit: 'cover',
-        objectPosition: '72% top',
-      }}
+      loading="eager"
     />
-  </div>
-
+  </picture>
+</div>
   <div className="hero-overlay" aria-hidden="true" />
 
   <div className="hero-left">
@@ -130,47 +138,27 @@ export default function HomePage() {
       </div>
 
       {/* ── GUIDANCE DECK ── */}
-      <section className="deck-section" id="deck" aria-label="Guidance Deck">
-        <div className="deck-copy">
-          <p className="eyebrow">Illustrated Awakening</p>
-          <h2>These cards did not begin<br />as guidance. They began<br />as <em>poems.</em></h2>
-          <p>Each of the 52 cards originates in a poem written by Susan Ann Shepler — not written as spiritual guidance but written as a poem, arriving the way poems arrive.</p>
-          <p>What emerged was not planned. It <em>manifested.</em> The cards are stepping stones, not a map. Draw a card. Meet what is already moving in you.</p>
-          <Link href="#begin" className="btn-gold">Draw a Card <span aria-hidden="true">→</span></Link>
-        </div>
-        <div className="deck-cards" aria-label="Sample cards">
-          {deckPreviews.map(card => (
-            <div key={card.name} className="card-preview">
-              <Image src={card.src} alt={`${card.name} — ${card.phrase}`} width={1427} height={2000} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div className="card-preview-label">
-                <span className="card-preview-name">{card.name}</span>
-                <span className="card-preview-phrase">{card.phrase}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── FOUR STREAMS ── */}
-      <section className="path-section" id="library" aria-label="The Four Streams">
-        <div className="path-intro">
-          <p className="eyebrow">The Framework</p>
-          <h2>Four streams.<br /><em>One river.</em></h2>
-          <p>AwakenArts draws from four traditions that have always been describing the same territory — the soul&apos;s movement toward its own depth, which is simultaneously a movement toward God.</p>
-          <Link href="#begin" className="btn-outline">Enter the Path <span aria-hidden="true">→</span></Link>
-        </div>
-        <div className="path-streams">
-          {streams.map(s => (
-            <div key={s.num} className="stream">
-              <div className="stream-num">{s.num}</div>
-              <div>
-                <div className="stream-title">{s.title}</div>
-                <p className="stream-body">{s.body}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+<section className="deck-section" id="deck" aria-label="Guidance Deck">
+  <div className="deck-cards" aria-label="Sample cards">
+    {deckPreviews.map((card) => (
+      <Link
+        key={card.name}
+        href="#begin"
+        className={`card-preview ${
+          card.variant ? `card-preview--${card.variant}` : 'card-preview--full'
+        }`}
+      >
+        <Image
+          src={card.src}
+          alt={`${card.name} — ${card.phrase}`}
+          width={1427}
+          height={2000}
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+        />
+      </Link>
+    ))}
+  </div>
+</section>
 
       {/* ── QUOTE ── */}
       <section className="quote-section" aria-label="Founding quote">
