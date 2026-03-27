@@ -202,48 +202,69 @@ nav {
 }
 
 @media (max-width: 1024px) {
-  .hero-left {
-    padding: 6rem 0 3rem 1.5rem;
-  }
 
-  .hero-inner {
-    width: min(28rem, 88vw);
-    max-width: 26rem;
-    padding: 2.25rem 2rem 2rem;
-  }
+  nav {
+  padding: 0.7rem 1.25rem;
+  min-height: 64px;
+  z-index: 999;
+}
 
-  .hero-inner h1 {
-    font-size: clamp(2.4rem, 5vw, 3.2rem);
-  }
+.hero {
+  position: relative;
+  height: calc(100svh - 64px);
+  margin-top: 64px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
 
-  .hero-sub {
-    font-size: 0.95rem;
-  }
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  z-index: 0;
+}
 
-  .hero-overlay {
-    background: linear-gradient(
-      to right,
-      rgba(28,43,58,0.65) 0%,
-      rgba(28,43,58,0.45) 40%,
-      rgba(28,43,58,0.25) 70%,
-      rgba(28,43,58,0.1) 100%
-    );
-  }
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 8%;
+}
 
-  .hero-bg img {
-    object-position: 60% center;
-  }
+.hero-left {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 1.5rem 2rem;
+  background: transparent;
+}
+
 }
 
 @media (max-width: 768px) {
+
+  /* Nav height (keep consistent) */
+  nav {
+    padding: 0.7rem 1.25rem;
+    min-height: 64px;
+    z-index: 999;
+  }
+
+  /* Hero sits below nav */
   .hero {
     position: relative;
-    height: 100svh;
+    height: calc(100svh - 64px);
+    margin-top: 64px;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
   }
 
+  /* Full-bleed image */
   .hero-bg {
     position: absolute;
     inset: 0;
@@ -255,20 +276,21 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 62% center;
+    object-position: 60% 8%; /* protects crown */
   }
 
+  /* Remove fade/overlay */
   .hero-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+    display: none;
   }
 
+  /* Text overlay */
   .hero-left {
     position: absolute;
-    inset: auto 0 0 0;
+    inset: 0;
     z-index: 2;
     display: flex;
+    align-items: flex-end;
     justify-content: flex-start;
     padding: 0 1.5rem 2rem;
     background: transparent;
@@ -279,34 +301,20 @@ nav {
     max-width: 20rem;
   }
 
-  .hero-inner .eyebrow {
+  .hero-inner .eyebrow,
+  .hero-inner h1,
+  .hero-sub,
+  .hero-cta {
     color: var(--cream);
+  }
+
+  .hero-inner h1 em,
+  .hero-cta {
+    color: var(--gold-lt);
   }
 
   .hero-inner .eyebrow::before {
     background: var(--gold-lt);
-  }
-
-  .hero-inner h1 {
-    font-size: clamp(2.7rem, 11vw, 4rem);
-    line-height: 0.96;
-    margin: 0.5rem 0 0.85rem;
-    color: var(--cream);
-  }
-
-  .hero-inner h1 em {
-    color: var(--gold-lt);
-  }
-
-  .hero-sub {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    color: rgba(250,247,242,0.9);
-  }
-
-  .hero-cta {
-    color: var(--gold-lt);
   }
 
   .hero-left::before {
