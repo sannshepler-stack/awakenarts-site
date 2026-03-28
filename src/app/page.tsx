@@ -39,21 +39,21 @@ export default function HomePage() {
       <section className="hero" aria-label="Hero">
   
 <div className="hero-bg" aria-hidden="true">
-  <picture>
-    <source
-      media="(max-width: 768px)"
-      srcSet="/images/brand/queen-ann-hero-mobile.jpg"
-    />
-    <source
-      media="(max-width: 1100px)"
-      srcSet="/images/brand/queen-ann-hero-tablet.jpg"
-    />
-    <img
-      src="/images/brand/queen-ann-hero-desktop.jpg"
-      alt=""
-      loading="eager"
-    />
-  </picture>
+<picture>
+  <source
+    media="(min-width: 769px) and (max-width: 1100px)"
+    srcSet="/images/brand/queen-ann-hero-tablet.jpg"
+  />
+  <source
+    media="(max-width: 768px)"
+    srcSet="/images/brand/queen-ann-hero-mobile.jpg"
+  />
+  <img
+    src="/images/brand/queen-ann-hero-desktop.jpg"
+    alt=""
+    loading="eager"
+  />
+</picture>
 </div>
   <div className="hero-overlay" aria-hidden="true" />
 
@@ -84,7 +84,7 @@ export default function HomePage() {
       <div className="gold-rule" aria-hidden="true">
         <div className="gold-rule-line" />
         <span className="gold-rule-glyph">✦ ✦ ✦</span>
-        <div className="gold-rule-line" />
+        <div className="gold-rule-line" />can 
       </div>
 
       {/* ── PATH TILES ── */}

@@ -286,20 +286,20 @@ nav {
 
   /* Text overlay */
   .hero-left {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    padding: 0 1.5rem 2rem;
-    background: transparent;
-  }
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 1.5rem 4rem;
+}
 
   .hero-inner {
-    width: 100%;
-    max-width: 20rem;
-  }
+  width: 100%;
+  max-width: 20rem;
+  transform: translateY(-3.5rem);
+}
 
   .hero-inner .eyebrow,
   .hero-inner h1,
