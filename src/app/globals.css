@@ -210,7 +210,28 @@ nav {
 }
 
 }
+@media (min-width: 769px) and (max-width: 1100px) {
+  .hero {
+    background: var(--deep);
+    min-height: 100svh;
+    align-items: center;
+  }
 
+  .hero-bg img {
+    object-fit: cover;
+    object-position: right top;
+  }
+
+  .hero-left {
+    width: 44%;
+    min-width: 0;
+    padding: 7rem 2rem 5rem 3rem;
+  }
+
+  .hero-overlay {
+    display: none;
+  }
+}
 @media (max-width: 768px) {
 
   /* Nav height (keep consistent) */
@@ -686,10 +707,6 @@ footer {
 ───────────────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   nav { padding: 1rem 2.5rem; }
-
-  .hero-left { padding: 7rem 2rem 5rem 3rem; width: 68%; min-width: 0; }
-  .hero-left::before { left: 3rem; }
-  .hero-overlay { display: none; }
 
   .tiles-section { padding: 5rem 2.5rem; }
   .tiles-header  { padding-left: 0; }
