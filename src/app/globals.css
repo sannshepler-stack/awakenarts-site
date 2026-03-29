@@ -9,7 +9,7 @@
   --gold-lt: #C9A84C;
   --gold-bg: #F5EDD6;
   --rose:    #7B2D3E;
-  --slate:   #3D5166;
+  --slate:   #3D5166
   --cream:   #FAF7F2;
   --warm:    #F0EAE0;
   --mist:    #DDD8CF;
@@ -728,7 +728,7 @@ footer {
 
   .hero-bg img {
     object-fit: cover;
-    object-position: 55% 18%;
+    object-position: 55% 0cqb;
   }
 
   .hero-left {
@@ -822,7 +822,7 @@ footer {
 }
 
 .hero-inner h1 {
-  font-size: clamp(2.7rem, 11vw, 4rem);
+  font-size: clamp(1.8rem, 8vw, 2.5rem);
   line-height: 0.96;
   margin: 0.5rem 0 0.85rem;
   color: var(--cream);
