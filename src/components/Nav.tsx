@@ -4,12 +4,20 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+const links = [
+  { label: 'The Path',     href: '#path' },
+  { label: 'Guidance Deck', href: '#deck' },
+  { label: 'Library',      href: '#library' },
+  { label: 'Offerings',    href: '#offerings' },
+  { label: 'About',        href: '#about' },
+]
+
 export default function Nav() {
   const [open, setOpen]       = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => setScrolled(window.scrollY > 48)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -17,29 +25,24 @@ export default function Nav() {
   const close = () => setOpen(false)
 
   return (
-    <nav style={{ padding: scrolled ? '.4rem 3rem' : '.6rem 3rem' }}>
-      {/*
-        logo-nav.png has a solid black background.
-        mix-blend-mode: screen (in globals.css) makes the black invisible
-        against the deep navy nav bar — calligraphy and gold ring show through.
-      */}
-      <Link href="/" onClick={close}>
+    <nav className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
+      <Link href="/" onClick={close} aria-label="AwakenArts home">
         <Image
           src="/images/brand/logo-nav.png"
-          alt="AwakenArts — Symbols Speak. The Soul Listens."
+          alt="AwakenArts"
           width={700}
           height={336}
-          className="nav-logo-img"
+          className="nav-logo"
           priority
         />
       </Link>
 
       <ul className={`nav-links${open ? ' open' : ''}`} id="nav-links">
-        <li><Link href="#path"      onClick={close}>The Path</Link></li>
-        <li><Link href="#deck"      onClick={close}>Guidance Deck</Link></li>
-        <li><Link href="#library"   onClick={close}>Library</Link></li>
-        <li><Link href="#offerings" onClick={close}>Offerings</Link></li>
-        <li><Link href="#about"     onClick={close}>About</Link></li>
+        {links.map(({ label, href }) => (
+          <li key={href}>
+            <Link href={href} onClick={close}>{label}</Link>
+          </li>
+        ))}
         <li>
           <Link href="#begin" className="nav-begin" onClick={close}>
             Begin Here
@@ -51,9 +54,12 @@ export default function Nav() {
         className="nav-toggle"
         aria-label={open ? 'Close menu' : 'Open menu'}
         aria-expanded={open}
-        onClick={() => setOpen(!open)}
+        aria-controls="nav-links"
+        onClick={() => setOpen(o => !o)}
       >
-        <span /><span /><span />
+        <span />
+        <span />
+        <span />
       </button>
     </nav>
   )

@@ -3,15 +3,27 @@
 import { useState } from 'react'
 
 export default function SignupForm() {
-  const [submitted, setSubmitted] = useState(false)
   const [fname, setFname]         = useState('')
   const [email, setEmail]         = useState('')
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError]         = useState('')
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!fname.trim() || !email.trim()) return
-    // TODO: wire to ConvertKit API route at /api/subscribe
-    // See README.md for implementation notes
+    setError('')
+
+    if (!fname.trim() || !email.trim()) {
+      setError('Please enter your name and email.')
+      return
+    }
+
+    // TODO: replace with your email provider API call
+    // Example for ConvertKit:
+    //   await fetch('/api/subscribe', {
+    //     method: 'POST',
+    //     body: JSON.stringify({ fname, email }),
+    //   })
+
     setSubmitted(true)
   }
 
@@ -28,32 +40,39 @@ export default function SignupForm() {
       <div className="form-field">
         <label htmlFor="fname">First Name</label>
         <input
-          type="text"
           id="fname"
+          type="text"
           name="fname"
           placeholder="Your first name"
           autoComplete="given-name"
-          required
           value={fname}
           onChange={e => setFname(e.target.value)}
+          required
         />
       </div>
+
       <div className="form-field">
         <label htmlFor="email">Email Address</label>
         <input
-          type="email"
           id="email"
+          type="email"
           name="email"
           placeholder="your@email.com"
           autoComplete="email"
-          required
           value={email}
           onChange={e => setEmail(e.target.value)}
+          required
         />
       </div>
+
+      {error && (
+        <p style={{ color: '#7B2D3E', fontSize: '.88rem' }}>{error}</p>
+      )}
+
       <button type="submit" className="btn-submit">
         Enter the Path →
       </button>
+
       <p className="form-note">No selling. No noise. Only what the path requires.</p>
     </form>
   )
