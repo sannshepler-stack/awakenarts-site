@@ -214,7 +214,7 @@ export default function HomePage() {
 
         <div className="deck-cta">
           <Link href="#begin" className="hero-cta">
-            Find Your Path <span className="arrow" aria-hidden="true">→</span>
+            Choose Your Path <span className="arrow" aria-hidden="true">→</span>
           </Link>
         </div>
       </section>
