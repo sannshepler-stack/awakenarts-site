@@ -177,9 +177,12 @@ export default function HomePage() {
             <br /><em>Symbols for the interior life.</em>
           </h2>
           <p>
-            Fifty-two figures, each carrying a symbolic truth. Draw a card as a
-            daily companion, a moment of reflection, or an entry point into the
-            deeper work. The deck meets you where you are.
+            These cards did not begin as guidance.
+            They began as poems.
+          </p>
+          <p>
+            Each holds a symbolic moment — something to be encountered,
+            reflected upon, and allowed to unfold.
           </p>
         </div>
 
