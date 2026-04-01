@@ -6,17 +6,17 @@ import SignupForm from '@/components/SignupForm'
 /* ── Data ──────────────────────────────────────────────── */
 
 const allCards = [
-  { src: '/images/cards/crossroad.jpg',        title: 'Crossroad' },
-  { src: '/images/cards/grace.jpg',            title: 'Grace' },
-  { src: '/images/cards/illusion.jpg',         title: 'Illusion' },
-  { src: '/images/cards/nurture.jpg',          title: 'Nurture' },
-  { src: '/images/cards/secrets.jpg',          title: 'Secrets' },
-  { src: '/images/cards/thoughts.jpg',         title: 'Thoughts' },
-  { src: '/images/cards/together.jpg',         title: 'Together' },
-  { src: '/images/cards/love.jpg',             title: 'Love' },
-  { src: '/images/cards/broken.jpg',           title: 'Broken' },
-  { src: '/images/cards/frozen.jpg',           title: 'Frozen' },
-  { src: '/images/cards/self-awareness.jpg',   title: 'Self Awareness' },
+  { src: '/images/cards/crossroad.jpg',          title: 'Crossroad' },
+  { src: '/images/cards/grace.jpg',              title: 'Grace' },
+  { src: '/images/cards/illusion.jpg',           title: 'Illusion' },
+  { src: '/images/cards/nurture.jpg',            title: 'Nurture' },
+  { src: '/images/cards/secrets.jpg',            title: 'Secrets' },
+  { src: '/images/cards/thoughts.jpg',           title: 'Thoughts' },
+  { src: '/images/cards/together.jpg',           title: 'Together' },
+  { src: '/images/cards/broken.jpg',             title: 'Broken' },
+  { src: '/images/cards/love.jpg',               title: 'Love' },
+  { src: '/images/cards/frozen.jpg',             title: 'Frozen' },
+  { src: '/images/cards/self-awareness.jpg',     title: 'Self Awareness' },
   { src: '/images/cards/unconscious-energy.jpg', title: 'Unconscious Energy' },
 ]
 
