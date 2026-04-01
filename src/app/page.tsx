@@ -207,6 +207,7 @@ export default function HomePage() {
                 alt={card.title}
                 width={2245}
                 height={3145}
+                unoptimized
               />
             </Link>
           ))}
