@@ -272,7 +272,7 @@ export default function HomePage() {
         <span className="quote-mark" aria-hidden="true">&ldquo;</span>
         <p className="quote-text">
           Art has a way of carrying what language alone cannot. These cards
-          began there — in image, in symbol, in the poem beneath the poem.
+          began there — in image, in symbol, in the poem beneath awareness.
         </p>
         <p className="quote-attr">— Susan Ann Shepler, AwakenArts</p>
       </section>
