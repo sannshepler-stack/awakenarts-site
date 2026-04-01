@@ -764,6 +764,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
     flex-direction: column;
     align-items: stretch;
     overflow: visible;
+    margin-top: 68px; /* clear the fixed nav bar */
   }
 
   /* ── Section A: image, 55vh, normal document flow ── */
@@ -773,7 +774,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
     width: 100%;
   }
   .hero-bg img {
-    object-position: center 45%; /* centres on the white-text figure */
+    object-position: center 12%; /* shows crown/head near top of frame */
   }
 
   /* ── Remove overlay entirely on mobile ── */
