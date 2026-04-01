@@ -5,15 +5,22 @@ import SignupForm from '@/components/SignupForm'
 
 /* ── Data ──────────────────────────────────────────────── */
 
-const cards = [
-  { src: '/images/cards/crossroad.jpg', name: 'Crossroad',  phrase: 'An intersection between heaven and earth' },
-  { src: '/images/cards/grace.jpg',     name: 'Grace',      phrase: 'Our souls are made for life everlasting' },
-  { src: '/images/cards/illusion.jpg',  name: 'Illusion',   phrase: 'Look beyond the ordinary' },
-  { src: '/images/cards/nurture.jpg',   name: 'Nurture',    phrase: 'The care that restores' },
-  { src: '/images/cards/secrets.jpg',   name: 'Secrets',    phrase: 'What the depths hold' },
-  { src: '/images/cards/thoughts.jpg',  name: 'Thoughts',   phrase: 'The mind as mirror' },
-  { src: '/images/cards/together.jpg',  name: 'Together',   phrase: 'Union of the self' },
+const allCards = [
+  { src: '/images/cards/crossroad.jpg',        title: 'Crossroad' },
+  { src: '/images/cards/grace.jpg',            title: 'Grace' },
+  { src: '/images/cards/illusion.jpg',         title: 'Illusion' },
+  { src: '/images/cards/nurture.jpg',          title: 'Nurture' },
+  { src: '/images/cards/secrets.jpg',          title: 'Secrets' },
+  { src: '/images/cards/thoughts.jpg',         title: 'Thoughts' },
+  { src: '/images/cards/together.jpg',         title: 'Together' },
+  { src: '/images/cards/love.jpg',             title: 'Love' },
+  { src: '/images/cards/broken.jpg',           title: 'Broken' },
+  { src: '/images/cards/frozen.jpg',           title: 'Frozen' },
+  { src: '/images/cards/self-awareness.jpg',   title: 'Self Awareness' },
+  { src: '/images/cards/unconscious-energy.jpg', title: 'Unconscious Energy' },
 ]
+
+const displayedCards = allCards.slice(0, 8)
 
 const marqueeItems = [
   'The Biblical Imagination',
@@ -187,22 +194,28 @@ export default function HomePage() {
         </div>
 
         <div className="deck-grid" role="list">
-          {cards.map(card => (
+          {displayedCards.map(card => (
             <Link
-              key={card.name}
+              key={card.title}
               href="#begin"
               className="deck-card"
               role="listitem"
-              aria-label={`${card.name} — ${card.phrase}`}
+              aria-label={card.title}
             >
               <Image
                 src={card.src}
-                alt={`${card.name}: ${card.phrase}`}
+                alt={card.title}
                 width={2245}
                 height={3145}
               />
             </Link>
           ))}
+        </div>
+
+        <div className="deck-cta">
+          <Link href="#begin" className="hero-cta">
+            Find Your Path <span className="arrow" aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
 
