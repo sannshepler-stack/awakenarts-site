@@ -766,14 +766,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
     overflow: visible;
   }
 
-  /* ── Section A: image, 50vh, normal document flow ── */
+  /* ── Section A: image, 55vh, normal document flow ── */
   .hero-bg {
     position: relative;
-    height: 50vh;
+    height: 55vh;
     width: 100%;
   }
   .hero-bg img {
-    object-position: center 20%; /* prevents top-heavy cropping */
+    object-position: center 45%; /* centres on the white-text figure */
   }
 
   /* ── Remove overlay entirely on mobile ── */
