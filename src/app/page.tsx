@@ -181,7 +181,7 @@ export default function HomePage() {
           <p className="eyebrow">The Work</p>
           <h2>
             The Guidance Deck
-            <br /><em>Symbols for the interior life.</em>
+            <br /><em>Symbols for the life within.</em>
           </h2>
           <p>
             These cards did not begin as guidance.
