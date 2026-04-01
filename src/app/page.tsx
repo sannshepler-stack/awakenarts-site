@@ -270,8 +270,8 @@ export default function HomePage() {
       <section className="quote-section" aria-label="Founding quote">
         <span className="quote-mark" aria-hidden="true">&ldquo;</span>
         <p className="quote-text">
-          Words acquiesced to shapes and shapes to words — so that the
-          unconscious material had a playground to work and appear.
+          I have found that art can bring forward what lives beneath awareness —
+          content that is purposeful, illuminating, and quietly guiding.
         </p>
         <p className="quote-attr">— Susan Ann Shepler, AwakenArts</p>
       </section>
