@@ -203,6 +203,53 @@ export default function HomePage() {
         </div>
       </section>
 
+            {/* ── LIBRARY ─── */}
+      <section className="library-section" id="library" aria-label="Symbolic Library">
+        <div className="library-header">
+          <p className="eyebrow">The Library</p>
+          <h2>
+            Writings for the symbolic life.
+            <br /><em>Thresholds into deeper seeing.</em>
+          </h2>
+          <p>
+            A growing body of reflective writing shaped by image, story,
+            archetype, and spiritual tradition. Enter through the figure, the
+            question, or the symbol that is already calling to you.
+          </p>
+        </div>
+
+        <div className="library-grid">
+          <article className="library-card">
+            <p className="library-card__eyebrow">Figures</p>
+            <h3>Queen Ann: Between Kingdoms</h3>
+            <p>
+              A meditation on exile, spirit, and the threshold between earthly
+              loss and impossible help.
+            </p>
+            <Link href="#begin" className="library-card__link">Read the reflection</Link>
+          </article>
+
+          <article className="library-card">
+            <p className="library-card__eyebrow">Foundations</p>
+            <h3>The Mirror and the Map</h3>
+            <p>
+              On learning to read symbolic material not as ornament, but as a
+              mode of recognition and interior orientation.
+            </p>
+            <Link href="#begin" className="library-card__link">Enter the essay</Link>
+          </article>
+
+          <article className="library-card">
+            <p className="library-card__eyebrow">Bridges</p>
+            <h3>Jung and the Gospel</h3>
+            <p>
+              Two languages, one interior country — where psyche and spiritual
+              tradition begin to illuminate each other.
+            </p>
+            <Link href="#begin" className="library-card__link">Explore the bridge</Link>
+          </article>
+        </div>
+      </section>
       {/* ── PULL QUOTE ─── */}
       <section className="quote-section" aria-label="Founding quote">
         <span className="quote-mark" aria-hidden="true">&ldquo;</span>
@@ -222,24 +269,26 @@ export default function HomePage() {
             <br /><em>something.</em>
           </h2>
           <p>
-            A dream that stayed with you longer than dreams stay. An image that
-            appeared in prayer or in silence and did not leave. A symbol that
-            kept returning — in Scripture, in life, in the margins of your own
-            thinking.
+            A dream that stayed longer than dreams usually stay. An image that
+            appeared in prayer, silence, or memory and did not leave. A symbol
+            that kept returning — in Scripture, in ordinary life, or at the
+            edge of your understanding.
           </p>
           <blockquote>It belongs to your tradition. It always has.</blockquote>
           <p>
-            Enter your name and email to receive a free symbolic interpretation
-            guide — and a welcome into the territory AwakenArts was built to
-            accompany.
+            AwakenArts exists to help you approach symbolic material with
+            reverence, clarity, and deeper recognition — not as decoration, but
+            as a living language of awareness.
           </p>
         </div>
 
         <div className="begin-form-wrap" id="offerings">
-          <h3>Receive the Free Guide</h3>
+          <p className="eyebrow">Free Offering</p>
+          <h3>Receive the Symbolic Interpretation Guide</h3>
           <p>
-            A symbolic interpretation guide for those who have seen something
-            they could not name.
+            Join the list to receive a free guide for approaching symbols,
+            images, and recurring inner material with more understanding and
+            steadiness.
           </p>
           <SignupForm />
         </div>
@@ -266,13 +315,13 @@ export default function HomePage() {
           </div>
 
           <div className="footer-col">
-            <h4>Explore</h4>
-            <ul>
-              <li><Link href="#path">The Path</Link></li>
-              <li><Link href="#deck">Guidance Deck</Link></li>
-              <li><Link href="#library">The Library</Link></li>
-              <li><Link href="#offerings">Offerings</Link></li>
-            </ul>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#path">The Path</a></li>
+            <li><a href="#deck">Guidance Deck</a></li>
+            <li><a href="#library">The Library</a></li>
+            <li><a href="#offerings">Offerings</a></li>
+          </ul>
           </div>
 
           <div className="footer-col">
