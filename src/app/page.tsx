@@ -271,7 +271,7 @@ export default function HomePage() {
       <section className="quote-section" aria-label="Founding quote">
         <span className="quote-mark" aria-hidden="true">&ldquo;</span>
         <p className="quote-text">
-          Art has a way of carrying what language alone cannot hold. These cards
+          Art has a way of carrying what language alone cannot. These cards
           began there — in image, in symbol, in the poem beneath the poem.
         </p>
         <p className="quote-attr">— Susan Ann Shepler, AwakenArts</p>
