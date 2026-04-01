@@ -202,13 +202,8 @@ export default function HomePage() {
               role="listitem"
               aria-label={card.title}
             >
-              <Image
-                src={card.src}
-                alt={card.title}
-                width={2245}
-                height={3145}
-                unoptimized
-              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={card.src} alt={card.title} loading="lazy" />
             </Link>
           ))}
         </div>
