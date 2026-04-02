@@ -5,11 +5,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const links = [
-  { label: 'The Path',     href: '#path' },
+  { label: 'Home',          href: '/' },
+  { label: 'The Path',      href: '/path' },
   { label: 'Guidance Deck', href: '/deck' },
-  { label: 'Library',      href: '#library' },
-  { label: 'Offerings',    href: '#offerings' },
-  { label: 'About',        href: '#about' },
+  { label: 'Library',       href: '/library' },
+  { label: 'Offerings',     href: '#offerings' },
+  { label: 'About',         href: '#about' },
 ]
 
 export default function Nav() {
@@ -44,7 +45,7 @@ export default function Nav() {
           </li>
         ))}
         <li>
-          <Link href="#begin" className="nav-begin" onClick={close}>
+          <Link href="/begin" className="nav-begin" onClick={close}>
             Begin Here
           </Link>
         </li>

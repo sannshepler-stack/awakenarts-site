@@ -1,0 +1,138 @@
+/* ─── FlipCard.module.css ────────────────────────────────────────────────────
+   AwakenArts · /deck page · Flip card styles
+   Matched to existing card proportions: aspect-ratio 2/3, border-radius 4px.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ── Outer scene: perspective + sizing ────────────────────────────────────── */
+
+.scene {
+  /* 2:3 portrait ratio matches the existing card images */
+  width: 100%;
+  aspect-ratio: 2 / 3;
+
+  perspective: 900px;
+  cursor: pointer;
+
+  /* Subtle lift on hover — signals interactivity without flipping */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Prevent accidental text selection on tap / double-tap */
+  user-select: none;
+  -webkit-user-select: none;
+  /* Prevent iOS long-press image callout */
+  -webkit-touch-callout: none;
+}
+
+.scene:hover {
+  transform: translateY(-4px);
+  /* Matched to .full-deck-card:hover .full-deck-card__img in globals.css */
+}
+
+/* Keyboard focus ring — uses AwakenArts gold, not browser default */
+.scene:focus-visible {
+  outline: 2px solid rgba(139, 105, 20, 0.55); /* --gold at partial opacity */
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Inner rotating container ─────────────────────────────────────────────── */
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+
+  /* Calm, even ease — no bounce, no spring */
+  transition: transform 620ms cubic-bezier(0.45, 0, 0.55, 1);
+
+  border-radius: 4px; /* matches .full-deck-card__img */
+  box-shadow: 0 4px 20px rgba(28, 43, 58, 0.14); /* matches .full-deck-card__img */
+
+  will-change: transform;
+}
+
+/* Flipped: rotate around the Y axis */
+.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+/* Lift the shadow when hovered (parent hover affects this child) */
+.scene:hover .inner {
+  box-shadow: 0 10px 32px rgba(28, 43, 58, 0.22); /* matches .full-deck-card:hover shadow */
+}
+
+/* ── Shared face styles ────────────────────────────────────────────────────── */
+
+.front,
+.back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  /* NO overflow:hidden here — it flattens the 3D context in Chrome/Safari
+     and prevents backface-visibility from working. Border-radius goes on
+     the img elements instead. */
+
+  /* Essential: hide each face when it is the "rear" in 3D space */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* required for Safari */
+
+  /* Force GPU compositing — improves backface-visibility reliability */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Back face: pre-rotated 180° so it appears correctly after the flip.
+   Also overrides the shared translateZ(0) with the full compound transform. */
+.back {
+  transform: rotateY(180deg) translateZ(0);
+  -webkit-transform: rotateY(180deg) translateZ(0);
+  z-index: 1;
+}
+
+.front {
+  z-index: 2;
+}
+
+.front img,
+.back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Border-radius lives on the img, not the container, to avoid 3D clipping */
+  border-radius: 4px;
+}
+
+/* ── Reduced motion: swap visibility instead of rotating ──────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .scene {
+    transition: none;
+  }
+
+  .inner {
+    transition: none;
+  }
+
+  /* Front fades out */
+  .flipped .front {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Back appears flat (no 3D rotation needed without animation) */
+  .back {
+    opacity: 0;
+    transform: none;
+    pointer-events: none;
+  }
+
+  .flipped .back {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import SignupForm from '@/components/SignupForm'
+import FlipCard from '@/components/FlipCard'
 
 export const metadata: Metadata = {
   title: 'The Guidance Deck',
@@ -82,31 +83,24 @@ export default function DeckPage() {
             <br /><em>the life within.</em>
           </h1>
           <p className="deck-page-hero__sub">
-            These cards did not begin as guidance. They began as poems.
-            Each holds a symbolic moment — something to be encountered,
-            reflected upon, and allowed to unfold.
+            The symbol does not explain.<br />
+            It reveals.
           </p>
+          <a href="#cards" className="deck-page-hero__invite">
+            Enter the deck.
+          </a>
         </div>
       </section>
 
-      {/* ── GOLD DIVIDER ─── */}
-      <div className="gold-rule" aria-hidden="true">
-        <div className="gold-rule-line" />
-        <span className="gold-rule-glyph">✦ ✦ ✦</span>
-        <div className="gold-rule-line" />
-      </div>
-
       {/* ── CARD GALLERY ─── */}
-      <section className="full-deck-section" aria-label="All cards">
+      <section className="full-deck-section" id="cards" aria-label="All cards">
         <div className="full-deck-grid" role="list">
           {cards.map(card => (
             <article key={card.title} className="full-deck-card" role="listitem">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={card.src}
-                alt={card.title}
-                loading="lazy"
-                className="full-deck-card__img"
+              <FlipCard
+                frontSrc={card.src}
+                frontAlt={card.title}
+                cardName={card.title}
               />
               <p className="full-deck-card__title">{card.title}</p>
             </article>

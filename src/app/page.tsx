@@ -36,7 +36,7 @@ const tiles = [
     eyebrow: 'Primary Offering',
     title: 'The Guidance Deck',
     body: 'Symbols speak when words cannot. Each card is a mirror — draw one and meet what is already moving in you.',
-    href: '#deck',
+    href: '/deck',
     label: 'Explore the Deck',
     wide: true,
   },
@@ -44,21 +44,21 @@ const tiles = [
     eyebrow: 'Framework',
     title: 'The Mythopoetic Path',
     body: '',
-    href: '#library',
+    href: '/path',
     label: 'Enter the Path',
   },
   {
     eyebrow: 'Foundational Text',
     title: 'Whispers of Awareness',
     body: '',
-    href: '#offerings',
+    href: 'https://www.amazon.co.jp/-/en/Susan-Ann-Shepler/dp/B0G4R4KTZD',
     label: 'Read the Book',
   },
   {
     eyebrow: 'Free to Explore',
     title: 'The Symbolic Library',
     body: '',
-    href: '#library',
+    href: '/library',
     label: 'Enter the Library',
     sm: true,
   },
@@ -66,7 +66,7 @@ const tiles = [
     eyebrow: 'Not sure where to start',
     title: 'Begin Here',
     body: '',
-    href: '#begin',
+    href: '/begin',
     label: 'Start here',
     sm: true,
   },
@@ -125,7 +125,7 @@ export default function HomePage() {
             Jungian individuation, and the language of myth and archetype.
           </p>
 
-          <Link href="#path" className="hero-cta">
+          <Link href="/path" className="hero-cta">
             Enter the Path <span className="arrow" aria-hidden="true">→</span>
           </Link>
         </div>
@@ -159,7 +159,11 @@ export default function HomePage() {
               <p className="tile-eyebrow">{eyebrow}</p>
               <h3>{title}</h3>
               {body && <p className="tile-body">{body}</p>}
-              <Link href={href} className="tile-link">{label}</Link>
+              <Link
+                href={href}
+                className="tile-link"
+                {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >{label}</Link>
             </div>
           ))}
         </div>
@@ -197,7 +201,7 @@ export default function HomePage() {
           {displayedCards.map(card => (
             <Link
               key={card.title}
-              href="#begin"
+              href="/begin"
               className="deck-card"
               role="listitem"
               aria-label={card.title}
@@ -209,7 +213,7 @@ export default function HomePage() {
         </div>
 
         <div className="deck-cta">
-          <Link href="#begin" className="hero-cta">
+          <Link href="/begin" className="hero-cta">
             Choose Your Path <span className="arrow" aria-hidden="true">→</span>
           </Link>
         </div>
@@ -224,9 +228,8 @@ export default function HomePage() {
             <br /><em>Thresholds into deeper seeing.</em>
           </h2>
           <p>
-            A growing body of reflective writing shaped by image, story,
-            archetype, and spiritual tradition. Enter through the figure, the
-            question, or the symbol that is already calling to you.
+            A growing body of writing shaped by image, story, and archetype.
+            Enter through the figure, the question, or the symbol that is already calling to you.
           </p>
         </div>
 
@@ -238,17 +241,16 @@ export default function HomePage() {
               A meditation on exile, spirit, and the threshold between earthly
               loss and impossible help.
             </p>
-            <Link href="#begin" className="library-card__link">Read the reflection</Link>
+            <Link href="/library/figures/queen-ann-between-kingdoms" className="library-card__link">Read the reflection</Link>
           </article>
 
           <article className="library-card">
             <p className="library-card__eyebrow">Foundations</p>
             <h3>The Mirror and the Map</h3>
             <p>
-              On learning to read symbolic material not as ornament, but as a
-              mode of recognition and interior orientation.
+              On learning to read symbolic material as a way of recognition and inner orientation.
             </p>
-            <Link href="#begin" className="library-card__link">Enter the essay</Link>
+            <Link href="/library/foundations/the-mirror-and-the-map" className="library-card__link">Enter the essay</Link>
           </article>
 
           <article className="library-card">
@@ -258,7 +260,7 @@ export default function HomePage() {
               Two languages, one interior country — where psyche and spiritual
               tradition begin to illuminate each other.
             </p>
-            <Link href="#begin" className="library-card__link">Explore the bridge</Link>
+            <Link href="/library" className="library-card__link">Explore the bridge</Link>
           </article>
         </div>
       </section>
@@ -276,17 +278,13 @@ export default function HomePage() {
       <section className="begin-section" id="begin" aria-label="Begin Here">
         <div className="begin-copy">
           <p className="eyebrow">Begin Here</p>
-          <h2>
-            You have seen
-            <br /><em>something.</em>
-          </h2>
+          <h2>Something has stayed with you.</h2>
           <p>
-            A dream that stayed longer than dreams usually stay. An image that
-            appeared in prayer, silence, or memory and did not leave. A symbol
-            that kept returning — in Scripture, in ordinary life, or at the
-            edge of your understanding.
+            A dream that lingered longer than dreams usually do.<br />
+            An image that appeared in prayer, silence, or memory and did not leave.<br />
+            A symbol that kept returning—in Scripture, in ordinary life, or at the edge of your understanding.
           </p>
-          <blockquote>It belongs to your tradition. It always has.</blockquote>
+          <blockquote className="quote-line">It belongs to your tradition. It always has.</blockquote>
           <p>
             AwakenArts exists to help you approach symbolic material with
             reverence, clarity, and deeper recognition — not as decoration, but
@@ -303,6 +301,39 @@ export default function HomePage() {
             steadiness.
           </p>
           <SignupForm />
+        </div>
+      </section>
+
+      {/* ── SCHOLAR QUOTES ─── */}
+      <section className="scholar-section" aria-label="Scholarly voices">
+        <p className="eyebrow scholar-eyebrow">The Tradition Speaks</p>
+        <div className="scholar-grid">
+
+          <blockquote className="scholar-quote">
+            <p>"The basic or original unit of mental functioning is the image."</p>
+            <cite>— E.C. Whitmont, <em>The Symbolic Quest</em></cite>
+          </blockquote>
+
+          <blockquote className="scholar-quote">
+            <p>"Whether we are aware of it or not, much of our behaviour is symbolic."</p>
+            <cite>— Robert A. Johnson, <em>Inner Work</em></cite>
+          </blockquote>
+
+          <blockquote className="scholar-quote">
+            <p>"The dream is a series of images, which are apparently contradictory and nonsensical, but arise in reality from psychologic material which yields a clear meaning."</p>
+            <cite>— C.G. Jung</cite>
+          </blockquote>
+
+          <blockquote className="scholar-quote">
+            <p>"The unconscious really is unconscious; in other words, it is unknown. And how can you assimilate something unknown."</p>
+            <cite>— C.G. Jung</cite>
+          </blockquote>
+
+        </div>
+        <div className="scholar-more">
+          <Link href="/library/voices" className="scholar-more__link">
+            More voices from the tradition →
+          </Link>
         </div>
       </section>
 
@@ -329,9 +360,9 @@ export default function HomePage() {
           <div className="footer-col">
           <h4>Explore</h4>
           <ul>
-            <li><a href="#path">The Path</a></li>
+            <li><Link href="/path">The Path</Link></li>
             <li><a href="#deck">Guidance Deck</a></li>
-            <li><a href="#library">The Library</a></li>
+            <li><a href="/library">The Library</a></li>
             <li><a href="#offerings">Offerings</a></li>
           </ul>
           </div>
@@ -350,7 +381,7 @@ export default function HomePage() {
             <h4>About</h4>
             <ul>
               <li><Link href="#about">Formation &amp; Provenance</Link></li>
-              <li><Link href="#begin">Begin Here</Link></li>
+              <li><Link href="/begin">Begin Here</Link></li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Use</Link></li>
             </ul>
