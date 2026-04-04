@@ -16,7 +16,7 @@ export default function ExperiencePage() {
       </p>
 
       <p style={{ margin: '1.5rem 0' }}>
-        Now it's your turn. Type something true. See what form it takes.
+        Now it&apos;s your turn. Type something true. See what form it takes.
       </p>
 
       <img
@@ -26,8 +26,7 @@ export default function ExperiencePage() {
       />
 
       <p style={{ margin: '1.5rem 0' }}>
-        Use WordArt to shape your words into a figure, a symbol, a creature, a crown —
-        whatever wants to emerge.
+        Use WordArt to shape your words into a figure, a symbol, a creature, a crown — whatever wants to emerge.
       </p>
 
       
