@@ -11,7 +11,7 @@ const links = [
   { label: 'Guidance Deck', href: '/deck' },
   { label: 'Library',       href: '/library' },
   { label: 'Offerings',     href: '#offerings' },
-  { label: 'About',         href: '#about' },
+  { label: 'About',         href: '/about' },
 ]
 
 export default function Nav() {
