@@ -56,7 +56,7 @@ export default function PathPage() {
             <div className="path-poem-wrap">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/grismere-poem.jpg"
+                src="/images/cards/figures/grismere/grismere-poem.jpg"
                 alt="Grismere — shaped poem by Susan Ann Shepler"
                 className="path-poem-img"
                 loading="lazy"
@@ -150,10 +150,10 @@ export default function PathPage() {
             </p>
             <div className="path-cards-row">
               {[
-                { src: '/images/cards/unconscious-energy.jpg', name: 'Unconscious Energy', sub: 'Conscious awareness is only part of the story' },
-                { src: '/images/cards/mystery.jpg',            name: 'Mystery',            sub: 'As mysterious as the sea' },
-                { src: '/images/cards/illusion.jpg',           name: 'Illusion',           sub: 'Look beyond the ordinary' },
-                { src: '/images/cards/time.jpg',               name: 'Time',               sub: 'Time tells many tales' },
+                { src: '/images/cards/fronts/unconscious-energy.jpg', name: 'Unconscious Energy', sub: 'Conscious awareness is only part of the story' },
+                { src: '/images/cards/fronts/mystery.jpg',            name: 'Mystery',            sub: 'As mysterious as the sea' },
+                { src: '/images/cards/fronts/illusion.jpg',           name: 'Illusion',           sub: 'Look beyond the ordinary' },
+                { src: '/images/cards/fronts/time.jpg',               name: 'Time',               sub: 'Time tells many tales' },
               ].map(({ src, name, sub }) => (
                 <div key={name} className="path-mini-card">
                   {/* eslint-disable-next-line @next/next/no-img-element */}

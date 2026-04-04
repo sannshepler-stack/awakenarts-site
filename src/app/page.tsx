@@ -6,18 +6,18 @@ import SignupForm from '@/components/SignupForm'
 /* ── Data ──────────────────────────────────────────────── */
 
 const allCards = [
-  { src: '/images/cards/crossroad.jpg',          title: 'Crossroad' },
-  { src: '/images/cards/grace.jpg',              title: 'Grace' },
-  { src: '/images/cards/illusion.jpg',           title: 'Illusion' },
-  { src: '/images/cards/nurture.jpg',            title: 'Nurture' },
-  { src: '/images/cards/secrets.jpg',            title: 'Secrets' },
-  { src: '/images/cards/thoughts.jpg',           title: 'Thoughts' },
-  { src: '/images/cards/together.jpg',           title: 'Together' },
-  { src: '/images/cards/broken.jpg',             title: 'Broken' },
-  { src: '/images/cards/love.jpg',               title: 'Love' },
-  { src: '/images/cards/frozen.jpg',             title: 'Frozen' },
-  { src: '/images/cards/self-awareness.jpg',     title: 'Self Awareness' },
-  { src: '/images/cards/unconscious-energy.jpg', title: 'Unconscious Energy' },
+  { src: '/images/cards/fronts/crossroad.jpg',          title: 'Crossroad' },
+  { src: '/images/cards/fronts/grace.jpg',              title: 'Grace' },
+  { src: '/images/cards/fronts/illusion.jpg',           title: 'Illusion' },
+  { src: '/images/cards/fronts/nurture.jpg',            title: 'Nurture' },
+  { src: '/images/cards/fronts/secrets.jpg',            title: 'Secrets' },
+  { src: '/images/cards/fronts/thoughts.jpg',           title: 'Thoughts' },
+  { src: '/images/cards/fronts/together.jpg',           title: 'Together' },
+  { src: '/images/cards/fronts/broken.jpg',             title: 'Broken' },
+  { src: '/images/cards/fronts/love.jpg',               title: 'Love' },
+  { src: '/images/cards/fronts/frozen.jpg',             title: 'Frozen' },
+  { src: '/images/cards/fronts/self-awareness.jpg',     title: 'Self Awareness' },
+  { src: '/images/cards/fronts/unconscious-energy.jpg', title: 'Unconscious Energy' },
 ]
 
 const displayedCards = allCards.slice(0, 8)

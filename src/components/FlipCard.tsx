@@ -13,7 +13,7 @@
 import { useState, useCallback, KeyboardEvent } from 'react'
 import styles from './FlipCard.module.css'
 
-const CARD_BACK_SRC = '/images/cards/card-back.jpg'
+const CARD_BACK_SRC = '/images/cards/backs/card-back.jpg'
 const CARD_BACK_ALT = 'AwakenArts card back — ornamental design'
 
 interface FlipCardProps {
