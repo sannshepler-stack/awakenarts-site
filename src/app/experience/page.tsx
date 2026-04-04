@@ -4,7 +4,7 @@ export default function ExperiencePage() {
   return (
     <>
       <Nav />
-      <main style={{ padding: '4rem 2rem', textAlign: 'center', maxWidth: '700px', margin: '0 auto' }}>
+      <main style={{ padding: '6rem 2rem 4rem', textAlign: 'center', maxWidth: '700px', margin: '0 auto' }}>
 
       <h1 style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Make Your Own Word Art</h1>
 
