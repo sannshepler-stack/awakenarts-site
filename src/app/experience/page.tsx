@@ -44,7 +44,7 @@ export default function ExperiencePage() {
           marginTop: '1rem',
         }}
       >
-        Create My Word Art →
+        Create My Word Art
       </a>
 
       <p style={{ marginTop: '3rem', fontStyle: 'italic' }}>
