@@ -304,40 +304,33 @@ export default function HomePage() {
       </section>
 
       {/* ── EXPERIENCE ─── */}
-      <section style={{
-        padding: '5rem 2rem',
-        textAlign: 'center',
-        backgroundColor: 'var(--cream)',
-        borderTop: '1px solid #e0d8cc',
-        borderBottom: '1px solid #e0d8cc',
-      }}>
-        <p style={{ fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#8a7a6a', marginBottom: '1.5rem' }}>
-          The Experience
-        </p>
-        <h2 style={{ fontSize: '2.2rem', marginBottom: '1.5rem', fontFamily: 'inherit' }}>
-          Use your own words.<br />Let them take shape.
-        </h2>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', maxWidth: '520px', margin: '0 auto 2rem' }}>
-          Words become forms. Forms become meaning. Begin with what you know —
-          and watch something you have never seen emerge.
-        </p>
-        <img
-          src="/images/experiences/word-form-spiral.png"
-          alt="Word form spiral"
-          style={{ maxWidth: '320px', width: '100%', margin: '0 auto 2rem', display: 'block', opacity: 0.8 }}
-        />
-        <Link href="/experience" style={{
-          display: 'inline-block',
-          padding: '0.85rem 2.5rem',
-          border: '1px solid #1C2B3A',
-          textDecoration: 'none',
-          fontSize: '1rem',
-          letterSpacing: '0.08em',
-          color: '#1C2B3A',
-        }}>
-          Begin the Experience
-        </Link>
-      </section>
+      
+{/* — EXPERIENCE — */}
+<section className="experience-home">
+  <div className="experience-home__inner">
+    <p className="experience-home__label">THE EXPERIENCE</p>
+
+    <h2 className="experience-home__title">
+      <span>Use your own words.</span>
+      <span>Let them take shape.</span>
+    </h2>
+
+    <p className="experience-home__text">
+      Words become forms. Forms become meaning. Begin with what you know —
+      and watch something you have never seen emerge.
+    </p>
+
+    <img
+      src="/images/experiences/butterfly-wordart.png"
+      alt="Butterfly formed from words"
+      className="experience-home__image"
+    />
+
+    <a href="/experience" className="experience-home__button">
+      Begin the Experience
+    </a>
+  </div>
+</section>
       {/* ── SCHOLAR QUOTES ─── */}
       <section className="scholar-section" aria-label="Scholarly voices">
         <p className="eyebrow scholar-eyebrow">The Tradition Speaks</p>
