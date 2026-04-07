@@ -39,6 +39,12 @@ const figures = [
     link: '/library/figures/grismere',
   },
   {
+    title: 'The Ballerina',
+    subtitle: 'A Figure of Love, Motion, and Becoming',
+    body: 'The Ballerina dances the dance of individuation. She is love personified — pink, perfection, divinity — and also the shadow of love: the projection, the longing, the power given away and slowly reclaimed.',
+    link: '/library/figures/ballerina',
+  },
+  {
     title: 'Queen Ann Between Kingdoms',
     subtitle: null,
     body: 'She moves between worlds. The kingdom behind her is no longer safe. The kingdom ahead is not yet visible. On exile as initiation, and the quiet courage of continuing when the road ahead remains unseen.',
