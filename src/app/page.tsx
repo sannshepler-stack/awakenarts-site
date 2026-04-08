@@ -112,7 +112,19 @@ export default function HomePage() {
 
         {/* Copy */}
         <div className="hero-content">
-          <p className="eyebrow">Where Symbol Meets Soul</p>
+
+          {/* Logo mark + tagline (replaces eyebrow) */}
+          <div className="hero-mark">
+            <Image
+              src="/images/brand/logo.png"
+              alt="AwakenArts"
+              width={160}
+              height={160}
+              className="hero-mark__logo"
+              priority
+            />
+            <p className="hero-mark__tagline">Symbols Speak.&nbsp;&nbsp;The Soul Listens.</p>
+          </div>
 
           <h1>
             Where <em>Symbol</em>
@@ -370,7 +382,7 @@ export default function HomePage() {
           <div className="footer-brand">
             <Link href="/" aria-label="AwakenArts home">
               <Image
-                src="/images/brand/logo-nav.png"
+                src="/images/brand/logo.png"
                 alt="AwakenArts"
                 width={700}
                 height={336}

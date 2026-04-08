@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 const links = [
@@ -28,17 +27,6 @@ export default function Nav() {
 
   return (
     <nav className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
-      <Link href="/" onClick={close} aria-label="AwakenArts home">
-        <Image
-          src="/images/brand/logo-nav.png"
-          alt="AwakenArts"
-          width={700}
-          height={336}
-          className="nav-logo"
-          priority
-        />
-      </Link>
-
       <ul className={`nav-links${open ? ' open' : ''}`} id="nav-links">
         {links.map(({ label, href }) => (
           <li key={href}>

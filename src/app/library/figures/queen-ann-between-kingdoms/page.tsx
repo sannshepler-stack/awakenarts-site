@@ -163,7 +163,7 @@ export default function QueenAnnPage() {
           <div className="footer-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <Link href="/" aria-label="AwakenArts home">
-              <img src="/images/brand/logo-nav.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
+              <img src="/images/brand/logo.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
             </Link>
             <p>
               A platform at the intersection of the Christian tradition, Jungian

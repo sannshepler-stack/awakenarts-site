@@ -18,6 +18,7 @@ export default function PathBallerinaPage() {
         <div className="path-subnav__inner">
           <Link href="/path/grismere">Grismere</Link>
           <Link href="/path/ballerina" aria-current="page">The Ballerina</Link>
+          <Link href="/path/ann">Queen Ann</Link>
         </div>
       </nav>
 
@@ -47,8 +48,8 @@ export default function PathBallerinaPage() {
                     src="/images/figures/ballerina/ballerina.png"
                     alt="The Ballerina — shaped poem by Susan Ann Shepler. Text arranged in the form of a little girl in a tutu."
                     className="path-poem-img"
-                    width={1600}
-                    height={2400}
+                    width={800}
+                    height={1200}
                     loading="eager"
                   />
                 </div>
@@ -57,7 +58,7 @@ export default function PathBallerinaPage() {
 
               {/* Reading text — extends as long as needed */}
               <div className="path-figure__reading">
-                <p className="eyebrow">Anima · Love · The Feminine</p>
+                <p className="eyebrow">Femininity · Love · Unity · Integration</p>
                 <p>
                   The Ballerina poem is in the shape of a little girl. This is the AwakenArts
                   method made visible: the poem does not describe the figure — it <em>becomes</em> the
@@ -120,7 +121,7 @@ export default function PathBallerinaPage() {
                 aria-label="The Ballerina — Pirouette in motion"
               >
                 <source
-                  src="/video/ballerina_music_v1_02-10-2014.mp4_HD%20copy.mp4"
+                  src="/images/figures/ballerina/ballerina.mp4"
                   type="video/mp4"
                 />
                 Your browser does not support video playback.
@@ -168,7 +169,7 @@ export default function PathBallerinaPage() {
           <div className="footer-brand">
             <Link href="/" aria-label="AwakenArts home">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/brand/logo-nav.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
+              <img src="/images/brand/logo.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
             </Link>
             <p>
               A platform at the intersection of the Christian tradition, Jungian
@@ -189,6 +190,7 @@ export default function PathBallerinaPage() {
             <ul>
               <li><Link href="/path/grismere">Grismere</Link></li>
               <li><Link href="/path/ballerina">The Ballerina</Link></li>
+              <li><Link href="/path/ann">Queen Ann</Link></li>
             </ul>
           </div>
           <div className="footer-col">

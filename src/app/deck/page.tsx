@@ -159,7 +159,7 @@ export default function DeckPage() {
             <Link href="/" aria-label="AwakenArts home">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/brand/logo-nav.png"
+                src="/images/brand/logo.png"
                 alt="AwakenArts"
                 className="footer-logo"
                 loading="lazy"

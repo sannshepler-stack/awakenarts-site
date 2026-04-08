@@ -44,6 +44,7 @@ export default function PathPage() {
           <div className="path-subnav__inner">
             <a href="#grismere">Grismere</a>
             <a href="#ballerina">The Ballerina</a>
+            <a href="#ann">Queen Ann</a>
           </div>
         </nav>
 
@@ -80,10 +81,14 @@ export default function PathPage() {
               <div className="path-figure__reading">
                 <p className="eyebrow">Anima · Earth Mother · Goddess</p>
                 <p>
-                  The name <em>Grismere</em> carries her meaning from the start. From
-                  the Spanish <em>gris</em> — grey, gloomy — and the French <em>mere</em>
-                  — ocean, and also mother. She is the Grey Ocean. She is, perhaps,
-                  the Grey Mother.
+                  The name <em>Grismere</em> holds her meaning within it. From the
+                  Spanish <em>gris</em> — grey, gloomy — and the French <em>mer</em>
+                  — the sea — with <em>mère</em> folded silently inside it: mother.
+                  She is the Grey Sea. She is the Grey Mother. The two are not separate
+                  in her. They never were. This is the nature of the anima — the interior
+                  feminine, the soul-image, the figure through which the psyche first
+                  turns toward its own depth. Grismere is that figure. She does not point
+                  toward the anima. She <em>is</em> the anima.
                 </p>
                 <p>
                   Grismere is one of a series of archetypal images linked to the process
@@ -126,12 +131,9 @@ export default function PathPage() {
             </div>
 
             {/* Library link */}
-            <div className="path-figure__lib-link" style={{display:'flex', gap:'2rem', flexWrap:'wrap', alignItems:'center'}}>
-              <Link href="/path/grismere" className="path-cta__link">
-                Explore Grismere in Full →
-              </Link>
-              <Link href="/library/figures/grismere" className="path-cta__link path-cta__link--quiet">
-                Library Essay
+            <div className="path-figure__lib-link">
+              <Link href="/library/figures/grismere" className="path-cta__link">
+                Library Essay →
               </Link>
             </div>
 
@@ -145,8 +147,8 @@ export default function PathPage() {
                 preload="metadata"
                 aria-label="Grismere — the mermaid in motion"
               >
-                <source src="/video/grismere.mov" type="video/quicktime" />
-                <source src="/video/grismere.mov" type="video/mp4" />
+                <source src="/images/figures/grismere/grismere.mov" type="video/quicktime" />
+                <source src="/images/figures/grismere/grismere.mov" type="video/mp4" />
                 Your browser does not support video playback.
               </video>
             </div>
@@ -201,8 +203,8 @@ export default function PathPage() {
                     src="/images/figures/ballerina/ballerina.png"
                     alt="The Ballerina — shaped poem by Susan Ann Shepler"
                     className="path-poem-img"
-                    width={1600}
-                    height={2400}
+                    width={800}
+                    height={1200}
                     loading="lazy"
                   />
                 </div>
@@ -210,7 +212,7 @@ export default function PathPage() {
 
               {/* Reading text */}
               <div className="path-figure__reading">
-                <p className="eyebrow">Anima · Love · The Feminine</p>
+                <p className="eyebrow">Femininity · Love · Unity · Integration</p>
                 <p>
                   The Ballerina poem is in the shape of a little girl. This is the AwakenArts
                   method made visible: the poem does not describe the figure — it <em>becomes</em> the
@@ -235,12 +237,9 @@ export default function PathPage() {
             </div>
 
             {/* Library link */}
-            <div className="path-figure__lib-link" style={{display:'flex', gap:'2rem', flexWrap:'wrap', alignItems:'center'}}>
-              <Link href="/path/ballerina" className="path-cta__link">
-                Explore The Ballerina in Full →
-              </Link>
-              <Link href="/library/figures/ballerina" className="path-cta__link path-cta__link--quiet">
-                Library Essay
+            <div className="path-figure__lib-link">
+              <Link href="/library/figures/ballerina" className="path-cta__link">
+                Library Essay →
               </Link>
             </div>
 
@@ -254,7 +253,7 @@ export default function PathPage() {
                 preload="metadata"
                 aria-label="The Ballerina — Pirouette in motion"
               >
-                <source src="/video/ballerina_music_v1_02-10-2014.mp4_HD%20copy.mp4" type="video/mp4" />
+                <source src="/images/figures/ballerina/ballerina.mp4" type="video/mp4" />
                 Your browser does not support video playback.
               </video>
             </div>
@@ -287,11 +286,111 @@ export default function PathPage() {
           </div>
         </section>
 
+        {/* ── ANN ── */}
+        <section className="path-figure" id="ann" aria-label="Queen Ann Between Kingdoms">
+          <div className="path-figure__inner">
+
+            <header className="path-figure__header">
+              <p className="eyebrow">Third Figure · The Threshold</p>
+              <h2 className="path-figure__name">Queen Ann Between Kingdoms</h2>
+              <p className="path-figure__role">
+                Exile as Initiation &nbsp;·&nbsp; The Passage &nbsp;·&nbsp; Loss · Spirit · Humility
+              </p>
+            </header>
+
+            <div className="path-figure__body">
+
+              <div className="path-poem-column">
+                <div className="path-poem-wrap">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/figures/ann/ann.png"
+                    alt="Queen Ann Between Kingdoms — shaped poem by Susan Ann Shepler"
+                    className="path-poem-img"
+                    width={800}
+                    height={1200}
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              {/* Reading text */}
+              <div className="path-figure__reading">
+                <p className="eyebrow">Threshold · Passage · Becoming</p>
+                <p>
+                  Queen Ann does not stand at the end of a journey or the beginning
+                  of one. She stands in the space between — the threshold where the
+                  old life has fallen away and the new one has not yet taken shape.
+                </p>
+                <p>
+                  Her name carries the weight of sovereignty. She is a queen. But she
+                  is a queen between kingdoms — which means she is a queen without a
+                  throne, without the structures that once defined her, walking uncertain
+                  ground with nothing left to protect her except the interior courage
+                  that does not require certainty to continue.
+                </p>
+                <p>
+                  The three cards that rose from her image tell her story. <em>Lost</em> —
+                  the necessary disorientation of leaving without knowing the destination.
+                  <em> Spirit</em> — the invisible resource that sustains movement when no
+                  external anchor remains. <em>Humility</em> — not defeat, but the releasing
+                  of what the ego once claimed as its own, the emptying that precedes becoming.
+                </p>
+                <blockquote className="quote-line">
+                  The psyche does not grow in comfort. It grows in the confrontation
+                  with what is unknown — in the willingness to remain present within
+                  uncertainty long enough for something new to emerge.
+                  <cite> — C. G. Jung</cite>
+                </blockquote>
+                <p>
+                  She is every person who has had to continue without knowing why or
+                  toward what. In that, she is already at work in you.
+                </p>
+              </div>
+
+            </div>
+
+            {/* Library essay link */}
+            <div className="path-figure__lib-link">
+              <Link href="/library/figures/queen-ann-between-kingdoms" className="path-cta__link">
+                Library Essay →
+              </Link>
+            </div>
+
+            {/* Associated cards */}
+            <div className="path-figure__cards">
+              <p className="eyebrow">Cards Amplified from this Symbol</p>
+              <p className="path-figure__cards-note">
+                Four cards emerged from Queen Ann — each one a different face of the
+                crossing. The disorientation that precedes growth. The spirit that
+                sustains when nothing external remains. The humility that makes
+                passage possible. And the fear that names what the crossing costs.
+              </p>
+              <div className="path-cards-row" style={{ gridTemplateColumns: 'repeat(4, 1fr)', maxWidth: '840px' }}>
+                {[
+                  { src: '/images/cards/fronts/lost.jpg',     name: 'Lost',    sub: 'To be lost is sometimes the beginning of being found' },
+                  { src: '/images/cards/fronts/spirit.jpg',   name: 'Spirit',  sub: 'The spirit sustains what the mind cannot explain' },
+                  { src: '/images/cards/fronts/humility.jpg', name: 'Humility',sub: 'Humility is the doorway the ego cannot fit through' },
+                  { src: '/images/cards/fronts/fear.jpg',     name: 'Fear',    sub: 'Fear names what matters — it does not have to stop the crossing' },
+                ].map(({ src, name, sub }) => (
+                  <div key={name} className="path-mini-card">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={src} alt={name} loading="lazy" />
+                    <p className="path-mini-card__name">{name}</p>
+                    <p className="path-mini-card__sub">{sub}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </section>
+
         {/* ── COMING ── */}
         <section className="path-coming">
           <p className="eyebrow">More Figures</p>
           <p className="path-coming__text">
-            Ann. The Dove. The King. The Butterfly. The Swan.{' '}
+            The Dove. The King. The Butterfly. The Swan.{' '}
             <em>Each figure holds its own axis. Each poem is its own threshold.</em>{' '}
             More will be added as the work continues.
           </p>
@@ -312,7 +411,7 @@ export default function PathPage() {
             <Link href="/" aria-label="AwakenArts home">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/brand/logo-nav.png"
+                src="/images/brand/logo.png"
                 alt="AwakenArts"
                 className="footer-logo"
                 loading="lazy"

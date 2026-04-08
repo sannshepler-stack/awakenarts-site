@@ -18,6 +18,7 @@ export default function PathGrismerePage() {
         <div className="path-subnav__inner">
           <Link href="/path/grismere" aria-current="page">Grismere</Link>
           <Link href="/path/ballerina">The Ballerina</Link>
+          <Link href="/path/ann">Queen Ann</Link>
         </div>
       </nav>
 
@@ -59,10 +60,14 @@ export default function PathGrismerePage() {
               <div className="path-figure__reading">
                 <p className="eyebrow">Anima · Earth Mother · Goddess</p>
                 <p>
-                  The name <em>Grismere</em> carries her meaning from the start. From
-                  the Spanish <em>gris</em> — grey, gloomy — and the French <em>mere</em>
-                  — ocean, and also mother. She is the Grey Ocean. She is, perhaps,
-                  the Grey Mother.
+                  The name <em>Grismere</em> holds her meaning within it. From the
+                  Spanish <em>gris</em> — grey, gloomy — and the French <em>mer</em>
+                  — the sea — with <em>mère</em> folded silently inside it: mother.
+                  She is the Grey Sea. She is the Grey Mother. The two are not separate
+                  in her. They never were. This is the nature of the anima — the interior
+                  feminine, the soul-image, the figure through which the psyche first
+                  turns toward its own depth. Grismere is that figure. She does not point
+                  toward the anima. She <em>is</em> the anima.
                 </p>
                 <p>
                   Grismere is one of a series of archetypal images linked to the process
@@ -130,8 +135,8 @@ export default function PathGrismerePage() {
                 preload="metadata"
                 aria-label="Grismere — the mermaid in motion"
               >
-                <source src="/video/grismere.mov" type="video/quicktime" />
-                <source src="/video/grismere.mov" type="video/mp4" />
+                <source src="/images/figures/grismere/grismere.mov" type="video/quicktime" />
+                <source src="/images/figures/grismere/grismere.mov" type="video/mp4" />
                 Your browser does not support video playback.
               </video>
             </div>
@@ -179,7 +184,7 @@ export default function PathGrismerePage() {
           <div className="footer-brand">
             <Link href="/" aria-label="AwakenArts home">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/brand/logo-nav.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
+              <img src="/images/brand/logo.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
             </Link>
             <p>
               A platform at the intersection of the Christian tradition, Jungian
@@ -200,6 +205,7 @@ export default function PathGrismerePage() {
             <ul>
               <li><Link href="/path/grismere">Grismere</Link></li>
               <li><Link href="/path/ballerina">The Ballerina</Link></li>
+              <li><Link href="/path/ann">Queen Ann</Link></li>
             </ul>
           </div>
           <div className="footer-col">

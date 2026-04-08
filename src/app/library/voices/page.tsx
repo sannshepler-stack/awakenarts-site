@@ -93,7 +93,7 @@ export default function VoicesPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <Link href="/" aria-label="AwakenArts home">
               <img
-                src="/images/brand/logo-nav.png"
+                src="/images/brand/logo.png"
                 alt="AwakenArts"
                 className="footer-logo"
                 loading="lazy"

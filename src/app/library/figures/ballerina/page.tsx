@@ -156,7 +156,7 @@ export default function BallerinaPage() {
         <div className="figure-video-wrap">
           <video controls playsInline>
             <source
-              src="/video/ballerina_music_v1_02-10-2014.mp4_HD%20copy.mp4"
+              src="/images/figures/ballerina/ballerina.mp4"
               type="video/mp4"
             />
             Your browser does not support the video element.
@@ -202,7 +202,7 @@ export default function BallerinaPage() {
           <div className="footer-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <Link href="/" aria-label="AwakenArts home">
-              <img src="/images/brand/logo-nav.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
+              <img src="/images/brand/logo.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
             </Link>
             <p>
               A platform at the intersection of the Christian tradition, Jungian
