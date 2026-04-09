@@ -232,6 +232,14 @@ export default function PathPage() {
                   pulsing with a heartbeat. Unity through multiplicity. The hallmark of
                   individuation itself.
                 </p>
+
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/figures/ballerina/ballet-art-image.png"
+                  alt="The Ballerina — art"
+                  className="path-reading-img"
+                  loading="lazy"
+                />
               </div>
 
             </div>
