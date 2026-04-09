@@ -1039,10 +1039,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 /* Tablet small — collapse to hamburger */
 @media (max-width: 768px) {
+  /* Dark body background ensures the gap between fixed nav and hero
+     is never cream — every explicit section sets its own background */
+  body { background: var(--deep); }
+
   .nav {
     padding: .4rem 1.5rem;
     grid-template-columns: auto 1fr auto;
-    min-height: 56px; /* explicit height so hero margin-top matches exactly */
   }
   .nav--scrolled { padding: .3rem 1.5rem; }
   .nav-links {
