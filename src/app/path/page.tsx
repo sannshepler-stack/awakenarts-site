@@ -182,7 +182,7 @@ export default function PathPage() {
         </section>
 
         {/* ── BALLERINA ── */}
-        <section className="path-figure" id="ballerina" aria-label="The Ballerina">
+        <section className="path-figure path-figure--warm" id="ballerina" aria-label="The Ballerina">
           <div className="path-figure__inner">
 
             <header className="path-figure__header">
