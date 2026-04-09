@@ -90,6 +90,15 @@ export default function PathBallerinaPage() {
                   form of what happens when the parts of the psyche are gathered rather than
                   scattered.
                 </p>
+
+                {/* Art image below reading text */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/figures/ballerina/ballet-art-image.png"
+                  alt="The Ballerina — art"
+                  className="path-reading-img"
+                  loading="lazy"
+                />
               </div>
 
             </div>
