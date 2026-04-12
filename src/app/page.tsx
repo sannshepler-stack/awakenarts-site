@@ -87,23 +87,23 @@ export default function HomePage() {
       ──────────────────────────────────────────────────────── */}
       <section className="hero" aria-label="Hero">
 
-        {/* Left column: image */}
+        {/* Left column: image
+            next/image fill — spec requirements:
+            · fill (no explicit width/height — container drives size)
+            · object-fit: cover (inline style, not CSS override)
+            · object-position: center top (preserves subject crown at all breakpoints)
+            · priority (disables lazy load, injects <link rel="preload">)
+            · sizes hints browser to correct source width per breakpoint
+            · No overlay gradient — readability comes from typography alone */}
         <div className="hero-image">
-          <picture>
-            <source
-              media="(max-width: 640px)"
-              srcSet="/images/brand/queen-ann-hero-mobile.jpg"
-            />
-            <source
-              media="(max-width: 1024px)"
-              srcSet="/images/brand/queen-ann-hero-tablet.jpg"
-            />
-            <img
-              src="/images/brand/queen-ann-hero-desktop.jpg"
-              alt="Queen Ann — AwakenArts"
-              fetchPriority="high"
-            />
-          </picture>
+          <Image
+            src="/images/brand/queen-ann-hero-desktop.jpg"
+            alt="Queen Ann — AwakenArts"
+            fill
+            priority
+            style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </div>
 
         {/* Right column: text */}
