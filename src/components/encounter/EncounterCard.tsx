@@ -1,143 +1,145 @@
 'use client'
 
 // ─── EncounterCard ────────────────────────────────────────────────────────────
-// AwakenArts · Encounter System · Archetype encounter, three movements
+// AwakenArts · Encounter System · Selection encounter
 //
-// This is not a card deck. There is no shuffling, no selection, no randomness.
-// One archetype unfolds in three ordered movements — a contained experience.
+// A quiet selection that resolves into a single encounter.
+// Three cards face-down. User chooses one. That one reveals.
 //
 // STATE MACHINE:
-//   initial (back) → movement I → movement II → movement III → end
+//   spread → (select) → selecting → encounter (revealed) → (begin again) → spread
 //
 // INTERACTION RULES:
-//   • The card itself is clickable ONLY in the initial state (back showing)
-//   • First click begins the encounter: reveals movement I
-//   • "Continue" advances through movements II and III
-//   • After movement III: "Begin again" resets to initial state
-//   • Only one card is ever visible — no grid, no spread, no deck
+//   • Spread: 3 cards face-down, equal, all selectable
+//   • Selection: chosen card scales/centers, others fade out (300ms)
+//   • Reveal: selected card crossfades back → front (250ms, auto after selection)
+//   • Encounter: single card visible, title beneath, "Begin again" below
+//   • "Begin again": resets to 3-card spread
+//   • No sequence, no progression, no deck logic
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { useState, useCallback } from 'react'
 import Card from '@/components/Card'
-import { DRAGON } from './archetype'
+import { HOUSE } from './archetype'
 import styles from './EncounterCard.module.css'
 
+type Phase = 'spread' | 'selecting' | 'encounter'
+
 export default function EncounterCard() {
-  const [cardIndex,     setCardIndex]     = useState(0)       // 0 | 1 | 2
-  const [revealed,      setRevealed]      = useState(false)   // false = back, true = front
-  const [done,          setDone]          = useState(false)   // true after movement III
+  const [phase,         setPhase]         = useState<Phase>('spread')
+  const [selected,      setSelected]      = useState<number | null>(null)
+  const [revealed,      setRevealed]      = useState(false)
   const [transitioning, setTransitioning] = useState(false)
 
-  const archetype = DRAGON
-  const card      = archetype.cards[cardIndex]
-  const isLast    = cardIndex === 2
+  const archetype = HOUSE
 
-  // ── Begin: first click on the card back → reveals movement I ─────────────
-  // This is the only moment the card itself is an interaction trigger.
-  const handleBegin = useCallback(() => {
-    if (transitioning || revealed) return
-    setRevealed(true)
-  }, [transitioning, revealed])
+  // ── Select: user clicks one of the three spread cards ────────────────────
+  // 1. Mark selected → CSS immediately fades out others, scales chosen card
+  // 2. After selection animation (320ms): switch to encounter + reveal
+  const handleSelect = useCallback((index: number) => {
+    if (transitioning || phase !== 'spread') return
+    setSelected(index)
+    setPhase('selecting')
+    setTransitioning(true)
+    setTimeout(() => {
+      setPhase('encounter')
+      setRevealed(true)
+      setTransitioning(false)
+    }, 320) // matches selection CSS transition
+  }, [transitioning, phase])
 
-  const handleBeginKeyDown = useCallback(
-    (e: React.KeyboardEvent) => {
+  const handleSelectKeyDown = useCallback(
+    (index: number) => (e: React.KeyboardEvent) => {
       if (e.key === ' ' || e.key === 'Enter') {
         e.preventDefault()
-        handleBegin()
+        handleSelect(index)
       }
     },
-    [handleBegin]
+    [handleSelect]
   )
 
-  // ── Continue: advance to next movement ───────────────────────────────────
-  // On the last movement: transition to end state instead of advancing.
-  // Between movements: card briefly shows back then auto-reveals next front.
-  const handleContinue = useCallback(() => {
-    if (transitioning) return
-    if (isLast) {
-      setDone(true)
-      return
-    }
-    setTransitioning(true)
-    setRevealed(false)                   // back shows briefly (breath between movements)
-    setTimeout(() => {
-      setCardIndex(i => i + 1)
-      setRevealed(true)                  // auto-reveal: no second click required
-      setTransitioning(false)
-    }, 270)                              // just beyond the 250ms fade transition
-  }, [transitioning, isLast])
-
-  // ── Begin again: reset to initial state ──────────────────────────────────
+  // ── Begin again: reset to spread ─────────────────────────────────────────
   const handleBeginAgain = useCallback(() => {
     if (transitioning) return
     setTransitioning(true)
-    setDone(false)
     setRevealed(false)
     setTimeout(() => {
-      setCardIndex(0)
+      setPhase('spread')
+      setSelected(null)
       setTransitioning(false)
-    }, 270)
+    }, 300)
   }, [transitioning])
 
-  return (
-    <div className={styles.wrap}>
+  // ── Spread phase ──────────────────────────────────────────────────────────
+  if (phase === 'spread' || phase === 'selecting') {
+    return (
+      <div className={styles.spread}>
+        {archetype.cards.map((card, i) => {
+          const isSelected   = selected === i
+          const isDismissed  = selected !== null && selected !== i
 
-      {/* ── Card ─────────────────────────────────────────────────────────── */}
-      {/* Clickable ONLY in initial state: back showing, cardIndex 0        */}
-      <div
-        className={`${styles.cardWrap} ${revealed ? styles['cardWrap--revealed'] : ''}`}
-        onClick={revealed ? undefined : handleBegin}
-        onKeyDown={revealed ? undefined : handleBeginKeyDown}
-        role={revealed ? undefined : 'button'}
-        tabIndex={revealed ? -1 : 0}
-        aria-label={revealed ? undefined : 'Begin the encounter'}
-      >
+          return (
+            <div
+              key={card.id}
+              className={[
+                styles.spreadCard,
+                isSelected  ? styles['spreadCard--selected']  : '',
+                isDismissed ? styles['spreadCard--dismissed'] : '',
+              ].join(' ')}
+              onClick={() => handleSelect(i)}
+              onKeyDown={handleSelectKeyDown(i)}
+              role="button"
+              tabIndex={phase === 'spread' ? 0 : -1}
+              aria-label={`Select card ${i + 1}`}
+              aria-disabled={phase === 'selecting'}
+            >
+              <Card
+                frontSrc={card.frontSrc}
+                frontAlt={card.alt}
+                backSrc={archetype.backSrc}
+                backAlt="AwakenArts encounter"
+                revealed={false}
+                interactive={phase === 'spread'}
+                variant="fade"
+              />
+            </div>
+          )
+        })}
+      </div>
+    )
+  }
+
+  // ── Encounter phase ───────────────────────────────────────────────────────
+  const card = archetype.cards[selected!]
+
+  return (
+    <div className={styles.encounter}>
+
+      {/* Single card — centered, larger than spread size */}
+      <div className={styles.encounterCard}>
         <Card
           frontSrc={card.frontSrc}
           frontAlt={card.alt}
           backSrc={archetype.backSrc}
           backAlt="AwakenArts encounter"
           revealed={revealed}
-          interactive={!revealed}
           variant="fade"
         />
       </div>
 
-      {/* ── After reveal: title · line · action ──────────────────────────── */}
+      {/* Title + action — fade in after reveal */}
       {revealed && (
         <div className={styles.meta}>
-
-          {/* Archetype title — renders only when real copy is present */}
-          {archetype.title && (
-            <p className={styles.title}>{archetype.title}</p>
-          )}
-
-          {/* Per-movement line — renders only when real copy is present */}
-          {card.line && (
-            <p className={styles.line}>{card.line}</p>
-          )}
-
-          {/* Action: "Continue" through the arc, then "Begin again" at end */}
-          {done ? (
-            <button
-              onClick={handleBeginAgain}
-              disabled={transitioning}
-              className={styles.action}
-              aria-label="Begin the encounter again"
-            >
-              Begin again
-            </button>
-          ) : (
-            <button
-              onClick={handleContinue}
-              disabled={transitioning}
-              className={styles.action}
-              aria-label="Continue to the next movement"
-            >
-              Continue
-            </button>
-          )}
-
+          <p className={styles.title}>{archetype.title}</p>
+          {card.line && <p className={styles.line}>{card.line}</p>}
+          <button
+            onClick={handleBeginAgain}
+            disabled={transitioning}
+            className={styles.action}
+            aria-label="Begin again"
+          >
+            Begin again
+          </button>
         </div>
       )}
 

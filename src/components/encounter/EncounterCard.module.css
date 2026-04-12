@@ -1,35 +1,87 @@
-/* ─── EncounterCard.module.css ───────────────────────────────────────────────
+/* ─── EncounterCard.module.css ────────────────────────────────────────────────
    Scoped to src/components/encounter/ only.
    Does NOT affect globals.css or any existing site styles.
-─────────────────────────────────────────────────────────────────────────────── */
+──────────────────────────────────────────────────────────────────────────────── */
 
-/* Outer wrapper — centers the experience vertically + horizontally */
-.wrap {
+
+/* ── Spread layout ───────────────────────────────────────────────────────────
+   3 cards, face-down, evenly spaced, horizontally centered.                   */
+
+.spread {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Each card in the spread */
+.spreadCard {
+  width: min(160px, 27vw);
+  cursor: pointer;
+  transition:
+    opacity   300ms ease,
+    transform 300ms ease;
+}
+
+/* Dismissed: non-selected card fades out when another is chosen */
+.spreadCard--dismissed {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+/* Selected: chosen card scales up slightly before transitioning to encounter */
+.spreadCard--selected {
+  transform: scale(1.06);
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 640px) {
+  .spread {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .spreadCard {
+    width: min(220px, 72vw);
+  }
+}
+
+
+/* ── Encounter layout ────────────────────────────────────────────────────────
+   Single card, centered, larger than spread size.                             */
+
+.encounter {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.75rem;
+  /* Fade in from slightly below — calm entry from the spread */
+  animation: encounterEnter 300ms ease forwards;
 }
 
-/* Card container — fixed width, drives 3:5 ratio from Card.tsx */
-.cardWrap {
-  width: min(240px, 72vw);
-  cursor: pointer;
+@keyframes encounterEnter {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
 }
 
-/* Revealed state: no pointer on the card itself after reveal */
-.cardWrap--revealed {
-  cursor: default;
+/* The single revealed card — larger than spread cards */
+.encounterCard {
+  width: min(260px, 76vw);
 }
 
-/* Metadata block — appears below card after reveal */
+
+/* ── Metadata block (title + line + action) ──────────────────────────────────
+   Appears below the card after reveal.                                        */
+
 .meta {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: .5rem;
-  /* Fade in on mount — calm, no bounce */
   animation: metaFadeIn 300ms ease forwards;
 }
 
@@ -38,7 +90,7 @@
   to   { opacity: 1; transform: translateY(0);   }
 }
 
-/* Card title — existing serif, light weight */
+/* Archetype title */
 .title {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.3rem;
@@ -48,7 +100,7 @@
   line-height: 1.3;
 }
 
-/* One short line beneath title — renders only when real copy is present */
+/* Per-card line — renders only when real copy is present */
 .line {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: .8rem;
@@ -57,7 +109,7 @@
   line-height: 1.6;
 }
 
-/* Action button — "Continue" and "Begin again"
+/* Action button — "Begin again"
    Plain text trigger: not styled as a CTA, no fill, no border-radius */
 .action {
   margin-top: .75rem;
@@ -85,7 +137,12 @@
   cursor: default;
 }
 
+
+/* ── Motion preferences ──────────────────────────────────────────────────────  */
+
 @media (prefers-reduced-motion: reduce) {
-  .meta   { animation: none; }
-  .action { transition: none; }
+  .spreadCard       { transition: none; }
+  .encounter        { animation: none; }
+  .meta             { animation: none; }
+  .action           { transition: none; }
 }

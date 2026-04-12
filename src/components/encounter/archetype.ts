@@ -1,71 +1,56 @@
 // ─── archetype.ts ─────────────────────────────────────────────────────────────
 // AwakenArts · Encounter System · Single source of truth
 //
-// One object. One archetype. Exactly three ordered cards.
-// This is NOT a deck — it is a fixed, sequential experience.
-// Cards are not interchangeable. The order is the meaning.
+// One object. One archetype. Exactly three cards.
+// Cards are equal — no sequence, no ordering, no progression.
+// User selects one. That one resolves into the encounter.
 //
-// ASSET SWAP (when final dragon artwork is ready):
-//   1. Drop into /public/images/cards/fronts/:
-//        dragon-young.jpg    ← stage I
-//        dragon-serpent.jpg  ← stage II
-//        dragon-winged.jpg   ← stage III
-//   2. Drop into /public/images/cards/backs/:
-//        dragon-back.jpg     ← pathway-through-trees (shared back)
-//   3. Update frontSrc in each card below + backSrc on the archetype
-//   No structural changes needed.
+// ASSET PATHS:
+//   All assets live in /public/images/encounters/{archetypeId}/
+//   Reference via /images/encounters/{archetypeId}/filename
 //
 // COPY NOTE:
-//   title and line fields are empty until real arc copy is provided.
-//   Do not invent copy — leave empty and the fields render nothing.
+//   `line` per card is omitted until real copy is provided.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface ArcCard {
   id:       string
   frontSrc: string
   alt:      string
-  line?:    string   // one line beneath title — omit or leave '' until real copy
+  line?:    string   // optional — renders beneath title when present
 }
 
 export interface Archetype {
   archetypeId: string
-  title:       string                        // archetype name — shown after each reveal
+  title:       string                        // shown beneath card after reveal
   backSrc:     string                        // shared back — identical for all three cards
-  cards:       [ArcCard, ArcCard, ArcCard]  // exactly 3, ordered, fixed sequence
+  cards:       [ArcCard, ArcCard, ArcCard]  // exactly 3, equal in presentation
 }
 
-// ── Dragon Archetype ──────────────────────────────────────────────────────────
-// Three movements of one archetype, in fixed order.
-//
-// INTERIM STAND-INS active (swap frontSrc values when final art arrives):
-//   Stage I   → dragon-young.jpg
-//   Stage II  → dragon-serpent.jpg
-//   Stage III → dragon-winged.jpg
-//   Back      → dragon-back.jpg
+// ── House Archetype ───────────────────────────────────────────────────────────
+// Three cards. One back. All equal.
+// User selects one — that card resolves into the encounter.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const DRAGON: Archetype = {
-  archetypeId: 'dragon',
-  title:       '',                                        // ← archetype title goes here
-  backSrc:     '/images/cards/backs/card-back.jpg',       // ← swap: dragon-back.jpg
+export const HOUSE: Archetype = {
+  archetypeId: 'house',
+  title:       'House',
+  backSrc:     '/images/encounters/house/house-back.png',
   cards: [
     {
-      id:       'dragon-i',
-      frontSrc: '/images/cards/fronts/rebirth.jpg',       // ← swap: dragon-young.jpg
-      alt:      'Dragon — first movement',
-      line:     '',                                        // ← arc stage I line
+      id:       'house-1',
+      frontSrc: '/images/encounters/house/house-1.png',
+      alt:      'House — card one',
     },
     {
-      id:       'dragon-ii',
-      frontSrc: '/images/cards/fronts/transformation.jpg',// ← swap: dragon-serpent.jpg
-      alt:      'Dragon — second movement',
-      line:     '',                                        // ← arc stage II line
+      id:       'house-2',
+      frontSrc: '/images/encounters/house/house-2.png',
+      alt:      'House — card two',
     },
     {
-      id:       'dragon-iii',
-      frontSrc: '/images/cards/fronts/transcendence.jpg', // ← swap: dragon-winged.jpg
-      alt:      'Dragon — third movement',
-      line:     '',                                        // ← arc stage III line
+      id:       'house-3',
+      frontSrc: '/images/encounters/house/house-3.png',
+      alt:      'House — card three',
     },
   ],
 }
