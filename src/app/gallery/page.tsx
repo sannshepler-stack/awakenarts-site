@@ -11,18 +11,67 @@ export const metadata: Metadata = {
    To add a piece: copy one entry, update path / title / medium / category.
    Categories: 'figure' | 'card' | 'study'
 ───────────────────────────────────────────────────────────────────────────── */
-const artworks = [
+const artworks: {
+  src: string
+  title: string
+  medium: string
+  category: string
+  wide: boolean
+  video?: boolean
+}[] = [
   {
-    src: '/images/figures/ann/ann.png',
-    title: 'Queen Ann',
-    medium: 'Mixed media',
+    src: '/images/gallery/angel.PNG',
+    title: 'Angel',
+    medium: 'Original work',
     category: 'figure',
-    wide: true,
+    wide: false,
   },
   {
     src: '/images/figures/grismere/grismere.png',
     title: 'Grismere',
     medium: 'Mixed media',
+    category: 'figure',
+    wide: false,
+  },
+  {
+    src: '/images/gallery/mermaid-genie-1.PNG',
+    title: 'Mermaid Genie',
+    medium: 'Original work',
+    category: 'figure',
+    wide: false,
+  },
+  {
+    src: '/images/gallery/mermaid-ocean.png',
+    title: 'Mermaid in the Ocean',
+    medium: 'Original work',
+    category: 'figure',
+    wide: false,
+  },
+  {
+    src: '/images/gallery/dark-girl.jpg',
+    title: 'Dark Girl',
+    medium: 'Original work',
+    category: 'figure',
+    wide: false,
+  },
+  {
+    src: '/images/gallery/hawaiian-girl.jpg',
+    title: 'Hawaiian Girl',
+    medium: 'Original work',
+    category: 'figure',
+    wide: false,
+  },
+  {
+    src: '/images/gallery/indian-girl.jpg',
+    title: 'Indian Girl',
+    medium: 'Original work',
+    category: 'figure',
+    wide: false,
+  },
+  {
+    src: '/images/gallery/may.jpg',
+    title: 'May',
+    medium: 'Original work',
     category: 'figure',
     wide: false,
   },
@@ -34,52 +83,18 @@ const artworks = [
     wide: false,
   },
   {
+    src: '/images/gallery/art-video-1.MP4',
+    title: 'In Motion',
+    medium: 'Video work',
+    category: 'study',
+    wide: false,
+    video: true,
+  },
+  {
     src: '/images/figures/ballerina/ballet-art-image.png',
     title: 'Ballet Study',
     medium: 'Pointillist work on paper',
     category: 'study',
-    wide: true,
-  },
-  {
-    src: '/images/cards/fronts/transcendence.jpg',
-    title: 'Transcendence',
-    medium: 'Guidance Deck',
-    category: 'card',
-    wide: false,
-  },
-  {
-    src: '/images/cards/fronts/rebirth.jpg',
-    title: 'Rebirth',
-    medium: 'Guidance Deck',
-    category: 'card',
-    wide: false,
-  },
-  {
-    src: '/images/cards/fronts/grace.jpg',
-    title: 'Grace',
-    medium: 'Guidance Deck',
-    category: 'card',
-    wide: false,
-  },
-  {
-    src: '/images/cards/fronts/transformation.jpg',
-    title: 'Transformation',
-    medium: 'Guidance Deck',
-    category: 'card',
-    wide: false,
-  },
-  {
-    src: '/images/cards/fronts/wisdom.jpg',
-    title: 'Wisdom',
-    medium: 'Guidance Deck',
-    category: 'card',
-    wide: false,
-  },
-  {
-    src: '/images/cards/fronts/mystery.jpg',
-    title: 'Mystery',
-    medium: 'Guidance Deck',
-    category: 'card',
     wide: false,
   },
 ]
@@ -111,13 +126,25 @@ export default function GalleryPage() {
                 className={`gallery-item${art.wide ? ' gallery-item--wide' : ''}`}
               >
                 <div className="gallery-item__frame">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={art.src}
-                    alt={art.title}
-                    loading={i < 4 ? 'eager' : 'lazy'}
-                    className="gallery-item__img"
-                  />
+                  {art.video ? (
+                    <video
+                      src={art.src}
+                      className="gallery-item__img"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      aria-label={art.title}
+                    />
+                  ) : (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img
+                      src={art.src}
+                      alt={art.title}
+                      loading={i < 4 ? 'eager' : 'lazy'}
+                      className="gallery-item__img"
+                    />
+                  )}
                   <div className="gallery-item__overlay">
                     <figcaption className="gallery-item__caption">
                       <span className="gallery-item__title">{art.title}</span>

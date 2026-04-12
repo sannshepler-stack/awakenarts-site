@@ -80,15 +80,15 @@ export default function HomePage() {
       <Nav />
 
       {/* ── HERO ───────────────────────────────────────────────
-          Three pre-cropped images swap at breakpoints via <picture>.
-          object-fit: cover + object-position: top
-          preserves crowns/heads at every screen size.
-          The overlay gradient handles text legibility on the left.
+          Two-column layout: image left, text right.
+          Stacks vertically on mobile (image top, text bottom).
+          object-fit: cover + object-position: center top
+          preserves crown/head at every breakpoint.
       ──────────────────────────────────────────────────────── */}
       <section className="hero" aria-label="Hero">
 
-        {/* Background: swaps desktop → tablet → mobile image */}
-        <div className="hero-bg" aria-hidden="true">
+        {/* Left column: image */}
+        <div className="hero-image">
           <picture>
             <source
               media="(max-width: 640px)"
@@ -100,47 +100,36 @@ export default function HomePage() {
             />
             <img
               src="/images/brand/queen-ann-hero-desktop.jpg"
-              alt=""
-              loading="eager"
+              alt="Queen Ann — AwakenArts"
               fetchPriority="high"
             />
           </picture>
         </div>
 
-        {/* Gradient overlay for text legibility */}
-        <div className="hero-overlay" aria-hidden="true" />
+        {/* Right column: text */}
+        <div className="hero-text">
+          <div className="hero-content">
+            <h1>
+              Where <em>Symbol</em>
+              <br />Meets Soul
+            </h1>
 
-        {/* Copy */}
-        <div className="hero-content">
+            <p className="hero-sub">
+              AwakenArts guides seekers through the symbolic landscape of the
+              psyche — drawing from the living depths of the Christian tradition,
+              Jungian individuation, and the language of myth and archetype.
+            </p>
 
-          {/* Logo mark + tagline (replaces eyebrow) */}
-          <div className="hero-mark">
-            <Image
-              src="/images/brand/logo.png"
-              alt="AwakenArts"
-              width={160}
-              height={160}
-              className="hero-mark__logo"
-              priority
-            />
-            <p className="hero-mark__tagline">Symbols Speak.&nbsp;&nbsp;The Soul Listens.</p>
+            <Link href="/path" className="hero-cta">
+              Enter the Path <span className="arrow" aria-hidden="true">→</span>
+            </Link>
           </div>
-
-          <h1>
-            Where <em>Symbol</em>
-            <br />Meets Soul
-          </h1>
-
-          <p className="hero-sub">
-            AwakenArts guides seekers through the symbolic landscape of the
-            psyche — drawing from the living depths of the Christian tradition,
-            Jungian individuation, and the language of myth and archetype.
-          </p>
-
-          <Link href="/path" className="hero-cta">
-            Enter the Path <span className="arrow" aria-hidden="true">→</span>
-          </Link>
         </div>
+      </section>
+
+      {/* ── HERO QUOTE ─── */}
+      <section className="hero-quote-section" aria-label="Opening quote">
+        <p className="hero-quote-text">&ldquo;Art has a way of carrying what language alone cannot.&rdquo;</p>
       </section>
 
       {/* ── GOLD DIVIDER ─── */}
@@ -210,7 +199,7 @@ export default function HomePage() {
         </div>
 
         <div className="deck-grid" role="list">
-          {displayedCards.map(card => (
+          {displayedCards.map((card, i) => (
             <Link
               key={card.title}
               href="/begin"
@@ -219,7 +208,12 @@ export default function HomePage() {
               aria-label={card.title}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={card.src} alt={card.title} loading="lazy" />
+              <img
+                src={card.src}
+                alt={card.title}
+                loading={i < 4 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
             </Link>
           ))}
         </div>
@@ -275,14 +269,6 @@ export default function HomePage() {
             <Link href="/library" className="library-card__link">Explore the bridge</Link>
           </article>
         </div>
-      </section>
-      {/* ── PULL QUOTE ─── */}
-      <section className="quote-section" aria-label="Founding quote">
-        <span className="quote-mark" aria-hidden="true">&ldquo;</span>
-        <p className="quote-text">
-          Art has a way of carrying what language alone cannot. These cards began there — in image, in symbol, in the poem beneath awareness. Shaping words is the AwakenArts method, a well traveled path, and a journal-like method for healing.
-        </p>
-        <p className="quote-attr">— Susan Ann Shepler, AwakenArts</p>
       </section>
 
       {/* ── BEGIN / SIGNUP ─── */}

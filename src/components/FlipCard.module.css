@@ -6,9 +6,9 @@
 /* ── Outer scene: perspective + sizing ────────────────────────────────────── */
 
 .scene {
-  /* 2:3 portrait ratio matches the existing card images */
+  /* 3:5 portrait ratio — matches card spec (1200×2000 px) */
   width: 100%;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 3 / 5;
 
   perspective: 900px;
   cursor: pointer;

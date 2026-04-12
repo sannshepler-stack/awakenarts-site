@@ -41,21 +41,16 @@ export default function BeginPage() {
 
         {/* ── OPENING ─── */}
         <section className="begin-page__opening">
-          <p className="eyebrow begin-page__eyebrow">Begin Here</p>
-          <h1 className="begin-page__headline">You are already in it.</h1>
-          <p className="begin-page__sub">
-            Something has stirred, returned, or remained.<br />
-            You do not need to search for it. Only to meet it.
+          <p className="begin-page__headline">BEGIN HERE</p>
+          <h1 className="begin-page__sub">
+            Symbols for<br />
+            the life within.
+          </h1>
+          <p className="begin-page__body">
+            There are different ways into this work. You may begin with an image,<br />
+            a question, or a reflection.
           </p>
-        </section>
-
-        {/* ── ORIENTATION ─── */}
-        <section className="begin-page__orientation">
-          <p>
-            There are different ways into this work.
-            You may begin with an image, a question, or a reflection.
-            Choose the path that feels closest.
-          </p>
+          <p className="begin-page__reveal">The symbol does not explain, it reveals.</p>
         </section>
 
         {/* ── THREE PATHS ─── */}
@@ -74,6 +69,14 @@ export default function BeginPage() {
         <p className="begin-page__closing">
           There is no correct order. Only the place that opens.
         </p>
+
+        {/* ── GUIDANCE DECK (FINAL) ─── */}
+        <section className="begin-page__guidance-deck">
+          <h2 className="begin-page__deck-title">The Guidance Deck</h2>
+          <p className="begin-page__deck-sub">Symbols Reveal a Path Unfolding.</p>
+          <p className="begin-page__deck-body">Allow the cards to lead; bring awareness to what speaks to you.</p>
+          <Link href="/deck" className="tile-link begin-page__deck-link">Enter the deck.</Link>
+        </section>
 
       </main>
 

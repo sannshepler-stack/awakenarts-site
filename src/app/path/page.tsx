@@ -302,7 +302,7 @@ export default function PathPage() {
               <p className="eyebrow">Third Figure · The Threshold</p>
               <h2 className="path-figure__name">Queen Ann Between Kingdoms</h2>
               <p className="path-figure__role">
-                Exile as Initiation &nbsp;·&nbsp; The Passage &nbsp;·&nbsp; Loss · Spirit · Humility
+                Exile as Initiation &nbsp;·&nbsp; The Passage &nbsp;·&nbsp; Loss · Spirit · Humility · Fear
               </p>
             </header>
 
@@ -338,11 +338,14 @@ export default function PathPage() {
                   that does not require certainty to continue.
                 </p>
                 <p>
-                  The three cards that rose from her image tell her story. <em>Lost</em> —
-                  the necessary disorientation of leaving without knowing the destination.
-                  <em> Spirit</em> — the invisible resource that sustains movement when no
-                  external anchor remains. <em>Humility</em> — not defeat, but the releasing
-                  of what the ego once claimed as its own, the emptying that precedes becoming.
+                  Four cards rose from her image — each one a different face of the
+                  crossing. <em>Lost</em> — the necessary disorientation of leaving without
+                  knowing the destination. <em>Spirit</em> — the invisible resource that
+                  sustains movement when no external anchor remains. <em>Humility</em> — not
+                  defeat, but the releasing of what the ego once claimed as its own, the
+                  emptying that precedes becoming. <em>Fear</em> — the honest acknowledgment
+                  of what the crossing costs, the trembling that is not weakness but proof
+                  of how much is at stake.
                 </p>
                 <blockquote className="quote-line">
                   The psyche does not grow in comfort. It grows in the confrontation
@@ -368,18 +371,12 @@ export default function PathPage() {
             {/* Associated cards */}
             <div className="path-figure__cards">
               <p className="eyebrow">Cards Amplified from this Symbol</p>
-              <p className="path-figure__cards-note">
-                Four cards emerged from Queen Ann — each one a different face of the
-                crossing. The disorientation that precedes growth. The spirit that
-                sustains when nothing external remains. The humility that makes
-                passage possible. And the fear that names what the crossing costs.
-              </p>
               <div className="path-cards-row" style={{ gridTemplateColumns: 'repeat(4, 1fr)', maxWidth: '840px' }}>
                 {[
-                  { src: '/images/cards/fronts/lost.jpg',     name: 'Lost',    sub: 'To be lost is sometimes the beginning of being found' },
-                  { src: '/images/cards/fronts/spirit.jpg',   name: 'Spirit',  sub: 'The spirit sustains what the mind cannot explain' },
-                  { src: '/images/cards/fronts/humility.jpg', name: 'Humility',sub: 'Humility is the doorway the ego cannot fit through' },
-                  { src: '/images/cards/fronts/fear.jpg',     name: 'Fear',    sub: 'Fear names what matters — it does not have to stop the crossing' },
+                  { src: '/images/cards/fronts/lost.jpg',     name: 'Lost',     sub: 'To be lost is sometimes the beginning of being found' },
+                  { src: '/images/cards/fronts/spirit.jpg',   name: 'Spirit',   sub: 'The spirit sustains what the mind cannot explain' },
+                  { src: '/images/cards/fronts/humility.jpg', name: 'Humility', sub: 'Humility is the doorway the ego cannot fit through' },
+                  { src: '/images/cards/fronts/fear.jpg',     name: 'Fear',     sub: 'Fear names what matters — it does not have to stop the crossing' },
                 ].map(({ src, name, sub }) => (
                   <div key={name} className="path-mini-card">
                     {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -72,19 +72,35 @@ a   { color: inherit; text-decoration: none; }
 }
 .nav--scrolled { padding: .25rem 2.5rem; }
 
-/* Left: logo anchor (hidden on homepage via conditional render) */
+/* Left: logo + tagline — persistent on all pages */
 .nav-left {
   justify-self: start;
   display: flex;
   align-items: center;
   min-width: 0;
 }
-.nav-left a { display: flex; align-items: center; }
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  text-decoration: none;
+}
 .nav-logo {
   display: block;
-  height: 64px;
+  height: 52px;
   width: auto;
   mix-blend-mode: screen;
+  flex-shrink: 0;
+}
+.nav-tagline {
+  font-family: var(--sans);
+  font-size: .58rem;
+  font-weight: 400;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(250,247,242,.5);
+  white-space: nowrap;
+  line-height: 1.4;
 }
 
 /* Center: all nav links, evenly spaced */
@@ -139,109 +155,67 @@ a   { color: inherit; text-decoration: none; }
 }
 
 /* ─────────────────────────────────────────────
-   HERO
-   Three pre-cropped images swap at breakpoints.
-   object-fit: cover + object-position: top
-   preserves the crown/head in every version.
+   HERO  — two-column layout
+   Left: image  |  Right: text on cream
+   Stacks image-top / text-bottom on mobile.
+   object-fit: cover + object-position: center top
+   preserves crown / focal point at every breakpoint.
 ───────────────────────────────────────────── */
 .hero {
-  position: relative;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 700px;
+  margin-top: 72px; /* clear fixed nav */
   overflow: hidden;
 }
 
-/* Full-bleed background image */
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+/* Left: image column */
+.hero-image {
+  position: relative;
+  overflow: hidden;
 }
-.hero-bg img {
+.hero-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.hero-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center top;
   display: block;
 }
 
-/* Gradient overlay: fades left side to readable, right shows artwork */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    to right,
-    rgba(28, 43, 58, 0.72) 0%,
-    rgba(28, 43, 58, 0.45) 30%,
-    rgba(28, 43, 58, 0.10) 55%,
-    rgba(28, 43, 58, 0.00) 70%
-  );
-}
-
-/* Copy sits over image + overlay */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 5rem 5rem 6rem;
-  max-width: 600px;
-}
-
-/* Logo mark + tagline above hero copy */
-.hero-mark {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: .6rem;
-  margin-bottom: 3.5rem;
-}
-.hero-mark__logo {
-  width: 140px;
-  height: 140px;
-  object-fit: contain;
-  mix-blend-mode: screen;
-}
-.hero-mark__tagline {
+/* Right: text column */
+.hero-text {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-family: var(--sans);
-  font-size: .68rem;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--cream);
-}
-.hero-mark__tagline::before {
-  content: '';
-  display: block;
-  width: 2rem;
-  height: 1px;
   background: var(--cream);
-  flex-shrink: 0;
+  padding: 5rem 4.5rem;
 }
 
-.hero-content .eyebrow { color: var(--gold-bg); margin-bottom: 1.5rem; }
-.hero-content .eyebrow::before { background: var(--gold-bg); }
+.hero-content {
+  max-width: 480px;
+}
 
 .hero h1 {
-  font-size: clamp(3rem, 5.5vw, 5.2rem);
+  font-size: clamp(2.6rem, 4vw, 4.2rem);
   font-weight: 300;
-  line-height: 1.06;
+  line-height: 1.08;
   letter-spacing: -.01em;
-  color: var(--cream);
+  color: var(--deep);
   margin-bottom: 1.5rem;
 }
 .hero h1 em {
-  color: var(--gold-lt);
+  color: var(--gold);
   font-style: italic;
 }
 
 .hero-sub {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: rgba(250,247,242,.88);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--mid);
   max-width: 44ch;
   margin-bottom: 2.5rem;
 }
@@ -538,7 +512,7 @@ a   { color: inherit; text-decoration: none; }
 .deck-card {
   border-radius: 6px;
   overflow: hidden;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 3 / 5;
   transform: scale(0.97);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   transition: transform .3s, box-shadow .3s;
@@ -553,6 +527,25 @@ a   { color: inherit; text-decoration: none; }
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* ─────────────────────────────────────────────
+   HERO QUOTE  (directly below hero on all pages)
+───────────────────────────────────────────── */
+.hero-quote-section {
+  background: var(--cream);
+  padding: 3.5rem 2rem;
+  text-align: center;
+}
+.hero-quote-text {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--deep);
+  max-width: 58ch;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 /* ─────────────────────────────────────────────
@@ -1024,7 +1017,6 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .hero-content { padding: 4.5rem 1.5rem 5rem; max-width: 520px; }
   .tiles-grid { grid-template-columns: 1fr 1fr; }
   .tile:first-child { grid-column: 1 / -1; }
   .deck-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1045,6 +1037,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   /* Dark body background ensures the gap between fixed nav and hero
      is never cream — every explicit section sets its own background */
   body { background: var(--deep); }
+  .nav-tagline { display: none; }
 
   .nav {
     padding: .4rem 1.5rem;
@@ -1089,81 +1082,46 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 /* ─────────────────────────────────────────────
-   MOBILE HERO REFACTOR  ≤ 768px
-   Replaces full-screen overlay with two stacked
-   sections: image on top, text block below.
-   Desktop / tablet hero (> 768px) is unchanged.
+   HERO RESPONSIVE
 ───────────────────────────────────────────── */
-@media (max-width: 768px) {
 
-  /* ── Hero shell: natural column flow, no fixed height ── */
+/* Tablet: compress text padding */
+@media (max-width: 1024px) {
   .hero {
+    min-height: 580px;
+  }
+  .hero-text {
+    padding: 3.5rem 3rem;
+  }
+}
+
+/* Mobile: stack image top, text bottom */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: 55vw auto;
     min-height: unset;
-    flex-direction: column;
-    align-items: stretch;
-    overflow: visible;
-    margin-top: 56px; /* matches nav min-height — eliminates cream gap */
-    background: var(--deep); /* catches any sub-pixel gap with dark color */
+    margin-top: 56px;
   }
-
-  /* ── Section A: image, 55vh, normal document flow ── */
-  .hero-bg {
-    position: relative;
-    height: 55vh;
-    width: 100%;
+  .hero-image {
+    height: 55vw;
+    min-height: 260px;
+    max-height: 420px;
   }
-  .hero-bg img {
-    object-position: center 12%; /* shows crown/head near top of frame */
+  .hero-image img {
+    object-position: center 10%;
   }
-
-  /* ── Remove overlay entirely on mobile ── */
-  .hero-overlay {
-    display: none;
+  .hero-text {
+    padding: 2.5rem 1.5rem 3rem;
   }
-
-  /* ── Section B: text block, cream background, normal flow ── */
   .hero-content {
-    position: static;
-    z-index: auto;
-    background: #f5f0e8;
-    padding: 2.5rem 1.5rem;
     max-width: none;
   }
-
-  /* ── Re-colour text for dark-on-cream legibility ── */
-  .hero-content .eyebrow {
-    color: var(--gold);
-    margin-bottom: 1.25rem;
-  }
-  .hero-content .eyebrow::before {
-    background: var(--gold);
-  }
   .hero h1 {
-    color: var(--deep);
-    font-size: clamp(2.4rem, 8vw, 3.2rem);
-  }
-  .hero h1 em {
-    color: var(--gold);
+    font-size: clamp(2.2rem, 8vw, 3rem);
   }
   .hero-sub {
-    color: var(--mid);
-  }
-  .hero-cta {
-    color: var(--deep);
-  }
-  .hero-cta:hover {
-    color: var(--gold);
-  }
-
-  /* Logo mark on cream background — remove screen blend, darken tagline */
-  .hero-mark__logo {
-    mix-blend-mode: normal;
-  }
-  .hero-mark__tagline {
-    color: var(--deep);
-  }
-  .hero-mark__tagline::before {
-    background: var(--deep);
+    max-width: none;
   }
 }
 
@@ -1252,7 +1210,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 .full-deck-card__img {
   width: 100%;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 3 / 5;
   object-fit: cover;
   border-radius: 4px;
   box-shadow: 0 4px 20px rgba(28,43,58,.14);
@@ -1575,7 +1533,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 .path-mini-card img {
   width: 100%;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 3 / 5;
   object-fit: cover;
   border-radius: 5px;
   box-shadow: 0 8px 28px rgba(28,43,58,.16);
@@ -1734,23 +1692,42 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .begin-page__eyebrow::before { display: none; }
 
 .begin-page__headline {
-  font-family: var(--serif);
-  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-  font-weight: 300;
-  line-height: 1.2;
-  color: var(--deep);
-  margin-bottom: 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 1.25rem;
 }
 
 .begin-page__sub {
   font-family: var(--serif);
-  font-size: 1.15rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-weight: 300;
   font-style: italic;
+  color: var(--deep);
+  line-height: 1.4;
+  max-width: 540px;
+  margin: 0 auto 1.75rem;
+}
+
+.begin-page__body {
+  font-family: var(--sans);
+  font-size: .95rem;
   color: var(--mid);
   line-height: 1.9;
-  max-width: 540px;
+  max-width: 480px;
+  margin: 0 auto 1.25rem;
+}
+
+.begin-page__reveal {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--deep);
   margin: 0 auto;
+  max-width: 480px;
 }
 
 /* Orientation */
@@ -1833,11 +1810,48 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 /* Closing */
 .begin-page__closing {
   text-align: center;
-  padding: 0 2rem 6rem;
+  padding: 0 2rem 4rem;
   font-family: var(--serif);
   font-size: 1.05rem;
   font-style: italic;
   color: var(--mid);
+}
+
+/* Guidance Deck — final block */
+.begin-page__guidance-deck {
+  text-align: center;
+  padding: 4rem 2rem 7rem;
+  border-top: 1px solid var(--mist);
+  background: var(--cream);
+}
+
+.begin-page__deck-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 300;
+  color: var(--deep);
+  margin-bottom: 0.75rem;
+}
+
+.begin-page__deck-sub {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.begin-page__deck-body {
+  font-family: var(--sans);
+  font-size: .9rem;
+  color: var(--mid);
+  line-height: 1.8;
+  max-width: 440px;
+  margin: 0 auto 2rem;
+}
+
+.begin-page__deck-link {
+  display: inline-block;
 }
 
 /* Responsive */
@@ -1847,12 +1861,15 @@ form { display: flex; flex-direction: column; gap: 1rem; }
     gap: 1.25rem;
     padding: 0 1.5rem 4rem;
   }
-  .begin-page__opening,
-  .begin-page__orientation {
+  .begin-page__opening {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
   .begin-page__closing {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .begin-page__guidance-deck {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }

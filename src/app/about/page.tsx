@@ -5,6 +5,7 @@ export default function AboutPage() {
   return (
     <>
       <Nav />
+      <div style={{ backgroundColor: 'var(--cream)', minHeight: '100vh' }}>
       <main style={{ padding: '6rem 2rem 4rem', maxWidth: '720px', margin: '0 auto' }}>
 
         <p style={{ fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#8a7a6a', marginBottom: '1.5rem' }}>
@@ -49,6 +50,7 @@ export default function AboutPage() {
         </div>
 
       </main>
+      </div>
     </>
   )
 }

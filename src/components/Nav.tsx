@@ -32,20 +32,19 @@ export default function Nav() {
   return (
     <nav className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
 
-      {/* Left: logo — hidden on homepage, persistent on all inner pages */}
+      {/* Left: logo + tagline — always visible */}
       <div className="nav-left">
-        {!isHome && (
-          <Link href="/" onClick={close} aria-label="AwakenArts home">
-            <Image
-              src="/images/brand/logo.png"
-              alt="AwakenArts"
-              width={160}
-              height={160}
-              className="nav-logo"
-              priority
-            />
-          </Link>
-        )}
+        <Link href="/" onClick={close} aria-label="AwakenArts home" className="nav-brand">
+          <Image
+            src="/images/brand/logo.png"
+            alt="AwakenArts"
+            width={160}
+            height={160}
+            className="nav-logo"
+            priority
+          />
+          <span className="nav-tagline">Symbols Speak.&nbsp;The Soul Listens.</span>
+        </Link>
       </div>
 
       {/* Center: nav links — Begin Here first, evenly spaced */}
