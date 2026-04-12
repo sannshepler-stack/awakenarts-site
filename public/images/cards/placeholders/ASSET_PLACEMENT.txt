@@ -2,47 +2,54 @@
 AWAKENARTS · CARD ASSET PLACEMENT GUIDE
 ──────────────────────────────────────────────────────────────────
 
-FOLDER STRUCTURE
-  /public/images/cards/
-    /fronts/         ← FINAL front artwork goes here (already exists)
-    /backs/          ← FINAL back artwork goes here (already exists)
-    /placeholders/
-      /fronts/       ← staging area for front assets before naming
-      /backs/        ← staging area for back assets before naming
+ENCOUNTER SYSTEM — DRAGON ARC (ACTIVE MODEL)
+  3 cards, one archetype, sequential arc progression.
+  All 3 cards share a single back design.
 
-CURRENT PLACEHOLDER SOURCES
-  DrawExperience and CardGrid currently reference these 6 cards
-  as working placeholders (real artwork, pending final set):
+  FINAL FILENAMES — drop into /public/images/cards/ using these exact names:
 
-    guidance.jpg       → /images/cards/fronts/guidance.jpg
-    dream.jpg          → /images/cards/fronts/dream.jpg
-    wholeness.jpg      → /images/cards/fronts/wholeness.jpg
-    journey.jpg        → /images/cards/fronts/journey.jpg
-    grace-swan.jpg     → /images/cards/fronts/grace-swan.jpg
-    faith.jpg          → /images/cards/fronts/faith.jpg
+    FRONTS → /public/images/cards/fronts/
+      dragon-young.jpg     ← arc stage I   (young dragon)
+      dragon-serpent.jpg   ← arc stage II  (serpentine dragon)
+      dragon-winged.jpg    ← arc stage III (winged dragon)
 
-  Back (all cards): /images/cards/backs/card-back.jpg
+    BACK → /public/images/cards/backs/
+      dragon-back.jpg      ← shared arc back (pathway through trees)
 
-INSERTING FINAL ASSETS — NO CODE CHANGES REQUIRED
-  1. Drop final front artwork into:
-       /public/images/cards/fronts/<card-name>.jpg
+  AFTER DROPPING FILES:
+    In src/components/encounter/EncounterCard.tsx, update:
+      1. ARC_BACK constant → '/images/cards/backs/dragon-back.jpg'
+      2. Each card's frontSrc per the comments in ENCOUNTER_CARDS
+      3. Each card's title + line fields when arc copy is ready
 
-  2. Drop final back artwork into:
-       /public/images/cards/backs/card-back.jpg
-       (or a new filename if the back design changes)
+  NO OTHER CHANGES REQUIRED — structure is arc-ready.
 
-  3. Update MOCK_CARDS in:
-       src/components/DrawExperience.tsx
-     — change frontSrc / backSrc for each card entry
-     — add new entries following the existing { id, title, frontSrc, backSrc, alt } pattern
+──────────────────────────────────────────────────────────────────
 
-  4. NO changes to Card.tsx, CardGrid.tsx, or globals.css required.
+INTERIM STAND-INS (currently active)
+  Until final dragon artwork arrives, EncounterCard uses:
+    arc-i   → /images/cards/fronts/rebirth.jpg
+    arc-ii  → /images/cards/fronts/transformation.jpg
+    arc-iii → /images/cards/fronts/transcendence.jpg
+    back    → /images/cards/backs/card-back.jpg
+
+──────────────────────────────────────────────────────────────────
 
 IMAGE SPEC (for final artwork)
   Format:     JPG or WebP
   Dimensions: 1200 × 2000 px minimum (3:5 ratio)
   DPI:        72 for web, 300 for print-ready
-  Object:     Subject should be centred horizontally, positioned in top 60%
-              (object-position: center top is applied — lower areas may crop)
+  Object:     Subject centred horizontally, positioned in top 60%
+              (object-position: center top applied — lower areas may crop)
+
+──────────────────────────────────────────────────────────────────
+
+FOLDER STRUCTURE
+  /public/images/cards/
+    /fronts/         ← ACTIVE front artwork (final + stand-ins)
+    /backs/          ← ACTIVE back artwork
+    /placeholders/
+      /fronts/       ← staging area for incoming assets before naming
+      /backs/        ← staging area for incoming assets before naming
 
 ──────────────────────────────────────────────────────────────────

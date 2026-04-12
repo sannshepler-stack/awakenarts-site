@@ -1,0 +1,62 @@
+/* ─── EncounterCard.module.css ───────────────────────────────────────────────
+   Scoped to src/components/encounter/ only.
+   Does NOT affect globals.css or any existing site styles.
+─────────────────────────────────────────────────────────────────────────────── */
+
+/* Outer wrapper — centers the experience vertically + horizontally */
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+/* Card container — fixed width, drives 3:5 ratio from Card.tsx */
+.cardWrap {
+  width: min(240px, 72vw);
+  cursor: pointer;
+}
+
+/* Revealed state: no pointer on the card itself after reveal */
+.cardWrap--revealed {
+  cursor: default;
+}
+
+/* Metadata block — appears below card after reveal */
+.meta {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  /* Fade in on mount — calm, no bounce */
+  animation: metaFadeIn 300ms ease forwards;
+}
+
+@keyframes metaFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* Card title — existing serif, light weight */
+.title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  font-style: italic;
+  color: #1C2B3A; /* --deep */
+  line-height: 1.3;
+}
+
+/* One short line beneath title — placeholder for real copy */
+.line {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: .8rem;
+  color: #5A5550; /* --mid */
+  letter-spacing: .04em;
+  line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meta { animation: none; }
+}
