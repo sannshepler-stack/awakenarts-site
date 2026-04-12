@@ -1122,7 +1122,16 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   }
   .hero-sub {
     max-width: none;
+    margin-bottom: 1.75rem;
   }
+  /* CTA text is cream on desktop (dark bg) — switch to gold on mobile (cream bg) */
+  .hero-cta {
+    color: var(--gold);
+  }
+  .hero-cta:hover { color: var(--deep); }
+  /* Tighten hero bottom padding and quote section so they sit closer together */
+  .hero-text { padding-bottom: 2rem; }
+  .hero-quote-section { padding: 2rem 1.5rem; }
 }
 
 /* ─────────────────────────────────────────────
