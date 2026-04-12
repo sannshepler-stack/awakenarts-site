@@ -1,0 +1,48 @@
+──────────────────────────────────────────────────────────────────
+AWAKENARTS · CARD ASSET PLACEMENT GUIDE
+──────────────────────────────────────────────────────────────────
+
+FOLDER STRUCTURE
+  /public/images/cards/
+    /fronts/         ← FINAL front artwork goes here (already exists)
+    /backs/          ← FINAL back artwork goes here (already exists)
+    /placeholders/
+      /fronts/       ← staging area for front assets before naming
+      /backs/        ← staging area for back assets before naming
+
+CURRENT PLACEHOLDER SOURCES
+  DrawExperience and CardGrid currently reference these 6 cards
+  as working placeholders (real artwork, pending final set):
+
+    guidance.jpg       → /images/cards/fronts/guidance.jpg
+    dream.jpg          → /images/cards/fronts/dream.jpg
+    wholeness.jpg      → /images/cards/fronts/wholeness.jpg
+    journey.jpg        → /images/cards/fronts/journey.jpg
+    grace-swan.jpg     → /images/cards/fronts/grace-swan.jpg
+    faith.jpg          → /images/cards/fronts/faith.jpg
+
+  Back (all cards): /images/cards/backs/card-back.jpg
+
+INSERTING FINAL ASSETS — NO CODE CHANGES REQUIRED
+  1. Drop final front artwork into:
+       /public/images/cards/fronts/<card-name>.jpg
+
+  2. Drop final back artwork into:
+       /public/images/cards/backs/card-back.jpg
+       (or a new filename if the back design changes)
+
+  3. Update MOCK_CARDS in:
+       src/components/DrawExperience.tsx
+     — change frontSrc / backSrc for each card entry
+     — add new entries following the existing { id, title, frontSrc, backSrc, alt } pattern
+
+  4. NO changes to Card.tsx, CardGrid.tsx, or globals.css required.
+
+IMAGE SPEC (for final artwork)
+  Format:     JPG or WebP
+  Dimensions: 1200 × 2000 px minimum (3:5 ratio)
+  DPI:        72 for web, 300 for print-ready
+  Object:     Subject should be centred horizontally, positioned in top 60%
+              (object-position: center top is applied — lower areas may crop)
+
+──────────────────────────────────────────────────────────────────

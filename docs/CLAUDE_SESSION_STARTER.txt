@@ -1,0 +1,63 @@
+──────────────────────────────────────────────────────────────
+AWAKENARTS  ·  ENCOUNTER PROJECT  ·  CLAUDE SESSION STARTER
+Drop this into every new Claude session to restore full context.
+──────────────────────────────────────────────────────────────
+
+PROJECT
+  Site:      awakenarts.com  (Next.js 14, TypeScript, deployed via Vercel)
+  Repo:      github.com/sannshepler-stack/awakenarts-site  (branch: main)
+  Local:     /Users/sashe/Projects/AwakenArts/awakenarts-site
+  Push cmd:  cd /Users/sashe/Projects/AwakenArts/awakenarts-site && git push origin main
+
+ENCOUNTER SYSTEM — CORE CONCEPT
+  Goal:      Build a symbolic encounter experience. Cards are the primary interface.
+             Guide users through recognition (not explanation).
+             Convert through invitation — never pressure.
+  Palette:   --deep #1C2B3A  --gold #8B6914  --gold-lt #C9A84C
+             --cream #FAF7F2  --warm #F0EAE0  --mid #5A5550
+  Fonts:     Cormorant Garamond (serif) · Inter (sans)
+  Tone:      Calm, grounded, restrained. No New Age cues. No theatrical fantasy.
+
+PHASE STATUS (update this line each session)
+  ✅ Phase 1 — Foundation (complete)
+  🔄 Phase 2 — Card System (IN PROGRESS)
+  ⬜ Phase 3 — Interaction / DrawExperience
+  ⬜ Phase 4 — Landing Page Assembly
+  ⬜ Phase 5 — MonetizationPanel
+  ⬜ Phase 6 — Polish & Launch
+
+WHAT WAS BUILT (Phase 1 + 2)
+  src/components/Nav.tsx            Mobile full-viewport overlay menu (fixed)
+  src/components/Card.tsx           3:5 locked card primitive (Phase 2)
+  src/components/CardGrid.tsx       Responsive 3/2/1 col grid (Phase 2)
+  src/components/FlipCard.tsx       Flip interaction (used on /deck page)
+  src/app/globals.css               Card system CSS added; mobile dark-body fixes
+  src/app/page.tsx                  Hero → next/image fill + priority + object-position
+  src/app/begin/page.tsx            Cream backgrounds added (mobile text fix)
+
+HARD CONSTRAINTS (never override)
+  Card:         aspect-ratio: 3/5 locked · object-fit: cover · no layout shift
+  Motion:       max scale 1.03 · fade or soft flip · 150–300 ms · no shuffle FX
+  Copy:         minimal · one clear action per section · no clutter
+  Conversion:   invitation only · no countdown timers · no urgency buttons
+  Hero image:   next/image fill · priority · object-position center top · no gradients
+  Scope:        no new sections · no extra CTAs · no unspecified visual effects
+
+SESSION WORKFLOW
+  1. Tell Claude which Phase you are on
+  2. Share screenshot if visual review needed
+  3. Claude shows full file changes before any commit
+  4. You approve → Claude commits → you run: git push origin main
+  5. Vercel auto-deploys in ~60 seconds → verify on mobile + desktop
+
+NEXT PHASE (Phase 3 — Interaction)
+  Task list:
+    - Hover elevation + scale (max 1.03) on Card
+    - Soft opacity fade (150–300 ms) on reveal
+    - DrawExperience component: one card, calm fade reveal, predefined set
+    - No shuffle animation · No new sections · No new CTAs
+
+REFERENCE
+  Full workflow:  /docs/ENCOUNTER_SYSTEM.md
+  Project brief:  /AwakenArts-Project-Brief.docx
+──────────────────────────────────────────────────────────────

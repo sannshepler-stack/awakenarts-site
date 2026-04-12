@@ -1199,6 +1199,195 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   opacity: 0.75;
 }
 
+/* ─────────────────────────────────────────────
+   CARD SYSTEM  (Phase 2)
+   Card + CardGrid primitives.
+   Spec: aspect-ratio 3/5 locked, object-fit cover,
+   front/back z-index layering — no reflow on state change.
+   Transitions are NOT defined here — Phase 3 only.
+───────────────────────────────────────────── */
+
+/* ── Card container ── */
+.card {
+  /* 3:5 portrait ratio — non-overrideable structural lock */
+  width: 100%;
+  aspect-ratio: 3 / 5;
+
+  position: relative;      /* stacking context for both faces */
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(28, 43, 58, 0.14);
+
+  /* Prevent accidental selection / iOS long-press */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* ── Shared face styles ── */
+.card__face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card__face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 4px;
+  /* No drag on mobile */
+  pointer-events: none;
+}
+
+/* ── Face stacking — back on top by default ── */
+.card__back  { z-index: 2; }
+.card__front { z-index: 1; }
+
+/* Revealed: front rises above back — no reflow, z-index swap only */
+.card--revealed .card__back  { z-index: 1; }
+.card--revealed .card__front { z-index: 2; }
+
+/* ── CardGrid layout ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;    /* 24px — minimum per spec */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   CARD SYSTEM — Phase 3
+   Hover interaction + fade reveal.
+   These styles are opt-in via CSS classes only:
+     .card--interactive  → hover scale + shadow
+     .card--fade         → opacity cross-fade on reveal
+   No transitions on base .card — only where explicitly enabled.
+───────────────────────────────────────────── */
+
+/* ── Interactive hover (scale max 1.03, soft shadow, 200ms) ── */
+.card--interactive {
+  cursor: pointer;
+  /* Transition ONLY on interactive cards — not on CardGrid previews */
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card--interactive:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 32px rgba(28, 43, 58, 0.22);
+}
+
+/* Focus ring for keyboard users */
+.card--interactive:focus-visible {
+  outline: 2px solid rgba(139, 105, 20, 0.55);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Fade reveal (used by DrawExperience only) ── */
+.card--fade .card__face {
+  /* 250ms ease — within 150–300ms spec range */
+  transition: opacity 250ms ease;
+}
+
+/* Default: back visible, front hidden */
+.card--fade .card__back  { opacity: 1; }
+.card--fade .card__front { opacity: 0; pointer-events: none; }
+
+/* Revealed: front visible, back hidden */
+.card--fade.card--revealed .card__back  { opacity: 0; pointer-events: none; }
+.card--fade.card--revealed .card__front { opacity: 1; pointer-events: auto;  }
+
+/* Reduced motion: skip opacity fade, respect OS preference */
+@media (prefers-reduced-motion: reduce) {
+  .card--interactive { transition: none; }
+  .card--fade .card__face { transition: none; }
+}
+
+/* ── DrawExperience wrapper ── */
+.draw-experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;        /* matches card-grid gap — consistent spacing rhythm */
+}
+
+.draw-experience__card-wrap {
+  /* Card width: fixed at 260px on desktop, fluid on mobile */
+  width: min(260px, 80vw);
+  position: relative;
+}
+
+.draw-experience__prompt {
+  /* "Draw a card" label below the face-down card */
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin-top: .875rem;
+}
+
+.draw-experience__meta {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+}
+
+.draw-experience__title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--deep);
+}
+
+/* "Draw another" — text link, NOT a CTA button */
+.draw-experience__next {
+  /* Reset button styles entirely */
+  background: none;
+  border: none;
+  padding: 0;
+  /* Style as a minimal text link */
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid rgba(139, 105, 20, 0.35);
+  padding-bottom: 2px;
+  cursor: pointer;
+  transition: color .2s, border-color .2s;
+}
+.draw-experience__next:hover {
+  color: var(--deep);
+  border-color: var(--deep);
+}
+
 /* ── Full gallery grid ── */
 .full-deck-section {
   background: #f5f0e8;
