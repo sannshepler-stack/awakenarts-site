@@ -14,9 +14,25 @@ export default function AboutPage() {
 
         <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Susan Ann Shepler</h1>
 
-        <p style={{ fontSize: '1.1rem', color: '#8a7a6a', marginBottom: '3rem', fontStyle: 'italic' }}>
+        <p style={{ fontSize: '1.1rem', color: '#8a7a6a', marginBottom: '2rem', fontStyle: 'italic' }}>
           Artist · Writer · Facilitator · Depth-Oriented Counselor
         </p>
+
+        {/* Portrait */}
+        <div style={{ marginBottom: '3rem', display: 'flex', justifyContent: 'center' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/about/susan-ann-shepler.jpg"
+            alt="Susan Ann Shepler"
+            style={{
+              width: '100%',
+              maxWidth: '420px',
+              borderRadius: '6px',
+              boxShadow: '0 8px 32px rgba(28,43,58,0.13)',
+              display: 'block',
+            }}
+          />
+        </div>
 
         <p style={{ fontSize: '1.15rem', lineHeight: '1.9', marginBottom: '2rem' }}>
           AwakenArts began not as a platform but as a practice — a lifelong inquiry into the symbolic life of the soul. Susan Ann Shepler has spent decades working at the intersection of language, image, and the interior world, drawing from Jungian depth psychology, the Christian mystical tradition, and the transformative power of the word made visible.
@@ -29,6 +45,24 @@ export default function AboutPage() {
         <p style={{ fontSize: '1.15rem', lineHeight: '1.9', marginBottom: '2rem' }}>
           Her concrete poetry is the visible form of this method. Words become figures. Figures become mirrors. The Queen Ann word-figure at the heart of this site is not decoration — it is a demonstration of what language can do when it is shaped rather than merely spoken. Shaping words is one method, the AwakenArts method, and it becomes a path for healing.
         </p>
+
+        {/* Merriweather — illustrates the symbolic figure method described above */}
+        <div style={{ marginBottom: '3rem', marginTop: '1rem' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/about/merri-art.png"
+            alt="Merriweather — Eternal Life, an AwakenArts symbolic figure"
+            style={{
+              width: '100%',
+              borderRadius: '4px',
+              boxShadow: '0 6px 24px rgba(28,43,58,0.10)',
+              display: 'block',
+            }}
+          />
+          <p style={{ fontSize: '0.75rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8a7a6a', marginTop: '0.75rem', textAlign: 'center' }}>
+            Merriweather · Eternal Life — AwakenArts Symbolic Figure
+          </p>
+        </div>
 
         <p style={{ fontSize: '1.15rem', lineHeight: '1.9', marginBottom: '2rem' }}>
           Susan is the author of Whispers of Awareness (2025), an anthology combining poetry, art, and Jungian psychology, and the creator of the 52-card AwakenArts Guidance Deck — a symbolic tool for reflection, growth, and creative practice. She is bilingual in English and Spanish and is based in Georgetown, Texas.

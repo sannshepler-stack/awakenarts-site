@@ -147,8 +147,7 @@ export default function PathPage() {
                 preload="metadata"
                 aria-label="Grismere — the mermaid in motion"
               >
-                <source src="/images/figures/grismere/grismere.mov" type="video/quicktime" />
-                <source src="/images/figures/grismere/grismere.mov" type="video/mp4" />
+                <source src="/videos/grismere/grismere-video.mp4" type="video/mp4" />
                 Your browser does not support video playback.
               </video>
             </div>
@@ -371,7 +370,7 @@ export default function PathPage() {
             {/* Associated cards */}
             <div className="path-figure__cards">
               <p className="eyebrow">Cards Amplified from this Symbol</p>
-              <div className="path-cards-row" style={{ gridTemplateColumns: 'repeat(4, 1fr)', maxWidth: '840px' }}>
+              <div className="path-cards-row">
                 {[
                   { src: '/images/cards/fronts/lost.jpg',     name: 'Lost',     sub: 'To be lost is sometimes the beginning of being found' },
                   { src: '/images/cards/fronts/spirit.jpg',   name: 'Spirit',   sub: 'The spirit sustains what the mind cannot explain' },

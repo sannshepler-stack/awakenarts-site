@@ -35,15 +35,17 @@ export default function Nav() {
       {/* Left: logo + tagline — always visible */}
       <div className="nav-left">
         <Link href="/" onClick={close} aria-label="AwakenArts home" className="nav-brand">
-          <Image
-            src="/images/brand/logo.png"
-            alt="AwakenArts"
-            width={160}
-            height={160}
-            className="nav-logo"
-            priority
-          />
-          <span className="nav-tagline">Symbols Speak.&nbsp;The Soul Listens.</span>
+          {!isHome && (
+            <Image
+              src="/images/brand/logo.png"
+              alt="AwakenArts"
+              width={160}
+              height={160}
+              className="nav-logo"
+              priority
+            />
+          )}
+          <span className="nav-tagline">Symbols Speak.&nbsp;The Soul Listens</span>
         </Link>
       </div>
 

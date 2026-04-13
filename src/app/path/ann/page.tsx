@@ -127,7 +127,7 @@ export default function PathAnnPage() {
                 of what the crossing costs, the trembling that is not weakness but proof
                 of how much is at stake.
               </p>
-              <div className="path-cards-row" style={{ gridTemplateColumns: 'repeat(4, 1fr)', maxWidth: '840px' }}>
+              <div className="path-cards-row">
                 {[
                   { src: '/images/cards/fronts/lost.jpg',     name: 'Lost',     sub: 'To be lost is sometimes the beginning of being found' },
                   { src: '/images/cards/fronts/spirit.jpg',   name: 'Spirit',   sub: 'The spirit sustains what the mind cannot explain' },

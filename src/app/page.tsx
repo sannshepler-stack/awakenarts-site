@@ -38,7 +38,6 @@ const tiles = [
     body: 'Symbols speak when words cannot. Each card is a mirror — draw one and meet what is already moving in you.',
     href: '/deck',
     label: 'Explore the Deck',
-    wide: true,
   },
   {
     eyebrow: 'Framework',
@@ -60,7 +59,6 @@ const tiles = [
     body: '',
     href: '/library',
     label: 'Enter the Library',
-    sm: true,
   },
   {
     eyebrow: 'Not sure where to start',
@@ -68,7 +66,13 @@ const tiles = [
     body: '',
     href: '/begin',
     label: 'Start here',
-    sm: true,
+  },
+  {
+    eyebrow: 'Coming Soon',
+    title: 'Encounters',
+    body: 'A guided symbolic experience shaped through image, reflection, and response.',
+    href: '/encounters',
+    label: 'Coming soon',
   },
 ]
 
@@ -94,21 +98,29 @@ export default function HomePage() {
             · object-position: center top (preserves subject crown at all breakpoints)
             · priority (disables lazy load, injects <link rel="preload">)
             · sizes hints browser to correct source width per breakpoint
-            · No overlay gradient — readability comes from typography alone */}
+            · gradient overlay on right half provides contrast for cream text */}
         <div className="hero-image">
           <Image
             src="/images/brand/queen-ann-hero-desktop.jpg"
             alt="Queen Ann — AwakenArts"
             fill
             priority
-            style={{ objectFit: 'cover', objectPosition: 'center top' }}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ objectFit: 'cover', objectPosition: '65% top' }}
+            sizes="100vw"
           />
         </div>
 
         {/* Right column: text */}
         <div className="hero-text">
           <div className="hero-content">
+            <Image
+              src="/images/brand/logo.png"
+              alt="AwakenArts"
+              width={700}
+              height={336}
+              className="hero-logo"
+              priority
+            />
             <h1>
               Where <em>Symbol</em>
               <br />Meets Soul
@@ -129,7 +141,8 @@ export default function HomePage() {
 
       {/* ── HERO QUOTE ─── */}
       <section className="hero-quote-section" aria-label="Opening quote">
-        <p className="hero-quote-text">&ldquo;Art has a way of carrying what language alone cannot.&rdquo;</p>
+        <p className="hero-quote-text">&ldquo;Our real long-term goal is to find that security inside ourselves. Our work is to internalize the feeling of being good enough — a state of okayness that is not reliant on others.&rdquo;</p>
+        <p className="hero-quote-cite">— Dr. Nicole LePera, <em>How to Do the Work</em></p>
       </section>
 
       {/* ── GOLD DIVIDER ─── */}
@@ -150,10 +163,10 @@ export default function HomePage() {
         </div>
 
         <div className="tiles-grid">
-          {tiles.map(({ eyebrow, title, body, href, label, wide, sm }) => (
+          {tiles.map(({ eyebrow, title, body, href, label }) => (
             <div
               key={title}
-              className={`tile${sm ? ' tile-sm' : ''}`}
+              className="tile"
               tabIndex={0}
               role="article"
             >
@@ -302,33 +315,32 @@ export default function HomePage() {
       </section>
 
       {/* ── EXPERIENCE ─── */}
-      
-{/* — EXPERIENCE — */}
-<section className="experience-home">
-  <div className="experience-home__inner">
-    <p className="experience-home__label">THE EXPERIENCE</p>
+      <section className="experience-home">
+        <div className="experience-home__inner">
+          <p className="experience-home__label">THE EXPERIENCE</p>
 
-    <h2 className="experience-home__title">
-      <span>Use your own words.</span>
-      <span>Let them take shape.</span>
-    </h2>
+          <h2 className="experience-home__title">
+            <span>Use your own words.</span>
+            <span>Let them take shape.</span>
+          </h2>
 
-    <p className="experience-home__text">
-      Words become forms. Forms become meaning. Begin with what you know —
-      and watch something you have never seen emerge.
-    </p>
+          <p className="experience-home__text">
+            Words become forms. Forms become meaning. Begin with what you know —
+            and watch something you have never seen emerge.
+          </p>
 
-    <img
-      src="/images/experiences/butterfly-wordart.png"
-      alt="Butterfly formed from words"
-      className="experience-home__image"
-    />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/experiences/butterfly-wordart.png"
+            alt="Butterfly formed from words"
+            className="experience-home__image"
+          />
 
-    <a href="/experience" className="experience-home__button">
-      Begin the Experience
-    </a>
-  </div>
-</section>
+          <a href="/experience" className="experience-home__button">
+            Begin the Experience
+          </a>
+        </div>
+      </section>
       {/* ── SCHOLAR QUOTES ─── */}
       <section className="scholar-section" aria-label="Scholarly voices">
         <p className="eyebrow scholar-eyebrow">The Tradition Speaks</p>

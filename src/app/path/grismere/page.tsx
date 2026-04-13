@@ -136,7 +136,6 @@ export default function PathGrismerePage() {
                 aria-label="Grismere — the mermaid in motion"
               >
                 <source src="/images/figures/grismere/grismere.mov" type="video/quicktime" />
-                <source src="/images/figures/grismere/grismere.mov" type="video/mp4" />
                 Your browser does not support video playback.
               </video>
             </div>
