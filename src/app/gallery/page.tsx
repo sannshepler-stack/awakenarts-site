@@ -111,12 +111,7 @@ export default function GalleryPage() {
           <p className="eyebrow gallery-opening__eyebrow">Original Works</p>
           <h1 className="gallery-opening__headline">The Art Behind the Path</h1>
           <p className="gallery-opening__sub">
-            These works arise from a sustained engagement with the feminine
-            archetypes — the figures that carry what culture has long
-            left unnamed. Angel, mermaid, maiden, dancer: each emerged not
-            as a chosen subject but as a presence that insisted on form.
-            To paint or render an archetype is to meet it. These images are
-            records of that meeting.
+            Each work emerges through a symbolic process—often expressed through feminine forms, where image and meaning take shape together.
           </p>
         </section>
 
