@@ -50,7 +50,7 @@ const tiles = [
     eyebrow: 'Foundational Text',
     title: 'Whispers of Awareness',
     body: '',
-    href: 'https://www.amazon.co.jp/-/en/Susan-Ann-Shepler/dp/B0G4R4KTZD',
+    href: 'https://www.amazon.com/dp/B0G4R4KTZD',
     label: 'Read the Book',
   },
   {
