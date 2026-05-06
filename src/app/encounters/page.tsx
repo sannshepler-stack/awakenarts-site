@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Cormorant_Garamond } from "next/font/google";
+import { getFirstEncounterPath } from "./sequence";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -55,7 +56,7 @@ export default function EncountersPage() {
     if (step < STEP_WORDS.length) {
       setStep((s) => s + 1);
     } else {
-      router.push("/encounters/mermaid");
+      router.push(getFirstEncounterPath());
     }
   };
 

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Cormorant_Garamond } from "next/font/google";
+import { getNextEncounter } from "../sequence";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -102,7 +103,7 @@ export default function VaseEncounterPage() {
         </p>
 
         <Link
-          href="/encounters/queen"
+          href={getNextEncounter("vase")}
           className={`encounter-forward ${cormorant.className}`}
           style={{
             color: "#fff",
