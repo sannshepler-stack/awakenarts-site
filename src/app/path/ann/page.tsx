@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
+import FooterSocial from '@/components/FooterSocial'
 
 export const metadata: Metadata = {
   title: 'Queen Ann Between Kingdoms — The Mythopoetic Path · AwakenArts',
@@ -111,9 +112,32 @@ export default function PathAnnPage() {
           </div>
         </section>
 
-        {/* ══ SECTION 2 — cards ══ */}
-        <section className="path-figure" aria-label="Queen Ann — cards">
+        {/* ══ SECTION 2 — video + cards ══ */}
+        <section className="path-figure" aria-label="Queen Ann — further exploration">
           <div className="path-figure__inner">
+
+            {/*
+             * Video — matches the Grismere and Ballerina path-video
+             * pattern (controls, no autoplay, played-through) so the
+             * three figures sit as parallel artifacts on /path. The
+             * /encounters/queen encounter, when it ships, will
+             * differentiate itself through full immersion (sound, full
+             * duration, full screen) rather than through any treatment
+             * difference here.
+             */}
+            <div className="path-figure__video">
+              <p className="eyebrow">Queen Ann in Motion</p>
+              <video
+                className="path-video"
+                controls
+                playsInline
+                preload="metadata"
+                aria-label="Queen Ann — the figure between kingdoms in motion"
+              >
+                <source src="/videos/queen-path.mp4" type="video/mp4" />
+                Your browser does not support video playback.
+              </video>
+            </div>
 
             <div className="path-figure__cards">
               <p className="eyebrow">Cards Amplified from this Symbol</p>
@@ -167,6 +191,7 @@ export default function PathAnnPage() {
               A platform at the intersection of the Christian tradition, Jungian
               Individuation, Transformational Language Arts, and original symbolic imagery.
             </p>
+            <FooterSocial />
           </div>
           <div className="footer-col">
             <h4>Explore</h4>
@@ -188,7 +213,7 @@ export default function PathAnnPage() {
           <div className="footer-col">
             <h4>About</h4>
             <ul>
-              <li><Link href="/#about">Formation &amp; Provenance</Link></li>
+              <li><Link href="/about">Formation &amp; Provenance</Link></li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Use</Link></li>
             </ul>

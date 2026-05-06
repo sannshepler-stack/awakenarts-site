@@ -1,13 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
-import SignupForm from '@/components/SignupForm'
 import FlipCard from '@/components/FlipCard'
+import FooterSocial from '@/components/FooterSocial'
 
 export const metadata: Metadata = {
   title: 'The Guidance Deck',
   description:
-    'These cards did not begin as guidance. They began as poems. Each holds a symbolic moment — something to be encountered, reflected upon, and allowed to unfold.',
+    'These cards did not begin as guidance. They began as poems. Each holds a symbolic moment — something to be encountered, reflected upon, and allowed to unfold. The 52-card AwakenArts Guidance Deck by Susan Ann Shepler.',
+  alternates: { canonical: '/deck' },
+  openGraph: {
+    url: '/deck',
+    title: 'The Guidance Deck — AwakenArts',
+    description:
+      'These cards did not begin as guidance. They began as poems. The 52-card AwakenArts Guidance Deck.',
+  },
 }
 
 /* ── All cards ──────────────────────────────────────────── */
@@ -118,38 +125,28 @@ export default function DeckPage() {
         <p className="quote-attr">— Susan Ann Shepler, AwakenArts</p>
       </section>
 
-      {/* ── BEGIN / SIGNUP ─── */}
-      <section className="begin-section" id="begin" aria-label="Begin Here">
-        <div className="begin-copy">
-          <p className="eyebrow">Begin Here</p>
-          <h2>
-            You have seen
-            <br /><em>something.</em>
-          </h2>
-          <p>
-            A dream that stayed longer than dreams usually stay. An image that
-            appeared in prayer, silence, or memory and did not leave. A symbol
-            that kept returning — in Scripture, in ordinary life, or at the
-            edge of your understanding.
-          </p>
-          <blockquote>It belongs to your tradition. It always has.</blockquote>
-          <p>
-            AwakenArts exists to help you approach symbolic material with
-            reverence, clarity, and deeper recognition — not as decoration, but
-            as a living language of awareness.
-          </p>
-        </div>
-
-        <div className="begin-form-wrap" id="offerings">
-          <p className="eyebrow">Free Offering</p>
-          <h3>Receive the Symbolic Interpretation Guide</h3>
-          <p>
-            Join the list to receive a free guide for approaching symbols,
-            images, and recurring inner material with more understanding and
-            steadiness.
-          </p>
-          <SignupForm />
-        </div>
+      {/* ── QUIET CLOSING ───
+          Per Site Alignment Brief: the Begin/Signup interruption
+          has been removed. A minimal closing note points toward
+          the Library and the Path without breaking encounter rhythm.
+      ─────────────────────────────────────────────── */}
+      <section
+        className="quote-section"
+        aria-label="After the cards"
+        style={{ textAlign: 'center' }}
+      >
+        <p className="quote-text" style={{ fontStyle: 'italic' }}>
+          A card that stays with you is an invitation.
+        </p>
+        <p className="quote-attr" style={{ marginTop: '0.75rem' }}>
+          <Link href="/library" style={{ textDecoration: 'underline' }}>
+            Enter the Library
+          </Link>
+          <span aria-hidden="true" style={{ padding: '0 0.75rem' }}>·</span>
+          <Link href="/path" style={{ textDecoration: 'underline' }}>
+            Walk the Path
+          </Link>
+        </p>
       </section>
 
       {/* ── FOOTER ─── */}
@@ -170,15 +167,16 @@ export default function DeckPage() {
               Individuation, Transformational Language Arts, and original
               symbolic imagery.
             </p>
+            <FooterSocial />
           </div>
 
           <div className="footer-col">
             <h4>Explore</h4>
             <ul>
-              <li><Link href="/#path">The Path</Link></li>
+              <li><Link href="/path">The Path</Link></li>
               <li><Link href="/deck">Guidance Deck</Link></li>
-              <li><Link href="/#library">The Library</Link></li>
-              <li><Link href="/#offerings">Offerings</Link></li>
+              <li><Link href="/library">The Library</Link></li>
+              <li><Link href="/begin">Offerings</Link></li>
             </ul>
           </div>
 
@@ -186,17 +184,25 @@ export default function DeckPage() {
             <h4>The Work</h4>
             <ul>
               <li><Link href="/deck">Illustrated Awakening</Link></li>
-              <li><Link href="/#offerings">Whispers of Awareness</Link></li>
-              <li><Link href="/#library">Concrete Poetry</Link></li>
-              <li><Link href="/#library">Maiden Archetype Series</Link></li>
+              <li>
+                <a
+                  href="https://www.amazon.com/dp/B0G4R4KTZD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Whispers of Awareness
+                </a>
+              </li>
+              <li><Link href="/library">Concrete Poetry</Link></li>
+              <li><Link href="/library">Maiden Archetype Series</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h4>About</h4>
             <ul>
-              <li><Link href="/#about">Formation &amp; Provenance</Link></li>
-              <li><Link href="/#begin">Begin Here</Link></li>
+              <li><Link href="/about">Formation &amp; Provenance</Link></li>
+              <li><Link href="/begin">Begin Here</Link></li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Use</Link></li>
             </ul>

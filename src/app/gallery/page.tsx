@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: 'Gallery — AwakenArts',
   description:
     'Original works by Susan Ann Shepler — figures, archetypes, and symbolic imagery drawn from the Jungian path of Individuation.',
+  alternates: { canonical: '/gallery' },
+  openGraph: {
+    url: '/gallery',
+    title: 'Gallery — AwakenArts',
+    description:
+      'Original works by Susan Ann Shepler — figures, archetypes, and symbolic imagery drawn from the Jungian path of Individuation.',
+  },
 }
 
 /* ── Artwork catalogue ──────────────────────────────────────────────────────

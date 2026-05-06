@@ -1,377 +1,142 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
-import SignupForm from '@/components/SignupForm'
+import FooterSocial from '@/components/FooterSocial'
 
-/* ── Data ──────────────────────────────────────────────── */
-
-const allCards = [
-  { src: '/images/cards/fronts/crossroad.jpg',          title: 'Crossroad' },
-  { src: '/images/cards/fronts/grace.jpg',              title: 'Grace' },
-  { src: '/images/cards/fronts/illusion.jpg',           title: 'Illusion' },
-  { src: '/images/cards/fronts/nurture.jpg',            title: 'Nurture' },
-  { src: '/images/cards/fronts/secrets.jpg',            title: 'Secrets' },
-  { src: '/images/cards/fronts/thoughts.jpg',           title: 'Thoughts' },
-  { src: '/images/cards/fronts/together.jpg',           title: 'Together' },
-  { src: '/images/cards/fronts/broken.jpg',             title: 'Broken' },
-  { src: '/images/cards/fronts/love.jpg',               title: 'Love' },
-  { src: '/images/cards/fronts/frozen.jpg',             title: 'Frozen' },
-  { src: '/images/cards/fronts/self-awareness.jpg',     title: 'Self Awareness' },
-  { src: '/images/cards/fronts/unconscious-energy.jpg', title: 'Unconscious Energy' },
-]
-
-const displayedCards = allCards.slice(0, 8)
-
-const marqueeItems = [
-  'The Biblical Imagination',
-  'Jungian Individuation',
-  'The Mystical Tradition',
-  'Transformational Language Arts',
-  'The Mythopoetic Method',
-  'Symbol as Epistemic',
-]
-
-const tiles = [
-  {
-    eyebrow: 'Primary Offering',
-    title: 'The Guidance Deck',
-    body: 'Symbols speak when words cannot. Each card is a mirror — draw one and meet what is already moving in you.',
-    href: '/deck',
-    label: 'Explore the Deck',
+// The homepage explicitly sets its canonical to "/" so the trailing-slash
+// and bare-domain forms collapse to a single URL in search results.
+// Title and description are inherited from the root layout default.
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+  openGraph: {
+    url: '/',
   },
-  {
-    eyebrow: 'Framework',
-    title: 'The Mythopoetic Path',
-    body: '',
-    href: '/path',
-    label: 'Enter the Path',
-  },
-  {
-    eyebrow: 'Foundational Text',
-    title: 'Whispers of Awareness',
-    body: '',
-    href: 'https://www.amazon.com/dp/B0G4R4KTZD',
-    label: 'Read the Book',
-  },
-  {
-    eyebrow: 'Free to Explore',
-    title: 'The Symbolic Library',
-    body: '',
-    href: '/library',
-    label: 'Enter the Library',
-  },
-  {
-    eyebrow: 'Not sure where to start',
-    title: 'Begin Here',
-    body: '',
-    href: '/begin',
-    label: 'Start here',
-  },
-  {
-    eyebrow: 'Coming Soon',
-    title: 'Encounters',
-    body: 'A guided symbolic experience shaped through image, reflection, and response.',
-    href: '/encounters',
-    label: 'Coming soon',
-  },
-]
+}
 
 /* ── Page ──────────────────────────────────────────────── */
+/*
+ * Homepage — The Threshold
+ * Per AwakenArts Site Alignment Brief (April 2026):
+ * The homepage is an invitation, not an overview. It sends the
+ * visitor into Encounters. All orientation, explanation, tiles,
+ * scholar quotes, signup, marquee, library previews, and the
+ * experience promo have been relocated or removed so the page
+ * functions as a single threshold.
+ */
 
 export default function HomePage() {
   return (
     <>
       <Nav />
 
-      {/* ── HERO ───────────────────────────────────────────────
-          Two-column layout: image left, text right.
-          Stacks vertically on mobile (image top, text bottom).
-          object-fit: cover + object-position: center top
-          preserves crown/head at every breakpoint.
+      {/* ── HERO — one unified section ─────────────────────────
+          A single <section class="hero"> with exactly two children:
+          .hero__text (left) and .hero__media (right). On desktop and
+          tablet they sit side-by-side via grid; on mobile they stack,
+          but remain within the same hero section — one shared
+          background, no visual break.
+
+          No overlay. No absolute positioning. No background-image.
+          No heavy gradient. The image is a plain <img> inside a
+          <picture> that switches variant per breakpoint, never
+          cropped by CSS.
       ──────────────────────────────────────────────────────── */}
       <section className="hero" aria-label="Hero">
 
-        {/* Left column: image
-            next/image fill — spec requirements:
-            · fill (no explicit width/height — container drives size)
-            · object-fit: cover (inline style, not CSS override)
-            · object-position: center top (preserves subject crown at all breakpoints)
-            · priority (disables lazy load, injects <link rel="preload">)
-            · sizes hints browser to correct source width per breakpoint
-            · gradient overlay on right half provides contrast for cream text */}
-        <div className="hero-image">
+        <div className="hero__text">
+          {/* Logo — primary identity placement. */}
           <Image
-            src="/images/brand/queen-ann-hero-desktop.jpg"
-            alt="Queen Ann — AwakenArts"
-            fill
+            src="/images/brand/logo.png"
+            alt="AwakenArts"
+            width={700}
+            height={336}
+            className="hero-logo"
             priority
-            style={{ objectFit: 'cover', objectPosition: '65% top' }}
-            sizes="100vw"
           />
-        </div>
 
-        {/* Right column: text */}
-        <div className="hero-text">
-          <div className="hero-content">
-            <Image
-              src="/images/brand/logo.png"
-              alt="AwakenArts"
-              width={700}
-              height={336}
-              className="hero-logo"
-              priority
-            />
-            <h1>
-              Where <em>Symbol</em>
-              <br />Meets Soul
-            </h1>
+          {/* Tagline — two lines, each in its own span so the
+              second line can be indented for a balanced shape. */}
+          <h1 className="hero-tagline">
+            <span>Symbols speak.</span>
+            <span>The soul listens</span>
+          </h1>
 
-            <p className="hero-sub">
-              AwakenArts guides seekers through the symbolic landscape of the
-              psyche — drawing from the living depths of the Christian tradition,
-              Jungian individuation, and the language of myth and archetype.
-            </p>
+          {/* Sub line — secondary, lighter. */}
+          <p className="hero-subline">Symbols do not explain. They reveal</p>
 
-            <Link href="/path" className="hero-cta">
-              Enter the Path <span className="arrow" aria-hidden="true">→</span>
+          {/* Existing paragraph. */}
+          <p className="hero-sub">
+            AwakenArts is a guided encounter with the symbolic life of the
+            soul — drawing from the Christian tradition, Jungian depth
+            psychology, and the language of image and myth.
+          </p>
+
+          {/*
+           * Primary CTA. Wording opens the whole AwakenArts world rather
+           * than naming any one feature; encounters remain reachable
+           * (this still routes to /encounters) but the language no
+           * longer implies that the encounter system is the entire site.
+           */}
+          <Link href="/encounters" className="hero-cta">
+            Enter AwakenArts <span className="arrow" aria-hidden="true">→</span>
+          </Link>
+
+          {/*
+           * Secondary paths — quiet, understated, not button-like.
+           * Their job is to surface the broader body of work (Path,
+           * Gallery, About) so that encounters reads as one unfolding
+           * dimension of the site rather than the sole destination.
+           * Styling deliberately lightweight (.hero-secondary).
+           */}
+          <nav className="hero-secondary" aria-label="Other paths">
+            <Link href="/path" className="hero-secondary-link">
+              Explore the Path
             </Link>
-          </div>
+            <span className="hero-secondary-sep" aria-hidden="true">·</span>
+            <Link href="/gallery" className="hero-secondary-link">
+              View the Gallery
+            </Link>
+            <span className="hero-secondary-sep" aria-hidden="true">·</span>
+            <Link href="/about" className="hero-secondary-link">
+              About Susan
+            </Link>
+          </nav>
         </div>
+
+        <div className="hero__media">
+          <picture className="hero__picture">
+            <source
+              media="(max-width: 640px)"
+              srcSet="/images/brand/queen-ann-hero-mobile.jpg"
+            />
+            <source
+              media="(max-width: 1024px)"
+              srcSet="/images/brand/queen-ann-hero-tablet.jpg"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/brand/queen-ann-hero-desktop.jpg"
+              alt="Queen Ann — a painted figure in contemplation, central to the AwakenArts identity"
+              className="hero__img"
+              width={1600}
+              height={1100}
+              loading="eager"
+              decoding="async"
+            />
+          </picture>
+        </div>
+
       </section>
 
       {/* ── HERO QUOTE ─── */}
       <section className="hero-quote-section" aria-label="Opening quote">
-        <p className="hero-quote-text">&ldquo;Our real long-term goal is to find that security inside ourselves. Our work is to internalize the feeling of being good enough — a state of okayness that is not reliant on others.&rdquo;</p>
-        <p className="hero-quote-cite">— Dr. Nicole LePera, <em>How to Do the Work</em></p>
-      </section>
-
-      {/* ── GOLD DIVIDER ─── */}
-      <div className="gold-rule" aria-hidden="true">
-        <div className="gold-rule-line" />
-        <span className="gold-rule-glyph">✦ ✦ ✦</span>
-        <div className="gold-rule-line" />
-      </div>
-
-      {/* ── PATH TILES ─── */}
-      <section className="tiles-section" id="path" aria-label="Five pathways">
-        <div className="tiles-header">
-          <p className="eyebrow">Your Path Begins</p>
-          <h2>
-            Five thresholds.
-            <br /><em>One interior landscape.</em>
-          </h2>
-        </div>
-
-        <div className="tiles-grid">
-          {tiles.map(({ eyebrow, title, body, href, label }) => (
-            <div
-              key={title}
-              className="tile"
-              tabIndex={0}
-              role="article"
-            >
-              <p className="tile-eyebrow">{eyebrow}</p>
-              <h3>{title}</h3>
-              {body && <p className="tile-body">{body}</p>}
-              <Link
-                href={href}
-                className="tile-link"
-                {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              >{label}</Link>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── MARQUEE ─── */}
-      <div className="marquee" aria-hidden="true">
-        <div className="marquee-track">
-          {[...marqueeItems, ...marqueeItems].flatMap((item, i) => [
-            <span key={`i-${i}`} className="marquee-item">{item}</span>,
-            <span key={`s-${i}`} className="marquee-item marquee-sep">✦</span>,
-          ])}
-        </div>
-      </div>
-
-      {/* ── GUIDANCE DECK ─── */}
-      <section className="deck-section" id="deck" aria-label="Guidance Deck">
-        <div className="deck-header">
-          <p className="eyebrow">The Work</p>
-          <h2>
-            The Guidance Deck
-            <br /><em>Symbols for the life within.</em>
-          </h2>
-          <p>
-            These cards did not begin as guidance.
-            They began as poems.
-          </p>
-          <p>
-            Each holds a symbolic moment — something to be encountered,
-            reflected upon, and allowed to unfold.
-          </p>
-        </div>
-
-        <div className="deck-grid" role="list">
-          {displayedCards.map((card, i) => (
-            <Link
-              key={card.title}
-              href="/begin"
-              className="deck-card"
-              role="listitem"
-              aria-label={card.title}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={card.src}
-                alt={card.title}
-                loading={i < 4 ? 'eager' : 'lazy'}
-                decoding="async"
-              />
-            </Link>
-          ))}
-        </div>
-
-        <div className="deck-cta">
-          <Link href="/begin" className="hero-cta">
-            Choose Your Path <span className="arrow" aria-hidden="true">→</span>
-          </Link>
-        </div>
-      </section>
-
-            {/* ── LIBRARY ─── */}
-      <section className="library-section" id="library" aria-label="Symbolic Library">
-        <div className="library-header">
-          <p className="eyebrow">The Library</p>
-          <h2>
-            Writings for the symbolic life.
-            <br /><em>Thresholds into deeper seeing.</em>
-          </h2>
-          <p>
-            A growing body of writing shaped by image, story, and archetype.
-            Enter through the figure, the question, or the symbol that is already calling to you.
-          </p>
-        </div>
-
-        <div className="library-grid">
-          <article className="library-card">
-            <p className="library-card__eyebrow">Figures</p>
-            <h3>Queen Ann: Between Kingdoms</h3>
-            <p>
-              A meditation on exile, spirit, and the threshold between earthly
-              loss and impossible help.
-            </p>
-            <Link href="/library/figures/queen-ann-between-kingdoms" className="library-card__link">Read the reflection</Link>
-          </article>
-
-          <article className="library-card">
-            <p className="library-card__eyebrow">Foundations</p>
-            <h3>The Mirror and the Map</h3>
-            <p>
-              On learning to read symbolic material as a way of recognition and inner orientation.
-            </p>
-            <Link href="/library/foundations/the-mirror-and-the-map" className="library-card__link">Enter the essay</Link>
-          </article>
-
-          <article className="library-card">
-            <p className="library-card__eyebrow">Bridges</p>
-            <h3>Jung and the Gospel</h3>
-            <p>
-              Two languages, one interior country — where psyche and spiritual
-              tradition begin to illuminate each other.
-            </p>
-            <Link href="/library" className="library-card__link">Explore the bridge</Link>
-          </article>
-        </div>
-      </section>
-
-      {/* ── BEGIN / SIGNUP ─── */}
-      <section className="begin-section" id="begin" aria-label="Begin Here">
-        <div className="begin-copy">
-          <p className="eyebrow">Begin Here</p>
-          <h2>Something has stayed with you.</h2>
-          <p>
-            A dream that lingered longer than dreams usually do.<br />
-            An image that appeared in prayer, silence, or memory and did not leave.<br />
-            A symbol that kept returning—in Scripture, in ordinary life, or at the edge of your understanding.
-          </p>
-          <blockquote className="quote-line">It belongs to your tradition. It always has.</blockquote>
-          <p>
-            AwakenArts exists to help you approach symbolic material with
-            reverence, clarity, and deeper recognition — not as decoration, but
-            as a living language of awareness.
-          </p>
-        </div>
-
-        <div className="begin-form-wrap" id="offerings">
-          <p className="eyebrow">Free Offering</p>
-          <h3>Receive the Symbolic Interpretation Guide</h3>
-          <p>
-            Join the list to receive a free guide for approaching symbols,
-            images, and recurring inner material with more understanding and
-            steadiness.
-          </p>
-          <SignupForm />
-        </div>
-      </section>
-
-      {/* ── EXPERIENCE ─── */}
-      <section className="experience-home">
-        <div className="experience-home__inner">
-          <p className="experience-home__label">THE EXPERIENCE</p>
-
-          <h2 className="experience-home__title">
-            <span>Use your own words.</span>
-            <span>Let them take shape.</span>
-          </h2>
-
-          <p className="experience-home__text">
-            Words become forms. Forms become meaning. Begin with what you know —
-            and watch something you have never seen emerge.
-          </p>
-
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/experiences/butterfly-wordart.png"
-            alt="Butterfly formed from words"
-            className="experience-home__image"
-          />
-
-          <a href="/experience" className="experience-home__button">
-            Begin the Experience
-          </a>
-        </div>
-      </section>
-      {/* ── SCHOLAR QUOTES ─── */}
-      <section className="scholar-section" aria-label="Scholarly voices">
-        <p className="eyebrow scholar-eyebrow">The Tradition Speaks</p>
-        <div className="scholar-grid">
-
-          <blockquote className="scholar-quote">
-            <p>"The basic or original unit of mental functioning is the image."</p>
-            <cite>— E.C. Whitmont, <em>The Symbolic Quest</em></cite>
-          </blockquote>
-
-          <blockquote className="scholar-quote">
-            <p>"Whether we are aware of it or not, much of our behaviour is symbolic."</p>
-            <cite>— Robert A. Johnson, <em>Inner Work</em></cite>
-          </blockquote>
-
-          <blockquote className="scholar-quote">
-            <p>"The dream is a series of images, which are apparently contradictory and nonsensical, but arise in reality from psychologic material which yields a clear meaning."</p>
-            <cite>— C.G. Jung</cite>
-          </blockquote>
-
-          <blockquote className="scholar-quote">
-            <p>"The unconscious really is unconscious; in other words, it is unknown. And how can you assimilate something unknown."</p>
-            <cite>— C.G. Jung</cite>
-          </blockquote>
-
-        </div>
-        <div className="scholar-more">
-          <Link href="/library/voices" className="scholar-more__link">
-            More voices from the tradition →
-          </Link>
-        </div>
+        <p className="hero-quote-text" style={{ fontStyle: 'normal' }}>
+          &ldquo;The symbolic process is an experience <em>in images and of images</em>.&rdquo;
+        </p>
+        <p className="hero-quote-cite">
+          — Carl Jung, <em>The Archetypes and the Collective Unconscious</em>
+        </p>
       </section>
 
       {/* ── FOOTER ─── */}
@@ -392,32 +157,45 @@ export default function HomePage() {
               Individuation, Transformational Language Arts, and original
               symbolic imagery.
             </p>
+
+            <FooterSocial />
           </div>
 
           <div className="footer-col">
-          <h4>Explore</h4>
-          <ul>
-            <li><Link href="/path">The Path</Link></li>
-            <li><a href="#deck">Guidance Deck</a></li>
-            <li><a href="/library">The Library</a></li>
-            <li><a href="#offerings">Offerings</a></li>
-          </ul>
+            <h4>Explore</h4>
+            <ul>
+              <li><Link href="/encounters">Encounters</Link></li>
+              {/*
+               * Descriptive anchor pointing directly at Mermaid.
+               * Quiet placement (footer sub-item), descriptive text
+               * ("The Mermaid — a threshold between two worlds")
+               * rather than generic "enter" or "continue". Two effects:
+               *   - reinforces crawl priority for the one indexable
+               *     encounter
+               *   - gives search engines indexable language tying the
+               *     URL to its meaning
+               */}
+              <li className="footer-sub"><Link href="/encounters/mermaid">The Mermaid — a threshold between two worlds</Link></li>
+              <li><Link href="/deck">Guidance Deck</Link></li>
+              <li><Link href="/library">The Library</Link></li>
+              <li><Link href="/begin">Begin Here</Link></li>
+            </ul>
           </div>
 
           <div className="footer-col">
             <h4>The Work</h4>
             <ul>
-              <li><Link href="#deck">Illustrated Awakening</Link></li>
-              <li><Link href="#offerings">Whispers of Awareness</Link></li>
-              <li><Link href="#library">Concrete Poetry</Link></li>
-              <li><Link href="#library">Maiden Archetype Series</Link></li>
+              <li><Link href="/path">The Path</Link></li>
+              <li><Link href="/experience">The Experience</Link></li>
+              <li><Link href="/library">Concrete Poetry</Link></li>
+              <li><Link href="/library#figures">Maiden Archetype Series</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h4>About</h4>
             <ul>
-              <li><Link href="#about">Formation &amp; Provenance</Link></li>
+              <li><Link href="/about">Formation &amp; Provenance</Link></li>
               <li><Link href="/begin">Begin Here</Link></li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Use</Link></li>

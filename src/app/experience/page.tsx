@@ -1,4 +1,18 @@
+import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
+
+export const metadata: Metadata = {
+  title: 'The Experience — AwakenArts',
+  description:
+    'A facilitated AwakenArts experience — guided practice with symbol, image, and word for individuals and groups.',
+  alternates: { canonical: '/experience' },
+  openGraph: {
+    url: '/experience',
+    title: 'The Experience — AwakenArts',
+    description:
+      'A facilitated AwakenArts experience — guided practice with symbol, image, and word.',
+  },
+}
 
 export default function ExperiencePage() {
   return (

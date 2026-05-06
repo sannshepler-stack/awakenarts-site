@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
+import FooterSocial from '@/components/FooterSocial'
 
 export const metadata: Metadata = {
   title: 'Allow Content to Direct the Shape — AwakenArts Library',
@@ -219,14 +220,15 @@ export default function AllowContentPage() {
               A platform at the intersection of the Christian tradition, Jungian
               Individuation, Transformational Language Arts, and original symbolic imagery.
             </p>
+            <FooterSocial />
           </div>
           <div className="footer-col">
             <h4>Explore</h4>
             <ul>
-              <li><Link href="/#path">The Path</Link></li>
+              <li><Link href="/path">The Path</Link></li>
               <li><Link href="/deck">Guidance Deck</Link></li>
               <li><Link href="/library">The Library</Link></li>
-              <li><Link href="/#offerings">Offerings</Link></li>
+              <li><Link href="/begin">Offerings</Link></li>
             </ul>
           </div>
           <div className="footer-col">
@@ -240,7 +242,7 @@ export default function AllowContentPage() {
           <div className="footer-col">
             <h4>About</h4>
             <ul>
-              <li><Link href="/#about">Formation &amp; Provenance</Link></li>
+              <li><Link href="/about">Formation &amp; Provenance</Link></li>
               <li><Link href="/begin">Begin Here</Link></li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Use</Link></li>

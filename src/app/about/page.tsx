@@ -1,5 +1,25 @@
+import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'About Susan Ann Shepler — AwakenArts',
+  description:
+    'Susan Ann Shepler — artist, writer, facilitator, and depth-oriented counselor. Master in Counseling Psychology (Webster University), certified Transformative Language Artist, author of Whispers of Awareness, and creator of the AwakenArts Guidance Deck.',
+  alternates: { canonical: '/about' },
+  openGraph: {
+    url: '/about',
+    title: 'About Susan Ann Shepler — AwakenArts',
+    description:
+      'Artist, writer, and depth-oriented counselor. Creator of AwakenArts and the AwakenArts Guidance Deck.',
+    images: [
+      {
+        url: '/images/about/susan-ann-shepler.jpg',
+        alt: 'Portrait of Susan Ann Shepler',
+      },
+    ],
+  },
+}
 
 export default function AboutPage() {
   return (

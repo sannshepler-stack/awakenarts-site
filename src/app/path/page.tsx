@@ -1,11 +1,19 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
+import FooterSocial from '@/components/FooterSocial'
 
 export const metadata: Metadata = {
   title: 'The Mythopoetic Path — AwakenArts',
   description:
     'Each poem came before the card. The text took the form of the figure — moving through the symbol from within. This is where the work began.',
+  alternates: { canonical: '/path' },
+  openGraph: {
+    url: '/path',
+    title: 'The Mythopoetic Path — AwakenArts',
+    description:
+      'Each poem came before the card. The text took the form of the figure — moving through the symbol from within.',
+  },
 }
 
 export default function PathPage() {
@@ -147,7 +155,7 @@ export default function PathPage() {
                 preload="metadata"
                 aria-label="Grismere — the mermaid in motion"
               >
-                <source src="/videos/grismere/grismere-video.mp4" type="video/mp4" />
+                <source src="/videos/grismere-path.mp4" type="video/mp4" />
                 Your browser does not support video playback.
               </video>
             </div>
@@ -260,7 +268,7 @@ export default function PathPage() {
                 preload="metadata"
                 aria-label="The Ballerina — Pirouette in motion"
               >
-                <source src="/images/figures/ballerina/ballerina.mp4" type="video/mp4" />
+                <source src="/videos/ballerina-path.mp4" type="video/mp4" />
                 Your browser does not support video playback.
               </video>
             </div>
@@ -425,6 +433,7 @@ export default function PathPage() {
               A platform at the intersection of the Christian tradition, Jungian
               Individuation, Transformational Language Arts, and original symbolic imagery.
             </p>
+            <FooterSocial />
           </div>
           <div className="footer-col">
             <h4>Explore</h4>
@@ -446,7 +455,7 @@ export default function PathPage() {
           <div className="footer-col">
             <h4>About</h4>
             <ul>
-              <li><Link href="/#about">Formation &amp; Provenance</Link></li>
+              <li><Link href="/about">Formation &amp; Provenance</Link></li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Use</Link></li>
             </ul>

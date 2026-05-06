@@ -1,25 +1,25 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+
+// Nav — text links only.
+// The logo lives in the homepage hero; it is deliberately not repeated here.
+// Keeping a small wordmark link on the left so there is still a way home.
 
 const links = [
-  { label: 'Begin Here',    href: '/begin',      cta: true  },
-  { label: 'The Path',      href: '/path',       cta: false },
-  { label: 'Library',       href: '/library',    cta: false },
-  { label: 'Guidance Deck', href: '/deck',       cta: false },
-  { label: 'Gallery',       href: '/gallery',    cta: false },
-  { label: 'Offerings',     href: '/#offerings', cta: false },
-  { label: 'About',         href: '/about',      cta: false },
+  { label: 'Begin Here',    href: '/begin',        cta: true  },
+  { label: 'Encounters',    href: '/encounters',   cta: false },
+  { label: 'The Path',      href: '/path',         cta: false },
+  { label: 'Library',       href: '/library',      cta: false },
+  { label: 'Guidance Deck', href: '/deck',         cta: false },
+  { label: 'Gallery',       href: '/gallery',      cta: false },
+  { label: 'About',         href: '/about',        cta: false },
 ]
 
 export default function Nav() {
   const [open, setOpen]         = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const pathname                = usePathname()
-  const isHome                  = pathname === '/'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48)
@@ -32,20 +32,10 @@ export default function Nav() {
   return (
     <nav className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
 
-      {/* Left: logo + tagline — always visible */}
+      {/* Left: text home link only. No logo image. */}
       <div className="nav-left">
         <Link href="/" onClick={close} aria-label="AwakenArts home" className="nav-brand">
-          {!isHome && (
-            <Image
-              src="/images/brand/logo.png"
-              alt="AwakenArts"
-              width={160}
-              height={160}
-              className="nav-logo"
-              priority
-            />
-          )}
-          <span className="nav-tagline">Symbols Speak.&nbsp;The Soul Listens</span>
+          <span className="nav-tagline">AwakenArts</span>
         </Link>
       </div>
 
