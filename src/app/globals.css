@@ -3023,3 +3023,61 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   filter: brightness(1.25) drop-shadow(0 0 12px rgba(255, 255, 255, 0.35));
   transform: translateX(4px);
 }
+
+/* ─────────────────────────────────────────────
+   CONTINUUM — ambient atmosphere
+
+   The continuum page is reached at the end of the encounter
+   sequence. Without a video, a pure black field reads as a
+   dropped phone call rather than a held breath. These two
+   layers give the page a quiet sense of presence: a soft
+   warm glow that breathes very slowly in the center, and a
+   subtle vignette that draws focus inward. Both sit behind
+   the optional video, so when /videos/continuum.mp4 is
+   present the video covers them; when it isn't, they carry
+   the atmosphere on their own.
+───────────────────────────────────────────── */
+.continuum-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Warm candle/gold light, very faint, centered slightly
+     above middle so the glow feels above the text rather
+     than behind it. */
+  background: radial-gradient(
+    ellipse 70% 55% at 50% 42%,
+    rgba(201, 168, 76, 0.18) 0%,
+    rgba(201, 168, 76, 0.08) 35%,
+    rgba(0, 0, 0, 0) 75%
+  );
+  /* Slow breath — 18s cycle, never reaches full off so the
+     atmosphere is always present. */
+  animation: continuum-breath 18s ease-in-out infinite;
+}
+
+.continuum-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Quiet darkening at the corners only. Center stays clear
+     so the glow and text sit in a held pool of light. */
+  background: radial-gradient(
+    ellipse 90% 80% at 50% 50%,
+    rgba(0, 0, 0, 0) 55%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+@keyframes continuum-breath {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1;    }
+}
+
+/* Honor user motion preference — hold the glow at its
+   midpoint instead of animating. */
+@media (prefers-reduced-motion: reduce) {
+  .continuum-glow {
+    animation: none;
+    opacity: 0.78;
+  }
+}

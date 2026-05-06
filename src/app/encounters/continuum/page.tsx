@@ -69,6 +69,16 @@ export default function ContinuumPage() {
         background: "#000",
       }}
     >
+      {/*
+       * Ambient atmosphere — sits behind the optional video so it
+       * acts as the page's own "presence" when no video is loaded.
+       * When /videos/continuum.mp4 is added later, the video covers
+       * these layers and they have no visual effect. See globals.css
+       * (CONTINUUM — ambient atmosphere) for the gradient + breath.
+       */}
+      <div className="continuum-glow" aria-hidden="true" />
+      <div className="continuum-vignette" aria-hidden="true" />
+
       {hasVideo && (
         <video
           ref={videoRef}
