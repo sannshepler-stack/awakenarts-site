@@ -2125,6 +2125,24 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   }
 }
 
+/* Mobile — tighten the stack between the reading text and the
+   Library Essay link. On desktop the body's grid keeps poem and
+   reading side-by-side, so the generous bottom margins read as
+   breathing room before the next block. On mobile everything is
+   linear, and those margins compound (1.5rem padding + 3.5rem
+   reading margin + 3.5rem body margin = ~8.5rem of air between
+   the last paragraph and the link). Compress to a single quiet
+   beat. */
+@media (max-width: 768px) {
+  .path-figure__reading {
+    padding: 1rem 0 0;
+    margin-bottom: 1.25rem;
+  }
+  .path-figure__body {
+    margin-bottom: 1.25rem;
+  }
+}
+
 /* ─────────────────────────────────────────────
    BEGIN HERE PAGE
 ───────────────────────────────────────────── */
