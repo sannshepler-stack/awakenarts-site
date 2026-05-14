@@ -206,8 +206,9 @@ export default function BallerinaPage() {
               <img src="/images/brand/logo.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
             </Link>
             <p>
-              A platform at the intersection of the Christian tradition, Jungian
-              Individuation, Transformational Language Arts, and original symbolic imagery.
+              Original symbolic figures for the interior life — rooted in the
+              Christian tradition, created through the transformative language
+              arts process. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>

@@ -9,7 +9,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'The Mermaid Encounter',
   description:
-    'A symbolic descent — the first AwakenArts encounter. Step into image and word, into the depths the psyche keeps beneath the surface.',
+    'A symbolic descent — the first AwakenArts encounter. Step into image and word, into what the surface conceals.',
   alternates: { canonical: '/encounters/mermaid' },
   openGraph: {
     url: '/encounters/mermaid',

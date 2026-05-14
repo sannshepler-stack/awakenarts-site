@@ -34,16 +34,16 @@ export default function PathPage() {
           </p>
           <p className="path-opening__sub" style={{marginTop: '1rem'}}>
             Each poem in this collection takes the shape of its symbol. The text
-            becomes the figure. From that shaped figure, Jungian amplification
+            becomes the figure. From that shaped figure, symbolic depth
             moves outward — producing card images that carry the energy through
             affect and imagery, not through explanation. The cards do not tell you
             what a symbol means. They let the symbol work on you.
           </p>
           <p className="path-opening__sub" style={{marginTop: '1rem'}}>
-            Every image here is connected to the Jungian path of Individuation —
-            the universal movement toward wholeness that Jung understood as the
-            deepest purpose of the psyche. These are not decorative symbols.
-            They are interior figures, and they are already at work in you.
+            Every image here is connected to the universal movement toward
+            wholeness — the deepest purpose of the psyche. These are not
+            decorative symbols. They are interior figures, and they are already
+            at work in you.
           </p>
         </section>
 
@@ -227,8 +227,8 @@ export default function PathPage() {
                   of words chosen to be felt before they are read.
                 </p>
                 <p>
-                  She dances the dance of individuation. Like most encounters with Jungian
-                  archetypes, she arrived not as an idea but as an event — a dream-image, whole
+                  She dances the dance of individuation. Like most encounters with symbolic
+                  figures of this kind, she arrived not as an idea but as an event — a dream-image, whole
                   and particular, before the analytic mind could arrive to name her. She is love
                   personified. She is also the shadow of love: the projection, the longing, the
                   power given away and slowly reclaimed.
@@ -375,6 +375,21 @@ export default function PathPage() {
               </Link>
             </div>
 
+            {/* Video */}
+            <div className="path-figure__video">
+              <p className="eyebrow">Queen Ann in Motion</p>
+              <video
+                className="path-video"
+                controls
+                playsInline
+                preload="metadata"
+                aria-label="Queen Ann — the figure between kingdoms in motion"
+              >
+                <source src="/videos/queen-path.mp4" type="video/mp4" />
+                Your browser does not support video playback.
+              </video>
+            </div>
+
             {/* Associated cards */}
             <div className="path-figure__cards">
               <p className="eyebrow">Cards Amplified from this Symbol</p>
@@ -430,8 +445,9 @@ export default function PathPage() {
               />
             </Link>
             <p>
-              A platform at the intersection of the Christian tradition, Jungian
-              Individuation, Transformational Language Arts, and original symbolic imagery.
+              Original symbolic figures for the interior life — rooted in the
+              Christian tradition, created through the transformative language
+              arts process. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>

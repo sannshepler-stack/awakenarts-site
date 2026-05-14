@@ -112,11 +112,10 @@ export default function BeginPage() {
           </p>
           <p className="begin-page__body" style={{ marginTop: '2rem' }}>
             AwakenArts is a guided encounter with the symbolic life of the
-            soul — drawing from the Christian tradition, Jungian depth
-            psychology, and the language of image and myth. It exists to help
-            you approach symbolic material with reverence, clarity, and deeper
-            recognition — not as decoration, but as a living language of
-            awareness.
+            soul — rooted in the Christian tradition, and the language of
+            image and symbol. It exists to help you approach symbolic material
+            with reverence, clarity, and deeper recognition — not as
+            decoration, but as a living language of awareness.
           </p>
         </section>
 
@@ -202,8 +201,9 @@ export default function BeginPage() {
               />
             </Link>
             <p>
-              A platform at the intersection of the Christian tradition, Jungian
-              Individuation, Transformational Language Arts, and original symbolic imagery.
+              Original symbolic figures for the interior life — rooted in the
+              Christian tradition, created through the transformative language
+              arts process. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>

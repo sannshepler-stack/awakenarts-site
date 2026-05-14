@@ -55,7 +55,7 @@ export default function AboutPage() {
         </div>
 
         <p style={{ fontSize: '1.15rem', lineHeight: '1.9', marginBottom: '2rem' }}>
-          AwakenArts began not as a platform but as a practice — a lifelong inquiry into the symbolic life of the soul. Susan Ann Shepler has spent decades working at the intersection of language, image, and the interior world, drawing from Jungian depth psychology, the Christian mystical tradition, and the transformative power of the word made visible.
+          AwakenArts began not as a platform but as a practice — a lifelong inquiry into the symbolic life of the soul. Susan Ann Shepler has spent decades working at the intersection of language, image, and the interior world, drawing from depth psychology and the Christian contemplative tradition, and the transformative power of the word made visible.
         </p>
 
         <p style={{ fontSize: '1.15rem', lineHeight: '1.9', marginBottom: '2rem' }}>

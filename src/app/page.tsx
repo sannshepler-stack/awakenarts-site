@@ -68,8 +68,8 @@ export default function HomePage() {
           {/* Existing paragraph. */}
           <p className="hero-sub">
             AwakenArts is a guided encounter with the symbolic life of the
-            soul — drawing from the Christian tradition, Jungian depth
-            psychology, and the language of image and myth.
+            soul — rooted in the Christian tradition, and the language of
+            image and symbol.
           </p>
 
           {/*
@@ -132,10 +132,10 @@ export default function HomePage() {
       {/* ── HERO QUOTE ─── */}
       <section className="hero-quote-section" aria-label="Opening quote">
         <p className="hero-quote-text" style={{ fontStyle: 'normal' }}>
-          &ldquo;The symbolic process is an experience <em>in images and of images</em>.&rdquo;
+          &ldquo;Though seeing, they do not see.&rdquo;
         </p>
         <p className="hero-quote-cite">
-          — Carl Jung, <em>The Archetypes and the Collective Unconscious</em>
+          — Matthew 13:13
         </p>
       </section>
 
@@ -153,9 +153,9 @@ export default function HomePage() {
               />
             </Link>
             <p>
-              A platform at the intersection of the Christian tradition, Jungian
-              Individuation, Transformational Language Arts, and original
-              symbolic imagery.
+              Original symbolic figures for the interior life — rooted in the
+              Christian tradition, created through the transformative language
+              arts process. By Susan Ann Shepler.
             </p>
 
             <FooterSocial />

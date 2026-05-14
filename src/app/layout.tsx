@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: '%s | AwakenArts',
   },
   description:
-    'AwakenArts guides seekers through the symbolic landscape of the psyche — drawing from the Christian tradition, Jungian individuation, and the language of myth and archetype. Original concrete poetry, symbolic figures, and a 52-card guidance deck by Susan Ann Shepler.',
+    'AwakenArts is a guided encounter with the symbolic life of the soul — rooted in the Christian tradition, in the language of image and symbol. Original concrete poetry, symbolic figures, and a 52-card guidance deck by Susan Ann Shepler.',
   applicationName: 'AwakenArts',
   authors: [{ name: 'Susan Ann Shepler', url: SITE_URL + '/about' }],
   creator: 'Susan Ann Shepler',
@@ -26,12 +26,12 @@ export const metadata: Metadata = {
   keywords: [
     'AwakenArts',
     'Susan Ann Shepler',
-    'Jungian individuation',
+    'Christian tradition',
+    'Christian mysticism',
     'concrete poetry',
     'symbolic imagery',
-    'depth psychology',
-    'Christian mysticism',
-    'archetypes',
+    'symbolic figures',
+    'interior life',
     'transformational language arts',
     'guidance deck',
     'Whispers of Awareness',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: 'AwakenArts — Where Symbol Meets Soul',
     description:
-      'A guided encounter with the symbolic life of the soul — Jungian individuation, Christian mysticism, and original concrete poetry by Susan Ann Shepler.',
+      'A guided encounter with the symbolic life of the soul — rooted in the Christian tradition, in image and symbol. Original concrete poetry and symbolic figures by Susan Ann Shepler.',
     locale: 'en_US',
     images: [
       {
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AwakenArts — Where Symbol Meets Soul',
     description:
-      'A guided encounter with the symbolic life of the soul — Jungian individuation, Christian mysticism, and original concrete poetry.',
+      'A guided encounter with the symbolic life of the soul — rooted in the Christian tradition, in image and symbol. Original concrete poetry and symbolic figures.',
     images: ['/images/brand/queen-ann-hero-desktop.jpg'],
   },
   robots: {
@@ -119,7 +119,7 @@ const jsonLd = {
       logo: `${SITE_URL}/images/brand/logo.png`,
       founder: { '@id': `${SITE_URL}/#person` },
       description:
-        'AwakenArts is a platform at the intersection of the Christian tradition, Jungian individuation, Transformational Language Arts, and original symbolic imagery.',
+        'Original symbolic figures for the interior life — rooted in the Christian tradition, created through the transformative language arts process. By Susan Ann Shepler.',
     },
     {
       '@type': 'WebSite',

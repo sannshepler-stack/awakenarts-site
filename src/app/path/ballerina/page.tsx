@@ -67,8 +67,8 @@ export default function PathBallerinaPage() {
                   of words chosen to be felt before they are read.
                 </p>
                 <p>
-                  She dances the dance of individuation. Like most encounters with Jungian
-                  archetypes, she arrived not as an idea but as an event — a dream-image, whole
+                  She dances the dance of individuation. Like most encounters with symbolic
+                  figures of this kind, she arrived not as an idea but as an event — a dream-image, whole
                   and particular, before the analytic mind could arrive to name her. She is love
                   personified. She is also the shadow of love: the projection, the longing, the
                   power given away and slowly reclaimed.
@@ -182,8 +182,9 @@ export default function PathBallerinaPage() {
               <img src="/images/brand/logo.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
             </Link>
             <p>
-              A platform at the intersection of the Christian tradition, Jungian
-              Individuation, Transformational Language Arts, and original symbolic imagery.
+              Original symbolic figures for the interior life — rooted in the
+              Christian tradition, created through the transformative language
+              arts process. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>
