@@ -220,7 +220,6 @@ export default function MirrorAndMapPage() {
             <h4>Explore</h4>
             <ul>
               <li><Link href="/path">The Path</Link></li>
-              <li><Link href="/deck">Guidance Deck</Link></li>
               <li><Link href="/library">The Library</Link></li>
               <li><Link href="/begin">Offerings</Link></li>
             </ul>

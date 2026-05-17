@@ -168,7 +168,6 @@ export default function PathBallerinaPage() {
         {/* ── CTA ── */}
         <section className="path-cta">
           <Link href="/path" className="path-cta__link">← Return to The Path</Link>
-          <Link href="/deck" className="path-cta__link path-cta__link--quiet">Enter the Deck →</Link>
         </section>
 
       </main>
@@ -193,7 +192,6 @@ export default function PathBallerinaPage() {
             <ul>
               <li><Link href="/">Home</Link></li>
               <li><Link href="/path">The Path</Link></li>
-              <li><Link href="/deck">Guidance Deck</Link></li>
               <li><Link href="/library">The Library</Link></li>
             </ul>
           </div>

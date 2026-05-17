@@ -425,7 +425,6 @@ export default function PathPage() {
 
         {/* ── CTA ── */}
         <section className="path-cta">
-          <Link href="/deck" className="path-cta__link">Enter the Deck →</Link>
           <Link href="/library" className="path-cta__link path-cta__link--quiet">Enter the Library</Link>
         </section>
 
@@ -455,7 +454,6 @@ export default function PathPage() {
             <h4>Explore</h4>
             <ul>
               <li><Link href="/">Home</Link></li>
-              <li><Link href="/deck">Guidance Deck</Link></li>
               <li><Link href="/library">The Library</Link></li>
               <li><Link href="/begin">Begin Here</Link></li>
             </ul>

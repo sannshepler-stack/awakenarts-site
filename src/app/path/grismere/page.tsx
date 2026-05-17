@@ -198,7 +198,6 @@ export default function PathGrismerePage() {
             <ul>
               <li><Link href="/">Home</Link></li>
               <li><Link href="/path">The Path</Link></li>
-              <li><Link href="/deck">Guidance Deck</Link></li>
               <li><Link href="/library">The Library</Link></li>
             </ul>
           </div>

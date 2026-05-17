@@ -176,7 +176,6 @@ export default function HomePage() {
                *     URL to its meaning
                */}
               <li className="footer-sub"><Link href="/encounters/mermaid">The Mermaid — a threshold between two worlds</Link></li>
-              <li><Link href="/deck">Guidance Deck</Link></li>
               <li><Link href="/library">The Library</Link></li>
               <li><Link href="/begin">Begin Here</Link></li>
             </ul>

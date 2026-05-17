@@ -212,7 +212,6 @@ export default function BeginPage() {
             <ul>
               <li><Link href="/">Home</Link></li>
               <li><Link href="/encounters">Encounters</Link></li>
-              <li><Link href="/deck">Guidance Deck</Link></li>
               <li><Link href="/library">The Library</Link></li>
             </ul>
           </div>

@@ -12,7 +12,6 @@ const links = [
   { label: 'Encounters',    href: '/encounters',   cta: false },
   { label: 'The Path',      href: '/path',         cta: false },
   { label: 'Library',       href: '/library',      cta: false },
-  { label: 'Guidance Deck', href: '/deck',         cta: false },
   { label: 'Gallery',       href: '/gallery',      cta: false },
   { label: 'About',         href: '/about',        cta: false },
 ]
