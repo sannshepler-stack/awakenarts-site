@@ -187,7 +187,7 @@ export default function HomePage() {
               <li><Link href="/path">The Path</Link></li>
               <li><Link href="/experience">The Experience</Link></li>
               <li><Link href="/library">Concrete Poetry</Link></li>
-              <li><Link href="/library#figures">Maiden Archetype Series</Link></li>
+              <li><Link href="/library">Figures</Link></li>
             </ul>
           </div>
 

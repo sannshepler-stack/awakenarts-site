@@ -193,7 +193,7 @@ export default function DeckPage() {
                 </a>
               </li>
               <li><Link href="/library">Concrete Poetry</Link></li>
-              <li><Link href="/library">Maiden Archetype Series</Link></li>
+              <li><Link href="/library">Figures</Link></li>
             </ul>
           </div>
 
