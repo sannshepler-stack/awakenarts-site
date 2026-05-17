@@ -14,11 +14,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'AwakenArts — Where Symbol Meets Soul',
+    default: 'AwakenArts — When Language Shapes a Path',
     template: '%s | AwakenArts',
   },
   description:
-    'AwakenArts is a guided encounter with the symbolic life of the soul — rooted in the Christian tradition, in the language of image and symbol. Original concrete poetry, symbolic figures, and a 52-card guidance deck by Susan Ann Shepler.',
+    'Within the Circle — concrete poems and readings by Susan Ann Shepler, where each poem takes the form of its subject. Rooted in the Christian tradition.',
   applicationName: 'AwakenArts',
   authors: [{ name: 'Susan Ann Shepler', url: SITE_URL + '/about' }],
   creator: 'Susan Ann Shepler',
@@ -32,8 +32,6 @@ export const metadata: Metadata = {
     'symbolic imagery',
     'symbolic figures',
     'interior life',
-    'transformational language arts',
-    'guidance deck',
     'Whispers of Awareness',
   ],
   alternates: {
@@ -43,9 +41,9 @@ export const metadata: Metadata = {
     siteName: 'AwakenArts',
     type: 'website',
     url: SITE_URL,
-    title: 'AwakenArts — Where Symbol Meets Soul',
+    title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'A guided encounter with the symbolic life of the soul — rooted in the Christian tradition, in image and symbol. Original concrete poetry and symbolic figures by Susan Ann Shepler.',
+      'Within the Circle — concrete poems and readings by Susan Ann Shepler, where each poem takes the form of its subject. Rooted in the Christian tradition.',
     locale: 'en_US',
     images: [
       {
@@ -58,9 +56,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AwakenArts — Where Symbol Meets Soul',
+    title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'A guided encounter with the symbolic life of the soul — rooted in the Christian tradition, in image and symbol. Original concrete poetry and symbolic figures.',
+      'Within the Circle — concrete poems and readings by Susan Ann Shepler, where each poem takes the form of its subject. Rooted in the Christian tradition.',
     images: ['/images/brand/queen-ann-hero-desktop.jpg'],
   },
   robots: {
@@ -93,7 +91,7 @@ const jsonLd = {
       image: `${SITE_URL}/images/about/susan-ann-shepler.jpg`,
       jobTitle: 'Artist, Writer, Depth-Oriented Counselor',
       description:
-        'Artist, writer, facilitator, and depth-oriented counselor. Creator of AwakenArts, author of Whispers of Awareness, and originator of the AwakenArts Guidance Deck.',
+        'Artist, writer, and depth-oriented counselor. Creator of AwakenArts and the Within the Circle series of concrete poems and readings — rooted in the Christian tradition. Author of Whispers of Awareness (2025).',
       knowsLanguage: ['en', 'es'],
       address: {
         '@type': 'PostalAddress',
