@@ -2294,7 +2294,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 /* Card presentation — final block */
-.begin-page__guidance-deck {
+.begin-page__card-presentation {
   text-align: center;
   padding: 4rem 2rem 7rem;
   border-top: 1px solid var(--mist);
@@ -2345,7 +2345,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-  .begin-page__guidance-deck {
+  .begin-page__card-presentation {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
