@@ -136,7 +136,7 @@ export default function DrawExperience() {
         onKeyDown={handleKeyDown}
         role={revealed ? undefined : 'button'}
         tabIndex={revealed ? undefined : 0}
-        aria-label={revealed ? undefined : `Draw a card — ${card.title}`}
+        aria-label={revealed ? undefined : `Reveal — ${card.title}`}
       >
         <Card
           frontSrc={card.frontSrc}
@@ -151,7 +151,7 @@ export default function DrawExperience() {
       {/* ── Prompt: shown when card is face-down ── */}
       {!revealed && (
         <p className="draw-experience__prompt" aria-hidden>
-          Draw a card
+          Reveal the image
         </p>
       )}
 
@@ -163,9 +163,9 @@ export default function DrawExperience() {
             className="draw-experience__next"
             onClick={handleNext}
             disabled={transitioning}
-            aria-label="Draw another card"
+            aria-label="Reveal the next image"
           >
-            Draw another
+            Reveal the next image
           </button>
         </div>
       )}
