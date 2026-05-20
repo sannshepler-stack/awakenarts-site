@@ -39,10 +39,10 @@ export const metadata: Metadata = {
 const paths = [
   {
     eyebrow: 'Begin with an image',
-    title: 'The Guidance Deck',
-    body: 'Draw a card. See what meets you.',
-    href: '/deck',
-    label: 'Enter the Deck',
+    title: 'Concrete Poems & Readings',
+    body: 'Poems that take the shape of their subject — the symbolic event embodied in form.',
+    href: '/library',
+    label: 'Enter the Library',
   },
   {
     eyebrow: 'Begin with a question',
