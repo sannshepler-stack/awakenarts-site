@@ -5,15 +5,15 @@ import FlipCard from '@/components/FlipCard'
 import FooterSocial from '@/components/FooterSocial'
 
 export const metadata: Metadata = {
-  title: 'The Guidance Deck',
+  title: 'Concrete Poems in Card Form',
   description:
-    'These cards did not begin as guidance. They began as poems. Each holds a symbolic moment — something to be encountered, reflected upon, and allowed to unfold. The 52-card AwakenArts Guidance Deck by Susan Ann Shepler.',
+    'These cards did not begin as guidance. They began as poems. Each holds a symbolic moment — something to be encountered, reflected upon, and allowed to unfold. Fifty-two concrete poems by Susan Ann Shepler, in card-form presentation.',
   alternates: { canonical: '/deck' },
   openGraph: {
     url: '/deck',
-    title: 'The Guidance Deck — AwakenArts',
+    title: 'Concrete Poems in Card Form — AwakenArts',
     description:
-      'These cards did not begin as guidance. They began as poems. The 52-card AwakenArts Guidance Deck.',
+      'These cards did not begin as guidance. They began as poems. Fifty-two concrete poems in card-form presentation.',
   },
 }
 
@@ -82,9 +82,9 @@ export default function DeckPage() {
       <Nav />
 
       {/* ── DECK HERO ─── */}
-      <section className="deck-page-hero deck-page-hero--quiet" aria-label="Guidance Deck">
+      <section className="deck-page-hero deck-page-hero--quiet" aria-label="Concrete poems in card form">
         <div className="deck-page-hero__inner">
-          <p className="eyebrow">The Guidance Deck</p>
+          <p className="eyebrow">Concrete Poems in Card Form</p>
           <h1>
             Symbols for
             <br /><em>the life within.</em>
@@ -94,7 +94,7 @@ export default function DeckPage() {
             It reveals.
           </p>
           <a href="#cards" className="deck-page-hero__invite">
-            Enter the deck.
+            See the cards.
           </a>
         </div>
       </section>
@@ -136,7 +136,7 @@ export default function DeckPage() {
         style={{ textAlign: 'center' }}
       >
         <p className="quote-text" style={{ fontStyle: 'italic' }}>
-          A card that stays with you is an invitation.
+          An image that stays with you is an invitation.
         </p>
         <p className="quote-attr" style={{ marginTop: '0.75rem' }}>
           <Link href="/library" style={{ textDecoration: 'underline' }}>
