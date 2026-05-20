@@ -115,7 +115,7 @@ export default function LibraryPage() {
       </section>
 
       {/* ── FOUNDATIONS ─── */}
-      <section className="lib-section" aria-label="Foundations">
+      <section id="foundations" className="lib-section" aria-label="Foundations">
         <div className="lib-section__header">
           <p className="eyebrow">Foundations</p>
           <h2>The principles behind the work.</h2>
@@ -138,7 +138,7 @@ export default function LibraryPage() {
       </section>
 
       {/* ── FIGURES ─── */}
-      <section className="lib-section lib-section--warm" aria-label="Figures">
+      <section id="figures" className="lib-section lib-section--warm" aria-label="Figures">
         <div className="lib-section__header">
           <p className="eyebrow">Figures</p>
           <h2>The symbolic figures of the journey.</h2>
