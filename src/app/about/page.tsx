@@ -5,13 +5,13 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'About Susan Ann Shepler — AwakenArts',
   description:
-    'Susan Ann Shepler — artist, writer, facilitator, and depth-oriented counselor. Master in Counseling Psychology (Webster University), certified Transformative Language Artist, author of Whispers of Awareness, and creator of the AwakenArts Guidance Deck.',
+    'Susan Ann Shepler — artist, writer, facilitator, and depth-oriented counselor. Master in Counseling Psychology (Webster University), certified Transformative Language Artist, author of Whispers of Awareness, and creator of the AwakenArts Within the Circle series of concrete poems and readings.',
   alternates: { canonical: '/about' },
   openGraph: {
     url: '/about',
     title: 'About Susan Ann Shepler — AwakenArts',
     description:
-      'Artist, writer, and depth-oriented counselor. Creator of AwakenArts and the AwakenArts Guidance Deck.',
+      'Artist, writer, and depth-oriented counselor. Creator of AwakenArts and the Within the Circle series of concrete poems and readings.',
     images: [
       {
         url: '/images/about/susan-ann-shepler.jpg',
@@ -85,7 +85,7 @@ export default function AboutPage() {
         </div>
 
         <p style={{ fontSize: '1.15rem', lineHeight: '1.9', marginBottom: '2rem' }}>
-          Susan is the author of Whispers of Awareness (2025), an anthology combining poetry, art, and Jungian psychology, and the creator of the 52-card AwakenArts Guidance Deck — a symbolic tool for reflection, growth, and creative practice. She is bilingual in English and Spanish and is based in Georgetown, Texas.
+          Susan is the author of Whispers of Awareness (2025), an anthology combining poetry, art, and Jungian psychology, and the creator of the AwakenArts Within the Circle series — fifty-two concrete poems and their card-form presentation. She is bilingual in English and Spanish and is based in Georgetown, Texas.
         </p>
 
         <div style={{ borderTop: '1px solid #e0d8cc', paddingTop: '2.5rem', marginTop: '3rem' }}>
