@@ -7,9 +7,11 @@
 The Encounter System is the technical + philosophical architecture for awakenarts.com. It combines:
 
 - A **philosophical system** (symbolic encounter, not explanation)
-- A **visual system** (cards as primary interface)
-- A **technical system** (Next.js components, scoped phases)
-- A **workflow system** (Claude-driven sessions, one phase at a time)
+- A **visual system** (form, image, and the encounter chain as primary interface)
+- A **technical system** (Next.js App Router routes and scoped components)
+- A **workflow system** (small, bounded implementation passes — one concrete target at a time)
+
+This document describes the system as it actually exists in the repository, not a target architecture.
 
 ---
 
@@ -28,163 +30,158 @@ The Encounter System is the technical + philosophical architecture for awakenart
 
 ---
 
+## Governing Principles
+
+These guide every implementation pass.
+
+### Form is primary
+The project is grounded in symbolic FORM. Concrete poems and their shapes are the originating works. Figures (Mermaid, Dragon, Vase, Queen, etc.) are secondary manifestations that arise from forms. Imagery decisions, encounter construction, card systems, and presentation hierarchy should reflect this ordering — form leads, figure follows.
+
+### Repository-anchored execution
+Work attaches to a specific route, component, file path, or asset. If a change is not implemented in the repo, visible in VS Code, locally verifiable, and committed, it is not yet part of the build. Conceptual reconciliation, ontology drift, and documentation-only progress are explicitly out of scope.
+
+### Calm interaction
+No fast motion. Hover scale capped at `1.03`. Soft fade or slow flip only (150–620 ms). No shuffle animation. No urgency UI.
+
+---
+
 ## Hard Constraints
 
-These cannot be overridden by any session, phase, or preference.
+These cannot be overridden by any pass.
 
-### Card
+### Card (`Card.tsx` / `FlipCard.tsx`)
 - `aspect-ratio: 3 / 5` — locked on the container, not overrideable
-- `object-fit: cover` — applied inline on both face images
+- `object-fit: cover` — applied on both face images
 - `object-position: center top` — preserves subject at all breakpoints
-- Front/back layering via CSS z-index — no DOM reflow on state change
+- Front/back layering via z-index (`Card.tsx`) or 3D rotation (`FlipCard.tsx`) — no DOM reflow on state change
 - No layout shift — container size set by aspect-ratio only
 
-### Motion
-- No fast motion — everything calm
-- Hover scale max `1.03`
-- Fade or soft flip only — `150–300 ms`
-- No shuffle animation
-- No visual randomness effects
-
 ### Hero Image
-- `next/image` with `fill`
-- `priority` — no lazy loading
-- `style={{ objectFit: 'cover', objectPosition: 'center top' }}`
-- No overlay gradients — readability from typography only
+- Rendered via `<picture>` with breakpoint sources (mobile / tablet / desktop variants in `/public/images/brand/`)
+- No overlay gradients — readability comes from typography, not from masking the image
 
 ### Copy & Scope
 - Minimal copy — one clear action per section
-- No new sections added beyond spec
 - No additional CTAs beyond defined ones
-- No urgency buttons (countdown, "limited time", etc.)
+- No urgency language (countdown, "limited time", etc.)
 - Invitation tone throughout
+
+---
+
+## Site Shape (as implemented)
+
+### Homepage (`/`) — the threshold
+The homepage is an invitation, not an overview. It is a single threshold section: brand logo, two-line tagline ("Symbols speak. / The soul listens"), a subline ("Symbols do not explain. They reveal"), one short orienting paragraph, and a primary CTA — **Enter AwakenArts** — that routes to `/encounters`. A quiet secondary nav (Explore the Path · View the Gallery · About Susan) sits below the CTA. A single scripture pull-quote follows the hero. The footer carries Explore / The Work / About columns.
+
+Earlier homepage concepts — orientation tiles, scholar quotes, marquee, library previews, "Draw a Card" landing, signup form, experience promo — have all been relocated or removed. The homepage no longer presents a card-draw interface or any "preview cards" grid.
+
+Sources: `src/app/page.tsx`, `src/app/layout.tsx`, hero styles in `src/app/globals.css`.
+
+### Encounter chain (`/encounters/*`)
+`/encounters` is a transitional video threshold (not indexed), not a destination. It plays a short intro video; the word "enter" fades in around 6.5s, and a click then forwards to the first encounter.
+
+The chain is centralised in `src/app/encounters/sequence.ts`:
+
+```
+mermaid → dragon → vase → queen → continuum
+```
+
+Whatever encounter is currently last in `ENCOUNTER_SEQUENCE` automatically forwards to `/encounters/continuum` (the "rest, more is coming" page) so no encounter dead-ends in a 404. To reorder: rearrange the slugs. To add an encounter: create `/encounters/<slug>` and append the slug to the sequence.
+
+Sources: `src/app/encounters/page.tsx`, `src/app/encounters/sequence.ts`, individual `src/app/encounters/<slug>/page.tsx` files.
+
+### Other routes
+- `/library` — foundations + figures (essay-form content; `.docx` / `.pdf` sources colocated)
+- `/path` — Ann, Grismere, Ballerina figure pages
+- `/gallery` — image gallery
+- `/about`, `/studio`, `/begin`, `/experience` — orientation pages
+- `/deck` — full card gallery using `FlipCard.tsx` (separate from any homepage card system)
+- Legal: `/privacy`, `/terms`, `/disclaimer`, `/copyright`
 
 ---
 
 ## Component Architecture
 
-### `Card.tsx` — Phase 2
-Structural primitive. 3:5 locked. Front/back layering.
+### `FlipCard.tsx` — `/deck` page
+Calm 3D flip interaction (620 ms cubic-bezier). 3:5 ratio. One state per card — no global coordination, no cascading animation. Card back image at `/public/images/cards/backs/card-back.jpg`. Used only on `/deck`.
 
-```tsx
-<Card
-  frontSrc="/images/cards/fronts/guidance.jpg"
-  frontAlt="Guidance"
-  revealed={false}   // false = back showing (default)
-/>
-```
+### `Card.tsx` — structural primitive
+3:5 locked container. Front/back layering via z-index rather than 3D rotation. Supports `revealed`, `interactive` (hover scale 1.03), and `variant="fade"` (opacity cross-fade 150–300 ms). Currently used by `EncounterCard.tsx` and `DrawExperience.tsx`.
 
-### `CardGrid.tsx` — Phase 2
-Responsive layout container. 3 col → 2 col → 1 col.
+### `CardGrid.tsx` — responsive layout
+3 cols (≥769 px) → 2 cols (481–768) → 1 col (≤480). Thin semantic wrapper; layout in `globals.css` under `.card-grid`.
 
-```tsx
-<CardGrid label="Preview cards">
-  <Card ... />
-  <Card ... />
-</CardGrid>
-```
+### `EncounterCard.tsx`
+Card variant used inside the encounter pages.
 
-### `FlipCard.tsx` — Phase 1 (existing)
-Used on `/deck` page for the full 52-card gallery. Flip interaction, 620ms ease.
+### `DrawExperience.tsx`
+Single-card reveal component. Holds a small set of cards (`MOCK_CARDS`) and reveals one at a time with a calm fade. Not currently wired into the homepage.
 
-### `DrawExperience.tsx` — Phase 3 (pending)
-Single-card reveal. Selects from predefined set. Calm fade (150–300 ms). No shuffle.
+### `Nav.tsx`, `FooterSocial.tsx`, `SignupForm.tsx`
+Site chrome and shared interaction primitives.
 
-### `MonetizationPanel.tsx` — Phase 5 (pending)
-Continuation of the experience. No borders, no urgency. Same spacing as card grid.
+### Card asset inventory
+Front artwork: `/public/images/cards/fronts/` (54 images). Card backs: `/public/images/cards/backs/`. To swap a card image, replace the file in place — no component change required.
 
 ---
 
-## Build Phases
+## Working Method
 
-### ✅ Phase 1 — Foundation
-- Nav responsive collapse + mobile full-viewport overlay
-- Hero image → `next/image` fill + priority
-- Mobile dark-body background fixes (Begin Here, gold-rule divider)
-- Offerings nav link → `/#offerings`
+All active work attaches directly to:
 
-### 🔄 Phase 2 — Card System *(current)*
-- `Card.tsx` — 3:5 locked container, front/back CSS layering
-- `CardGrid.tsx` — 3/2/1 col responsive grid
-- Card system CSS in `globals.css`
+- a specific route, **or**
+- a specific component, **or**
+- a specific file path, **or**
+- a specific image asset, **or**
+- a specific visual replacement, **or**
+- a specific implementation task
 
-### ⬜ Phase 3 — Interaction
-- Hover elevation + scale on `Card` (max 1.03)
-- Soft opacity fade on reveal (150–300 ms)
-- `DrawExperience.tsx` — one card, calm reveal, predefined set
+Preferred loop:
 
-### ⬜ Phase 4 — Landing Page Assembly
-- Hero Encounter section
-- Orientation (2–3 lines max)
-- Cards Preview (3–6 cards, hover)
-- Primary CTA — "Draw a Card"
-- Light framing note
-- Monetization entry
+1. Inspect repo state
+2. Identify one concrete implementation target
+3. Make the change
+4. Verify locally (`npm run build`, local dev server)
+5. Commit in a single bounded commit
+6. Move forward
 
-### ⬜ Phase 5 — Monetization Layer
-- `MonetizationPanel.tsx`
-- Digital Deck product link
-- Companion materials link
-- Invitation tone — no urgency
-
-### ⬜ Phase 6 — Polish & Launch
-- Full responsiveness audit
-- Image loading priorities
-- Visual consistency across all pages
-- Build check → commit → push → verify on awakenarts.com
+Out of scope for an implementation pass: recursive planning cycles, governance interpretation, abstract symbolic expansion, document-only progress, architectural restatement without implementation.
 
 ---
 
-## Monetization Model
+## Current Priorities
 
-| Offering | Format | Phase |
-|----------|--------|-------|
-| Digital Deck (primary) | Gumroad or Stripe | Phase 5 |
-| Companion Materials | PDF / gated page | Phase 5 |
-| Physical Deck (future) | Print-on-demand | Phase 6+ |
+These are the active targets, in no fixed order. Each is repository-anchored and bounded.
 
-Approach: **invitation-based**. Value delivered through depth. No aggressive conversion UI.
+- Homepage refinement (within the threshold model — no expansion)
+- Replacement of existing flip-card imagery
+- Stronger atmospheric, form-primary visuals
+- Encounter stabilisation (timing, transitions, mobile playback)
+- Typography cleanup
+- Mobile refinement
+- Route coherence (cross-link sanity, canonical URLs)
+- Visual consistency across pages
+- SEO cleanup (metadata, sitemap, robots)
+- Deployment readiness (build green, Vercel verified on mobile + desktop)
+
+The objective is a functioning, coherent, public-facing AwakenArts experience — not conceptual completion.
 
 ---
 
-## User Flow
+## Deployment
 
-```
-Land → Pause → Curiosity → Interact → Deepen → Convert (invitation)
+Local build verification:
+
+```bash
+cd /Users/sashe/Projects/AwakenArts/awakenarts-site
+npm run build
 ```
 
-1. **Land** — Hero image. Tagline. One action.
-2. **Pause** — User feels recognised, not sold to.
-3. **Curiosity** — Card preview grid (3–6 cards). Hover.
-4. **Interact** — Draw a card. Single reveal.
-5. **Deepen** — Optional companion content or reflection.
-6. **Convert** — Invitation to Digital Deck or Companion. No urgency.
+Push (Vercel auto-deploys in ~60 seconds; verify on mobile + desktop after):
 
----
-
-## Session Workflow
-
-1. Open `docs/CLAUDE_SESSION_STARTER.txt` — drop into Claude chat
-2. Tell Claude which phase you are in
-3. Share a screenshot if visual review is needed
-4. Claude shows **full file changes** before any commit
-5. Approve → Claude commits → run `git push origin main`
-6. Vercel deploys in ~60 seconds → verify on mobile + desktop
-
-**Push command:**
 ```bash
 cd /Users/sashe/Projects/AwakenArts/awakenarts-site && git push origin main
 ```
-
----
-
-## Today's Checklist (Phase 2 → 3)
-
-- [ ] Verify `Card.tsx` renders correctly at all breakpoints
-- [ ] Verify `CardGrid.tsx` columns: 3 / 2 / 1
-- [ ] Verify hero image loads with priority (check Network tab — no lazy)
-- [ ] Push Phase 2 to main
-- [ ] Start Phase 3: add hover states to `Card`, build `DrawExperience`
 
 ---
 
