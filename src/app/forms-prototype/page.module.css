@@ -1,30 +1,34 @@
 /* ─── /forms-prototype — Page Layout ────────────────────────────────────────
    AwakenArts · The Forms — prototype
 
-   Cinematic gallery on the deep contemplative ground. Centered intro;
-   two-column gallery on desktop (one column on mobile) with generous
-   spacing so each Form has room to breathe.
+   Cinematic gallery on the deep contemplative ground. Hierarchy matches
+   the Journal pattern:
+     • topBar      — upper-left ← Home (site nav, standalone)
+     • container   — centered identity block + intro + gallery
+
+   The topBar sits on its own at the top of the page so the site
+   navigation does not visually collide with the centered "The Forms"
+   identity below. Generous breathing room between the two layers.
    ──────────────────────────────────────────────────────────────────────── */
 
 .page {
   min-height: 100vh;
   background: var(--deep);
   color: var(--cream);
-  padding: 6rem 1.5rem 7rem;
+  padding: 3rem 2rem 7rem;
 }
 
-.container {
+/* ─── Top bar: ← Home, upper-left ───────────────────────────────────────── */
+.topBar {
   max-width: 960px;
-  margin: 0 auto;
-  text-align: center;
+  margin: 0 auto 6rem;
+  text-align: left;
 }
 
-/* ─── Top return link: "← Home" ─────────────────────────────────────────── */
 .homeLink {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 3rem;
   font-family: var(--sans);
   font-size: 0.66rem;
   font-weight: 500;
@@ -57,6 +61,13 @@
   .homeArrow {
     transition: none;
   }
+}
+
+/* ─── Centered identity + gallery container ─────────────────────────────── */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* ─── Header / Intro ────────────────────────────────────────────────────── */
@@ -130,7 +141,10 @@
 /* ─── Mobile ────────────────────────────────────────────────────────────── */
 @media (max-width: 560px) {
   .page {
-    padding: 4.5rem 1.25rem 5rem;
+    padding: 2.25rem 1.25rem 5rem;
+  }
+  .topBar {
+    margin-bottom: 4.5rem;
   }
   .intro {
     margin-bottom: 3.5rem;

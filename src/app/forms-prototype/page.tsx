@@ -7,13 +7,19 @@
 // poem-forms themselves are held within the Collection; this page is a
 // visual threshold.
 //
-// IMPORTANT: Forms use authored poem/form names (e.g. "Queen Ann").
-// They are not Journal entries, which use symbolic motifs (e.g. "The
-// Crown"). Do not mix the two systems.
+// Hierarchy (matches /journal pattern):
+//   • topBar (upper-left): ← Home — site-level return, standalone
+//   • centered identity block: eyebrow + title + lede + intro
+//   • gallery of FormPanel entries
+//   • footnote
 //
 // All Forms data is centralized in src/components/forms/. To add a Form,
 // edit forms-data.ts. To stage a Form before its artwork is ready, omit
 // imageSrc and the panel renders as a restrained placeholder.
+//
+// IMPORTANT: Forms use authored poem/form names (e.g. "Queen Ann").
+// They are not Journal entries, which use symbolic motifs (e.g. "The
+// Crown"). Do not mix the two systems.
 // ─────────────────────────────────────────────────────────────────────────────
 
 import Link from 'next/link'
@@ -24,14 +30,16 @@ import styles from './page.module.css'
 export default function FormsPrototypePage() {
   return (
     <main className={styles.page}>
-      <div className={styles.container}>
+      <div className={styles.topBar}>
         <Link href="/" className={styles.homeLink}>
           <span className={styles.homeArrow} aria-hidden="true">
             ←
           </span>
           Home
         </Link>
+      </div>
 
+      <div className={styles.container}>
         <span className={styles.eyebrow}>The Forms</span>
         <h1 className={styles.title}>The Forms</h1>
 
