@@ -9,14 +9,21 @@
 // Static params are generated for the five known territory slugs.
 // Unknown slugs fall through to notFound().
 //
-// Reuses the JournalIndexItem component established in
-// /journal-prototype-v2.
+// Page rhythm matches Susan's directive flow:
+//   1. "The Journal" brand link        (small, returns to /journal)
+//   2. Territory subnav                (current territory marked)
+//   3. Current territory title         (large)
+//   4. Short symbolic descriptor       (italic)
+//   5. Symbol list                     (expandable entries)
+//
+// JournalIndexItem (from /journal-prototype-v2) is reused unchanged.
 // ─────────────────────────────────────────────────────────────────────────────
 
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import JournalIndexItem from '@/components/journal/JournalIndexItem'
+import TerritoryNav from '@/components/journal/TerritoryNav'
 import {
   getAllCategorySlugs,
   getCategoryBySlug,
@@ -68,20 +75,26 @@ export default function JournalCategoryPage({ params }: CategoryPageProps) {
   return (
     <main className={styles.page}>
       <div className={styles.container}>
-        <Link href="/journal" className={styles.backlink}>
-          <span className={styles.backArrow} aria-hidden="true">
-            ←
-          </span>
-          The Journal
-        </Link>
+        {/* Masthead: brand + territory subnav */}
+        <div className={styles.masthead}>
+          <Link href="/journal" className={styles.brand}>
+            The Journal
+          </Link>
+          <TerritoryNav
+            variant="subnav"
+            currentSlug={category.slug}
+            ariaLabel="Symbolic territories"
+          />
+        </div>
 
+        {/* Header: current territory title + descriptor */}
         <header className={styles.header}>
-          <span className={styles.eyebrow}>Symbolic Territory</span>
           <h1 className={styles.title}>{category.name}</h1>
           <p className={styles.description}>{category.description}</p>
           <div className={styles.divider} aria-hidden="true" />
         </header>
 
+        {/* Symbol list */}
         {entries.length === 0 ? (
           <div className={styles.emptyState} role="status">
             This territory is in preparation. New symbols are written and

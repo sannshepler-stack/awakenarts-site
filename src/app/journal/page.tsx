@@ -1,23 +1,18 @@
 // ─── /journal — Index Page ───────────────────────────────────────────────────
 // AwakenArts · The Journal — archive gateway
 //
-// Hidden during architecture build (noindex, not in nav). The page is
-// deliberately restrained: a single block of intro copy followed by an
-// inline text-only navigation of the five symbolic territories.
+// Hidden during architecture build (noindex, not in nav). Deliberately
+// restrained: a single block of intro copy followed by inline navigation
+// of the five symbolic territories, rendered by the shared TerritoryNav
+// component (gateway variant).
 //
-// All Journal data is centralized in src/components/journal/. This page
-// reads through get-entries.ts helpers, so future shifts in data shape
-// do not require rewriting this template.
+// All Journal data is centralized in src/components/journal/.
 // ─────────────────────────────────────────────────────────────────────────────
 
-import Link from 'next/link'
-import { Fragment } from 'react'
-import { getCategoriesWithCounts } from '@/components/journal/get-entries'
+import TerritoryNav from '@/components/journal/TerritoryNav'
 import styles from './page.module.css'
 
 export default function JournalIndexPage() {
-  const territories = getCategoriesWithCounts()
-
   return (
     <main className={styles.page}>
       <div className={styles.container}>
@@ -36,44 +31,7 @@ export default function JournalIndexPage() {
         </p>
 
         <span className={styles.territoriesLabel}>Symbolic Territories</span>
-
-        <nav
-          className={styles.territories}
-          aria-label="Symbolic territories"
-        >
-          {territories.map(({ category, count }, index) => {
-            const isLast = index === territories.length - 1
-
-            const node =
-              count === 0 ? (
-                <span
-                  className={styles.territoryPending}
-                  aria-disabled="true"
-                  title="In preparation"
-                >
-                  {category.name}
-                </span>
-              ) : (
-                <Link
-                  href={`/journal/${category.slug}`}
-                  className={styles.territoryLink}
-                >
-                  {category.name}
-                </Link>
-              )
-
-            return (
-              <Fragment key={category.slug}>
-                {node}
-                {!isLast && (
-                  <span className={styles.separator} aria-hidden="true">
-                    ·
-                  </span>
-                )}
-              </Fragment>
-            )
-          })}
-        </nav>
+        <TerritoryNav variant="gateway" />
 
         <p className={styles.footnote}>
           Prototype · The Journal · not yet linked from navigation

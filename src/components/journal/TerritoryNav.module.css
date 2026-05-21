@@ -1,0 +1,84 @@
+/* ─── TerritoryNav — Module CSS ─────────────────────────────────────────────
+   AwakenArts · The Journal
+   Inline literary navigation across the five symbolic territories.
+   ──────────────────────────────────────────────────────────────────────── */
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.85rem 0.75rem;
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--cream);
+}
+
+/* ─── Variant: gateway — large nav on the root /journal page ────────────── */
+.gateway {
+  font-size: clamp(1.25rem, 1.9vw, 1.55rem);
+  line-height: 1.4;
+}
+
+/* ─── Variant: subnav — smaller nav on each territory page ──────────────── */
+.subnav {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  gap: 0.55rem 0.5rem;
+  letter-spacing: 0.005em;
+}
+
+/* ─── Link to a territory ───────────────────────────────────────────────── */
+.link {
+  display: inline-block;
+  color: var(--cream);
+  transition: color 220ms ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--gold-lt);
+  outline: none;
+}
+
+.link:focus-visible {
+  text-decoration: underline;
+  text-decoration-color: var(--gold-lt);
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+}
+
+/* ─── The current territory (not a link to itself) ──────────────────────── */
+.current {
+  display: inline-block;
+  color: var(--gold-lt);
+  cursor: default;
+}
+
+.subnav .current {
+  /* On subnav: italic to mark "you are here" without using gold too heavily */
+  font-style: italic;
+  color: var(--cream);
+}
+
+/* ─── Pending (empty) territory ─────────────────────────────────────────── */
+.pending {
+  display: inline-block;
+  color: rgba(250, 247, 242, 0.35);
+  cursor: default;
+}
+
+.separator {
+  color: rgba(250, 247, 242, 0.3);
+  user-select: none;
+  font-family: var(--serif);
+}
+
+.subnav .separator {
+  color: rgba(250, 247, 242, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+}

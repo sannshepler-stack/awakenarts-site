@@ -19,11 +19,6 @@
 //   Passage           — path, sea, dove
 //   Time & Memory     — church, poppy, glass
 //   Power & Identity  — king, chessmen, angel, bowls
-//
-// Set aside (preserved at end of file in a comment block, not part of the
-// current architecture):
-//   mountain          — original prompts retained for possible future
-//                       restoration in a territory of Susan's choice
 // ─────────────────────────────────────────────────────────────────────────────
 
 import type { JournalEntry } from './types'
@@ -175,6 +170,17 @@ export const JOURNAL_ENTRIES: ReadonlyArray<JournalEntry> = [
     artPrompt:
       'Use delicate line-work or repeated drifting forms across the page.',
   },
+  {
+    slug: 'mountain',
+    name: 'The Mountain',
+    categorySlug: 'transformation',
+    orientation:
+      'Mountains suggest endurance, perspective, difficulty, and long effort.',
+    reflectionPrompt:
+      'What challenge in your life requires patience rather than speed?',
+    artPrompt:
+      'Use layered elevation, texture, or repeated forms to create a sense of ascent.',
+  },
 
   // ─── Passage ─────────────────────────────────────────────────────────────
   // Also belonging here (awaiting prompts): path, sea, dove.
@@ -307,20 +313,3 @@ export const JOURNAL_ENTRIES: ReadonlyArray<JournalEntry> = [
   },
 ]
 
-// ─── Set aside — not currently mapped to a territory ─────────────────────────
-// Mountain was authored in an earlier prototype but is not placed in the
-// five-territory architecture. Prompts preserved below. To restore: pick
-// a categorySlug, uncomment, and add to JOURNAL_ENTRIES in the appropriate
-// section above.
-//
-// {
-//   slug: 'mountain',
-//   name: 'The Mountain',
-//   categorySlug: '???',  // territory to be chosen by Susan
-//   orientation:
-//     'Mountains suggest endurance, perspective, difficulty, and long effort.',
-//   reflectionPrompt:
-//     'What challenge in your life requires patience rather than speed?',
-//   artPrompt:
-//     'Use layered elevation, texture, or repeated forms to create a sense of ascent.',
-// },
