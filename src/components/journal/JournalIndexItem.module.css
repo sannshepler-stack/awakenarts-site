@@ -1,19 +1,20 @@
 /* ─── JournalIndexItem — Module CSS ─────────────────────────────────────────
-   AwakenArts · /journal-prototype-v2
+   AwakenArts · text-first Journal interface
 
-   Text-first interface. Closed state shows only the symbol name — no
-   card, no border, no fill. The list reads like a commonplace book
-   index. Open state reveals a soft inset panel beneath the name.
+   Designed for the deep contemplative ground (var(--deep)). Closed state
+   shows only the symbol name in cream; the open state reveals a soft
+   cream/parchment inset panel that pops warmly against the dark field.
 
-   Layout owned by the parent (page.module.css). This file defines the
-   row, the name typography, and the reveal panel.
+   Used by:
+     • /journal-prototype-v2
+     • /journal/[category]
    ───────────────────────────────────────────────────────────────────────── */
 
 .item {
   display: flex;
   flex-direction: column;
   padding: 1.5rem 0 1.5rem;
-  border-bottom: 1px solid rgba(28, 43, 58, 0.08);
+  border-bottom: 1px solid rgba(250, 247, 242, 0.1);
 }
 
 .item:last-child {
@@ -32,17 +33,17 @@
   text-align: left;
   cursor: pointer;
   font-family: var(--serif);
-  color: var(--deep);
+  color: var(--cream);
   transition: color 240ms ease;
 }
 
 .trigger:hover .name,
 .trigger:focus-visible .name {
-  color: var(--gold);
+  color: var(--gold-lt);
 }
 
 .trigger:focus-visible {
-  outline: 1px solid var(--gold);
+  outline: 1px solid var(--gold-lt);
   outline-offset: 6px;
   border-radius: 2px;
 }
@@ -51,8 +52,8 @@
   width: 0.4rem;
   height: 0.4rem;
   border-radius: 50%;
-  background: var(--gold);
-  opacity: 0.7;
+  background: var(--gold-lt);
+  opacity: 0.8;
   flex-shrink: 0;
   transform: translateY(-0.15rem);
   transition: opacity 240ms ease, background-color 240ms ease;
@@ -70,7 +71,7 @@
   font-size: clamp(1.55rem, 2.4vw, 1.95rem);
   line-height: 1.2;
   letter-spacing: 0.005em;
-  color: var(--deep);
+  color: var(--cream);
   transition: color 240ms ease;
 }
 
@@ -80,21 +81,18 @@
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--mid);
-  opacity: 0.5;
+  color: rgba(250, 247, 242, 0.55);
   transition: opacity 240ms ease, color 240ms ease;
   flex-shrink: 0;
 }
 
 .trigger:hover .glyph,
 .trigger:focus-visible .glyph {
-  opacity: 1;
-  color: var(--gold);
+  color: var(--gold-lt);
 }
 
 .item.open .glyph {
-  opacity: 0.7;
-  color: var(--gold);
+  color: var(--gold-lt);
 }
 
 /* ─── Panel: closed -> 0 height, open -> auto ───────────────────────────── */
@@ -122,10 +120,11 @@
   background: var(--cream);
   border-left: 1px solid var(--gold);
   border-radius: 0 2px 2px 0;
-  box-shadow: 0 1px 6px rgba(28, 43, 58, 0.06);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  color: var(--deep);
 }
 
 .section {
