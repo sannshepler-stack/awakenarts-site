@@ -1,0 +1,104 @@
+/* ─── /journal-prototype-v2 — Page Layout ───────────────────────────────────
+   AwakenArts · The Journal — text-first variant
+
+   A parchment-toned ground, a single narrow column. The list reads as
+   a symbolic index, a contemplative notebook, a literary archive.
+   ──────────────────────────────────────────────────────────────────────── */
+
+.page {
+  min-height: 100vh;
+  background: #f3ede1;
+  color: var(--deep);
+  padding: 5.5rem 1.5rem 6rem;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ─── Header / Intro ────────────────────────────────────────────────────── */
+.header {
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  letter-spacing: 0.005em;
+  color: var(--deep);
+  margin-bottom: 1.5rem;
+}
+
+.lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--mid);
+  margin-bottom: 1rem;
+  max-width: 56ch;
+}
+
+.intro {
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--deep);
+  opacity: 0.78;
+  max-width: 60ch;
+}
+
+/* ─── Separator between intro and list ──────────────────────────────────── */
+.divider {
+  width: 2.25rem;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+  margin: 3rem 0 1.5rem;
+}
+
+/* ─── The list itself ───────────────────────────────────────────────────── */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid rgba(28, 43, 58, 0.08);
+}
+
+/* ─── Footnote ──────────────────────────────────────────────────────────── */
+.footnote {
+  margin: 5rem 0 0;
+  text-align: left;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  opacity: 0.55;
+}
+
+/* ─── Small-screen tightening ───────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .page {
+    padding: 4rem 1.25rem 5rem;
+  }
+  .header {
+    margin-bottom: 3rem;
+  }
+}
