@@ -15,13 +15,13 @@
   min-height: 100vh;
   background: var(--deep);
   color: var(--cream);
-  padding: 3rem 2rem 7rem;
+  padding: 6rem 1.5rem 7rem;
 }
 
 /* ─── Top bar: ← Home, upper-left ───────────────────────────────────────── */
 .topBar {
   max-width: 960px;
-  margin: 0 auto 6rem;
+  margin: 0 auto 4rem;
   text-align: left;
 }
 
@@ -141,10 +141,10 @@
 /* ─── Mobile ────────────────────────────────────────────────────────────── */
 @media (max-width: 560px) {
   .page {
-    padding: 2.25rem 1.25rem 5rem;
+    padding: 4.5rem 1.25rem 5rem;
   }
   .topBar {
-    margin-bottom: 4.5rem;
+    margin-bottom: 3rem;
   }
   .intro {
     margin-bottom: 3.5rem;
