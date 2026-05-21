@@ -75,10 +75,13 @@ export default function JournalCategoryPage({ params }: CategoryPageProps) {
   return (
     <main className={styles.page}>
       <div className={styles.container}>
-        {/* Masthead: brand + territory subnav */}
+        {/* Masthead: explicit return link + territory subnav */}
         <div className={styles.masthead}>
-          <Link href="/journal" className={styles.brand}>
-            The Journal
+          <Link href="/journal" className={styles.backLink}>
+            <span className={styles.backArrow} aria-hidden="true">
+              ←
+            </span>
+            Back to Journal
           </Link>
           <TerritoryNav
             variant="subnav"

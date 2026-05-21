@@ -2,8 +2,8 @@
    AwakenArts · The Journal — one symbolic territory
 
    Layered hierarchy on the deep contemplative ground:
-     • small "The Journal" brand link  (returns to gateway)
-     • inline territory subnav         (current territory marked here)
+     • "← Back to Journal" return link  (explicit, eyebrow style)
+     • inline territory subnav          (current territory marked)
      • large current-territory title
      • short symbolic descriptor
      • symbol list (expandable entries via JournalIndexItem)
@@ -21,27 +21,48 @@
   margin: 0 auto;
 }
 
-/* ─── Masthead block: brand + subnav ────────────────────────────────────── */
+/* ─── Masthead block: return link + subnav ──────────────────────────────── */
 .masthead {
   margin-bottom: 4rem;
 }
 
-.brand {
-  display: inline-block;
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: 1.05rem;
-  letter-spacing: 0.01em;
-  color: rgba(250, 247, 242, 0.85);
-  margin-bottom: 1.25rem;
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(250, 247, 242, 0.65);
   transition: color 220ms ease;
 }
 
-.brand:hover,
-.brand:focus-visible {
+.backLink:hover,
+.backLink:focus-visible {
   color: var(--gold-lt);
   outline: none;
+}
+
+.backArrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  transition: transform 220ms ease;
+}
+
+.backLink:hover .backArrow,
+.backLink:focus-visible .backArrow {
+  transform: translateX(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backLink,
+  .backArrow {
+    transition: none;
+  }
 }
 
 /* ─── Header: territory title + descriptor ──────────────────────────────── */
@@ -119,11 +140,5 @@
   }
   .header {
     margin-bottom: 2.25rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .brand {
-    transition: none;
   }
 }
