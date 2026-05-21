@@ -29,9 +29,21 @@ export interface SymbolicForm {
   imageSrc?: string
   /** Accessible alt text for the image. Recommended when imageSrc set. */
   imageAlt?: string
+  /**
+   * Optional path to a short atmospheric video (e.g. ".../queen-ann.mp4").
+   * When set, the panel renders the still image as the resting state and
+   * layers the video on top; the video plays on hover / focus-within and
+   * pauses + resets on leave / blur.
+   */
+  videoSrc?: string
 }
 
 /** True when the Form has an image asset attached. */
 export function hasImage(form: SymbolicForm): boolean {
   return Boolean(form.imageSrc)
+}
+
+/** True when the Form has an atmospheric video attached. */
+export function hasVideo(form: SymbolicForm): boolean {
+  return Boolean(form.videoSrc)
 }

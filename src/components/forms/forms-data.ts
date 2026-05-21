@@ -23,6 +23,7 @@ export const SYMBOLIC_FORMS: ReadonlyArray<SymbolicForm> = [
     name: 'Queen Ann',
     imageSrc: '/images/brand/queen-ann-hero-desktop.jpg',
     imageAlt: 'Queen Ann — a painted figure in contemplation.',
+    videoSrc: '/videos/queen-ann.mp4',
   },
   {
     slug: 'mermaid-grismere',
