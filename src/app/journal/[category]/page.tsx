@@ -75,14 +75,25 @@ export default function JournalCategoryPage({ params }: CategoryPageProps) {
   return (
     <main className={styles.page}>
       <div className={styles.container}>
-        {/* Masthead: explicit return link + territory subnav */}
+        {/* Masthead: return links + territory subnav */}
         <div className={styles.masthead}>
-          <Link href="/journal" className={styles.backLink}>
-            <span className={styles.backArrow} aria-hidden="true">
-              ←
+          <div className={styles.returnLinks}>
+            <Link href="/" className={styles.returnLink}>
+              <span className={styles.returnArrow} aria-hidden="true">
+                ←
+              </span>
+              Home
+            </Link>
+            <span className={styles.returnSeparator} aria-hidden="true">
+              ·
             </span>
-            Back to Journal
-          </Link>
+            <Link href="/journal" className={styles.returnLink}>
+              <span className={styles.returnArrow} aria-hidden="true">
+                ←
+              </span>
+              Back to Journal
+            </Link>
+          </div>
           <TerritoryNav
             variant="subnav"
             currentSlug={category.slug}

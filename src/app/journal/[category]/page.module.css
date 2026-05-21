@@ -2,7 +2,7 @@
    AwakenArts · The Journal — one symbolic territory
 
    Layered hierarchy on the deep contemplative ground:
-     • "← Back to Journal" return link  (explicit, eyebrow style)
+     • return links: "← Home  ·  ← Back to Journal"
      • inline territory subnav          (current territory marked)
      • large current-territory title
      • short symbolic descriptor
@@ -21,16 +21,23 @@
   margin: 0 auto;
 }
 
-/* ─── Masthead block: return link + subnav ──────────────────────────────── */
+/* ─── Masthead block: return links + subnav ─────────────────────────────── */
 .masthead {
   margin-bottom: 4rem;
 }
 
-.backLink {
+.returnLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.returnLink {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 0.4rem;
   font-family: var(--sans);
   font-size: 0.66rem;
   font-weight: 500;
@@ -40,27 +47,34 @@
   transition: color 220ms ease;
 }
 
-.backLink:hover,
-.backLink:focus-visible {
+.returnLink:hover,
+.returnLink:focus-visible {
   color: var(--gold-lt);
   outline: none;
 }
 
-.backArrow {
+.returnArrow {
   display: inline-block;
   font-size: 0.85rem;
   letter-spacing: 0;
   transition: transform 220ms ease;
 }
 
-.backLink:hover .backArrow,
-.backLink:focus-visible .backArrow {
+.returnLink:hover .returnArrow,
+.returnLink:focus-visible .returnArrow {
   transform: translateX(-3px);
 }
 
+.returnSeparator {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  color: rgba(250, 247, 242, 0.3);
+  user-select: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .backLink,
-  .backArrow {
+  .returnLink,
+  .returnArrow {
     transition: none;
   }
 }

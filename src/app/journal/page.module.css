@@ -21,6 +21,46 @@
   text-align: center;
 }
 
+/* ─── Top return link: "← Home" ─────────────────────────────────────────── */
+.homeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(250, 247, 242, 0.65);
+  transition: color 220ms ease;
+}
+
+.homeLink:hover,
+.homeLink:focus-visible {
+  color: var(--gold-lt);
+  outline: none;
+}
+
+.homeArrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  transition: transform 220ms ease;
+}
+
+.homeLink:hover .homeArrow,
+.homeLink:focus-visible .homeArrow {
+  transform: translateX(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homeLink,
+  .homeArrow {
+    transition: none;
+  }
+}
+
 /* ─── Header / Intro ────────────────────────────────────────────────────── */
 .eyebrow {
   display: inline-block;

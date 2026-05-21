@@ -9,6 +9,7 @@
 // All Journal data is centralized in src/components/journal/.
 // ─────────────────────────────────────────────────────────────────────────────
 
+import Link from 'next/link'
 import TerritoryNav from '@/components/journal/TerritoryNav'
 import styles from './page.module.css'
 
@@ -16,6 +17,13 @@ export default function JournalIndexPage() {
   return (
     <main className={styles.page}>
       <div className={styles.container}>
+        <Link href="/" className={styles.homeLink}>
+          <span className={styles.homeArrow} aria-hidden="true">
+            ←
+          </span>
+          Home
+        </Link>
+
         <span className={styles.eyebrow}>The Journal</span>
         <h1 className={styles.title}>The Journal</h1>
 
