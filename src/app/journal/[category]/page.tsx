@@ -1,22 +1,20 @@
 // ─── /journal/[category] — Dynamic Territory Page ───────────────────────────
 // AwakenArts · The Journal — one symbolic territory
 //
+// Hierarchy (top to bottom):
+//   1. topBar       — upper-left ← Home (site nav, standalone)
+//   2. masthead     — ← Back to Journal (section return)
+//                     + territory subnav (lateral movement)
+//   3. header       — large current-territory title + short descriptor
+//   4. list         — symbol entries (expandable via JournalIndexItem)
+//
+// Each tier gets its own vertical breathing room so the layers read
+// as distinct rather than collapsing into a compressed nav strip.
+//
 // One template renders every territory page. Entries are filtered from
-// the centralized data via getEntriesByCategory(). To add or remove
-// territories, edit categories.ts and types.ts — this file does not
-// need to change.
-//
-// Static params are generated for the five known territory slugs.
-// Unknown slugs fall through to notFound().
-//
-// Page rhythm matches Susan's directive flow:
-//   1. "The Journal" brand link        (small, returns to /journal)
-//   2. Territory subnav                (current territory marked)
-//   3. Current territory title         (large)
-//   4. Short symbolic descriptor       (italic)
-//   5. Symbol list                     (expandable entries)
-//
-// JournalIndexItem (from /journal-prototype-v2) is reused unchanged.
+// the centralized data via getEntriesByCategory(). Static params are
+// generated for the five known territory slugs; unknown slugs fall
+// through to notFound().
 // ─────────────────────────────────────────────────────────────────────────────
 
 import type { Metadata } from 'next'
@@ -74,26 +72,25 @@ export default function JournalCategoryPage({ params }: CategoryPageProps) {
 
   return (
     <main className={styles.page}>
+      {/* 1. Site nav — upper-left, standalone */}
+      <div className={styles.topBar}>
+        <Link href="/" className={styles.homeLink}>
+          <span className={styles.homeArrow} aria-hidden="true">
+            ←
+          </span>
+          Home
+        </Link>
+      </div>
+
       <div className={styles.container}>
-        {/* Masthead: return links + territory subnav */}
+        {/* 2. Section return + lateral territory navigation */}
         <div className={styles.masthead}>
-          <div className={styles.returnLinks}>
-            <Link href="/" className={styles.returnLink}>
-              <span className={styles.returnArrow} aria-hidden="true">
-                ←
-              </span>
-              Home
-            </Link>
-            <span className={styles.returnSeparator} aria-hidden="true">
-              ·
+          <Link href="/journal" className={styles.backToJournal}>
+            <span className={styles.backArrow} aria-hidden="true">
+              ←
             </span>
-            <Link href="/journal" className={styles.returnLink}>
-              <span className={styles.returnArrow} aria-hidden="true">
-                ←
-              </span>
-              Back to Journal
-            </Link>
-          </div>
+            Back to Journal
+          </Link>
           <TerritoryNav
             variant="subnav"
             currentSlug={category.slug}
@@ -101,14 +98,14 @@ export default function JournalCategoryPage({ params }: CategoryPageProps) {
           />
         </div>
 
-        {/* Header: current territory title + descriptor */}
+        {/* 3. Current territory title + descriptor */}
         <header className={styles.header}>
           <h1 className={styles.title}>{category.name}</h1>
           <p className={styles.description}>{category.description}</p>
           <div className={styles.divider} aria-hidden="true" />
         </header>
 
-        {/* Symbol list */}
+        {/* 4. Symbol list */}
         {entries.length === 0 ? (
           <div className={styles.emptyState} role="status">
             This territory is in preparation. New symbols are written and

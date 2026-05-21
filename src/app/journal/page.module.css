@@ -1,32 +1,33 @@
 /* ─── /journal — Index Page ─────────────────────────────────────────────────
    AwakenArts · The Journal — archive gateway
 
-   Restrained literary index on the deep contemplative ground. The
-   gateway content is centered to feel like an intentional entrance.
-   Constrained-width paragraphs are centered via auto margins; the
-   territory nav itself centers via the .gateway variant in
-   TerritoryNav.module.css.
+   Hierarchy:
+     • topBar         — upper-left ← Home (site nav, standalone)
+     • container      — centered identity block + intro + territory nav
+
+   The topBar sits on its own at the top of the page so site navigation
+   (← Home) does not visually collide with the centered "The Journal"
+   identity below. Generous breathing room between the two layers.
    ──────────────────────────────────────────────────────────────────────── */
 
 .page {
   min-height: 100vh;
   background: var(--deep);
   color: var(--cream);
-  padding: 6rem 1.5rem 7rem;
+  padding: 3rem 2rem 7rem;
 }
 
-.container {
+/* ─── Top bar: ← Home, upper-left ───────────────────────────────────────── */
+.topBar {
   max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
+  margin: 0 auto 6rem;
+  text-align: left;
 }
 
-/* ─── Top return link: "← Home" ─────────────────────────────────────────── */
 .homeLink {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 3rem;
   font-family: var(--sans);
   font-size: 0.66rem;
   font-weight: 500;
@@ -61,7 +62,13 @@
   }
 }
 
-/* ─── Header / Intro ────────────────────────────────────────────────────── */
+/* ─── Centered identity + content ───────────────────────────────────────── */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .eyebrow {
   display: inline-block;
   font-family: var(--sans);
@@ -128,7 +135,10 @@
 /* ─── Mobile ────────────────────────────────────────────────────────────── */
 @media (max-width: 560px) {
   .page {
-    padding: 4.5rem 1.25rem 5rem;
+    padding: 2.25rem 1.25rem 5rem;
+  }
+  .topBar {
+    margin-bottom: 4.5rem;
   }
   .intro {
     margin-bottom: 3.5rem;
