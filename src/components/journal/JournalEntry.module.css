@@ -1,0 +1,180 @@
+/* ─── JournalEntry — Module CSS ─────────────────────────────────────────────
+   AwakenArts · /journal-prototype
+
+   Visual language:
+     • parchment-toned panel on a deep contemplative ground
+     • restrained accent rule (gold) — no decorative excess
+     • generous interior spacing — reading should feel slow
+     • soft expand on reveal, no spectacle, no flip
+
+   Sizes match the directive: 320–360px desktop panel, single-column on
+   small screens. Layout is owned by the parent grid (page.module.css).
+   ───────────────────────────────────────────────────────────────────────── */
+
+.entry {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 2.25rem 1.75rem;
+  background: var(--cream);
+  color: var(--deep);
+  border: 1px solid rgba(28, 43, 58, 0.08);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(28, 43, 58, 0.04);
+  cursor: pointer;
+  transition:
+    background-color 320ms ease,
+    box-shadow 320ms ease,
+    border-color 320ms ease;
+  font-family: var(--serif);
+  text-align: left;
+}
+
+.entry:hover {
+  background: #fbf9f4;
+  box-shadow: 0 2px 8px rgba(28, 43, 58, 0.08);
+}
+
+.entry:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.entry.open {
+  cursor: default;
+  background: #fbf9f4;
+  box-shadow: 0 3px 14px rgba(28, 43, 58, 0.10);
+}
+
+/* ─── Header: accent rule + symbol name ─────────────────────────────────── */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.accent {
+  width: 2.25rem;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.7;
+}
+
+.name {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: var(--deep);
+}
+
+/* ─── Body: hidden when closed, fades + slides in when open ─────────────── */
+.body {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 380ms ease,
+    opacity 320ms ease 60ms;
+}
+
+.entry.open .body {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.bodyInner {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sectionLabel {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.sectionText {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--deep);
+}
+
+.sectionText em {
+  font-style: italic;
+  color: var(--mid);
+}
+
+/* ─── Footer hint: only visible when closed ─────────────────────────────── */
+.hint {
+  margin-top: 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+  opacity: 0.65;
+  transition: opacity 220ms ease;
+}
+
+.entry.open .hint {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* ─── Close affordance (visible only when open) ─────────────────────────── */
+.closeRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.close {
+  background: none;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+.close:hover,
+.close:focus-visible {
+  color: var(--gold);
+  outline: none;
+}
+
+/* ─── Reduced motion — disable transitions ──────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .entry,
+  .body,
+  .hint,
+  .close {
+    transition: none;
+  }
+}
