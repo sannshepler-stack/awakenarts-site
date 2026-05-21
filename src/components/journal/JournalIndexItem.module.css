@@ -21,6 +21,33 @@
   border-bottom: none;
 }
 
+/* ─── Planned entry: name only, non-interactive ─────────────────────────── */
+.itemPlanned {
+  opacity: 0.58;
+}
+
+.triggerStatic {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.25rem 0;
+  width: 100%;
+  font-family: var(--serif);
+  color: var(--cream);
+  cursor: default;
+}
+
+.plannedHint {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(250, 247, 242, 0.5);
+  font-style: normal;
+  flex-shrink: 0;
+}
+
 /* ─── Trigger row: gold dot, symbol name, quiet glyph ───────────────────── */
 .trigger {
   display: flex;

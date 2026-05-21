@@ -1,9 +1,14 @@
 // ─── Journal — Types ─────────────────────────────────────────────────────────
 // AwakenArts · The Journal
 //
-// Shape of a single Journal entry. Each entry pairs a symbolic motif with
-// a brief orientation, a reflection prompt, and an art-journaling prompt,
-// and belongs to one symbolic territory (its categorySlug).
+// Shape of a single Journal entry. Each entry names a symbolic motif and
+// belongs to one symbolic territory. Prompts (orientation, reflection,
+// art) are optional — a planned symbol may appear in the archive with
+// just its name before its prompts are written.
+//
+// Rendering convention:
+//   • Entry with prompts present → expandable JournalIndexItem
+//   • Entry without prompts      → non-interactive name row (planned)
 //
 // The Journal is a separate offering from The Forms. It is symbolic
 // reflection and contemplative participation — not oracle, not divination,
@@ -12,12 +17,7 @@
 
 /**
  * Valid symbolic territory slugs. Limited to FIVE — this is an
- * architectural decision for pacing, readability, and coherence. Do
- * not extend this union casually; new territories require deliberate
- * curation.
- *
- * Order in this union has no runtime meaning; arc order is defined
- * in categories.ts.
+ * architectural decision for pacing, readability, and coherence.
  */
 export type CategorySlug =
   | 'thresholds'
@@ -33,10 +33,24 @@ export interface JournalEntry {
   name: string
   /** Primary symbolic territory this entry belongs to. */
   categorySlug: CategorySlug
-  /** One- to two-sentence symbolic orientation. Not a definition. */
-  orientation: string
-  /** Reflective question for the visitor. */
-  reflectionPrompt: string
-  /** Art-journaling prompt — gesture-oriented, materials light. */
-  artPrompt: string
+  /**
+   * One- to two-sentence symbolic orientation. Optional — when absent,
+   * the entry is treated as a planned symbol and rendered as a
+   * non-interactive name row.
+   */
+  orientation?: string
+  /** Reflective question for the visitor. Optional (see orientation). */
+  reflectionPrompt?: string
+  /** Art-journaling prompt — gesture-oriented, materials light. Optional. */
+  artPrompt?: string
+}
+
+/**
+ * True when an entry has the full set of prompts ready. False entries
+ * are planned symbols whose prompts have not yet been written.
+ */
+export function isEntryReady(entry: JournalEntry): boolean {
+  return Boolean(
+    entry.orientation && entry.reflectionPrompt && entry.artPrompt
+  )
 }

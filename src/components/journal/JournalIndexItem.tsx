@@ -1,16 +1,22 @@
 'use client'
 
 // ─── JournalIndexItem ────────────────────────────────────────────────────────
-// AwakenArts · /journal-prototype-v2
+// AwakenArts · The Journal · text-first row
 //
-// Text-first Journal interface. A row in a symbolic index / commonplace
-// book. Closed state shows only the symbol name with a quiet gold dot;
-// the open state reveals a soft inset panel beneath it.
+// A row in a symbolic index / commonplace book. Two render modes:
 //
-// Each item manages its own state independently — opening one does not
-// close others. This matches the "literary archive" feel: you may have
-// several entries open at once, the way a reader might leave multiple
-// pages bookmarked.
+//   • Ready entry   — has orientation / reflection / art prompts.
+//                     Closed state shows the symbol name with a quiet
+//                     gold dot; open state reveals a soft inset panel.
+//
+//   • Planned entry — only the name is known so far. Rendered as a
+//                     non-interactive row at lower opacity so the
+//                     visitor sees the intended shape of the territory
+//                     without expecting an interaction that isn't ready.
+//
+// Each ready item manages its own state independently — opening one
+// does not close others. This matches the "literary archive" feel: you
+// may have several entries open at once.
 //
 // Voice constraints (per directive + AGENTS.md):
 //   • No "draw" / "guidance" / "oracle" / "divination" language.
@@ -24,15 +30,43 @@ import {
   MouseEvent as ReactMouseEvent,
 } from 'react'
 import styles from './JournalIndexItem.module.css'
-import type { JournalEntry as JournalEntryData } from './types'
+import { isEntryReady, type JournalEntry as JournalEntryData } from './types'
 
 interface JournalIndexItemProps {
   entry: JournalEntryData
 }
 
 export default function JournalIndexItem({ entry }: JournalIndexItemProps) {
-  const [isOpen, setIsOpen] = useState(false)
+  // ─── Planned entry — name only, non-interactive ─────────────────────────
+  if (!isEntryReady(entry)) {
+    return (
+      <li
+        className={`${styles.item} ${styles.itemPlanned}`}
+        aria-label={`${entry.name} — entry in preparation`}
+      >
+        <div className={styles.triggerStatic}>
+          <span className={styles.dot} aria-hidden="true" />
+          <span className={styles.name}>{entry.name}</span>
+          <span className={styles.plannedHint} aria-hidden="true">
+            soon
+          </span>
+        </div>
+      </li>
+    )
+  }
 
+  // ─── Ready entry — interactive reveal ───────────────────────────────────
+  // (All prompt fields are present here per isEntryReady; assertion is
+  //  safe because the type is narrowed by intent, not by TS — read access
+  //  is below.)
+  return <ReadyEntry entry={entry} />
+}
+
+// ─── Ready-entry subcomponent ───────────────────────────────────────────────
+// Split into its own component so the useState hook is only mounted when
+// the entry actually has prompts to reveal.
+function ReadyEntry({ entry }: { entry: JournalEntryData }) {
+  const [isOpen, setIsOpen] = useState(false)
   const toggle = useCallback(() => setIsOpen((v) => !v), [])
   const close = useCallback(() => setIsOpen(false), [])
 
@@ -42,7 +76,6 @@ export default function JournalIndexItem({ entry }: JournalIndexItemProps) {
         e.preventDefault()
         close()
       }
-      // Enter and Space are already handled natively by <button>.
     },
     [isOpen, close]
   )

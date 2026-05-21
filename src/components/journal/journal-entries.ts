@@ -14,11 +14,10 @@
 //   • reflectionPrompt  — invitational, second person, no directive language
 //   • artPrompt         — gesture / materials / shapes, never instructive
 //
-// Future symbols (placed in territories but awaiting prompts — do not
-// invent prompts; wait for Susan):
-//   Passage           — path, sea, dove
-//   Time & Memory     — church, poppy, glass
-//   Power & Identity  — king, chessmen, angel, bowls
+// Planned entries (symbol named, prompts not yet written): these appear
+// in their territory as non-interactive name rows so visitors see the
+// full intended shape of the archive. Prompts are written by Susan and
+// added in subsequent passes — do not invent prompt copy.
 // ─────────────────────────────────────────────────────────────────────────────
 
 import type { JournalEntry } from './types'
@@ -183,7 +182,6 @@ export const JOURNAL_ENTRIES: ReadonlyArray<JournalEntry> = [
   },
 
   // ─── Passage ─────────────────────────────────────────────────────────────
-  // Also belonging here (awaiting prompts): path, sea, dove.
   {
     slug: 'ship',
     name: 'The Ship',
@@ -217,9 +215,12 @@ export const JOURNAL_ENTRIES: ReadonlyArray<JournalEntry> = [
     artPrompt:
       'Experiment with repeated circular marks, echoes, or radiating patterns.',
   },
+  // Planned (prompts to come):
+  { slug: 'path', name: 'The Path', categorySlug: 'passage' },
+  { slug: 'sea', name: 'The Sea', categorySlug: 'passage' },
+  { slug: 'dove', name: 'The Dove', categorySlug: 'passage' },
 
   // ─── Time & Memory ───────────────────────────────────────────────────────
-  // Also belonging here (awaiting prompts): church, poppy, glass.
   {
     slug: 'hourglass',
     name: 'The Hourglass',
@@ -264,9 +265,12 @@ export const JOURNAL_ENTRIES: ReadonlyArray<JournalEntry> = [
     artPrompt:
       'Build layered organic forms using repeated growth-like shapes or textures.',
   },
+  // Planned (prompts to come):
+  { slug: 'church', name: 'The Church', categorySlug: 'time-and-memory' },
+  { slug: 'poppy', name: 'The Poppy', categorySlug: 'time-and-memory' },
+  { slug: 'glass', name: 'The Glass', categorySlug: 'time-and-memory' },
 
   // ─── Power & Identity ────────────────────────────────────────────────────
-  // Also belonging here (awaiting prompts): king, chessmen, angel, bowls.
   {
     slug: 'crown',
     name: 'The Crown',
@@ -311,5 +315,10 @@ export const JOURNAL_ENTRIES: ReadonlyArray<JournalEntry> = [
     artPrompt:
       'Create marks, layers, or shapes that suggest hidden compartments, locks, or openings.',
   },
+  // Planned (prompts to come):
+  { slug: 'king', name: 'The King', categorySlug: 'power-and-identity' },
+  { slug: 'chessmen', name: 'The Chessmen', categorySlug: 'power-and-identity' },
+  { slug: 'angel', name: 'The Angel', categorySlug: 'power-and-identity' },
+  { slug: 'bowls', name: 'The Bowls', categorySlug: 'power-and-identity' },
 ]
 
