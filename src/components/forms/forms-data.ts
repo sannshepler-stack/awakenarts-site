@@ -7,10 +7,10 @@
 //
 // Current placeholder strategy (per directive):
 //   • Queen Ann is the only Form with its own matching still + video pair.
-//     - Still:  /images/forms/Ann_Forms.png  (matches the video — same
+//     - Still:  /images/forms/queen-ann-still.png  (matches the video — same
 //               crop, same composition, same atmospheric tone)
-//     - Video:  /videos/queen-ann.mp4
-//   • All other Forms reuse the same Ann_Forms still as a shared
+//     - Video:  /videos/forms/queen-ann-motion.mp4
+//   • All other Forms reuse the same queen-ann-still as a shared
 //     atmospheric placeholder while keeping their own poem-form names.
 //   • Only Queen Ann has hover motion; the others remain still.
 //
@@ -24,7 +24,7 @@
 
 import type { SymbolicForm } from './types'
 
-const ANN_FORMS_STILL = '/images/forms/Ann_Forms.png'
+const ANN_FORMS_STILL = '/images/forms/queen-ann-still.png'
 const ANN_FORMS_PLACEHOLDER_ALT =
   'Placeholder atmospheric still — authored artwork forthcoming.'
 
@@ -35,7 +35,7 @@ export const SYMBOLIC_FORMS: ReadonlyArray<SymbolicForm> = [
     imageSrc: ANN_FORMS_STILL,
     imageAlt:
       'Queen Ann — atmospheric still: a windswept figure with form-silhouette overlay.',
-    videoSrc: '/videos/queen-ann.mp4',
+    videoSrc: '/videos/forms/queen-ann-motion.mp4',
   },
   {
     slug: 'mermaid-grismere',

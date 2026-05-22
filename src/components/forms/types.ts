@@ -30,7 +30,7 @@ export interface SymbolicForm {
   /** Accessible alt text for the image. Recommended when imageSrc set. */
   imageAlt?: string
   /**
-   * Optional path to a short atmospheric video (e.g. ".../queen-ann.mp4").
+   * Optional path to a short atmospheric video (e.g. "/videos/forms/queen-ann-motion.mp4").
    * When set, the panel renders the still image as the resting state and
    * layers the video on top; the video plays on hover / focus-within and
    * pauses + resets on leave / blur.
