@@ -6,13 +6,16 @@
 // into individual pages.
 //
 // Current placeholder strategy (per directive):
-//   • Queen Ann is the only Form with its own matching still + video pair.
-//     - Still:  /images/forms/queen-ann-still.png  (matches the video — same
-//               crop, same composition, same atmospheric tone)
-//     - Video:  /videos/forms/queen-ann-motion.mp4
-//   • All other Forms reuse the same queen-ann-still as a shared
+//   • Forms with their own matching still + video pair:
+//     - Queen Ann
+//         Still:  /images/forms/queen-ann-still.png
+//         Video:  /videos/forms/queen-ann-motion.mp4
+//     - Mermaid Grismere
+//         Still:  /images/forms/mermaid-grismere-still.png
+//         Video:  /videos/forms/mermaid-grismere-motion.mp4
+//   • All other Forms reuse the queen-ann-still as a shared
 //     atmospheric placeholder while keeping their own poem-form names.
-//   • Only Queen Ann has hover motion; the others remain still.
+//   • Only Forms with a videoSrc have hover motion; the others remain still.
 //
 // The brand hero (/images/brand/queen-ann-hero-desktop.jpg) is no longer
 // referenced by the Forms page. It remains in /public for use elsewhere
@@ -40,8 +43,10 @@ export const SYMBOLIC_FORMS: ReadonlyArray<SymbolicForm> = [
   {
     slug: 'mermaid-grismere',
     name: 'Mermaid Grismere',
-    imageSrc: ANN_FORMS_STILL,
-    imageAlt: ANN_FORMS_PLACEHOLDER_ALT,
+    imageSrc: '/images/forms/mermaid-grismere-still.png',
+    imageAlt:
+      'Mermaid Grismere — atmospheric still: a figure beneath the water with form-silhouette overlay.',
+    videoSrc: '/videos/forms/mermaid-grismere-motion.mp4',
   },
   {
     slug: 'the-dragon',
