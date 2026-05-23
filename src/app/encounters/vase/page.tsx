@@ -1,124 +1,157 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Cormorant_Garamond } from "next/font/google";
 import { getNextEncounter } from "../sequence";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400"],
   style: ["italic"],
+  weight: ["400"],
 });
 
 export default function VaseEncounterPage() {
-  const [ended, setEnded] = useState(false);
-  const [showLine1, setShowLine1] = useState(false);
-  const [showLine2, setShowLine2] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setShowLine1(true), 2500);
-    const t2 = setTimeout(() => setShowLine2(true), 5000);
-    const t3 = setTimeout(() => setShowButton(true), 9000);
-    return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-      clearTimeout(t3);
-    };
+    const v = videoRef.current;
+
+    if (v) {
+      v.playbackRate = 0.8;
+      v.play().catch(() => {});
+    }
+
+    const tButton = setTimeout(() => setShowButton(true), 12000);
+
+    return () => clearTimeout(tButton);
   }, []);
 
   return (
     <main
       style={{
-        position: "relative",
         width: "100%",
         height: "100vh",
         overflow: "hidden",
         background: "#000",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      <video
-        src="/videos/vase.mp4"
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        onEnded={(e) => {
-          const v = e.currentTarget;
-          v.pause();
-          v.currentTime = Math.max(0, v.duration - 0.05);
-          setEnded(true);
-        }}
+      <section
         style={{
-          position: "absolute",
-          inset: 0,
+          position: "relative",
           width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          filter: ended ? "brightness(0.7)" : "brightness(1)",
-          transition: "filter 1.2s ease",
-        }}
-      />
-
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-end",
-          alignItems: "center",
-          textAlign: "center",
-          color: "#fff",
-          textShadow: "0 2px 12px rgba(0,0,0,0.6)",
-          padding: "0 24px 8vh 24px",
-          pointerEvents: "none",
+          height: "75vh",
+          overflow: "hidden",
+          background: "#000",
         }}
       >
-        <p
-          style={{
-            fontSize: "1.25rem",
-            letterSpacing: "0.02em",
-            margin: 0,
-            marginBottom: "0.75rem",
-            opacity: showLine1 ? 1 : 0,
-            transition: "opacity 1.5s ease",
+        <video
+          ref={videoRef}
+          src="/videos/vase.mp4"
+          autoPlay
+          muted
+          playsInline
+          preload="auto"
+          onLoadedMetadata={(e) => {
+            e.currentTarget.playbackRate = 0.8;
           }}
-        >
-          We are more than an outer shell.
-        </p>
-
-        <p
-          style={{
-            fontSize: "1.25rem",
-            letterSpacing: "0.02em",
-            margin: 0,
-            marginBottom: "2rem",
-            opacity: showLine2 ? 1 : 0,
-            transition: "opacity 1.5s ease",
+          onEnded={(e) => {
+            const v = e.currentTarget;
+            v.pause();
+            v.currentTime = Math.max(0, v.duration - 0.05);
           }}
-        >
-          We hold a truth within.
-        </p>
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "50% 50%",
+            filter: "brightness(0.92)",
+            transition: "filter 2s ease",
+          }}
+        />
+      </section>
 
+      <aside
+        style={{
+          height: "25vh",
+          width: "100%",
+          background: "#f4efe6",
+          color: "#2f2a26",
+          position: "relative",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "1.5rem 2rem",
+          boxSizing: "border-box",
+          borderTop: "1px solid rgba(0,0,0,0.08)",
+        }}
+      >
         <Link
-          href={getNextEncounter("vase")}
-          className={`encounter-forward ${cormorant.className}`}
+          href="/"
+          className={cormorant.className}
           style={{
-            color: "#fff",
+            position: "absolute",
+            top: "1.1rem",
+            left: "1.5rem",
+            color: "#6f665e",
             textDecoration: "none",
+            fontSize: "1.15rem",
             fontStyle: "italic",
-            fontSize: "1.5rem",
-            letterSpacing: "0.01em",
-            opacity: showButton ? 0.9 : 0,
-            pointerEvents: showButton ? "auto" : "none",
-            transition: "opacity 1.5s ease",
           }}
         >
-          forward
+          home
         </Link>
-      </div>
+
+        <div style={{ maxWidth: "780px", textAlign: "center" }}>
+          <h1
+            className={cormorant.className}
+            style={{
+              fontSize: "2.35rem",
+              fontWeight: 400,
+              fontStyle: "italic",
+              margin: "0 0 0.45rem",
+            }}
+          >
+            Vase
+          </h1>
+
+          <p
+            style={{
+              fontFamily: "Georgia, serif",
+              fontSize: "1.16rem",
+              lineHeight: 1.42,
+              letterSpacing: "0.01em",
+              margin: "0 0 0.9rem",
+              whiteSpace: "pre-line",
+            }}
+          >
+            {`“We have this treasure in earthen vessels.” — 2 Corinthians 4:7
+
+The vessel is fashioned for what it is meant to carry.`}
+          </p>
+
+          <Link
+            href={getNextEncounter("vase")}
+            className={cormorant.className}
+            style={{
+              color: "#2f2a26",
+              textDecoration: "none",
+              fontSize: "1.4rem",
+              fontStyle: "italic",
+              opacity: showButton ? 0.9 : 0,
+              pointerEvents: showButton ? "auto" : "none",
+              transition: "opacity 1.5s ease",
+            }}
+          >
+            forward
+          </Link>
+        </div>
+      </aside>
     </main>
   );
 }
