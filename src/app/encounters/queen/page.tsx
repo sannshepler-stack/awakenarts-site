@@ -23,7 +23,7 @@ export default function QueenEncounterPage() {
       v.play().catch(() => {});
     }
 
-    const tButton = setTimeout(() => setShowButton(true), 12000);
+    const tButton = setTimeout(() => setShowButton(true), 7000);
 
     return () => clearTimeout(tButton);
   }, []);

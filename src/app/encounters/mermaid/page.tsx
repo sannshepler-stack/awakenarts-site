@@ -28,7 +28,7 @@ export default function MermaidEncounterPage() {
     const tDescend = setTimeout(() => setStage(1), 500);
     const tDeepen = setTimeout(() => setStage(2), 13000);
     const tSettle = setTimeout(() => setEnded(true), 13000);
-    const tButton = setTimeout(() => setShowButton(true), 18500);
+    const tButton = setTimeout(() => setShowButton(true), 7000);
 
     return () => {
       clearTimeout(tDescend);
@@ -170,7 +170,7 @@ We begin in the depths and rise toward the light.`}
               fontStyle: "italic",
               opacity: showButton ? 0.9 : 0,
               pointerEvents: showButton ? "auto" : "none",
-              transition: "opacity 1.5s ease",
+              transition: "opacity 0.6s ease",
             }}
           >
             forward
