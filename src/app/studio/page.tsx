@@ -79,16 +79,16 @@ export default function StudioPage() {
                   src="/images/forms/mermaid-grismere-still.png"
                   alt="Mermaid Grismere — symbolic figure"
                   fill
-                  sizes="(max-width: 640px) 38vw, 180px"
+                  sizes="(max-width: 640px) 38vw, 220px"
                   className="studio-silhouette-pair__img"
                 />
               </div>
               <div className="studio-silhouette-pair__item">
                 <Image
-                  src="/images/figures/ballerina/ballerina.png"
-                  alt="The Ballerina — symbolic figure"
+                  src="/images/figures/ann/ann.png"
+                  alt="Queen Ann — figure study"
                   fill
-                  sizes="(max-width: 640px) 38vw, 180px"
+                  sizes="(max-width: 640px) 38vw, 220px"
                   className="studio-silhouette-pair__img"
                 />
               </div>
