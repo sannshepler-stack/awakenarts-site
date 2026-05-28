@@ -7,7 +7,7 @@ import FooterSocial from '@/components/FooterSocial'
 export const metadata: Metadata = {
   title: 'Studio — AwakenArts',
   description:
-    'The visual symbolic art practice of AwakenArts — silhouettes, symbolic figures, and atmospheric works by Susan Ann Shepler.',
+    'The visual symbolic art practice of AwakenArts — silhouettes, digital art paintings, and concrete poems by Susan Ann Shepler.',
   alternates: { canonical: '/studio' },
   openGraph: {
     url: '/studio',
@@ -46,9 +46,9 @@ export default function StudioPage() {
           </div>
         </section>
 
-        {/* ── 1. SILHOUETTES — entry panel ────────────────────────
+        {/* ── 1. SILHOUETTES ──────────────────────────────────────
             The opening visual territory. Shaping forms, symbolic
-            contours, threshold presences. Calm and singular.
+            contours, threshold presences. Spacious, singular.
         ──────────────────────────────────────────────────────── */}
         <section className="studio-entry-section" aria-label="Silhouettes">
           <div className="studio-section__inner">
@@ -60,7 +60,7 @@ export default function StudioPage() {
                     src="/images/forms/queen-ann-still.png"
                     alt="Queen Ann — symbolic figure"
                     fill
-                    sizes="(max-width: 640px) 90vw, 420px"
+                    sizes="(max-width: 640px) 80vw, 360px"
                     className="studio-entry-panel__img"
                   />
                 </div>
@@ -74,67 +74,15 @@ export default function StudioPage() {
           </div>
         </section>
 
-        {/* ── 2. IMAGES, SYMBOLS, AND SHAPES ──────────────────────
-            The symbolic image territory. Queen Ann leads; Mermaid
-            Grismere recedes into secondary presence. Dark field.
-        ──────────────────────────────────────────────────────── */}
-        <section className="studio-symbolic-section" aria-labelledby="studio-symbolic-heading">
-          <div className="studio-section__inner">
-
-            <div className="studio-symbolic-header">
-              <p className="eyebrow studio-symbolic-eyebrow">Studio</p>
-              <h2 id="studio-symbolic-heading">
-                Images, Symbols,<br />
-                <em>and Shapes</em>
-              </h2>
-            </div>
-
-            <div className="studio-preview-panels">
-              <div className="studio-preview-panel">
-                <div className="studio-preview-panel__frame">
-                  <Image
-                    src="/images/forms/queen-ann-still.png"
-                    alt="Queen Ann — symbolic figure"
-                    fill
-                    sizes="(max-width: 640px) 90vw, 44vw"
-                    className="studio-preview-panel__img"
-                  />
-                </div>
-                <p className="studio-preview-panel__name">Queen Ann</p>
-              </div>
-
-              <div className="studio-preview-panel studio-preview-panel--secondary">
-                <div className="studio-preview-panel__frame">
-                  <Image
-                    src="/images/forms/mermaid-grismere-still.png"
-                    alt="Mermaid Grismere — symbolic figure"
-                    fill
-                    sizes="(max-width: 640px) 90vw, 40vw"
-                    className="studio-preview-panel__img"
-                  />
-                </div>
-                <p className="studio-preview-panel__name">Mermaid Grismere</p>
-              </div>
-            </div>
-
-            <p className="studio-symbolic-cta">
-              <Link href="/studio/silhouettes" className="text-link studio-symbolic-link">
-                View all silhouettes <span aria-hidden="true">→</span>
-              </Link>
-            </p>
-
-          </div>
-        </section>
-
-        {/* ── 3. PAINTERLY WORKS ──────────────────────────────────
-            A quieter, secondary territory. Atmospheric figures.
-            3-across at smaller scale. Warm field. Curated.
+        {/* ── 2. DIGITAL ART PAINTINGS ────────────────────────────
+            Quieter territory. Atmospheric figures at restrained
+            scale. Warm field. Curated, not crowded.
         ──────────────────────────────────────────────────────── */}
         <section className="studio-painterly-section" aria-labelledby="studio-painterly-heading">
           <div className="studio-section__inner">
 
             <div className="studio-painterly-header">
-              <p className="eyebrow">Painterly Works</p>
+              <p className="eyebrow">Digital Art Paintings</p>
               <h2 id="studio-painterly-heading">
                 Atmospheric figures<br />
                 <em>and studies</em>
@@ -147,7 +95,7 @@ export default function StudioPage() {
                   src="/images/gallery/angel.PNG"
                   alt="Angel — atmospheric painterly figure"
                   fill
-                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                  sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
                   className="studio-painterly-img"
                 />
               </div>
@@ -156,7 +104,7 @@ export default function StudioPage() {
                   src="/images/gallery/girlsitting.jpg"
                   alt="Seated Figure — atmospheric painterly study"
                   fill
-                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                  sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
                   className="studio-painterly-img"
                 />
               </div>
@@ -165,7 +113,7 @@ export default function StudioPage() {
                   src="/images/gallery/may.jpg"
                   alt="May — atmospheric painterly figure"
                   fill
-                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                  sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
                   className="studio-painterly-img"
                 />
               </div>
@@ -174,7 +122,7 @@ export default function StudioPage() {
                   src="/images/gallery/dark-girl.jpg"
                   alt="Figure Study — atmospheric painterly work"
                   fill
-                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                  sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
                   className="studio-painterly-img"
                 />
               </div>
@@ -183,7 +131,7 @@ export default function StudioPage() {
                   src="/images/gallery/hawaiian-girl.jpg"
                   alt="Figure — atmospheric painterly study"
                   fill
-                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                  sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
                   className="studio-painterly-img"
                 />
               </div>
@@ -192,14 +140,55 @@ export default function StudioPage() {
                   src="/images/gallery/indian-girl.jpg"
                   alt="Figure Study — painterly atmospheric work"
                   fill
-                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                  sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
                   className="studio-painterly-img"
                 />
               </div>
             </div>
 
-            {/* ── 4. FEMININE MOTIFS — quiet orienting subheading ── */}
-            <p className="studio-feminine-motifs">Feminine Motifs</p>
+          </div>
+        </section>
+
+        {/* ── 3. CONCRETE POEMS ───────────────────────────────────
+            The quietest and most restrained territory.
+            Originating language-image structures. Intimate scale.
+            More spaciously separated than the paintings above.
+        ──────────────────────────────────────────────────────── */}
+        <section className="studio-poems-section" aria-labelledby="studio-poems-heading">
+          <div className="studio-poems-inner">
+
+            <div className="studio-poems-header">
+              <p className="eyebrow studio-poems-eyebrow">Concrete Poems</p>
+              <h2 id="studio-poems-heading">
+                Language as<br />
+                <em>visual form</em>
+              </h2>
+              <p className="studio-poems-intro">
+                Originating image-text structures — the language-forms
+                beneath the larger symbolic world.
+              </p>
+            </div>
+
+            <div className="studio-poems-grid">
+              <div className="studio-poems-item">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/experiences/butterfly-wordart.png"
+                  alt="Butterfly Word-Art — a concrete poem in the shape of a butterfly"
+                  className="studio-poems-img"
+                  loading="lazy"
+                />
+              </div>
+              <div className="studio-poems-item">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/experiences/word-form-spiral.png"
+                  alt="Word-Form Spiral — a concrete poem in spiral form"
+                  className="studio-poems-img"
+                  loading="lazy"
+                />
+              </div>
+            </div>
 
           </div>
         </section>
@@ -240,7 +229,8 @@ export default function StudioPage() {
             <h4>Studio</h4>
             <ul>
               <li><Link href="/studio/silhouettes">Silhouettes</Link></li>
-              <li><span className="footer-pending">Painterly Works</span></li>
+              <li><span className="footer-pending">Digital Art Paintings</span></li>
+              <li><span className="footer-pending">Concrete Poems</span></li>
             </ul>
           </div>
           <div className="footer-col">

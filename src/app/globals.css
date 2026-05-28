@@ -3990,7 +3990,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 /* ── Single-panel entry layout (Studio landing) ────────── */
 .studio-entry-panels--single {
   grid-template-columns: 1fr;
-  max-width: 420px;
+  max-width: 360px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -4089,14 +4089,14 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .studio-painterly-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 960px;
+  gap: 1.25rem;
+  max-width: 840px;
   margin: 0 auto;
 }
 
 .studio-painterly-item {
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 2px;
   background: var(--mist);
@@ -4105,48 +4105,108 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .studio-painterly-img {
   object-fit: cover;
   object-position: center top;
-  opacity: .82;
+  opacity: .78;
   transition: opacity .4s ease;
 }
 
 .studio-painterly-item:hover .studio-painterly-img {
-  opacity: 1;
-}
-
-/* ── 4. FEMININE MOTIFS — quiet orienting label ─────────── */
-.studio-feminine-motifs {
-  text-align: center;
-  margin-top: 4rem;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: .95rem;
-  letter-spacing: .06em;
-  color: var(--mid);
-  opacity: .6;
-}
-
-@media (max-width: 768px) {
-  .studio-painterly-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-  }
+  opacity: .96;
 }
 
 @media (max-width: 640px) {
   .studio-painterly-section { padding: 5rem 1.25rem 4rem; }
-  .studio-painterly-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
+  .studio-painterly-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 380px) {
   .studio-painterly-grid {
     grid-template-columns: 1fr;
-    max-width: 320px;
+    max-width: 280px;
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+/* ── 3. CONCRETE POEMS (Studio landing) ───────────────────
+   The quietest territory. Language-image structures.
+   Cream field. Intimate scale. Spaciously separated.
+─────────────────────────────────────────────────────────── */
+.studio-poems-section {
+  background: #f5f0e8;
+  padding: 7rem 2rem 9rem;
+  border-top: 1px solid var(--mist);
+  text-align: center;
+}
+
+.studio-poems-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.studio-poems-header {
+  margin-bottom: 5rem;
+}
+
+.studio-poems-eyebrow {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.studio-poems-eyebrow::before { display: none; }
+
+.studio-poems-section h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--deep);
+  margin: 0 0 1.5rem;
+}
+
+.studio-poems-section h2 em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.studio-poems-intro {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.85;
+  color: var(--mid);
+  max-width: 46ch;
+  margin: 0 auto;
+  opacity: .85;
+}
+
+.studio-poems-grid {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.studio-poems-item {
+  flex: 0 0 auto;
+  width: min(260px, 42vw);
+}
+
+.studio-poems-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: .82;
+  transition: opacity .4s ease;
+}
+
+.studio-poems-item:hover .studio-poems-img {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .studio-poems-section { padding: 5rem 1.25rem 7rem; }
+  .studio-poems-grid { gap: 2.5rem; }
+  .studio-poems-item { width: min(220px, 80vw); }
 }
 
 /* ── Silhouettes page heading subline ─────────────────── */
