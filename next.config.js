@@ -14,6 +14,8 @@ const nextConfig = {
       { source: '/path/ann',       destination: '/studio', permanent: true },
       // /journey → /studio  (retired route, content folded into Studio)
       { source: '/journey',        destination: '/studio', permanent: true },
+      // /begin → /  (retired route, homepage is now the threshold)
+      { source: '/begin',          destination: '/',       permanent: true },
       // /forms-prototype → /studio  (Forms integrated into Studio)
       { source: '/forms-prototype', destination: '/studio', permanent: true },
     ]

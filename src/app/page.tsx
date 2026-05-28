@@ -159,7 +159,7 @@ export default function HomePage() {
               </div>
               <p className="studio-preview-panel__name">Queen Ann</p>
             </div>
-            <div className="studio-preview-panel">
+            <div className="studio-preview-panel studio-preview-panel--secondary">
               <div className="studio-preview-panel__frame">
                 <Image
                   src="/images/forms/mermaid-grismere-still.png"
