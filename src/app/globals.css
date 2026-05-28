@@ -3399,23 +3399,27 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   opacity: 1;
 }
 
-/* Secondary panel — Grismere should feel integrated into her
-   underwater setting, not cropped. object-fit: contain preserves
-   the full composition; the dark frame background matches the
-   image's deep-water field, so the edges dissolve naturally.
-   margin-top offsets the panel from the primary for hierarchy. */
+/* Secondary panel — Grismere should feel spatially integrated
+   into the underwater environment, not cropped or truncated.
+   Frame aspect-ratio 2/3 matches Grismere's natural portrait
+   ratio (1600×2302 ≈ 0.695), so contain fills without letterbox.
+   scale(0.82) zooms the image out — the figure sits smaller
+   within a larger surrounding dark-water field.
+   margin-top offsets the panel to let the primary lead. */
 .studio-preview-panel--secondary .studio-preview-panel__frame {
-  aspect-ratio: 4 / 4.2;
+  aspect-ratio: 2 / 3;
   margin-top: 1.5rem;
-  background: #0d1a24; /* deep underwater tone — matches Grismere image */
+  background: #0a1520; /* deep underwater tone */
 }
 .studio-preview-panel--secondary .studio-preview-panel__img {
   object-fit: contain;
   object-position: center center;
-  opacity: .72;
+  transform: scale(0.82);
+  transform-origin: center center;
+  opacity: .70;
 }
 .studio-preview-panel--secondary:hover .studio-preview-panel__img {
-  opacity: .90;
+  opacity: .88;
 }
 
 .studio-preview-panel__name {
@@ -3997,6 +4001,45 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   max-width: 360px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ── Two quiet silhouettes beneath the Ann opening panel ──
+   Restrained scale, no labels, ample separation.
+   These continue the silhouette territory without repeating
+   a full new section or oversized symbolic announcement.
+─────────────────────────────────────────────────────────── */
+.studio-silhouette-pair {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 3.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.studio-silhouette-pair__item {
+  position: relative;
+  width: 180px;
+  flex: 0 0 180px;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background: transparent;
+}
+
+.studio-silhouette-pair__img {
+  object-fit: cover;
+  object-position: center top;
+  opacity: .55;
+  transition: opacity .45s ease;
+}
+
+.studio-silhouette-pair__item:hover .studio-silhouette-pair__img {
+  opacity: .78;
+}
+
+@media (max-width: 640px) {
+  .studio-silhouette-pair { gap: 2rem; margin-top: 2.5rem; }
+  .studio-silhouette-pair__item { width: 140px; flex-basis: 140px; }
 }
 
 /* ── 2. IMAGES, SYMBOLS, AND SHAPES (Studio landing) ──────

@@ -47,13 +47,15 @@ export default function StudioPage() {
         </section>
 
         {/* ── 1. SILHOUETTES ──────────────────────────────────────
-            The opening visual territory. Shaping forms, symbolic
-            contours, threshold presences. Spacious, singular.
+            Opening visual territory. Queen Ann leads. Two quieter
+            silhouettes follow — restrained, spacious, no labels.
+            Together they establish the threshold atmosphere.
         ──────────────────────────────────────────────────────── */}
         <section className="studio-entry-section" aria-label="Silhouettes">
           <div className="studio-section__inner">
-            <div className="studio-entry-panels studio-entry-panels--single">
 
+            {/* Primary: Ann still — links to full silhouettes page */}
+            <div className="studio-entry-panels studio-entry-panels--single">
               <Link href="/studio/silhouettes" className="studio-entry-panel">
                 <div className="studio-entry-panel__frame">
                   <Image
@@ -66,11 +68,32 @@ export default function StudioPage() {
                 </div>
                 <div className="studio-entry-panel__label">
                   <p className="eyebrow">Silhouettes</p>
-                  <p>Symbols, Images, and Shapes</p>
                 </div>
               </Link>
-
             </div>
+
+            {/* Secondary: two quieter silhouettes — no labels, reduced scale */}
+            <div className="studio-silhouette-pair" aria-hidden="true">
+              <div className="studio-silhouette-pair__item">
+                <Image
+                  src="/images/forms/mermaid-grismere-still.png"
+                  alt="Mermaid Grismere — symbolic figure"
+                  fill
+                  sizes="(max-width: 640px) 38vw, 180px"
+                  className="studio-silhouette-pair__img"
+                />
+              </div>
+              <div className="studio-silhouette-pair__item">
+                <Image
+                  src="/images/figures/ballerina/ballerina.png"
+                  alt="The Ballerina — symbolic figure"
+                  fill
+                  sizes="(max-width: 640px) 38vw, 180px"
+                  className="studio-silhouette-pair__img"
+                />
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -101,8 +124,8 @@ export default function StudioPage() {
               </div>
               <div className="studio-painterly-item">
                 <Image
-                  src="/images/gallery/girlsitting.jpg"
-                  alt="Seated Figure — atmospheric painterly study"
+                  src="/images/gallery/mermaid-genie-1.PNG"
+                  alt="Mermaid Genie — atmospheric painterly figure"
                   fill
                   sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
                   className="studio-painterly-img"
