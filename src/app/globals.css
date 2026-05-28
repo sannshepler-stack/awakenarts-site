@@ -3360,13 +3360,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   margin: 0 auto;
 }
 
-/* Two-panel grid */
+/* Two-panel grid — primary leads, secondary recedes */
 .studio-preview-panels {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
   max-width: 900px;
   margin: 0 auto 3.5rem;
+  align-items: start;
 }
 
 .studio-preview-panel {
@@ -3399,14 +3400,18 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 /* Secondary panel — dials back visual weight so a bolder figure
-   doesn't overwhelm the primary panel. Lower resting opacity,
-   top-biased crop so the figure sits with more air above it. */
+   doesn't overwhelm the primary panel. Narrower column, shorter
+   frame, lower resting opacity, top-biased crop for breathing room. */
+.studio-preview-panel--secondary .studio-preview-panel__frame {
+  aspect-ratio: 4 / 4.2;
+  margin-top: 1.5rem; /* offset from top — lets primary panel dominate vertically */
+}
 .studio-preview-panel--secondary .studio-preview-panel__img {
-  opacity: .72;
-  object-position: center 15%;
+  opacity: .65;
+  object-position: center 20%;
 }
 .studio-preview-panel--secondary:hover .studio-preview-panel__img {
-  opacity: .90;
+  opacity: .85;
 }
 
 .studio-preview-panel__name {
@@ -3980,6 +3985,168 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   cursor: default;
   pointer-events: none;
   opacity: 0.72;
+}
+
+/* ── Single-panel entry layout (Studio landing) ────────── */
+.studio-entry-panels--single {
+  grid-template-columns: 1fr;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── 2. IMAGES, SYMBOLS, AND SHAPES (Studio landing) ──────
+   Dark-field section — reuses studio-preview-panel system.
+   Shares background language with the homepage preview.
+─────────────────────────────────────────────────────────── */
+.studio-symbolic-section {
+  background: var(--deep);
+  padding: 6rem 2rem 5rem;
+  border-top: 1px solid rgba(201, 168, 76, .1);
+}
+
+.studio-symbolic-header {
+  max-width: 640px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.studio-symbolic-eyebrow {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: var(--gold-lt);
+}
+.studio-symbolic-eyebrow::before { display: none; }
+
+.studio-symbolic-section h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--cream);
+  margin: 0 0 1.25rem;
+}
+
+.studio-symbolic-section h2 em {
+  color: var(--gold-lt);
+  font-style: italic;
+}
+
+.studio-symbolic-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.studio-symbolic-link {
+  color: var(--gold-lt) !important;
+  border-bottom-color: rgba(201, 168, 76, .45) !important;
+}
+.studio-symbolic-link:hover {
+  color: var(--cream) !important;
+  border-bottom-color: rgba(250, 247, 242, .4) !important;
+}
+
+@media (max-width: 640px) {
+  .studio-symbolic-section { padding: 5rem 1.25rem 4rem; }
+}
+
+/* ── 3. PAINTERLY WORKS (Studio landing) ──────────────────
+   Warm-field section. 3-across grid at restrained scale.
+   Quieter and secondary to the symbolic section above.
+─────────────────────────────────────────────────────────── */
+.studio-painterly-section {
+  background: var(--warm);
+  padding: 6rem 2rem 5rem;
+  border-top: 1px solid var(--mist);
+}
+
+.studio-painterly-header {
+  max-width: 640px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.studio-painterly-header .eyebrow {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.studio-painterly-header .eyebrow::before { display: none; }
+
+.studio-painterly-header h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--deep);
+  margin: 0;
+}
+
+.studio-painterly-header h2 em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.studio-painterly-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.studio-painterly-item {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--mist);
+}
+
+.studio-painterly-img {
+  object-fit: cover;
+  object-position: center top;
+  opacity: .82;
+  transition: opacity .4s ease;
+}
+
+.studio-painterly-item:hover .studio-painterly-img {
+  opacity: 1;
+}
+
+/* ── 4. FEMININE MOTIFS — quiet orienting label ─────────── */
+.studio-feminine-motifs {
+  text-align: center;
+  margin-top: 4rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: .95rem;
+  letter-spacing: .06em;
+  color: var(--mid);
+  opacity: .6;
+}
+
+@media (max-width: 768px) {
+  .studio-painterly-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .studio-painterly-section { padding: 5rem 1.25rem 4rem; }
+  .studio-painterly-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .studio-painterly-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* ── Silhouettes page heading subline ─────────────────── */
