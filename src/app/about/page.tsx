@@ -97,11 +97,6 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div style={{ marginTop: '3rem' }}>
-          <Link href="/begin" style={{ fontSize: '1rem', letterSpacing: '0.08em', color: '#1C2B3A', textDecoration: 'none', borderBottom: '1px solid #1C2B3A', paddingBottom: '2px' }}>
-            Begin Here
-          </Link>
-        </div>
 
       </main>
       </div>

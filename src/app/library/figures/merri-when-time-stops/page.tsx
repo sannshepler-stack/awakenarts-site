@@ -304,7 +304,6 @@ export default function MerriPage() {
             <ul>
               <li><Link href="/path">The Path</Link></li>
               <li><Link href="/library">The Library</Link></li>
-              <li><Link href="/begin">Offerings</Link></li>
             </ul>
           </div>
           <div className="footer-col">
@@ -319,7 +318,6 @@ export default function MerriPage() {
             <h4>About</h4>
             <ul>
               <li><Link href="/about">Formation &amp; Provenance</Link></li>
-              <li><Link href="/begin">Begin Here</Link></li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Use</Link></li>
             </ul>

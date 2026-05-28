@@ -17,12 +17,12 @@ export const metadata: Metadata = {
 /* ── Page ──────────────────────────────────────────────── */
 /*
  * Homepage — The Threshold
- * Per AwakenArts Site Alignment Brief (April 2026):
- * The homepage is an invitation, not an overview. It sends the
- * visitor into Encounters. All orientation, explanation, tiles,
- * scholar quotes, signup, marquee, library previews, and the
- * experience promo have been relocated or removed so the page
- * functions as a single threshold.
+ * Alignment + Subtraction pass (May 2026):
+ * 4-section structure: Hero → Studio preview → Library preview →
+ * The AwakenArts Collection. Encounters section removed — Encounters
+ * functions through direct navigation, not homepage explanation.
+ * Collection imagery removed — silhouettes belong to Studio.
+ * Homepage suggests, implies, atmospherically introduces.
  */
 
 export default function HomePage() {
@@ -55,51 +55,43 @@ export default function HomePage() {
             priority
           />
 
-          {/* Tagline — two lines, each in its own span so the
-              second line can be indented for a balanced shape. */}
+          {/* Primary tagline — the studio's full identity phrase.
+              Two spans let the second line indent for a balanced shape. */}
           <h1 className="hero-tagline">
-            <span>Symbols speak.</span>
-            <span>The soul listens</span>
+            <span>When Language</span>
+            <span>Shapes a Path</span>
           </h1>
 
-          {/* Sub line — secondary, lighter. */}
-          <p className="hero-subline">Symbols do not explain. They reveal</p>
+          {/* Supporting atmospheric line — quieter weight than h1. */}
+          <p className="hero-subline">Symbols speak. The soul listens.</p>
 
-          {/* Existing paragraph. */}
+          {/* Sub line — what the work actually is. */}
           <p className="hero-sub">
-            AwakenArts is a guided encounter with the symbolic life of the
-            soul — rooted in the Christian tradition, and the language of
+            Concrete poems, symbolic forms, readings, and encounters —
+            rooted in the Christian tradition, and the language of
             image and symbol.
           </p>
 
-          {/*
-           * Primary CTA. Wording opens the whole AwakenArts world rather
-           * than naming any one feature; encounters remain reachable
-           * (this still routes to /encounters) but the language no
-           * longer implies that the encounter system is the entire site.
-           */}
+          {/* Primary CTA — into the encounter sequence. */}
           <Link href="/encounters" className="hero-cta">
-            Enter AwakenArts <span className="arrow" aria-hidden="true">→</span>
+            Enter the Encounters <span className="arrow" aria-hidden="true">→</span>
           </Link>
 
           {/*
            * Secondary paths — quiet, understated, not button-like.
-           * Their job is to surface the broader body of work (Path,
-           * Gallery, About) so that encounters reads as one unfolding
-           * dimension of the site rather than the sole destination.
-           * Styling deliberately lightweight (.hero-secondary).
+           * Surfaces the collection, the work itself, and the maker.
            */}
           <nav className="hero-secondary" aria-label="Other paths">
-            <Link href="/path" className="hero-secondary-link">
-              Explore the Path
+            <Link href="/studio" className="hero-secondary-link">
+              Studio
             </Link>
             <span className="hero-secondary-sep" aria-hidden="true">·</span>
-            <Link href="/gallery" className="hero-secondary-link">
-              View the Gallery
+            <Link href="/library" className="hero-secondary-link">
+              Library
             </Link>
             <span className="hero-secondary-sep" aria-hidden="true">·</span>
             <Link href="/about" className="hero-secondary-link">
-              About Susan
+              About
             </Link>
           </nav>
         </div>
@@ -139,6 +131,120 @@ export default function HomePage() {
         </p>
       </section>
 
+      {/* ── SECTION 2: STUDIO PREVIEW ────────────────────────────
+          Two atmospheric image panels. Images carry the atmosphere.
+          Minimal copy. Studio section refined to elemental language.
+      ──────────────────────────────────────────────────────────── */}
+      <section className="studio-preview-section" aria-labelledby="studio-preview-heading">
+        <div className="studio-preview-inner">
+
+          <div className="studio-preview-header">
+            <p className="eyebrow">Studio</p>
+            <h2 id="studio-preview-heading">
+              Symbols, Images,<br />
+              <em>Settings, and Shapes</em>
+            </h2>
+          </div>
+
+          <div className="studio-preview-panels">
+            <div className="studio-preview-panel">
+              <div className="studio-preview-panel__frame">
+                <Image
+                  src="/images/forms/queen-ann-still.png"
+                  alt="Queen Ann — symbolic figure"
+                  fill
+                  sizes="(max-width: 768px) 90vw, 44vw"
+                  className="studio-preview-panel__img"
+                />
+              </div>
+              <p className="studio-preview-panel__name">Queen Ann</p>
+            </div>
+            <div className="studio-preview-panel">
+              <div className="studio-preview-panel__frame">
+                <Image
+                  src="/images/forms/mermaid-grismere-still.png"
+                  alt="Mermaid Grismere — symbolic figure"
+                  fill
+                  sizes="(max-width: 768px) 90vw, 44vw"
+                  className="studio-preview-panel__img"
+                />
+              </div>
+              <p className="studio-preview-panel__name">Mermaid Grismere</p>
+            </div>
+          </div>
+
+          <p className="studio-preview-cta">
+            <Link href="/studio" className="text-link">
+              Enter the Studio <span aria-hidden="true">→</span>
+            </Link>
+          </p>
+
+        </div>
+      </section>
+
+      {/* ── SECTION 3: LIBRARY PREVIEW ───────────────────────────
+          The readable archive — concrete poetry, literary texts,
+          and symbolic works. Warm cream field; text-led.
+      ──────────────────────────────────────────────────────────── */}
+      <section className="lib-preview-section" aria-labelledby="lib-preview-heading">
+        <div className="lib-preview-inner">
+          <p className="eyebrow">Library</p>
+          <h2 id="lib-preview-heading">
+            Concrete poetry<br />
+            <em>and symbolic works</em>
+          </h2>
+          <p className="lib-preview-body">
+            The readable archive of AwakenArts — shaped poems, readings,
+            reflections, and symbolic literary works encountered as
+            literature, not explanation.
+          </p>
+          <p className="lib-preview-cta">
+            <Link href="/library" className="text-link">
+              Enter the Library <span aria-hidden="true">→</span>
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* ── SECTION 4: COLLECTION / FOLIOS ───────────────────────
+          The future protected product layer. Curated, withheld,
+          forthcoming. NOT archive browsing — that belongs to Library.
+          Placeholder edition objects establish the product register
+          until real folio imagery is prepared.
+      ──────────────────────────────────────────────────────────── */}
+      <section className="coll-section" aria-labelledby="coll-heading">
+        <div className="coll-inner">
+
+          <div className="coll-header">
+            <p className="eyebrow">The AwakenArts Collection</p>
+            <h2 id="coll-heading">
+              Folios, readings,<br />
+              <em>and curated editions</em>
+            </h2>
+            <p className="coll-body">
+              Curated symbolic editions, literary folios, and contemplative
+              works from the world of AwakenArts.
+            </p>
+          </div>
+
+          {/* Edition placeholders — visual register of the forthcoming
+              product layer. Styled as closed folio objects. Will be
+              replaced with real edition imagery when prepared. */}
+          <div className="coll-editions-preview" aria-hidden="true">
+            <div className="coll-edition-placeholder">
+              <span className="coll-edition-placeholder__label">In preparation</span>
+            </div>
+            <div className="coll-edition-placeholder">
+              <span className="coll-edition-placeholder__label">In preparation</span>
+            </div>
+            <div className="coll-edition-placeholder">
+              <span className="coll-edition-placeholder__label">In preparation</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* ── FOOTER ─── */}
       <footer className="site-footer" id="about" aria-label="Site footer">
         <div className="footer-grid">
@@ -157,7 +263,6 @@ export default function HomePage() {
               Christian tradition, created through the transformative language
               arts process. By Susan Ann Shepler.
             </p>
-
             <FooterSocial />
           </div>
 
@@ -165,29 +270,10 @@ export default function HomePage() {
             <h4>Explore</h4>
             <ul>
               <li><Link href="/encounters">Encounters</Link></li>
-              {/*
-               * Descriptive anchor pointing directly at Mermaid.
-               * Quiet placement (footer sub-item), descriptive text
-               * ("The Mermaid — a threshold between two worlds")
-               * rather than generic "enter" or "continue". Two effects:
-               *   - reinforces crawl priority for the one indexable
-               *     encounter
-               *   - gives search engines indexable language tying the
-               *     URL to its meaning
-               */}
               <li className="footer-sub"><Link href="/encounters/mermaid">The Mermaid — a threshold between two worlds</Link></li>
-              <li><Link href="/library">The Library</Link></li>
-              <li><Link href="/begin">Begin Here</Link></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h4>The Work</h4>
-            <ul>
-              <li><Link href="/path">The Path</Link></li>
-              <li><Link href="/experience">The Experience</Link></li>
-              <li><Link href="/library">Concrete Poetry</Link></li>
-              <li><Link href="/library">Figures</Link></li>
+              <li><Link href="/studio">Studio</Link></li>
+              <li><Link href="/library">Library</Link></li>
+              <li><Link href="/journal">Journal</Link></li>
             </ul>
           </div>
 
@@ -195,7 +281,6 @@ export default function HomePage() {
             <h4>About</h4>
             <ul>
               <li><Link href="/about">Formation &amp; Provenance</Link></li>
-              <li><Link href="/begin">Begin Here</Link></li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Use</Link></li>
             </ul>

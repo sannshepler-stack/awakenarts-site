@@ -11,7 +11,7 @@ const cormorant = Cormorant_Garamond({
   style: ["italic"],
 });
 
-const STEP_WORDS = ["enter"] as const;
+const STEP_WORDS = ["begin"] as const;
 
 // ── TIMING ──────────────────────────────────────────────────────────
 // The intro video is 11.2 seconds long. We want "enter" to be fully

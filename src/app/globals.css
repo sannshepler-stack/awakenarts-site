@@ -301,7 +301,9 @@ a   { color: inherit; text-decoration: none; }
 
 .hero-tagline {
   font-family: var(--serif);
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  /* Slightly wider clamp to accommodate 'When Language Shapes a Path'
+     without wrapping awkwardly at tablet widths. */
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: -.005em;
@@ -3086,4 +3088,966 @@ form { display: flex; flex-direction: column; gap: 1rem; }
     animation: none;
     opacity: 0.78;
   }
+}
+
+/* ─────────────────────────────────────────────
+   STUDIO PAGE  /studio
+───────────────────────────────────────────── */
+
+.studio-page {
+  padding-top: 72px; /* clears fixed nav */
+}
+
+/* Opening — Susan's voice */
+.studio-opening {
+  background: #f5f0e8;
+  padding: 6rem 2rem 5rem;
+}
+
+.studio-opening__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.studio-opening__eyebrow {
+  justify-content: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.studio-opening__headline {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--deep);
+  margin: 0 0 2.5rem;
+}
+
+.studio-opening__headline em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.studio-opening__body p {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--mid);
+  margin-bottom: 1.5rem;
+}
+
+.studio-opening__body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Shared section structure */
+.studio-silhouettes {
+  background: var(--deep);
+  padding: 6rem 2rem 5rem;
+  border-top: 1px solid rgba(201, 168, 76, .1);
+}
+
+.studio-painterly {
+  background: var(--warm);
+  padding: 6rem 2rem 5rem;
+  border-top: 1px solid var(--mist);
+}
+
+.studio-section__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.studio-section__header {
+  max-width: 680px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.studio-section__header .eyebrow {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.studio-section__header .eyebrow::before { display: none; }
+
+/* Silhouettes eyebrow on dark bg */
+.studio-silhouettes .studio-section__header .eyebrow {
+  color: var(--gold-lt);
+}
+.studio-silhouettes .studio-section__header .eyebrow::before {
+  background: var(--gold-lt);
+}
+
+.studio-section__header h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
+}
+
+/* h2 colors per section */
+.studio-silhouettes .studio-section__header h2 {
+  color: var(--cream);
+}
+.studio-silhouettes .studio-section__header h2 em {
+  color: var(--gold-lt);
+  font-style: italic;
+}
+.studio-painterly .studio-section__header h2 {
+  color: var(--deep);
+}
+.studio-painterly .studio-section__header h2 em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.studio-section__intro {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.85;
+  max-width: 54ch;
+  margin: 0 auto;
+}
+
+.studio-silhouettes .studio-section__intro {
+  color: rgba(250, 247, 242, .65);
+}
+
+.studio-painterly .studio-section__intro {
+  color: var(--mid);
+}
+
+/* Forms gallery — reuses existing FormPanel component */
+.studio-forms-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .studio-forms-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 640px;
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .studio-forms-gallery {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+}
+
+/* Painterly works — coming */
+.studio-painterly__coming {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--mid);
+  text-align: center;
+  opacity: .65;
+}
+
+/* Studio CTA */
+.studio-cta {
+  background: var(--deep);
+  padding: 4rem 3rem 5rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  border-top: 1px solid rgba(201, 168, 76, .1);
+}
+
+@media (max-width: 640px) {
+  .studio-opening { padding: 5rem 1.25rem 4rem; }
+  .studio-silhouettes,
+  .studio-painterly { padding: 4.5rem 1.25rem 4rem; }
+  .studio-cta { padding: 3.5rem 1.25rem 4rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+}
+
+/* ─────────────────────────────────────────────
+   HOMEPAGE — STUDIO PREVIEW SECTION
+───────────────────────────────────────────── */
+.studio-preview-section {
+  background: var(--deep);
+  padding: 7rem 2rem 6rem;
+  border-top: 1px solid rgba(201, 168, 76, .1);
+}
+
+.studio-preview-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.studio-preview-header {
+  max-width: 640px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.studio-preview-header .eyebrow {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: var(--gold-lt);
+}
+.studio-preview-header .eyebrow::before {
+  display: none;
+}
+
+.studio-preview-header h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--cream);
+  margin: 0 0 1.25rem;
+}
+
+.studio-preview-header h2 em {
+  color: var(--gold-lt);
+  font-style: italic;
+}
+
+.studio-preview-intro {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.85;
+  color: rgba(250, 247, 242, .62);
+  max-width: 52ch;
+  margin: 0 auto;
+}
+
+/* Two-panel grid */
+.studio-preview-panels {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto 3.5rem;
+}
+
+.studio-preview-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.studio-preview-panel__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--deep);
+  /* Soft inset on dark bg to give the panel definition */
+  box-shadow: 0 2px 0 0 rgba(201, 168, 76, .15) inset,
+              0 0 40px rgba(0, 0, 0, .4);
+}
+
+.studio-preview-panel__img {
+  object-fit: cover;
+  object-position: center;
+  opacity: .9;
+  transition: opacity .35s ease;
+}
+
+.studio-preview-panel:hover .studio-preview-panel__img {
+  opacity: 1;
+}
+
+.studio-preview-panel__name {
+  font-family: var(--serif);
+  font-size: .95rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(250, 247, 242, .55);
+  text-align: center;
+}
+
+.studio-preview-cta {
+  text-align: center;
+}
+
+/* Override text-link color for dark bg */
+.studio-preview-section .text-link {
+  color: var(--gold-lt);
+  border-bottom-color: rgba(201, 168, 76, .45);
+}
+.studio-preview-section .text-link:hover {
+  color: var(--cream);
+  border-bottom-color: rgba(250, 247, 242, .4);
+}
+
+@media (max-width: 640px) {
+  .studio-preview-section { padding: 5rem 1.25rem 4rem; }
+  .studio-preview-panels { grid-template-columns: 1fr; max-width: 380px; gap: 1.75rem; }
+  .studio-preview-header { margin-bottom: 3rem; }
+}
+
+/* ─────────────────────────────────────────────
+   HOMEPAGE — LIBRARY PREVIEW SECTION
+───────────────────────────────────────────── */
+.lib-preview-section {
+  background: var(--warm);
+  padding: 6rem 2rem 5.5rem;
+  border-top: 1px solid var(--mist);
+  text-align: center;
+}
+
+.lib-preview-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.lib-preview-section .eyebrow {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.lib-preview-section .eyebrow::before { display: none; }
+
+.lib-preview-section h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--deep);
+  margin: 0 0 1.25rem;
+}
+
+.lib-preview-section h2 em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.lib-preview-body {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.85;
+  color: var(--mid);
+  max-width: 52ch;
+  margin: 0 auto 2.5rem;
+}
+
+.lib-preview-cta {
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .lib-preview-section { padding: 5rem 1.25rem 4.5rem; }
+}
+
+/* ─────────────────────────────────────────────
+   IMAGE WATERMARK SYSTEM
+
+   Two surfaces protected:
+     1. .wtc-figure__frame  — homepage figure grid
+     2. .path-poem-wrap     — Journey page poem columns
+
+   Method: CSS ::after pseudo-element positioned at
+   bottom-right. Low-opacity ghost text + mix-blend-mode
+   overlay so it reads against light and dark image regions
+   without the heavy-handed stock-photo aesthetic.
+
+   Intentionally hard to remove via screenshot crop — the
+   mark sits at the edge of the composition rather than
+   dead center.
+───────────────────────────────────────────── */
+
+/* Homepage figure frames */
+.wtc-figure__frame::after {
+  content: 'AwakenArts';
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+}
+
+/* Journey page poem frames */
+.path-poem-wrap {
+  position: relative; /* ensure ::after stacks correctly */
+}
+.path-poem-wrap::after {
+  content: '© AwakenArts';
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.75rem;
+  font-family: var(--sans);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(28, 43, 58, 0.22);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+}
+
+/* Reduced visibility on very small frames (mobile) */
+@media (max-width: 480px) {
+  .wtc-figure__frame::after {
+    font-size: 0.5rem;
+    letter-spacing: 0.16em;
+    bottom: 0.4rem;
+    right: 0.5rem;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   REUSABLE UTILITIES — homepage sections
+───────────────────────────────────────────── */
+
+/* Quiet uppercase text-link. Lighter variant of .hero-cta
+   for use inside body sections on both cream and dark bgs. */
+.text-link {
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid rgba(139, 105, 20, 0.45);
+  padding-bottom: 2px;
+  transition: color .2s ease-out, border-color .2s ease-out;
+}
+.text-link:hover {
+  color: var(--deep);
+  border-color: var(--deep);
+}
+
+/* Eyebrow on dark (navy) backgrounds. */
+.eyebrow--light {
+  color: var(--gold-lt);
+}
+.eyebrow--light::before {
+  background: var(--gold-lt);
+}
+
+/* ─────────────────────────────────────────────
+   SECTION 2 — WITHIN THE CIRCLE
+───────────────────────────────────────────── */
+.wtc-section {
+  background: var(--cream);
+  padding: 7rem 2rem 6rem;
+  border-top: 1px solid var(--mist);
+}
+
+.wtc-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wtc-header {
+  max-width: 680px;
+  margin: 0 auto 4.5rem;
+  text-align: center;
+}
+
+.wtc-header .eyebrow {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.wtc-header .eyebrow::before { display: none; }
+
+.wtc-header h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--deep);
+  margin: 0 0 1.25rem;
+}
+
+.wtc-intro {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.85;
+  color: var(--mid);
+  max-width: 56ch;
+  margin: 0 auto;
+}
+
+/* Four-column figure grid */
+.wtc-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+  padding: 0;
+}
+
+.wtc-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* The frame is a relative-positioned container for the <Image fill>.
+   Aspect ratio 3/4 keeps the figures consistently proportioned. */
+.wtc-figure__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--warm);
+  border: 1px solid var(--mist);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* Open-frame variant for the "more" placeholder */
+.wtc-figure__frame--open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-color: rgba(90, 85, 80, 0.18);
+  border-style: dashed;
+}
+
+.wtc-more-glyph {
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: var(--mist);
+  letter-spacing: 0.3em;
+  user-select: none;
+}
+
+.wtc-figure__img {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.75rem;
+}
+
+.wtc-figure__name {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--deep);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* "More" item — slightly dimmer name */
+.wtc-figure--more .wtc-figure__name {
+  color: var(--mid);
+}
+
+.wtc-cta {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .wtc-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wtc-section { padding: 5rem 1.25rem 4rem; }
+  .wtc-header { margin-bottom: 3rem; }
+}
+
+/* ─────────────────────────────────────────────
+   SECTION 3 — ENCOUNTERS PREVIEW
+───────────────────────────────────────────── */
+.enc-section {
+  background: var(--deep);
+  padding: 7rem 2rem;
+  border-top: 1px solid rgba(201, 168, 76, .1);
+}
+
+.enc-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.enc-text .eyebrow {
+  margin-bottom: 1.25rem;
+}
+
+.enc-text h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--cream);
+  margin: 0 0 1.5rem;
+}
+
+.enc-text h2 em {
+  color: var(--gold-lt);
+  font-style: italic;
+}
+
+.enc-body {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(250, 247, 242, .68);
+  max-width: 44ch;
+  margin: 0 0 2.5rem;
+}
+
+.enc-cta {
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  border-bottom: 1px solid rgba(201, 168, 76, .5);
+  padding-bottom: 2px;
+  transition: color .2s ease-out, border-color .2s ease-out;
+}
+.enc-cta:hover {
+  color: var(--cream);
+  border-bottom-color: rgba(250, 247, 242, .5);
+}
+
+/* Video column — portrait container, video fills it */
+.enc-media {
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  /* Soft shadow so the video floats slightly in the dark field */
+  box-shadow: 0 16px 60px rgba(0, 0, 0, .5);
+}
+
+.enc-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 2px;
+  opacity: .88;
+}
+
+@media (max-width: 960px) {
+  .enc-inner {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .enc-media {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .enc-section { padding: 5rem 1.25rem; }
+  .enc-body { max-width: none; }
+}
+
+/* ─────────────────────────────────────────────
+   SECTION 4 — COLLECTION / FOLIOS
+───────────────────────────────────────────── */
+.coll-section {
+  background: #f5f0e8;
+  padding: 7rem 2rem 6rem;
+  border-top: 1px solid var(--mist);
+}
+
+.coll-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.coll-header {
+  max-width: 640px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.coll-header .eyebrow {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.coll-header .eyebrow::before { display: none; }
+
+.coll-header h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--deep);
+  margin: 0 0 1.25rem;
+}
+
+.coll-header h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.coll-body {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.85;
+  color: var(--mid);
+  max-width: 54ch;
+  margin: 0 auto;
+}
+
+/* Two forms displayed as literary objects — mat-bordered, quiet */
+.coll-forms {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.coll-form-item {
+  flex: 0 1 420px;
+  border: 1px solid var(--mist);
+  background: var(--warm);
+  padding: 1.5rem;
+  border-radius: 2px;
+  /* Subtle mat shadow */
+  box-shadow: 0 4px 20px rgba(28, 43, 58, .06);
+}
+
+.coll-form-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.coll-cta {
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .coll-section { padding: 5rem 1.25rem 4rem; }
+  .coll-forms { gap: 1.5rem; }
+  .coll-form-item {
+    flex: 1 1 280px;
+    padding: 1rem;
+  }
+}
+
+/* ── Studio entry panels (Studio landing /studio) ─────── */
+.studio-entry-section {
+  padding: 5rem 2rem 7rem;
+  background: var(--cream);
+}
+
+.studio-entry-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .studio-entry-panels {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Panel as link — resets link defaults */
+a.studio-entry-panel {
+  text-decoration: none;
+  color: inherit;
+}
+
+.studio-entry-panel {
+  display: block;
+}
+
+.studio-entry-panel__frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--mist);
+  overflow: hidden;
+}
+
+.studio-entry-panel__img {
+  object-fit: cover;
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+
+a.studio-entry-panel:hover .studio-entry-panel__img {
+  opacity: 0.88;
+  transform: scale(1.02);
+}
+
+/* Placeholder frame for Painterly Works */
+.studio-entry-panel__frame--empty {
+  background: var(--warm);
+  border: 1px solid var(--mist);
+}
+
+.studio-entry-panel__label {
+  padding: 1.25rem 0 0.5rem;
+}
+
+.studio-entry-panel__label .eyebrow {
+  margin-bottom: 0.4rem;
+}
+
+.studio-entry-panel__label p:not(.eyebrow) {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--mid);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Pending panel — not interactive */
+.studio-entry-panel--pending {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.72;
+}
+
+/* ── Silhouettes page heading subline ─────────────────── */
+.studio-opening__subline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  color: var(--mid);
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+
+/* ── Footer pending item ───────────────────────────────── */
+.footer-pending {
+  color: var(--mid);
+  font-style: italic;
+  opacity: 0.6;
+  font-size: inherit;
+}
+
+/* ── Collection edition placeholders ─────────────────────
+   Three closed-folio objects suggesting forthcoming editions.
+   Replace with real imagery when prepared.
+─────────────────────────────────────────────────────────── */
+.coll-editions-preview {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 3.5rem 0 0;
+  flex-wrap: wrap;
+}
+
+.coll-edition-placeholder {
+  width: 160px;
+  aspect-ratio: 3 / 4;
+  background: var(--warm);
+  border: 1px solid var(--mist);
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: flex-end;
+  padding: 0.9rem 1rem;
+  flex-shrink: 0;
+}
+
+.coll-edition-placeholder__label {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--mid);
+  opacity: 0.55;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 640px) {
+  .coll-editions-preview {
+    gap: 1rem;
+  }
+  .coll-edition-placeholder {
+    width: 130px;
+  }
+}
+
+/* ── Library hero (/library) ──────────────────────────────
+   Literary, quiet. Typography-led. No cinematic treatment.
+─────────────────────────────────────────────────────────── */
+.lib-hero {
+  padding: 6rem 2rem 5rem;
+  background: var(--cream);
+  text-align: center;
+}
+
+.lib-hero__inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.lib-hero .eyebrow {
+  margin-bottom: 1.25rem;
+}
+
+.lib-hero h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  color: var(--deep);
+  margin: 0 0 1.5rem;
+}
+
+.lib-hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.lib-hero__sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: var(--mid);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .lib-hero { padding: 4rem 1.25rem 3.5rem; }
+}
+
+/* ── Library placeholder sections ────────────────────────
+   In-preparation state for Readings and Reflections.
+─────────────────────────────────────────────────────────── */
+.lib-placeholder-note {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--mid);
+  opacity: 0.6;
+  margin-top: 1.5rem;
 }

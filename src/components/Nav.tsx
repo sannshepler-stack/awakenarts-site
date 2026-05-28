@@ -8,12 +8,11 @@ import Link from 'next/link'
 // Keeping a small wordmark link on the left so there is still a way home.
 
 const links = [
-  { label: 'Begin Here',    href: '/begin',        cta: true  },
-  { label: 'Encounters',    href: '/encounters',   cta: false },
-  { label: 'The Path',      href: '/path',         cta: false },
-  { label: 'The Library',   href: '/library',      cta: false },
-  { label: 'Gallery',       href: '/gallery',      cta: false },
-  { label: 'About',         href: '/about',        cta: false },
+  { label: 'Encounters',  href: '/encounters',  cta: false },
+  { label: 'Studio',      href: '/studio',      cta: false },
+  { label: 'Library',     href: '/library',     cta: false },
+  { label: 'Journal',     href: '/journal',     cta: false },
+  { label: 'About',       href: '/about',       cta: false },
 ]
 
 export default function Nav() {

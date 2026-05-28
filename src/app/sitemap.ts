@@ -16,15 +16,14 @@ type Entry = {
 const ENTRIES: Entry[] = [
   { path: '/',                                                   changeFrequency: 'weekly',  priority: 1.0 },
   { path: '/about',                                              changeFrequency: 'monthly', priority: 0.9 },
-  { path: '/begin',                                              changeFrequency: 'monthly', priority: 0.9 },
   // /encounters itself is a transitional intro video (the doorway).
   // It's intentionally absent from the sitemap so search results point
   // visitors directly at the Mermaid encounter — the real content.
   { path: '/encounters/mermaid',                                 changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/path',                                               changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/path/ann',                                           changeFrequency: 'monthly', priority: 0.6 },
-  { path: '/path/grismere',                                      changeFrequency: 'monthly', priority: 0.6 },
-  { path: '/path/ballerina',                                     changeFrequency: 'monthly', priority: 0.6 },
+  { path: '/studio',                                             changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/studio/silhouettes',                                 changeFrequency: 'monthly', priority: 0.7 },
+  // /path, /path/ann, /path/grismere, /path/ballerina, /begin, /journey
+  // all permanently redirect to /studio or / — omitted from sitemap.
   { path: '/library',                                            changeFrequency: 'monthly', priority: 0.8 },
   { path: '/library/foundations/process-in-and-of-images',       changeFrequency: 'monthly', priority: 0.6 },
   { path: '/library/foundations/the-mirror-and-the-map',         changeFrequency: 'monthly', priority: 0.6 },

@@ -455,7 +455,6 @@ export default function PathPage() {
             <ul>
               <li><Link href="/">Home</Link></li>
               <li><Link href="/library">The Library</Link></li>
-              <li><Link href="/begin">Begin Here</Link></li>
             </ul>
           </div>
           <div className="footer-col">
