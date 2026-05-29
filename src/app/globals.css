@@ -4019,8 +4019,8 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 .studio-silhouette-pair__item {
   position: relative;
-  width: 220px;
-  flex: 0 0 220px;
+  width: 260px;
+  flex: 0 0 260px;
   aspect-ratio: 2 / 3;
   overflow: hidden;
   background: transparent;
@@ -4038,8 +4038,8 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 @media (max-width: 640px) {
-  .studio-silhouette-pair { gap: 1.75rem; margin-top: 2.5rem; }
-  .studio-silhouette-pair__item { width: 160px; flex-basis: 160px; }
+  .studio-silhouette-pair { gap: 1.5rem; margin-top: 2.5rem; }
+  .studio-silhouette-pair__item { width: 170px; flex-basis: 170px; }
 }
 
 /* ── 2. IMAGES, SYMBOLS, AND SHAPES (Studio landing) ──────

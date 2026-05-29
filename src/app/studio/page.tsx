@@ -79,16 +79,16 @@ export default function StudioPage() {
                   src="/images/forms/mermaid-grismere-still.png"
                   alt="Mermaid Grismere — symbolic figure"
                   fill
-                  sizes="(max-width: 640px) 38vw, 220px"
+                  sizes="(max-width: 640px) 44vw, 260px"
                   className="studio-silhouette-pair__img"
                 />
               </div>
               <div className="studio-silhouette-pair__item">
                 <Image
-                  src="/images/figures/ann/ann.png"
-                  alt="Queen Ann — figure study"
+                  src="/images/forms/mermaid-grismere-still.png"
+                  alt="Mermaid Grismere — symbolic figure"
                   fill
-                  sizes="(max-width: 640px) 38vw, 220px"
+                  sizes="(max-width: 640px) 44vw, 260px"
                   className="studio-silhouette-pair__img"
                 />
               </div>
@@ -105,10 +105,10 @@ export default function StudioPage() {
           <div className="studio-section__inner">
 
             <div className="studio-painterly-header">
-              <p className="eyebrow">Digital Art Paintings</p>
+              <p className="eyebrow">Feminine Motifs</p>
               <h2 id="studio-painterly-heading">
-                Atmospheric figures<br />
-                <em>and studies</em>
+                Digital Art<br />
+                <em>Paintings</em>
               </h2>
             </div>
 
