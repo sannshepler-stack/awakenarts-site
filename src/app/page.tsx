@@ -141,8 +141,8 @@ export default function HomePage() {
           <div className="studio-preview-header">
             <p className="eyebrow">Studio</p>
             <h2 id="studio-preview-heading">
-              Symbols, Images,<br />
-              <em>Settings, and Shapes</em>
+              Images, Symbols,<br />
+              <em>and Shapes</em>
             </h2>
           </div>
 

@@ -3379,7 +3379,8 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .studio-preview-panel__frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  /* aspect-ratio: 2/3 — canonical silhouette format (1600 × 2400 px source) */
+  aspect-ratio: 2 / 3;
   overflow: hidden;
   border-radius: 2px;
   background: var(--deep);
@@ -3401,13 +3402,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 /* Secondary panel — Grismere should feel spatially integrated
    into the underwater environment, not cropped or truncated.
-   Frame aspect-ratio 2/3 matches Grismere's natural portrait
-   ratio (1600×2302 ≈ 0.695), so contain fills without letterbox.
+   2/3 ratio matches the canonical silhouette master format.
    scale(0.82) zooms the image out — the figure sits smaller
    within a larger surrounding dark-water field.
    margin-top offsets the panel to let the primary lead. */
 .studio-preview-panel--secondary .studio-preview-panel__frame {
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 2 / 3; /* already canonical — unchanged */
   margin-top: 1.5rem;
   background: #0a1520; /* deep underwater tone */
 }
@@ -3950,7 +3950,8 @@ a.studio-entry-panel {
 
 .studio-entry-panel__frame {
   position: relative;
-  aspect-ratio: 4 / 5;
+  /* aspect-ratio: 2/3 — canonical silhouette format (1600 × 2400 px source) */
+  aspect-ratio: 2 / 3;
   background: var(--mist);
   overflow: hidden;
 }

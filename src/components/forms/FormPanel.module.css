@@ -10,6 +10,13 @@
    Forms without a video remain completely still — no hover behavior.
 
    Placeholder forms (no image) are quiet name-only panels.
+
+   CANONICAL SILHOUETTE FORMAT:
+   Frame aspect-ratio is 2:3 (vertical), matching the canonical source
+   master dimensions of 1600 × 2400 px. All silhouette stills and their
+   paired videos must be prepared at this ratio. Still and video must
+   originate from the same composition — same framing, same environment,
+   same spatial breathing room. The figure should not fill the frame.
    ───────────────────────────────────────────────────────────────────────── */
 
 .panel {
@@ -21,9 +28,10 @@
 }
 
 /* ─── Image / video frame ───────────────────────────────────────────────── */
+/* aspect-ratio: 2/3 — canonical silhouette format (1600 × 2400 px source) */
 .imageFrame {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 2 / 3;
   overflow: hidden;
   background: rgba(250, 247, 242, 0.04);
   position: relative;
@@ -82,7 +90,7 @@
 
 .placeholderFrame {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 2 / 3;
   display: flex;
   align-items: center;
   justify-content: center;

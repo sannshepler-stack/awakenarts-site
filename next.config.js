@@ -18,6 +18,9 @@ const nextConfig = {
       { source: '/begin',          destination: '/',       permanent: true },
       // /forms-prototype → /studio  (Forms integrated into Studio)
       { source: '/forms-prototype', destination: '/studio', permanent: true },
+      // /journal-prototype and v2 → /journal  (canonical journal is live)
+      { source: '/journal-prototype',    destination: '/journal', permanent: true },
+      { source: '/journal-prototype-v2', destination: '/journal', permanent: true },
     ]
   },
 }
