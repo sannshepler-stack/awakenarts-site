@@ -134,26 +134,24 @@ export default function HomePage() {
       </section>
 
       {/* ── SECTION 2: STUDIO PREVIEW ────────────────────────────
-          Two atmospheric image panels. Images carry the atmosphere.
-          Minimal copy. Studio section refined to elemental language.
+          Single symbolic threshold image — Queen Ann only.
+          Homepage is the invitation; the Studio holds the full collection.
       ──────────────────────────────────────────────────────────── */}
       <section className="studio-preview-section" aria-labelledby="studio-preview-heading">
         <div className="studio-preview-inner">
 
           <div className="studio-preview-header">
-            <p className="eyebrow">Studio</p>
+            <p className="eyebrow">The AwakenArts Collection</p>
             <h2 id="studio-preview-heading">
-              Images, Symbols,<br />
-              <em>and Shapes</em>
+              Symbolic Forms<br />
+              <em>and Images</em>
             </h2>
           </div>
 
-          {/* Canonical silhouette system — FormPanel is the single implementation.
-              Behavior, hover logic, and aspect ratio all inherit from /studio/silhouettes.
-              CSS context overrides below tune size and stagger for the preview grid. */}
-          <div className="studio-preview-panels">
+          {/* Single Queen Ann panel — threshold image, not a gallery.
+              The larger collection of forms unfolds inside the Studio. */}
+          <div className="studio-preview-panels studio-preview-panels--single">
             <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'queen-ann')!} />
-            <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'mermaid-grismere')!} />
           </div>
 
           <p className="studio-preview-cta">

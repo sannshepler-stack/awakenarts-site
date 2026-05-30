@@ -72,7 +72,7 @@ export default function JournalIndexPage() {
             repetition, placement, rhythm, image, and language.
           </p>
           <Link href="/experience" className={styles.wordFormLink}>
-            Begin a Symbolic Form
+            Create a Word Form
           </Link>
           <p className={styles.wordFormSupport}>
             Begin with a word, memory, image, or phrase.
@@ -83,7 +83,7 @@ export default function JournalIndexPage() {
       {/* ── Footnote ──────────────────────────────────────────────── */}
       <div className={styles.footnoteBar}>
         <p className={styles.footnote}>
-          Prototype · The Journal · not yet linked from navigation
+          A journal of symbolic territories and reflective forms.
         </p>
       </div>
     </>

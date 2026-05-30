@@ -9,7 +9,7 @@ import { SYMBOLIC_FORMS } from '@/components/forms/forms-data'
 export const metadata: Metadata = {
   title: 'Studio — AwakenArts',
   description:
-    'The visual symbolic art practice of AwakenArts — silhouettes, digital art paintings, and concrete poems by Susan Ann Shepler.',
+    'The AwakenArts Collection — symbolic forms, images, and contemplative works by Susan Ann Shepler.',
   alternates: { canonical: '/studio' },
   openGraph: {
     url: '/studio',
@@ -39,10 +39,10 @@ export default function StudioPage() {
             {/* Heading uses studio-section__header — dark-bg color rules
                 already defined in globals.css for .studio-silhouettes context. */}
             <div className="studio-section__header">
-              <p className="eyebrow">Silhouettes</p>
+              <p className="eyebrow">The AwakenArts Collection</p>
               <h1 id="studio-silhouettes-heading">
-                Symbolic<br />
-                <em>forms</em>
+                Symbolic Forms<br />
+                <em>and Images</em>
               </h1>
             </div>
 
@@ -221,7 +221,7 @@ export default function StudioPage() {
           <div className="footer-col">
             <h4>Studio</h4>
             <ul>
-              <li><Link href="/studio/silhouettes">Silhouettes</Link></li>
+              <li><Link href="/studio/silhouettes">Symbolic Forms</Link></li>
               <li><span className="footer-pending">Digital Art Paintings</span></li>
               <li><span className="footer-pending">Concrete Poems</span></li>
             </ul>
