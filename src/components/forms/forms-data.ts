@@ -27,18 +27,18 @@
 //   like the still slowly awakening.
 //
 // ── CURRENT ASSETS ───────────────────────────────────────────────────────────
-//   • Forms with their own matching still + video pair:
+//   • Forms with canonical 1600×2400 still + 512×768 video (2:3 throughout):
 //     - Queen Ann
-//         Still:  /images/forms/queen-ann-still.png  (592×672 — needs remaster)
-//         Video:  /videos/forms/queen-ann-motion.mp4 (592×672 — needs remaster)
+//         Still:  /images/forms/queen-ann-still.png  (1600×2400 ✓ canonical)
+//         Video:  /videos/forms/queen-ann-motion.mp4 (512×768 ✓ 2:3)
 //     - Mermaid Grismere
-//         Still:  /images/forms/mermaid-grismere-still.png  (1600×2302 — close)
-//         Video:  /videos/forms/mermaid-grismere-motion.mp4 (528×752 — needs remaster)
-//   • All other Forms use the queen-ann-still as a shared atmospheric
-//     placeholder. Only Forms with a videoSrc have hover motion.
-//
-//   NOTE: Both Queen Ann and Mermaid Grismere stills predate the canonical
-//   1600×2400 standard and should be remastered at the next asset preparation.
+//         Still:  /images/forms/mermaid-grismere-still.png  (1600×2400 ✓ canonical)
+//         Video:  /videos/forms/mermaid-grismere-motion.mp4 (512×768 ✓ 2:3)
+//     - The Dragon (still extracted from video frame — canonical temp)
+//         Still:  /images/forms/dragon-still.png  (512×768 ✓ 2:3, frame extract)
+//         Video:  /videos/forms/dragon-motion.mp4  (512×768 ✓ 2:3)
+//   • Ballerina and Merri still use queen-ann-still as shared placeholder.
+//     Only Forms with a videoSrc have hover motion.
 //
 // ── ADDING A NEW FORM ─────────────────────────────────────────────────────────
 //   1. Prepare still at 1600×2400 px per the composition rule above.
@@ -63,6 +63,9 @@ export const SYMBOLIC_FORMS: ReadonlyArray<SymbolicForm> = [
     imageAlt:
       'Queen Ann — atmospheric still: a windswept figure with form-silhouette overlay.',
     videoSrc: '/videos/forms/queen-ann-motion.mp4',
+    // New canonical still is 1600×2400 — review whether the 60% horizontal
+    // crop correction is still needed once new composition is seen live.
+    imagePosition: '60% center',
   },
   {
     slug: 'mermaid-grismere',
@@ -75,8 +78,12 @@ export const SYMBOLIC_FORMS: ReadonlyArray<SymbolicForm> = [
   {
     slug: 'the-dragon',
     name: 'The Dragon',
-    imageSrc: ANN_FORMS_STILL,
-    imageAlt: ANN_FORMS_PLACEHOLDER_ALT,
+    // Still extracted from dragon-motion.mp4 frame at 2.5s — canonical 512×768 (2:3).
+    // Replace with a full 1600×2400 authored still when available.
+    imageSrc: '/images/forms/dragon-still.png',
+    imageAlt:
+      'The Dragon — atmospheric still: symbolic presence within elemental environment.',
+    videoSrc: '/videos/forms/dragon-motion.mp4',
   },
   {
     slug: 'the-ballerina',

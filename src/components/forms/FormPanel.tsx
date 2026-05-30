@@ -84,6 +84,7 @@ export default function FormPanel({ form }: FormPanelProps) {
           className={styles.image}
           draggable={false}
           loading="lazy"
+          style={form.imagePosition ? { objectPosition: form.imagePosition } : undefined}
         />
 
         {withVideo && (
@@ -96,6 +97,7 @@ export default function FormPanel({ form }: FormPanelProps) {
             loop
             preload="metadata"
             aria-hidden="true"
+            style={form.imagePosition ? { objectPosition: form.imagePosition } : undefined}
           />
         )}
       </div>

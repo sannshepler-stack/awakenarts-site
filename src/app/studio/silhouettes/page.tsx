@@ -46,11 +46,13 @@ export default function SilhouettesPage() {
         <section className="studio-silhouettes" aria-label="Silhouette forms">
           <div className="studio-section__inner">
             <div className="studio-forms-gallery" role="list" aria-label="Symbolic figures">
-              {SYMBOLIC_FORMS.map((form) => (
-                <div key={form.slug} role="listitem">
-                  <FormPanel form={form} />
-                </div>
-              ))}
+              {SYMBOLIC_FORMS
+                .filter(f => ['queen-ann', 'mermaid-grismere', 'the-dragon'].includes(f.slug))
+                .map((form) => (
+                  <div key={form.slug} role="listitem">
+                    <FormPanel form={form} />
+                  </div>
+                ))}
             </div>
           </div>
         </section>

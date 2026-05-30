@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import FooterSocial from '@/components/FooterSocial'
+import FormPanel from '@/components/forms/FormPanel'
+import { SYMBOLIC_FORMS } from '@/components/forms/forms-data'
 
 export const metadata: Metadata = {
   title: 'Studio — AwakenArts',
@@ -24,74 +26,34 @@ export default function StudioPage() {
 
       <main className="studio-page">
 
-        {/* ── OPENING ─────────────────────────────────────────────
-            One restrained paragraph. The imagery arrives almost
-            immediately after. The work speaks for itself.
+        {/* ── SILHOUETTES — page opening ──────────────────────────
+            Canonical implementation — identical to /studio/silhouettes.
+            studio-silhouettes class: dark bg, gold border.
+            studio-forms-gallery: 3-equal-column triptych grid.
+            FormPanel: hover still/video, 2:3 ratio, caption beneath.
+            Source of truth: src/app/studio/silhouettes/page.tsx
         ──────────────────────────────────────────────────────── */}
-        <section className="studio-opening">
-          <div className="studio-opening__inner">
-            <p className="eyebrow studio-opening__eyebrow">Studio</p>
-            <h1 className="studio-opening__headline">
-              The visual symbolic<br />
-              <em>art practice</em>
-            </h1>
-
-            <div className="studio-opening__body">
-              <p>
-                AwakenArts emerged through poetry, image, and symbolic form —
-                a contemplative visual practice shaped through atmosphere,
-                language, and recurring symbolic presences.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ── 1. SILHOUETTES ──────────────────────────────────────
-            Opening visual territory. Queen Ann leads. Two quieter
-            silhouettes follow — restrained, spacious, no labels.
-            Together they establish the threshold atmosphere.
-        ──────────────────────────────────────────────────────── */}
-        <section className="studio-entry-section" aria-label="Silhouettes">
+        <section className="studio-silhouettes" aria-labelledby="studio-silhouettes-heading">
           <div className="studio-section__inner">
 
-            {/* Primary: Ann still — links to full silhouettes page */}
-            <div className="studio-entry-panels studio-entry-panels--single">
-              <Link href="/studio/silhouettes" className="studio-entry-panel">
-                <div className="studio-entry-panel__frame">
-                  <Image
-                    src="/images/forms/queen-ann-still.png"
-                    alt="Queen Ann — symbolic figure"
-                    fill
-                    sizes="(max-width: 640px) 80vw, 360px"
-                    className="studio-entry-panel__img"
-                  />
-                </div>
-                <div className="studio-entry-panel__label">
-                  <p className="eyebrow">Silhouettes</p>
-                </div>
-              </Link>
+            {/* Heading uses studio-section__header — dark-bg color rules
+                already defined in globals.css for .studio-silhouettes context. */}
+            <div className="studio-section__header">
+              <p className="eyebrow">Silhouettes</p>
+              <h1 id="studio-silhouettes-heading">
+                Symbolic<br />
+                <em>forms</em>
+              </h1>
             </div>
 
-            {/* Secondary: two quieter silhouettes — no labels, reduced scale */}
-            <div className="studio-silhouette-pair" aria-hidden="true">
-              <div className="studio-silhouette-pair__item">
-                <Image
-                  src="/images/forms/mermaid-grismere-still.png"
-                  alt="Mermaid Grismere — symbolic figure"
-                  fill
-                  sizes="(max-width: 640px) 44vw, 260px"
-                  className="studio-silhouette-pair__img"
-                />
-              </div>
-              <div className="studio-silhouette-pair__item">
-                <Image
-                  src="/images/forms/mermaid-grismere-still.png"
-                  alt="Mermaid Grismere — symbolic figure"
-                  fill
-                  sizes="(max-width: 640px) 44vw, 260px"
-                  className="studio-silhouette-pair__img"
-                />
-              </div>
+            <div className="studio-forms-gallery" role="list" aria-label="Symbolic figures">
+              {SYMBOLIC_FORMS
+                .filter(f => ['queen-ann', 'mermaid-grismere', 'the-dragon'].includes(f.slug))
+                .map((form) => (
+                  <div key={form.slug} role="listitem">
+                    <FormPanel form={form} />
+                  </div>
+                ))}
             </div>
 
           </div>
@@ -173,18 +135,17 @@ export default function StudioPage() {
         </section>
 
         {/* ── 3. CONCRETE POEMS ───────────────────────────────────
-            The quietest and most restrained territory.
-            Originating language-image structures. Intimate scale.
-            More spaciously separated than the paintings above.
+            Third major Studio territory.
+            Heading system matches Feminine Motifs: eyebrow + serif h2.
         ──────────────────────────────────────────────────────── */}
         <section className="studio-poems-section" aria-labelledby="studio-poems-heading">
           <div className="studio-poems-inner">
 
             <div className="studio-poems-header">
               <p className="eyebrow studio-poems-eyebrow">Concrete Poems</p>
-              <h2 id="studio-poems-heading">
-                Language as<br />
-                <em>visual form</em>
+              <h2 id="studio-poems-heading" className="studio-poems-heading">
+                The visual symbolic<br />
+                <em>art practice</em>
               </h2>
               <p className="studio-poems-intro">
                 Originating image-text structures — the language-forms
@@ -211,6 +172,15 @@ export default function StudioPage() {
                   loading="lazy"
                 />
               </div>
+            </div>
+
+            {/* Contextual body — grounding reflection after the visual work. */}
+            <div className="studio-poems-context">
+              <p className="studio-poems-context__body">
+                AwakenArts emerged through poetry, image, and symbolic form —
+                a contemplative visual practice shaped through atmosphere,
+                language, and recurring symbolic presences.
+              </p>
             </div>
 
           </div>

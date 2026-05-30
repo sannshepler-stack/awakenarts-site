@@ -40,9 +40,9 @@ a   { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 1rem;
   font-family: var(--sans);
-  font-size: .68rem;
+  font-size: .78rem;
   font-weight: 500;
-  letter-spacing: .22em;
+  letter-spacing: .15em;
   text-transform: uppercase;
   color: var(--gold);
 }
@@ -94,16 +94,16 @@ a   { color: inherit; text-decoration: none; }
 }
 .nav-logo {
   display: block;
-  height: 52px;
+  height: 58px;
   width: auto;
   mix-blend-mode: screen;
   flex-shrink: 0;
 }
 .nav-tagline {
   font-family: var(--sans);
-  font-size: .72rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #ffffff;
   white-space: nowrap;
@@ -120,11 +120,11 @@ a   { color: inherit; text-decoration: none; }
 }
 .nav-links a {
   font-family: var(--sans);
-  font-size: .68rem;
+  font-size: .84rem;
   font-weight: 500;
-  letter-spacing: .16em;
+  letter-spacing: .10em;
   text-transform: uppercase;
-  color: rgba(250,247,242,.65);
+  color: rgba(250,247,242,.80);
   transition: color .2s;
 }
 .nav-links a:hover { color: var(--cream); }
@@ -1217,9 +1217,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 .footer-col h4 {
   font-family: var(--sans);
-  font-size: .66rem;
+  font-size: .76rem;
   font-weight: 600;
-  letter-spacing: .2em;
+  letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--gold-lt);
   margin-bottom: 1.25rem;
@@ -3142,22 +3142,23 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .studio-opening__inner {
-  max-width: 720px;
+  max-width: 640px;
   margin: 0 auto;
+  text-align: center; /* align with all other Studio section headings */
 }
 
 .studio-opening__eyebrow {
-  justify-content: flex-start;
+  justify-content: center;
   margin-bottom: 1.25rem;
 }
 
 .studio-opening__headline {
   font-family: var(--serif);
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem); /* normalized — same scale as section h2s */
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.25;
   color: var(--deep);
-  margin: 0 0 2.5rem;
+  margin: 0;
 }
 
 .studio-opening__headline em {
@@ -3215,18 +3216,21 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   background: var(--gold-lt);
 }
 
+.studio-section__header h1,
 .studio-section__header h2 {
   font-family: var(--serif);
-  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.25;
   margin: 0 0 1.25rem;
 }
 
-/* h2 colors per section */
+/* h1/h2 colors per section (h1 used when section is the page opener) */
+.studio-silhouettes .studio-section__header h1,
 .studio-silhouettes .studio-section__header h2 {
   color: var(--cream);
 }
+.studio-silhouettes .studio-section__header h1 em,
 .studio-silhouettes .studio-section__header h2 em {
   color: var(--gold-lt);
   font-style: italic;
@@ -3360,75 +3364,28 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   margin: 0 auto;
 }
 
-/* Two-panel grid — primary leads, secondary recedes */
+/* Two-panel grid — equal columns, FormPanel renders inside each cell.
+   Hover behavior, aspect ratio, and video logic all come from FormPanel.module.css.
+   Context overrides below tune presentation for the dark homepage field. */
 .studio-preview-panels {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   gap: 3rem;
   max-width: 900px;
   margin: 0 auto 3.5rem;
   align-items: start;
 }
 
-.studio-preview-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.studio-preview-panel__frame {
-  position: relative;
-  width: 100%;
-  /* aspect-ratio: 2/3 — canonical silhouette format (1600 × 2400 px source) */
-  aspect-ratio: 2 / 3;
-  overflow: hidden;
-  border-radius: 2px;
-  background: var(--deep);
-  /* Soft inset on dark bg to give the panel definition */
-  box-shadow: 0 2px 0 0 rgba(201, 168, 76, .15) inset,
-              0 0 40px rgba(0, 0, 0, .4);
-}
-
-.studio-preview-panel__img {
-  object-fit: cover;
-  object-position: center;
-  opacity: .9;
-  transition: opacity .35s ease;
-}
-
-.studio-preview-panel:hover .studio-preview-panel__img {
-  opacity: 1;
-}
-
-/* Secondary panel — Grismere should feel spatially integrated
-   into the underwater environment, not cropped or truncated.
-   2/3 ratio matches the canonical silhouette master format.
-   scale(0.82) zooms the image out — the figure sits smaller
-   within a larger surrounding dark-water field.
-   margin-top offsets the panel to let the primary lead. */
-.studio-preview-panel--secondary .studio-preview-panel__frame {
-  aspect-ratio: 2 / 3; /* already canonical — unchanged */
+/* Stagger second FormPanel panel downward for visual rhythm. */
+.studio-preview-panels > figure:nth-child(2) {
   margin-top: 1.5rem;
-  background: #0a1520; /* deep underwater tone */
-}
-.studio-preview-panel--secondary .studio-preview-panel__img {
-  object-fit: contain;
-  object-position: center center;
-  transform: scale(0.82);
-  transform-origin: center center;
-  opacity: .70;
-}
-.studio-preview-panel--secondary:hover .studio-preview-panel__img {
-  opacity: .88;
 }
 
-.studio-preview-panel__name {
-  font-family: var(--serif);
+/* Scale down FormPanel caption for the preview context. */
+.studio-preview-panels > figure figcaption {
   font-size: .95rem;
-  font-weight: 300;
   font-style: italic;
-  color: rgba(250, 247, 242, .55);
-  text-align: center;
+  color: rgba(250, 247, 242, .72);
 }
 
 .studio-preview-cta {
@@ -3578,9 +3535,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    for use inside body sections on both cream and dark bgs. */
 .text-link {
   font-family: var(--sans);
-  font-size: .72rem;
+  font-size: .8rem;
   font-weight: 500;
-  letter-spacing: .18em;
+  letter-spacing: .13em;
   text-transform: uppercase;
   color: var(--gold);
   border-bottom: 1px solid rgba(139, 105, 20, 0.45);
@@ -3923,6 +3880,34 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   background: var(--cream);
 }
 
+/* Silhouettes section heading — page opener on /studio, section heading elsewhere.
+   Targets both h1 (Studio landing, where Silhouettes is the page opener)
+   and h2 (if used in sub-contexts). Same visual weight as all Studio sections. */
+.studio-entry-section__header {
+  max-width: 640px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+.studio-entry-section__header .eyebrow {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.studio-entry-section__header .eyebrow::before { display: none; }
+.studio-entry-section__heading,
+.studio-entry-section__header h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--deep);
+  margin: 0;
+}
+.studio-entry-section__heading em,
+.studio-entry-section__header h2 em {
+  color: var(--gold);
+  font-style: italic;
+}
+
 .studio-entry-panels {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -3958,6 +3943,8 @@ a.studio-entry-panel {
 
 .studio-entry-panel__img {
   object-fit: cover;
+  /* 60% horizontal — matches Ann alignment correction across all silhouette contexts. */
+  object-position: 60% center;
   transition: opacity 0.4s ease, transform 0.5s ease;
 }
 
@@ -4029,7 +4016,8 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 .studio-silhouette-pair__img {
   object-fit: cover;
-  object-position: center top;
+  /* 60% horizontal — matches Ann alignment correction; top vertical preserved. */
+  object-position: 60% top;
   opacity: .55;
   transition: opacity .45s ease;
 }
@@ -4122,7 +4110,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 .studio-painterly-header h2 {
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem); /* normalized */
   font-weight: 300;
   line-height: 1.25;
   color: var(--deep);
@@ -4192,7 +4180,9 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .studio-poems-header {
-  margin-bottom: 5rem;
+  max-width: 640px;
+  margin: 0 auto 4rem;
+  text-align: center;
 }
 
 .studio-poems-eyebrow {
@@ -4201,16 +4191,18 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 .studio-poems-eyebrow::before { display: none; }
 
-.studio-poems-section h2 {
+/* Section heading — matches .studio-painterly-header h2 exactly.
+   Concrete Poems is the third major Studio territory; same visual weight. */
+.studio-poems-heading {
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem); /* normalized */
   font-weight: 300;
   line-height: 1.25;
   color: var(--deep);
   margin: 0 0 1.5rem;
 }
 
-.studio-poems-section h2 em {
+.studio-poems-heading em {
   color: var(--gold);
   font-style: italic;
 }
@@ -4251,10 +4243,29 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   opacity: 1;
 }
 
+/* ── Context block — studio intro, relocated below the poem images ──────── */
+.studio-poems-context {
+  margin-top: 6rem;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(0, 0, 0, .08);
+  text-align: center;
+}
+
+.studio-poems-context__body {
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--mid);
+  max-width: 52ch;
+  margin: 0 auto;
+  opacity: .88;
+}
+
 @media (max-width: 640px) {
   .studio-poems-section { padding: 5rem 1.25rem 7rem; }
   .studio-poems-grid { gap: 2.5rem; }
   .studio-poems-item { width: min(220px, 80vw); }
+  .studio-poems-context { margin-top: 4rem; padding-top: 3rem; }
 }
 
 /* ── Silhouettes page heading subline ─────────────────── */
@@ -4290,9 +4301,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .coll-edition-placeholder {
   width: 160px;
   aspect-ratio: 3 / 4;
-  background: var(--warm);
-  border: 1px solid var(--mist);
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  /* Lighter than section bg so the boxes read as objects, not voids. */
+  background: var(--cream);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 6px 18px rgba(0, 0, 0, 0.09), 0 1px 3px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: flex-end;
   padding: 0.9rem 1rem;
@@ -4302,9 +4314,9 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .coll-edition-placeholder__label {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   color: var(--mid);
-  opacity: 0.55;
+  opacity: 0.78;
   letter-spacing: 0.01em;
 }
 

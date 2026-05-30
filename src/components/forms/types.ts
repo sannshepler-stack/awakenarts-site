@@ -36,6 +36,14 @@ export interface SymbolicForm {
    * pauses + resets on leave / blur.
    */
   videoSrc?: string
+  /**
+   * Optional CSS object-position value applied to both the still <img> and
+   * the <video> overlay, overriding the default "center". Use to correct
+   * per-form framing when the figure sits off-center within the 2:3 crop.
+   * Example: "60% center" shifts the visible window right (useful when the
+   * figure reads too far left at the default 50% horizontal anchor).
+   */
+  imagePosition?: string
 }
 
 /** True when the Form has an image asset attached. */

@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import FooterSocial from '@/components/FooterSocial'
+import FormPanel from '@/components/forms/FormPanel'
+import { SYMBOLIC_FORMS } from '@/components/forms/forms-data'
 
 // The homepage explicitly sets its canonical to "/" so the trailing-slash
 // and bare-domain forms collapse to a single URL in search results.
@@ -146,31 +148,12 @@ export default function HomePage() {
             </h2>
           </div>
 
+          {/* Canonical silhouette system — FormPanel is the single implementation.
+              Behavior, hover logic, and aspect ratio all inherit from /studio/silhouettes.
+              CSS context overrides below tune size and stagger for the preview grid. */}
           <div className="studio-preview-panels">
-            <div className="studio-preview-panel">
-              <div className="studio-preview-panel__frame">
-                <Image
-                  src="/images/forms/queen-ann-still.png"
-                  alt="Queen Ann — symbolic figure"
-                  fill
-                  sizes="(max-width: 768px) 90vw, 44vw"
-                  className="studio-preview-panel__img"
-                />
-              </div>
-              <p className="studio-preview-panel__name">Queen Ann</p>
-            </div>
-            <div className="studio-preview-panel studio-preview-panel--secondary">
-              <div className="studio-preview-panel__frame">
-                <Image
-                  src="/images/forms/mermaid-grismere-still.png"
-                  alt="Mermaid Grismere — symbolic figure"
-                  fill
-                  sizes="(max-width: 768px) 90vw, 44vw"
-                  className="studio-preview-panel__img"
-                />
-              </div>
-              <p className="studio-preview-panel__name">Mermaid Grismere</p>
-            </div>
+            <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'queen-ann')!} />
+            <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'mermaid-grismere')!} />
           </div>
 
           <p className="studio-preview-cta">
