@@ -163,35 +163,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── SECTION 3: LIBRARY PREVIEW ───────────────────────────
-          The readable archive — concrete poetry, literary texts,
-          and symbolic works. Warm cream field; text-led.
-      ──────────────────────────────────────────────────────────── */}
-      <section className="lib-preview-section" aria-labelledby="lib-preview-heading">
-        <div className="lib-preview-inner">
-          <p className="eyebrow">Library</p>
-          <h2 id="lib-preview-heading">
-            Concrete poetry<br />
-            <em>and symbolic works</em>
-          </h2>
-          <p className="lib-preview-body">
-            The readable archive of AwakenArts — shaped poems, readings,
-            reflections, and symbolic literary works encountered as
-            literature, not explanation.
-          </p>
-          <p className="lib-preview-cta">
-            <Link href="/library" className="text-link">
-              Enter the Library <span aria-hidden="true">→</span>
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      {/* ── SECTION 4: COLLECTION / FOLIOS ───────────────────────
-          The future protected product layer. Curated, withheld,
-          forthcoming. NOT archive browsing — that belongs to Library.
-          Placeholder edition objects establish the product register
-          until real folio imagery is prepared.
+      {/* ── SECTION 3: COLLECTION / FOLIOS ───────────────────────
+          Primary product layer — before Library. Curated, withheld,
+          forthcoming. Placeholder objects hold the register.
       ──────────────────────────────────────────────────────────── */}
       <section className="coll-section" aria-labelledby="coll-heading">
         <div className="coll-inner">
@@ -202,15 +176,8 @@ export default function HomePage() {
               Folios, readings,<br />
               <em>and curated editions</em>
             </h2>
-            <p className="coll-body">
-              Curated symbolic editions, literary folios, and contemplative
-              works from the world of AwakenArts.
-            </p>
           </div>
 
-          {/* Edition placeholders — visual register of the forthcoming
-              product layer. Styled as closed folio objects. Will be
-              replaced with real edition imagery when prepared. */}
           <div className="coll-editions-preview" aria-hidden="true">
             <div className="coll-edition-placeholder">
               <span className="coll-edition-placeholder__label">In preparation</span>
@@ -223,6 +190,24 @@ export default function HomePage() {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* ── SECTION 4: LIBRARY PREVIEW ───────────────────────────
+          Reflective reading/archive companion space. After Collection.
+      ──────────────────────────────────────────────────────────── */}
+      <section className="lib-preview-section" aria-labelledby="lib-preview-heading">
+        <div className="lib-preview-inner">
+          <p className="eyebrow">Library</p>
+          <h2 id="lib-preview-heading">
+            Concrete poetry<br />
+            <em>and symbolic works</em>
+          </h2>
+          <p className="lib-preview-cta">
+            <Link href="/library" className="text-link">
+              Enter the Library <span aria-hidden="true">→</span>
+            </Link>
+          </p>
         </div>
       </section>
 

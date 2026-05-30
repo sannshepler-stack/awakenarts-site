@@ -51,6 +51,11 @@ export default function JournalIndexPage() {
 
           <span className={styles.territoriesLabel}>Symbolic Territories</span>
           <TerritoryNav variant="gateway" />
+
+          {/* Editorial identity — restrained gold, beneath the territory list */}
+          <p className={styles.identityStatement}>
+            A journal of symbolic territories and reflective forms.
+          </p>
         </div>
       </main>
 
@@ -71,21 +76,54 @@ export default function JournalIndexPage() {
             space invites an experiment with symbolic form — through
             repetition, placement, rhythm, image, and language.
           </p>
-          <Link href="/experience" className={styles.wordFormLink}>
-            Create a Word Form
-          </Link>
-          <p className={styles.wordFormSupport}>
-            Begin with a word, memory, image, or phrase.
+
+          {/* Word-form image examples — the actual visual content
+              previously in Studio section 3 (Concrete Poems).
+              butterfly-wordart.png and word-form-spiral.png */}
+          <div className={styles.wordFormGrid}>
+            <div className={styles.wordFormItem}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/experiences/butterfly-wordart.png"
+                alt="Butterfly Word-Art — words arranged in the shape of a butterfly"
+                className={styles.wordFormImg}
+                loading="lazy"
+              />
+            </div>
+            <div className={styles.wordFormItem}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/experiences/word-form-spiral.png"
+                alt="Word-Form Spiral — words arranged in a spiral form"
+                className={styles.wordFormImg}
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div className={styles.ctaBlock}>
+            <Link href="/experience" className={styles.wordFormLink}>
+              Create a Word Form
+            </Link>
+            <p className={styles.wordFormSupport}>
+              Begin with a word, memory, image, or phrase.
+            </p>
+          </div>
+
+          <p className={styles.externalRef}>
+            Word forms may also be explored through tools such as{' '}
+            <a
+              href="https://wordart.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.externalLink}
+            >
+              WordArt.com
+            </a>
+            .
           </p>
         </div>
       </section>
-
-      {/* ── Footnote ──────────────────────────────────────────────── */}
-      <div className={styles.footnoteBar}>
-        <p className={styles.footnote}>
-          A journal of symbolic territories and reflective forms.
-        </p>
-      </div>
     </>
   )
 }
