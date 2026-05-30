@@ -110,18 +110,6 @@ export default function JournalIndexPage() {
             </p>
           </div>
 
-          <p className={styles.externalRef}>
-            Word forms may also be explored through tools such as{' '}
-            <a
-              href="https://wordart.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.externalLink}
-            >
-              WordArt.com
-            </a>
-            .
-          </p>
         </div>
       </section>
     </>

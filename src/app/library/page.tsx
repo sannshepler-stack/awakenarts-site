@@ -71,26 +71,16 @@ export default function LibraryPage() {
             <em>and symbolic works</em>
           </h1>
           <p className="lib-hero__sub">
-            The readable archive of AwakenArts — shaped poems, readings,
-            reflections, and symbolic literary works encountered as
-            literature, not explanation.
+            A quiet collection of symbolic figures, forms, and reflective
+            writings from AwakenArts.
           </p>
         </div>
       </section>
 
-      {/* ── CONCRETE POEMS ───────────────────────────────────────
-          The symbolic figures as literary archive entries.
-          Each title links to its dedicated page. Notes are brief,
-          atmospheric, and literary — not explanatory.
+      {/* ── SYMBOLIC FIGURES ─────────────────────────────────────
+          Literary archive entries — atmospheric, not explanatory.
       ──────────────────────────────────────────────────────────── */}
-      <section className="lib-section" aria-labelledby="lib-poems-heading">
-        <div className="lib-section__header">
-          <p className="eyebrow">Concrete Poems</p>
-          <h2 id="lib-poems-heading">
-            Symbolic figures<br />
-            <em>within the work</em>
-          </h2>
-        </div>
+      <section className="lib-section" aria-label="Symbolic figures">
         <div className="lib-grid lib-grid--4">
           {poems.map(({ title, note, link }) => (
             <article key={title} className="lib-card">
@@ -99,37 +89,6 @@ export default function LibraryPage() {
               <Link href={link} className="library-card__link">Read →</Link>
             </article>
           ))}
-        </div>
-      </section>
-
-      {/* ── READINGS ─────────────────────────────────────────────
-          Placeholder. Contemplative literary reflections connected
-          to symbols, memory, image, and atmospheric recognition.
-          Not a guidance system.
-      ──────────────────────────────────────────────────────────── */}
-      <section className="lib-section lib-section--warm" aria-labelledby="lib-readings-heading">
-        <div className="lib-section__header">
-          <p className="eyebrow">Readings</p>
-          <h2 id="lib-readings-heading">
-            Contemplative<br />
-            <em>literary reflections</em>
-          </h2>
-          <p className="lib-placeholder-note">In preparation.</p>
-        </div>
-      </section>
-
-      {/* ── REFLECTIONS ──────────────────────────────────────────
-          Placeholder. Short contemplative symbolic writing.
-          Restrained editorial tone.
-      ──────────────────────────────────────────────────────────── */}
-      <section className="lib-section" aria-labelledby="lib-reflections-heading">
-        <div className="lib-section__header">
-          <p className="eyebrow">Reflections</p>
-          <h2 id="lib-reflections-heading">
-            Symbolic writing<br />
-            <em>and contemplation</em>
-          </h2>
-          <p className="lib-placeholder-note">In preparation.</p>
         </div>
       </section>
 
@@ -157,9 +116,7 @@ export default function LibraryPage() {
           <div className="footer-col">
             <h4>Library</h4>
             <ul>
-              <li><Link href="/library#lib-poems-heading">Concrete Poems</Link></li>
-              <li><Link href="/library#lib-readings-heading">Readings</Link></li>
-              <li><Link href="/library#lib-reflections-heading">Reflections</Link></li>
+              <li><Link href="/library">Symbolic Works</Link></li>
             </ul>
           </div>
 
