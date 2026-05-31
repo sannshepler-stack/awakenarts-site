@@ -77,7 +77,7 @@ export default function StudioPage() {
             <div className="studio-painterly-grid">
               <div className="studio-painterly-item">
                 <Image
-                  src="/images/gallery/angel.PNG"
+                  src="/images/gallery/angel1-painting.png"
                   alt="Angel — atmospheric painterly figure"
                   fill
                   sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
@@ -86,7 +86,7 @@ export default function StudioPage() {
               </div>
               <div className="studio-painterly-item">
                 <Image
-                  src="/images/gallery/mermaid-genie-1.PNG"
+                  src="/images/gallery/mermaid-genie1-painting.png"
                   alt="Mermaid Genie — atmospheric painterly figure"
                   fill
                   sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
@@ -95,7 +95,7 @@ export default function StudioPage() {
               </div>
               <div className="studio-painterly-item">
                 <Image
-                  src="/images/gallery/may.jpg"
+                  src="/images/gallery/may-painting.jpg"
                   alt="May — atmospheric painterly figure"
                   fill
                   sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
@@ -104,7 +104,7 @@ export default function StudioPage() {
               </div>
               <div className="studio-painterly-item">
                 <Image
-                  src="/images/gallery/dark-girl.jpg"
+                  src="/images/gallery/dark-girl-painting.jpg"
                   alt="Figure Study — atmospheric painterly work"
                   fill
                   sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
@@ -113,7 +113,7 @@ export default function StudioPage() {
               </div>
               <div className="studio-painterly-item">
                 <Image
-                  src="/images/gallery/hawaiian-girl.jpg"
+                  src="/images/gallery/hawaiian-girl-painting.jpg"
                   alt="Figure — atmospheric painterly study"
                   fill
                   sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
@@ -122,7 +122,7 @@ export default function StudioPage() {
               </div>
               <div className="studio-painterly-item">
                 <Image
-                  src="/images/gallery/indian-girl.jpg"
+                  src="/images/gallery/indian-girl-painting.jpg"
                   alt="Figure Study — painterly atmospheric work"
                   fill
                   sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"

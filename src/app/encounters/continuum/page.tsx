@@ -30,7 +30,6 @@ export default function ContinuumPage() {
   const [hasVideo, setHasVideo] = useState(true);
   const [ended, setEnded] = useState(false);
   const [showLine1, setShowLine1] = useState(false);
-  const [showLine2, setShowLine2] = useState(false);
   const [showExits, setShowExits] = useState(false);
 
   useEffect(() => {
@@ -48,12 +47,10 @@ export default function ContinuumPage() {
     //  10.0s — quiet exits appear
     //   8.5s — brightness settles (only meaningful if a video is playing)
     const t1 = setTimeout(() => setShowLine1(true), 3000);
-    const t2 = setTimeout(() => setShowLine2(true), 6000);
     const t3 = setTimeout(() => setShowExits(true), 10000);
     const tSettle = setTimeout(() => setEnded(true), 8500);
     return () => {
       clearTimeout(t1);
-      clearTimeout(t2);
       clearTimeout(t3);
       clearTimeout(tSettle);
     };
@@ -123,34 +120,16 @@ export default function ContinuumPage() {
           className={cormorant.className}
           style={{
             fontStyle: "italic",
-            fontSize: "clamp(1.6rem, 4.5vw, 2.6rem)",
+            fontSize: "clamp(2rem, 5vw, 3.2rem)",
             letterSpacing: "0.01em",
             lineHeight: 1.2,
             margin: 0,
-            marginBottom: "1.25rem",
+            marginBottom: "3rem",
             opacity: showLine1 ? 1 : 0,
             transition: "opacity 2s ease",
           }}
         >
           The way continues.
-        </p>
-
-        <p
-          className={cormorant.className}
-          style={{
-            fontStyle: "italic",
-            fontSize: "clamp(1.05rem, 2.6vw, 1.45rem)",
-            letterSpacing: "0.02em",
-            lineHeight: 1.45,
-            margin: 0,
-            marginBottom: "3rem",
-            color: "rgba(255,255,255,0.85)",
-            maxWidth: "32ch",
-            opacity: showLine2 ? 1 : 0,
-            transition: "opacity 2s ease",
-          }}
-        >
-          Rest here. More will arrive when you return.
         </p>
 
         <nav
@@ -179,7 +158,7 @@ export default function ContinuumPage() {
                 color: "rgba(255,255,255,0.85)",
                 textDecoration: "none",
                 fontStyle: "italic",
-                fontSize: "1.05rem",
+                fontSize: "1.5rem",
                 letterSpacing: "0.06em",
                 borderBottom: "1px solid rgba(255,255,255,0.25)",
                 paddingBottom: "2px",

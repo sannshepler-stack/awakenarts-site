@@ -163,9 +163,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── SECTION 3: COLLECTION / FOLIOS ───────────────────────
-          Primary product layer — before Library. Curated, withheld,
-          forthcoming. Placeholder objects hold the register.
+      {/* ── SECTION 3: COLLECTION ────────────────────────────────
+          Literary-symbolic threshold. Featured work + supporting tier.
+          Queen Ann: cinematic, path-oriented, emotionally immediate.
+          Ballerina + Kings: supporting — restrained, collectible.
       ──────────────────────────────────────────────────────────── */}
       <section className="coll-section" aria-labelledby="coll-heading">
         <div className="coll-inner">
@@ -178,31 +179,24 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="coll-editions-preview">
-            {/* Queen Ann — shape as shape */}
-            <div className="coll-edition-card">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/collection/queen-ann--shape-as-shape.png"
-                alt="Queen Ann — symbolic form as shape"
-                className="coll-edition-img"
-                loading="lazy"
-              />
-            </div>
-            {/* Queen Ann — words as words */}
-            <div className="coll-edition-card">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/collection/queen-ann--words-as-words.png"
-                alt="Queen Ann — words as words"
-                className="coll-edition-img"
-                loading="lazy"
-              />
-            </div>
-            {/* Third slot — forthcoming */}
-            <div className="coll-edition-placeholder">
-              <span className="coll-edition-placeholder__label">In preparation</span>
-            </div>
+          {/* ── Ballerina — single collection image ── */}
+          <div className="coll-single">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/collection/ballerina-collection.png"
+              alt="Ballerina — AwakenArts Collection"
+              className="coll-single__img"
+              loading="eager"
+            />
+          </div>
+
+          <div className="coll-invitation">
+            <p className="coll-invitation__text">
+              Original poetic works — authored symbolic forms in language, image, and atmosphere.
+            </p>
+            <Link href="/collection" className="coll-invitation__link">
+              The Collection <span aria-hidden="true">→</span>
+            </Link>
           </div>
 
         </div>
