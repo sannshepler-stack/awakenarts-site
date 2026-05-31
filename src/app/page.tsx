@@ -178,13 +178,28 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="coll-editions-preview" aria-hidden="true">
-            <div className="coll-edition-placeholder">
-              <span className="coll-edition-placeholder__label">In preparation</span>
+          <div className="coll-editions-preview">
+            {/* Queen Ann — shape as shape */}
+            <div className="coll-edition-card">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/collection/queen-ann--shape-as-shape.png"
+                alt="Queen Ann — symbolic form as shape"
+                className="coll-edition-img"
+                loading="lazy"
+              />
             </div>
-            <div className="coll-edition-placeholder">
-              <span className="coll-edition-placeholder__label">In preparation</span>
+            {/* Queen Ann — words as words */}
+            <div className="coll-edition-card">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/collection/queen-ann--words-as-words.png"
+                alt="Queen Ann — words as words"
+                className="coll-edition-img"
+                loading="lazy"
+              />
             </div>
+            {/* Third slot — forthcoming */}
             <div className="coll-edition-placeholder">
               <span className="coll-edition-placeholder__label">In preparation</span>
             </div>
