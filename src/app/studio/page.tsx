@@ -134,58 +134,6 @@ export default function StudioPage() {
           </div>
         </section>
 
-        {/* ── 3. CONCRETE POEMS ───────────────────────────────────
-            Third major Studio territory.
-            Heading system matches Feminine Motifs: eyebrow + serif h2.
-        ──────────────────────────────────────────────────────── */}
-        <section className="studio-poems-section" aria-labelledby="studio-poems-heading">
-          <div className="studio-poems-inner">
-
-            <div className="studio-poems-header">
-              <p className="eyebrow studio-poems-eyebrow">Concrete Poems</p>
-              <h2 id="studio-poems-heading" className="studio-poems-heading">
-                The visual symbolic<br />
-                <em>art practice</em>
-              </h2>
-              <p className="studio-poems-intro">
-                Originating image-text structures — the language-forms
-                beneath the larger symbolic world.
-              </p>
-            </div>
-
-            <div className="studio-poems-grid">
-              <div className="studio-poems-item">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/experiences/butterfly-wordart.png"
-                  alt="Butterfly Word-Art — a concrete poem in the shape of a butterfly"
-                  className="studio-poems-img"
-                  loading="lazy"
-                />
-              </div>
-              <div className="studio-poems-item">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/experiences/word-form-spiral.png"
-                  alt="Word-Form Spiral — a concrete poem in spiral form"
-                  className="studio-poems-img"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            {/* Contextual body — grounding reflection after the visual work. */}
-            <div className="studio-poems-context">
-              <p className="studio-poems-context__body">
-                AwakenArts emerged through poetry, image, and symbolic form —
-                a contemplative visual practice shaped through atmosphere,
-                language, and recurring symbolic presences.
-              </p>
-            </div>
-
-          </div>
-        </section>
-
         {/* ── CTA ── */}
         <section className="studio-cta">
           <Link href="/encounters" className="path-cta__link">
