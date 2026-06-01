@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import FooterSocial from '@/components/FooterSocial'
@@ -59,78 +58,30 @@ export default function StudioPage() {
           </div>
         </section>
 
-        {/* ── 2. DIGITAL ART PAINTINGS ────────────────────────────
-            Quieter territory. Atmospheric figures at restrained
-            scale. Warm field. Curated, not crowded.
-        ──────────────────────────────────────────────────────── */}
-        <section className="studio-painterly-section" aria-labelledby="studio-painterly-heading">
-          <div className="studio-section__inner">
-
-            <div className="studio-painterly-header">
+        {/* ── 2. DIGITAL ART PAINTINGS ──────────────────────────── */}
+        <section className="paintings-section" aria-labelledby="paintings-heading">
+          <div className="paintings-inner">
+            <div className="paintings-header">
               <p className="eyebrow">Feminine Motifs</p>
-              <h2 id="studio-painterly-heading">
+              <h2 id="paintings-heading">
                 Digital Art<br />
                 <em>Paintings</em>
               </h2>
             </div>
-
-            <div className="studio-painterly-grid">
-              <div className="studio-painterly-item">
-                <Image
-                  src="/images/gallery/angel1-painting.png"
-                  alt="Angel — atmospheric painterly figure"
-                  fill
-                  sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
-                  className="studio-painterly-img"
-                />
-              </div>
-              <div className="studio-painterly-item">
-                <Image
-                  src="/images/gallery/mermaid-genie1-painting.png"
-                  alt="Mermaid Genie — atmospheric painterly figure"
-                  fill
-                  sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
-                  className="studio-painterly-img"
-                />
-              </div>
-              <div className="studio-painterly-item">
-                <Image
-                  src="/images/gallery/may-painting.jpg"
-                  alt="May — atmospheric painterly figure"
-                  fill
-                  sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
-                  className="studio-painterly-img"
-                />
-              </div>
-              <div className="studio-painterly-item">
-                <Image
-                  src="/images/gallery/dark-girl-painting.jpg"
-                  alt="Figure Study — atmospheric painterly work"
-                  fill
-                  sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
-                  className="studio-painterly-img"
-                />
-              </div>
-              <div className="studio-painterly-item">
-                <Image
-                  src="/images/gallery/hawaiian-girl-painting.jpg"
-                  alt="Figure — atmospheric painterly study"
-                  fill
-                  sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
-                  className="studio-painterly-img"
-                />
-              </div>
-              <div className="studio-painterly-item">
-                <Image
-                  src="/images/gallery/indian-girl-painting.jpg"
-                  alt="Figure Study — painterly atmospheric work"
-                  fill
-                  sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 26vw"
-                  className="studio-painterly-img"
-                />
-              </div>
+            <div className="paintings-grid">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/gallery/ann-painting.jpg"          alt="Ann"          className="paintings-img" loading="lazy" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/gallery/candace-painting.jpg"      alt="Candace"      className="paintings-img" loading="lazy" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/gallery/may-painting.jpg"          alt="May"          className="paintings-img" loading="lazy" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/gallery/dark-girl-painting.jpg"    alt="Dark Girl"    className="paintings-img" loading="lazy" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/gallery/hawaiian-girl-painting.jpg" alt="Hawaiian Girl" className="paintings-img" loading="lazy" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/gallery/indian-girl-painting.jpg"  alt="Indian Girl"  className="paintings-img" loading="lazy" />
             </div>
-
           </div>
         </section>
 

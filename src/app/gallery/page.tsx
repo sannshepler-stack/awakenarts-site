@@ -27,7 +27,7 @@ const artworks: {
   video?: boolean
 }[] = [
   {
-    src: '/images/gallery/angel1-painting.PNG',
+    src: '/images/gallery/angel1-painting.jpg',
     title: 'Angel',
     medium: 'Original work',
     category: 'figure',
@@ -48,7 +48,7 @@ const artworks: {
     wide: false,
   },
   {
-    src: '/images/gallery/mermaid-genie1-painting.PNG',
+    src: '/images/gallery/mermaid-genie1-painting.jpg',
     title: 'Mermaid Genie',
     medium: 'Original work',
     category: 'figure',
