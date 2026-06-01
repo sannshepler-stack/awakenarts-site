@@ -90,6 +90,20 @@ export default function CollectionPage() {
               </figcaption>
             </figure>
 
+            <figure className="col-work-fig">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/collection/dragon-collection.png"
+                alt="Dragon — a concrete poem by Susan Ann Shepler"
+                className="col-work-fig__img"
+                loading="lazy"
+              />
+              <figcaption className="col-work-fig__caption">
+                <span className="col-work-fig__title">Dragon</span>
+                <span className="col-work-fig__type">Concrete poem · Folio edition</span>
+              </figcaption>
+            </figure>
+
           </div>
         </section>
 
