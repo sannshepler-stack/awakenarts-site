@@ -6,7 +6,7 @@ import FooterSocial from '@/components/FooterSocial'
 export const metadata: Metadata = {
   title: 'Library — AwakenArts',
   description:
-    'Concrete poems, readings, and symbolic literary works — the readable archive of AwakenArts by Susan Ann Shepler.',
+    'Image-shaped poems and symbolic forms — concrete poetry as contemplative learning. Each work joins language to visible structure, inviting recognition through form, feeling, and reflection.',
   alternates: { canonical: '/library' },
   openGraph: {
     url: '/library',
@@ -27,27 +27,27 @@ export const metadata: Metadata = {
 const poems = [
   {
     title: 'Grismere',
-    note: 'Water, depth, and the slow surface of what has long been present.',
+    note: 'The mermaid embodies divided awareness — the pull between surface life and hidden depth. She teaches the reader to recognize what has been submerged beneath ordinary experience, and why it continues to call.',
     link: '/library/figures/grismere',
   },
   {
     title: 'Queen Ann',
-    note: 'Between kingdoms — a threshold between what has ended and what has not yet begun.',
+    note: 'The queen stands at the threshold between what has ended and what has not yet begun. She carries the tension of exile and fidelity — the cost of remaining true when the familiar kingdom is gone.',
     link: '/library/figures/queen-ann-between-kingdoms',
   },
   {
     title: 'The Ballerina',
-    note: 'Movement, longing, and the body as symbolic form.',
+    note: 'The ballerina holds the tension between longing and discipline — the body shaped by devotion toward something it cannot fully reach. She teaches the reader to recognize beauty as both gift and burden.',
     link: '/library/figures/ballerina',
   },
   {
     title: 'Dragon',
-    note: 'A presence that cannot be approached through opposition.',
+    note: 'The dragon cannot be defeated through direct opposition. He embodies the force that must be understood before it can be integrated — fear, power, and the shadow that grows larger when refused.',
     link: '/library/figures/the-dragon',
   },
   {
     title: 'Merri — When Time Stops',
-    note: 'She arrives when time has run out. A poem of stillness and readiness.',
+    note: 'Merri arrives when time has run out — when forward movement is no longer possible. She teaches stillness as readiness, not failure. In the moment of suspension, she reveals what the rushing past conceals.',
     link: '/library/figures/merri-when-time-stops',
   },
 ]
@@ -67,12 +67,16 @@ export default function LibraryPage() {
         <div className="lib-hero__inner">
           <p className="eyebrow">Library</p>
           <h1>
-            Concrete poetry<br />
-            <em>and symbolic works</em>
+            Image-shaped poems<br />
+            <em>and symbolic forms</em>
           </h1>
           <p className="lib-hero__sub">
-            A quiet collection of symbolic figures, forms, and reflective
-            writings from AwakenArts.
+            These works reflect the movement beneath surface experience into
+            deeper layers of memory, longing, conflict, transformation, and
+            recognition. The journey inward is not an escape from reality,
+            but a search for truthful orientation — where the hidden life of
+            the heart encounters wisdom, reflection, and the light that guides
+            the path forward.
           </p>
         </div>
       </section>

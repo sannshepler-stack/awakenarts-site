@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: '%s | AwakenArts',
   },
   description:
-    'Within the Circle — concrete poems and readings by Susan Ann Shepler, where each poem takes the form of its subject. Rooted in the Christian tradition.',
+    'AwakenArts explores the inner journey through symbolic concrete poetry and visible poetic form — reflecting movement through memory, longing, conflict, transformation, and recognition. By Susan Ann Shepler.',
   applicationName: 'AwakenArts',
   authors: [{ name: 'Susan Ann Shepler', url: SITE_URL + '/about' }],
   creator: 'Susan Ann Shepler',

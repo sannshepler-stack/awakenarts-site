@@ -8,13 +8,13 @@ import { SYMBOLIC_FORMS } from '@/components/forms/forms-data'
 export const metadata: Metadata = {
   title: 'Studio — AwakenArts',
   description:
-    'The AwakenArts Collection — symbolic forms, images, and contemplative works by Susan Ann Shepler.',
+    'The Studio of AwakenArts — image-shaped poems, concrete poetry, and symbolic forms. Each work joins language to visible structure through contemplative learning and symbolic recognition.',
   alternates: { canonical: '/studio' },
   openGraph: {
     url: '/studio',
     title: 'Studio — AwakenArts',
     description:
-      'The visual symbolic art practice of AwakenArts by Susan Ann Shepler.',
+      'Concrete poetry and image-shaped poems — how language becomes visible form in the work of Susan Ann Shepler.',
   },
 }
 
@@ -38,10 +38,10 @@ export default function StudioPage() {
             {/* Heading uses studio-section__header — dark-bg color rules
                 already defined in globals.css for .studio-silhouettes context. */}
             <div className="studio-section__header">
-              <p className="eyebrow">The AwakenArts Collection</p>
+              <p className="eyebrow">Image-Shaped Poems</p>
               <h1 id="studio-silhouettes-heading">
-                Symbolic Forms<br />
-                <em>and Images</em>
+                Language becoming<br />
+                <em>visible form</em>
               </h1>
             </div>
 

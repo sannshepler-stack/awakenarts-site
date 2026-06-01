@@ -64,17 +64,17 @@ export default function HomePage() {
             <span>Shapes a Path</span>
           </h1>
 
-          {/* Supporting atmospheric line — quieter weight than h1. */}
-          <p className="hero-subline">Symbols speak. The soul listens.</p>
+          <p className="hero-subline">The inner journey through symbolic form.</p>
 
-          {/* Sub line — what the work actually is. */}
           <p className="hero-sub">
-            Concrete poems, symbolic forms, readings, and encounters —
-            rooted in the Christian tradition, and the language of
-            image and symbol.
+            AwakenArts explores the inner journey through symbolic concrete
+            poetry and visible poetic form — reflecting movement through
+            memory, longing, conflict, transformation, and recognition.
+            The journey inward is a search for truthful orientation, where
+            the hidden life of the heart encounters wisdom and the light
+            that guides the path forward.
           </p>
 
-          {/* Primary CTA — into the encounter sequence. */}
           <Link href="/encounters" className="hero-cta">
             Enter the Encounters <span className="arrow" aria-hidden="true">→</span>
           </Link>
@@ -141,10 +141,10 @@ export default function HomePage() {
         <div className="studio-preview-inner">
 
           <div className="studio-preview-header">
-            <p className="eyebrow">The AwakenArts Collection</p>
+            <p className="eyebrow">Image-Shaped Poems</p>
             <h2 id="studio-preview-heading">
-              Symbolic Forms<br />
-              <em>and Images</em>
+              Form carries<br />
+              <em>meaning</em>
             </h2>
           </div>
 
@@ -174,8 +174,8 @@ export default function HomePage() {
           <div className="coll-header">
             <p className="eyebrow">The AwakenArts Collection</p>
             <h2 id="coll-heading">
-              Folios, readings,<br />
-              <em>and curated editions</em>
+              Poems, readings,<br />
+              <em>and reflective works</em>
             </h2>
           </div>
 
@@ -209,8 +209,8 @@ export default function HomePage() {
         <div className="lib-preview-inner">
           <p className="eyebrow">Library</p>
           <h2 id="lib-preview-heading">
-            Concrete poetry<br />
-            <em>and symbolic works</em>
+            Read the poems.<br />
+            <em>Encounter the forms.</em>
           </h2>
           <p className="lib-preview-cta">
             <Link href="/library" className="text-link">
