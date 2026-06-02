@@ -81,7 +81,7 @@ export default function SilhouettesPage() {
               loading="lazy"
             />
             <p>
-              Original symbolic figures for the interior life — rooted in the
+              Symbolic concrete poetry exploring the inward journey — rooted in the
               Christian tradition, created through the transformative language
               arts process. By Susan Ann Shepler.
             </p>

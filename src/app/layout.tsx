@@ -117,7 +117,7 @@ const jsonLd = {
       logo: `${SITE_URL}/images/brand/logo.png`,
       founder: { '@id': `${SITE_URL}/#person` },
       description:
-        'Original symbolic figures for the interior life — rooted in the Christian tradition, created through the transformative language arts process. By Susan Ann Shepler.',
+        'Symbolic concrete poetry exploring the inward journey — rooted in the Christian tradition, created through the transformative language arts process. By Susan Ann Shepler.',
     },
     {
       '@type': 'WebSite',

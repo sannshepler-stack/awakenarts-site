@@ -38,10 +38,10 @@ export default function StudioPage() {
             {/* Heading uses studio-section__header — dark-bg color rules
                 already defined in globals.css for .studio-silhouettes context. */}
             <div className="studio-section__header">
-              <p className="eyebrow">Image-Shaped Poems</p>
+              <p className="eyebrow">The Symbolic Forms</p>
               <h1 id="studio-silhouettes-heading">
-                Language becoming<br />
-                <em>visible form</em>
+                Language becomes<br />
+                <em>the figure</em>
               </h1>
             </div>
 
@@ -55,6 +55,45 @@ export default function StudioPage() {
                 ))}
             </div>
 
+          </div>
+        </section>
+
+        {/* ── METHOD ────────────────────────────────────────────────
+            Parabolic statement — how the forms function.
+            Between silhouettes and paintings: grounds the method
+            before the reader encounters the broader visual work.
+        ──────────────────────────────────────────────────────── */}
+        <section className="studio-method-section" aria-label="The AwakenArts method">
+          <div className="studio-method-inner">
+            <p className="eyebrow">The Method</p>
+            <blockquote className="studio-method-quote">
+              &ldquo;Though seeing, they do not see.&rdquo;
+              <cite>— Matthew 13:13</cite>
+            </blockquote>
+            <p className="studio-method-body">
+              These poems work the way parables work. They do not explain. They show.
+              A queen crossing through fire reveals something about loss, dignity, and
+              the cost of remaining true. A mermaid at the surface of the water reveals
+              something about divided awareness and the pull toward what lies beneath.
+              A dragon in conflict with itself reveals something about the tragic nature
+              of inner division.
+            </p>
+            <p className="studio-method-body">
+              You do not need to understand the symbolism in advance. You encounter it
+              through the form itself — through shape, rhythm, image, and the particular
+              emotional atmosphere each poem creates. The meaning arrives through
+              recognition, not explanation.
+            </p>
+            <p className="studio-method-body">
+              This is what it means to treat symbolic form as visible language rather
+              than as decoration. The poem is not about the figure. The poem is the figure.
+            </p>
+
+            <blockquote className="studio-method-quote">
+              &ldquo;The purposes of a person&rsquo;s heart are deep waters,
+              but one who has insight draws them out.&rdquo;
+              <cite>— Proverbs 20:5</cite>
+            </blockquote>
           </div>
         </section>
 
@@ -111,7 +150,7 @@ export default function StudioPage() {
               />
             </Link>
             <p>
-              Original symbolic figures for the interior life — rooted in the
+              Symbolic concrete poetry exploring the inward journey — rooted in the
               Christian tradition, created through the transformative language
               arts process. By Susan Ann Shepler.
             </p>

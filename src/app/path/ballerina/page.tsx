@@ -181,7 +181,7 @@ export default function PathBallerinaPage() {
               <img src="/images/brand/logo.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
             </Link>
             <p>
-              Original symbolic figures for the interior life — rooted in the
+              Symbolic concrete poetry exploring the inward journey — rooted in the
               Christian tradition, created through the transformative language
               arts process. By Susan Ann Shepler.
             </p>

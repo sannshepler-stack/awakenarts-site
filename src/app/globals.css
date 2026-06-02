@@ -20,13 +20,16 @@
    RESET
 ───────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  font-size: 18px; /* rem base — all rem values scale from this */
+}
 body {
   background: #f5f0e8;
   color: var(--deep);
   font-family: var(--serif);
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: 1rem;
+  line-height: 1.85;
   overflow-x: hidden;
 }
 img { max-width: 100%; display: block; }
@@ -217,11 +220,9 @@ a   { color: inherit; text-decoration: none; }
   display: grid;
   /* Text column narrower than image column so the figure carries
      compositional weight and the text does not drift outward. */
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  column-gap: 1.25rem;
-  /* align to the top of both columns; the text block is offset
-     downward via margin-top so it sits naturally with the figure. */
-  align-items: start;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  column-gap: 3rem;
+  align-items: stretch;
   max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
@@ -234,9 +235,10 @@ a   { color: inherit; text-decoration: none; }
    from expanding across the cell. */
 .hero__text {
   text-align: left;
-  max-width: 620px;
+  max-width: 520px;
   justify-self: start;
-  margin-top: 1.25rem;
+  align-self: center; /* vertically center text within the stretched row */
+  margin-top: 0;
 }
 
 /* Two-line headline. Each line wraps in its own span so the second
@@ -274,20 +276,22 @@ a   { color: inherit; text-decoration: none; }
    no border-radius, so nothing reads as a card frame. */
 .hero__media {
   width: 100%;
-  max-width: 1200px;
-  justify-self: end; /* push the figure to the right edge of its grid cell */
+  min-height: 420px;
+  overflow: hidden;
+  justify-self: end;
 }
 .hero__picture {
   display: block;
   width: 100%;
+  height: 100%;
 }
 .hero__img {
   display: block;
   width: 100%;
-  height: auto;
-  /* No border-radius, no shadow — the figure sits directly in the
-     cream field, not as a card inside it. Intrinsic aspect ratio is
-     preserved by width:100%; height:auto so no cropping is possible. */
+  height: 100%;
+  object-fit: cover;
+  /* 70% crops the left (black chess piece) — shows the queen figure. */
+  object-position: 70% center;
 }
 
 /* ── Inner text content styles ───────────────────────────── */
@@ -301,9 +305,9 @@ a   { color: inherit; text-decoration: none; }
 
 .hero-tagline {
   font-family: var(--serif);
-  font-size: clamp(2.1rem, 3.6vw, 3.2rem);
+  font-size: clamp(2.6rem, 4.2vw, 3.8rem);
   font-weight: 300;
-  line-height: 1.15;
+  line-height: 1.1;
   letter-spacing: -.01em;
   color: var(--deep);
   margin: 0 0 1.25rem;
@@ -321,10 +325,10 @@ a   { color: inherit; text-decoration: none; }
 }
 
 .hero-sub {
-  font-size: 1.08rem;
-  line-height: 1.9;
+  font-size: 1.15rem;
+  line-height: 1.95;
   color: var(--mid);
-  max-width: 52ch;
+  max-width: 62ch;
   margin: 0 0 2.5rem;
 }
 
@@ -683,18 +687,19 @@ a   { color: inherit; text-decoration: none; }
 ───────────────────────────────────────────── */
 .hero-quote-section {
   background: var(--cream);
-  padding: 3.5rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
+  border-top: 1px solid var(--mist);
 }
 .hero-quote-text {
   font-family: var(--serif);
-  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
   font-weight: 300;
   font-style: italic;
   color: var(--deep);
-  max-width: 58ch;
-  margin: 0 auto 1rem;
-  line-height: 1.7;
+  max-width: 62ch;
+  margin: 0 auto 1.25rem;
+  line-height: 1.75;
 }
 
 .hero-quote-cite {
@@ -874,7 +879,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   padding: 4rem 3rem 3rem;
 }
 .lib-intro__inner {
-  max-width: 720px;
+  max-width: 860px;
   margin: 0 auto;
 }
 .lib-intro__inner p {
@@ -893,6 +898,17 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   padding: 5rem 3rem;
   background: #f5f0e8;
 }
+
+.lib-method-note {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: var(--deep);
+  max-width: 74ch;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
 .lib-section--warm {
   background: var(--warm);
 }
@@ -902,7 +918,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   text-align: center;
 }
 .lib-section__header {
-  max-width: 720px;
+  max-width: 860px;
   margin: 0 auto 3rem;
   text-align: center;
 }
@@ -967,11 +983,19 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   margin: 0;
 }
 .lib-card__body {
-  font-size: 1.1rem;
-  line-height: 1.85;
+  font-size: 1.15rem;
+  line-height: 1.9;
   color: var(--deep);
   flex: 1;
-  margin: 0.25rem 0 0.75rem;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.lib-card__poems {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  margin: 0 0 0.85rem;
 }
 
 .lib-voices {
@@ -1210,7 +1234,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   justify-content: center;
 }
 .encounter-caption p {
-  max-width: 56ch;
+  max-width: 68ch;
   margin: 0;
   font-family: var(--serif, Georgia, serif);
   font-size: 1.1rem;
@@ -2450,16 +2474,16 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .essay-body {
-  max-width: 720px;
+  max-width: 860px;
   margin: 0 auto;
   padding: 4rem 2rem 5rem;
 }
 .essay-body p {
   font-family: var(--serif);
-  font-size: 1.1rem;
-  line-height: 1.85;
+  font-size: 1.15rem;
+  line-height: 1.95;
   color: var(--deep);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 .essay-body h2 {
   font-family: var(--serif);
@@ -2478,6 +2502,18 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   color: var(--gold);
   margin: 2.5rem 0 1rem;
 }
+.essay-snippet {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--deep);
+  border-left: 3px solid var(--gold);
+  padding: 0.75rem 0 0.75rem 1.5rem;
+  margin: 2rem 0 2rem;
+  max-width: 62ch;
+}
+
 .essay-display {
   text-align: center;
   font-style: italic;
@@ -2751,7 +2787,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .figure-intro--portrait .figure-intro__text {
-  max-width: 58ch;
+  max-width: 72ch;
   margin: 0 auto;
 }
 
@@ -3158,8 +3194,8 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 .studio-opening__headline {
   font-family: var(--serif);
-  font-size: clamp(1.7rem, 2.5vw, 2.4rem); /* normalized — same scale as section h2s */
-  font-weight: 300;
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  font-weight: 400;
   line-height: 1.25;
   color: var(--deep);
   margin: 0;
@@ -3201,7 +3237,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .studio-section__header {
-  max-width: 680px;
+  max-width: 780px;
   margin: 0 auto 4rem;
   text-align: center;
 }
@@ -3224,7 +3260,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .studio-section__header h2 {
   font-family: var(--serif);
   font-size: clamp(1.7rem, 2.5vw, 2.4rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.25;
   margin: 0 0 1.25rem;
 }
@@ -3412,14 +3448,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    HOMEPAGE — LIBRARY PREVIEW SECTION
 ───────────────────────────────────────────── */
 .lib-preview-section {
-  background: var(--warm);
+  background: var(--cream);
   padding: 6rem 2rem 5.5rem;
   border-top: 1px solid var(--mist);
   text-align: center;
 }
 
 .lib-preview-inner {
-  max-width: 680px;
+  max-width: 780px;
   margin: 0 auto;
 }
 
@@ -3448,9 +3484,30 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   font-size: 1.1rem;
   font-style: italic;
   line-height: 1.9;
-  color: var(--mid);
+  color: var(--deep);
   max-width: 58ch;
   margin: 0 auto 2.5rem;
+}
+
+.lib-preview-scripture {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.75;
+  color: var(--deep);
+  max-width: 62ch;
+  margin: 0 auto 2rem;
+}
+
+.lib-preview-scripture__cite {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 0.5rem;
 }
 
 .lib-preview-cta {
@@ -4179,7 +4236,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .studio-poems-inner {
-  max-width: 720px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
@@ -4393,7 +4450,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   font-size: 1.15rem;
   color: var(--ink);
   line-height: 1.6;
-  max-width: 480px;
+  max-width: 560px;
   margin: 0;
 }
 
@@ -4430,7 +4487,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .lib-hero__inner {
-  max-width: 680px;
+  max-width: 780px;
   margin: 0 auto;
 }
 
@@ -4455,10 +4512,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .lib-hero__sub {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
   color: var(--mid);
-  line-height: 1.8;
-  max-width: 52ch;
+  line-height: 1.9;
+  max-width: 62ch;
   margin: 0 auto;
 }
 
@@ -4761,6 +4818,35 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
    Tier 1: overview poster full-width of content column
    Tier 2: three individual works at comfortable reading size
 ─────────────────────────────────────────────────────────── */
+/* ── Collection interpretive statement ──────────────────── */
+.col-statement-section {
+  background: var(--warm);
+  padding: 6rem 2rem 6rem;
+  border-top: 1px solid var(--mist);
+  border-bottom: 1px solid var(--mist);
+}
+
+.col-statement-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.col-statement-body {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.95;
+  color: var(--deep);
+  margin: 0 0 2rem;
+}
+
+.col-statement-body:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .col-statement-section { padding: 4rem 1.25rem 4rem; }
+}
+
 .col-overview-section {
   padding: 5rem 2rem 3rem;
 }
@@ -4919,6 +5005,58 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 /* ── Digital Art Paintings — clean rebuild ────────────────
    Simple grid, natural image sizing, no absolute positioning.
 ─────────────────────────────────────────────────────────── */
+/* ── Studio method section ────────────────────────────────── */
+.studio-method-section {
+  background: var(--warm);
+  padding: 6rem 2rem 6rem;
+  border-top: 1px solid var(--mist);
+  text-align: center;
+}
+
+.studio-method-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.studio-method-quote {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--deep);
+  margin: 2rem auto 1rem;
+  max-width: 52ch;
+  border-left: 3px solid var(--gold);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  text-align: left;
+}
+
+.studio-method-quote cite {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 0.5rem;
+}
+
+.studio-method-body {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.95;
+  color: var(--deep);
+  margin: 1.75rem auto 0;
+  max-width: 70ch;
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .studio-method-section { padding: 5rem 1.25rem 5rem; }
+  .studio-method-body { text-align: left; }
+}
+
 .paintings-section {
   background: var(--cream, #f7f3eb);
   padding: 6rem 2rem 5rem;

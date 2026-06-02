@@ -6,49 +6,48 @@ import FooterSocial from '@/components/FooterSocial'
 export const metadata: Metadata = {
   title: 'Library — AwakenArts',
   description:
-    'Image-shaped poems and symbolic forms — concrete poetry as contemplative learning. Each work joins language to visible structure, inviting recognition through form, feeling, and reflection.',
+    'Thematic readings of symbolic concrete poetry — depth, exile, fear, longing, and inwardness explored through image-shaped poems by Susan Ann Shepler.',
   alternates: { canonical: '/library' },
   openGraph: {
     url: '/library',
     title: 'Library — AwakenArts',
     description:
-      'Concrete poems, readings, and symbolic literary works from the world of AwakenArts.',
+      'Thematic readings of symbolic concrete poetry — what the poems reveal about depth, exile, fear, longing, and the hidden interior life.',
   },
 }
 
-/* ── Data ──────────────────────────────────────────────── */
+/* ── Thematic categories ───────────────────────────────────────────── */
 
-/*
- * Concrete Poems — literary archive entries for each symbolic figure.
- * Placeholder notes. Each entry will eventually carry: excerpt,
- * reading, reflection, selected imagery, optional audio.
- * Framing is literary — not psychological, not instructional.
- */
-const poems = [
+const themes = [
   {
-    title: 'Grismere',
-    note: 'The mermaid embodies divided awareness — the pull between surface life and hidden depth. She teaches the reader to recognize what has been submerged beneath ordinary experience, and why it continues to call.',
-    link: '/library/figures/grismere',
+    title: 'Depth and Hidden Life',
+    note: 'What lies beneath the surface of ordinary awareness — submerged realities, concealed interior life, and the fear of encountering what we carry within.',
+    poems: 'Grismere · The Vase',
+    link: '/library/themes/depth-and-hidden-life',
   },
   {
-    title: 'Queen Ann',
-    note: 'The queen stands at the threshold between what has ended and what has not yet begun. She carries the tension of exile and fidelity — the cost of remaining true when the familiar kingdom is gone.',
-    link: '/library/figures/queen-ann-between-kingdoms',
+    title: 'Exile and Threshold',
+    note: 'The space between what has ended and what has not yet begun — crossing, loss, forced stillness, and the threshold moments where old identity falls away.',
+    poems: 'Queen Ann · Merri — When Time Stops',
+    link: '/library/themes/exile-and-threshold',
   },
   {
-    title: 'The Ballerina',
-    note: 'The ballerina holds the tension between longing and discipline — the body shaped by devotion toward something it cannot fully reach. She teaches the reader to recognize beauty as both gift and burden.',
-    link: '/library/figures/ballerina',
+    title: 'Fear and Transformative Force',
+    note: 'Forces that cannot be approached through opposition — what must be understood, not defeated, before it can move through us toward integration.',
+    poems: 'Dragon',
+    link: '/library/themes/fear-and-transformative-force',
   },
   {
-    title: 'Dragon',
-    note: 'The dragon cannot be defeated through direct opposition. He embodies the force that must be understood before it can be integrated — fear, power, and the shadow that grows larger when refused.',
-    link: '/library/figures/the-dragon',
+    title: 'Longing and Devotion',
+    note: 'The body shaped by devotion toward something it cannot fully reach — beauty, aspiration, fragility, and the cost of becoming.',
+    poems: 'The Ballerina',
+    link: '/library/themes/longing-and-devotion',
   },
   {
-    title: 'Merri — When Time Stops',
-    note: 'Merri arrives when time has run out — when forward movement is no longer possible. She teaches stillness as readiness, not failure. In the moment of suspension, she reveals what the rushing past conceals.',
-    link: '/library/figures/merri-when-time-stops',
+    title: 'Containment and Inwardness',
+    note: 'What is held within ordinary form — silence, memory, and interior truth carried quietly beneath a still surface.',
+    poems: 'The Vase',
+    link: '/library/themes/containment-and-inwardness',
   },
 ]
 
@@ -59,37 +58,35 @@ export default function LibraryPage() {
     <>
       <Nav />
 
-      {/* ── HERO ─────────────────────────────────────────────────
-          Literary heading. Quieter than Studio. Typography-led.
-          No cinematic layout — just the work, announced simply.
-      ──────────────────────────────────────────────────────────── */}
       <section className="lib-hero" aria-label="Library">
         <div className="lib-hero__inner">
           <p className="eyebrow">Library</p>
           <h1>
-            Image-shaped poems<br />
-            <em>and symbolic forms</em>
+            The poems<br />
+            <em>and what they reveal.</em>
           </h1>
           <p className="lib-hero__sub">
-            These works reflect the movement beneath surface experience into
-            deeper layers of memory, longing, conflict, transformation, and
-            recognition. The journey inward is not an escape from reality,
-            but a search for truthful orientation — where the hidden life of
-            the heart encounters wisdom, reflection, and the light that guides
-            the path forward.
+            Each concrete poem carries hidden meaning in its shape, language,
+            and symbolic tension. These readings draw that out — exploring
+            the human realities the poems hold: depth and hidden life, exile
+            and threshold, fear, longing, inwardness.
           </p>
         </div>
       </section>
 
-      {/* ── SYMBOLIC FIGURES ─────────────────────────────────────
-          Literary archive entries — atmospheric, not explanatory.
-      ──────────────────────────────────────────────────────────── */}
-      <section className="lib-section" aria-label="Symbolic figures">
+      <section className="lib-section" aria-label="Thematic readings">
+        <p className="lib-method-note">
+          These poems do not explain themselves. You encounter them the way you
+          encounter a parable — through image, tension, and recognition rather
+          than summary. Each thematic reading gathers poems that speak to the
+          same territory of human experience.
+        </p>
         <div className="lib-grid lib-grid--4">
-          {poems.map(({ title, note, link }) => (
+          {themes.map(({ title, note, poems, link }) => (
             <article key={title} className="lib-card">
               <h3>{title}</h3>
               <p className="lib-card__body">{note}</p>
+              <p className="lib-card__poems">{poems}</p>
               <Link href={link} className="library-card__link">Read →</Link>
             </article>
           ))}
@@ -110,7 +107,7 @@ export default function LibraryPage() {
               />
             </Link>
             <p>
-              Original symbolic figures for the interior life — rooted in the
+              Symbolic concrete poetry exploring the inward journey — rooted in the
               Christian tradition, created through the transformative language
               arts process. By Susan Ann Shepler.
             </p>
@@ -120,7 +117,11 @@ export default function LibraryPage() {
           <div className="footer-col">
             <h4>Library</h4>
             <ul>
-              <li><Link href="/library">Symbolic Works</Link></li>
+              <li><Link href="/library/themes/depth-and-hidden-life">Depth and Hidden Life</Link></li>
+              <li><Link href="/library/themes/exile-and-threshold">Exile and Threshold</Link></li>
+              <li><Link href="/library/themes/fear-and-transformative-force">Fear and Transformative Force</Link></li>
+              <li><Link href="/library/themes/longing-and-devotion">Longing and Devotion</Link></li>
+              <li><Link href="/library/themes/containment-and-inwardness">Containment and Inwardness</Link></li>
             </ul>
           </div>
 

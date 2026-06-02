@@ -64,15 +64,14 @@ export default function HomePage() {
             <span>Shapes a Path</span>
           </h1>
 
-          <p className="hero-subline">The inner journey through symbolic form.</p>
+          <p className="hero-subline">Symbolic concrete poetry for the inner journey.</p>
 
           <p className="hero-sub">
-            AwakenArts explores the inner journey through symbolic concrete
-            poetry and visible poetic form — reflecting movement through
-            memory, longing, conflict, transformation, and recognition.
-            The journey inward is a search for truthful orientation, where
-            the hidden life of the heart encounters wisdom and the light
-            that guides the path forward.
+            AwakenArts creates image-shaped poems where words become the
+            figure itself — a queen crossing through exile, a mermaid moving
+            beneath the surface, a dragon turned against itself. Each poem
+            carries emotional, psychological, and spiritual meaning through
+            visible form rather than explanation alone.
           </p>
 
           <Link href="/encounters" className="hero-cta">
@@ -124,12 +123,9 @@ export default function HomePage() {
       </section>
 
       {/* ── HERO QUOTE ─── */}
-      <section className="hero-quote-section" aria-label="Opening quote">
-        <p className="hero-quote-text" style={{ fontStyle: 'normal' }}>
-          &ldquo;Though seeing, they do not see.&rdquo;
-        </p>
-        <p className="hero-quote-cite">
-          — Matthew 13:13
+      <section className="hero-quote-section" aria-label="Opening statement">
+        <p className="hero-quote-text">
+          Symbols and parables have a way of carrying what words alone cannot.
         </p>
       </section>
 
@@ -143,8 +139,8 @@ export default function HomePage() {
           <div className="studio-preview-header">
             <p className="eyebrow">Image-Shaped Poems</p>
             <h2 id="studio-preview-heading">
-              Form carries<br />
-              <em>meaning</em>
+              The words become<br />
+              <em>the figure</em>
             </h2>
           </div>
 
@@ -174,8 +170,8 @@ export default function HomePage() {
           <div className="coll-header">
             <p className="eyebrow">The AwakenArts Collection</p>
             <h2 id="coll-heading">
-              Poems, readings,<br />
-              <em>and reflective works</em>
+              Symbolic concrete poetry<br />
+              <em>and visible poetic form</em>
             </h2>
           </div>
 
@@ -192,7 +188,7 @@ export default function HomePage() {
 
           <div className="coll-invitation">
             <p className="coll-invitation__text">
-              Original poetic works — authored symbolic forms in language, image, and atmosphere.
+              Each work joins language and image into a single structure of meaning — intended for slow encounter, not quick reading.
             </p>
             <Link href="/collection" className="coll-invitation__link">
               The Collection <span aria-hidden="true">→</span>
@@ -209,9 +205,14 @@ export default function HomePage() {
         <div className="lib-preview-inner">
           <p className="eyebrow">Library</p>
           <h2 id="lib-preview-heading">
-            Read the poems.<br />
-            <em>Encounter the forms.</em>
+            The poems<br />
+            <em>and what they reveal.</em>
           </h2>
+          <p className="lib-preview-body">
+            Depth and hidden life. Exile and threshold. Fear and transformative
+            force. Longing and devotion. Thematic readings that draw out what
+            the poems carry — the specific human realities within each form.
+          </p>
           <p className="lib-preview-cta">
             <Link href="/library" className="text-link">
               Enter the Library <span aria-hidden="true">→</span>
@@ -234,7 +235,7 @@ export default function HomePage() {
               />
             </Link>
             <p>
-              Original symbolic figures for the interior life — rooted in the
+              Symbolic concrete poetry exploring the inward journey — rooted in the
               Christian tradition, created through the transformative language
               arts process. By Susan Ann Shepler.
             </p>

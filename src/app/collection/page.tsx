@@ -6,7 +6,7 @@ import FooterSocial from '@/components/FooterSocial'
 export const metadata: Metadata = {
   title: 'The Collection — AwakenArts',
   description:
-    'Folios, readings, and curated editions. Concrete poems and symbolic readings shaped through image, language, atmosphere, and path.',
+    'The AwakenArts Collection — symbolic concrete poetry exploring longing, transformation, exile, fear, grace, memory, and identity. Image-shaped forms intended to be encountered slowly.',
   alternates: { canonical: '/collection' },
   openGraph: {
     url: '/collection',
@@ -32,12 +32,56 @@ export default function CollectionPage() {
             <p className="eyebrow col-hero__eyebrow">AwakenArts</p>
             <h1 className="col-hero__title">The Collection</h1>
             <p className="col-hero__sub">
-              Folios, readings, and curated editions
+              Symbolic concrete poetry by Susan Ann Shepler
             </p>
             <p className="col-hero__body">
-              Concrete poems and symbolic readings shaped through image,
-              language, atmosphere, and path.
+              Image-shaped poems exploring longing, transformation, exile,
+              fear, grace, memory, and identity — where the words themselves
+              become the figure.
             </p>
+          </div>
+        </section>
+
+        {/* ── INTERPRETIVE STATEMENT ───────────────────────────
+            The full statement of what the Collection is and does.
+        ──────────────────────────────────────────────────────── */}
+        <section className="col-statement-section">
+          <div className="col-statement-inner">
+
+            <p className="col-statement-body">
+              Each work joins language and image so that the words themselves become the figure.
+              Shape, rhythm, symbolism, emotional tension, and atmosphere operate together as
+              a single structure of meaning.
+            </p>
+
+            <p className="col-statement-body">
+              The Collection approaches concrete poetry as a contemplative and parabolic form:
+              revealing through symbolic image what is often difficult to perceive directly
+              within human experience. These poems are not decorative symbolic objects or
+              literary curiosities. They are image-shaped forms intended to be encountered
+              slowly — allowing recognition, reflection, and symbolic understanding to emerge
+              through the body of the poem itself.
+            </p>
+
+            <p className="col-statement-body">
+              The figures within the Collection embody opposing tensions simultaneously:
+              beauty and danger, innocence and illusion, strength and vulnerability,
+              fear and transformation, exile and endurance.
+            </p>
+
+            <p className="col-statement-body">
+              A mermaid becomes divided awareness and longing. A queen becomes loss, dignity,
+              and threshold. A dragon becomes instinct, fear, and transformative force.
+              A dancer becomes tenderness, aspiration, fragility, and grace.
+            </p>
+
+            <p className="col-statement-body">
+              The symbolic forms function similarly to parable: revealing through image what
+              ordinary language often struggles to express directly. The Collection exists
+              not merely to present symbolic artwork, but to help readers encounter deeper
+              dimensions of human experience through language becoming form.
+            </p>
+
           </div>
         </section>
 
@@ -49,7 +93,7 @@ export default function CollectionPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/collection/connection-all.png"
-              alt="The AwakenArts Collection — poetic encounters in shape, symbol and story"
+              alt="The AwakenArts Collection — symbolic concrete poetry — language becoming visible form"
               className="col-overview-img"
               loading="eager"
             />
@@ -72,7 +116,7 @@ export default function CollectionPage() {
               />
               <figcaption className="col-work-fig__caption">
                 <span className="col-work-fig__title">Ballerina</span>
-                <span className="col-work-fig__type">Concrete poem · Folio edition</span>
+                <span className="col-work-fig__type">Symbolic concrete poem</span>
               </figcaption>
             </figure>
 
@@ -86,7 +130,7 @@ export default function CollectionPage() {
               />
               <figcaption className="col-work-fig__caption">
                 <span className="col-work-fig__title">Kings</span>
-                <span className="col-work-fig__type">Concrete poem · Folio edition</span>
+                <span className="col-work-fig__type">Symbolic concrete poem</span>
               </figcaption>
             </figure>
 
@@ -100,7 +144,7 @@ export default function CollectionPage() {
               />
               <figcaption className="col-work-fig__caption">
                 <span className="col-work-fig__title">Dragon</span>
-                <span className="col-work-fig__type">Concrete poem · Folio edition</span>
+                <span className="col-work-fig__type">Symbolic concrete poem</span>
               </figcaption>
             </figure>
 
@@ -111,12 +155,8 @@ export default function CollectionPage() {
             Understated. Literary. No sales language.
         ──────────────────────────────────────────────────────── */}
         <section className="col-invitation">
-          <p className="col-invitation__body">
-            Each work is a complete authored reading — symbolic form,
-            language, and atmosphere held together as a single encounter.
-          </p>
           <Link href="/encounters" className="col-invitation__link">
-            Begin an Encounter <span aria-hidden="true">→</span>
+            Explore the Collection <span aria-hidden="true">→</span>
           </Link>
         </section>
 
@@ -135,7 +175,7 @@ export default function CollectionPage() {
               />
             </Link>
             <p>
-              Original symbolic figures for the interior life — rooted in the
+              Symbolic concrete poetry exploring the inward journey — rooted in the
               Christian tradition, created through the transformative language
               arts process. By Susan Ann Shepler.
             </p>

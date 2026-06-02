@@ -67,14 +67,15 @@ export default function JournalIndexPage() {
         <div className={styles.wordFormInner}>
           <span className={styles.wordFormEyebrow}>Word · Image · Form</span>
           <h2 id="word-form-heading" className={styles.wordFormHeading}>
-            Language sometimes<br />
-            <em>gathers into shape</em>
+            What happens when<br />
+            <em>words take shape</em>
           </h2>
           <p className={styles.wordFormBody}>
-            Throughout history, poems, symbols, and visual arrangements of
-            words have carried meaning beyond ordinary explanation. This
-            space invites an experiment with symbolic form — through
-            repetition, placement, rhythm, image, and language.
+            Words arranged into a visual form carry meaning differently than
+            words read in a line. The shape itself becomes part of the
+            message. You can try this for yourself — beginning with a word,
+            a phrase, or a memory, and watching what emerges when language
+            is given a body.
           </p>
 
           {/* Word-form image examples — the actual visual content
