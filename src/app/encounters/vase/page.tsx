@@ -32,8 +32,7 @@ export default function VaseEncounterPage() {
     <main
       style={{
         width: "100%",
-        height: "100vh",
-        overflow: "hidden",
+        minHeight: "100vh",
         background: "#000",
         display: "flex",
         flexDirection: "column",
@@ -78,7 +77,7 @@ export default function VaseEncounterPage() {
 
       <aside
         style={{
-          height: "25vh",
+          minHeight: "25vh",
           width: "100%",
           background: "#f4efe6",
           color: "#2f2a26",
@@ -86,7 +85,7 @@ export default function VaseEncounterPage() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "1.5rem 2rem",
+          padding: "1.5rem 2rem 2rem",
           boxSizing: "border-box",
           borderTop: "1px solid rgba(0,0,0,0.08)",
         }}
@@ -111,7 +110,7 @@ export default function VaseEncounterPage() {
           <h1
             className={cormorant.className}
             style={{
-              fontSize: "2.35rem",
+              fontSize: "clamp(1.6rem, 5vw, 2.35rem)",
               fontWeight: 400,
               fontStyle: "italic",
               margin: "0 0 0.45rem",
@@ -123,7 +122,7 @@ export default function VaseEncounterPage() {
           <p
             style={{
               fontFamily: "Georgia, serif",
-              fontSize: "1.16rem",
+              fontSize: "clamp(0.9rem, 2.5vw, 1.16rem)",
               lineHeight: 1.42,
               letterSpacing: "0.01em",
               margin: "0 0 0.9rem",
