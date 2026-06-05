@@ -6,7 +6,7 @@ import FooterSocial from '@/components/FooterSocial'
 export const metadata: Metadata = {
   title: 'Library — AwakenArts',
   description:
-    'Thematic readings of symbolic concrete poetry — depth, exile, fear, longing, and inwardness explored through image-shaped poems by Susan Ann Shepler.',
+    'Thematic readings of symbolic works — depth, exile, fear, longing, and inwardness explored through the symbolic works of Susan Ann Shepler.',
   alternates: { canonical: '/library' },
   openGraph: {
     url: '/library',
@@ -48,6 +48,24 @@ const themes = [
     note: 'What is held within ordinary form — silence, memory, and interior truth carried quietly beneath a still surface.',
     poems: 'The Vase',
     link: '/library/themes/containment-and-inwardness',
+  },
+  {
+    title: 'Grace and the Guarding Presence',
+    note: 'The angel who plants in soil, sows love in winter storms, counts your smiles and touches you when you cry. Over all the cold and frost — you are never lost.',
+    poems: 'Angel Gardens',
+    link: '/library/themes/grace-and-the-guarding-presence',
+  },
+  {
+    title: 'Her Mother\'s Hands',
+    note: 'The poem shaped as a California poppy — orange bloom, green stem, flowers crossed over her heart. The center was never lost. It was handed down.',
+    poems: 'Her Mother\'s Hands',
+    link: '/library/themes/her-mothers-hands',
+  },
+  {
+    title: 'The Watery Cross',
+    note: 'The cross that forms where the wooden mast meets the moving water — not in heaven, not in the deep, but at the surface where the two worlds touch.',
+    poems: 'Watery Cross',
+    link: '/library/themes/the-watery-cross',
   },
 ]
 

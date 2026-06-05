@@ -5,13 +5,13 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'About Susan Ann Shepler — AwakenArts',
   description:
-    'Susan Ann Shepler — artist, writer, facilitator, and depth-oriented counselor. Master in Counseling Psychology (Webster University), certified Transformative Language Artist, author of Whispers of Awareness, and creator of the AwakenArts Within the Circle series of concrete poems and readings.',
+    'Susan Ann Shepler — artist, poet, facilitator, and depth-oriented counselor. Creator of AwakenArts and its body of symbolic concrete poetry, rooted in the Christian contemplative tradition.',
   alternates: { canonical: '/about' },
   openGraph: {
     url: '/about',
     title: 'About Susan Ann Shepler — AwakenArts',
     description:
-      'Artist, writer, and depth-oriented counselor. Creator of AwakenArts and the Within the Circle series of concrete poems and readings.',
+      'Artist, poet, and depth-oriented counselor. Creator of AwakenArts and its symbolic concrete poetry.',
     images: [
       {
         url: '/images/about/susan-ann-shepler.jpg',
@@ -107,7 +107,7 @@ export default function AboutPage() {
         </div>
 
         <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '2rem' }}>
-          Susan is the author of Whispers of Awareness (2025), an anthology combining poetry, art, and Jungian psychology, and the creator of the AwakenArts Within the Circle series — fifty-two concrete poems and their card-form presentation. She is bilingual in English and Spanish and is based in Georgetown, Texas.
+          She is bilingual in English and Spanish and is based in Georgetown, Texas.
         </p>
 
 

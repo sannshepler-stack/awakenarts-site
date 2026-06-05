@@ -8,13 +8,13 @@ import { SYMBOLIC_FORMS } from '@/components/forms/forms-data'
 export const metadata: Metadata = {
   title: 'Studio — AwakenArts',
   description:
-    'The Studio of AwakenArts — image-shaped poems, concrete poetry, and symbolic forms. Each work joins language to visible structure through contemplative learning and symbolic recognition.',
+    'The Studio of AwakenArts — symbolic works, concrete poetry, and visual-poetic forms. Each work joins language to visible structure through symbolic recognition.',
   alternates: { canonical: '/studio' },
   openGraph: {
     url: '/studio',
     title: 'Studio — AwakenArts',
     description:
-      'Concrete poetry and image-shaped poems — how language becomes visible form in the work of Susan Ann Shepler.',
+      'Symbolic works and concrete poetry — how language becomes visible form in the work of Susan Ann Shepler.',
   },
 }
 
