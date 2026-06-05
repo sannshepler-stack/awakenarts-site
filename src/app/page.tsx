@@ -64,35 +64,34 @@ export default function HomePage() {
             <span>Shapes a Path</span>
           </h1>
 
-          <p className="hero-subline">Symbolic concrete poetry for the inner journey.</p>
+          <p className="hero-subline">Symbolic works that illuminate personal experience through image, language, and reflection.</p>
 
           <p className="hero-sub">
-            AwakenArts creates image-shaped poems where words become the
-            figure itself — a queen crossing through exile, a mermaid moving
-            beneath the surface, a dragon turned against itself. Each poem
-            carries emotional, psychological, and spiritual meaning through
-            visible form rather than explanation alone.
+            AwakenArts creates symbolic works where words become the
+            figure — a queen in exile, a mermaid beneath the surface,
+            a dragon turned inward. Each work carries meaning through
+            visible form.
           </p>
 
-          <Link href="/encounters" className="hero-cta">
-            Enter the Encounters <span className="arrow" aria-hidden="true">→</span>
+          <Link href="/collection" className="hero-cta">
+            Enter the Collection <span className="arrow" aria-hidden="true">→</span>
           </Link>
 
           {/*
            * Secondary paths — quiet, understated, not button-like.
-           * Surfaces the collection, the work itself, and the maker.
+           * Encounters repositioned as secondary experiential layer.
            */}
           <nav className="hero-secondary" aria-label="Other paths">
+            <Link href="/encounters" className="hero-secondary-link">
+              Encounters
+            </Link>
+            <span className="hero-secondary-sep" aria-hidden="true">·</span>
             <Link href="/studio" className="hero-secondary-link">
               Studio
             </Link>
             <span className="hero-secondary-sep" aria-hidden="true">·</span>
             <Link href="/library" className="hero-secondary-link">
               Library
-            </Link>
-            <span className="hero-secondary-sep" aria-hidden="true">·</span>
-            <Link href="/about" className="hero-secondary-link">
-              About
             </Link>
           </nav>
         </div>
@@ -137,7 +136,7 @@ export default function HomePage() {
         <div className="studio-preview-inner">
 
           <div className="studio-preview-header">
-            <p className="eyebrow">Image-Shaped Poems</p>
+            <p className="eyebrow">Symbolic Works</p>
             <h2 id="studio-preview-heading">
               The words become<br />
               <em>the figure</em>
@@ -170,8 +169,8 @@ export default function HomePage() {
           <div className="coll-header">
             <p className="eyebrow">The AwakenArts Collection</p>
             <h2 id="coll-heading">
-              Symbolic concrete poetry<br />
-              <em>and visible poetic form</em>
+              Works<br />
+              <em>from the Collection</em>
             </h2>
           </div>
 
@@ -235,7 +234,7 @@ export default function HomePage() {
               />
             </Link>
             <p>
-              Symbolic concrete poetry exploring the inward journey — rooted in the
+              Symbolic works exploring the inward journey — rooted in the
               Christian tradition, created through the transformative language
               arts process. By Susan Ann Shepler.
             </p>
@@ -245,10 +244,10 @@ export default function HomePage() {
           <div className="footer-col">
             <h4>Explore</h4>
             <ul>
-              <li><Link href="/encounters">Encounters</Link></li>
-              <li className="footer-sub"><Link href="/encounters/mermaid">The Mermaid — a threshold between two worlds</Link></li>
+              <li><Link href="/collection">The Collection</Link></li>
               <li><Link href="/studio">Studio</Link></li>
               <li><Link href="/library">Library</Link></li>
+              <li><Link href="/encounters">Encounters</Link></li>
               <li><Link href="/journal">Journal</Link></li>
             </ul>
           </div>
