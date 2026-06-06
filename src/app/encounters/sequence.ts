@@ -18,6 +18,7 @@ export const ENCOUNTER_SEQUENCE = [
   'dragon',
   'vase',
   'queen',
+  'butterfly',
 ] as const
 
 export type EncounterSlug = (typeof ENCOUNTER_SEQUENCE)[number]

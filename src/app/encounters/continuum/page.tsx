@@ -43,12 +43,11 @@ export default function ContinuumPage() {
     // Pacing tuned to feel like the other encounters but slightly
     // slower at the end — this is rest, not advance.
     //   3.0s — first line begins to fade in
-    //   6.0s — second line begins to fade in
-    //  10.0s — quiet exits appear
-    //   8.5s — brightness settles (only meaningful if a video is playing)
-    const t1 = setTimeout(() => setShowLine1(true), 3000);
-    const t3 = setTimeout(() => setShowExits(true), 10000);
-    const tSettle = setTimeout(() => setEnded(true), 8500);
+    //   5.0s — brightness settles (only meaningful if a video is playing)
+    //   5.5s — quiet exits appear
+    const t1 = setTimeout(() => setShowLine1(true), 1500);
+    const t3 = setTimeout(() => setShowExits(true), 5500);
+    const tSettle = setTimeout(() => setEnded(true), 5000);
     return () => {
       clearTimeout(t1);
       clearTimeout(t3);
@@ -145,9 +144,9 @@ export default function ContinuumPage() {
           }}
         >
           {[
-            { href: "/path", label: "The Path" },
+            { href: "/collection", label: "The Collection" },
             { href: "/library", label: "The Library" },
-            { href: "/gallery", label: "The Gallery" },
+            { href: "/studio", label: "Studio" },
             { href: "/", label: "Home" },
           ].map(({ href, label }) => (
             <Link

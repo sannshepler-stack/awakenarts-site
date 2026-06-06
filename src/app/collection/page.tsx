@@ -32,7 +32,7 @@ export default function CollectionPage() {
               Works from the Collection
             </p>
             <p className="col-hero__body">
-              Symbolic works that illuminate personal experience through image, language, and reflection.
+              Works shaped from the inside of lived experience — through image, language, and the things that stay with you.
             </p>
           </div>
         </section>
@@ -68,31 +68,27 @@ export default function CollectionPage() {
             </h2>
 
             <p className="col-statement-body">
-              Symbolic works exploring memory, longing, transformation, exile, grace,
-              identity, and recognition through language and visible form.
+              Works shaped from memory, longing, exile, grace — the moments that mark us,
+              made visible through language and form.
             </p>
 
             <p className="col-statement-body">
-              The Collection brings together symbolic works, visual-poetic works,
-              and contemplative readings shaped through the relationship between
-              word, image, form, and atmosphere.
+              The Collection gathers works where language has taken shape — poems that have
+              become figures, figures that hold what prose cannot.
             </p>
 
             <p className="col-statement-body">
-              Each work is intended to be encountered slowly — through reflection, symbolic
-              recognition, and contemplative reading.
+              Each work is meant to be lived with. The meaning arrives before it can be named.
             </p>
 
             <p className="col-statement-body">
-              The figures within the Collection explore longing, transformation, exile, memory,
-              grace, fear, beauty, identity, and emotional tension through language becoming
-              visible form.
+              The figures within the Collection carry longing, exile, memory, grace, and fear —
+              not as subjects to be studied, but as presences to be recognized.
             </p>
 
             <p className="col-statement-body">
-              The Collection functions as a growing symbolic literary archive centered on
-              recognition, reflection, and the illumination of personal experience through
-              image and language.
+              The Collection grows from the work itself — gathered over time,
+              recognized rather than explained.
             </p>
 
           </div>

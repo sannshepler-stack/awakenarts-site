@@ -84,10 +84,9 @@ export default function LibraryPage() {
             <em>and what they reveal.</em>
           </h1>
           <p className="lib-hero__sub">
-            Each concrete poem carries hidden meaning in its shape, language,
-            and symbolic tension. These readings draw that out — exploring
-            the human realities the poems hold: depth and hidden life, exile
-            and threshold, fear, longing, inwardness.
+            Each concrete poem carries something in its shape and silence.
+            These readings draw that out — depth and hidden life, exile,
+            fear, longing, and the life that moves beneath the surface.
           </p>
         </div>
       </section>
@@ -97,7 +96,7 @@ export default function LibraryPage() {
           These poems do not explain themselves. You encounter them the way you
           encounter a parable — through image, tension, and recognition rather
           than summary. Each thematic reading gathers poems that speak to the
-          same territory of human experience.
+          same human territory.
         </p>
         <div className="lib-grid lib-grid--4">
           {themes.map(({ title, note, poems, link }) => (

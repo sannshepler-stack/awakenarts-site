@@ -976,7 +976,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   color: var(--gold);
 }
 .lib-card h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
   font-weight: 400;
   line-height: 1.25;
   color: var(--deep);
@@ -3876,7 +3876,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 .coll-header h2 {
   font-family: var(--serif);
-  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
   font-weight: 300;
   line-height: 1.2;
   color: var(--deep);
@@ -4583,10 +4583,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 .col-hero__title {
   font-family: var(--serif);
-  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
   font-weight: 400;
   line-height: 1.1;
-  color: var(--ink);
+  color: var(--deep);
   margin: 0;
 }
 
@@ -4594,7 +4594,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   font-family: var(--serif);
   font-style: italic;
   font-size: clamp(1.2rem, 2.5vw, 1.55rem);
-  color: var(--ink);
+  color: var(--deep);
   margin: 0;
   line-height: 1.4;
 }
@@ -5179,4 +5179,117 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 @media (max-width: 640px) {
   .col-archive-statement { padding: 4rem 1.5rem 3.5rem; }
   .col-archive-cta { padding: 3.5rem 1.5rem 6rem; }
+}
+
+/* ── Shared encounter page layout ────────────────────────────
+   All encounter pages (mermaid, dragon, vase, queen, butterfly)
+   share this structural layout. Breakpoint rules live here so
+   inline styles on each page only carry what is unique to that
+   encounter (video src, objectFit, filter, transforms).
+─────────────────────────────────────────────────────────────── */
+.enc-page-layout {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.enc-video-section {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.enc-aside {
+  min-height: 25vh;
+  width: 100%;
+  background: #f4efe6;
+  color: #2f2a26;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem 2rem;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.enc-aside__content {
+  max-width: 780px;
+  text-align: center;
+  width: 100%;
+}
+
+.enc-aside__home {
+  position: absolute;
+  top: 1.1rem;
+  left: 1.5rem;
+  color: #6f665e;
+  text-decoration: none;
+  font-size: clamp(1.2rem, 1.8vw, 1.35rem);
+  font-style: italic;
+}
+
+/* Forward link — shared sizing so all encounter pages are consistent */
+.enc-forward {
+  color: #2f2a26;
+  text-decoration: none;
+  font-size: clamp(1.35rem, 2.5vw, 1.55rem);
+  font-style: italic;
+}
+
+/* Body text inside the aside — scripture + contemplative line */
+.enc-aside__content p {
+  font-family: Georgia, serif;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.9rem;
+  white-space: pre-line;
+}
+
+/* Mobile — give text panel more room, tighten horizontal padding */
+@media (max-width: 640px) {
+  .enc-video-section { height: 58vh; }
+  .enc-aside {
+    min-height: 42vh;
+    padding: 2.75rem 1.25rem 1.75rem;
+    align-items: flex-start;
+  }
+  .enc-aside__home {
+    top: 0.85rem;
+    left: 1rem;
+    font-size: 1.2rem;
+  }
+  .enc-forward { font-size: 1.4rem; }
+  .enc-aside__content p { font-size: 1.05rem; line-height: 1.55; }
+}
+
+/* Tablet — slight padding reduction */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .enc-aside { padding: 1.5rem 3rem 2rem; }
+  .enc-aside__home { font-size: 1.25rem; }
+}
+
+/* Landscape phone — video fills height, aside overlays bottom */
+@media (max-height: 480px) and (orientation: landscape) {
+  .enc-video-section { height: 100dvh; }
+  .enc-aside {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: auto;
+    padding: 0.65rem 1.5rem 0.75rem;
+    background: rgba(244, 239, 230, 0.95);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 10;
+  }
+  .enc-aside__content { max-width: 100%; }
+  .enc-aside__home { top: 0.65rem; left: 1rem; font-size: 1.1rem; }
+  .enc-forward { font-size: 1.2rem; }
+  .enc-aside__content p { font-size: 0.95rem; }
 }

@@ -39,24 +39,8 @@ export default function MermaidEncounterPage() {
   }, []);
 
   return (
-    <main
-      style={{
-        width: "100%",
-        minHeight: "100vh",
-        background: "#000",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <section
-        style={{
-          position: "relative",
-          width: "100%",
-          height: "75vh",
-          overflow: "hidden",
-          background: "#000",
-        }}
-      >
+    <main className="enc-page-layout">
+      <section className="enc-video-section">
         <video
           ref={videoRef}
           src="/videos/mermaid.mp4"
@@ -95,43 +79,15 @@ export default function MermaidEncounterPage() {
         />
       </section>
 
-      <aside
-        style={{
-          minHeight: "25vh",
-          width: "100%",
-          background: "#f4efe6",
-          color: "#2f2a26",
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "1.5rem 2rem 2rem",
-          boxSizing: "border-box",
-          borderTop: "1px solid rgba(0,0,0,0.08)",
-        }}
-      >
+      <aside className="enc-aside">
         <Link
           href="/"
-          className={cormorant.className}
-          style={{
-            position: "absolute",
-            top: "1.1rem",
-            left: "1.5rem",
-            color: "#6f665e",
-            textDecoration: "none",
-            fontSize: "1.15rem",
-            fontStyle: "italic",
-          }}
+          className={`${cormorant.className} enc-aside__home`}
         >
           home
         </Link>
 
-        <div
-          style={{
-            maxWidth: "780px",
-            textAlign: "center",
-          }}
-        >
+        <div className="enc-aside__content">
           <h1
             className={cormorant.className}
             style={{
@@ -147,7 +103,7 @@ export default function MermaidEncounterPage() {
          <p
   style={{
   fontFamily: "Georgia, serif",
-  fontSize: "clamp(0.9rem, 2.5vw, 1.16rem)",
+  fontSize: "clamp(1rem, 2.5vw, 1.16rem)",
   lineHeight: 1.42,
   letterSpacing: "0.01em",
   margin: "0 0 0.9rem",
@@ -161,15 +117,14 @@ We begin in the depths and rise toward the light.`}
 
           <Link
             href={getNextEncounter("mermaid")}
-            className={cormorant.className}
+            className={`${cormorant.className} enc-forward`}
             style={{
               color: "#2f2a26",
               textDecoration: "none",
-              fontSize: "1.4rem",
               fontStyle: "italic",
               opacity: showButton ? 0.9 : 0,
               pointerEvents: showButton ? "auto" : "none",
-              transition: "opacity 0.6s ease",
+              transition: "opacity 1.2s ease",
             }}
           >
             forward
