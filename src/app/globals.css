@@ -920,10 +920,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .lib-method-note {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.85;
   color: var(--deep);
-  max-width: 60ch;
+  max-width: 68ch;
   margin: 0 auto 3rem;
   text-align: center;
 }
@@ -3326,8 +3326,8 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .studio-poem-previews {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 560px;
+  gap: 1.25rem;
+  max-width: 420px;
   margin: 0 auto 3.5rem;
 }
 .studio-poem-preview {
@@ -3335,7 +3335,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   overflow: hidden;
   border-radius: 3px;
   border: 1px solid rgba(201, 168, 76, .14);
-  background: #000;
+  background: var(--deep);
 }
 .studio-poem-preview img {
   display: block;
@@ -3355,8 +3355,8 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    threshold. */
 @media (max-width: 640px) {
   .studio-poem-previews {
-    max-width: 420px;
-    gap: 1rem;
+    max-width: 340px;
+    gap: 0.85rem;
     margin: 0 auto 2.75rem;
   }
 }
@@ -3365,8 +3365,8 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    shrink gracefully rather than overflowing the section padding. */
 @media (max-width: 400px) {
   .studio-poem-previews {
-    max-width: 300px;
-    gap: 0.6rem;
+    max-width: 250px;
+    gap: 0.5rem;
   }
 }
 
