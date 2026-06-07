@@ -3326,24 +3326,37 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 /* ── Standard small-thumbnail size ──────────────────────────
    Establishing this grid as the reusable pattern for any future
    "preview, not full view" thumbnails (3-up, 2:3 frame, ~150px
-   wide at desktop). The text-overlay PNGs (ann/grismere/dragon)
-   are mostly-transparent art with faint, dark-toned linework —
-   they read as soft color/shape on a LIGHT ground (cream), and
-   disappear into a dark one. Use --cream as the frame background
-   for any transparent-overlay artwork added here. ──────────── */
+   wide at desktop, exported at ~600x900 for retina). The
+   text-overlay PNGs (ann/grismere/dragon) are mostly-transparent
+   art with faint, dark-toned linework — they read as soft
+   color/shape on a LIGHT ground, and disappear into a dark one.
+
+   Rather than drop three separate cream boxes onto the section's
+   dark navy (which read as stray cutouts), the trio sits inside
+   one shared cream "shelf" — a single soft panel that bridges the
+   dark section and the pale artwork as one deliberate light zone.
+   ──────────────────────────────────────────────────────────── */
+.studio-poem-shelf {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 2rem 1.75rem 1.75rem;
+  max-width: 580px;
+  margin: 0 auto 3.5rem;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, .18);
+}
 .studio-poem-previews {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
   max-width: 480px;
-  margin: 0 auto 3.5rem;
+  margin: 0 auto;
 }
 .studio-poem-preview {
   aspect-ratio: 2 / 3;
   overflow: hidden;
   border-radius: 3px;
-  border: 1px solid rgba(201, 168, 76, .14);
-  background: var(--cream);
+  border: 1px solid rgba(28, 43, 58, .1);
+  background: transparent;
 }
 .studio-poem-preview img {
   display: block;
@@ -3356,24 +3369,32 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   transition: opacity .3s ease-out;
 }
 .studio-poem-preview:hover img {
-  opacity: .92;
+  opacity: .85;
 }
 
 /* Tablet — tracks the section's own breakpoint (640px, see
-   .studio-silhouettes padding rule) so the previews tighten in
+   .studio-silhouettes padding rule) so the shelf tightens in
    step with the section around them rather than on a mismatched
    threshold. */
 @media (max-width: 640px) {
+  .studio-poem-shelf {
+    max-width: 460px;
+    padding: 1.5rem 1.25rem 1.25rem;
+    margin: 0 auto 2.75rem;
+  }
   .studio-poem-previews {
     max-width: 380px;
     gap: 0.9rem;
-    margin: 0 auto 2.75rem;
   }
 }
 
 /* Phone — narrower still; keep all three in a row but let them
    shrink gracefully rather than overflowing the section padding. */
 @media (max-width: 400px) {
+  .studio-poem-shelf {
+    max-width: 320px;
+    padding: 1.1rem 0.9rem 0.9rem;
+  }
   .studio-poem-previews {
     max-width: 270px;
     gap: 0.5rem;

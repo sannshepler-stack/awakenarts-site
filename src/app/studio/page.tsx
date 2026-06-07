@@ -52,30 +52,32 @@ export default function StudioPage() {
                 and atmosphere of the written form, not to make the
                 poems themselves readable here. The full pieces stay
                 inside the Collection. Mirrors /studio/silhouettes. ── */}
-            <div className="studio-poem-previews" role="list" aria-label="Concrete-poetry form previews">
-              <div className="studio-poem-preview" role="listitem">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/forms/ann-text.png"
-                  alt="Queen Ann — a glimpse of the concrete-poetry form behind the figure"
-                  loading="lazy"
-                />
-              </div>
-              <div className="studio-poem-preview" role="listitem">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/forms/grismere-text.png"
-                  alt="Grismere — a glimpse of the concrete-poetry form behind the figure"
-                  loading="lazy"
-                />
-              </div>
-              <div className="studio-poem-preview" role="listitem">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/forms/dragon-text.png"
-                  alt="The Dragon — a glimpse of the concrete-poetry form behind the figure"
-                  loading="lazy"
-                />
+            <div className="studio-poem-shelf">
+              <div className="studio-poem-previews" role="list" aria-label="Concrete-poetry form previews">
+                <div className="studio-poem-preview" role="listitem">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/forms/ann-text-thumb.png"
+                    alt="Queen Ann — a glimpse of the concrete-poetry form behind the figure"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="studio-poem-preview" role="listitem">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/forms/grismere-text-thumb.png"
+                    alt="Grismere — a glimpse of the concrete-poetry form behind the figure"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="studio-poem-preview" role="listitem">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/forms/dragon-text-thumb.png"
+                    alt="The Dragon — a glimpse of the concrete-poetry form behind the figure"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </div>
 
