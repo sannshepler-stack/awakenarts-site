@@ -109,7 +109,7 @@ export default function CollectionPage() {
         ──────────────────────────────────────────────────────────── */}
         <section className="col-archive-cta">
           <Link href="/encounters" className="col-archive-cta__link">
-            Step inside <span aria-hidden="true">→</span>
+            Enter Encounters <span aria-hidden="true">→</span>
           </Link>
         </section>
 
