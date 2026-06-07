@@ -103,11 +103,11 @@ export default function StudioPage() {
           <div className="studio-method-inner">
             <p className="eyebrow">The Method</p>
             <p className="studio-method-body">
-              These works don&rsquo;t explain themselves — they show. A queen
-              crossing through fire: loss, dignity, the cost of staying true to
-              yourself. A mermaid caught at the surface: being pulled in two
-              directions at once. A dragon at war with itself: the parts of us
-              that fight hardest against each other.
+              These works speak the way words embody shapes: a queen crossing
+              through fire — loss, dignity, the cost of staying true to yourself.
+              A mermaid caught at the surface — being pulled in two directions at
+              once. A dragon at war with itself — the parts of us that fight
+              hardest against each other.
             </p>
             <p className="studio-method-body">
               You don&rsquo;t have to work out the symbolism first. Look long
