@@ -3344,14 +3344,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      with (and outweighing) the figure gallery below, which is the
      section's real focal point. This keeps it a supporting glimpse,
      not the headline. */
-  max-width: 640px;
+  max-width: 760px;
   margin: 0 auto 3.5rem;
 }
 .studio-poem-previews {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 560px;
+  gap: 1.75rem;
+  max-width: 680px;
   margin: 0 auto;
 }
 .studio-poem-preview {
@@ -3364,12 +3364,16 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      as its own card and the faint linework has more to sit
      against, rather than washing into a flat, single-tone field. */
   background: var(--warm);
+  /* Padding so the artwork breathes within its frame instead of
+     pressing against the edges — the --warm fill becomes a visible
+     margin around the image, not just a backdrop showing through it. */
+  padding: 0.9rem;
 }
 .studio-poem-preview img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   /* Show the whole shape uncropped — these previews are meant to
      echo the same forms (Ann, Grismere, Dragon) shown at larger
      scale in the gallery below, not stand alone as linked
@@ -3389,12 +3393,15 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    threshold. */
 @media (max-width: 640px) {
   .studio-poem-shelf {
-    max-width: 460px;
+    max-width: 540px;
     margin: 0 auto 2.75rem;
   }
   .studio-poem-previews {
-    max-width: 380px;
-    gap: 0.9rem;
+    max-width: 460px;
+    gap: 1rem;
+  }
+  .studio-poem-preview {
+    padding: 0.7rem;
   }
 }
 
@@ -3402,11 +3409,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    shrink gracefully rather than overflowing the section padding. */
 @media (max-width: 400px) {
   .studio-poem-shelf {
-    max-width: 320px;
+    max-width: 360px;
   }
   .studio-poem-previews {
-    max-width: 270px;
-    gap: 0.5rem;
+    max-width: 310px;
+    gap: 0.6rem;
+  }
+  .studio-poem-preview {
+    padding: 0.5rem;
   }
 }
 
@@ -3414,11 +3424,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    the narrowest screens (e.g. 360px-wide devices). */
 @media (max-width: 380px) {
   .studio-poem-shelf {
-    max-width: 290px;
+    max-width: 320px;
   }
   .studio-poem-previews {
-    max-width: 240px;
-    gap: 0.45rem;
+    max-width: 270px;
+    gap: 0.4rem;
+  }
+  .studio-poem-preview {
+    padding: 0.4rem;
   }
 }
 
