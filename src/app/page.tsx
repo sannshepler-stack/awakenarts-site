@@ -125,7 +125,7 @@ export default function HomePage() {
       {/* ── HERO QUOTE ─── */}
       <section className="hero-quote-section" aria-label="Opening statement">
         <p className="hero-quote-text">
-          Some things are better spoken through images, stories, and parables than by words alone.
+          Images, stories, and parables speak what words alone cannot.
         </p>
       </section>
 
