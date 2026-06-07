@@ -112,7 +112,7 @@ export default function StudioPage() {
             <p className="studio-method-body">
               You don&rsquo;t have to work out the symbolism first. Look long
               enough, and something in you responds — sometimes right away,
-              sometimes only after the image has had time to work on you.
+              sometimes only after you&rsquo;ve come back to it more than once.
             </p>
             <p className="studio-method-body">
               That&rsquo;s the idea behind each piece: not a picture of an idea,
