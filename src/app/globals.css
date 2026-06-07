@@ -3337,16 +3337,15 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    dark section and the pale artwork as one deliberate light zone.
    ──────────────────────────────────────────────────────────── */
 .studio-poem-shelf {
-  background: var(--cream);
-  border-radius: 8px;
-  padding: 2.25rem 2rem 2rem;
-  /* Scaled back from 860px — at full size the shelf was competing
+  /* No panel — the frames sit directly on the section's dark
+     ground, each carrying its own --warm fill. This wrapper is
+     now pure layout: it centers and spaces the row, nothing more.
+     Scaled back from 860px — at full size the shelf was competing
      with (and outweighing) the figure gallery below, which is the
      section's real focal point. This keeps it a supporting glimpse,
      not the headline. */
   max-width: 640px;
   margin: 0 auto 3.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, .14);
 }
 .studio-poem-previews {
   display: grid;
@@ -3391,7 +3390,6 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 @media (max-width: 640px) {
   .studio-poem-shelf {
     max-width: 460px;
-    padding: 1.5rem 1.25rem 1.25rem;
     margin: 0 auto 2.75rem;
   }
   .studio-poem-previews {
@@ -3405,7 +3403,6 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 @media (max-width: 400px) {
   .studio-poem-shelf {
     max-width: 320px;
-    padding: 1.1rem 0.9rem 0.9rem;
   }
   .studio-poem-previews {
     max-width: 270px;
@@ -3418,7 +3415,6 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 @media (max-width: 380px) {
   .studio-poem-shelf {
     max-width: 290px;
-    padding: 1rem 0.8rem 0.8rem;
   }
   .studio-poem-previews {
     max-width: 240px;
