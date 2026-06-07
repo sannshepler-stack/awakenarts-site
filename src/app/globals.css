@@ -4668,7 +4668,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   font-size: clamp(1.15rem, 1.8vw, 1.4rem);
   color: var(--mid);
   line-height: 1.7;
-  max-width: 520px;
+  max-width: 640px;
   margin: 1rem auto 0;
 }
 
