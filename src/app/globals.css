@@ -3339,16 +3339,16 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .studio-poem-shelf {
   background: var(--cream);
   border-radius: 8px;
-  padding: 2.5rem 2rem 2rem;
-  max-width: 760px;
+  padding: 2.75rem 2.25rem 2.25rem;
+  max-width: 860px;
   margin: 0 auto 3.5rem;
   box-shadow: 0 6px 28px rgba(0, 0, 0, .18);
 }
 .studio-poem-previews {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 660px;
+  gap: 1.75rem;
+  max-width: 760px;
   margin: 0 auto;
 }
 .studio-poem-preview {

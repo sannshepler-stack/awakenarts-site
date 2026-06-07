@@ -57,7 +57,7 @@ export default function StudioPage() {
                 <div className="studio-poem-preview" role="listitem">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/images/forms/ann-text-thumb.png"
+                    src="/images/forms/ann-text-dark-thumb.png"
                     alt="Queen Ann — a glimpse of the concrete-poetry form behind the figure"
                     loading="lazy"
                   />
