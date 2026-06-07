@@ -923,8 +923,8 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   font-size: 1.15rem;
   line-height: 1.85;
   color: var(--deep);
-  max-width: 74ch;
-  margin: 0 auto 3.5rem;
+  max-width: 60ch;
+  margin: 0 auto 3rem;
   text-align: center;
 }
 .lib-section--warm {
