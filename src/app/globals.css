@@ -703,9 +703,21 @@ a   { color: inherit; text-decoration: none; }
   font-weight: 300;
   font-style: italic;
   color: var(--deep);
-  max-width: 62ch;
+  max-width: 48ch;
   margin: 0 auto 1.25rem;
   line-height: 1.75;
+}
+
+/* The revised line is shorter and now sits on a single line at most
+   widths — a tighter max-width keeps it reading as one composed
+   thought rather than spreading thin across the full 62ch band.
+   Mobile gets slightly reduced section padding to match: a short
+   one-line quote in the old 5rem band read as too much empty air
+   around too little text. */
+@media (max-width: 768px) {
+  .hero-quote-section {
+    padding: 3.75rem 1.5rem;
+  }
 }
 
 .hero-quote-cite {
