@@ -64,7 +64,7 @@ export default function HomePage() {
             <span>Shapes a Path</span>
           </h1>
 
-          <p className="hero-subline">Works made of image and language, shaped to be lived with — not just looked at once.</p>
+          <p className="hero-subline">Works made of image and language, shaped to be lived with.</p>
 
           <p className="hero-sub">
             AwakenArts is a collection of works where language takes
@@ -125,7 +125,7 @@ export default function HomePage() {
       {/* ── HERO QUOTE ─── */}
       <section className="hero-quote-section" aria-label="Opening statement">
         <p className="hero-quote-text">
-          Some things are easier to recognize in an image than to say outright — and clearer still the second time you sit with them.
+          Some things are easier to recognize in an image than to say outright.
         </p>
       </section>
 
