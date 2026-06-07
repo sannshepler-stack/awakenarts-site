@@ -32,7 +32,7 @@ export default function CollectionPage() {
               Works from the Collection
             </p>
             <p className="col-hero__body">
-              Works shaped from lived experience — the moments that mark us, made visible through image and language, and built to be returned to.
+              Works shaped from lived experience — the moments that define us, made visible through image and language.
             </p>
           </div>
         </section>
