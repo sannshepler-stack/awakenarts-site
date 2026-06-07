@@ -3356,7 +3356,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   overflow: hidden;
   border-radius: 3px;
   border: 1px solid rgba(28, 43, 58, .1);
-  background: transparent;
+  /* A shade darker than the shelf's --cream so each frame reads
+     as its own card and the faint linework has more to sit
+     against, rather than washing into a flat, single-tone field. */
+  background: var(--warm);
 }
 .studio-poem-preview img {
   display: block;
