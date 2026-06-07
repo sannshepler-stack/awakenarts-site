@@ -92,9 +92,9 @@ export default function LibraryPage() {
       <section className="lib-section" aria-label="Thematic readings">
         <p className="lib-method-note">
           These essays add context to particular works in the Collection —
-          not the full picture, just enough to help you notice more. Read
-          them in any order: pick what interests you, skip the rest, and
-          come back whenever a piece has you wanting to know more.
+          not the full picture. Read them in any order: pick what interests
+          you, skip the rest, and come back whenever a piece has you
+          wanting to know more.
         </p>
         <div className="lib-grid lib-grid--4">
           {themes.map(({ title, note, poems, link }) => (
