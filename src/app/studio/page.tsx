@@ -116,7 +116,7 @@ export default function StudioPage() {
             </p>
             <p className="studio-method-body">
               That&rsquo;s the idea behind each piece: not a picture of an idea,
-              but the idea itself, given a shape you can come back to.
+              but the idea itself, given visible shape.
             </p>
           </div>
         </section>
