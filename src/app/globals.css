@@ -3349,10 +3349,24 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   opacity: 1;
 }
 
-@media (max-width: 560px) {
+/* Tablet — tracks the section's own breakpoint (640px, see
+   .studio-silhouettes padding rule) so the previews tighten in
+   step with the section around them rather than on a mismatched
+   threshold. */
+@media (max-width: 640px) {
   .studio-poem-previews {
-    max-width: 360px;
-    gap: 0.75rem;
+    max-width: 420px;
+    gap: 1rem;
+    margin: 0 auto 2.75rem;
+  }
+}
+
+/* Phone — narrower still; keep all three in a row but let them
+   shrink gracefully rather than overflowing the section padding. */
+@media (max-width: 400px) {
+  .studio-poem-previews {
+    max-width: 300px;
+    gap: 0.6rem;
   }
 }
 
