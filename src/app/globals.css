@@ -3323,11 +3323,19 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    Deliberately compact: a glimpse of shape, color, and atmosphere —
    not a readable presentation of the poems themselves, which remain
    part of the Collection rather than given away here. */
+/* ── Standard small-thumbnail size ──────────────────────────
+   Establishing this grid as the reusable pattern for any future
+   "preview, not full view" thumbnails (3-up, 2:3 frame, ~150px
+   wide at desktop). The text-overlay PNGs (ann/grismere/dragon)
+   are mostly-transparent art with faint, dark-toned linework —
+   they read as soft color/shape on a LIGHT ground (cream), and
+   disappear into a dark one. Use --cream as the frame background
+   for any transparent-overlay artwork added here. ──────────── */
 .studio-poem-previews {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  max-width: 420px;
+  max-width: 480px;
   margin: 0 auto 3.5rem;
 }
 .studio-poem-preview {
@@ -3335,18 +3343,20 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   overflow: hidden;
   border-radius: 3px;
   border: 1px solid rgba(201, 168, 76, .14);
-  background: var(--deep);
+  background: var(--cream);
 }
 .studio-poem-preview img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: .8;
+  /* Source art is already faint/mostly-transparent by design —
+     no extra dimming needed, or it disappears into the frame. */
+  opacity: 1;
   transition: opacity .3s ease-out;
 }
 .studio-poem-preview:hover img {
-  opacity: 1;
+  opacity: .92;
 }
 
 /* Tablet — tracks the section's own breakpoint (640px, see
@@ -3355,8 +3365,8 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    threshold. */
 @media (max-width: 640px) {
   .studio-poem-previews {
-    max-width: 340px;
-    gap: 0.85rem;
+    max-width: 380px;
+    gap: 0.9rem;
     margin: 0 auto 2.75rem;
   }
 }
@@ -3365,7 +3375,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    shrink gracefully rather than overflowing the section padding. */
 @media (max-width: 400px) {
   .studio-poem-previews {
-    max-width: 250px;
+    max-width: 270px;
     gap: 0.5rem;
   }
 }
