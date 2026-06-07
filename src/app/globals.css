@@ -5157,30 +5157,6 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   margin: 0 auto;
 }
 
-.studio-method-quote {
-  font-family: var(--serif);
-  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--deep);
-  margin: 2rem auto 1rem;
-  max-width: 52ch;
-  border-left: 3px solid var(--gold);
-  padding: 0.5rem 0 0.5rem 1.5rem;
-  text-align: left;
-}
-
-.studio-method-quote cite {
-  display: block;
-  font-family: var(--sans);
-  font-size: 0.88rem;
-  font-style: normal;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-top: 0.5rem;
-}
-
 .studio-method-body {
   font-family: var(--serif);
   font-size: 1.2rem;
@@ -5193,7 +5169,6 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 @media (max-width: 640px) {
   .studio-method-section { padding: 5rem 1.25rem 5rem; }
-  .studio-method-body { text-align: left; }
 }
 
 .paintings-section {
