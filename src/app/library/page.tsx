@@ -84,8 +84,8 @@ export default function LibraryPage() {
             <em>to accompany the work.</em>
           </h1>
           <p className="lib-hero__sub">
-            Essays written to accompany particular works in the Collection —
-            and to help them open up a little further each time you return.
+            Essays supporting particular works in the Collection — written
+            to help each one open up a little further.
           </p>
         </div>
       </section>
