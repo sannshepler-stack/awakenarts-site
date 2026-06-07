@@ -103,7 +103,7 @@ export default function StudioPage() {
           <div className="studio-method-inner">
             <p className="eyebrow">The Method</p>
             <p className="studio-method-body">
-              These works speak the way words embody shapes: a queen crossing
+              These works speak as words embody shapes: a queen crossing
               through fire — loss, dignity, the cost of staying true to yourself.
               A mermaid caught at the surface — being pulled in two directions at
               once. A dragon at war with itself — the parts of us that fight
