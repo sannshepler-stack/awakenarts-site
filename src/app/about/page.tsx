@@ -5,19 +5,23 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'About Susan Ann Shepler — AwakenArts',
   description:
-    'Susan Ann Shepler — artist, poet, facilitator, and depth-oriented counselor. Creator of AwakenArts and its body of symbolic concrete poetry, rooted in the Christian contemplative tradition.',
+    'Susan Ann Shepler — artist and writer, and the creator of AwakenArts. Author of Whispers of Awareness and the AwakenArts Guidance Deck, with a background in counseling psychology and years of work with language, image, and the inner life.',
   alternates: { canonical: '/about' },
   openGraph: {
     url: '/about',
     title: 'About Susan Ann Shepler — AwakenArts',
     description:
-      'Artist, poet, and depth-oriented counselor. Creator of AwakenArts and its symbolic concrete poetry.',
+      'Artist and writer. Creator of AwakenArts, author of Whispers of Awareness, and creator of the AwakenArts Guidance Deck.',
     images: [
       {
         url: '/images/about/susan-ann-shepler.jpg',
         alt: 'Portrait of Susan Ann Shepler',
       },
     ],
+  },
+  twitter: {
+    description:
+      'Original works of image and language by Susan Ann Shepler — rooted in the Christian contemplative tradition, made to be returned to over time.',
   },
 }
 
@@ -35,7 +39,7 @@ export default function AboutPage() {
         <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Susan Ann Shepler</h1>
 
         <p style={{ fontSize: '1.15rem', color: '#8a7a6a', marginBottom: '2rem', fontStyle: 'italic' }}>
-          Artist · Writer · Facilitator · Depth-Oriented Counselor
+          Artist · Writer · Creator of AwakenArts
         </p>
 
         {/* Portrait */}
@@ -55,15 +59,15 @@ export default function AboutPage() {
         </div>
 
         <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '2rem' }}>
-          AwakenArts began not as a project but as a practice. Susan Ann Shepler has spent decades working at the intersection of language, image, and the interior life — drawing from depth psychology, the Christian contemplative tradition, and the conviction that words shaped into visible form carry a kind of meaning that ordinary language cannot reach alone.
+          AwakenArts began not as a project but as a practice — a long, ongoing attention to language, image, and the inner life. Susan Ann Shepler has spent decades working at that intersection, shaped by the Christian contemplative tradition and by years spent helping others find words for what&rsquo;s hardest to say.
         </p>
 
         <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '2rem' }}>
-          With a Master in Counseling Psychology from Webster University — specializing in Spirituality and Play Therapy — and certifications as both a Transformative Language Artist and a Journal Instructor, Susan brings a rare combination of clinical grounding and creative vision to her work. She has provided over a thousand hours of individual and group therapy, integrating bibliotherapy, journaling, and creative modalities with traditional counseling.
+          She holds a Master&rsquo;s in Counseling Psychology from Webster University, with certifications as a Transformative Language Artist and a Journal Instructor — training that, alongside years of direct work with people and language, shapes how she builds each piece. That background is part of what grounds AwakenArts: not as a course or a method to follow, but as work made by someone who has spent a long time paying close attention to how people find their way through difficult things.
         </p>
 
         <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '2rem' }}>
-          Her concrete poetry is the visible form of this method. Words become figures. Figures become mirrors. The Queen Ann word-figure at the heart of this site is not decoration — it is a demonstration of what language can do when it is shaped rather than merely spoken. Shaping words is one method, the AwakenArts method, and it becomes a path for healing.
+          Her work gives that attention visible form. Queen Ann — the figure at the center of this site — isn&rsquo;t decoration. She&rsquo;s an example of what happens when language is shaped rather than simply spoken: it becomes something you can stand in front of, return to, and recognize a little more of each time.
         </p>
 
         <div style={{ borderTop: '1px solid #e0d8cc', paddingTop: '2.5rem', marginTop: '1rem', marginBottom: '2rem' }}>
@@ -93,7 +97,7 @@ export default function AboutPage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/about/merri-art.png"
-            alt="Merriweather — Eternal Life, an AwakenArts symbolic figure"
+            alt="Merri — Eternal Life, an AwakenArts symbolic figure"
             style={{
               width: '100%',
               borderRadius: '4px',
@@ -102,13 +106,20 @@ export default function AboutPage() {
             }}
           />
           <p style={{ fontSize: '0.9rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8a7a6a', marginTop: '0.75rem', textAlign: 'center' }}>
-            Merriweather · Eternal Life — AwakenArts Symbolic Figure
+            Merri — Eternal Life. A work from the AwakenArts Collection.
           </p>
         </div>
 
         <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '2rem' }}>
-          She is bilingual in English and Spanish and is based in Georgetown, Texas.
+          Susan is the author of Whispers of Awareness (2025), a collection of poetry, art, and reflection, and the creator of the 52-card AwakenArts Guidance Deck — made for quiet use in reflection and creative practice. She is bilingual in English and Spanish, and lives in Georgetown, Texas.
         </p>
+
+        <div style={{ borderLeft: '2px solid #c9a84c', paddingLeft: '1.5rem', marginBottom: '2rem' }}>
+          <p style={{ fontSize: '1.2rem', lineHeight: '1.9', fontStyle: 'italic', color: '#2a2520', marginBottom: '0.4rem' }}>
+            &ldquo;Art carries some things that language alone can&rsquo;t reach. The deck began there — in image, in the poem beneath the words, in the long practice of shaping language until it could finally hold what it needed to.&rdquo;
+          </p>
+          <p style={{ fontSize: '0.88rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8a7a6a' }}>— Susan Ann Shepler, AwakenArts</p>
+        </div>
 
 
         {/* ── Theological foundation ── */}

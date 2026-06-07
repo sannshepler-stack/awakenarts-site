@@ -8,7 +8,7 @@ import { SYMBOLIC_FORMS } from '@/components/forms/forms-data'
 export const metadata: Metadata = {
   title: 'Studio — AwakenArts',
   description:
-    'The Studio of AwakenArts — symbolic works, concrete poetry, and visual-poetic forms. Each work joins language to visible structure through symbolic recognition.',
+    'The Studio shows how the works of AwakenArts take shape — language given visible form, made to be encountered slowly and returned to often.',
   alternates: { canonical: '/studio' },
   openGraph: {
     url: '/studio',
@@ -38,10 +38,10 @@ export default function StudioPage() {
             {/* Heading uses studio-section__header — dark-bg color rules
                 already defined in globals.css for .studio-silhouettes context. */}
             <div className="studio-section__header">
-              <p className="eyebrow">The Symbolic Forms</p>
+              <p className="eyebrow">Inside the Works</p>
               <h1 id="studio-silhouettes-heading">
-                Language becomes<br />
-                <em>the figure</em>
+                Language takes<br />
+                <em>visible shape</em>
               </h1>
             </div>
 
@@ -71,22 +71,24 @@ export default function StudioPage() {
               <cite>— Matthew 13:13</cite>
             </blockquote>
             <p className="studio-method-body">
-              These poems work the way parables work. They do not explain. They show.
-              A queen crossing through fire reveals something about loss, dignity, and
-              the cost of remaining true. A mermaid at the surface of the water reveals
-              something about divided awareness and the pull toward what lies beneath.
-              A dragon in conflict with itself reveals something about the tragic nature
-              of inner division.
+              These works don&rsquo;t explain — they show. A queen crossing through
+              fire says something about loss, dignity, and the cost of staying true
+              to yourself. A mermaid caught at the surface says something about being
+              pulled in two directions at once. A dragon at war with itself says
+              something about the parts of us that fight hardest against each other.
+              You don&rsquo;t have to puzzle out the symbolism first. You spend time
+              with the image, and something in you responds — sometimes right away,
+              sometimes only after you&rsquo;ve sat with it a while.
             </p>
             <p className="studio-method-body">
-              You do not need to understand the symbolism in advance. You encounter it
-              through the form itself — through shape, rhythm, image, and the particular
-              emotional atmosphere each poem creates. The meaning arrives through
-              recognition, not explanation.
+              You meet each piece through its shape, its rhythm, the feeling it
+              creates — not through a key you have to learn first. What it means
+              tends to arrive on its own, often when you&rsquo;ve stopped trying to
+              work it out.
             </p>
             <p className="studio-method-body">
-              This is what it means to treat symbolic form as visible language rather
-              than as decoration. The poem is not about the figure. The poem is the figure.
+              That&rsquo;s the idea behind every piece here: the work isn&rsquo;t a
+              picture of an idea — it&rsquo;s the idea, given a shape you can sit with.
             </p>
 
             <blockquote className="studio-method-quote">
@@ -150,9 +152,9 @@ export default function StudioPage() {
               />
             </Link>
             <p>
-              Symbolic concrete poetry exploring the inward journey — rooted in the
-              Christian tradition, created through the transformative language
-              arts process. By Susan Ann Shepler.
+              A collection of reflective works — image and language shaped as
+              one, rooted in the Christian contemplative tradition. By Susan
+              Ann Shepler.
             </p>
             <FooterSocial />
           </div>

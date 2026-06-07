@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: '%s | AwakenArts',
   },
   description:
-    'AwakenArts explores the inner journey through symbolic concrete poetry and visible poetic form — reflecting movement through memory, longing, conflict, transformation, and recognition. By Susan Ann Shepler.',
+    'AwakenArts is a growing collection of reflective works — image and language shaped as one — made to be returned to slowly, again and again. By Susan Ann Shepler, rooted in the Christian contemplative tradition.',
   applicationName: 'AwakenArts',
   authors: [{ name: 'Susan Ann Shepler', url: SITE_URL + '/about' }],
   creator: 'Susan Ann Shepler',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'Within the Circle — concrete poems and readings by Susan Ann Shepler, where each poem takes the form of its subject. Rooted in the Christian tradition.',
+      'AwakenArts is a growing collection of reflective works — image and language shaped as one — made to be returned to slowly, again and again. By Susan Ann Shepler, rooted in the Christian contemplative tradition.',
     locale: 'en_US',
     images: [
       {
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'Within the Circle — concrete poems and readings by Susan Ann Shepler, where each poem takes the form of its subject. Rooted in the Christian tradition.',
+      'AwakenArts is a growing collection of reflective works — image and language shaped as one — made to be returned to slowly, again and again. By Susan Ann Shepler, rooted in the Christian contemplative tradition.',
     images: ['/images/brand/queen-ann-hero-desktop.jpg'],
   },
   robots: {

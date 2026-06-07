@@ -11,7 +11,12 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'The Journal',
   description:
-    'Symbolic reflections and journal prompts inspired by recurring motifs, contemplative imagery, and the larger language of symbolic form.',
+    'Journaling prompts and reflections written alongside particular works in the AwakenArts Collection — a place to slow down, notice, and write down what surfaces.',
+  openGraph: {
+    title: 'The Journal — AwakenArts',
+    description:
+      'A space for journaling and reflection alongside the works of AwakenArts — for writing down what stays with you, and returning to it later.',
+  },
   robots: {
     index: false,
     follow: false,

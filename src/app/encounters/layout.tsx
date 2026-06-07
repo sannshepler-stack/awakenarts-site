@@ -18,7 +18,10 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Encounters — AwakenArts',
   description:
-    'A guided encounter with the symbolic life of the soul.',
+    'Step inside AwakenArts — a short introduction to the works and the Collection.',
+  openGraph: {
+    title: 'AwakenArts — When Language Shapes a Path',
+  },
   robots: { index: false, follow: true },
 }
 

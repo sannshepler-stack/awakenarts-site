@@ -24,18 +24,10 @@ const ENTRIES: Entry[] = [
   { path: '/studio/silhouettes',                                 changeFrequency: 'monthly', priority: 0.7 },
   // /path, /path/ann, /path/grismere, /path/ballerina, /begin, /journey
   // all permanently redirect to /studio or / — omitted from sitemap.
+  // /library/figures/*, /library/foundations/*, /library/voices, /gallery,
+  // and /deck were an orphaned, self-referencing page tree with no links
+  // from the live site (and no redirects) — removed entirely (June 2026).
   { path: '/library',                                            changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/library/foundations/process-in-and-of-images',       changeFrequency: 'monthly', priority: 0.6 },
-  { path: '/library/foundations/the-mirror-and-the-map',         changeFrequency: 'monthly', priority: 0.6 },
-  { path: '/library/foundations/allow-content-to-direct-the-shape', changeFrequency: 'monthly', priority: 0.6 },
-  { path: '/library/figures/the-dragon',                         changeFrequency: 'monthly', priority: 0.6 },
-  { path: '/library/figures/merri-when-time-stops',              changeFrequency: 'monthly', priority: 0.6 },
-  { path: '/library/figures/grismere',                           changeFrequency: 'monthly', priority: 0.6 },
-  { path: '/library/figures/queen-ann-between-kingdoms',         changeFrequency: 'monthly', priority: 0.6 },
-  { path: '/library/figures/ballerina',                          changeFrequency: 'monthly', priority: 0.6 },
-  { path: '/library/voices',                                     changeFrequency: 'monthly', priority: 0.5 },
-  { path: '/gallery',                                            changeFrequency: 'monthly', priority: 0.7 },
-  { path: '/deck',                                               changeFrequency: 'monthly', priority: 0.7 },
   { path: '/experience',                                         changeFrequency: 'monthly', priority: 0.6 },
   { path: '/privacy',                                            changeFrequency: 'yearly',  priority: 0.2 },
   { path: '/terms',                                              changeFrequency: 'yearly',  priority: 0.2 },

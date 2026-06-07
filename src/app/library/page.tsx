@@ -6,13 +6,13 @@ import FooterSocial from '@/components/FooterSocial'
 export const metadata: Metadata = {
   title: 'Library — AwakenArts',
   description:
-    'Thematic readings of symbolic works — depth, exile, fear, longing, and inwardness explored through the symbolic works of Susan Ann Shepler.',
+    'Companion readings for the works of AwakenArts — essays written to help particular pieces in the Collection open up the longer you spend with them.',
   alternates: { canonical: '/library' },
   openGraph: {
     url: '/library',
     title: 'Library — AwakenArts',
     description:
-      'Thematic readings of symbolic concrete poetry — what the poems reveal about depth, exile, fear, longing, and the hidden interior life.',
+      'Companion essays that walk alongside the works in the Collection — written to deepen, not replace, time spent with the pieces themselves.',
   },
 }
 
@@ -80,23 +80,24 @@ export default function LibraryPage() {
         <div className="lib-hero__inner">
           <p className="eyebrow">Library</p>
           <h1>
-            The poems<br />
-            <em>and what they reveal.</em>
+            Readings<br />
+            <em>that walk alongside the work.</em>
           </h1>
           <p className="lib-hero__sub">
-            Each concrete poem carries something in its shape and silence.
-            These readings draw that out — depth and hidden life, exile,
-            fear, longing, and the life that moves beneath the surface.
+            Essays written to accompany particular works in the Collection —
+            and to help them open up a little further each time you return.
           </p>
         </div>
       </section>
 
       <section className="lib-section" aria-label="Thematic readings">
         <p className="lib-method-note">
-          These poems do not explain themselves. You encounter them the way you
-          encounter a parable — through image, tension, and recognition rather
-          than summary. Each thematic reading gathers poems that speak to the
-          same human territory.
+          These readings don&rsquo;t explain the works so much as walk
+          alongside them — offering a little orientation, not the full
+          picture, so there&rsquo;s still something left to discover on your
+          own. There&rsquo;s no required order here: read what calls to you,
+          skip what doesn&rsquo;t, and come back when something in the
+          Collection sends you looking for more.
         </p>
         <div className="lib-grid lib-grid--4">
           {themes.map(({ title, note, poems, link }) => (
@@ -124,9 +125,9 @@ export default function LibraryPage() {
               />
             </Link>
             <p>
-              Symbolic concrete poetry exploring the inward journey — rooted in the
-              Christian tradition, created through the transformative language
-              arts process. By Susan Ann Shepler.
+              A body of work rooted in the Christian contemplative tradition —
+              created through years of attention to image, language, and the
+              inner life. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>

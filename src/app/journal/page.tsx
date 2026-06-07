@@ -39,22 +39,22 @@ export default function JournalIndexPage() {
           <h1 className={styles.title}>The Journal</h1>
 
           <p className={styles.lede}>
-            Symbolic reflections and journal prompts inspired by recurring
-            motifs, contemplative imagery, and the larger language of
-            symbolic form.
+            Reflections and journaling prompts that walk alongside particular
+            works in the Collection — a place to slow down, notice what comes
+            up, and write it down before it passes.
           </p>
           <p className={styles.intro}>
-            Each symbolic territory gathers reflective entries intended to
-            encourage observation, imagination, contemplation, and creative
-            exploration.
+            Each section below gathers entries connected to specific works and
+            themes in the Collection — prompts and reflections meant to help
+            you notice more, the longer you sit with them.
           </p>
 
-          <span className={styles.territoriesLabel}>Symbolic Territories</span>
+          <span className={styles.territoriesLabel}>Reflection Paths</span>
           <TerritoryNav variant="gateway" />
 
           {/* Editorial identity — restrained gold, beneath the territory list */}
           <p className={styles.identityStatement}>
-            A journal of symbolic territories and reflective forms.
+            A place to read, notice, and write — alongside the works that prompted it.
           </p>
         </div>
       </main>
@@ -71,11 +71,11 @@ export default function JournalIndexPage() {
             <em>words take shape</em>
           </h2>
           <p className={styles.wordFormBody}>
-            Words arranged into a visual form carry meaning differently than
-            words read in a line. The shape itself becomes part of the
-            message. You can try this for yourself — beginning with a word,
-            a phrase, or a memory, and watching what emerges when language
-            is given a body.
+            Words arranged into a shape carry meaning differently than words
+            read in a line — the shape itself becomes part of what&rsquo;s
+            being said. Try it yourself: start with a word, a phrase, or a
+            memory, and see what shows up once language has a body to move
+            through.
           </p>
 
           {/* Word-form image examples — the actual visual content

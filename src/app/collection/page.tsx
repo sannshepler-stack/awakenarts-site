@@ -6,13 +6,13 @@ import FooterSocial from '@/components/FooterSocial'
 export const metadata: Metadata = {
   title: 'The Collection — AwakenArts',
   description:
-    'The AwakenArts Collection — symbolic works exploring memory, longing, transformation, exile, grace, identity, and symbolic recognition through language and visible form.',
+    'The Collection gathers the works of AwakenArts — pieces meant to be returned to over time, through reflection, journaling, and quiet re-reading. By Susan Ann Shepler.',
   alternates: { canonical: '/collection' },
   openGraph: {
     url: '/collection',
     title: 'The AwakenArts Collection',
     description:
-      'A literary-symbolic collection of authored poetic works by Susan Ann Shepler.',
+      'A literary collection of works — image and language shaped as one — meant to be lived with, not read just once.',
   },
 }
 
@@ -32,7 +32,7 @@ export default function CollectionPage() {
               Works from the Collection
             </p>
             <p className="col-hero__body">
-              Works shaped from the inside of lived experience — through image, language, and the things that stay with you.
+              Works shaped from lived experience — the moments that mark us, made visible through image and language, and built to be returned to.
             </p>
           </div>
         </section>
@@ -63,32 +63,41 @@ export default function CollectionPage() {
           <div className="col-statement-inner">
 
             <h2 className="col-archive-statement__heading">
-              The Collection is the primary literary archive of AwakenArts —
-              the entry point into future works, readings, and editions.
+              The Collection is the heart of AwakenArts — not an archive to
+              pass through once, but a place to keep returning to, as new
+              works, readings, and materials take shape around it.
             </h2>
 
             <p className="col-statement-body">
-              Works shaped from memory, longing, exile, grace — the moments that mark us,
-              made visible through language and form.
+              Works shaped from memory, longing, exile, and grace — the moments
+              that stay with us, given visible form so they can be sat with,
+              rather than only remembered.
             </p>
 
             <p className="col-statement-body">
-              The Collection gathers works where language has taken shape — poems that have
-              become figures, figures that hold what prose cannot.
+              The Collection gathers works where language has taken visible
+              shape — pieces that hold what&rsquo;s hard to put into plain
+              words, and that give you something to come back to when you need
+              it again.
             </p>
 
             <p className="col-statement-body">
-              Each work is meant to be lived with. The meaning arrives before it can be named.
+              Each work is meant to be lived with. You might feel something the
+              first time you encounter one and not have the words for it yet —
+              then come back to it later and recognize exactly what it was.
             </p>
 
             <p className="col-statement-body">
-              The figures within the Collection carry longing, exile, memory, grace, and fear —
-              not as subjects to be studied, but as presences to be recognized.
+              The works in the Collection hold longing, exile, memory, grace,
+              and fear — not as ideas to study, but as things you&rsquo;ll
+              likely recognize from your own life, whenever you happen to meet
+              them again.
             </p>
 
             <p className="col-statement-body">
-              The Collection grows from the work itself — gathered over time,
-              recognized rather than explained.
+              The Collection grows slowly, the way the works themselves do —
+              gathered over time, and best understood simply by spending time
+              with them.
             </p>
 
           </div>
@@ -99,7 +108,7 @@ export default function CollectionPage() {
         ──────────────────────────────────────────────────────────── */}
         <section className="col-archive-cta">
           <Link href="/encounters" className="col-archive-cta__link">
-            Enter the Encounters <span aria-hidden="true">→</span>
+            Step inside <span aria-hidden="true">→</span>
           </Link>
         </section>
 
@@ -118,9 +127,9 @@ export default function CollectionPage() {
               />
             </Link>
             <p>
-              Symbolic literary forms exploring the inward journey — rooted in the
-              Christian tradition, created through the transformative language
-              arts process. By Susan Ann Shepler.
+              A collection of reflective works — image and language shaped as
+              one, rooted in the Christian contemplative tradition. By Susan
+              Ann Shepler.
             </p>
             <FooterSocial />
           </div>

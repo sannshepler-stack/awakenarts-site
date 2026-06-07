@@ -64,13 +64,14 @@ export default function HomePage() {
             <span>Shapes a Path</span>
           </h1>
 
-          <p className="hero-subline">Symbolic works that illuminate personal experience through image, language, and reflection.</p>
+          <p className="hero-subline">Works made of image and language, shaped to be lived with — not just looked at once.</p>
 
           <p className="hero-sub">
-            AwakenArts creates symbolic works where words become the
-            figure — a queen in exile, a mermaid beneath the surface,
-            a dragon turned inward. Each work carries meaning through
-            visible form.
+            AwakenArts is a collection of works where language takes
+            visible shape — a queen in exile, a mermaid beneath the
+            surface, a dragon turned inward. Each one is made for slow
+            company: the kind of work that opens a little differently
+            every time you come back to it.
           </p>
 
           <Link href="/collection" className="hero-cta">
@@ -124,7 +125,7 @@ export default function HomePage() {
       {/* ── HERO QUOTE ─── */}
       <section className="hero-quote-section" aria-label="Opening statement">
         <p className="hero-quote-text">
-          Symbols and parables have a way of carrying what words alone cannot.
+          Some things are easier to recognize in an image than to say outright — and clearer still the second time you sit with them.
         </p>
       </section>
 
@@ -136,10 +137,10 @@ export default function HomePage() {
         <div className="studio-preview-inner">
 
           <div className="studio-preview-header">
-            <p className="eyebrow">Symbolic Works</p>
+            <p className="eyebrow">From the Collection</p>
             <h2 id="studio-preview-heading">
-              The words become<br />
-              <em>the figure</em>
+              Language becomes<br />
+              <em>a figure you return to</em>
             </h2>
           </div>
 
@@ -167,7 +168,7 @@ export default function HomePage() {
         <div className="coll-inner">
 
           <div className="coll-header">
-            <p className="eyebrow">The AwakenArts Collection</p>
+            <p className="eyebrow">The Collection</p>
             <h2 id="coll-heading">
               Works<br />
               <em>from the Collection</em>
@@ -187,7 +188,7 @@ export default function HomePage() {
 
           <div className="coll-invitation">
             <p className="coll-invitation__text">
-              Each work joins language and image into a single structure of meaning — intended for slow encounter, not quick reading.
+              Each work joins language and image into something whole — made for slow company, and for coming back to. The kind of piece that means something different on the third visit than it did on the first.
             </p>
             <Link href="/collection" className="coll-invitation__link">
               The Collection <span aria-hidden="true">→</span>
@@ -204,13 +205,15 @@ export default function HomePage() {
         <div className="lib-preview-inner">
           <p className="eyebrow">Library</p>
           <h2 id="lib-preview-heading">
-            The poems<br />
-            <em>and what they reveal.</em>
+            Readings<br />
+            <em>that walk alongside the works.</em>
           </h2>
           <p className="lib-preview-body">
-            Depth and hidden life. Exile and threshold. Fear and transformative
-            force. Longing and devotion. Thematic readings that draw out what
-            the poems carry — the specific human realities within each form.
+            Exile and belonging. Fear, and the long way through it. Longing,
+            memory, devotion. The Library holds readings that sit alongside
+            particular works in the Collection — not to explain them, but to
+            help you notice what&rsquo;s already there, the next time you
+            spend time with one.
           </p>
           <p className="lib-preview-cta">
             <Link href="/library" className="text-link">
@@ -234,9 +237,9 @@ export default function HomePage() {
               />
             </Link>
             <p>
-              Symbolic works exploring the inward journey — rooted in the
-              Christian tradition, created through the transformative language
-              arts process. By Susan Ann Shepler.
+              A collection of reflective works — image and language shaped as
+              one, rooted in the Christian contemplative tradition. By Susan
+              Ann Shepler.
             </p>
             <FooterSocial />
           </div>
