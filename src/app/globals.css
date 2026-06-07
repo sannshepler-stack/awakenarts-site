@@ -3318,6 +3318,44 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   color: var(--mid);
 }
 
+/* Poem-form previews — small teaser thumbnails of the concrete-poetry
+   shapes (Ann, Grismere, Dragon) shown above the silhouette gallery.
+   Deliberately compact: a glimpse of shape, color, and atmosphere —
+   not a readable presentation of the poems themselves, which remain
+   part of the Collection rather than given away here. */
+.studio-poem-previews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 560px;
+  margin: 0 auto 3.5rem;
+}
+.studio-poem-preview {
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 1px solid rgba(201, 168, 76, .14);
+  background: #000;
+}
+.studio-poem-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .8;
+  transition: opacity .3s ease-out;
+}
+.studio-poem-preview:hover img {
+  opacity: 1;
+}
+
+@media (max-width: 560px) {
+  .studio-poem-previews {
+    max-width: 360px;
+    gap: 0.75rem;
+  }
+}
+
 /* Forms gallery — reuses existing FormPanel component */
 .studio-forms-gallery {
   display: grid;

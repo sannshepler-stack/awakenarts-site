@@ -84,7 +84,7 @@ export default function LibraryPage() {
             <em>to accompany the work.</em>
           </h1>
           <p className="lib-hero__sub">
-            Essays supporting particular works in the Collection.
+            Essays supporting selected works in the Collection.
           </p>
         </div>
       </section>

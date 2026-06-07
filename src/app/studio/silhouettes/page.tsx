@@ -45,6 +45,41 @@ export default function SilhouettesPage() {
         ──────────────────────────────────────────────────────── */}
         <section className="studio-silhouettes" aria-label="Silhouette forms">
           <div className="studio-section__inner">
+
+            {/* ── POEM-FORM PREVIEWS ─────────────────────────────────
+                Small glimpses of the concrete-poetry shapes behind
+                each figure — Queen Ann, Grismere, the Dragon. Sized
+                deliberately small: enough to convey the shape, color,
+                and atmosphere of the written form, not to make the
+                poems themselves readable here. The full pieces stay
+                inside the Collection. ─────────────────────────────── */}
+            <div className="studio-poem-previews" role="list" aria-label="Concrete-poetry form previews">
+              <div className="studio-poem-preview" role="listitem">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/forms/ann-text.png"
+                  alt="Queen Ann — a glimpse of the concrete-poetry form behind the figure"
+                  loading="lazy"
+                />
+              </div>
+              <div className="studio-poem-preview" role="listitem">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/forms/grismere-text.png"
+                  alt="Grismere — a glimpse of the concrete-poetry form behind the figure"
+                  loading="lazy"
+                />
+              </div>
+              <div className="studio-poem-preview" role="listitem">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/forms/dragon-text.png"
+                  alt="The Dragon — a glimpse of the concrete-poetry form behind the figure"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
             <div className="studio-forms-gallery" role="list" aria-label="Symbolic figures">
               {SYMBOLIC_FORMS
                 .filter(f => ['queen-ann', 'mermaid-grismere', 'the-dragon'].includes(f.slug))
