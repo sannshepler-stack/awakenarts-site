@@ -102,36 +102,22 @@ export default function StudioPage() {
         <section className="studio-method-section" aria-label="The AwakenArts method">
           <div className="studio-method-inner">
             <p className="eyebrow">The Method</p>
-            <blockquote className="studio-method-quote">
-              &ldquo;Though seeing, they do not see.&rdquo;
-              <cite>— Matthew 13:13</cite>
-            </blockquote>
             <p className="studio-method-body">
-              These works don&rsquo;t explain — they show. A queen crossing through
-              fire says something about loss, dignity, and the cost of staying true
-              to yourself. A mermaid caught at the surface says something about being
-              pulled in two directions at once. A dragon at war with itself says
-              something about the parts of us that fight hardest against each other.
-              You don&rsquo;t have to puzzle out the symbolism first. You spend time
-              with the image, and something in you responds — sometimes right away,
-              sometimes only after you&rsquo;ve sat with it a while.
+              These works don&rsquo;t explain themselves — they show. A queen
+              crossing through fire: loss, dignity, the cost of staying true to
+              yourself. A mermaid caught at the surface: being pulled in two
+              directions at once. A dragon at war with itself: the parts of us
+              that fight hardest against each other.
             </p>
             <p className="studio-method-body">
-              You meet each piece through its shape, its rhythm, the feeling it
-              creates — not through a key you have to learn first. What it means
-              tends to arrive on its own, often when you&rsquo;ve stopped trying to
-              work it out.
+              You don&rsquo;t have to work out the symbolism first. Look long
+              enough, and something in you responds — sometimes right away,
+              sometimes only after the image has had time to work on you.
             </p>
             <p className="studio-method-body">
-              That&rsquo;s the idea behind every piece here: the work isn&rsquo;t a
-              picture of an idea — it&rsquo;s the idea, given a shape you can sit with.
+              That&rsquo;s the idea behind each piece: not a picture of an idea,
+              but the idea itself, given a shape you can come back to.
             </p>
-
-            <blockquote className="studio-method-quote">
-              &ldquo;The purposes of a person&rsquo;s heart are deep waters,
-              but one who has insight draws them out.&rdquo;
-              <cite>— Proverbs 20:5</cite>
-            </blockquote>
           </div>
         </section>
 
