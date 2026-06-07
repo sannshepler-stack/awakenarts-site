@@ -81,7 +81,7 @@ export default function LibraryPage() {
           <p className="eyebrow">Library</p>
           <h1>
             Readings<br />
-            <em>that walk alongside the work.</em>
+            <em>to accompany the work.</em>
           </h1>
           <p className="lib-hero__sub">
             Essays written to accompany particular works in the Collection —
