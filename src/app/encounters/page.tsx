@@ -14,20 +14,19 @@ const cormorant = Cormorant_Garamond({
 const STEP_WORDS = ["Begin the Encounter"] as const;
 
 // ── TIMING ──────────────────────────────────────────────────────────
-// The intro video is 11.2 seconds long. We want "enter" to be fully
-// visible roughly a second before the video ends, so it feels like the
-// word arrives WITH the closing beat, not after it.
+// The intro video is 11.2 seconds long. The reveal phrase should
+// arrive right at the close of the video — appearing as the video
+// ends, not mid-sequence — so it reads as the video's final beat
+// handing off to the visitor.
 //
-// REVEAL_AT_MS:  when "enter" begins fading in, measured from page load
+// REVEAL_AT_MS:  when the phrase begins fading in, measured from page load
 // FADE_MS:       how long the fade itself takes
 //
-// With the values below: fade starts at 6.5s, completes at 7.1s, and
-// the video ends at 11.2s — leaving "enter" present and waiting for
-// the final ~4 seconds of the video, so it's clearly part of the
-// sequence rather than an afterthought. To tune, only change these
-// two numbers.
+// With the values below: fade starts at 10.6s and completes at 11.2s,
+// landing exactly as the video ends. To tune, only change these two
+// numbers.
 // ────────────────────────────────────────────────────────────────────
-const REVEAL_AT_MS = 6500;
+const REVEAL_AT_MS = 10600;
 const FADE_MS = 600;
 
 export default function EncountersPage() {
