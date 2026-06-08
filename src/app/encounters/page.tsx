@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Cormorant_Garamond } from "next/font/google";
 import { getFirstEncounterPath } from "./sequence";
@@ -30,8 +30,13 @@ const STEP_WORDS = ["Begin the Encounter"] as const;
 const REVEAL_AT_MS = 4500;
 const FADE_MS = 600;
 
+// Slightly slower than natural speed — gives the opening a more
+// unhurried, contemplative pace without dragging.
+const PLAYBACK_RATE = 0.85;
+
 export default function EncountersPage() {
   const router = useRouter();
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   // step = 0 → "enter" hidden
   // step = 1 → "enter" visible
   // click after "enter" appears → navigate to mermaid
@@ -44,6 +49,14 @@ export default function EncountersPage() {
     const t = setTimeout(() => setStep(1), REVEAL_AT_MS);
     return () => clearTimeout(t);
   }, []);
+
+  // Slow the intro slightly for a more unhurried opening. Set on the
+  // element directly (no HTML attribute exists for playback rate),
+  // and re-applied on loadedmetadata in case the browser resets it.
+  const applyPlaybackRate = () => {
+    const v = videoRef.current;
+    if (v) v.playbackRate = PLAYBACK_RATE;
+  };
 
   // Safety nets — if anything goes wrong with the video or the page
   // sits longer than expected, still surface "enter" so the visitor
@@ -73,11 +86,14 @@ export default function EncountersPage() {
       }}
     >
       <video
+        ref={videoRef}
         src="/videos/intro.mp4"
         autoPlay
         muted
         playsInline
         preload="auto"
+        onLoadedMetadata={applyPlaybackRate}
+        onPlay={applyPlaybackRate}
         onEnded={handleVideoEnded}
         onError={handleVideoError}
         style={{
@@ -86,6 +102,25 @@ export default function EncountersPage() {
           width: "100%",
           height: "100%",
           objectFit: "cover",
+          // A faint warm-gold cast over the opening footage —
+          // sepia + hue-rotate + saturation, kept subtle so the
+          // image still reads naturally rather than as a filter.
+          filter: "sepia(0.22) saturate(1.18) hue-rotate(-12deg) brightness(0.97)",
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* Soft gold wash layered over the video — reinforces the tint
+          without flattening contrast, and warms the black margins
+          the video doesn't fill. */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "radial-gradient(ellipse at center, rgba(201,168,76,0.10) 0%, rgba(28,43,58,0.28) 100%)",
+          mixBlendMode: "overlay",
           pointerEvents: "none",
         }}
       />
