@@ -21,7 +21,7 @@ export default function ButterflyEncounterPage() {
       v.playbackRate = 0.8;
       v.play().catch(() => {});
     }
-    const tButton = setTimeout(() => setShowButton(true), 2300);
+    const tButton = setTimeout(() => setShowButton(true), 2800);
     return () => clearTimeout(tButton);
   }, []);
 
