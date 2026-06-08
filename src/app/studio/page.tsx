@@ -8,13 +8,13 @@ import { SYMBOLIC_FORMS } from '@/components/forms/forms-data'
 export const metadata: Metadata = {
   title: 'Studio — AwakenArts',
   description:
-    'The Studio shows how the works of AwakenArts take shape — language given visible form, made to be encountered slowly and returned to often.',
+    'The Studio shows how language takes visible shape — parable and symbol given form, in the literary mode Scripture itself has always used.',
   alternates: { canonical: '/studio' },
   openGraph: {
     url: '/studio',
     title: 'Studio — AwakenArts',
     description:
-      'Symbolic works and concrete poetry — how language becomes visible form in the work of Susan Ann Shepler.',
+      'Symbolic works and concrete poetry — language given visible shape through parable, image, and figure, in the work of Susan Ann Shepler.',
   },
 }
 
@@ -49,7 +49,7 @@ export default function StudioPage() {
                 Small glimpses of the concrete-poetry shapes behind
                 each figure — Queen Ann, Grismere, the Dragon. Sized
                 deliberately small: enough to convey the shape, color,
-                and atmosphere of the written form, not to make the
+                and texture of the written form, not to make the
                 poems themselves readable here. The full pieces stay
                 inside the Collection. Mirrors /studio/silhouettes. ── */}
             <div className="studio-poem-shelf">
@@ -174,9 +174,9 @@ export default function StudioPage() {
               />
             </Link>
             <p>
-              A collection of reflective works — image and language shaped as
-              one, rooted in the Christian contemplative tradition. By Susan
-              Ann Shepler.
+              A collection of works that join image and language the way
+              Scripture itself so often does — through parable, poetry, and
+              symbol. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>

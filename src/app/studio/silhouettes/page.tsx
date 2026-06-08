@@ -8,13 +8,13 @@ import { SYMBOLIC_FORMS } from '@/components/forms/forms-data'
 export const metadata: Metadata = {
   title: 'Silhouettes — Studio — AwakenArts',
   description:
-    'Symbolic figures within atmospheric environments — the silhouette work of AwakenArts by Susan Ann Shepler.',
+    'Symbolic figures rendered within environments built to carry meaning — the silhouette work of AwakenArts by Susan Ann Shepler.',
   alternates: { canonical: '/studio/silhouettes' },
   openGraph: {
     url: '/studio/silhouettes',
     title: 'Silhouettes — Studio — AwakenArts',
     description:
-      'Symbolic figures within atmospheric environments. The silhouette work of AwakenArts.',
+      'Symbolic figures shaped by the environments that hold them — the silhouette work of AwakenArts.',
   },
 }
 
@@ -27,7 +27,7 @@ export default function SilhouettesPage() {
 
         {/* ── HEADING ─────────────────────────────────────────────
             Restrained. No explanatory paragraph needed — the
-            imagery carries the atmosphere.
+            image itself carries the meaning, the way a parable does.
         ──────────────────────────────────────────────────────── */}
         <section className="studio-opening">
           <div className="studio-opening__inner">
@@ -50,7 +50,7 @@ export default function SilhouettesPage() {
                 Small glimpses of the concrete-poetry shapes behind
                 each figure — Queen Ann, Grismere, the Dragon. Sized
                 deliberately small: enough to convey the shape, color,
-                and atmosphere of the written form, not to make the
+                and texture of the written form, not to make the
                 poems themselves readable here. The full pieces stay
                 inside the Collection. ─────────────────────────────── */}
             <div className="studio-poem-shelf">
@@ -118,9 +118,9 @@ export default function SilhouettesPage() {
               loading="lazy"
             />
             <p>
-              Symbolic concrete poetry exploring the inward journey — rooted in the
-              Christian tradition, created through the transformative language
-              arts process. By Susan Ann Shepler.
+              Concrete poetry and symbolic form — language given shape in the
+              same literary mode Scripture itself uses: parable, image, and
+              figure. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>
