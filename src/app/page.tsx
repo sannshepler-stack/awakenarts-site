@@ -69,14 +69,15 @@ export default function HomePage() {
             <span>Shapes a Path</span>
           </h1>
 
-          <p className="hero-subline">Words become a path where feelings take shape.</p>
+          <p className="hero-subline">
+            AwakenArts is a body of visual-poetic works shaped through
+            image, poetic structure, and figurative language.
+          </p>
 
           <p className="hero-sub">
-            AwakenArts is a collection of works where language takes
-            visible shape — a queen in exile, a mermaid beneath the
-            surface, a dragon at war with itself. Each figure works the
-            way a parable works: not explained, but recognized — meaning
-            something different the third time you meet it than the first.
+            The forms draw from longstanding traditions of parable,
+            poetry, symbolic narrative, and image-bearing meaning found
+            throughout Scripture and Christian literary expression.
           </p>
 
           <Link href="/collection" className="hero-cta">
@@ -130,8 +131,29 @@ export default function HomePage() {
       {/* ── HERO QUOTE ─── */}
       <section className="hero-quote-section" aria-label="Opening statement">
         <p className="hero-quote-text">
-          Images, stories, and parables speak what words alone cannot.
+          &ldquo;He did not say anything to them without using a parable.&rdquo;
         </p>
+        <p className="hero-quote-cite">Matthew 13:34</p>
+      </section>
+
+      {/* ── SCRIPTURE'S OWN LANGUAGE ──────────────────────────────
+          Secondary section — grounds the work in Scripture's own
+          poetic and figurative mode before introducing the Studio.
+      ──────────────────────────────────────────────────────────── */}
+      <section className="hero-secondary-section" aria-label="The language of Scripture">
+        <div className="hero-secondary-section__inner">
+          <p>The language of Scripture is often poetic before it is explanatory.</p>
+          <p>
+            From the Psalms and Proverbs to prophetic imagery and the
+            parables of Christ, Biblical language repeatedly carries
+            meaning through symbol, metaphor, narrative, and visual form.
+          </p>
+          <p>
+            AwakenArts approaches visual-poetic structure within that
+            broader literary tradition: works in which image and language
+            participate together in meaning.
+          </p>
+        </div>
       </section>
 
       {/* ── SECTION 2: STUDIO PREVIEW ────────────────────────────
@@ -192,8 +214,15 @@ export default function HomePage() {
           </div>
 
           <div className="coll-invitation">
+            <p className="coll-invitation__text coll-invitation__text--lead">
+              A queen between kingdoms. A figure beneath the surface. A
+              dragon turned inward.
+            </p>
             <p className="coll-invitation__text">
-              Each work joins language and image into something whole — made for slow company, and for coming back to. The kind of piece that means something different on the third visit than it did on the first.
+              The works of AwakenArts are shaped through symbolic form,
+              poetic structure, and visual language intended to be
+              encountered as literary figures rather than interpreted as
+              systems.
             </p>
             <Link href="/collection" className="coll-invitation__link">
               The Collection <span aria-hidden="true">→</span>

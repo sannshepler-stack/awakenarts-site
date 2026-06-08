@@ -720,6 +720,34 @@ a   { color: inherit; text-decoration: none; }
   }
 }
 
+/* ── Secondary section — grounds the work in Scripture's own
+   poetic mode. Quiet, centered, restrained prose block. ── */
+.hero-secondary-section {
+  background: #f5f0e8;
+  padding: 5rem 2rem;
+  border-top: 1px solid var(--mist);
+}
+.hero-secondary-section__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-secondary-section__inner p {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  line-height: 1.95;
+  color: var(--mid);
+  margin-bottom: 1.5rem;
+}
+.hero-secondary-section__inner p:first-child {
+  color: var(--deep);
+  font-style: italic;
+}
+.hero-secondary-section__inner p:last-child { margin-bottom: 0; }
+@media (max-width: 768px) {
+  .hero-secondary-section { padding: 3.75rem 1.5rem; }
+}
+
 .hero-quote-cite {
   font-family: var(--sans);
   font-size: 0.82rem;
@@ -4600,6 +4628,11 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   line-height: 1.6;
   max-width: 560px;
   margin: 0;
+}
+.coll-invitation__text--lead {
+  font-style: italic;
+  color: var(--deep);
+  max-width: 520px;
 }
 
 .coll-invitation__link {
