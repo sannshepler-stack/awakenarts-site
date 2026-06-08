@@ -255,14 +255,13 @@ export default function HomePage() {
           <p className="eyebrow">Library</p>
           <h2 id="lib-preview-heading">
             Readings<br />
-            <em>that walk alongside the works.</em>
+            <em>grounded in image, symbol, and figurative language.</em>
           </h2>
           <p className="lib-preview-body">
-            Exile and belonging. Fear, and the long way through it. Longing,
-            memory, devotion. The Library holds readings that sit alongside
-            particular works in the Collection — not to explain them, but to
-            help you notice what&rsquo;s already there, the next time you
-            spend time with one.
+            The Library gathers writings on Biblical imagery, parable,
+            poetry, allegory, and literary-symbolic form. These readings
+            help establish the language beneath AwakenArts: works shaped
+            through image, meaning, and visual-poetic structure.
           </p>
           <p className="lib-preview-cta">
             <Link href="/library" className="text-link">
