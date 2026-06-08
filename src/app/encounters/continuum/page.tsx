@@ -42,11 +42,12 @@ export default function ContinuumPage() {
     }
     // Pacing tuned to feel like the other encounters but slightly
     // slower at the end — this is rest, not advance.
-    //   3.0s — first line begins to fade in
+    //   1.5s — first line begins to fade in
+    //   2.6s — quiet exits appear, after only a brief pause —
+    //          calm and intentional, not held back for effect
     //   5.0s — brightness settles (only meaningful if a video is playing)
-    //   5.5s — quiet exits appear
     const t1 = setTimeout(() => setShowLine1(true), 1500);
-    const t3 = setTimeout(() => setShowExits(true), 5500);
+    const t3 = setTimeout(() => setShowExits(true), 2600);
     const tSettle = setTimeout(() => setEnded(true), 5000);
     return () => {
       clearTimeout(t1);
@@ -139,7 +140,7 @@ export default function ContinuumPage() {
             justifyContent: "center",
             gap: "1rem 2rem",
             opacity: showExits ? 1 : 0,
-            transition: "opacity 2s ease",
+            transition: "opacity 0.25s ease",
             pointerEvents: showExits ? "auto" : "none",
           }}
         >

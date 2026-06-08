@@ -21,7 +21,7 @@ export default function ButterflyEncounterPage() {
       v.playbackRate = 0.8;
       v.play().catch(() => {});
     }
-    const tButton = setTimeout(() => setShowButton(true), 7000);
+    const tButton = setTimeout(() => setShowButton(true), 1100);
     return () => clearTimeout(tButton);
   }, []);
 
@@ -56,7 +56,14 @@ export default function ButterflyEncounterPage() {
       </section>
 
       <aside className="enc-aside">
-        <Link href="/" className={`${cormorant.className} enc-aside__home`}>
+        <Link
+          href="/"
+          className={`${cormorant.className} enc-aside__home`}
+          style={{
+            opacity: showButton ? 1 : 0,
+            transition: "opacity 0.2s ease",
+          }}
+        >
           home
         </Link>
 
@@ -95,9 +102,9 @@ What was enclosed is released. What was hidden becomes visible.`}
               color: "#2f2a26",
               textDecoration: "none",
               fontStyle: "italic",
-              opacity: showButton ? 0.9 : 0,
+              opacity: showButton ? 1 : 0,
               pointerEvents: showButton ? "auto" : "none",
-              transition: "opacity 1.2s ease",
+              transition: "opacity 0.2s ease",
             }}
           >
             forward
