@@ -5,7 +5,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'About Susan Ann Shepler — AwakenArts',
   description:
-    'Susan Ann Shepler — artist and writer, and the creator of AwakenArts. Author of Whispers of Awareness and the AwakenArts Guidance Deck, with a background in counseling psychology and years of work with language, image, and the inner life.',
+    'Susan Ann Shepler — artist and writer, and the creator of AwakenArts. Author of Whispers of Awareness and the AwakenArts Guidance Deck, working at the intersection of language, image, and the literary-symbolic tradition of Scripture.',
   alternates: { canonical: '/about' },
   openGraph: {
     url: '/about',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     description:
-      'Original works of image and language by Susan Ann Shepler — rooted in the Christian contemplative tradition, made to be returned to over time.',
+      'Original works of image and language by Susan Ann Shepler, working in the literary-symbolic tradition of Scripture — parable, poetry, and image — made to be returned to over time.',
   },
 }
 
@@ -59,11 +59,11 @@ export default function AboutPage() {
         </div>
 
         <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '2rem' }}>
-          AwakenArts began not as a project but as a practice — a long, ongoing attention to language, image, and the inner life. Susan Ann Shepler has spent decades working at that intersection, shaped by the Christian contemplative tradition and by years spent helping others find words for what&rsquo;s hardest to say.
+          AwakenArts began not as a project but as a practice — a long, ongoing attention to language and image, and to the literary-symbolic tradition Scripture itself has always worked in: parable, poem, type, and figure. Susan Ann Shepler has spent decades working at that intersection, and years more helping others find words for what&rsquo;s hardest to say.
         </p>
 
         <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '2rem' }}>
-          She holds a Master&rsquo;s in Counseling Psychology from Webster University, with certifications as a Transformative Language Artist and a Journal Instructor — training that, alongside years of direct work with people and language, shapes how she builds each piece. That background is part of what grounds AwakenArts: not as a course or a method to follow, but as work made by someone who has spent a long time paying close attention to how people find their way through difficult things.
+          She holds a Master&rsquo;s in Counseling Psychology from Webster University, with certifications as a Transformative Language Artist and a Journal Instructor — training that sharpened her ear for how people actually speak about difficult things, and shapes how she builds each piece. But that isn&rsquo;t where AwakenArts is grounded. The deeper foundation is older and more specific: the literary-symbolic tradition of Scripture itself, where parable, image, and poem have always carried what plain statement could not.
         </p>
 
         <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '2rem' }}>
@@ -84,7 +84,7 @@ export default function AboutPage() {
           </p>
 
           <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '1.75rem' }}>
-            This process engaged both hemispheres simultaneously — the left brain in formal craft, meter, rhyme, and structure; the right brain in image, spatial intelligence, and symbolic recognition. The integration of the two in the act of making is itself the subject of the work. The process enacts what the poems describe: the movement toward center through the joining of what had been divided.
+            This is the same discipline behind acrostic psalms and Hebrew chiasm — form and meaning made inseparable, structure carrying significance rather than merely housing it. Craft (meter, rhyme, structure) and image rose together, neither one decorating the other. The process enacts what the poems themselves picture: shape and sense arriving as one thing, not two joined afterward.
           </p>
 
           <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '0' }}>
@@ -126,19 +126,19 @@ export default function AboutPage() {
         <div style={{ borderTop: '1px solid #e0d8cc', paddingTop: '3rem', marginTop: '4rem' }}>
 
           <p style={{ fontSize: '0.95rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8a7a6a', marginBottom: '1.75rem' }}>
-            The Inner Journey
+            A Literary Inheritance
           </p>
 
           <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '1.75rem' }}>
-            The inner journey in AwakenArts is not self-absorption or detached mysticism. It is the movement toward truthful self-understanding, discernment, wisdom, reconciliation, and orientation before God.
+            AwakenArts works inside a tradition far older than itself. Scripture speaks continually through image rather than argument — through parable, poem, type, vision, and figure. The Psalms are built as poetry. The prophets were given visions, not proofs. &ldquo;He did not say anything to them without using a parable&rdquo; (Matthew 13:34). The symbolic forms gathered here extend that same mode: meaning made visible, met rather than explained.
           </p>
 
           <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '1.75rem' }}>
-            The symbolic forms become mirrors through which a person encounters fear, division, longing, exile, temptation, transformation, courage, grace, and identity. This aligns with longstanding Biblical wisdom about the inner person, the heart, discernment, and the search for what is true beneath appearances.
+            Each figure works the way a parable works. A queen crossing through fire is not a riddle to solve — she is an image that does its own work, the way the prodigal son or the woman at the well do theirs: by being encountered, not decoded. Fear, exile, longing, grace, courage, division, temptation, identity — these arrive in story and shape, the way Scripture has always presented them, not as concepts requiring a key.
           </p>
 
           <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '2.5rem' }}>
-            The inner journey is the movement from surface identity toward truthful recognition of the deeper self before God — not escape from reality, not self-worship, not mystical vagueness, but deeper honesty, awareness, discernment, integration, and orientation toward what is true.
+            This is the same practice the Bible itself models: the Proverbs drawing the deep waters of the heart to the surface, the Psalms moving between confession and praise, the prophets speaking in vision because plain statement wasn&rsquo;t enough. AwakenArts simply continues that practice in visual-poetic form — each passage below speaks in the same key the work tries to hold:
           </p>
 
           {/* Scripture anchors */}
@@ -182,23 +182,23 @@ export default function AboutPage() {
           </div>
 
           <p style={{ fontSize: '0.95rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8a7a6a', margin: '3rem 0 1.75rem' }}>
-            Opposing Tensions
+            Held in Tension
           </p>
 
           <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '1.75rem' }}>
-            This direction aligns naturally with parable, myth, dream, Scripture, and human experience itself. Archetypal forms contain opposing energies simultaneously. This tension gives symbolic figures their depth, vitality, and psychological truth.
+            This kind of tension is native to the literary forms Scripture itself uses — parable, type, poetic structure — where a single image holds more than one truth at once: the lion that is also the lamb, the vine and the branches, the bridegroom who is also the judge. A figure doesn&rsquo;t resolve into one meaning; it carries several, the way Scripture&rsquo;s own images do.
           </p>
 
           <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '1.75rem' }}>
-            The forms within AwakenArts are not fixed symbols with singular meanings. They often carry beauty and danger, innocence and illusion, strength and vulnerability, longing and fear at the same time. A figure may attract and unsettle simultaneously. A form may conceal what it reveals. Grace may exist beside fragility. Transformation may emerge through disorientation.
+            The forms within AwakenArts are not fixed symbols with singular meanings. They often carry beauty and danger, innocence and illusion, strength and vulnerability, longing and fear at the same time. A figure may attract and unsettle simultaneously. A form may conceal what it reveals. Grace may stand beside fragility. A reckoning may arrive by way of confusion.
           </p>
 
           <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '1.75rem' }}>
-            This layered structure reflects the nature of human experience itself, where identity, memory, desire, fear, love, suffering, and spiritual longing rarely exist in isolation from one another. The symbolic figures remain alive because they move between opposing realities rather than resolving into simplistic definitions.
+            This layered structure reflects how Scripture itself speaks of the human heart — identity, memory, desire, fear, love, suffering, and longing, rarely arriving one at a time. The figures here stay alive for the same reason a good parable does: they keep moving between realities instead of settling into a single, simple meaning.
           </p>
 
           <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '0' }}>
-            AwakenArts approaches symbolic concrete poetry as a contemplative and parabolic language capable of holding these tensions visibly — through image, form, rhythm, and embodiment.
+            AwakenArts approaches symbolic concrete poetry as a parabolic language — the kind Scripture has always used to hold such tensions visibly: through image, form, rhythm, and figure.
           </p>
 
         </div>
