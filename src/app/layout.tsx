@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: '%s | AwakenArts',
   },
   description:
-    'AwakenArts is a growing collection of reflective works — image and language shaped as one — made to be returned to slowly, again and again. By Susan Ann Shepler, rooted in the Christian contemplative tradition.',
+    'AwakenArts is a growing collection of works that join image and language the way Scripture itself so often does — through parable, poetry, and symbol — made to be returned to slowly, again and again. By Susan Ann Shepler.',
   applicationName: 'AwakenArts',
   authors: [{ name: 'Susan Ann Shepler', url: SITE_URL + '/about' }],
   creator: 'Susan Ann Shepler',
@@ -27,11 +27,12 @@ export const metadata: Metadata = {
     'AwakenArts',
     'Susan Ann Shepler',
     'Christian tradition',
-    'Christian mysticism',
+    'Biblical imagery',
+    'parable and poetry',
     'concrete poetry',
     'symbolic imagery',
     'symbolic figures',
-    'interior life',
+    'figurative language',
     'Whispers of Awareness',
   ],
   alternates: {
@@ -43,14 +44,14 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'AwakenArts is a growing collection of reflective works — image and language shaped as one — made to be returned to slowly, again and again. By Susan Ann Shepler, rooted in the Christian contemplative tradition.',
+      'AwakenArts is a growing collection of works that join image and language the way Scripture itself so often does — through parable, poetry, and symbol — made to be returned to slowly, again and again. By Susan Ann Shepler.',
     locale: 'en_US',
     images: [
       {
         url: '/images/brand/queen-ann-hero-desktop.jpg',
         width: 1600,
         height: 1100,
-        alt: 'Queen Ann — a painted figure in contemplation, central to the AwakenArts identity',
+        alt: 'Queen Ann — a painted figure standing within a symbolic narrative, central to the AwakenArts identity',
       },
     ],
   },
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'AwakenArts is a growing collection of reflective works — image and language shaped as one — made to be returned to slowly, again and again. By Susan Ann Shepler, rooted in the Christian contemplative tradition.',
+      'AwakenArts is a growing collection of works that join image and language the way Scripture itself so often does — through parable, poetry, and symbol — made to be returned to slowly, again and again. By Susan Ann Shepler.',
     images: ['/images/brand/queen-ann-hero-desktop.jpg'],
   },
   robots: {
@@ -89,9 +90,9 @@ const jsonLd = {
       name: 'Susan Ann Shepler',
       url: `${SITE_URL}/about`,
       image: `${SITE_URL}/images/about/susan-ann-shepler.jpg`,
-      jobTitle: 'Artist, Writer, Depth-Oriented Counselor',
+      jobTitle: 'Artist and Writer',
       description:
-        'Artist, writer, and depth-oriented counselor. Creator of AwakenArts and the Within the Circle series of concrete poems and readings — rooted in the Christian tradition. Author of Whispers of Awareness (2025).',
+        'Artist and writer. Creator of AwakenArts and the Within the Circle series of concrete poems and readings, working in the literary-symbolic tradition Scripture itself has always used — parable, image, and figure. Author of Whispers of Awareness (2025).',
       knowsLanguage: ['en', 'es'],
       address: {
         '@type': 'PostalAddress',
@@ -117,7 +118,7 @@ const jsonLd = {
       logo: `${SITE_URL}/images/brand/logo.png`,
       founder: { '@id': `${SITE_URL}/#person` },
       description:
-        'Symbolic concrete poetry exploring the inward journey — rooted in the Christian tradition, created through the transformative language arts process. By Susan Ann Shepler.',
+        'Concrete poetry and symbolic form — language given shape in the same literary mode Scripture itself uses: parable, image, and figure. By Susan Ann Shepler.',
     },
     {
       '@type': 'WebSite',

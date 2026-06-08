@@ -6,7 +6,7 @@ import FooterSocial from '@/components/FooterSocial'
 export const metadata: Metadata = {
   title: 'The Collection — AwakenArts',
   description:
-    'The Collection gathers the works of AwakenArts — pieces meant to be returned to over time, through reflection, journaling, and quiet re-reading. By Susan Ann Shepler.',
+    'The Collection gathers the works of AwakenArts — pieces meant to be returned to over time, the way image and parable reward a second and third reading. By Susan Ann Shepler.',
   alternates: { canonical: '/collection' },
   openGraph: {
     url: '/collection',
@@ -127,9 +127,9 @@ export default function CollectionPage() {
               />
             </Link>
             <p>
-              A collection of reflective works — image and language shaped as
-              one, rooted in the Christian contemplative tradition. By Susan
-              Ann Shepler.
+              A collection of works that join image and language the way
+              Scripture itself so often does — through parable, poetry, and
+              symbol. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>
