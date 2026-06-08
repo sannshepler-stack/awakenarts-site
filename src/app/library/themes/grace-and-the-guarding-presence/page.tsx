@@ -80,7 +80,7 @@ export default function GraceAndTheGuardingPresencePage() {
 
                 <div className="essay-figure-nav">
                   <Link href="/library/themes/containment-and-inwardness" className="essay-figure-nav__prev">
-                    ← Containment and Inwardness
+                    ← Containment and Hidden Treasure
                   </Link>
                   <Link href="/library" className="essay-figure-nav__next">
                     Return to Library →

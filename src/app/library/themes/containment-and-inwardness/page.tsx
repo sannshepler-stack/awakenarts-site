@@ -4,7 +4,7 @@ import Nav from '@/components/Nav'
 import FooterSocial from '@/components/FooterSocial'
 
 export const metadata: Metadata = {
-  title: 'Containment and Inwardness — Library — AwakenArts',
+  title: 'Containment and Hidden Treasure — Library — AwakenArts',
   description:
     'What the outer story cannot fill — the vessel shaped for something the world cannot give. A thematic reading through Decorations on a Clay Vase.',
   alternates: { canonical: '/library/themes/containment-and-inwardness' },
@@ -21,7 +21,7 @@ export default function ContainmentAndInwardnessPage() {
 
       <header className="essay-header">
         <p className="eyebrow">Thematic Reading</p>
-        <h1>Containment and Inwardness</h1>
+        <h1>Containment and Hidden Treasure</h1>
         <p className="essay-header__subtitle">
           What the outer story cannot fill
         </p>
@@ -112,7 +112,7 @@ export default function ContainmentAndInwardnessPage() {
             <ul>
               <li><Link href="/library">The Library</Link></li>
               <li><Link href="/library/themes/depth-and-hidden-life">Depth and Hidden Life</Link></li>
-              <li><Link href="/library/themes/containment-and-inwardness">Containment and Inwardness</Link></li>
+              <li><Link href="/library/themes/containment-and-inwardness">Containment and Hidden Treasure</Link></li>
             </ul>
           </div>
           <div className="footer-col">

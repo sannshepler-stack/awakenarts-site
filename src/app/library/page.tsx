@@ -32,7 +32,7 @@ const themes = [
     link: '/library/themes/exile-and-threshold',
   },
   {
-    title: 'Fear and Transformative Force',
+    title: 'Fear and What Must Be Named',
     note: 'What can&rsquo;t be fought head-on — the dragon that has to be recognized and named before anything can be made of it, the way Scripture names what besets us before it ever speaks of overcoming.',
     poems: 'Dragon',
     link: '/library/themes/fear-and-transformative-force',
@@ -44,7 +44,7 @@ const themes = [
     link: '/library/themes/longing-and-devotion',
   },
   {
-    title: 'Containment and Inwardness',
+    title: 'Containment and Hidden Treasure',
     note: 'What an ordinary form holds without showing — silence, memory, the kind of truth Scripture calls treasure carried in jars of clay.',
     poems: 'The Vase',
     link: '/library/themes/containment-and-inwardness',
@@ -134,9 +134,9 @@ export default function LibraryPage() {
             <ul>
               <li><Link href="/library/themes/depth-and-hidden-life">Depth and Hidden Life</Link></li>
               <li><Link href="/library/themes/exile-and-threshold">Exile and Threshold</Link></li>
-              <li><Link href="/library/themes/fear-and-transformative-force">Fear and Transformative Force</Link></li>
+              <li><Link href="/library/themes/fear-and-transformative-force">Fear and What Must Be Named</Link></li>
               <li><Link href="/library/themes/longing-and-devotion">Longing and Devotion</Link></li>
-              <li><Link href="/library/themes/containment-and-inwardness">Containment and Inwardness</Link></li>
+              <li><Link href="/library/themes/containment-and-inwardness">Containment and Hidden Treasure</Link></li>
             </ul>
           </div>
 
