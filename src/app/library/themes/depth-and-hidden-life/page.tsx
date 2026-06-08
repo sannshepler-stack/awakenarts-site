@@ -58,7 +58,7 @@ export default function DepthAndHiddenLifePage() {
                 </p>
 
                 <p>
-                  The sea surrounding Grismere functions as more than physical setting. It becomes a symbolic depth-world filled with mystery, memory, fear, longing, and submerged realities that continue moving beneath ordinary awareness. The poem sustains this atmosphere through distance, darkness, silence, and the feeling of something ancient remaining partially unseen.
+                  The sea surrounding Grismere functions as more than physical setting. It becomes a symbolic depth-world — the same figure the Psalms reach for when they speak of deep calling unto deep, of waters that cover and waters that part. Memory, fear, longing, and what stays hidden all move beneath the surface, the way Scripture so often locates truth not in what is plainly stated but in what waits to be drawn up from below.
                 </p>
 
                 <p>
@@ -122,9 +122,9 @@ export default function DepthAndHiddenLifePage() {
               <img src="/images/brand/logo.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
             </Link>
             <p>
-              Symbolic concrete poetry exploring the inward journey — rooted in the
-              Christian tradition, created through the transformative language
-              arts process. By Susan Ann Shepler.
+              Concrete poetry and symbolic form — language given shape in the
+              same literary mode Scripture itself uses: parable, image, and
+              figure. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>

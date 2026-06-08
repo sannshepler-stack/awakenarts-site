@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const themes = [
   {
     title: 'Depth and Hidden Life',
-    note: 'What lies beneath the surface of ordinary awareness — submerged realities, concealed interior life, and the fear of encountering what we carry within.',
+    note: 'What lies beneath the surface — submerged realities, what stays hidden, the fear of meeting what the deep holds. The same ground the Psalms name when they speak of deep calling unto deep.',
     poems: 'Grismere · The Vase',
     link: '/library/themes/depth-and-hidden-life',
   },
@@ -33,7 +33,7 @@ const themes = [
   },
   {
     title: 'Fear and Transformative Force',
-    note: 'Forces that cannot be approached through opposition — what must be understood, not defeated, before it can move through us toward integration.',
+    note: 'What can&rsquo;t be fought head-on — the dragon that has to be recognized and named before anything can be made of it, the way Scripture names what besets us before it ever speaks of overcoming.',
     poems: 'Dragon',
     link: '/library/themes/fear-and-transformative-force',
   },
@@ -45,7 +45,7 @@ const themes = [
   },
   {
     title: 'Containment and Inwardness',
-    note: 'What is held within ordinary form — silence, memory, and interior truth carried quietly beneath a still surface.',
+    note: 'What an ordinary form holds without showing — silence, memory, the kind of truth Scripture calls treasure carried in jars of clay.',
     poems: 'The Vase',
     link: '/library/themes/containment-and-inwardness',
   },
@@ -121,9 +121,10 @@ export default function LibraryPage() {
               />
             </Link>
             <p>
-              A body of work rooted in the Christian contemplative tradition —
-              created through years of attention to image, language, and the
-              inner life. By Susan Ann Shepler.
+              A body of work shaped by the literary-symbolic tradition of
+              Scripture itself — parable, poetry, and image — built through
+              years of close attention to language and form. By Susan Ann
+              Shepler.
             </p>
             <FooterSocial />
           </div>

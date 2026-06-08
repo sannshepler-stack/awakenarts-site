@@ -41,7 +41,7 @@ export default function TheWateryCrossPage() {
                 </p>
 
                 <p>
-                  The cross is not in the sky. It is not carved in stone. It is a shadow cast by a wooden mast onto moving water. A reflection. Visible only at the surface — only at the threshold where the physical world above and the spiritual depth below make contact.
+                  The cross is not in the sky. It is not carved in stone. It is a shadow cast by a wooden mast onto moving water. A reflection. Visible only at the surface — only at the threshold where the world above and the deep below meet, the way Scripture so often places its meaning at a crossing-point rather than in either realm alone.
                 </p>
 
                 <p className="essay-snippet">
@@ -60,11 +60,11 @@ export default function TheWateryCrossPage() {
                 </p>
 
                 <p>
-                  The tension in the poem is precisely this: the cross is formed from what is most ordinary — a mast, wood, functional — and what is most spiritually charged — water, the deep, the place of hidden life. Grismere moves through this same water from below. The Watery Cross forms above it. Both are present at the same threshold.
+                  The tension in the poem is precisely this: the cross is formed from what is most ordinary — a mast, wood, functional — and what carries the weightiest meaning — water, the deep, the place of hidden life, the same waters Scripture returns to again and again to speak of what lies beneath plain sight. Grismere moves through this same water from below. The Watery Cross forms above it. Both are present at the same threshold.
                 </p>
 
                 <p>
-                  The captain who knows our every hope will never pull up rope and sail without you or me. That promise does not arrive through vision or revelation. It arrives through the shadow of a mast on a moving sea. The ordinary physical world is the medium through which the spiritual presence makes itself known.
+                  The captain who knows our every hope will never pull up rope and sail without you or me. That promise does not arrive through vision or revelation. It arrives through the shadow of a mast on a moving sea — the way Scripture itself so often speaks: not by stating the thing directly, but by letting the ordinary world carry it into view.
                 </p>
 
                 {/* Poppies image — add to /public/images/mandala/ when transparent version is ready */}
@@ -126,9 +126,9 @@ export default function TheWateryCrossPage() {
               <img src="/images/brand/logo.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
             </Link>
             <p>
-              Symbolic concrete poetry exploring the inward journey — rooted in the
-              Christian tradition, created through the transformative language
-              arts process. By Susan Ann Shepler.
+              Concrete poetry and symbolic form — language given shape in the
+              same literary mode Scripture itself uses: parable, image, and
+              figure. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>

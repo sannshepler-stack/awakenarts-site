@@ -101,9 +101,9 @@ export default function ContainmentAndInwardnessPage() {
               <img src="/images/brand/logo.png" alt="AwakenArts" className="footer-logo" loading="lazy" />
             </Link>
             <p>
-              Symbolic concrete poetry exploring the inward journey — rooted in the
-              Christian tradition, created through the transformative language
-              arts process. By Susan Ann Shepler.
+              Concrete poetry and symbolic form — language given shape in the
+              same literary mode Scripture itself uses: parable, image, and
+              figure. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>
