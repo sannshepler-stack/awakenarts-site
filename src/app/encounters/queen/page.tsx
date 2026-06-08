@@ -92,7 +92,7 @@ export default function QueenEncounterPage() {
           >
             {`“For here we have no lasting city, but we seek the city that is to come.” — Hebrews 13:14
 
-A queen between kingdoms — a figure standing where one world ends and another takes shape.`}
+A queen between kingdoms — a figure crossing the threshold from a city that is passing away toward one that is to come.`}
           </p>
 
           <Link

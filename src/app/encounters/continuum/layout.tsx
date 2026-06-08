@@ -5,9 +5,9 @@ import type { Metadata } from 'next'
 // nofollow matches the convention used by individual encounter pages.
 
 export const metadata: Metadata = {
-  title: 'More to Come — AwakenArts',
+  title: 'The Passage Continues — AwakenArts',
   description:
-    'A closing passage at the end of the present encounters. More forms will arrive.',
+    'A closing passage at the end of the present encounters — more figures and forms are taking shape beyond it.',
   robots: { index: false, follow: false },
 }
 

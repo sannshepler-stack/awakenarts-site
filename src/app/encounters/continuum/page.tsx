@@ -128,7 +128,7 @@ export default function ContinuumPage() {
             transition: "opacity 2s ease",
           }}
         >
-          More forms are taking shape.
+          The passage continues.
         </p>
 
         <nav
