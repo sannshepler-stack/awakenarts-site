@@ -167,7 +167,7 @@ export default function HomePage() {
             <p className="eyebrow">From the Collection</p>
             <h2 id="studio-preview-heading">
               Language becomes<br />
-              <em>a figure you return to</em>
+              <em>a symbolic and visual form</em>
             </h2>
           </div>
 
