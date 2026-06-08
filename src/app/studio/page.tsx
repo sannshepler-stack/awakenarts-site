@@ -103,25 +103,24 @@ export default function StudioPage() {
           <div className="studio-method-inner">
             <p className="eyebrow">The Method</p>
             <p className="studio-method-body">
-              AwakenArts works within a longstanding Christian literary
-              tradition shaped through parable, poetry, image, and
-              figurative language.
+              AwakenArts is grounded in the understanding that language
+              itself can shape perception, recognition, and awareness.
             </p>
             <p className="studio-method-body">
-              The project emerged through the recognition that Scripture
-              itself frequently communicates through symbolic and
-              image-bearing forms — meaning carried in figure and narrative
-              shape rather than stated outright.
+              Throughout Scripture, figurative language, poetry, parable,
+              metaphor, and symbolic imagery repeatedly carry meaning
+              beyond direct explanation alone. Language does not merely
+              describe reality; it also participates in how reality is
+              perceived and understood.
             </p>
             <p className="studio-method-body">
-              The works presented here are visual-poetic structures in
-              which language and image participate together in meaning.
-              The intention is not abstraction for its own sake, but form
-              that carries something worth returning to.
+              The visual-poetic works of AwakenArts emerge from this
+              relationship between language, image, symbolic structure,
+              and figurative recognition.
             </p>
             <p className="studio-method-body">
-              As in poetry, parable, and Biblical imagery, understanding
-              sometimes arrives through recognition before explanation.
+              The forms are therefore not illustrations added to language
+              after the fact. They are language assuming visual form.
             </p>
           </div>
         </section>
