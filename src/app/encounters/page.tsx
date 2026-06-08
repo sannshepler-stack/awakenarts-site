@@ -22,12 +22,12 @@ const STEP_WORDS = ["Begin the Encounter"] as const;
 // REVEAL_AT_MS:  when the phrase begins fading in, measured from page load
 // FADE_MS:       how long the fade itself takes
 //
-// With the values below: fade starts at 3.5s and completes at 4.1s —
+// With the values below: fade starts at 4.5s and completes at 5.1s —
 // early enough to be discovered quickly, while still letting the
 // video establish its mood first. To tune, only change these two
 // numbers.
 // ────────────────────────────────────────────────────────────────────
-const REVEAL_AT_MS = 3500;
+const REVEAL_AT_MS = 4500;
 const FADE_MS = 600;
 
 export default function EncountersPage() {
