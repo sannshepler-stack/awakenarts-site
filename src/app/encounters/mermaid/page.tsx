@@ -28,7 +28,7 @@ export default function MermaidEncounterPage() {
     const tDescend = setTimeout(() => setStage(1), 500);
     const tDeepen = setTimeout(() => setStage(2), 13000);
     const tSettle = setTimeout(() => setEnded(true), 13000);
-    const tButton = setTimeout(() => setShowButton(true), 2300);
+    const tButton = setTimeout(() => setShowButton(true), 2800);
 
     return () => {
       clearTimeout(tDescend);
