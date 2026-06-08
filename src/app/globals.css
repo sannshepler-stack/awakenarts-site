@@ -3592,9 +3592,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   width: 100%;
 }
 
-/* Scale down FormPanel caption for the preview context. */
+/* FormPanel caption for the preview context — slightly enlarged for legibility. */
 .studio-preview-panels > figure figcaption {
-  font-size: .95rem;
+  font-size: 1.15rem;
   font-style: italic;
   color: rgba(250, 247, 242, .72);
 }

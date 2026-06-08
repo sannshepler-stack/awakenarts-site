@@ -3,8 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import FooterSocial from '@/components/FooterSocial'
-import FormPanel from '@/components/forms/FormPanel'
-import { SYMBOLIC_FORMS } from '@/components/forms/forms-data'
+import formPanelStyles from '@/components/forms/FormPanel.module.css'
 
 // The homepage explicitly sets its canonical to "/" so the trailing-slash
 // and bare-domain forms collapse to a single URL in search results.
@@ -171,10 +170,26 @@ export default function HomePage() {
             </h2>
           </div>
 
-          {/* Single Queen Ann panel — threshold image, not a gallery.
-              The larger collection of forms unfolds inside the Studio. */}
+          {/* Single Queen Ann presentation — one autoplaying, looping
+              video only (no still-image layer, no placeholder). This is
+              the sole Queen Ann media block in this section; the larger
+              collection of forms unfolds inside the Studio. */}
           <div className="studio-preview-panels studio-preview-panels--single">
-            <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'queen-ann')!} />
+            <figure className={formPanelStyles.panel}>
+              <div className={formPanelStyles.imageFrame}>
+                <video
+                  className={formPanelStyles.image}
+                  src="/videos/forms/queen-ann-motion.mp4"
+                  style={{ objectPosition: '60% center' }}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-hidden="true"
+                />
+              </div>
+              <figcaption className={formPanelStyles.name}>Queen Ann</figcaption>
+            </figure>
           </div>
 
           <p className="studio-preview-cta">
@@ -215,14 +230,13 @@ export default function HomePage() {
 
           <div className="coll-invitation">
             <p className="coll-invitation__text coll-invitation__text--lead">
-              A queen between kingdoms. A figure beneath the surface. A
-              dragon turned inward.
+              A queen between kingdoms. A figure beneath the surface.
+              <br />
+              A dragon turned inward.
             </p>
             <p className="coll-invitation__text">
-              The works of AwakenArts are shaped through symbolic form,
-              poetic structure, and visual language intended to be
-              encountered as literary figures rather than interpreted as
-              systems.
+              The works of AwakenArts are shaped through image, symbolic
+              form, and figurative language.
             </p>
             <Link href="/collection" className="coll-invitation__link">
               The Collection <span aria-hidden="true">→</span>
