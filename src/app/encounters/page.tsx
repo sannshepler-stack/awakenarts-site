@@ -11,7 +11,7 @@ const cormorant = Cormorant_Garamond({
   style: ["italic"],
 });
 
-const STEP_WORDS = ["begin"] as const;
+const STEP_WORDS = ["Begin the Encounter"] as const;
 
 // ── TIMING ──────────────────────────────────────────────────────────
 // The intro video is 11.2 seconds long. We want "enter" to be fully
@@ -110,10 +110,11 @@ export default function EncountersPage() {
           style={{
             color: "#fff",
             fontStyle: "italic",
-            fontSize: "clamp(2rem, 5vw, 3.5rem)",
+            fontSize: "clamp(1.5rem, 4vw, 2.6rem)",
             letterSpacing: "0.01em",
-            lineHeight: 1.15,
-            whiteSpace: "nowrap",
+            lineHeight: 1.25,
+            whiteSpace: "normal",
+            maxWidth: "90vw",
           }}
         >
           {STEP_WORDS.map((word, i) => (
