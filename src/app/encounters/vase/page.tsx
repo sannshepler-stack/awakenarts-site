@@ -23,7 +23,7 @@ export default function VaseEncounterPage() {
       v.play().catch(() => {});
     }
 
-    const tButton = setTimeout(() => setShowButton(true), 1100);
+    const tButton = setTimeout(() => setShowButton(true), 2300);
 
     return () => clearTimeout(tButton);
   }, []);
@@ -65,7 +65,7 @@ export default function VaseEncounterPage() {
           className={`${cormorant.className} enc-aside__home`}
           style={{
             opacity: showButton ? 1 : 0,
-            transition: "opacity 0.2s ease",
+            transition: "opacity 0.6s ease",
           }}
         >
           home
@@ -94,9 +94,7 @@ export default function VaseEncounterPage() {
               whiteSpace: "pre-line",
             }}
           >
-            {`“We have this treasure in earthen vessels.” — 2 Corinthians 4:7
-
-The vessel is fashioned for what it is meant to carry.`}
+            {`“We have this treasure in earthen vessels.” — 2 Corinthians 4:7`}
           </p>
 
           <Link
@@ -108,7 +106,7 @@ The vessel is fashioned for what it is meant to carry.`}
               fontStyle: "italic",
               opacity: showButton ? 1 : 0,
               pointerEvents: showButton ? "auto" : "none",
-              transition: "opacity 0.2s ease",
+              transition: "opacity 0.6s ease",
             }}
           >
             forward

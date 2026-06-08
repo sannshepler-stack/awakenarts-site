@@ -28,7 +28,7 @@ export default function MermaidEncounterPage() {
     const tDescend = setTimeout(() => setStage(1), 500);
     const tDeepen = setTimeout(() => setStage(2), 13000);
     const tSettle = setTimeout(() => setEnded(true), 13000);
-    const tButton = setTimeout(() => setShowButton(true), 1100);
+    const tButton = setTimeout(() => setShowButton(true), 2300);
 
     return () => {
       clearTimeout(tDescend);
@@ -85,7 +85,7 @@ export default function MermaidEncounterPage() {
           className={`${cormorant.className} enc-aside__home`}
           style={{
             opacity: showButton ? 1 : 0,
-            transition: "opacity 0.2s ease",
+            transition: "opacity 0.6s ease",
           }}
         >
           home
@@ -114,9 +114,7 @@ export default function MermaidEncounterPage() {
   whiteSpace: "pre-line",
 }}
 >
-  {`“He drew me out of many waters.” — Psalm 18:16
-
-A figure drawn up from the depths, suspended between two worlds, facing toward the light.`}
+  {`“He drew me out of many waters.” — Psalm 18:16`}
 </p>
 
           <Link
@@ -128,7 +126,7 @@ A figure drawn up from the depths, suspended between two worlds, facing toward t
               fontStyle: "italic",
               opacity: showButton ? 1 : 0,
               pointerEvents: showButton ? "auto" : "none",
-              transition: "opacity 0.2s ease",
+              transition: "opacity 0.6s ease",
             }}
           >
             forward

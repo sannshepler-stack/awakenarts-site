@@ -21,7 +21,7 @@ export default function ButterflyEncounterPage() {
       v.playbackRate = 0.8;
       v.play().catch(() => {});
     }
-    const tButton = setTimeout(() => setShowButton(true), 1100);
+    const tButton = setTimeout(() => setShowButton(true), 2300);
     return () => clearTimeout(tButton);
   }, []);
 
@@ -61,7 +61,7 @@ export default function ButterflyEncounterPage() {
           className={`${cormorant.className} enc-aside__home`}
           style={{
             opacity: showButton ? 1 : 0,
-            transition: "opacity 0.2s ease",
+            transition: "opacity 0.6s ease",
           }}
         >
           home
@@ -90,9 +90,7 @@ export default function ButterflyEncounterPage() {
               whiteSpace: "pre-line",
             }}
           >
-            {`"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" — 2 Corinthians 5:17
-
-What was enclosed is released. What was hidden becomes visible.`}
+            {`"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" — 2 Corinthians 5:17`}
           </p>
 
           <Link
@@ -104,7 +102,7 @@ What was enclosed is released. What was hidden becomes visible.`}
               fontStyle: "italic",
               opacity: showButton ? 1 : 0,
               pointerEvents: showButton ? "auto" : "none",
-              transition: "opacity 0.2s ease",
+              transition: "opacity 0.6s ease",
             }}
           >
             forward

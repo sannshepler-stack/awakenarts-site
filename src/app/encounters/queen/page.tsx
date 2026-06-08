@@ -23,7 +23,7 @@ export default function QueenEncounterPage() {
       v.play().catch(() => {});
     }
 
-    const tButton = setTimeout(() => setShowButton(true), 1100);
+    const tButton = setTimeout(() => setShowButton(true), 2300);
 
     return () => clearTimeout(tButton);
   }, []);
@@ -65,7 +65,7 @@ export default function QueenEncounterPage() {
           className={`${cormorant.className} enc-aside__home`}
           style={{
             opacity: showButton ? 1 : 0,
-            transition: "opacity 0.2s ease",
+            transition: "opacity 0.6s ease",
           }}
         >
           home
@@ -94,9 +94,7 @@ export default function QueenEncounterPage() {
               whiteSpace: "pre-line",
             }}
           >
-            {`“For here we have no lasting city, but we seek the city that is to come.” — Hebrews 13:14
-
-A queen between kingdoms — a figure crossing the threshold from a city that is passing away toward one that is to come.`}
+            {`“For here we have no lasting city, but we seek the city that is to come.” — Hebrews 13:14`}
           </p>
 
           <Link
@@ -108,7 +106,7 @@ A queen between kingdoms — a figure crossing the threshold from a city that is
               fontStyle: "italic",
               opacity: showButton ? 1 : 0,
               pointerEvents: showButton ? "auto" : "none",
-              transition: "opacity 0.2s ease",
+              transition: "opacity 0.6s ease",
             }}
           >
             forward

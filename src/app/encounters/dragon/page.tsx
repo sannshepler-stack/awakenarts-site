@@ -23,7 +23,7 @@ export default function DragonEncounterPage() {
       v.play().catch(() => {});
     }
 
-    const tButton = setTimeout(() => setShowButton(true), 1100);
+    const tButton = setTimeout(() => setShowButton(true), 2300);
 
     return () => clearTimeout(tButton);
   }, []);
@@ -65,7 +65,7 @@ export default function DragonEncounterPage() {
           className={`${cormorant.className} enc-aside__home`}
           style={{
             opacity: showButton ? 1 : 0,
-            transition: "opacity 0.2s ease",
+            transition: "opacity 0.6s ease",
           }}
         >
           home
@@ -94,9 +94,7 @@ export default function DragonEncounterPage() {
               whiteSpace: "pre-line",
             }}
           >
-            {`“Resist the devil, and he will flee from you.” — James 4:7
-
-Deception may appear wise, beautiful, and almost harmless.`}
+            {`“Resist the devil, and he will flee from you.” — James 4:7`}
           </p>
 
           <Link
@@ -108,7 +106,7 @@ Deception may appear wise, beautiful, and almost harmless.`}
               fontStyle: "italic",
               opacity: showButton ? 1 : 0,
               pointerEvents: showButton ? "auto" : "none",
-              transition: "opacity 0.2s ease",
+              transition: "opacity 0.6s ease",
             }}
           >
             forward
