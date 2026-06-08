@@ -32,10 +32,8 @@ export default function CollectionPage() {
               Works from the Collection
             </p>
             <p className="col-hero__body">
-              The Collection gathers a body of visual-poetic works shaped
-              through symbolic form, poetic structure, and literary
-              imagery — works built to be encountered as figures, not
-              read as explanations.
+              The Collection gathers poetic works shaped through figurative
+              language, symbolic forms, and literary imagery.
             </p>
           </div>
         </section>
