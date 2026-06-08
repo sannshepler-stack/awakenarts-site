@@ -64,9 +64,8 @@ export default function CollectionPage() {
           <div className="col-statement-inner">
 
             <h2 className="col-archive-statement__heading">
-              The Collection is the heart of AwakenArts — not an archive to
-              pass through once, but a place to keep returning to, as new
-              works, readings, and materials take shape around it.
+              The Collection is the heart of AwakenArts — new works,
+              readings, and materials take shape around it.
             </h2>
 
             <p className="col-statement-body">
