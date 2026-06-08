@@ -258,7 +258,9 @@ export default function HomePage() {
             <em>grounded in image and symbol.</em>
           </h2>
           <p className="lib-preview-body">
-            The readings help establish the language beneath AwakenArts.
+            The Library gathers writings on parable, poetry, allegory,
+            and literary-symbolic form. The readings help establish the
+            language beneath AwakenArts.
           </p>
           <p className="lib-preview-cta">
             <Link href="/library" className="text-link">
