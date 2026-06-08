@@ -52,7 +52,17 @@ export default function CollectionPage() {
               loading="eager"
             />
             <p className="col-overview-caption">
-              Symbols and parables have a way of carrying what words alone cannot.
+              Rooted in traditions of parable, poetry, and symbolic language
+              found within Scripture and Christian literary expression, the
+              works draw through themes of memory, exile, grace, longing,
+              fear, and return.
+            </p>
+            <p className="col-overview-caption">
+              The Collection offers material suited for personal reading,
+              group discussion, retreats, workshops, and teaching environments
+              where poetry, symbolism, figurative language, and visual form
+              may serve as points of reflection, conversation, and
+              understanding.
             </p>
           </div>
         </section>
