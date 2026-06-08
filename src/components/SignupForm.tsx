@@ -30,7 +30,7 @@ export default function SignupForm() {
   if (submitted) {
     return (
       <div className="form-thanks">
-        <p>Your guide is on its way.<br />Welcome to the path.</p>
+        <p>You&rsquo;re on the list.<br />Welcome to AwakenArts.</p>
       </div>
     )
   }
@@ -70,10 +70,10 @@ export default function SignupForm() {
       )}
 
       <button type="submit" className="btn-submit">
-        Enter the Path →
+        Join the List →
       </button>
 
-      <p className="form-note">No selling. No noise. Only what the path requires.</p>
+      <p className="form-note">No selling. No noise. Only what the work requires.</p>
     </form>
   )
 }
