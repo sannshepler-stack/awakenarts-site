@@ -32,7 +32,10 @@ export default function CollectionPage() {
               Works from the Collection
             </p>
             <p className="col-hero__body">
-              Works shaped from lived experience — the moments that define us, made visible through image and language.
+              The Collection gathers a body of visual-poetic works shaped
+              through symbolic form, poetic structure, and literary
+              imagery — works built to be encountered as figures, not
+              read as explanations.
             </p>
           </div>
         </section>

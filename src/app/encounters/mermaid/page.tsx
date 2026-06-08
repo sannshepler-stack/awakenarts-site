@@ -112,7 +112,7 @@ export default function MermaidEncounterPage() {
 >
   {`“He drew me out of many waters.” — Psalm 18:16
 
-We begin in the depths and rise toward the light.`}
+A figure caught between the depths and the light — image carrying what words alone cannot.`}
 </p>
 
           <Link

@@ -92,7 +92,7 @@ export default function QueenEncounterPage() {
           >
             {`“For here we have no lasting city, but we seek the city that is to come.” — Hebrews 13:14
 
-As we are called forward, we leave a burning city behind us.`}
+A queen between kingdoms — a figure standing where one world ends and another takes shape.`}
           </p>
 
           <Link

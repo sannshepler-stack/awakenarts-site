@@ -84,15 +84,19 @@ export default function LibraryPage() {
             <em>to accompany the work.</em>
           </h1>
           <p className="lib-hero__sub">
-            Essays supporting selected works in the Collection.
+            A gathering of writings on parable, poetry, symbolic language,
+            and Biblical imagery — the literary tradition the works of
+            AwakenArts draw from and extend.
           </p>
         </div>
       </section>
 
       <section className="lib-section" aria-label="Thematic readings">
         <p className="lib-method-note">
-          These essays add context to particular works in the Collection —
-          not the full picture. Read them in any order: pick what interests
+          These essays trace the symbolic and poetic language behind
+          particular works in the Collection — not as explanation, but as
+          context drawn from the same literary tradition that shapes the
+          works themselves. Read them in any order: pick what interests
           you, skip the rest, and come back to discover more.
         </p>
         <div className="lib-grid lib-grid--4">

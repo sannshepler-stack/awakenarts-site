@@ -59,15 +59,15 @@ export default function AboutPage() {
         </div>
 
         <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '2rem' }}>
-          AwakenArts began not as a project but as a practice — a long, ongoing attention to language and image, and to the literary-symbolic tradition Scripture itself has always worked in: parable, poem, type, and figure. Susan Ann Shepler has spent decades working at that intersection, and years more helping others find words for what&rsquo;s hardest to say.
+          AwakenArts began not as a project but as a practice — a long, ongoing attention to language and image, and to the literary-symbolic tradition Scripture itself has always worked in: parable, poem, type, and figure. Susan Ann Shepler has spent decades working at that intersection, shaping image-shaped poetic forms in which language and figure carry meaning together rather than one explaining the other.
         </p>
 
         <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '2rem' }}>
-          She holds a Master&rsquo;s in Counseling Psychology from Webster University, with certifications as a Transformative Language Artist and a Journal Instructor — training that sharpened her ear for how people actually speak about difficult things, and shapes how she builds each piece. But that isn&rsquo;t where AwakenArts is grounded. The deeper foundation is older and more specific: the literary-symbolic tradition of Scripture itself, where parable, image, and poem have always carried what plain statement could not.
+          She holds a Master&rsquo;s in Counseling Psychology from Webster University, with certifications as a Transformative Language Artist and a Journal Instructor — training that sharpened her ear for how language carries what plain statement cannot, and shapes how she builds each piece. But that isn&rsquo;t where AwakenArts is grounded. The deeper foundation is older and more specific: the literary-symbolic tradition of Scripture itself, where parable, image, and poem have always carried meaning through figure, type, and narrative shape.
         </p>
 
         <p style={{ fontSize: '1.25rem', lineHeight: '1.95', marginBottom: '2rem' }}>
-          Her work gives that attention visible form. Queen Ann — the figure at the center of this site — isn&rsquo;t decoration. She&rsquo;s an example of what happens when language is shaped rather than simply spoken: it becomes something you can stand in front of, return to, and recognize a little more of each time.
+          Her work gives that tradition visible form — figures, silhouettes, and narrative shapes built from language itself. Queen Ann — the figure at the center of this site — isn&rsquo;t decoration. She&rsquo;s an example of what happens when language is shaped rather than simply spoken: a form you can stand in front of, return to, and recognize a little more of each time.
         </p>
 
         <div style={{ borderTop: '1px solid #e0d8cc', paddingTop: '2.5rem', marginTop: '1rem', marginBottom: '2rem' }}>

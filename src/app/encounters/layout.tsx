@@ -18,7 +18,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Encounters — AwakenArts',
   description:
-    'Step inside AwakenArts — a short introduction to the works and the Collection.',
+    'Literary-symbolic passages shaped through image, atmosphere, and visual-poetic form — not explanations, but figures, thresholds, fragments, and narrative moments from the AwakenArts Collection.',
   openGraph: {
     title: 'AwakenArts — When Language Shapes a Path',
   },

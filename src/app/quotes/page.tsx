@@ -145,6 +145,12 @@ export default function QuotesPage() {
           allegory, and symbol. The following voices helped shape the
           literary-symbolic understanding beneath <em>AwakenArts</em>.
         </p>
+        <p className="quotes-hero__intro">
+          From Scripture and poetic theology to literary imagination and
+          figurative narrative, these passages reflect a longstanding
+          tradition in which language carries meaning through image,
+          symbol, and poetic form.
+        </p>
       </section>
 
       {/* ── SCRIPTURE & PARABLE ──────────────────────────────────

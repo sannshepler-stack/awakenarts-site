@@ -103,20 +103,25 @@ export default function StudioPage() {
           <div className="studio-method-inner">
             <p className="eyebrow">The Method</p>
             <p className="studio-method-body">
-              These works speak as words embody shapes: a queen crossing
-              through fire — loss, dignity, the cost of staying true to yourself.
-              A mermaid caught at the surface — being pulled in two directions at
-              once. A dragon at war with itself — the parts of us that fight
-              hardest against each other.
+              AwakenArts works within a longstanding Christian literary
+              tradition shaped through parable, poetry, image, and
+              figurative language.
             </p>
             <p className="studio-method-body">
-              You don&rsquo;t have to work out the symbolism first. Look long
-              enough, and something in you responds — sometimes right away,
-              sometimes only after you&rsquo;ve come back to it more than once.
+              The project emerged through the recognition that Scripture
+              itself frequently communicates through symbolic and
+              image-bearing forms — meaning carried in figure and narrative
+              shape rather than stated outright.
             </p>
             <p className="studio-method-body">
-              That&rsquo;s the idea behind each piece: not a picture of an idea,
-              but the idea itself, given visible shape.
+              The works presented here are visual-poetic structures in
+              which language and image participate together in meaning.
+              The intention is not abstraction for its own sake, but form
+              that carries something worth returning to.
+            </p>
+            <p className="studio-method-body">
+              As in poetry, parable, and Biblical imagery, understanding
+              sometimes arrives through recognition before explanation.
             </p>
           </div>
         </section>
