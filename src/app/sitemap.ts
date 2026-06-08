@@ -28,6 +28,9 @@ const ENTRIES: Entry[] = [
   // and /deck were an orphaned, self-referencing page tree with no links
   // from the live site (and no redirects) — removed entirely (June 2026).
   { path: '/library',                                            changeFrequency: 'monthly', priority: 0.8 },
+  // /quotes — Scripture and the Christian literary tradition; part of
+  // the site's foundational interpretive framework (June 2026).
+  { path: '/quotes',                                             changeFrequency: 'monthly', priority: 0.8 },
   { path: '/experience',                                         changeFrequency: 'monthly', priority: 0.6 },
   { path: '/privacy',                                            changeFrequency: 'yearly',  priority: 0.2 },
   { path: '/terms',                                              changeFrequency: 'yearly',  priority: 0.2 },

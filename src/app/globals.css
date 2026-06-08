@@ -5406,3 +5406,167 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .enc-forward { font-size: 1.2rem; }
   .enc-aside__content p { font-size: 0.95rem; }
 }
+
+/* ─────────────────────────────────────────────
+   QUOTES PAGE  /quotes
+   Restrained literary gathering — Scripture and
+   Christian authors. Spacious, quiet, curated.
+   No card grids, no ornamental quote marks —
+   the voices carry the page.
+───────────────────────────────────────────── */
+
+.quotes-hero {
+  width: min(1200px, calc(100% - 6rem));
+  margin: 0 auto;
+  background: var(--deep);
+  color: var(--cream);
+  padding: 5.5rem 0 4.5rem;
+  text-align: center;
+}
+.quotes-hero .eyebrow {
+  color: var(--gold-lt);
+  justify-content: center;
+}
+.quotes-hero .eyebrow::before { background: var(--gold-lt); }
+.quotes-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 1rem 0 1.5rem;
+  color: var(--cream);
+}
+.quotes-hero__intro {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.95;
+  color: var(--mist);
+  max-width: 56ch;
+  margin: 0 auto;
+}
+.quotes-hero__intro em {
+  font-style: italic;
+  color: var(--gold-lt);
+}
+
+/* ── Section shell — generous, quiet rhythm ── */
+.quotes-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 5.5rem 2rem;
+}
+.quotes-section--scripture {
+  background: #f5f0e8;
+  max-width: none;
+  padding: 5.5rem 2rem;
+}
+.quotes-section--scripture .quotes-section__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.quotes-section__header {
+  margin-bottom: 2.5rem;
+}
+.quotes-section__header .eyebrow { margin-bottom: 1rem; }
+.quotes-section__header h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  font-weight: 300;
+  color: var(--deep);
+  line-height: 1.25;
+  margin: 0;
+}
+.quotes-section__header h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.quotes-intro p {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  line-height: 1.95;
+  color: var(--mid);
+  margin-bottom: 1.5rem;
+}
+.quotes-intro p:last-child { margin-bottom: 0; }
+
+/* ── Citations — Scripture & authors share this form ──
+   Quiet italic line, gold rule, small-caps reference.
+   No quotation-mark glyphs — the rule marks the voice. */
+.quotes-citation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  margin-top: 2.5rem;
+}
+.quotes-citation {
+  border-left: 2px solid var(--gold-lt);
+  padding-left: 1.5rem;
+}
+.quotes-citation p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: var(--deep);
+  margin: 0 0 0.5rem;
+}
+.quotes-citation cite {
+  display: block;
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── Author sections ── */
+.quotes-author {
+  padding: 4rem 0;
+  border-top: 1px solid var(--mist);
+}
+.quotes-author:first-of-type { border-top: none; padding-top: 0; }
+.quotes-author__name {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 3.5vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--deep);
+  margin: 0 0 1.25rem;
+}
+.quotes-author__intro {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: var(--mid);
+  margin: 0 0 2rem;
+}
+.quotes-author .quotes-citation-list { margin-top: 0; gap: 1.85rem; }
+.quotes-author .quotes-citation { border-left-color: var(--mist); }
+.quotes-author .quotes-citation p { font-size: 1.1rem; }
+.quotes-author .quotes-citation cite { color: var(--mid); }
+
+/* ── Closing ── */
+.quotes-closing {
+  background: var(--warm);
+  text-align: center;
+  padding: 5rem 2rem;
+}
+.quotes-closing p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: var(--deep);
+  max-width: 52ch;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .quotes-hero { padding: 4rem 0 3.5rem; width: calc(100% - 2.5rem); }
+  .quotes-section,
+  .quotes-section--scripture { padding: 4rem 1.5rem; }
+  .quotes-author { padding: 3rem 0; }
+  .quotes-citation { padding-left: 1.15rem; }
+  .quotes-closing { padding: 4rem 1.5rem; }
+}
