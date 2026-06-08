@@ -52,17 +52,7 @@ export default function CollectionPage() {
               loading="eager"
             />
             <p className="col-overview-caption">
-              Rooted in traditions of parable, poetry, and symbolic language
-              found within Scripture and Christian literary expression, the
-              works draw through themes of memory, exile, grace, longing,
-              fear, and return.
-            </p>
-            <p className="col-overview-caption">
-              The Collection offers material suited for personal reading,
-              group discussion, retreats, workshops, and teaching environments
-              where poetry, symbolism, figurative language, and visual form
-              may serve as points of reflection, conversation, and
-              understanding.
+              Symbols and parables have a way of carrying what words alone cannot.
             </p>
           </div>
         </section>
@@ -80,35 +70,18 @@ export default function CollectionPage() {
             </h2>
 
             <p className="col-statement-body">
-              Works shaped from memory, longing, exile, and grace — the moments
-              that stay with us, given visible form so they can be sat with,
-              rather than only remembered.
+              Rooted in traditions of parable, poetry, and symbolic language
+              found within Scripture and Christian literary expression, the
+              works draw through themes of memory, exile, grace, longing,
+              fear, and return.
             </p>
 
             <p className="col-statement-body">
-              The Collection gathers works where language has taken visible
-              shape — pieces that hold what&rsquo;s hard to put into plain
-              words, and that give you something to come back to when you need
-              it again.
-            </p>
-
-            <p className="col-statement-body">
-              Each work is meant to be lived with. You might feel something the
-              first time you encounter one and not have the words for it yet —
-              then come back to it later and recognize exactly what it was.
-            </p>
-
-            <p className="col-statement-body">
-              The works in the Collection hold longing, exile, memory, grace,
-              and fear — not as ideas to study, but as things you&rsquo;ll
-              likely recognize from your own life, whenever you happen to meet
-              them again.
-            </p>
-
-            <p className="col-statement-body">
-              The Collection grows slowly, the way the works themselves do —
-              gathered over time, and best understood simply by spending time
-              with them.
+              The Collection offers material suited for personal reading,
+              group discussion, retreats, workshops, and teaching environments
+              where poetry, symbolism, figurative language, and visual form
+              may serve as points of reflection, conversation, and
+              understanding.
             </p>
 
           </div>
