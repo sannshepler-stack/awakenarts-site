@@ -235,8 +235,8 @@ export default function HomePage() {
               A dragon turned inward.
             </p>
             <p className="coll-invitation__text">
-              The works of AwakenArts are shaped through image, symbolic
-              form, and figurative language.
+              The works of AwakenArts are shaped through symbolic form
+              and figurative language.
             </p>
             <Link href="/collection" className="coll-invitation__link">
               The Collection <span aria-hidden="true">→</span>
