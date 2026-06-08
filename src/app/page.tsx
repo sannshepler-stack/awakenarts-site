@@ -255,13 +255,10 @@ export default function HomePage() {
           <p className="eyebrow">Library</p>
           <h2 id="lib-preview-heading">
             Readings<br />
-            <em>grounded in image, symbol, and figurative language.</em>
+            <em>grounded in image and symbol.</em>
           </h2>
           <p className="lib-preview-body">
-            The Library gathers writings on Biblical imagery, parable,
-            poetry, allegory, and literary-symbolic form. These readings
-            help establish the language beneath AwakenArts: works shaped
-            through image, meaning, and visual-poetic structure.
+            The readings help establish the language beneath AwakenArts.
           </p>
           <p className="lib-preview-cta">
             <Link href="/library" className="text-link">
