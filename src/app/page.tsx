@@ -24,7 +24,12 @@ export const metadata: Metadata = {
  * The AwakenArts Collection. Encounters section removed — Encounters
  * functions through direct navigation, not homepage explanation.
  * Collection imagery removed — silhouettes belong to Studio.
- * Homepage suggests, implies, atmospherically introduces.
+ *
+ * Editorial framework (June 2026 recalibration): the works are not
+ * symbolic art accompanied by Christian reference — they extend a
+ * literary mode Scripture itself already uses (parable, poetry,
+ * image, figure, type). The homepage should read as an entry into
+ * that tradition, not a mood.
  */
 
 export default function HomePage() {
@@ -69,9 +74,9 @@ export default function HomePage() {
           <p className="hero-sub">
             AwakenArts is a collection of works where language takes
             visible shape — a queen in exile, a mermaid beneath the
-            surface, a dragon turned inward. Each one is made for slow
-            company: the kind of work that opens a little differently
-            every time you come back to it.
+            surface, a dragon at war with itself. Each figure works the
+            way a parable works: not explained, but recognized — meaning
+            something different the third time you meet it than the first.
           </p>
 
           <Link href="/collection" className="hero-cta">
@@ -110,7 +115,7 @@ export default function HomePage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/brand/queen-ann-hero-desktop.jpg"
-              alt="Queen Ann — a painted figure in contemplation, central to the AwakenArts identity"
+              alt="Queen Ann — a painted figure standing within a symbolic narrative, central to the AwakenArts identity"
               className="hero__img"
               width={1600}
               height={1100}
@@ -199,7 +204,8 @@ export default function HomePage() {
       </section>
 
       {/* ── SECTION 4: LIBRARY PREVIEW ───────────────────────────
-          Reflective reading/archive companion space. After Collection.
+          Companion readings — literary and symbolic, not explanatory.
+          After Collection.
       ──────────────────────────────────────────────────────────── */}
       <section className="lib-preview-section" aria-labelledby="lib-preview-heading">
         <div className="lib-preview-inner">
@@ -237,9 +243,9 @@ export default function HomePage() {
               />
             </Link>
             <p>
-              A collection of reflective works — image and language shaped as
-              one, rooted in the Christian contemplative tradition. By Susan
-              Ann Shepler.
+              A collection of works that join image and language the way
+              Scripture itself so often does — through parable, poetry, and
+              symbol. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>
