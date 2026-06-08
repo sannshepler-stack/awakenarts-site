@@ -102,25 +102,25 @@ export default function EncountersPage() {
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          // A faint warm-gold cast over the opening footage —
-          // sepia + hue-rotate + saturation, kept subtle so the
-          // image still reads naturally rather than as a filter.
-          filter: "sepia(0.22) saturate(1.18) hue-rotate(-12deg) brightness(0.97)",
+          // A light, airy cream cast — gentle warmth without murk.
+          // Mostly a small sepia/saturation lift plus a touch of
+          // brightness, so the footage stays luminous rather than
+          // darkened or muddied.
+          filter: "sepia(0.12) saturate(1.05) brightness(1.06)",
           pointerEvents: "none",
         }}
       />
 
-      {/* Soft gold wash layered over the video — reinforces the tint
-          without flattening contrast, and warms the black margins
-          the video doesn't fill. */}
+      {/* Soft cream wash layered over the video using "screen" —
+          lightens rather than darkens, lifting the image toward the
+          site's warm cream/gold palette without going murky. */}
       <div
         aria-hidden="true"
         style={{
           position: "absolute",
           inset: 0,
-          background:
-            "radial-gradient(ellipse at center, rgba(201,168,76,0.10) 0%, rgba(28,43,58,0.28) 100%)",
-          mixBlendMode: "overlay",
+          background: "rgba(250, 247, 242, 0.16)",
+          mixBlendMode: "screen",
           pointerEvents: "none",
         }}
       />
