@@ -170,6 +170,14 @@ export default function HomePage() {
             </h2>
           </div>
 
+          <p className="studio-preview-intro">
+            We live among symbols whether we notice them or not. Images
+            shape memory, stories organize identity, and language itself
+            can take visible form. AwakenArts explores these realities
+            through symbolic concrete poems, contemplative readings, and
+            literary encounters shaped to be returned to over time.
+          </p>
+
           {/* Single Queen Ann presentation — one autoplaying, looping
               video only (no still-image layer, no placeholder). This is
               the sole Queen Ann media block in this section; the larger
