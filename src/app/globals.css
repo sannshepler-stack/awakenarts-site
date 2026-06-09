@@ -3585,7 +3585,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   font-family: var(--serif);
   font-size: clamp(1rem, 1.6vw, 1.15rem);
   line-height: 1.7;
-  color: var(--mid);
+  color: var(--ink);
   text-align: center;
 }
 
