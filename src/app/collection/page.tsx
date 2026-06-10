@@ -83,6 +83,7 @@ export default function CollectionPage() {
               understanding.
             </p>
 
+
           </div>
         </section>
 

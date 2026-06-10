@@ -16,58 +16,53 @@ export const metadata: Metadata = {
   },
 }
 
-/* ── Thematic categories ───────────────────────────────────────────── */
+/* ── Poem-centric cards ─────────────────────────────────────────────── */
 
-const themes = [
+const poemCards = [
   {
-    title: 'Depth and Hidden Life',
-    note: 'What lies beneath the surface — submerged realities, what stays hidden, the fear of meeting what the deep holds. The same ground the Psalms name when they speak of deep calling unto deep.',
-    poems: 'Grismere · The Vase',
+    poem: 'Mermaid Grismere',
+    note: 'What lies beneath the surface — submerged, hidden, and waiting to be met.',
     link: '/library/themes/depth-and-hidden-life',
   },
   {
-    title: 'Exile and Threshold',
-    note: 'The space between what has ended and what has not yet begun — crossing, loss, forced stillness, and the threshold moments where old identity falls away.',
-    poems: 'Queen Ann · Merri — When Time Stops',
+    poem: 'Queen Ann',
+    note: 'A queen between kingdoms — the threshold where old identity falls away.',
     link: '/library/themes/exile-and-threshold',
   },
   {
-    title: 'Fear and What Must Be Named',
-    note: 'What can&rsquo;t be fought head-on — the dragon that has to be recognized and named before anything can be made of it, the way Scripture names what besets us before it ever speaks of overcoming.',
-    poems: 'Dragon',
+    poem: 'Dragon',
+    note: 'What cannot be fought until it is named.',
     link: '/library/themes/fear-and-transformative-force',
   },
   {
-    title: 'Longing and Devotion',
-    note: 'The body shaped by devotion toward something it cannot fully reach — beauty, aspiration, fragility, and the cost of becoming.',
-    poems: 'The Ballerina',
+    poem: 'The Ballerina',
+    note: 'The body shaped by devotion toward something it cannot fully reach.',
     link: '/library/themes/longing-and-devotion',
+    essay: { label: 'Little Girls Speak Volumes', href: '/essays/little-girls-speak-volumes.pdf' },
   },
   {
-    title: 'Containment and Hidden Treasure',
-    note: 'What an ordinary form holds without showing — silence, memory, the kind of truth Scripture calls treasure carried in jars of clay.',
-    poems: 'The Vase',
+    poem: 'The Vase',
+    note: 'What an ordinary form holds without showing.',
     link: '/library/themes/containment-and-inwardness',
   },
   {
-    title: 'Grace and the Guarding Presence',
-    note: 'The angel who plants in soil, sows love in winter storms, counts your smiles and touches you when you cry. Over all the cold and frost — you are never lost.',
-    poems: 'Angel Gardens',
+    poem: 'Angel Gardens',
+    note: 'Over all the cold and frost — you are never lost.',
     link: '/library/themes/grace-and-the-guarding-presence',
   },
   {
-    title: 'Her Mother\'s Hands',
-    note: 'The poem shaped as a California poppy — orange bloom, green stem, flowers crossed over her heart. The center was never lost. It was handed down.',
-    poems: 'Her Mother\'s Hands',
+    poem: "Her Mother's Hands",
+    note: 'The center was never lost. It was handed down.',
     link: '/library/themes/her-mothers-hands',
   },
   {
-    title: 'The Watery Cross',
-    note: 'The cross that forms where the wooden mast meets the moving water — not in heaven, not in the deep, but at the surface where the two worlds touch.',
-    poems: 'Watery Cross',
+    poem: 'Watery Cross',
+    note: 'The cross that forms at the surface where two worlds touch.',
     link: '/library/themes/the-watery-cross',
   },
 ]
+
+const poemNames = poemCards.map(p => p.poem)
 
 /* ── Page ──────────────────────────────────────────────── */
 
@@ -84,28 +79,40 @@ export default function LibraryPage() {
             <em>to accompany the work.</em>
           </h1>
           <p className="lib-hero__sub">
-            A gathering of writings on parable, poetry, symbolic language,
-            and Biblical imagery — the literary tradition the works of
-            AwakenArts draw from and extend.
+            The Library gathers writings on poetry, parable, symbol,
+            and imagery — amplifying the works of AwakenArts.
           </p>
         </div>
       </section>
 
-      <section className="lib-section" aria-label="Thematic readings">
-        <p className="lib-method-note">
-          These essays trace the symbolic and poetic language behind
-          particular works in the Collection — not as explanation, but as
-          context drawn from the same literary tradition that shapes the
-          works themselves. Read them in any order: pick what interests
-          you, skip the rest, and come back to discover more.
-        </p>
-        <div className="lib-grid lib-grid--4">
-          {themes.map(({ title, note, poems, link }) => (
-            <article key={title} className="lib-card">
-              <h3>{title}</h3>
+      <section className="lib-section lib-section--dark" aria-label="Thematic readings">
+
+        {/* ── Poem navigation ── */}
+        <div className="lib-poem-nav">
+          <p className="eyebrow lib-poem-nav__label">Selections Include</p>
+          <ul className="lib-poem-nav__list">
+            {poemNames.map(name => (
+              <li key={name} className="lib-poem-nav__item">{name}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="lib-grid lib-grid--poems">
+          {poemCards.map(({ poem, note, link, essay }) => (
+            <article key={poem} className="lib-card">
+              <h3 className="lib-card__poem-name">{poem}</h3>
               <p className="lib-card__body">{note}</p>
-              <p className="lib-card__poems">{poems}</p>
               <Link href={link} className="library-card__link">Read →</Link>
+              {essay && (
+                <a
+                  href={essay.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="library-card__link lib-card__essay-link"
+                >
+                  {essay.label} ↗
+                </a>
+              )}
             </article>
           ))}
         </div>

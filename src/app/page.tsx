@@ -69,14 +69,18 @@ export default function HomePage() {
           </h1>
 
           <p className="hero-subline">
-            AwakenArts is a body of visual-poetic works shaped through
-            image, poetic structure, and figurative language.
+            AwakenArts is an artistic body of work shaped through image
+            and language. The works express emotion and meaning in symbolic
+            form, where word and image reveal archetypal patterns of thought
+            and inward experience. Drawing from parable, allegory, and
+            figurative expression, the works invite awareness as they support
+            discussion, teaching, and exploration.
           </p>
 
           <p className="hero-sub">
-            The forms draw from longstanding traditions of parable,
-            poetry, symbolic narrative, and image-bearing meaning found
-            throughout Scripture and Christian literary expression.
+            The AwakenArts Collection is a series of symbolic works beneficial
+            to personal growth through reflection and deeper dialogue —
+            shaping experiences often difficult to uncover and express.
           </p>
 
           <Link href="/collection" className="hero-cta">
@@ -178,26 +182,41 @@ export default function HomePage() {
             literary encounters shaped to be returned to over time.
           </p>
 
-          {/* Single Queen Ann presentation — one autoplaying, looping
-              video only (no still-image layer, no placeholder). This is
-              the sole Queen Ann media block in this section; the larger
-              collection of forms unfolds inside the Studio. */}
-          <div className="studio-preview-panels studio-preview-panels--single">
-            <figure className={formPanelStyles.panel}>
-              <div className={formPanelStyles.imageFrame}>
-                <video
-                  className={formPanelStyles.image}
-                  src="/videos/forms/queen-ann-motion.mp4"
-                  style={{ objectPosition: '60% center' }}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  aria-hidden="true"
-                />
-              </div>
-              <figcaption className={formPanelStyles.name}>Queen Ann</figcaption>
-            </figure>
+          {/* Queen Ann — silhouette alongside her concrete poetry form.
+              The pairing makes the concept immediate: the figure is the
+              poem, language taking visible shape line by line.
+              Poetry image CSS-inverted so text reads white on --deep. */}
+          <div className="studio-ann-feature">
+            <div className="studio-ann-feature__panel">
+              <figure className={formPanelStyles.panel}>
+                <div className={formPanelStyles.imageFrame}>
+                  <video
+                    className={formPanelStyles.image}
+                    src="/videos/forms/queen-ann-motion.mp4"
+                    style={{ objectPosition: '60% center' }}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    aria-hidden="true"
+                  />
+                </div>
+                <figcaption className={formPanelStyles.name}>Queen Ann</figcaption>
+              </figure>
+            </div>
+            <div className="studio-ann-feature__poem">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/forms/ann-text.png"
+                alt="Queen Ann — the concrete poetry form; language taking the shape of the figure"
+                className="studio-ann-feature__poem-img"
+                loading="lazy"
+              />
+              <p className="studio-ann-feature__caption">
+                The silhouette is the poem — language taking visible shape,
+                line by line.
+              </p>
+            </div>
           </div>
 
           <p className="studio-preview-cta">
@@ -223,6 +242,12 @@ export default function HomePage() {
               Works<br />
               <em>from the Collection</em>
             </h2>
+            <p className="coll-invitation__text coll-invitation__text--lead">
+              The AwakenArts Collection is a series of symbolic works
+              beneficial to personal growth through reflection and deeper
+              dialogue — shaping experiences often difficult to uncover
+              and express.
+            </p>
           </div>
 
           {/* ── Ballerina — single collection image ── */}
@@ -237,15 +262,6 @@ export default function HomePage() {
           </div>
 
           <div className="coll-invitation">
-            <p className="coll-invitation__text coll-invitation__text--lead">
-              A queen between kingdoms. A figure beneath the surface.
-              <br />
-              A dragon turned inward.
-            </p>
-            <p className="coll-invitation__text">
-              The works of AwakenArts are shaped through language and
-              symbolic form.
-            </p>
             <Link href="/collection" className="coll-invitation__link">
               The Collection <span aria-hidden="true">→</span>
             </Link>

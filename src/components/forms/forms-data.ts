@@ -86,6 +86,15 @@ export const SYMBOLIC_FORMS: ReadonlyArray<SymbolicForm> = [
     videoSrc: '/videos/forms/dragon-motion.mp4',
   },
   {
+    slug: 'juggling-bear',
+    name: 'Juggling Bear',
+    imageSrc: '/images/forms/bear-still.jpg',
+    imageAlt:
+      'Juggling Bear — animated circus bear with clown hat, juggling orbs in motion.',
+    videoSrc: '/videos/forms/bear-motion.mp4',
+    autoplayVideo: true,  // loops continuously — no hover needed
+  },
+  {
     slug: 'the-ballerina',
     name: 'The Ballerina',
     imageSrc: ANN_FORMS_STILL,

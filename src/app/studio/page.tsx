@@ -26,69 +26,82 @@ export default function StudioPage() {
       <main className="studio-page">
 
         {/* ── SILHOUETTES — page opening ──────────────────────────
-            Canonical implementation — identical to /studio/silhouettes.
-            studio-silhouettes class: dark bg, gold border.
-            studio-forms-gallery: 3-equal-column triptych grid.
+            Three figure+poem pairs — each symbolic silhouette shown
+            alongside its concrete-poetry form. The pairs alternate
+            layout (figure-left / poem-left) for visual rhythm.
             FormPanel: hover still/video, 2:3 ratio, caption beneath.
-            Source of truth: src/app/studio/silhouettes/page.tsx
         ──────────────────────────────────────────────────────── */}
-        <section className="studio-silhouettes" aria-labelledby="studio-silhouettes-heading">
+        {/* ── LIGHT INTRO — heading on cream ───────────────────── */}
+        <section className="studio-silhouettes-intro">
           <div className="studio-section__inner">
-
-            {/* Heading uses studio-section__header — dark-bg color rules
-                already defined in globals.css for .studio-silhouettes context. */}
             <div className="studio-section__header">
               <p className="eyebrow">Inside the Works</p>
               <h1 id="studio-silhouettes-heading">
                 Language takes<br />
                 <em>visible shape</em>
               </h1>
+              <p className="studio-section__subtitle">
+                The poetic works of AwakenArts are the result of a process,
+                a becoming rather than a formulation — an inseparable
+                relationship between language, image, and symbolic structure.
+              </p>
             </div>
-
-            {/* ── POEM-FORM PREVIEWS ─────────────────────────────────
-                Small glimpses of the concrete-poetry shapes behind
-                each figure — Queen Ann, Grismere, the Dragon. Sized
-                deliberately small: enough to convey the shape, color,
-                and texture of the written form, not to make the
-                poems themselves readable here. The full pieces stay
-                inside the Collection. Mirrors /studio/silhouettes. ── */}
-            <div className="studio-poem-shelf">
-              <div className="studio-poem-previews" role="list" aria-label="Concrete-poetry form previews">
-                <div className="studio-poem-preview" role="listitem">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/images/forms/ann-text-dark-thumb.png"
-                    alt="Queen Ann — a glimpse of the concrete-poetry form behind the figure"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="studio-poem-preview" role="listitem">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/images/forms/grismere-text-thumb.png"
-                    alt="Grismere — a glimpse of the concrete-poetry form behind the figure"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="studio-poem-preview" role="listitem">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/images/forms/dragon-text-thumb.png"
-                    alt="The Dragon — a glimpse of the concrete-poetry form behind the figure"
-                    loading="lazy"
-                  />
-                </div>
+            {/* ── Juggling Bear — poem + video pair on cream ── */}
+            <div className="studio-intro-bear-pair">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/forms/bear-text.png"
+                alt="Juggling Bear — concrete-poetry form"
+                className="studio-intro-bear-poem"
+                loading="lazy"
+              />
+              <div className="studio-intro-bear-panel">
+                <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'juggling-bear')!} />
+                <p className="studio-intro-bear-note">
+                  The bear may have a convincing act —
+                  but it is not what it seems.
+                </p>
               </div>
             </div>
+          </div>
+        </section>
 
-            <div className="studio-forms-gallery" role="list" aria-label="Symbolic figures">
-              {SYMBOLIC_FORMS
-                .filter(f => ['queen-ann', 'mermaid-grismere', 'the-dragon'].includes(f.slug))
-                .map((form) => (
-                  <div key={form.slug} role="listitem">
-                    <FormPanel form={form} />
-                  </div>
-                ))}
+        {/* ── DARK STAGE — poems and silhouettes ───────────────── */}
+        <section className="studio-silhouettes" aria-labelledby="studio-silhouettes-heading">
+          <div className="studio-section__inner">
+
+            {/* ── Row 1: three concrete-poetry images ── */}
+            <div className="studio-poems-row">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/forms/ann-text.png"
+                alt="Queen Ann — concrete-poetry form"
+                className="studio-poem-img"
+                loading="lazy"
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/forms/grismere-text.png"
+                alt="Mermaid Grismere — concrete-poetry form"
+                className="studio-poem-img"
+                loading="lazy"
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/forms/dragon-text.png"
+                alt="The Dragon — concrete-poetry form"
+                className="studio-poem-img"
+                loading="lazy"
+              />
+            </div>
+
+            <p className="studio-dark-label">Studio Silhouettes</p>
+
+            {/* ── Row 2: three silhouette panels ── */}
+            <div className="studio-panels-row">
+              <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'queen-ann')!} />
+              <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'mermaid-grismere')!} />
+              <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'the-dragon')!} />
             </div>
 
           </div>
@@ -101,7 +114,7 @@ export default function StudioPage() {
         ──────────────────────────────────────────────────────── */}
         <section className="studio-method-section" aria-label="The AwakenArts method">
           <div className="studio-method-inner">
-            <p className="eyebrow">The Method</p>
+            <p className="eyebrow">The Language</p>
             <p className="studio-method-body">
               AwakenArts is grounded in the understanding that language
               itself can shape perception, recognition, and awareness.
@@ -113,15 +126,7 @@ export default function StudioPage() {
               describe reality; it also participates in how reality is
               perceived and understood.
             </p>
-            <p className="studio-method-body">
-              The visual-poetic works of AwakenArts emerge from this
-              relationship between language, image, symbolic structure,
-              and figurative recognition.
-            </p>
-            <p className="studio-method-body">
-              The forms are therefore not illustrations added to language
-              after the fact. They are language assuming visual form.
-            </p>
+
           </div>
         </section>
 

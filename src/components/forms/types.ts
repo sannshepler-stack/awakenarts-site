@@ -44,6 +44,12 @@ export interface SymbolicForm {
    * figure reads too far left at the default 50% horizontal anchor).
    */
   imagePosition?: string
+  /**
+   * When true, the video autoplays on mount and loops continuously —
+   * the still image is hidden and the video is always visible.
+   * Use for animated forms that should play without hover interaction.
+   */
+  autoplayVideo?: boolean
 }
 
 /** True when the Form has an image asset attached. */

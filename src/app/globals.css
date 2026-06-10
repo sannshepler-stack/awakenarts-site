@@ -12,6 +12,7 @@
   --warm:     #F0EAE0;
   --mist:     #DDD8CF;
   --mid:      #5A5550;
+  --ink:      #1C2B3A;  /* alias for --deep; used as general text ink */
   --serif:    'Cormorant Garamond', Georgia, serif;
   --sans:     'Inter', system-ui, sans-serif;
 }
@@ -43,7 +44,7 @@ a   { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 1rem;
   font-family: var(--sans);
-  font-size: .95rem;
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: .10em;
   text-transform: uppercase;
@@ -315,7 +316,6 @@ a   { color: inherit; text-decoration: none; }
 
 .hero-subline {
   font-family: var(--serif);
-  font-style: italic;
   font-size: clamp(1.1rem, 1.55vw, 1.3rem);
   font-weight: 300;
   line-height: 1.6;
@@ -326,6 +326,7 @@ a   { color: inherit; text-decoration: none; }
 
 .hero-sub {
   font-family: var(--serif);
+  font-style: italic;
   font-size: 1.15rem;
   line-height: 1.95;
   color: var(--mid);
@@ -495,6 +496,14 @@ a   { color: inherit; text-decoration: none; }
 
 .library-card__link:hover {
   border-bottom-color: var(--gold);
+}
+.lib-card__essay-link {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--gold);
+  border-bottom-color: rgba(139, 105, 20, 0.35);
 }
 
 @media (max-width: 1024px) {
@@ -720,6 +729,12 @@ a   { color: inherit; text-decoration: none; }
   }
 }
 
+@media (max-width: 640px) {
+  .hero-quote-section {
+    padding: 3rem 1.25rem;
+  }
+}
+
 /* ── Secondary section — grounds the work in Scripture's own
    poetic mode. Quiet, centered, restrained prose block. ── */
 .hero-secondary-section {
@@ -749,6 +764,10 @@ a   { color: inherit; text-decoration: none; }
 .hero-secondary-section__inner p:last-child { margin-bottom: 0; }
 @media (max-width: 768px) {
   .hero-secondary-section { padding: 3.75rem 1.5rem; }
+}
+
+@media (max-width: 640px) {
+  .hero-secondary-section { padding: 3rem 1.25rem; }
 }
 
 .hero-quote-cite {
@@ -948,6 +967,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   background: #f5f0e8;
 }
 
+.lib-section--dark {
+  background: var(--deep);
+}
+
 .lib-method-note {
   font-family: var(--serif);
   font-style: italic;
@@ -1000,11 +1023,23 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .lib-grid--4 {
   grid-template-columns: repeat(2, 1fr);
 }
+.lib-grid--poems {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 1.5rem;
+}
+@media (max-width: 900px) {
+  .lib-grid--poems { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .lib-grid--poems { grid-template-columns: 1fr; }
+}
 
 .lib-card {
   padding: 2rem 1.75rem;
   border: 1px solid rgba(28, 43, 58, 0.1);
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--warm);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -1045,6 +1080,75 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   letter-spacing: 0.06em;
   color: var(--gold);
   margin: 0 0 0.85rem;
+}
+
+/* ── Poem navigation row ── */
+.lib-poem-nav {
+  max-width: 1100px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+.lib-poem-nav__label {
+  justify-content: center;
+  color: var(--gold-lt);
+  margin-bottom: 1.25rem;
+}
+.lib-poem-nav__label::before { display: none; }
+.lib-poem-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid rgba(201, 168, 76, .3);
+  border-bottom: 1px solid rgba(201, 168, 76, .3);
+  padding: 1rem 0;
+}
+.lib-poem-nav__item {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: rgba(250, 247, 242, .75);
+}
+
+/* ── Poem-centric card elements ── */
+.lib-card__poem-name {
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--deep);
+  margin: 0 0 0.25rem;
+}
+.lib-card__theme {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.75rem;
+}
+.lib-card__quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--mid);
+  margin: 0 0 0.75rem;
+  padding: 0;
+  border: none;
+}
+.lib-card__cite {
+  display: block;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  margin-top: 0.35rem;
 }
 
 .lib-voices {
@@ -3267,11 +3371,52 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   margin-bottom: 0;
 }
 
+/* Light intro — heading on cream, above the dark stage */
+.studio-silhouettes-intro {
+  background: var(--cream);
+  padding: 6rem 2rem 4rem;
+  border-top: 1px solid var(--mist);
+}
+
+.studio-silhouettes-intro .studio-section__header .eyebrow {
+  color: var(--gold);
+  justify-content: center;
+}
+.studio-silhouettes-intro .studio-section__header .eyebrow::before {
+  display: none;
+}
+.studio-silhouettes-intro .studio-section__header h1 {
+  color: var(--deep);
+}
+.studio-silhouettes-intro .studio-section__header h1 em {
+  color: var(--gold);
+  font-style: italic;
+}
+.studio-silhouettes-intro .studio-section__subtitle {
+  color: var(--mid);
+}
+/* Bear panel name caption reads on cream */
+.studio-intro-bear-panel .name {
+  color: var(--mid);
+}
+.studio-intro-bear-note {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.75;
+  color: var(--gold);
+  text-align: center;
+  margin-top: 1.25rem;
+  max-width: 28ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Shared section structure */
 .studio-silhouettes {
   background: var(--deep);
-  padding: 6rem 2rem 5rem;
-  border-top: 1px solid rgba(201, 168, 76, .1);
+  padding: 7rem 2rem 8rem;
+  border-top: none;
 }
 
 .studio-painterly {
@@ -3308,7 +3453,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .studio-section__header h1,
 .studio-section__header h2 {
   font-family: var(--serif);
-  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  font-size: clamp(1.9rem, 2.8vw, 2.6rem);
   font-weight: 400;
   line-height: 1.25;
   margin: 0 0 1.25rem;
@@ -3330,6 +3475,16 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .studio-painterly .studio-section__header h2 em {
   color: var(--gold);
   font-style: italic;
+}
+
+.studio-section__subtitle {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  font-style: italic;
+  line-height: 1.75;
+  max-width: 52ch;
+  margin: 1.25rem auto 0;
+  color: rgba(250, 247, 242, .55);
 }
 
 .studio-section__intro {
@@ -3466,6 +3621,166 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   }
 }
 
+/* ── Queen Ann feature — used on HOMEPAGE only (studio preview section).
+   Two equal columns: FormPanel left, poetry image right.
+   NOT used on the Studio page — see .studio-poems-row / .studio-panels-row. */
+.studio-ann-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+  max-width: 820px;
+  margin: 0 auto 6rem;
+}
+
+/* Alternate layout — poem left, figure right */
+.studio-ann-feature--reversed {
+  direction: rtl;
+}
+.studio-ann-feature--reversed > * {
+  direction: ltr;
+}
+
+.studio-ann-feature__poem {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.studio-ann-feature__poem-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+
+.studio-ann-feature__caption {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.7;
+  color: rgba(250, 247, 242, .55);
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .studio-ann-feature {
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .studio-ann-feature {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  .studio-ann-feature--reversed {
+    direction: ltr;
+  }
+  .studio-ann-feature--reversed > * {
+    direction: ltr;
+  }
+}
+
+/* ── Studio page: poems row + panels row ─────────────────────────────────
+   Row 1: three concrete-poetry images across — inverted white text on --deep.
+   Row 2: three silhouette FormPanel figures across.
+   Both rows share the same 3-col grid and max-width as the section inner. */
+/* Dark-section label — gold caps, centered, no decorative line */
+.studio-dark-label {
+  font-family: var(--sans);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  text-align: center;
+  margin: 0 auto 2.5rem;
+}
+
+/* Poems — a tight centered cluster, presented as a set.
+   Not aligned to individual panels below; they read as a group
+   and give way to the silhouettes as the primary statement. */
+.studio-poems-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid rgba(201, 168, 76, .5);
+  border-bottom: 1px solid rgba(201, 168, 76, .5);
+  width: fit-content;
+  margin: 0 auto 5.5rem;
+}
+
+.studio-poem-img {
+  display: block;
+  width: auto;
+  max-width: 240px;
+  max-height: 480px;
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+
+/* Panels — the main event. Larger, breathing, full-width presence. */
+.studio-panels-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── Juggling Bear — poem + video pair in light intro ── */
+.studio-intro-bear-pair {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4rem;
+  margin: 4rem auto 0;
+  max-width: 900px;
+}
+.studio-intro-bear-poem {
+  display: block;
+  width: auto;
+  height: 570px;
+  max-width: none;
+  flex-shrink: 0;
+}
+.studio-intro-bear-panel {
+  width: 380px;   /* 2:3 ratio → 570px tall — matches poem height */
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .studio-panels-row { gap: 1.5rem; max-width: 100%; }
+  .studio-poem-img { max-width: 140px; max-height: 280px; }
+  .studio-intro-bear-pair { gap: 2.5rem; }
+  .studio-intro-bear-poem { height: 420px; }
+  .studio-intro-bear-panel { width: 280px; } /* 2:3 → 420px */
+}
+
+@media (max-width: 640px) {
+  .studio-poems-row { gap: 0.35rem; padding: 0.5rem; }
+  .studio-poem-img { max-width: 90px; max-height: 180px; }
+  .studio-panels-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .studio-intro-bear-pair {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .studio-intro-bear-poem { height: auto; max-width: 280px; }
+  .studio-intro-bear-panel { width: 100%; max-width: 300px; }
+  .studio-intro-bear { max-width: 280px; margin-top: 3rem; }
+}
+
 /* Forms gallery — reuses existing FormPanel component.
    This trio (the still/video silhouettes) is the section's real
    focal point, so it should read larger and carry more presence
@@ -3519,10 +3834,17 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   border-top: 1px solid rgba(201, 168, 76, .1);
 }
 
+@media (max-width: 1024px) {
+  .studio-silhouettes-intro { padding: 5rem 1.5rem 3.5rem; }
+  .studio-silhouettes,
+  .studio-painterly { padding: 4.5rem 1.5rem 4.5rem; }
+}
+
 @media (max-width: 640px) {
   .studio-opening { padding: 5rem 1.25rem 4rem; }
+  .studio-silhouettes-intro { padding: 4rem 1.25rem 3rem; }
   .studio-silhouettes,
-  .studio-painterly { padding: 4.5rem 1.25rem 4rem; }
+  .studio-painterly { padding: 4rem 1.25rem 4rem; }
   .studio-cta { padding: 3.5rem 1.25rem 4rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
 }
 
@@ -3570,22 +3892,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .studio-preview-intro {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-style: italic;
-  line-height: 1.85;
-  color: rgba(250, 247, 242, .62);
-  max-width: 52ch;
-  margin: 0 auto;
-}
-
-.studio-preview-intro {
   max-width: 600px;
   margin: 0 auto 3.5rem;
   font-family: var(--serif);
   font-size: clamp(1rem, 1.6vw, 1.15rem);
+  font-style: italic;
   line-height: 1.7;
-  color: var(--ink);
+  color: rgba(250, 247, 242, .75);
   text-align: center;
 }
 
@@ -3621,6 +3934,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .studio-preview-section .text-link:hover {
   color: var(--cream);
   border-bottom-color: rgba(250, 247, 242, .4);
+}
+
+@media (max-width: 1024px) {
+  .studio-preview-section { padding: 6rem 1.75rem 5rem; }
 }
 
 @media (max-width: 640px) {
@@ -3701,6 +4018,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 .lib-preview-cta {
   text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .lib-preview-section { padding: 5.5rem 1.75rem 5rem; }
 }
 
 @media (max-width: 640px) {

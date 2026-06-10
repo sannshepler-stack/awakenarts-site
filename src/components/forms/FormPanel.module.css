@@ -76,7 +76,7 @@
 .name {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
   line-height: 1.25;
   letter-spacing: 0.01em;
   color: var(--cream);
@@ -113,10 +113,22 @@
   color: rgba(250, 247, 242, 0.65);
 }
 
+/* ─── Autoplay video — always visible, no hover fade ────────────────────── */
+.videoAutoplay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 1;
+  pointer-events: none;
+}
+
 /* ─── Reduced motion ────────────────────────────────────────────────────── */
 /* Motion-sensitive visitors see the still image only — never the video. */
 @media (prefers-reduced-motion: reduce) {
-  .video {
-    display: none;
-  }
+  .video { display: none; }
+  .videoAutoplay { display: none; }
 }

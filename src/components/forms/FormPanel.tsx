@@ -24,7 +24,7 @@
 // no full poem text. Image + name only.
 // ─────────────────────────────────────────────────────────────────────────────
 
-import { useCallback, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import styles from './FormPanel.module.css'
 import { hasImage, hasVideo, type SymbolicForm } from './types'
 
@@ -50,6 +50,13 @@ export default function FormPanel({ form }: FormPanelProps) {
     v.currentTime = 0
   }, [])
 
+  // ─── Autoplay on mount (for forms with autoplayVideo: true) ───────────
+  useEffect(() => {
+    if (form.autoplayVideo && videoRef.current) {
+      void videoRef.current.play().catch(() => {})
+    }
+  }, [form.autoplayVideo])
+
   // ─── Placeholder mode ──────────────────────────────────────────────────
   if (!hasImage(form)) {
     return (
@@ -67,35 +74,39 @@ export default function FormPanel({ form }: FormPanelProps) {
 
   // ─── Standard / video mode ─────────────────────────────────────────────
   const withVideo = hasVideo(form)
+  const autoplay = form.autoplayVideo && withVideo
 
   return (
     <figure
       className={styles.panel}
-      onMouseEnter={withVideo ? startVideo : undefined}
-      onMouseLeave={withVideo ? stopVideo : undefined}
-      onFocus={withVideo ? startVideo : undefined}
-      onBlur={withVideo ? stopVideo : undefined}
+      onMouseEnter={withVideo && !autoplay ? startVideo : undefined}
+      onMouseLeave={withVideo && !autoplay ? stopVideo : undefined}
+      onFocus={withVideo && !autoplay ? startVideo : undefined}
+      onBlur={withVideo && !autoplay ? stopVideo : undefined}
     >
-      <div className={styles.imageFrame} tabIndex={withVideo ? 0 : -1}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={form.imageSrc}
-          alt={form.imageAlt ?? form.name}
-          className={styles.image}
-          draggable={false}
-          loading="lazy"
-          style={form.imagePosition ? { objectPosition: form.imagePosition } : undefined}
-        />
+      <div className={styles.imageFrame} tabIndex={withVideo && !autoplay ? 0 : -1}>
+        {/* Still image — hidden when autoplay is active */}
+        {!autoplay && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={form.imageSrc}
+            alt={form.imageAlt ?? form.name}
+            className={styles.image}
+            draggable={false}
+            loading="lazy"
+            style={form.imagePosition ? { objectPosition: form.imagePosition } : undefined}
+          />
+        )}
 
         {withVideo && (
           <video
             ref={videoRef}
-            className={styles.video}
+            className={autoplay ? styles.videoAutoplay : styles.video}
             src={form.videoSrc}
             muted
             playsInline
             loop
-            preload="metadata"
+            preload={autoplay ? 'auto' : 'metadata'}
             aria-hidden="true"
             style={form.imagePosition ? { objectPosition: form.imagePosition } : undefined}
           />
