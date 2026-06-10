@@ -116,15 +116,14 @@ export default function StudioPage() {
           <div className="studio-method-inner">
             <p className="eyebrow">The Language</p>
             <p className="studio-method-body">
-              AwakenArts is grounded in the understanding that language
-              itself can shape perception, recognition, and awareness.
+              AwakenArts approaches language as something capable of
+              shaping awareness through image, figure, metaphor, and
+              symbolic form.
             </p>
             <p className="studio-method-body">
-              Throughout Scripture, figurative language, poetry, parable,
-              metaphor, and symbolic imagery repeatedly carry meaning
-              beyond direct explanation alone. Language does not merely
-              describe reality; it also participates in how reality is
-              perceived and understood.
+              Throughout Scripture, poetry, and parable, language carries
+              meaning beyond direct explanation. It does not only describe
+              reality; it also shapes how reality is recognized and understood.
             </p>
 
           </div>
