@@ -216,7 +216,7 @@ a   { color: inherit; text-decoration: none; }
   margin-top: 72px; /* clears the fixed nav */
   padding-top: 2.75rem;
   padding-bottom: 2.75rem;
-  padding-left: 3.5rem;
+  padding-left: 2rem;
   padding-right: 1rem; /* reduced so the image can reach nearer the right edge */
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
@@ -238,7 +238,6 @@ a   { color: inherit; text-decoration: none; }
   justify-self: start;
   align-self: center; /* vertically center text within the stretched row */
   margin-top: 0;
-  padding-left: 2rem; /* left inset — breathing room from section edge */
 }
 
 /* Two-line headline. Each line wraps in its own span so the second
@@ -1549,7 +1548,6 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .hero__text {
     justify-self: start;
     max-width: 100%;
-    padding-left: 0; /* remove desktop inset — section padding is sufficient */
   }
   .hero__media {
     justify-self: center;
