@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: '%s | AwakenArts',
   },
   description:
-    'AwakenArts is a growing collection of works that join image and language the way Scripture itself so often does — through parable, poetry, and symbol — made to be returned to slowly, again and again. By Susan Ann Shepler.',
+    'AwakenArts is an artistic body of work shaped through image and language — symbolic poetic forms and literary encounters by Susan Ann Shepler, suited to personal reflection, discussion, retreats, and teaching.',
   applicationName: 'AwakenArts',
   authors: [{ name: 'Susan Ann Shepler', url: SITE_URL + '/about' }],
   creator: 'Susan Ann Shepler',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'AwakenArts is a growing collection of works that join image and language the way Scripture itself so often does — through parable, poetry, and symbol — made to be returned to slowly, again and again. By Susan Ann Shepler.',
+      'AwakenArts is an artistic body of work shaped through image and language. The works express meaning in symbolic form, where word and image reveal archetypal patterns of thought and human experience. By Susan Ann Shepler.',
     locale: 'en_US',
     images: [
       {
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'AwakenArts is a growing collection of works that join image and language the way Scripture itself so often does — through parable, poetry, and symbol — made to be returned to slowly, again and again. By Susan Ann Shepler.',
+      'AwakenArts is an artistic body of work shaped through image and language — symbolic forms and literary encounters where word and image reveal archetypal patterns of thought and human experience. By Susan Ann Shepler.',
     images: ['/images/brand/queen-ann-hero-desktop.jpg'],
   },
   robots: {

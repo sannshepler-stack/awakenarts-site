@@ -107,10 +107,10 @@ export default function PoemsPage() {
               />
             </Link>
             <p>
-              A body of work shaped by the literary-symbolic tradition of
-              Scripture itself — parable, poetry, and image — built through
-              years of close attention to language and form. By Susan Ann
-              Shepler.
+              An artistic body of work shaped through image and language.
+              The works express meaning in symbolic form, where word and image
+              reveal archetypal patterns of thought and human experience.
+              By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>

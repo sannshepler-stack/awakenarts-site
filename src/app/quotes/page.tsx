@@ -208,9 +208,10 @@ export default function QuotesPage() {
               />
             </Link>
             <p>
-              Original symbolic figures for the interior life — rooted in the
-              Christian tradition, created through the transformative language
-              arts process. By Susan Ann Shepler.
+              An artistic body of work shaped through image and language.
+              The works express meaning in symbolic form, where word and image
+              reveal archetypal patterns of thought and human experience.
+              By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>

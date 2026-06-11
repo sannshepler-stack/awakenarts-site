@@ -184,9 +184,10 @@ export default function StudioPage() {
               />
             </Link>
             <p>
-              A collection of works that join image and language the way
-              Scripture itself so often does — through parable, poetry, and
-              symbol. By Susan Ann Shepler.
+              An artistic body of work shaped through image and language.
+              The works express meaning in symbolic form, where word and image
+              reveal archetypal patterns of thought and human experience.
+              By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>

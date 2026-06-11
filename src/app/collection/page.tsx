@@ -6,13 +6,13 @@ import FooterSocial from '@/components/FooterSocial'
 export const metadata: Metadata = {
   title: 'The Collection — AwakenArts',
   description:
-    'The Collection gathers the works of AwakenArts — pieces meant to be returned to over time, the way image and parable reward a second and third reading. By Susan Ann Shepler.',
+    'The AwakenArts Collection — symbolic poetic forms suited to personal reading, discussion, retreats, and teaching. By Susan Ann Shepler.',
   alternates: { canonical: '/collection' },
   openGraph: {
     url: '/collection',
     title: 'The AwakenArts Collection',
     description:
-      'A literary collection of works — image and language shaped as one — meant to be lived with, not read just once.',
+      'The AwakenArts Collection — symbolic poetic forms suited to personal reading, discussion, retreats, and teaching. By Susan Ann Shepler.',
   },
 }
 
@@ -69,19 +69,26 @@ export default function CollectionPage() {
             </h2>
 
             <p className="col-statement-body">
-              Rooted in traditions of parable, poetry, and symbolic language
-              found within Scripture and Christian literary expression, the
-              works draw through themes of memory, exile, grace, longing,
-              fear, and return.
+              Symbols play an important and recurring role in human experience.
+              They appear in dreams, art, stories, and faith, often carrying
+              meanings that are difficult to express through language alone.
             </p>
 
             <p className="col-statement-body">
-              The Collection offers material suited for personal reading,
-              group discussion, retreats, workshops, and teaching environments
-              where poetry, symbolism, figurative language, and visual form
-              may serve as points of reflection, conversation, and
-              understanding.
+              The works in the Collection provide opportunities to become
+              attentive to symbolic patterns and paths, and to ways symbols
+              shape understanding and meaning.
             </p>
+
+            <ul className="col-use-list">
+              <li>Use them in workshops.</li>
+              <li>Use them in retreats.</li>
+              <li>Use them in group discussion.</li>
+              <li>Use them in literary discussion.</li>
+              <li>Use them in personal reflection.</li>
+              <li>Use them as symbolic prompts when ordinary language falls short.</li>
+              <li>Use them as companions to understanding.</li>
+            </ul>
 
 
           </div>
@@ -111,9 +118,10 @@ export default function CollectionPage() {
               />
             </Link>
             <p>
-              A collection of works that join image and language the way
-              Scripture itself so often does — through parable, poetry, and
-              symbol. By Susan Ann Shepler.
+              An artistic body of work shaped through image and language.
+              The works express meaning in symbolic form, where word and image
+              reveal archetypal patterns of thought and human experience.
+              By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>
