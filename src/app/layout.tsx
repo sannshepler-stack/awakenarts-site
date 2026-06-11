@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'AwakenArts is an artistic body of work shaped through image and language. The works express meaning in symbolic form, where word and image reveal archetypal patterns of thought and human experience. By Susan Ann Shepler.',
+      'AwakenArts is an artistic body of work shaped through image and language. The works express emotion and meaning in symbolic form, where word and image reveal archetypal patterns of thought and inward experience. By Susan Ann Shepler.',
     locale: 'en_US',
     images: [
       {
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'AwakenArts is an artistic body of work shaped through image and language — symbolic forms and literary encounters where word and image reveal archetypal patterns of thought and human experience. By Susan Ann Shepler.',
+      'AwakenArts is an artistic body of work shaped through image and language — symbolic forms and literary encounters where word and image reveal archetypal patterns of thought and inward experience. By Susan Ann Shepler.',
     images: ['/images/brand/queen-ann-hero-desktop.jpg'],
   },
   robots: {

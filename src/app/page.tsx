@@ -70,11 +70,11 @@ export default function HomePage() {
 
           <p className="hero-subline">
             AwakenArts is an artistic body of work shaped through image
-            and language. The works express meaning in symbolic form,
-            where word and image reveal archetypal patterns of thought
+            and language. The works express emotion and meaning in symbolic
+            form, where word and image reveal archetypal patterns of thought
             and inward experience. Drawing from parable, allegory, and
-            figurative expression, the works invite awareness while
-            supporting reflection, discussion, teaching, and exploration.
+            figurative expression, the works invite awareness as they support
+            discussion, teaching, and exploration.
           </p>
 
           <Link href="/collection" className="hero-cta">
@@ -237,21 +237,10 @@ export default function HomePage() {
               <em>from the Collection</em>
             </h2>
             <p className="coll-invitation__text coll-invitation__text--lead">
-              The AwakenArts Collection consists of symbolic poetic forms
-              that reveal conflict, longing, grace, fear, transformation,
-              and the inward path toward awareness and recognition. Each
-              work approaches human experience through symbolic figure,
-              tension, and awareness rather than fixed explanation.
-            </p>
-            <p className="coll-invitation__text coll-romans">
-              Working with the series becomes a gradual confrontation with
-              what remains divided, hidden, projected, undeveloped, or
-              unconscious within the self — while also recognizing the
-              universality of those same patterns across human experience.{' '}
-              <em>
-                &ldquo;Be transformed by the renewing of your mind.&rdquo;
-                &nbsp;— Romans 12:2
-              </em>
+              The AwakenArts Collection is a series of symbolic works
+              beneficial to personal growth through reflection and deeper
+              dialogue — shaping experiences often difficult to uncover
+              and express.
             </p>
           </div>
 
@@ -314,9 +303,9 @@ export default function HomePage() {
             </Link>
             <p>
               An artistic body of work shaped through image and language.
-              The works express meaning in symbolic form, where word and image
-              reveal archetypal patterns of thought and human experience.
-              By Susan Ann Shepler.
+              The works express emotion and meaning in symbolic form, where
+              word and image reveal archetypal patterns of thought and
+              inward experience. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>

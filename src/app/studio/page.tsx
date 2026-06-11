@@ -185,9 +185,9 @@ export default function StudioPage() {
             </Link>
             <p>
               An artistic body of work shaped through image and language.
-              The works express meaning in symbolic form, where word and image
-              reveal archetypal patterns of thought and human experience.
-              By Susan Ann Shepler.
+              The works express emotion and meaning in symbolic form, where
+              word and image reveal archetypal patterns of thought and
+              inward experience. By Susan Ann Shepler.
             </p>
             <FooterSocial />
           </div>
