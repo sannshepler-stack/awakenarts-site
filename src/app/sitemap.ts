@@ -24,10 +24,8 @@ const ENTRIES: Entry[] = [
   { path: '/studio/silhouettes',                                 changeFrequency: 'monthly', priority: 0.7 },
   // /path, /path/ann, /path/grismere, /path/ballerina, /begin, /journey
   // all permanently redirect to /studio or / — omitted from sitemap.
-  // /library/figures/*, /library/foundations/*, /library/voices, /gallery,
-  // and /deck were an orphaned, self-referencing page tree with no links
-  // from the live site (and no redirects) — removed entirely (June 2026).
-  { path: '/library',                                            changeFrequency: 'monthly', priority: 0.8 },
+  // /library route renamed /poems (June 2026); theme sub-pages retired.
+  { path: '/poems',                                              changeFrequency: 'monthly', priority: 0.8 },
   // /quotes — Scripture and the Christian literary tradition; part of
   // the site's foundational interpretive framework (June 2026).
   { path: '/quotes',                                             changeFrequency: 'monthly', priority: 0.8 },

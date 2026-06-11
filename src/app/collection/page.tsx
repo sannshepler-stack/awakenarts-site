@@ -128,7 +128,7 @@ export default function CollectionPage() {
             <h4>The Work</h4>
             <ul>
               <li><Link href="/encounters">Encounters</Link></li>
-              <li><Link href="/library">Library</Link></li>
+              <li><Link href="/poems">Poems</Link></li>
               <li><Link href="/journal">Journal</Link></li>
             </ul>
           </div>

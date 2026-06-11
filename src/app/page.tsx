@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 /*
  * Homepage — The Threshold
  * Alignment + Subtraction pass (May 2026):
- * 4-section structure: Hero → Studio preview → Library preview →
+ * 4-section structure: Hero → Studio preview → Poems preview →
  * The AwakenArts Collection. Encounters section removed — Encounters
  * functions through direct navigation, not homepage explanation.
  * Collection imagery removed — silhouettes belong to Studio.
@@ -94,8 +94,8 @@ export default function HomePage() {
               Studio
             </Link>
             <span className="hero-secondary-sep" aria-hidden="true">·</span>
-            <Link href="/library" className="hero-secondary-link">
-              Library
+            <Link href="/poems" className="hero-secondary-link">
+              Poems
             </Link>
           </nav>
         </div>
@@ -281,19 +281,19 @@ export default function HomePage() {
       ──────────────────────────────────────────────────────────── */}
       <section className="lib-preview-section" aria-labelledby="lib-preview-heading">
         <div className="lib-preview-inner">
-          <p className="eyebrow">Library</p>
+          <p className="eyebrow">Poems</p>
           <h2 id="lib-preview-heading">
-            Readings<br />
+            Concrete poetry<br />
             <em>grounded in image and symbol.</em>
           </h2>
           <p className="lib-preview-body">
-            The Library offers a series of writings on poetry, parable,
-            and symbolic form. The readings help establish the literary
-            and symbolic language beneath AwakenArts.
+            The poems of AwakenArts work through parable, figure, and
+            symbolic form — language given visible shape through years
+            of close attention to image and meaning.
           </p>
           <p className="lib-preview-cta">
-            <Link href="/library" className="text-link">
-              Enter the Library <span aria-hidden="true">→</span>
+            <Link href="/poems" className="text-link">
+              View the Poems <span aria-hidden="true">→</span>
             </Link>
           </p>
         </div>
@@ -325,7 +325,7 @@ export default function HomePage() {
             <ul>
               <li><Link href="/collection">The Collection</Link></li>
               <li><Link href="/studio">Studio</Link></li>
-              <li><Link href="/library">Library</Link></li>
+              <li><Link href="/poems">Poems</Link></li>
               <li><Link href="/encounters">Encounters</Link></li>
               <li><Link href="/journal">Journal</Link></li>
             </ul>

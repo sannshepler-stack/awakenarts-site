@@ -146,7 +146,7 @@ export default function ContinuumPage() {
         >
           {[
             { href: "/collection", label: "The Collection" },
-            { href: "/library", label: "The Library" },
+            { href: "/poems", label: "Poems" },
             { href: "/studio", label: "Studio" },
             { href: "/", label: "Home" },
           ].map(({ href, label }) => (

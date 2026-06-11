@@ -47,21 +47,23 @@ export default function StudioPage() {
               </p>
             </div>
             {/* ── Juggling Bear — poem + video pair on cream ── */}
-            <div className="studio-intro-bear-pair">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/forms/bear-text.png"
-                alt="Juggling Bear — concrete-poetry form"
-                className="studio-intro-bear-poem"
-                loading="lazy"
-              />
-              <div className="studio-intro-bear-panel">
-                <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'juggling-bear')!} />
-                <p className="studio-intro-bear-note">
-                  The bear may have a convincing act —
-                  but it is not what it seems.
-                </p>
+            <div className="studio-intro-bear-wrap">
+              <div className="studio-intro-bear-pair">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/forms/bear-text.png"
+                  alt="Juggling Bear — concrete-poetry form"
+                  className="studio-intro-bear-poem"
+                  loading="lazy"
+                />
+                <div className="studio-intro-bear-panel">
+                  <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'juggling-bear')!} />
+                </div>
               </div>
+              <p className="studio-intro-bear-note">
+                The bear may have a convincing act —
+                but it is not what it seems.
+              </p>
             </div>
           </div>
         </section>
@@ -161,8 +163,8 @@ export default function StudioPage() {
           <Link href="/encounters" className="path-cta__link">
             Enter the Encounters
           </Link>
-          <Link href="/library" className="path-cta__link path-cta__link--quiet">
-            The Library
+          <Link href="/poems" className="path-cta__link path-cta__link--quiet">
+            Poems
           </Link>
         </section>
 
@@ -200,7 +202,7 @@ export default function StudioPage() {
             <h4>The Work</h4>
             <ul>
               <li><Link href="/encounters">Encounters</Link></li>
-              <li><Link href="/library">Library</Link></li>
+              <li><Link href="/poems">Poems</Link></li>
               <li><Link href="/journal">Journal</Link></li>
             </ul>
           </div>

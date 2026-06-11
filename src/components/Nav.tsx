@@ -11,7 +11,7 @@ const links = [
   { label: 'Encounters',  href: '/encounters',  cta: false },
   { label: 'Studio',      href: '/studio',      cta: false },
   { label: 'Collection',  href: '/collection',  cta: false },
-  { label: 'Library',     href: '/library',     cta: false },
+  { label: 'Poems',     href: '/poems',     cta: false },
   { label: 'Quotes',      href: '/quotes',      cta: false },
   { label: 'Journal',     href: '/journal',     cta: false },
   { label: 'About',       href: '/about',       cta: false },
