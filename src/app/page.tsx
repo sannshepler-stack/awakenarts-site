@@ -276,7 +276,7 @@ export default function HomePage() {
             <em>grounded in image and symbol.</em>
           </h2>
           <p className="lib-preview-body">
-            The poems of AwakenArts work through parable, figure, and
+            AwakenArts poetry works through parable, figure, and
             symbolic form — language given visible shape through years
             of close attention to image and meaning.
           </p>
