@@ -201,7 +201,7 @@ export default function QuotesPage() {
             <Link href="/" aria-label="AwakenArts home">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/brand/logo.png"
+                src="/images/brand/logo-reversed.svg"
                 alt="AwakenArts"
                 className="footer-logo"
                 loading="lazy"

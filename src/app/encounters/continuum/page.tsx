@@ -29,7 +29,6 @@ export default function ContinuumPage() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hasVideo, setHasVideo] = useState(true);
   const [ended, setEnded] = useState(false);
-  const [showLine1, setShowLine1] = useState(false);
   const [showExits, setShowExits] = useState(false);
 
   useEffect(() => {
@@ -40,17 +39,12 @@ export default function ContinuumPage() {
       v.playbackRate = 0.5;
       v.play().catch(() => {});
     }
-    // Pacing tuned to feel like the other encounters but slightly
-    // slower at the end — this is rest, not advance.
-    //   1.5s — first line begins to fade in
-    //   2.6s — quiet exits appear, after only a brief pause —
-    //          calm and intentional, not held back for effect
+    // Pacing: exits appear quickly and calmly — rest, not advance.
+    //   1.5s — navigation fades in
     //   5.0s — brightness settles (only meaningful if a video is playing)
-    const t1 = setTimeout(() => setShowLine1(true), 1500);
-    const t3 = setTimeout(() => setShowExits(true), 2600);
+    const t3 = setTimeout(() => setShowExits(true), 1500);
     const tSettle = setTimeout(() => setEnded(true), 5000);
     return () => {
-      clearTimeout(t1);
       clearTimeout(t3);
       clearTimeout(tSettle);
     };
@@ -116,22 +110,6 @@ export default function ContinuumPage() {
           padding: "0 24px",
         }}
       >
-        <p
-          className={cormorant.className}
-          style={{
-            fontStyle: "italic",
-            fontSize: "clamp(2rem, 5vw, 3.2rem)",
-            letterSpacing: "0.01em",
-            lineHeight: 1.2,
-            margin: 0,
-            marginBottom: "3rem",
-            opacity: showLine1 ? 1 : 0,
-            transition: "opacity 2s ease",
-          }}
-        >
-          The passage continues.
-        </p>
-
         <nav
           aria-label="Continue"
           style={{

@@ -52,13 +52,14 @@ export default function HomePage() {
 
         <div className="hero__text">
           {/* Logo — primary identity placement. */}
-          <Image
-            src="/images/brand/logo.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/brand/logo-mixed.svg"
             alt="AwakenArts"
-            width={700}
-            height={336}
             className="hero-logo"
-            priority
+            width={500}
+            height={170}
+            loading="eager"
           />
 
           {/* Primary tagline — the studio's full identity phrase.
@@ -77,8 +78,8 @@ export default function HomePage() {
             discussion, teaching, and exploration.
           </p>
 
-          <Link href="/collection" className="hero-cta">
-            Enter the Collection <span className="arrow" aria-hidden="true">→</span>
+          <Link href="#collection" className="hero-cta">
+            Learn More <span className="arrow" aria-hidden="true">→</span>
           </Link>
 
           {/*
@@ -125,37 +126,68 @@ export default function HomePage() {
 
       </section>
 
-      {/* ── HERO QUOTE ─── */}
+      {/* ── THE COLLECTION ───────────────────────────────────────
+          Section 2 — immediately below the hero.
+          The Collection answers: "What do I actually do with AwakenArts?"
+          Cover image + purpose statement + CTA.
+          Studio, Poems, Encounters follow as supporting destinations.
+      ──────────────────────────────────────────────────────────── */}
+      <section id="collection" className="home-coll-section" aria-labelledby="home-coll-heading">
+        <div className="home-coll-inner">
+
+          <div className="home-coll-cover">
+            <Image
+              src="/images/collection/collection-cover-light.png"
+              alt="The Collection — An AwakenArts Resource & Guide"
+              width={300}
+              height={388}
+              className="home-coll-cover__img"
+              loading="lazy"
+            />
+          </div>
+
+          <div className="home-coll-text">
+            <p className="eyebrow">Resource &amp; Guide</p>
+            <h2 id="home-coll-heading">The Collection</h2>
+            <p className="home-coll-sub">An AwakenArts Resource &amp; Guide</p>
+            <p className="home-coll-body">
+              The Collection brings together the works, language, methods, and
+              resources developed through AwakenArts. Designed for reflection,
+              discussion, teaching, retreats, workshops, and personal
+              exploration, it provides practical ways to engage the language
+              of symbols through image and language.
+            </p>
+            <Link href="/collection" className="home-coll-cta">
+              Explore the Collection <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── OPENING STATEMENT ────────────────────────────────────
+          Section 3 — philosophical grounding after the Collection.
+      ──────────────────────────────────────────────────────────── */}
       <section className="hero-quote-section" aria-label="Opening statement">
         <p className="hero-quote-text">
           &ldquo;He did not say anything to them without using a parable.&rdquo;
         </p>
         <p className="hero-quote-cite">Matthew 13:34</p>
+        <p className="hero-quote-body">
+          From the Psalms and Proverbs to prophetic imagery and the
+          parables of Christ, biblical language repeatedly carries
+          meaning through symbol, metaphor, narrative, and visual form.
+        </p>
+        <p className="hero-quote-body">
+          AwakenArts approaches image and language within that broader
+          literary tradition: works in which meaning arrives through
+          recognition rather than explanation.
+        </p>
       </section>
 
-      {/* ── SCRIPTURE'S OWN LANGUAGE ──────────────────────────────
-          Secondary section — grounds the work in Scripture's own
-          poetic and figurative mode before introducing the Studio.
-      ──────────────────────────────────────────────────────────── */}
-      <section className="hero-secondary-section" aria-label="The language of Scripture">
-        <div className="hero-secondary-section__inner">
-          <p>The language of Scripture is often poetic before it is explanatory.</p>
-          <p>
-            From the Psalms and Proverbs to prophetic imagery and the
-            parables of Christ, Biblical language repeatedly carries
-            meaning through symbol, metaphor, narrative, and visual form.
-          </p>
-          <p>
-            AwakenArts approaches visual-poetic structure within that
-            broader literary tradition: works in which image and language
-            participate together in meaning.
-          </p>
-        </div>
-      </section>
-
-      {/* ── SECTION 2: STUDIO PREVIEW ────────────────────────────
-          Single symbolic threshold image — Queen Ann only.
-          Homepage is the invitation; the Studio holds the full collection.
+      {/* ── STUDIO PREVIEW ───────────────────────────────────────
+          Supporting destination. Queen Ann: the silhouette is the
+          poem — language taking visible shape, line by line.
       ──────────────────────────────────────────────────────────── */}
       <section className="studio-preview-section" aria-labelledby="studio-preview-heading">
         <div className="studio-preview-inner">
@@ -177,9 +209,8 @@ export default function HomePage() {
           </p>
 
           {/* Queen Ann — silhouette alongside her concrete poetry form.
-              The pairing makes the concept immediate: the figure is the
-              poem, language taking visible shape line by line.
-              Poetry image CSS-inverted so text reads white on --deep. */}
+              mix-blend-mode: screen dissolves the dark fill so the
+              poem reads as clean white text against the navy field. */}
           <div className="studio-ann-feature">
             <div className="studio-ann-feature__panel">
               <figure className={formPanelStyles.panel}>
@@ -222,48 +253,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── SECTION 3: COLLECTION ────────────────────────────────
-          Literary-symbolic threshold. Featured work + supporting tier.
-          Queen Ann: cinematic, path-oriented, emotionally immediate.
-          Ballerina + Kings: supporting — restrained, collectible.
-      ──────────────────────────────────────────────────────────── */}
-      <section className="coll-section" aria-labelledby="coll-heading">
-        <div className="coll-inner">
-
-          <div className="coll-header">
-            <p className="eyebrow">The Collection</p>
-            <h2 id="coll-heading">
-              Works<br />
-              <em>from the Collection</em>
-            </h2>
-            <p className="coll-invitation__text coll-invitation__text--lead">
-              The AwakenArts Collection is a series of symbolic works
-              beneficial to personal growth through reflection and deeper
-              dialogue — shaping experiences often difficult to uncover
-              and express.
-            </p>
-          </div>
-
-          {/* ── Ballerina — single collection image ── */}
-          <div className="coll-single">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/collection/ballerina-collection.png"
-              alt="Ballerina — AwakenArts Collection"
-              className="coll-single__img"
-              loading="eager"
-            />
-          </div>
-
-          <div className="coll-invitation">
-            <Link href="/collection" className="coll-invitation__link">
-              The Collection <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-
-        </div>
-      </section>
-
       {/* ── SECTION 4: LIBRARY PREVIEW ───────────────────────────
           Companion readings — literary and symbolic, not explanatory.
           After Collection.
@@ -293,12 +282,14 @@ export default function HomePage() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link href="/" aria-label="AwakenArts home">
-              <Image
-                src="/images/brand/logo.png"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/brand/logo-reversed.svg"
                 alt="AwakenArts"
-                width={700}
-                height={336}
                 className="footer-logo"
+                width={500}
+                height={170}
+                loading="lazy"
               />
             </Link>
             <p>
