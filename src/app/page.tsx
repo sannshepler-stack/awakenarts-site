@@ -215,15 +215,13 @@ export default function HomePage() {
             <div className="studio-ann-feature__panel">
               <figure className={formPanelStyles.panel}>
                 <div className={formPanelStyles.imageFrame}>
-                  <video
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     className={formPanelStyles.image}
-                    src="/videos/forms/queen-ann-motion.mp4"
+                    src="/images/forms/queen-ann-still.png"
+                    alt="Queen Ann — atmospheric still: a windswept figure with form-silhouette overlay."
                     style={{ objectPosition: '60% center' }}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    aria-hidden="true"
+                    loading="lazy"
                   />
                 </div>
                 <figcaption className={formPanelStyles.name}>Queen Ann</figcaption>
