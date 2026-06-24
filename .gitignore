@@ -27,3 +27,7 @@ next-env.d.ts
 # system
 .DS_Store
 Thumbs.db
+
+# personal working files / drafts — not part of the website
+/AwakenArts_Workbook/
+/public/archive/deprecated/

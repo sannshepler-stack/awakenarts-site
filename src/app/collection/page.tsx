@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import FooterSocial from '@/components/FooterSocial'
+import { editions } from '@/data/editions'
 
 export const metadata: Metadata = {
   title: 'The Collection — AwakenArts',
@@ -18,18 +19,26 @@ export const metadata: Metadata = {
 }
 
 /*
- * The Collection page — rebuilt June 2026 around the Governance Framework.
+ * The Collection page — revised June 2026 per Susan's "Website Revision —
+ * First Pass" and "Collection Banner Integration" briefs.
  *
- * Hierarchy: Works → Language → Method → Resources → Workbook
- * The Collection is the product. The workbook is one expression of it.
- * Central purpose: recognition rather than explanation.
+ * The Figure Editions are becoming the primary expression of the work.
+ * Governing line: "The works are the foundation. Everything else grows
+ * from them." This page should demonstrate the Collection, not describe it.
+ *
+ * Visual hierarchy, three tiers:
+ *   1. Collection Banner   — the body of work (gallery wall)
+ *   2. Edition Preview Sheets — the internal structure of each edition
+ *   3. Individual Figure Pages (/editions/[slug]) — the detailed encounter
  *
  * Page structure:
- *   1. Hero — identity + entry point
- *   2. Publication — cover image + what The Collection is
- *   3. How it's used — applications and method
- *   4. The Works — foundation
- *   5. CTA
+ *   1. Hero — heading only, minimal
+ *   2. Collection Banner — framed-works gallery image, full content width
+ *   3. The Works — introductory copy, works as foundation
+ *   4. Edition Previews — contact-sheet cards, data-driven (src/data/editions.ts)
+ *   5. Publication — what The Collection is, as resource & guide
+ *   6. How it's used — applications and method
+ *   7. CTA
  */
 
 export default function CollectionPage() {
@@ -40,29 +49,105 @@ export default function CollectionPage() {
       <main className="col-page">
 
         {/* 1 ── HERO ─────────────────────────────────────────────────
-            Entry point. Not explanatory — just enough to orient
-            and invite. The cover image carries the visual weight
-            in section 2, not here.
+            Heading only. The Banner immediately below carries the
+            visual weight and the introduction.
         ──────────────────────────────────────────────────────────── */}
-        <section className="col-hero">
+        <section className="col-hero col-hero--trim">
           <div className="col-hero__inner">
             <p className="eyebrow col-hero__eyebrow">AwakenArts</p>
             <h1 className="col-hero__title">The Collection</h1>
             <p className="col-hero__sub">
               An AwakenArts Resource &amp; Guide
             </p>
-            <p className="col-hero__body">
-              A resource and guide built around original visual-literary works —
-              designed to help people engage the language of symbols through
-              image, reflection, discussion, teaching, and exploration.
-            </p>
           </div>
         </section>
 
-        {/* 2 ── PUBLICATION ─────────────────────────────────────────
-            The cover image sits here, not on the homepage.
-            This is where Resource & Guide language belongs.
-            Split layout at larger screens; stacks on mobile.
+        {/* 2 ── COLLECTION BANNER ───────────────────────────────────
+            Demonstrates the Collection rather than describing it —
+            a gallery wall of framed works. Appears immediately
+            beneath the page heading, before any explanatory text.
+        ──────────────────────────────────────────────────────────── */}
+        <section className="col-banner" aria-label="The AwakenArts Collection">
+          <div className="col-banner__inner">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/collection/collection-banner-1400.png"
+              alt="The AwakenArts Collection — poetic encounters in shape, symbol, and story — five framed visual-literary works displayed as a gallery wall"
+              className="col-banner__img"
+              loading="eager"
+            />
+          </div>
+        </section>
+
+        {/* 3 ── THE WORKS ───────────────────────────────────────────
+            Introductory copy. The works are the foundation;
+            everything else grows from them.
+        ──────────────────────────────────────────────────────────── */}
+        <section className="col-works-foundation" aria-labelledby="col-works-heading">
+          <div className="col-works-foundation__inner col-works-foundation__inner--text-only">
+            <div className="col-works-foundation__text">
+              <p className="eyebrow">The Works</p>
+              <h2 id="col-works-heading">
+                The works are the foundation.<br />
+                <em>Everything else grows from them.</em>
+              </h2>
+              <p>
+                These original visual-literary pieces serve as points of entry
+                into reflection, discussion, recognition, and inquiry. Through
+                image, symbol, poetry, and story, they create opportunities
+                for observation before interpretation and recognition before
+                explanation.
+              </p>
+              <p>
+                The Collection gathers these works into a growing body of
+                symbolic encounters.
+              </p>
+              <p>
+                <Link href="/studio" className="text-link">
+                  View the works in the Studio <span aria-hidden="true">→</span>
+                </Link>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* 4 ── EDITION PREVIEWS ────────────────────────────────────
+            Product previews. The contact sheets carry the weight —
+            no extensive explanation. Driven by src/data/editions.ts
+            so additional editions append here with no redesign.
+        ──────────────────────────────────────────────────────────── */}
+        <section className="col-editions" aria-labelledby="col-editions-heading">
+          <div className="col-editions__inner">
+            <div className="col-editions__header">
+              <p className="eyebrow">Edition Previews</p>
+              <h2 id="col-editions-heading">
+                The current expression<br /><em>of the works.</em>
+              </h2>
+            </div>
+
+            <div className="col-editions__grid">
+              {editions.map((edition) => (
+                <Link
+                  key={edition.slug}
+                  href={`/editions/${edition.slug}`}
+                  className="col-edition-card"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={edition.contactSheet}
+                    alt={edition.contactSheetAlt}
+                    className="col-edition-card__img"
+                    loading="lazy"
+                  />
+                  <span className="col-edition-card__title">{edition.title}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 5 ── PUBLICATION ─────────────────────────────────────────
+            What The Collection is, as a resource & guide.
         ──────────────────────────────────────────────────────────── */}
         <section className="col-pub-section" aria-labelledby="col-pub-heading">
           <div className="col-pub-inner">
@@ -105,7 +190,7 @@ export default function CollectionPage() {
           </div>
         </section>
 
-        {/* 3 ── HOW IT'S USED ───────────────────────────────────────
+        {/* 6 ── HOW IT'S USED ───────────────────────────────────────
             Applications + method. The method is the bridge between
             the works and the resources. Presented accessibly,
             not as a framework dump.
@@ -146,44 +231,7 @@ export default function CollectionPage() {
           </div>
         </section>
 
-        {/* 4 ── THE WORKS ───────────────────────────────────────────
-            Brief acknowledgment that the artwork is the foundation.
-            The works live in Studio — this section bridges.
-        ──────────────────────────────────────────────────────────── */}
-        <section className="col-works-foundation" aria-labelledby="col-works-heading">
-          <div className="col-works-foundation__inner">
-
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/collection/connection-all.png"
-              alt="The AwakenArts Collection — symbolic concrete poetry — language becoming visible form"
-              className="col-overview-img"
-              loading="lazy"
-            />
-
-            <div className="col-works-foundation__text">
-              <p className="eyebrow">The Works</p>
-              <h2 id="col-works-heading">
-                The works are the foundation.<br />
-                <em>Everything else grows from them.</em>
-              </h2>
-              <p>
-                These original visual-literary pieces serve as points of entry
-                into reflection, discussion, recognition, and inquiry. They are
-                not explanations — they are figures through which meaning
-                may be approached and explored.
-              </p>
-              <p>
-                <Link href="/studio" className="text-link">
-                  View the works in the Studio <span aria-hidden="true">→</span>
-                </Link>
-              </p>
-            </div>
-
-          </div>
-        </section>
-
-        {/* 5 ── CTA ─────────────────────────────────────────────────── */}
+        {/* 7 ── CTA ─────────────────────────────────────────────────── */}
         <section className="col-archive-cta">
           <Link href="/encounters" className="col-archive-cta__link">
             Enter Encounters <span aria-hidden="true">→</span>
