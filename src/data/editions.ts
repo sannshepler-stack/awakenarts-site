@@ -46,4 +46,12 @@ export const editions: Edition[] = [
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Grismere Figure Edition',
     pdf: '/files/editions/Grismere_Figure_Edition.pdf',
   },
+  {
+    slug: 'poppy',
+    title: 'Poppy',
+    kicker: 'Figure Edition',
+    contactSheet: '/images/editions/poppy-contact-sheet.png',
+    contactSheetAlt: 'Contact sheet preview of all eleven pages of the Poppy Figure Edition',
+    pdf: '/files/editions/Poppy_Figure_Edition.pdf',
+  },
 ]
