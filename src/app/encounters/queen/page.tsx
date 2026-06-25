@@ -97,6 +97,16 @@ export default function QueenEncounterPage() {
             {`“For here we have no lasting city, but we seek the city that is to come.” — Hebrews 13:14`}
           </p>
 
+          <p className="enc-aside__label">observation</p>
+          <p className="enc-aside__prompt">
+            Let your eyes stay here a moment longer. What do you notice first — and what do you notice only after?
+          </p>
+
+          <p className="enc-aside__label">reflection</p>
+          <p className="enc-aside__prompt">
+            There is nothing here to resolve. Stay with whatever rises, and let it be enough for now.
+          </p>
+
           <Link
             href={getNextEncounter("queen")}
             className={`${cormorant.className} enc-forward`}

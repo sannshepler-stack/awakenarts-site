@@ -1,0 +1,286 @@
+/*
+ * Encounters — shared single-hero template.
+ *
+ * Built against Susan's "journey-01-guide.png" art-direction reference
+ * (the master design specification named in her "Begin New Encounter
+ * Architecture" directive, 2026-06-25). Adapted from the earlier
+ * Homeward Paths five-movement scroll prototype
+ * (src/app/encounters/mermaid/homeward-paths.module.css) down to a
+ * single full-bleed hero per encounter, since each encounter is now its
+ * own standalone page rather than one panel in a forced sequence.
+ *
+ * Per the image production standard: the hero background is a
+ * photographic image only (a "-web" production asset, no baked-in
+ * type). All typography, the scroll cue, and the closing strip are
+ * built live in HTML/CSS here — never baked into the image.
+ */
+
+/* --enc-gold / --enc-gold-lt / --enc-cream / --enc-mist are declared in
+   src/app/globals.css :root — CSS Modules can't declare :root locally,
+   and previous attempts at :global(:root) here threw a CssSyntaxError. */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding-left: clamp(1.5rem, 7vw, 7rem);
+  background: #0e1418;
+  color: var(--enc-cream);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  animation: encSlowzoom 26s ease-in-out infinite alternate;
+}
+@keyframes encSlowzoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+.heroScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(10, 12, 10, 0.82) 0%,
+    rgba(10, 12, 10, 0.58) 32%,
+    rgba(10, 12, 10, 0.15) 58%,
+    rgba(10, 12, 10, 0) 75%
+  );
+}
+
+/* top chrome: brand + menu */
+.chrome {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem 2.2rem;
+  font-family: var(--enc-sans);
+  color: var(--enc-cream);
+}
+.chromeBrand {
+  font-size: 0.92rem; font-weight: 600; letter-spacing: 0.14em;
+  text-decoration: none; color: inherit;
+}
+.chromeMenu {
+  font-size: 0.74rem; font-weight: 500; letter-spacing: 0.14em;
+  text-decoration: none; color: inherit;
+}
+
+/* eyebrow: constant "ENCOUNTERS" label, rule-diamond-rule beneath */
+.encLabel {
+  font-family: var(--enc-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--enc-gold-lt);
+}
+.eyebrowRule {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.6rem 0 0;
+  color: var(--enc-gold-lt);
+}
+.eyebrowRule span:first-child,
+.eyebrowRule span:last-child {
+  width: 1.5rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+.eyebrowRuleDot { font-size: 0.5rem; opacity: 0.8; }
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  max-width: 460px;
+  text-align: left;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin: 0.75rem 0 1.1rem;
+  color: var(--enc-cream);
+}
+
+.line {
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+  line-height: 1.55;
+  margin: 0;
+  color: var(--enc-gold-lt);
+}
+
+/* Scripture and Echo are poetry — they should read as poetry, at a size
+   and line-height that invite reading rather than glancing. Readable
+   first, atmospheric second. */
+.scripture {
+  display: block;
+  margin-top: 1.1rem;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  line-height: 1.65;
+  color: var(--enc-cream);
+}
+.ref {
+  display: block;
+  margin-top: 0.6rem;
+  font-style: normal;
+  font-family: var(--enc-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--enc-gold-lt);
+}
+
+.echo {
+  display: block;
+  margin-top: 1.3rem;
+  font-style: italic;
+  font-size: clamp(1.05rem, 2vw, 1.22rem);
+  line-height: 1.6;
+  color: var(--enc-mist);
+}
+.echoRef {
+  display: block;
+  margin-top: 0.45rem;
+  font-style: normal;
+  font-family: var(--enc-sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--enc-gold-lt);
+  opacity: 0.9;
+}
+
+/* Scroll cue — bottom-left of the hero */
+.scrollCue {
+  position: absolute;
+  left: clamp(1.5rem, 7vw, 7rem);
+  bottom: 3.4rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--enc-gold-lt);
+}
+.scrollArrow {
+  font-size: 0.85rem;
+  display: inline-block;
+  animation: encBob 2.2s ease-in-out infinite;
+}
+@keyframes encBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+.scrollWord {
+  font-family: var(--enc-sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Closing strip — quiet, beneath the hero. Room for future sections to
+   be inserted between the hero and this strip without redesigning the
+   encounter (per "Future Growth"). */
+.closingStrip {
+  background: #11181d;
+  padding: 3.8rem 1.6rem 4.4rem;
+  text-align: center;
+}
+.closingLine {
+  font-style: italic;
+  color: var(--enc-mist);
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  line-height: 1.6;
+  margin: 0 0 1.6rem;
+}
+/* Breathing room above the Experience Navigation — per the directive's
+ * 48–72px range, this reads as a reflective pause rather than an
+ * immediate continuation of the closing line above it. */
+.experienceNavWrap {
+  margin-top: 60px;
+}
+
+/* Experience Navigation — Claude Directive "Experience Navigation
+ * Refinement" (2026-06-25). No background, no box, no border, no
+ * divider lines beyond the inline "·" separators themselves. Gold
+ * typography only, centered, sitting directly on the page's existing
+ * dark background (.closingStrip on individual pages, .page on the
+ * index) — a chapter guide, not a navigation bar. */
+.experienceNav {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--enc-sans);
+  font-size: clamp(0.82rem, 1.3vw, 0.92rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.experienceNavItem {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.experienceNavSep {
+  color: var(--enc-gold-lt);
+  opacity: 0.45;
+}
+.experienceNavLink {
+  color: var(--enc-gold-lt);
+  opacity: 0.62;
+  text-decoration: none;
+  transition: opacity 0.25s ease, color 0.25s ease;
+}
+.experienceNavLink:hover {
+  opacity: 0.9;
+}
+.experienceNavLinkCurrent {
+  color: var(--enc-gold-lt);
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-color: rgba(217, 181, 104, 0.55);
+  text-underline-offset: 0.3em;
+}
+
+/* Responsive — collapse to centered layout on narrow viewports */
+@media (max-width: 720px) {
+  .hero {
+    justify-content: center;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+  }
+  .heroInner {
+    max-width: 420px;
+    text-align: center;
+  }
+  .eyebrowRule { justify-content: center; }
+  .scrollCue {
+    left: 0;
+    right: 0;
+    bottom: 2.2rem;
+    justify-content: center;
+  }
+}

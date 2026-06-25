@@ -30,14 +30,18 @@ const ALLOWED_BOTS = [
   'DuckAssistBot',
 ]
 
-// Mermaid is the soft-launched, public-ready encounter and IS indexed.
-// The other encounters stay disallowed until they ship at the same level
-// of polish. When the next is ready, remove its line from this list AND
-// flip its layout's `robots: { index: false }` flag AND add it to sitemap.ts.
+// Encounters architecture (2026-06-25): the figure-tied encounters
+// (dragon, vase/Bowls, queen, butterfly, continuum) and the old Mermaid
+// route (now a redirect into /encounters/journey) are all set aside —
+// not deleted, just unlinked from the new index — so they stay
+// disallowed rather than indexed as standalone results.
 const DISALLOWED_PATHS = [
   '/encounters/vase',
   '/encounters/dragon',
   '/encounters/queen',
+  '/encounters/butterfly',
+  '/encounters/continuum',
+  '/encounters/mermaid',
   '/api/',
   '/_next/',
 ]

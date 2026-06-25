@@ -16,16 +16,25 @@ type Entry = {
 const ENTRIES: Entry[] = [
   { path: '/',                                                   changeFrequency: 'weekly',  priority: 1.0 },
   { path: '/about',                                              changeFrequency: 'monthly', priority: 0.9 },
-  // /encounters itself is a transitional intro video (the doorway).
-  // It's intentionally absent from the sitemap so search results point
-  // visitors directly at the Mermaid encounter — the real content.
-  { path: '/encounters/mermaid',                                 changeFrequency: 'monthly', priority: 0.8 },
+  // Encounters architecture (2026-06-25) — /encounters is now the
+  // primary entrance in its own right, not a transitional doorway, plus
+  // each of the five locked encounters.
+  { path: '/encounters',                                         changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/encounters/journey',                                 changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/encounters/deep',                                    changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/encounters/table',                                   changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/encounters/word',                                    changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/encounters/continue',                                changeFrequency: 'monthly', priority: 0.8 },
   { path: '/studio',                                             changeFrequency: 'monthly', priority: 0.8 },
   { path: '/studio/silhouettes',                                 changeFrequency: 'monthly', priority: 0.7 },
   // /path, /path/ann, /path/grismere, /path/ballerina, /begin, /journey
   // all permanently redirect to /studio or / — omitted from sitemap.
   // /library route renamed /poems (June 2026); theme sub-pages retired.
   { path: '/poems',                                              changeFrequency: 'monthly', priority: 0.8 },
+  // Journal restored to primary navigation (2026-06-25, "Retire Gallery
+  // and Reinstate Journal" directive) — Gallery is retired and was never
+  // listed here, so no entry needs to be removed for it.
+  { path: '/journal',                                            changeFrequency: 'monthly', priority: 0.8 },
   // /quotes — Scripture and the Christian literary tradition; part of
   // the site's foundational interpretive framework (June 2026).
   { path: '/quotes',                                             changeFrequency: 'monthly', priority: 0.8 },

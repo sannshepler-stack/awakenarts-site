@@ -93,6 +93,16 @@ export default function ButterflyEncounterPage() {
             {`"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" — 2 Corinthians 5:17`}
           </p>
 
+          <p className="enc-aside__label">observation</p>
+          <p className="enc-aside__prompt">
+            Let your eyes stay here a moment longer. What do you notice first — and what do you notice only after?
+          </p>
+
+          <p className="enc-aside__label">reflection</p>
+          <p className="enc-aside__prompt">
+            There is nothing here to resolve. Stay with whatever rises, and let it be enough for now.
+          </p>
+
           <Link
             href={getNextEncounter("butterfly")}
             className={`${cormorant.className} enc-forward`}

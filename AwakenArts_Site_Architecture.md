@@ -1,0 +1,255 @@
+# AwakenArts — Site Architecture
+
+*Living reference for the site's navigation and content structure. Last revised 2026-06-24 — governing direction, all open questions resolved.*
+
+AwakenArts is no longer organized as a collection of pages. It is organized around a guided experience.
+
+## Encounters architecture (2026-06-25) — supersedes Path
+
+Susan's directive "Begin New Encounter Architecture" replaces the Path experience described below with **Encounters**. This is an architectural change, not a nav relabel — read this section first; sections below that still say "Path" are historical record of how the template was developed, not the current public structure.
+
+- **Navigation:** `PATH` → `ENCOUNTERS`. Encounters is now the primary entrance into the symbolic language of AwakenArts (`/encounters`, indexed, no longer a transitional pre-roll).
+- **Purpose shift:** Encounters are *not* completed teaching pages. Each is an atmospheric point of entry into a theme — image, language, Scripture, and a brief **AwakenArts Echo** (a short excerpt from the AwakenArts poetry corpus that resonates with the theme, cited by source). Encounters grow over time; they are not meant to feel "finished."
+- **Design standard:** `journey-01-guide.png` is the master design specification for every encounter — its typography, spacing, hierarchy, text placement, movement, scroll cue, and interaction. See "Left-aligned template" below; it still governs. Subsequent encounters reproduce this language with their own imagery/content.
+- **Asset convention:** each encounter folder under `public/images/encounters/<slug>/` supplies `<slug>-01-web.png` (the production image) and, where provided, `<slug>-01-web-notes.txt` (section label, title, opening statement, Scripture, AwakenArts Echo, layout guidance, encounter intent). Journey and Deep predate this notes-file convention — their copy carries forward unchanged from the locked copy below.
+- **Locked sequence (corrected order):** **Journey → The Deep → The Table → The Word → Continue.** Note this swaps Table and Word relative to the original five-movement template documented further down (which read Journey → Deep → Word → Table → Continue) — the new order is authoritative.
+- **Standalone pages, not a forced scroll sequence:** each encounter is its own page (`/encounters/journey`, `/encounters/deep`, `/encounters/table`, `/encounters/word`, `/encounters/continue`), not panels in one mandatory scroll. Each ends in a closing strip linking back to the index and forward to the next encounter (Continue links onward to `/collection` instead). Built this way so additional sections can be added beneath any encounter's opening page later without redesigning it.
+- **Dropped from the original template:** the circular/rectangular "Begin" button (each page now stands alone rather than starting a forced flow), the right-edge progress-dot trail, and the "Explore More" thumbnail strip (its only real asset, `journey-02-web.png`, doesn't exist on disk).
+- **Figure-tied routes set aside, not deleted:** Dragon, Bowls/Vase, Queen Ann, Butterfly, Continuum, and the old Mermaid prototype (the five-movement scroll built under that route) are unlinked from nav and the new Encounters index, noindexed via `robots.ts`/layout metadata, and left in place on disk. `/encounters/mermaid` now permanently redirects to `/encounters/journey`.
+- **AwakenArts Echo:** The Table uses a line from "Angel Gardens" ("I sow my love with Heaven's care…"); The Word uses a line from "Swan Sings" ("She gave a warning. You see what you believe."), added 2026-06-25 at Susan's direction. Continue still omits the Echo block (per the Continue notes' own instruction to omit rather than force one).
+
+## Navigation (4 items)
+
+**ENCOUNTERS · COLLECTION · GALLERY · ABOUT**
+
+Voices, Studio, Poems, and Quotes are retired as standalone nav destinations. Their content is redistributed below — nothing is lost, it just moves to where it serves the visitor.
+
+---
+
+### ENCOUNTERS
+
+*(supersedes PATH — see "Encounters architecture (2026-06-25)" at the top of this doc)*
+
+The primary entrance into the symbolic language of AwakenArts. Visitors browse a quiet index and enter any encounter as a standalone atmospheric page — image, language, Scripture, and a brief AwakenArts Echo. Encounters are not completed teaching pages and are not a forced sequence; they grow over time.
+
+Current Encounter sequence (locked 2026-06-25):
+- Journey
+- The Deep
+- The Table
+- The Word
+- Continue
+
+Set aside (unlinked from nav/index, left in place, noindexed): Dragon, Bowls/Vase, Queen Ann, Butterfly, Continuum, and the old Mermaid five-movement prototype (now redirects to Journey).
+
+Scripture lives inside each encounter — woven into the experience, never on a separate Scripture page.
+
+**Route decision:** `/encounters` is the index/primary entrance, publicly labeled **Encounters**, and is indexed (no longer noindexed as a transitional pre-roll).
+
+---
+
+### COLLECTION
+
+The publications. Figure Editions remain the primary published works.
+
+Contains:
+- Figure Editions
+- The Collection Guide
+- Workshop Materials
+- Facilitator Resources *(future)*
+- Edition previews / contact-sheet previews
+
+Author notes live within each Figure Edition (not duplicated in Gallery).
+
+---
+
+### GALLERY
+
+A curated presentation of the symbolic figures and related imagery. Not a poetry gallery, not an archive. It does not present complete poems.
+
+Retains: figure artwork, atmosphere images, related visual studies — only what supports the symbolic figures and future Paths.
+
+Figures shown: Grismere, Dragon, Ballerina, Bowls, **Queen Ann**, **Butterfly**.
+
+- Queen Ann and Butterfly remain **Gallery-only figures** until they become full Figure Editions — they have no Path yet and no Edition yet, so Gallery is currently their only public home.
+- Every figure's Gallery card ends with a CTA forward — into its Path if one exists, otherwise into its Figure Edition once published.
+
+Production, process, and superseded material (digital art paintings, concrete-poetry/word-art images, silhouette panels) is archived outside the public site — it does not live in Gallery.
+
+---
+
+### ABOUT
+
+Story, purpose, and contact.
+
+---
+
+## Content redistribution rules
+
+| Old home | New home |
+|---|---|
+| Scripture (was: Voices) | Inside each Path |
+| Companion quotes — Lewis, Augustine, Sanford, etc. (was: Voices) | Placed contextually wherever they deepen a specific figure/theme — never a standalone list |
+| Author notes (was: scattered) | Inside each Figure Edition (Collection) |
+| Full poem text (was: `/poems`, Studio) | Inside Paths and/or Figure Editions — never in Gallery |
+| Figure artwork, atmosphere stills (was: Studio silhouettes) | Gallery |
+| Digital art paintings, concrete-poetry/word-art images (was: Studio) | Archived outside the public site |
+
+## Retired as standalone destinations
+
+- **Studio** — split: figure/atmosphere imagery → Gallery; paintings & word-art → archived outside the public site
+- **Poems** — full poem text moves to Path/Figure Editions; the page itself retires
+- **Quotes / Voices** — content distributed contextually; no standalone page
+- **Journal** — stays footer-only, not in main nav
+
+## Resolved decisions (previously open)
+
+1. **Path UX model** — visitors choose a Path from a selection screen, then walk one guided journey. Not a forced sequence through all figures.
+2. **Queen Ann / Butterfly** — Gallery-only until each has a Path and/or Figure Edition.
+3. **Studio's non-symbolic assets** (paintings, word-art, juggling bear, process content) — archived outside the public site; not part of Gallery.
+4. **URL strategy** — keep `/encounters` as the route; label it Path publicly.
+
+## Figure Editions and Paths — the relationship
+
+Two expressions of the same truth, serving different purposes.
+
+**Figure Edition** — a completed artistic work. Brings together the symbolic figure, the complete poem, author notes, reflection, and discussion into a finished publication. Once published, it remains substantially fixed. It is *a work*.
+
+**Path** — a living Scriptural journey inspired by the same symbolic movement that gave rise to the Figure Edition. A Path is not an explanation of the figure and not an illustration of the poem. It is an invitation to walk through Scripture, imagery, silence, and reflection toward recognition.
+
+- Path imagery is not limited to the figure itself — it may draw on the wider vocabulary of biblical visual language: landscapes, light, water, trees, roads, clay, hands, doors, mountains, gardens, and so on.
+- The symbolic figure may appear only once within a Path — or not at all.
+- A Path stays free to mature over time. As Scripture continues to illuminate the symbolic movement, new imagery, passages, and reflections may be woven in without ever altering the published Figure Edition.
+
+Figure Editions remain enduring works; Paths remain living journeys. The two illuminate one another — neither replaces the other.
+
+Paths are organized around Scriptural themes rather than symbolic figures. Figure Editions are original artistic works that illuminate those same themes through image and poetry.
+
+## Layers of meaning within a Figure Edition (locked 2026-06-24, from Poppy)
+
+Worked out while deciding what Poppy's cover should and shouldn't show. The principle generalizes to every Figure Edition, not just Poppy.
+
+A Figure Edition reveals itself in layers, and each layer has its own work to do:
+
+- **Cover** — invitation. Universal, inviting, never the specific personal story. Anyone should be able to step into it, the same way anyone can step onto the road in a Path's Journey movement.
+- **Figure** — encounter. The symbolic figure itself.
+- **Poem** — expression. The complete work, in the artist's own words.
+- **Notes** — recognition. Where the personal, specific truth behind the symbol is finally given — the place where "Her mother's hands" gets named, not the cover.
+- **Reflection** — personal response. Where the reader's own recognition happens.
+
+The governing rule, the editorial compass: **universality invites, specificity reveals.** A cover built around one person's literal hands stops being an invitation and becomes information delivered too early — recognition handed to the reader instead of discovered by them. The cover's abundance (a field, a light, a landscape) should be capable of meaning nothing more than itself on first viewing, and only retroactively reveal itself as having been about inheritance and continuity all along, once the reader has gone deeper into the work.
+
+This sits alongside the earlier idea that "the image prepares the heart, the Word gives it voice" — extended one step further: the notes complete the recognition.
+
+**Each layer carries greater intimacy than the one before it.** That is why the cover must remain spacious and universal. The Figure is more intimate. The Poem is more intimate still. The Notes become personal. The Reflection becomes the reader's own. This isn't just sequencing — it's hospitality. The work doesn't demand the reader begin with the artist's most personal experience. It welcomes them into a shared human landscape first, then gradually reveals the deeper, more particular meaning. The reader is never asked to understand before they've first entered the world of the work.
+
+Worked across the Collection:
+
+| | Cover (invitation) | Figure (encounter) | Poem (expression) | Notes (recognition) | Reflection (personal response) |
+|---|---|---|---|---|---|
+| **Grismere** | Sea, horizon, longing | The maiden | Grismere | The divided self, longing, recognition | "Where have you experienced this?" |
+| **Dragon** | Storm, mountain, gathering clouds | The dragon | Dragon | The divided will, "and," reconciliation | Personal response |
+| **Bowls** | Morning table, ocean light | The bowls | Both Sides Now | Two feminine selves, reconciliation | Recognition |
+| **Poppy** | Hillside alive with orange poppies | The symbolic composition | Her Mother's Hands | The hands, inheritance, recognition | The reader's own story |
+
+This has become part of the grammar of AwakenArts — not limited to Figure Editions. The same universality-invites/specificity-reveals progression should also shape Homeward Paths (the cover/Journey movement of any Path stays spacious; particularity arrives later, inside The Word, The Table, and beyond), the website's general editorial voice, and eventually workshop design.
+
+*Superseded note (kept for history):* the first Grismere build was figure-centric (a video zoom on the figure herself, throughout). Susan's June 24 master-template direction below explicitly retires this approach — a Path is no longer organized around its symbolic figure at all.
+
+## Path structure — the five movements (master template, 2026-06-24)
+
+*(Historical: this section and most of what follows describes the development of the template that now governs Encounters. Order has since changed — see "Encounters architecture (2026-06-25)" at the top of this doc for the corrected sequence, Journey → The Deep → The Table → The Word → Continue.)*
+
+Every Path — regardless of theme — follows the same five movements. Different Paths use different imagery, Scripture, and reflection, but the structure itself is fixed. This is the template that now governs all Path development, replacing the figure-centric approach above.
+
+1. **Journey** — the invitation; the visitor arrives. Landscape imagery: a road, a shoreline, a field, a mountain, a quiet place. Purpose: invite the visitor to begin.
+2. **The Deep** — the place where something is encountered: longing, questions, loss, wonder, silence. Imagery suggests depth rather than answers. Purpose: awaken recognition. *(The symbolic figure, if it appears at all, belongs here — once, quietly, subordinate to the theme of depth — never as a showcased hero image.)*
+3. **The Word** — Scripture enters naturally; imagery and Scripture illuminate one another. Emphasis is revelation, not explanation. Purpose: let Scripture speak.
+4. **The Table** — invitation: bread, water, fish, cup, hospitality, rest, communion, belonging. Purpose: to receive.
+5. **Continue** — the visitor has been walking a path the entire time; this isn't a fifth place but the invitation to keep living what the first four movements opened. A road, morning, light, hope. The ending is always forward. Closing invitation: *"Continue exploring these themes through the AwakenArts Figure Editions."*
+
+The Path is not about a symbolic figure. The symbolic figures inspired the vision, but each Path stands independently as its own Scripturally grounded journey, following the same rhythm: **Journey → The Deep → The Word → The Table → Continue.**
+
+## Path visual language & per-movement copy (locked 2026-06-24, superseded same day — see below)
+
+*Superseded note (kept for history):* the paragraphs immediately below describe the **centered** template, confirmed against Susan's "How the Path Experience Works" explainer. That same day, Susan supplied a fully art-directed reference mockup (`journey-01-guide.png`) for Journey using a **left-aligned** composition instead. The left-aligned version is now the locked template — see "Left-aligned template (locked 2026-06-24, supersedes centered)" further below. The centered description is kept here only as a historical record of the decision path.
+
+Reference direction (superseded): warm, photographic, golden-hour — not the dark/navy-immersive treatment used in the first Grismere build. Dark-ink serif type sits directly on bright photography where the image allows it (Journey); light cream type is used on darker/warmer tones elsewhere. Text was centered, confirmed by Susan's "How the Path Experience Works" reference graphic.
+
+Constant chrome across every movement screen: small `AWAKENARTS` wordmark (top-left) + `MENU` (top-right) — this part is unchanged by the left-aligned pivot. (Superseded) a centered `PATH` eyebrow label, the movement name as a large italic serif headline, a circular "Begin" button + downward chevron + "Scroll" label on the first screen, a simpler chevron + "Scroll" cue on movements 2–4, and a forward link ("Explore the Figure Edition") closing movement 5.
+
+## Left-aligned template (locked 2026-06-24, supersedes centered)
+
+Susan's `journey-01-guide.png` reference established the production template now used for all five movements and every future Homeward Paths series entry:
+
+- **Eyebrow:** `HOMEWARD PATHS` (not `PATH`), gold, with a short rule–diamond–rule beneath, left-aligned.
+- **Movement title:** large serif, uppercase, *not* italic (e.g. `JOURNEY`), cream-colored, left-aligned.
+- **Body line:** one italic serif line (or two), gold-toned, left-aligned, directly beneath the title.
+- **Scripture / short invite:** same position as before (Deep, Word, Table), now left-aligned under the body line instead of centered.
+- **Begin / forward button:** a rectangular gold-outlined button with a label + arrow (`BEGIN →` on Journey; `EXPLORE THE EDITION →` closing Continue) — replaces the earlier circular button and plain text link.
+- **Scroll cue:** `↓ SCROLL`, gold, positioned independently at the bottom-left of the panel (not stacked under the button) on movements 1–4. Continue has no scroll cue — it's the end of the path.
+- **Composition:** text block sits in the left third to half of the frame; the photograph fills the rest, with a scrim darkening the left side only (not full-frame) so the photo stays legible on the right while the text stays readable on the left.
+- **Responsive behavior:** the layout is left-aligned on desktop/tablet; on narrow (mobile) viewports it collapses to centered text and a centered scroll cue so nothing crowds the screen edge.
+
+This applies uniformly across Journey, The Deep, The Word, The Table, and Continue, and is the template every future Homeward Paths series entry should also follow.
+
+## Homeward Paths — image production standard (locked 2026-06-24)
+
+Each movement's hero image is produced in **two versions**, named `<movement>-<number>-guide.png` and `<movement>-<number>-web.png` (e.g. `journey-01-guide.png`, `journey-01-web.png`):
+
+1. **Guide / presentation version** — includes baked-in typography, button placement, and navigation cues. This is a *design reference only*, used to propose and approve the art direction for a movement (composition, mood, where the text should sit). It is never read as live text by the site.
+2. **Web / production version** — the identical photograph with no text, no buttons, no overlays — pure photographic artwork. This is the only version the production code should use as a background image; all typography, the Begin/forward button, and the Scroll cue are recreated live in HTML/CSS on top of it (see "Left-aligned template" above).
+
+Workflow: Susan creates the guide mockup → reviews/approves the art direction → generates the clean "web" companion image → Claude wires the web image into the page as a background and rebuilds the approved typography/button/scroll-cue live in code. Each movement ends up with both a design board (guide) and a production asset (web), which keeps the whole Homeward Paths series visually consistent without ever depending on flattened, non-editable text baked into an image.
+
+**Current status:** Journey now has two complete guide/web pairs (`journey-01-guide.png`/`journey-01-web.png` and `journey-02-guide.png`/`journey-02-web.png`, both in `public/images/encounters/journey/`). The hero background uses `journey-01-web.png`; `journey-02-web.png` (a forest path with sunbeams) appears as real photography in the Explore More strip below the hero, replacing the earlier placeholder crops. Journey is the first movement to complete the full guide → web → implementation loop, now with two photographs in rotation. Deep, Word, Table, and Continue have no guide or web images yet beyond Deep's earlier draft photo.
+
+## Path visual language & per-movement copy, continued — locked content (unaffected by the layout pivot)
+
+**Figures are not part of Path, full stop.** An earlier draft of this doc allowed a symbolic figure to appear once, quietly, inside The Deep — Susan has explicitly overridden that: Paths carry no figure imagery at all. Figures live in Gallery and Figure Editions only.
+
+**Navigation, confirmed:** the right-edge dot-trail and scrolling are the two ways to move through a Path — click a dot to jump to that movement, or scroll to move forward/back one movement at a time (per Susan's "How the Path Experience Works" reference).
+
+**Below-the-fold "Explore More" — new, part of the template:** each of the five full-screen movements may be followed by an optional, non-mandatory strip of supplementary imagery ("Explore More") for visitors who want to linger. The five-screen scroll experience is complete on its own — Explore More is bonus, never required. Scroll-snap on the Path container should use `proximity` (not `mandatory`) so visitors aren't forced past this content.
+
+Locked per-movement copy (worked example: Homeward Paths — themes drawn from the Grismere Figure Edition):
+
+1. **Journey** — "Every journey begins before we know where it leads." *(very little text — title + one line only)*
+2. **The Deep** — "There are places within us that ordinary language cannot reach." + full Scripture: *"Deep calls to deep at the roar of your waterfalls; all your waves and breakers have swept over me."* — Psalm 42:7
+3. **The Word** — "Scripture speaks into the journey." + Scripture: *"Your word is a lamp to my feet and a light to my path."* — **Psalm 119:105**, confirmed 2026-06-24 *(supersedes the earlier Psalm 18:16, "He drew me out of many waters")*
+4. **The Table** — "Here we are welcomed before we are understood." + "Come and eat." — John 21:12 *(new: Susan's reference added both the short invitation and this citation)*
+5. **Continue** — "Walk on. Continue the journey." then, quietly: *"Continue exploring these themes through the AwakenArts Figure Editions."*
+
+This same copy pattern (title + one restrained line, Scripture only where it serves revelation, image carrying meaning over explanation) is the model for every future Path — only the imagery, verse, and line wording change per theme.
+
+**Path-selection screen copy, locked 2026-06-24** — "Homeward Paths," then each movement with its one-line mantra. These don't appear on the hero screens themselves; they belong to the `/encounters` Path-selection screen where visitors choose which movement-card to enter:
+
+- Journey — *I begin.*
+- The Deep — *I encounter.*
+- The Word — *I listen.*
+- The Table — *I receive.*
+- Continue — *I walk on.*
+
+## Homeward Paths as a growing series (2026-06-24)
+
+Homeward Paths is not a single journey — it is a series. The five-movement structure stays fixed, but the first two movements are where the Scriptural landscape changes from journey to journey; the last three (**The Word, The Table, Continue**) hold constant across every entry, giving the series a recognizable shape that can grow for years without feeling repetitive.
+
+Worked examples:
+
+- **Homeward Paths** — Journey → The Deep → The Word → The Table → Continue *(current build priority — themes from the Grismere Figure Edition)*
+- **Homeward Paths** — Wilderness → Waiting → The Word → The Table → Continue
+- **Homeward Paths** — The Garden → The Night → The Word → The Table → Continue
+
+Open implication worth noting, not yet decided: this sits alongside the existing "Paths (aligned to Figure Editions)" list above (Grismere/Dragon/Ballerina/Bowls/Poppy as separate figure-named Paths). Since Paths are now explicitly organized around Scriptural themes rather than figures, future Path entries may end up named like the Homeward Paths examples above (Wilderness, The Garden, etc.) rather than after figures — worth revisiting once the first Homeward Paths entry is live.
+
+## Current build priority
+
+Prototype the master five-movement template as **Homeward Paths**: visually cinematic, Scripturally grounded, emotionally quiet. The visitor should feel they are walking a path, not browsing a website. It is being built using themes that originally emerged alongside the Grismere Figure Edition, but it is not "the Grismere Path" — Grismere stays in the background as the source of inspiration, not the identity of the Path. Once approved, this same structure (not the Homeward-Paths-specific content) becomes the template for every other Path.
+
+## Still open / noted for later
+
+- **Active need: real photography for the remaining movements.** The template, layout, copy, and navigation are now settled — what's left is images. Real photography exists for **Journey** (`/images/encounters/journey/journey-1.png`, hillside trail, golden hour) and a draft for **The Deep** (`/images/encounters/deep/encounter-1-deep.png`, dusk shoreline with a silhouetted figure — Susan flagged this one as a draft that "may be replaced at a later time"). The Word, The Table, and Continue still use warm-toned gradient placeholders, and none of the five movements has real imagery yet for its "Explore More" below-fold strip (Journey's strip currently reuses crops of the one real Journey photo as a stand-in).
+- **Asset folder structure, resolved 2026-06-24:** `public/images/encounters/` now has one folder per movement — `journey/`, `deep/`, `word/`, `table/`, `continue/` — replacing the earlier single `Journey/` folder that awkwardly held both the Journey and Deep images. This is the standard structure for staging photography going forward, for this Path and any future Homeward Paths series entry.
+- "The Table" has no candidate image yet (bread/cup/water) — the Bowls clay-vessel still was tried earlier as a stand-in but the newer direction expects dedicated Table photography rather than a reused figure asset. Susan's reference mockup envisions a shoreline breakfast scene (bread, fish, a clay jug, a moored boat) — consistent with the new John 21:12 citation.
+- Ballerina has an unused video asset ready (`/videos/ballerina-path.mp4`) but no Path page built yet — quick follow-up once the master template is approved and applied across Paths.
+- Bowls, Butterfly, and Ballerina Gallery stills were freshly extracted from existing video footage (`/images/forms/bowls-still.jpg`, `butterfly-still.jpg`) as placeholders, with Ballerina now using `/images/library/ballerina-frozen.jpg` since its video frame turned out to be a title card — fine for now, but worth replacing with authored stills at the canonical 1600×2400 standard when available.
+- Poppy has no Path, Gallery image, or Figure Edition yet — entirely future work.

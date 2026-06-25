@@ -15,6 +15,15 @@
   --ink:      #1C2B3A;  /* alias for --deep; used as general text ink */
   --serif:    'Cormorant Garamond', Georgia, serif;
   --sans:     'Inter', system-ui, sans-serif;
+
+  /* Encounters (2026-06-25) — kept namespaced/separate from the tokens
+     above rather than reused, since CSS Modules can't declare :root
+     itself (it gets scoped/hashed); these live here so every encounter
+     module (.module.css) can read them as real global custom properties. */
+  --enc-gold:     #8b6914;
+  --enc-gold-lt:  #d9b568;
+  --enc-cream:    #faf7f2;
+  --enc-mist:     #ddd8cf;
 }
 
 /* ─────────────────────────────────────────────
@@ -310,6 +319,18 @@ a   { color: inherit; text-decoration: none; }
   letter-spacing: -.01em;
   color: var(--deep);
   margin: 0 0 2rem;
+}
+
+/* Mission line — sits between the headline and the body paragraph,
+   restating the AwakenArts USP in the gold register used for mission
+   statements elsewhere on the site (see .lib-preview-mission). */
+.hero-mission {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+  line-height: 1.6;
+  color: var(--gold);
+  margin: 0 0 1.25rem;
 }
 
 .hero-subline {
@@ -704,9 +725,29 @@ a   { color: inherit; text-decoration: none; }
   text-align: center;
   border-top: 1px solid var(--mist);
 }
+
+/* Used wherever an AtmosphericHeader sits directly above this section
+   (see Biblical Foundation, homepage), paired with the header's
+   `flush` prop. Revised 2026-06-25 ("Revise Biblical Foundation
+   Threshold Section"): the header no longer supplies its own bottom
+   margin here — that margin sat on the page's base background
+   (#f5f0e8), which is a visibly different cream than this section's
+   own background (--cream, #FAF7F2), so it read as a seam between
+   two disconnected blocks. The breathing room between image and
+   Scripture now lives entirely inside this section's own background
+   instead, as padding-top — one continuous cream field, image
+   flowing directly into content. The gap is also slightly reduced
+   from the old 56/48/40px, per the "reduce the vertical gap" note.
+   The top border stays dropped — the header image is still the
+   section's visual opening. */
+.hero-quote-section--headed {
+  padding-top: 2.75rem;
+  border-top: none;
+}
+
 .hero-quote-text {
   font-family: var(--serif);
-  font-size: clamp(1.2rem, 2.1vw, 1.5rem);
+  font-size: clamp(1.3rem, 2.3vw, 1.65rem);
   font-weight: 300;
   font-style: italic;
   color: var(--deep);
@@ -725,11 +766,17 @@ a   { color: inherit; text-decoration: none; }
   .hero-quote-section {
     padding: 5rem 1.5rem 5.5rem;
   }
+  .hero-quote-section--headed {
+    padding-top: 2.25rem;
+  }
 }
 
 @media (max-width: 640px) {
   .hero-quote-section {
     padding: 4rem 1.25rem 4.5rem;
+  }
+  .hero-quote-section--headed {
+    padding-top: 1.75rem;
   }
 }
 
@@ -782,17 +829,30 @@ a   { color: inherit; text-decoration: none; }
 
 .hero-quote-body {
   font-family: var(--serif);
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
-  line-height: 1.9;
+  /* Widened from 640px and sized up slightly per the "Revise Biblical
+     Foundation Threshold Section" directive — the body copy column
+     now sits in the requested 680–760px range, with a touch more
+     size and line-height so it reads as calm editorial prose rather
+     than a narrow caption beneath the Scripture. */
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  line-height: 1.95;
   color: var(--mid);
-  max-width: 640px;
+  max-width: 720px;
   margin: 0 auto 1.25rem;
 }
 
-.hero-quote-body:last-child {
-  margin-bottom: 0;
-  color: var(--deep);
+/* Closing thought — a quiet, gold-italic line beneath the two body
+   paragraphs, in the same restrained "mission line" register used
+   elsewhere on the homepage (.hero-mission, .lib-preview-mission).
+   Reflective and confident, not instructional. */
+.hero-quote-closing {
+  font-family: var(--serif);
   font-style: italic;
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  line-height: 1.7;
+  color: var(--gold);
+  max-width: 720px; /* matches .hero-quote-body — one consistent column */
+  margin: 1.5rem auto 0;
 }
 
 /* ─────────────────────────────────────────────
@@ -3626,7 +3686,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   grid-template-columns: 1fr 1fr;
   gap: 3.5rem;
   align-items: start;
-  max-width: 820px;
+  /* 820px → 930px (~13%): both the figure image and the poem image fill
+     their column at 100% width, so widening the shared grid scales each
+     proportionally without altering the composition (Susan's 2026-06-25
+     "give the poem more presence" / "enlarge the image" feedback). */
+  max-width: 930px;
   margin: 0 auto 6rem;
 }
 
@@ -4008,6 +4072,19 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   margin: 0 auto 2rem;
 }
 
+/* Mission-reinforcement line — quietly restates the AwakenArts USP
+   beneath the section's own body copy. Comfortably readable, not a
+   caption: same family/weight register as the scripture line above. */
+.lib-preview-mission {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--gold);
+  max-width: 56ch;
+  margin: 0 auto 2.25rem;
+}
+
 .lib-preview-scripture__cite {
   display: block;
   font-family: var(--sans);
@@ -4124,8 +4201,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 .home-coll-cover { flex-shrink: 0; }
 
+/* Homepage Section 2 revision (2026-06-25): the cover is the visual
+   anchor of this section, not a thumbnail — sized up ~35% (260px →
+   350px) so it carries equal visual weight to the heading/body. */
 .home-coll-cover__img {
-  width: 260px;
+  width: 350px;
   height: auto;
   box-shadow: 0 14px 48px rgba(28, 43, 58, 0.2);
   border-radius: 2px;
@@ -4135,17 +4215,17 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 .home-coll-text h2 {
   font-family: var(--serif);
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-size: clamp(2.1rem, 3.7vw, 3.4rem);
   font-weight: 300;
   letter-spacing: 0.04em;
   color: var(--deep);
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.5rem;
   line-height: 1.1;
 }
 
 .home-coll-sub {
   font-family: var(--serif);
-  font-size: 1.05rem;
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
   font-style: italic;
   color: var(--gold);
   margin: 0 0 1.75rem;
@@ -4154,7 +4234,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 .home-coll-body {
   font-family: var(--serif);
-  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
   line-height: 1.85;
   color: rgba(28, 43, 58, 0.72);
   margin: 0 0 2.25rem;
@@ -4193,7 +4273,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 @media (max-width: 640px) {
   .home-coll-section { padding: 5rem 1.5rem 6rem; }
-  .home-coll-cover__img { width: 200px; }
+  .home-coll-cover__img { width: 270px; }
 }
 
 /* ── PUBLICATION PANEL — The Collection promo ──────────────────────── */
@@ -4270,16 +4350,18 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 /* Quiet uppercase text-link. Lighter variant of .hero-cta
-   for use inside body sections on both cream and dark bgs. */
+   for use inside body sections on both cream and dark bgs.
+   Bumped from .8rem (readability pass, 2026-06-25) — a navigation
+   link should be clearly legible, not just decoratively uppercase. */
 .text-link {
   font-family: var(--sans);
-  font-size: .8rem;
+  font-size: .95rem;
   font-weight: 500;
-  letter-spacing: .13em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--gold);
   border-bottom: 1px solid rgba(139, 105, 20, 0.45);
-  padding-bottom: 2px;
+  padding-bottom: 3px;
   transition: color .2s ease-out, border-color .2s ease-out;
 }
 .text-link:hover {
@@ -5177,10 +5259,17 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 /* ── Poems hero (/poems) ───────────────────────────────────
    Literary, quiet. Typography-led. No cinematic treatment.
+   Dark field (2026-06-25, Susan's request): the Threshold Header was
+   removed from this page (it wasn't reading well), and the cropped
+   Edition figure images on the cards below it carry residual dark
+   background edges that showed as stray black lines against the
+   former cream field. Running the hero and gallery dark — the same
+   #0e1418 used on the Encounters pages — removes that seam instead of
+   fighting each image's edges individually.
 ─────────────────────────────────────────────────────────── */
 .lib-hero {
   padding: 6rem 2rem 5rem;
-  background: var(--cream);
+  background: #0e1418;
   text-align: center;
 }
 
@@ -5191,6 +5280,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 .lib-hero .eyebrow {
   margin-bottom: 1.25rem;
+  color: var(--gold-lt);
+}
+.lib-hero .eyebrow::before {
+  background: var(--gold-lt);
 }
 
 .lib-hero h1 {
@@ -5198,20 +5291,20 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   font-weight: 400;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.2;
-  color: var(--deep);
+  color: #faf7f2;
   margin: 0 0 1.5rem;
 }
 
 .lib-hero h1 em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--gold-lt);
 }
 
 .lib-hero__sub {
   font-family: var(--serif);
   font-style: italic;
   font-size: clamp(1.2rem, 1.7vw, 1.45rem);
-  color: var(--mid);
+  color: #ddd8cf;
   line-height: 1.9;
   max-width: 62ch;
   margin: 0 auto;
@@ -5318,6 +5411,141 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 /* Mobile */
 @media (max-width: 420px) {
   .lib-poem-gallery { padding: 2.5rem 1.25rem 4rem; gap: 3.5rem; }
+}
+
+/* ── Poems preview gallery (/poems) ───────────────────────
+   Homepage Revision (2026-06-25): /poems is now a curated PREVIEW
+   gallery, not a full poetry archive — image + brief excerpt + title
+   + link to the related Edition, never the complete poem. Restrained
+   card grid. Readable first: poem titles and excerpts read as
+   comfortably as normal reading text, never shrunk to manufacture
+   quietness — quietness comes from spacing only.
+   Dark field (2026-06-25, Susan's request): matches .lib-hero above
+   it — see that rule's comment for why (removing the Threshold
+   Header, and the stray dark edges on the cropped Edition figure
+   images, both pointed toward a dark page rather than cream here).
+─────────────────────────────────────────────────────────── */
+.poems-gallery-section {
+  background: #0e1418;
+  padding: 1rem 2rem 6rem;
+}
+
+.poems-gallery {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 2.25rem;
+}
+
+.poem-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.poem-card__imageFrame {
+  /* Vertical/portrait box (2026-06-25, confirmed with Susan: "Create
+     vertical rectangular containers for the poetry images") — 4:5
+     reads clearly as a vertical rectangle, sized for the new figure
+     images' native crop while still working for Poppy's landscape
+     atmosphere photo.
+     Cream mat (2026-06-25, Susan: "put a white/cream background on
+     the image container" for a consistent look): the five cards mix
+     full-bleed photos (Poppy, Bowls) with watercolors that carry
+     their own paper-colored background (Dragon, Grismere, Ballerina)
+     — side by side those read inconsistently. Matting every image on
+     the same cream field, shown in full via object-fit: contain
+     rather than cropped via cover, unifies all five and echoes how
+     each Edition's own page presents its figure artwork: matted on a
+     dark field. */
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #faf7f2;
+  padding: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  margin-bottom: 1.4rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.poem-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.poem-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.poem-card__kicker {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  margin: 0;
+}
+
+.poem-card__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.45rem, 1.9vw, 1.7rem);
+  line-height: 1.25;
+  color: #faf7f2;
+  margin: 0 0 0.3rem;
+}
+
+.poem-card__excerpt {
+  margin: 0 0 0.4rem;
+  padding: 0;
+  border: none;
+}
+
+.poem-card__excerpt p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: #ddd8cf;
+  margin: 0;
+}
+
+.poem-card__excerpt p::before { content: '\201C'; color: var(--gold-lt); }
+.poem-card__excerpt p::after { content: '\201D'; color: var(--gold-lt); }
+
+.poem-card__cta {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.45);
+  padding-bottom: 3px;
+  width: fit-content;
+  margin-top: 0.4rem;
+  transition: border-color 0.2s ease-out, color 0.2s ease-out;
+}
+.poem-card__cta:hover {
+  border-color: rgba(201, 168, 76, 0.9);
+}
+
+@media (max-width: 980px) {
+  .poems-gallery { grid-template-columns: repeat(2, 1fr); gap: 2.75rem 2rem; }
+}
+
+@media (max-width: 640px) {
+  .poems-gallery-section { padding: 0.5rem 1.25rem 4.5rem; }
+  .poems-gallery { grid-template-columns: 1fr; max-width: 480px; gap: 3rem; }
 }
 
 /* ── Library placeholder sections ────────────────────────
@@ -5945,11 +6173,11 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .col-pub-inner {
-  max-width: 1100px;
+  max-width: 1160px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: auto 1fr;
-  column-gap: 5rem;
+  column-gap: 3.75rem;
   align-items: center;
 }
 
@@ -5958,7 +6186,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .col-pub-cover__img {
-  width: 345px;
+  width: 375px;
   height: auto;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
   border-radius: 2px;
@@ -5993,7 +6221,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   color: rgba(250, 247, 242, 0.8);
   line-height: 1.75;
   margin: 0 0 1.1rem;
-  max-width: 62ch;
+  max-width: 70ch;
 }
 
 .col-pub-text p em {
@@ -6115,9 +6343,15 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   font-family: var(--serif);
   font-size: clamp(0.95rem, 1.25vw, 1.1rem);
   color: rgba(250, 247, 242, 0.75);
-  line-height: 1.78;
+  /* Widened from 64ch (~520px) — that per-paragraph cap, not the 760px
+     container, was the real source of the narrow/caption-like measure
+     Susan flagged. 720px reads as a calm editorial column rather than
+     a narrow strip, while still sitting inside the 680–760px desktop
+     range she asked for. Slightly taller line-height for the wider
+     line length. */
+  line-height: 1.85;
   margin: 0 0 1.25rem;
-  max-width: 64ch;
+  max-width: 720px;
 }
 
 .col-works-foundation__text .text-link {
@@ -6389,6 +6623,26 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   letter-spacing: 0.01em;
 }
 
+/* Forward group — used where a journey ends with two quiet onward
+   choices (return to the Path selection, or continue into the Figure
+   Edition) rather than a single auto-advance link. Same restrained
+   italic-serif language as .enc-forward; a thin centered dot separates
+   the two without competing with either. */
+.enc-forward-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+.enc-forward-group .enc-forward {
+  font-size: clamp(1.1rem, 1.9vw, 1.25rem);
+}
+.enc-forward-group__dot {
+  color: #b8ada0;
+  font-size: 1rem;
+}
+
 /* Body text inside the aside — scripture + contemplative line */
 .enc-aside__content p {
   font-family: Georgia, serif;
@@ -6396,6 +6650,24 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   letter-spacing: 0.01em;
   margin: 0 0 0.9rem;
   white-space: pre-line;
+}
+
+/* Observation / Reflection beats — the two quiet invitations that follow
+   the Scripture line. Labeled the same restrained way "home"/"forward"
+   are labeled: lowercase, italic, small. These are invitations to look
+   and to sit with what's there — never an explanation of what the
+   figure means. */
+.enc-aside__label {
+  font-family: Georgia, serif;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: #6b6258;
+  font-size: clamp(0.82rem, 1.3vw, 0.92rem);
+  margin: 0 0 0.2rem;
+}
+.enc-aside__content p.enc-aside__prompt {
+  font-size: clamp(0.92rem, 2.2vw, 1.02rem);
+  color: #4a443d;
 }
 
 /* Mobile — give text panel more room, tighten horizontal padding */
@@ -6880,4 +7152,130 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .edition-hero { padding: 5.5rem 1.5rem 2rem; }
   .edition-sheet-section { padding: 0 1.25rem 2.5rem; }
   .edition-actions { padding: 0 1.5rem 4.5rem; }
+}
+
+/* ── Gallery — June 2026 architecture revision ──────────────────────────
+   A curated, imagery-only presentation of the symbolic figures. Not a
+   reading room. Every card either closes with a quiet CTA forward (into
+   a Path or Figure Edition) or, for figures with neither yet, simply
+   "More to come" — present, without overpromising a journey that isn't
+   built. */
+
+.gal-hero {
+  background: var(--deep);
+  padding: 7rem 2rem 3.5rem;
+  text-align: center;
+}
+
+.gal-hero__inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.gal-hero .eyebrow {
+  justify-content: center;
+}
+
+.gal-hero h1 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  color: var(--cream);
+  margin: 0.6rem 0 1.1rem;
+  line-height: 1.2;
+}
+
+.gal-hero__sub {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.75;
+  color: rgba(250, 247, 242, 0.78);
+  margin: 0 auto;
+  max-width: 56ch;
+}
+
+.gal-grid-section {
+  background: var(--deep);
+  padding: 1rem 2rem 6rem;
+}
+
+.gal-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.25rem;
+}
+
+.gal-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(250, 247, 242, 0.04);
+  border: 1px solid rgba(250, 247, 242, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.gal-card:hover {
+  border-color: rgba(250, 247, 242, 0.22);
+  transform: translateY(-2px);
+}
+
+.gal-card__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.gal-card__body {
+  padding: 1.1rem 1.25rem 1.4rem;
+}
+
+.gal-card__name {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: var(--cream);
+  margin: 0 0 0.3rem;
+}
+
+.gal-card__caption {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(250, 247, 242, 0.65);
+  margin: 0 0 0.9rem;
+}
+
+.gal-card__cta {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.gal-card__cta:hover {
+  text-decoration: underline;
+}
+
+.gal-card__soon {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(250, 247, 242, 0.4);
+}
+
+@media (max-width: 640px) {
+  .gal-hero { padding: 6rem 1.5rem 3rem; }
+  .gal-grid-section { padding: 1rem 1.25rem 4.5rem; }
 }

@@ -1,0 +1,64 @@
+Encounter Notes — The Word
+
+Purpose
+
+This opening encounter introduces The Word as an invitation into
+language that shapes a life. The image should welcome every visitor
+before any explanation begins.
+
+Use the standard encounter layout established by journey-01-guide.
+
+Hero Image
+
+Use the supplied word-01-web image as the full-screen background.
+
+Preserve the quiet atmosphere. The book should remain understated. It
+represents the written word broadly—Scripture, poetry, wisdom,
+reflection, and truth. Avoid emphasizing it as a Bible through the
+composition. Let visitors discover that dimension through the page
+content.
+
+Section Label
+
+THE WORD
+
+Title
+
+The Word
+
+Opening Statement
+
+Some words do more than inform us. They quietly become the language by
+which we learn to see.
+
+Scripture
+
+“Your word is a lamp to my feet and a light to my path.”
+
+Psalm 119:105
+
+AwakenArts Echo
+
+(Select a brief AwakenArts excerpt that speaks of language, light,
+wisdom, truth, or becoming. Reference the source poem.)
+
+Layout
+
+Reproduce the typography, spacing, alignment, and visual hierarchy
+established by journey-01-guide.
+
+The image is primary. Typography should remain restrained, elegant, and
+secondary to the atmosphere.
+
+Scroll Cue
+
+SCROLL
+
+Intent
+
+The encounter begins with recognition, not instruction.
+
+The image should feel like a place where words have been lived before
+they are read. It invites the visitor into conversation rather than
+argument. Scripture, poetry, and reflection are presented as companions
+within a larger journey of recognition.

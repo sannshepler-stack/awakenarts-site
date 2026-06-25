@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
+import WayfindingBand from '@/components/WayfindingBand'
 import FooterSocial from '@/components/FooterSocial'
 import { editions } from '@/data/editions'
 
@@ -239,6 +240,8 @@ export default function CollectionPage() {
         </section>
 
       </main>
+
+      <WayfindingBand />
 
       <footer className="site-footer" aria-label="Site footer">
         <div className="footer-grid">

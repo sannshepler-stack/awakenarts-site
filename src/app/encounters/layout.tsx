@@ -1,28 +1,25 @@
 import type { Metadata } from 'next'
 
-// /encounters is the intro/threshold video that leads into the Mermaid
-// encounter. It's a transitional doorway, not a destination — so it's
-// deliberately NOT indexed. Search engines and AI tools should land
-// visitors on /encounters/mermaid (the actual encounter content) rather
-// than on a pre-roll video page.
+// Encounters architecture (2026-06-25): /encounters is now the primary
+// entrance into the symbolic language of AwakenArts in its own right —
+// not a transitional pre-roll in front of a single piece of content.
+// It's indexed, and its own page introduces the five encounters
+// (Journey, The Deep, The Table, The Word, Continue) directly.
 //
-// Important: index=false but follow=true. We still want crawlers to walk
-// through this page and discover the linked Mermaid encounter behind it.
-// (We also do NOT add /encounters to robots.ts disallow, because that
-// would block crawling entirely; noindex+follow is the right tool for a
-// transitional page.)
-//
-// Children layouts (mermaid, dragon, queen, vase) override this with
-// their own metadata.
+// The figure-tied routes set aside by this change (dragon, vase, queen,
+// butterfly, continuum, and the retired mermaid redirect) keep their own
+// noindex metadata / robots.ts disallow rules — see those files.
 
 export const metadata: Metadata = {
   title: 'Encounters — AwakenArts',
   description:
-    'Literary-symbolic passages shaped through image, atmosphere, and visual-poetic form — not explanations, but figures, thresholds, fragments, and narrative moments from the AwakenArts Collection.',
+    'Quiet doorways into the symbolic world of AwakenArts — image, language, Scripture, and a brief AwakenArts Echo. Journey, The Deep, The Table, The Word, Continue.',
   openGraph: {
-    title: 'AwakenArts — When Language Shapes a Path',
+    title: 'Encounters — AwakenArts',
+    description:
+      'Quiet doorways into the symbolic world of AwakenArts — image, language, Scripture, and a brief AwakenArts Echo.',
   },
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
 }
 
 export default function EncountersLayout({

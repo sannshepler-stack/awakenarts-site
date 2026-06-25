@@ -22,6 +22,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import JournalIndexItem from '@/components/journal/JournalIndexItem'
 import TerritoryNav from '@/components/journal/TerritoryNav'
+import WayfindingBand from '@/components/WayfindingBand'
 import {
   getAllCategorySlugs,
   getCategoryBySlug,
@@ -71,6 +72,7 @@ export default function JournalCategoryPage({ params }: CategoryPageProps) {
   const entries = getEntriesByCategory(category.slug)
 
   return (
+    <>
     <main className={styles.page}>
       {/* 1. Site nav — upper-left, standalone */}
       <div className={styles.topBar}>
@@ -127,5 +129,7 @@ export default function JournalCategoryPage({ params }: CategoryPageProps) {
         </p>
       </div>
     </main>
+    <WayfindingBand />
+    </>
   )
 }

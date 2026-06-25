@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import FooterSocial from '@/components/FooterSocial'
+import AtmosphericHeader from '@/components/AtmosphericHeader'
+import WayfindingBand from '@/components/WayfindingBand'
 import formPanelStyles from '@/components/forms/FormPanel.module.css'
 
 // The homepage explicitly sets its canonical to "/" so the trailing-slash
@@ -69,28 +71,28 @@ export default function HomePage() {
             <span>Shapes a Path</span>
           </h1>
 
-          <p className="hero-subline">
-            AwakenArts is an artistic body of work shaped through image
-            and language. The works express emotion and meaning in symbolic
-            form, where word and image reveal archetypal patterns of thought
-            and inward experience. Drawing from parable, allegory, and
-            figurative expression, the works invite awareness as they support
-            discussion, teaching, and exploration.
+          {/* Mission line — restates the AwakenArts USP directly beneath
+              the headline, echoed again on /encounters and in the Poems
+              preview section below. */}
+          <p className="hero-mission">
+            Discover symbolic language through image and poem.
           </p>
 
-          <Link href="#collection" className="hero-cta">
-            Learn More <span className="arrow" aria-hidden="true">→</span>
+          <p className="hero-subline">
+            AwakenArts brings image and poem together in symbolic forms
+            that invite recognition rather than explanation.
+          </p>
+
+          <Link href="/encounters" className="hero-cta">
+            Encounters <span className="arrow" aria-hidden="true">→</span>
           </Link>
 
           {/*
            * Secondary paths — quiet, understated, not button-like.
-           * Encounters repositioned as secondary experiential layer.
+           * Encounters is now the primary CTA above, so it's dropped
+           * here to avoid a duplicate link to the same destination.
            */}
           <nav className="hero-secondary" aria-label="Other paths">
-            <Link href="/encounters" className="hero-secondary-link">
-              Encounters
-            </Link>
-            <span className="hero-secondary-sep" aria-hidden="true">·</span>
             <Link href="/studio" className="hero-secondary-link">
               Studio
             </Link>
@@ -138,62 +140,81 @@ export default function HomePage() {
           <div className="home-coll-cover">
             <Image
               src="/images/collection/collection-cover-light.png"
-              alt="The Collection — An AwakenArts Resource & Guide"
-              width={300}
-              height={388}
+              alt="The Collection — a growing collection of symbolic works from AwakenArts"
+              width={390}
+              height={504}
               className="home-coll-cover__img"
               loading="lazy"
             />
           </div>
 
           <div className="home-coll-text">
-            <p className="eyebrow">Resource &amp; Guide</p>
+            <p className="eyebrow">Collection</p>
             <h2 id="home-coll-heading">The Collection</h2>
-            <p className="home-coll-sub">An AwakenArts Resource &amp; Guide</p>
+            <p className="home-coll-sub">A growing collection of symbolic works.</p>
             <p className="home-coll-body">
-              The Collection brings together the works, language, methods, and
-              resources developed through AwakenArts. Designed for reflection,
-              discussion, teaching, retreats, workshops, and personal
-              exploration, it provides practical ways to engage the language
-              of symbols through image and language.
+              The Collection brings together the symbolic works of AwakenArts
+              — each pairing image and poem to reveal meaning through symbolic
+              language. Together they form a growing body of encounters that
+              invite reflection, conversation, and deeper recognition.
             </p>
             <Link href="/collection" className="home-coll-cta">
-              Explore the Collection <span aria-hidden="true">→</span>
+              Collection <span aria-hidden="true">→</span>
             </Link>
           </div>
 
         </div>
       </section>
 
-      {/* ── OPENING STATEMENT ────────────────────────────────────
-          Section 3 — philosophical grounding after the Collection.
+      {/* ── BIBLICAL FOUNDATION ───────────────────────────────────
+          Section 3 — literary/theological grounding after the
+          Collection (revised 2026-06-25). Purpose: establish that
+          symbolic language is not an AwakenArts invention but an
+          enduring literary tradition Scripture itself already uses.
+          Grounding, not apologetics — literary, thoughtful, welcoming.
       ──────────────────────────────────────────────────────────── */}
-      <section className="hero-quote-section" aria-label="Opening statement">
+      <AtmosphericHeader
+        src="/images/headers/biblical-foundation.png"
+        alt="Sunrise over hills and a winding river, seen through a worn stone window — a threshold image."
+        flush
+      />
+      <section className="hero-quote-section hero-quote-section--headed" aria-label="Biblical foundation">
         <p className="hero-quote-text">
           &ldquo;He did not say anything to them without using a parable.&rdquo;
         </p>
         <p className="hero-quote-cite">Matthew 13:34</p>
         <p className="hero-quote-body">
-          From the Psalms and Proverbs to prophetic imagery and the
-          parables of Christ, biblical language repeatedly carries
-          meaning through symbol, metaphor, narrative, and visual form.
+          Throughout Scripture, truth is frequently communicated through
+          figurative language rather than direct explanation. The Psalms,
+          Proverbs, prophetic visions, and especially the parables of
+          Christ reveal meaning through image, metaphor, symbol, and
+          narrative.
         </p>
         <p className="hero-quote-body">
-          AwakenArts approaches image and language within that broader
-          literary tradition: works in which meaning arrives through
-          recognition rather than explanation.
+          AwakenArts intentionally works within this enduring literary
+          tradition, bringing image and poem together as symbolic forms
+          that invite recognition through attentive engagement rather
+          than explanation alone.
+        </p>
+        <p className="hero-quote-closing">
+          Symbolic language invites recognition before explanation.
         </p>
       </section>
 
-      {/* ── STUDIO PREVIEW ───────────────────────────────────────
-          Supporting destination. Queen Ann: the silhouette is the
-          poem — language taking visible shape, line by line.
+      {/* ── LANGUAGE MADE VISIBLE ─────────────────────────────────
+          Repurposed per Susan's "Preserve and Repurpose" directive
+          (2026-06-25): no longer a navigation destination pointing to
+          /studio — a contemplative pause that demonstrates, rather
+          than explains, the AwakenArts USP (recognizing symbolic
+          language through image and poem). Visitors stop, observe,
+          read, recognize, then continue naturally into the next
+          section. No CTA — the silhouette/poem pairing is the point.
       ──────────────────────────────────────────────────────────── */}
       <section className="studio-preview-section" aria-labelledby="studio-preview-heading">
         <div className="studio-preview-inner">
 
           <div className="studio-preview-header">
-            <p className="eyebrow">From the Collection</p>
+            <p className="eyebrow">Language Made Visible</p>
             <h2 id="studio-preview-heading">
               Language becomes<br />
               <em>a symbolic and visual form</em>
@@ -201,11 +222,10 @@ export default function HomePage() {
           </div>
 
           <p className="studio-preview-intro">
-            We live among symbols whether we notice them or not. Images
-            shape memory, stories organize identity, and language itself
-            can take visible form. AwakenArts explores these realities
-            through symbolic poetic forms and literary encounters that
-            reveal archetypal patterns of thought and inward experience.
+            In AwakenArts, language becomes image. The poem no longer
+            describes the figure — it becomes the figure. Reading and
+            seeing become one experience, inviting recognition through
+            both language and form.
           </p>
 
           {/* Queen Ann — silhouette alongside her concrete poetry form.
@@ -236,17 +256,10 @@ export default function HomePage() {
                 loading="lazy"
               />
               <p className="studio-ann-feature__caption">
-                The silhouette is the poem — language taking visible shape,
-                line by line.
+                The figure is written before it is read.
               </p>
             </div>
           </div>
-
-          <p className="studio-preview-cta">
-            <Link href="/studio" className="text-link">
-              Enter the Studio <span aria-hidden="true">→</span>
-            </Link>
-          </p>
 
         </div>
       </section>
@@ -254,26 +267,54 @@ export default function HomePage() {
       {/* ── SECTION 4: LIBRARY PREVIEW ───────────────────────────
           Companion readings — literary and symbolic, not explanatory.
           After Collection.
+
+          Threshold Header (2026-06-25, "Poetry Threshold Headers"
+          directive): introduces the relationship between image and
+          poem before the section's own typography begins — language
+          becoming form, the written page, craftsmanship, quiet
+          attention. This is the warm literary still-life (open
+          journal, pen, dried flowers, ceramic vase) Susan specified
+          for the homepage placement — an introduction to symbolic
+          language, not a presentation of the Editions themselves. No
+          overlaid text, per the standing Threshold Header rule.
       ──────────────────────────────────────────────────────────── */}
+      <AtmosphericHeader
+        src="/images/headers/poetry-page-1.png"
+        alt="An open journal with handwriting, a fountain pen, dried flowers, and a ceramic vase in warm golden light — language becoming form."
+        flush
+      />
+      {/* flush: .lib-preview-section already shares var(--cream) with no
+          section directly above using a different tone, and already
+          carries generous padding-top (6rem desktop) — the same
+          same-color-field pattern used for Biblical Foundation, so the
+          header's own margin-bottom is dropped to avoid exposing the
+          page's base background as a stray seam. */}
       <section className="lib-preview-section" aria-labelledby="lib-preview-heading">
         <div className="lib-preview-inner">
           <p className="eyebrow">Poems</p>
           <h2 id="lib-preview-heading">
-            Concrete poetry<br />
-            <em>grounded in image and symbol.</em>
+            Image and poem<br />
+            <em>become symbolic language.</em>
           </h2>
           <p className="lib-preview-body">
-            AwakenArts poetry works through figure and symbolic form —
-            language given visible shape through years of close attention
-            to image and meaning.
+            AwakenArts poems unite image and language in symbolic forms
+            that invite recognition rather than explanation. Each work
+            offers a glimpse into the language of symbol through carefully
+            paired visual and poetic expression.
           </p>
-          <p className="lib-preview-cta">
-            <Link href="/poems" className="text-link">
-              View the Poems <span aria-hidden="true">→</span>
-            </Link>
+          <p className="lib-preview-mission">
+            Discover symbolic language through image and poem.
           </p>
         </div>
       </section>
+
+      {/* ── WAYFINDING BAND ───────────────────────────────────────
+          Global Wayfinding Band Standard (2026-06-25): concludes the
+          homepage experience and invites the visitor to continue
+          elsewhere in the site. Replaces the former single "Explore
+          the Poems" CTA — the band itself is now that invitation.
+      ──────────────────────────────────────────────────────────── */}
+      <WayfindingBand />
 
       {/* ── FOOTER ─── */}
       <footer className="site-footer" id="about" aria-label="Site footer">

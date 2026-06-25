@@ -1,174 +1,113 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
-import { Cormorant_Garamond } from "next/font/google";
-import { getFirstEncounterPath } from "./sequence";
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["italic"],
-});
-
-const STEP_WORDS = ["Begin the Encounter"] as const;
-
-// ── TIMING ──────────────────────────────────────────────────────────
-// The intro video is 11.2 seconds long. The reveal phrase needs to
-// surface early enough that a visitor isn't left waiting in silence,
-// wondering whether anything is going to happen — it should arrive
-// while the video is still unfolding, not at its close.
+// Encounters — index (2026-06-25 "Begin New Encounter Architecture").
 //
-// REVEAL_AT_MS:  when the phrase begins fading in, measured from page load
-// FADE_MS:       how long the fade itself takes
+// Replaces the earlier "Choose a Path" video threshold, which opened onto
+// a list of figure-named Paths (Homeward Paths/Dragon/Bowls/Ballerina/
+// Poppy). Per Susan's directive, Encounters are no longer figure-tied or
+// built toward being completed teaching pages — they are atmospheric
+// points of entry into the symbolic world of AwakenArts, and this is now
+// the section's primary landing page.
 //
-// With the values below: fade starts at 4.5s and completes at 5.1s —
-// early enough to be discovered quickly, while still letting the
-// video establish its mood first. To tune, only change these two
-// numbers.
-// ────────────────────────────────────────────────────────────────────
-const REVEAL_AT_MS = 4500;
-const FADE_MS = 600;
+// The five encounters below are listed in the locked sequence: Journey,
+// The Deep, The Table, The Word, Continue. The figure-tied encounters
+// (Dragon, Bowls/Vase, Queen, Butterfly, and the prototype formerly at
+// /encounters/mermaid) are intentionally not linked here — set aside per
+// the directive, not deleted. See AwakenArts_Site_Architecture.md.
 
-// Slightly slower than natural speed — gives the opening a more
-// unhurried, contemplative pace without dragging.
-const PLAYBACK_RATE = 0.85;
+import Link from 'next/link'
+import WayfindingBand from '@/components/WayfindingBand'
+import { ExperienceNav } from './_shared/ExperienceNav'
+import styles from './encounters-index.module.css'
 
-export default function EncountersPage() {
-  const router = useRouter();
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  // step = 0 → "enter" hidden
-  // step = 1 → "enter" visible
-  // click after "enter" appears → navigate to mermaid
-  const [step, setStep] = useState(0);
+const ENCOUNTERS = [
+  {
+    slug: 'journey',
+    label: 'Encounter I',
+    title: 'Journey',
+    mantra: 'I begin.',
+    image: '/images/encounters/journey/journey-01-web.png',
+    position: 'center 38%',
+  },
+  {
+    slug: 'deep',
+    label: 'Encounter II',
+    title: 'The Deep',
+    mantra: 'I encounter.',
+    image: '/images/encounters/deep/deep-01-web.png',
+    position: 'center',
+  },
+  {
+    slug: 'table',
+    label: 'Encounter III',
+    title: 'The Table',
+    mantra: 'I receive.',
+    image: '/images/encounters/table/table-01-web.png',
+    position: 'center 62%',
+  },
+  {
+    slug: 'word',
+    label: 'Encounter IV',
+    title: 'The Word',
+    mantra: 'I listen.',
+    image: '/images/encounters/word/word-01-web.png',
+    position: 'center 55%',
+  },
+  {
+    slug: 'continue',
+    label: 'Encounter V',
+    title: 'Continue',
+    mantra: 'I walk on.',
+    image: '/images/encounters/continue/continue-01-web.png',
+    position: 'center 45%',
+  },
+] as const
 
-  // Single deterministic timer, started on mount. No dependence on
-  // video-element events for the primary reveal — those proved
-  // unreliable across browsers and dev/prod environments.
-  useEffect(() => {
-    const t = setTimeout(() => setStep(1), REVEAL_AT_MS);
-    return () => clearTimeout(t);
-  }, []);
-
-  // Slow the intro slightly for a more unhurried opening. Set on the
-  // element directly (no HTML attribute exists for playback rate),
-  // and re-applied on loadedmetadata in case the browser resets it.
-  const applyPlaybackRate = () => {
-    const v = videoRef.current;
-    if (v) v.playbackRate = PLAYBACK_RATE;
-  };
-
-  // Safety nets — if anything goes wrong with the video or the page
-  // sits longer than expected, still surface "enter" so the visitor
-  // is never stranded.
-  const handleVideoEnded = () => setStep(1);
-  const handleVideoError = () => setStep(1);
-
-  const handleAdvance = () => {
-    if (step === 0) return; // wait for "enter" to appear
-    if (step < STEP_WORDS.length) {
-      setStep((s) => s + 1);
-    } else {
-      router.push(getFirstEncounterPath());
-    }
-  };
-
+export default function EncountersIndexPage() {
   return (
-    <main
-      onClick={handleAdvance}
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "100vh",
-        overflow: "hidden",
-        background: "#000",
-        cursor: step >= 1 ? "pointer" : "default",
-      }}
-    >
-      <video
-        ref={videoRef}
-        src="/videos/intro.mp4"
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        onLoadedMetadata={applyPlaybackRate}
-        onPlay={applyPlaybackRate}
-        onEnded={handleVideoEnded}
-        onError={handleVideoError}
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          // A light, airy cream cast — gentle warmth without murk.
-          // Mostly a small sepia/saturation lift plus a touch of
-          // brightness, so the footage stays luminous rather than
-          // darkened or muddied.
-          filter: "sepia(0.12) saturate(1.05) brightness(1.06)",
-          pointerEvents: "none",
-        }}
-      />
-
-      {/* Soft cream wash layered over the video using "screen" —
-          lightens rather than darkens, lifting the image toward the
-          site's warm cream/gold palette without going murky. */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "rgba(250, 247, 242, 0.16)",
-          mixBlendMode: "screen",
-          pointerEvents: "none",
-        }}
-      />
-
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          color: "#fff",
-          textShadow: "0 2px 18px rgba(0,0,0,0.65)",
-          padding: "0 24px",
-          pointerEvents: "none",
-        }}
-      >
-        <div
-          className={cormorant.className}
-          style={{
-            color: "#fff",
-            fontStyle: "italic",
-            fontSize: "clamp(1.5rem, 4vw, 2.6rem)",
-            letterSpacing: "0.01em",
-            lineHeight: 1.25,
-            whiteSpace: "normal",
-            maxWidth: "90vw",
-          }}
-        >
-          {STEP_WORDS.map((word, i) => (
-            <span
-              key={word}
-              style={{
-                display: "inline-block",
-                opacity: step > i ? 1 : 0,
-                transform: step > i ? "translateY(0)" : "translateY(6px)",
-                transition:
-                  `opacity ${FADE_MS}ms ease, transform ${FADE_MS}ms ease`,
-                marginRight: i === STEP_WORDS.length - 1 ? 0 : "0.3em",
-              }}
-            >
-              {word}
-            </span>
-          ))}
-        </div>
+    <main className={styles.page}>
+      <div className={styles.intro}>
+        <Link href="/" className={styles.brand}>
+          AWAKENARTS
+        </Link>
+        <p className={styles.eyebrow}>Encounters</p>
+        <h1 className={styles.title}>Encounters</h1>
+        <p className={styles.statementPrimary}>
+          Discover symbolic language through image and poem.
+        </p>
+        <p className={styles.statementSecondary}>
+          Quiet doorways into the symbolic world of AwakenArts.
+        </p>
       </div>
+
+      <nav className={styles.grid} aria-label="Encounters">
+        {ENCOUNTERS.map((e) => (
+          <Link
+            key={e.slug}
+            href={`/encounters/${e.slug}`}
+            className={styles.card}
+            style={{ backgroundImage: `url('${e.image}')`, backgroundPosition: e.position }}
+          >
+            <div className={styles.cardScrim} />
+            <div className={styles.cardInner}>
+              <p className={styles.cardLabel}>{e.label}</p>
+              <p className={styles.cardTitle}>{e.title}</p>
+              <p className={styles.cardMantra}>{e.mantra}</p>
+            </div>
+          </Link>
+        ))}
+      </nav>
+
+      {/* Experience Navigation (Claude Directive "Experience Navigation
+          Refinement," 2026-06-25): belongs to the Encounter sequence
+          itself, not the site's global nav — no bar, no band, no box,
+          gold typography only, directly on the page's existing dark
+          background. No single stage is "current" on the index, so
+          nothing is highlighted here; each link still moves a visitor
+          straight into that stage. */}
+      <div className={styles.experienceNavWrap}>
+        <ExperienceNav />
+      </div>
+
+      <WayfindingBand />
     </main>
-  );
+  )
 }

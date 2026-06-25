@@ -97,6 +97,16 @@ export default function VaseEncounterPage() {
             {`“We have this treasure in earthen vessels.” — 2 Corinthians 4:7`}
           </p>
 
+          <p className="enc-aside__label">observation</p>
+          <p className="enc-aside__prompt">
+            Let your eyes stay here a moment longer. What do you notice first — and what do you notice only after?
+          </p>
+
+          <p className="enc-aside__label">reflection</p>
+          <p className="enc-aside__prompt">
+            There is nothing here to resolve. Stay with whatever rises, and let it be enough for now.
+          </p>
+
           <Link
             href={getNextEncounter("vase")}
             className={`${cormorant.className} enc-forward`}

@@ -14,7 +14,6 @@
  * encounter page's "forward" link.
  */
 export const ENCOUNTER_SEQUENCE = [
-  'mermaid',
   'dragon',
   'vase',
   'queen',

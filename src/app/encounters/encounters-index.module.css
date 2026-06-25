@@ -1,0 +1,160 @@
+/*
+ * Encounters index — the new primary entrance (replaces the old
+ * "Choose a Path" figure-selection video threshold). Quiet, atmospheric,
+ * minimal — an introduction, not a teaching page. See
+ * AwakenArts_Site_Architecture.md, "Encounters architecture (2026-06-25)."
+ */
+
+.page {
+  min-height: 100vh;
+  background: #0e1418;
+  color: #faf7f2;
+  padding: 6.5rem 1.6rem 5rem;
+}
+
+.intro {
+  max-width: 720px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.brand {
+  display: inline-block;
+  font-family: var(--enc-sans, inherit);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #faf7f2;
+  text-decoration: none;
+  margin-bottom: 2.4rem;
+}
+
+.eyebrow {
+  font-family: var(--enc-sans, inherit);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #d9b568;
+  margin: 0 0 1rem;
+}
+
+.title {
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7vw, 4rem);
+  letter-spacing: 0.01em;
+  margin: 0 0 1.3rem;
+  color: #faf7f2;
+}
+
+/* Primary statement — the USP line. Not italic, full cream contrast,
+   meaningfully larger than the line beneath it: this is the sentence a
+   visitor should read first and retain. Readability over atmosphere. */
+.statementPrimary {
+  font-style: normal;
+  font-weight: 500;
+  color: #faf7f2;
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  line-height: 1.5;
+  margin: 0 0 0.7rem;
+}
+
+/* Secondary line — quieter support copy, still legible at a glance. */
+.statementSecondary {
+  font-style: italic;
+  color: #ddd8cf;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 3 / 4;
+  border-radius: 3px;
+  overflow: hidden;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+.card:hover { transform: translateY(-3px); }
+
+.cardScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 12, 10, 0) 28%,
+    rgba(10, 12, 10, 0.88) 100%
+  );
+}
+
+.cardInner {
+  position: relative;
+  z-index: 2;
+  padding: 1.2rem 1.15rem 1.5rem;
+  text-align: left;
+}
+
+.cardLabel {
+  font-family: var(--enc-sans, inherit);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d9b568;
+  margin: 0 0 0.5rem;
+}
+
+.cardTitle {
+  font-weight: 500;
+  font-size: clamp(1.55rem, 2.3vw, 1.85rem);
+  line-height: 1.15;
+  color: #faf7f2;
+  margin: 0 0 0.4rem;
+}
+
+.cardMantra {
+  font-style: italic;
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  color: #faf7f2;
+  opacity: 0.92;
+  margin: 0;
+}
+
+/* Breathing room between the card grid and the Experience Navigation
+ * beneath it (Claude Directive "Experience Navigation Refinement,"
+ * 2026-06-25) — a reflective pause, not an immediate continuation. */
+.experienceNavWrap {
+  margin: 60px auto 0;
+  max-width: 1180px;
+  text-align: center;
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+  .card {
+    aspect-ratio: 16 / 10;
+  }
+}
