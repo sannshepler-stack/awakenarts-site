@@ -2,7 +2,57 @@
 
 *Living reference for the site's navigation and content structure. Last revised 2026-06-24 — governing direction, all open questions resolved.*
 
+*Governed by `AwakenArts_Editorial_Identity_and_Design_Standard.md` (locked 2026-06-25) — the imprint-wide identity document covering philosophy, brand identity, visual language, writing standards, and product standards across every AwakenArts product, not just the website. This document is the technical implementation reference for that identity as expressed in the Next.js site. Where the two disagree, the identity document wins.*
+
 AwakenArts is no longer organized as a collection of pages. It is organized around a guided experience.
+
+## Global Page Architecture Standard (locked 2026-06-25) — governing standard
+
+This is the publishing architecture of AwakenArts. Every primary page on the site inherits this structure automatically; it supersedes any nav/footer descriptions further down this document that predate it (e.g. the older "4-item nav" and Gallery references under "Encounters architecture" below are historical record, not current). Susan's words: *"Up to now, you've been designing pages. What you've just arrived at is the publishing architecture of AwakenArts. From this point forward, every new page Claude builds can inherit this framework automatically, which will make the entire site feel like one coherent literary work rather than a collection of individual pages."*
+
+**Guiding principle:** Visitors should always know where they are, where they can continue, and when they have reached the natural conclusion of a page. The structure should feel editorial rather than web-like. Navigation should never compete with the work — whenever possible, the work itself becomes the navigation. The site should feel like moving through chapters of a carefully designed book rather than browsing a conventional website.
+
+**Universal Page Structure** — every primary page follows this sequence:
+1. Global Header Navigation
+2. Optional Editorial Header Image (where appropriate)
+3. Page Title / Introduction
+4. Primary Page Content
+5. Global Wayfinding Band
+6. Standard Footer
+
+**Global Header Navigation** — the dark navigation at the top (unchanged): HOME (optional if the logo links home) · ENCOUNTERS · COLLECTION · POEMS · JOURNAL · ABOUT. Implemented in `src/components/Nav.tsx` — the AwakenArts wordmark already links home, so a separate HOME item isn't needed there.
+
+**Editorial Header Images** — function as visual thresholds, not decorative banners. Each prepares the visitor for what follows: Biblical Foundation → quiet landscape; Poetry → manuscript / written language; Collection → symbolic atmosphere; About → optional portrait or no header; Journal → contemplative atmosphere. Always restrained, never competing with page content, never with text embedded inside the image. (Site-wide rollout of this system is tracked separately — see "Still open / noted for later" / task backlog; Poetry's manuscript header is live, Collection/About/Journal headers are not yet built.)
+
+**Primary Content** — each page develops its own rhythm; the body of each page remains unique.
+
+**Global Wayfinding Band** — a permanent architectural element, cream/gold (not dark), appearing immediately above the footer on every major page. Universal site navigation only: HOME · ENCOUNTERS · COLLECTION · POEMS · JOURNAL · ABOUT. It is quiet, generously spaced, and answers one question: *the visitor has completed this page — where would they like to continue?* It is not a footer and not page-specific navigation. Implemented once in `src/components/WayfindingBand.tsx`, reused everywhere — single source of truth.
+
+**Standard Footer** — every page ends with the same footer: AwakenArts logo, short description, Explore links, About links, copyright. No page terminates without it; the footer communicates completion. Implemented once in `src/components/Footer.tsx` (built 2026-06-25, reusing the existing `FooterSocial` component for the social row), reused everywhere — single source of truth. As of this writing, every primary page (`/`, `/encounters` + all 5 encounter pages, `/collection`, `/poems`, `/journal`, `/journal/[category]`, `/about`) renders `<WayfindingBand />` immediately followed by `<Footer />`. Retired/unlinked pages (`/studio`, `/studio/silhouettes`, `/quotes`, `/gallery`) were deliberately left out of this pass since they're no longer reachable from primary nav.
+
+**Encounter Page Standard** — Encounters follow the same architecture with one distinction: Global Header Navigation → Encounter Introduction → Encounter Cards → generous breathing space → Global Wayfinding Band → Standard Footer. The cards themselves are the navigation. There is no parallel text-listing of the stages ("Encounter I · Encounter II · Encounter III...") — it would duplicate the cards, not scale as new encounters are added, and weaken the visual presentation. The cards already communicate the sequence (Journey / The Deep / The Table / The Word / Continue); future encounters simply become additional cards, and the architecture never changes. (The earlier `ExperienceNav` component that listed the stages as text has been removed entirely — deleted from the codebase, not just restyled — per this directive.)
+
+**Architectural principle, restated:** the visitor moves naturally through image, language, and symbol before making navigational decisions. Future pages should be built to inherit this structure from the start, not have it retrofitted afterward.
+
+## AwakenArts Global Design System (locked 2026-06-25) — rollout complete
+
+This is the technical implementation of Section 3 ("Visual Language") of `AwakenArts_Editorial_Identity_and_Design_Standard.md`. Six typographic roles, two structural standards, and one image philosophy now govern every primary page — established once as CSS custom properties in `src/app/globals.css` `:root`, referenced everywhere via `var(--token)`, never adjusted by eye page to page.
+
+**Typography tokens** — applied across all 8 primary pages (homepage, Encounters index + 5 detail pages, Collection, Poems, Journal index + category pages, About):
+- `--h1-size` / `--h1-weight` — every page title.
+- `--h2-size` / `--h2-weight` — every section title.
+- `--label-size` / `--label-weight` / `--label-tracking` — every gold category label (uppercase, sans-serif). Fixed one outlier in the process: Collection's `.col-hero__eyebrow` was gray, not gold — corrected to `var(--gold)`.
+- `--subtitle-size` / `--subtitle-line` — every gold/italic subtitle beneath a title. Fixed three outliers that weren't actually gold: Poems' `.lib-hero__sub` (was mist), Collection's `.col-hero__sub` (was navy), About's `.about-credentials` (was mid-gray) — all corrected to `var(--gold)`/`var(--gold-lt)` per the rule that subtitles are always gold.
+- `--body-size` / `--body-line` — every editorial paragraph, site-wide. This is a single fixed specification (no `clamp()`, no responsive font-size step-down) — previously ~20 rules ranged 0.95rem–1.2rem with their own per-page clamp curves; a stray mobile override on About's `.about-body` (which would have shrunk text below the standard) was removed.
+- `--link-size` / `--link-weight` / `--link-tracking` — every small uppercase link/CTA (`.hero-cta`, `.text-link`, `.poem-card__cta`, `.wordFormLink`, the Wayfinding Band's primary links). Serif/italic "read more" style links (`.home-coll-cta`, `.col-archive-cta__link`) are a deliberately distinct treatment, not converted — they're an editorial-prose link style, not the small-caps CTA role.
+
+**Text Width Standard** — three tiers only, applied to every paragraph's `max-width`: `--measure-narrow` (640px), `--measure-medium` (760px), `--measure-wide` (1100px). Previously 15+ px values and 12+ ch values were in use with no system; all converted to the nearest tier (most editorial paragraphs landed on Medium).
+
+**Vertical Rhythm Standard** — `--band-gap` / `--band-gap-md` / `--band-gap-sm` is the single value for "end of primary content → Global Wayfinding Band," applied identically on all 8 pages (see rollout detail in the now-superseded per-page band-gap tasks; this is the same token family referenced in Section 3 of the identity document).
+
+**Not yet converted (deliberately out of scope):** Encounters' poetry display text (`.scripture`, `.echo`) and reflective closing lines (`.closingLine`) keep their own sizing — they read as poetry, not paragraph prose, and Section 3's own principle ("consistency should never eliminate quietness... no page should feel mechanical") protects this distinction. Footer typography (heading/link/description hierarchy) was already standardized separately (see "Standard Footer" above) and is intentionally not part of this token set.
+
+**Image Standard** — documented in Section 5 of the identity document (five categories: atmospheric headers, edition covers, encounter cards/hero backgrounds, demonstration images, symbolic compositions). Not yet implemented as shared CSS rules — Encounters renders its images via CSS `background-image`, not `<img>`/`next/image`, which the identity document flags as a known constraint for any future automated, `object-fit`-based image pipeline. Site-wide Editorial Header Image rollout (Collection/About/Journal) remains separately tracked as open work.
 
 ## Encounters architecture (2026-06-25) — supersedes Path
 

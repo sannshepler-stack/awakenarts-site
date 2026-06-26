@@ -18,6 +18,7 @@ import Link from 'next/link'
 import Nav from '@/components/Nav'
 import TerritoryNav from '@/components/journal/TerritoryNav'
 import WayfindingBand from '@/components/WayfindingBand'
+import Footer from '@/components/Footer'
 import styles from './page.module.css'
 
 export default function JournalIndexPage() {
@@ -108,6 +109,7 @@ export default function JournalIndexPage() {
       </section>
 
       <WayfindingBand />
+      <Footer />
     </>
   )
 }

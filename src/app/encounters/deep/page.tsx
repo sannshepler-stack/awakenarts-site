@@ -46,7 +46,7 @@ export default function DeepEncounterPage() {
         <ScrollCue />
       </section>
 
-      <ClosingStrip line="From the deep, a table is being prepared." current="deep" />
+      <ClosingStrip line="From the deep, a table is being prepared." />
     </main>
   )
 }

@@ -52,10 +52,7 @@ export default function ContinueEncounterPage() {
         <ScrollCue href="#continue" />
       </section>
 
-      <ClosingStrip
-        line="Continue exploring these themes through the AwakenArts Collection."
-        current="continue"
-      />
+      <ClosingStrip line="Continue exploring these themes through the AwakenArts Collection." />
     </main>
   )
 }

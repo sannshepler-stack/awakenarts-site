@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'About — AwakenArts',
@@ -116,6 +117,7 @@ export default function AboutPage() {
       </div>
 
       <WayfindingBand />
+      <Footer />
     </>
   )
 }

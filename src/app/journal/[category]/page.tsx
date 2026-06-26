@@ -23,6 +23,7 @@ import { notFound } from 'next/navigation'
 import JournalIndexItem from '@/components/journal/JournalIndexItem'
 import TerritoryNav from '@/components/journal/TerritoryNav'
 import WayfindingBand from '@/components/WayfindingBand'
+import Footer from '@/components/Footer'
 import {
   getAllCategorySlugs,
   getCategoryBySlug,
@@ -130,6 +131,7 @@ export default function JournalCategoryPage({ params }: CategoryPageProps) {
       </div>
     </main>
     <WayfindingBand />
+    <Footer />
     </>
   )
 }

@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
-import FooterSocial from '@/components/FooterSocial'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
+import Footer from '@/components/Footer'
 import formPanelStyles from '@/components/forms/FormPanel.module.css'
 
 // The homepage explicitly sets its canonical to "/" so the trailing-slash
@@ -230,7 +230,12 @@ export default function HomePage() {
 
           {/* Queen Ann — silhouette alongside her concrete poetry form.
               mix-blend-mode: screen dissolves the dark fill so the
-              poem reads as clean white text against the navy field. */}
+              poem reads as clean white text against the navy field.
+              Name now sits once, centered above the whole pairing,
+              rather than as a per-image caption plus a closing line
+              beneath the poem (removed 2026-06-25 — Susan: the closing
+              line was adding wording at the bottom of the section). */}
+          <p className="studio-ann-feature__label">Queen Ann</p>
           <div className="studio-ann-feature">
             <div className="studio-ann-feature__panel">
               <figure className={formPanelStyles.panel}>
@@ -244,7 +249,6 @@ export default function HomePage() {
                     loading="lazy"
                   />
                 </div>
-                <figcaption className={formPanelStyles.name}>Queen Ann</figcaption>
               </figure>
             </div>
             <div className="studio-ann-feature__poem">
@@ -255,9 +259,6 @@ export default function HomePage() {
                 className="studio-ann-feature__poem-img"
                 loading="lazy"
               />
-              <p className="studio-ann-feature__caption">
-                The figure is written before it is read.
-              </p>
             </div>
           </div>
 
@@ -268,27 +269,16 @@ export default function HomePage() {
           Companion readings — literary and symbolic, not explanatory.
           After Collection.
 
-          Threshold Header (2026-06-25, "Poetry Threshold Headers"
-          directive): introduces the relationship between image and
-          poem before the section's own typography begins — language
-          becoming form, the written page, craftsmanship, quiet
-          attention. This is the warm literary still-life (open
-          journal, pen, dried flowers, ceramic vase) Susan specified
-          for the homepage placement — an introduction to symbolic
-          language, not a presentation of the Editions themselves. No
-          overlaid text, per the standing Threshold Header rule.
+          Threshold Header removed (2026-06-25, Susan: "clashing with
+          the queen ann section") — the manuscript header previously
+          sat here, directly beneath the Queen Ann feature above, and
+          read as a second competing image moment back-to-back with
+          it. .lib-preview-section's own padding-top (6rem desktop)
+          carries the gap in its place. The same manuscript image
+          remains the permanent threshold for the /poems page itself
+          — see src/app/poems/page.tsx — this change only removes its
+          homepage placement.
       ──────────────────────────────────────────────────────────── */}
-      <AtmosphericHeader
-        src="/images/headers/poetry-page-1.png"
-        alt="An open journal with handwriting, a fountain pen, dried flowers, and a ceramic vase in warm golden light — language becoming form."
-        flush
-      />
-      {/* flush: .lib-preview-section already shares var(--cream) with no
-          section directly above using a different tone, and already
-          carries generous padding-top (6rem desktop) — the same
-          same-color-field pattern used for Biblical Foundation, so the
-          header's own margin-bottom is dropped to avoid exposing the
-          page's base background as a stray seam. */}
       <section className="lib-preview-section" aria-labelledby="lib-preview-heading">
         <div className="lib-preview-inner">
           <p className="eyebrow">Poems</p>
@@ -315,57 +305,7 @@ export default function HomePage() {
           the Poems" CTA — the band itself is now that invitation.
       ──────────────────────────────────────────────────────────── */}
       <WayfindingBand />
-
-      {/* ── FOOTER ─── */}
-      <footer className="site-footer" id="about" aria-label="Site footer">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <Link href="/" aria-label="AwakenArts home">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/brand/logo-reversed.svg"
-                alt="AwakenArts"
-                className="footer-logo"
-                width={500}
-                height={170}
-                loading="lazy"
-              />
-            </Link>
-            <p>
-              An artistic body of work shaped through image and language.
-              The works express emotion and meaning in symbolic form, where
-              word and image reveal archetypal patterns of thought and
-              inward experience. By Susan Ann Shepler.
-            </p>
-            <FooterSocial />
-          </div>
-
-          <div className="footer-col">
-            <h4>Explore</h4>
-            <ul>
-              <li><Link href="/collection">The Collection</Link></li>
-              <li><Link href="/studio">Studio</Link></li>
-              <li><Link href="/poems">Poems</Link></li>
-              <li><Link href="/encounters">Encounters</Link></li>
-              <li><Link href="/journal">Journal</Link></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h4>About</h4>
-            <ul>
-              <li><Link href="/about">Formation &amp; Provenance</Link></li>
-              <li><Link href="/privacy">Privacy Policy</Link></li>
-              <li><Link href="/terms">Terms of Use</Link></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <span>© 2026 AwakenArts · awakenarts.com · All Rights Reserved</span>
-          <span>© Susan Ann Shepler · Confidential</span>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }

@@ -24,20 +24,22 @@
 }
 
 .eyebrow {
+  /* Gold category label — Global Design System (locked 2026-06-25). */
   display: inline-block;
   font-family: var(--sans);
-  font-size: 0.92rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
   text-transform: uppercase;
   color: var(--gold-lt);
   margin-bottom: 1.5rem;
 }
 
 .title {
+  /* H1 — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: var(--h1-weight);
+  font-size: var(--h1-size);
   line-height: 1.1;
   letter-spacing: 0.005em;
   color: var(--cream);
@@ -45,31 +47,34 @@
 }
 
 .lede {
+  /* Gold/italic subtitle + Medium measure — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
-  line-height: 1.75;
+  font-size: var(--subtitle-size);
+  line-height: var(--subtitle-line);
   color: var(--cream);
   margin: 0 auto 1.5rem;
-  max-width: 58ch;
+  max-width: var(--measure-medium);
 }
 
 .intro {
+  /* Body copy + Medium measure — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: 1.15rem;
-  line-height: 1.85;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   color: rgba(250, 247, 242, 0.9);
-  max-width: 60ch;
+  max-width: var(--measure-medium);
   margin: 0 auto 5rem;
 }
 
 /* ─── Territory label ────────────────────────────────────────────────────── */
 .territoriesLabel {
+  /* Gold category label — Global Design System (locked 2026-06-25). */
   font-family: var(--sans);
-  font-size: 0.92rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
   text-transform: uppercase;
   color: var(--gold-lt);
   margin-bottom: 1.5rem;
@@ -78,10 +83,12 @@
 
 /* ─── Editorial identity statement ──────────────────────────────────────── */
 .identityStatement {
+  /* Gold/italic subtitle — Global Design System (locked 2026-06-25). */
   margin-top: 3.5rem;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: var(--subtitle-size);
+  line-height: var(--subtitle-line);
   letter-spacing: 0.01em;
   color: var(--gold-lt);
 }
@@ -89,7 +96,11 @@
 /* ─── Word · Image · Form — cream section ───────────────────────────────── */
 .wordFormSection {
   background: #f5f0e8;
-  padding: 7rem 2rem 7rem;
+  /* Bottom value is the AwakenArts Vertical Rhythm Standard's
+     universal "content end -> Wayfinding Band" gap (--band-gap,
+     globals.css :root) — this is the last section on /journal before
+     <WayfindingBand />. */
+  padding: 7rem 2rem var(--band-gap);
   text-align: center;
   border-top: 1px solid #ddd8cf;
 }
@@ -100,20 +111,22 @@
 }
 
 .wordFormEyebrow {
+  /* Gold category label — Global Design System (locked 2026-06-25). */
   display: inline-block;
   font-family: var(--sans);
-  font-size: 0.92rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 1.5rem;
 }
 
 .wordFormHeading {
+  /* H2 — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1.9rem, 2.8vw, 2.6rem);
-  font-weight: 300;
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
   line-height: 1.25;
   color: var(--deep);
   margin: 0 0 2rem;
@@ -125,11 +138,12 @@
 }
 
 .wordFormBody {
+  /* Body copy + Medium measure — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: 1.15rem;
-  line-height: 1.9;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   color: var(--deep);
-  max-width: 64ch;
+  max-width: var(--measure-medium);
   margin: 0 auto 3rem;
 }
 
@@ -170,11 +184,12 @@
 }
 
 .wordFormLink {
+  /* Small link/CTA — Global Design System (locked 2026-06-25). */
   display: inline-block;
   font-family: var(--sans);
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: var(--link-size);
+  font-weight: var(--link-weight);
+  letter-spacing: var(--link-tracking);
   text-transform: uppercase;
   color: var(--deep);
   border-bottom: 2px solid rgba(28, 43, 58, 0.5);
@@ -199,7 +214,7 @@
 @media (max-width: 560px) {
   .page { padding: 6.5rem 1.25rem 4rem; }
   .intro { margin-bottom: 3.5rem; }
-  .wordFormSection { padding: 5rem 1.25rem 5rem; }
+  .wordFormSection { padding: 5rem 1.25rem var(--band-gap-sm); }
   .wordFormGrid { gap: 2rem; }
   .wordFormItem { width: min(200px, 80vw); }
 }

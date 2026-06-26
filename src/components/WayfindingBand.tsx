@@ -13,11 +13,17 @@ import styles from './WayfindingBand.module.css'
  * folded into the footer markup itself.
  *
  * Contains ONLY the primary site navigation:
- *   Encounters · Collection · Poems · Journal · About
+ *   Home · Encounters · Collection · Poems · Journal · About
  * No icons, no buttons, no explanatory copy, no secondary/contextual
  * navigation (the earlier per-Encounter prev/next row was removed in
  * this directive — visitors always return to the complete AwakenArts
  * navigation rather than being locked into a linear sequence).
+ *
+ * Home was added 2026-06-25 per the "Global Page Architecture
+ * Standard" directive. The header Nav omits a literal "Home" link
+ * because its wordmark already links home — but the band has no logo,
+ * so Home is listed explicitly here as one of the places a visitor may
+ * want to continue.
  *
  * Single reusable component, referenced identically by every page —
  * future changes to links, typography, or spacing happen once, here.
@@ -29,6 +35,7 @@ import styles from './WayfindingBand.module.css'
  */
 
 const PRIMARY_LINKS = [
+  { label: 'Home', href: '/' },
   { label: 'Encounters', href: '/encounters' },
   { label: 'Collection', href: '/collection' },
   { label: 'Poems', href: '/poems' },

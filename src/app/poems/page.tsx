@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
+import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
-import FooterSocial from '@/components/FooterSocial'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Poems — AwakenArts',
@@ -135,12 +136,20 @@ export default function PoemsPage() {
     <>
       <Nav />
 
-      {/* Threshold Header removed (2026-06-25, Susan: "The header isn't
-          working on the poetry page and you can delete it."). The
-          carved-stone "poetry" image is no longer used here; this
-          section now opens the page directly. See the dark-field note
-          on .lib-hero/.poems-gallery-section in globals.css for the
-          related background change made at the same time. */}
+      {/* Threshold Header (2026-06-25): the carved-stone "poetry" image
+          was removed earlier today ("The header isn't working on the
+          poetry page and you can delete it."). Susan has since asked
+          for the refined manuscript image — open handwritten pages,
+          warm gold haze, fountain pen reduced to an edge detail — to
+          become the *permanent* Poetry threshold, used here and on the
+          homepage Poems section (see src/app/page.tsx). Not flush: the
+          section below is now a dark field (#0e1418), not the shared
+          cream the `flush` prop assumes, so the header keeps its own
+          margin and a small cream gap separates image from section. */}
+      <AtmosphericHeader
+        src="/images/headers/poetry-manuscript.jpg"
+        alt="An open handwritten manuscript in warm golden light, dried flowers cast in shadow across the page, a fountain pen resting at the edge — language becoming form."
+      />
       <section className="lib-hero" aria-label="Poems">
         <div className="lib-hero__inner">
           <p className="eyebrow">Poems</p>
@@ -182,62 +191,7 @@ export default function PoemsPage() {
       </section>
 
       <WayfindingBand />
-
-      {/* ── FOOTER ── */}
-      <footer className="site-footer" aria-label="Site footer">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <Link href="/" aria-label="AwakenArts home">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/brand/logo-reversed.svg"
-                alt="AwakenArts"
-                className="footer-logo"
-                loading="lazy"
-              />
-            </Link>
-            <p>
-              An artistic body of work shaped through image and language.
-              The works express emotion and meaning in symbolic form, where
-              word and image reveal archetypal patterns of thought and
-              inward experience. By Susan Ann Shepler.
-            </p>
-            <FooterSocial />
-          </div>
-
-          <div className="footer-col">
-            <h4>Explore</h4>
-            <ul>
-              <li><Link href="/poems">Poems</Link></li>
-              <li><Link href="/encounters">Encounters</Link></li>
-              <li><Link href="/studio">Studio</Link></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h4>The Work</h4>
-            <ul>
-              <li><Link href="/encounters">Encounters</Link></li>
-              <li><Link href="/studio">Studio</Link></li>
-              <li><Link href="/journal">Journal</Link></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h4>About</h4>
-            <ul>
-              <li><Link href="/about">Formation &amp; Provenance</Link></li>
-              <li><Link href="/privacy">Privacy Policy</Link></li>
-              <li><Link href="/terms">Terms of Use</Link></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <span>© 2026 AwakenArts · awakenarts.com · All Rights Reserved</span>
-          <span>© Susan Ann Shepler · Confidential</span>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }

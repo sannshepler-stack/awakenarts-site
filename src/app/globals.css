@@ -24,6 +24,66 @@
   --enc-gold-lt:  #d9b568;
   --enc-cream:    #faf7f2;
   --enc-mist:     #ddd8cf;
+
+  /* AwakenArts Vertical Rhythm Standard (2026-06-25) — the one spacing
+     value used, site-wide, for "end of primary content -> Global
+     Wayfinding Band" on every major page. Do not hand-tune this gap
+     per page; every page's last content section should use this same
+     bottom-padding value (or one of its responsive tiers below) as the
+     space before the page's <WayfindingBand />. The Wayfinding Band's
+     own bottom-padding before the Footer is a separate, already-
+     universal value owned by .site-footer's top padding — see that
+     rule rather than duplicating a second variable here. */
+  --band-gap:    6rem; /* default / desktop */
+  --band-gap-md: 5rem; /* <=1024px */
+  --band-gap-sm: 4rem; /* <=640px */
+
+  /* AwakenArts Global Design System (locked 2026-06-25). One locked
+     value per typographic role, shared by every primary page. Color
+     stays contextual (navy on cream, cream/white on dark) — only
+     size, weight, family, letter-spacing, and line-height are
+     unified here. See AwakenArts_Site_Architecture.md, "AwakenArts
+     Global Design System," for the full rationale and inventory this
+     was built from. Do not introduce a page-specific font-size for
+     any of these five roles going forward — reference the token. */
+
+  /* H1 — primary page titles (one page per major section: homepage,
+     Collection, Encounters, Poems, Journal, About). 60-64px desktop. */
+  --h1-size: clamp(2.4rem, 5vw, 3.5rem);
+  --h1-weight: 400;
+
+  /* H2 — section titles. One size smaller than H1, always identical. */
+  --h2-size: clamp(1.9rem, 3.2vw, 2.5rem);
+  --h2-weight: 300;
+
+  /* Gold category label (eyebrow) — uppercase, sans, identical
+     tracking everywhere: COLLECTION / POEMS / ENCOUNTERS / etc. */
+  --label-size: 0.85rem;
+  --label-weight: 600;
+  --label-tracking: 0.18em;
+
+  /* Gold/italic subtitle — serif italic support line beneath a
+     title or label, identical size and line-height everywhere. */
+  --subtitle-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  --subtitle-line: 1.7;
+
+  /* Body copy — the single editorial paragraph specification.
+     1rem = 18px at this site's html font-size. */
+  --body-size: 1rem;
+  --body-line: 1.8;
+
+  /* Small links / CTAs — one size, one tracking, one underline. */
+  --link-size: 0.95rem;
+  --link-weight: 500;
+  --link-tracking: 0.08em;
+
+  /* Text Width Standard — three widths; no page invents a fourth.
+     Narrow: quotes, journal prompts, centered statements.
+     Medium: editorial introductions (Collection, Poems, About).
+     Wide: homepage hero, long explanations. */
+  --measure-narrow: 640px;
+  --measure-medium: 760px;
+  --measure-wide: 1100px;
 }
 
 /* ─────────────────────────────────────────────
@@ -49,13 +109,14 @@ a   { color: inherit; text-decoration: none; }
    UTILITIES
 ───────────────────────────────────────────── */
 .eyebrow {
+  /* Gold category label — Global Design System (locked 2026-06-25). */
   display: flex;
   align-items: center;
   gap: 1rem;
   font-family: var(--sans);
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: .10em;
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
   text-transform: uppercase;
   color: var(--gold);
 }
@@ -312,9 +373,11 @@ a   { color: inherit; text-decoration: none; }
 }
 
 .hero-tagline {
+  /* H1 — Global Design System (locked 2026-06-25): size/weight now
+     come from the shared --h1-size/--h1-weight tokens. */
   font-family: var(--serif);
-  font-size: clamp(2.6rem, 4.2vw, 3.8rem);
-  font-weight: 300;
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
   line-height: 1.1;
   letter-spacing: -.01em;
   color: var(--deep);
@@ -325,19 +388,21 @@ a   { color: inherit; text-decoration: none; }
    restating the AwakenArts USP in the gold register used for mission
    statements elsewhere on the site (see .lib-preview-mission). */
 .hero-mission {
+  /* Gold/italic subtitle — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
-  line-height: 1.6;
+  font-size: var(--subtitle-size);
+  line-height: var(--subtitle-line);
   color: var(--gold);
   margin: 0 0 1.25rem;
 }
 
 .hero-subline {
+  /* Body copy — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1.1rem, 1.55vw, 1.3rem);
+  font-size: var(--body-size);
   font-weight: 300;
-  line-height: 1.6;
+  line-height: var(--body-line);
   color: rgba(28, 43, 58, 0.82);
   margin: 0 0 1.5rem;
   letter-spacing: .01em;
@@ -355,13 +420,14 @@ a   { color: inherit; text-decoration: none; }
 
 /* Restrained gold CTA — quiet underline, no heavy effects. */
 .hero-cta {
+  /* Small link/CTA — Global Design System (locked 2026-06-25). */
   display: inline-flex;
   align-items: center;
   gap: .55rem;
   font-family: var(--sans);
-  font-size: .88rem;
-  font-weight: 500;
-  letter-spacing: .13em;
+  font-size: var(--link-size);
+  font-weight: var(--link-weight);
+  letter-spacing: var(--link-tracking);
   text-transform: uppercase;
   color: var(--gold);
   border: 0;
@@ -829,15 +895,11 @@ a   { color: inherit; text-decoration: none; }
 
 .hero-quote-body {
   font-family: var(--serif);
-  /* Widened from 640px and sized up slightly per the "Revise Biblical
-     Foundation Threshold Section" directive — the body copy column
-     now sits in the requested 680–760px range, with a touch more
-     size and line-height so it reads as calm editorial prose rather
-     than a narrow caption beneath the Scripture. */
-  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
-  line-height: 1.95;
+  /* Body copy + Medium measure — Global Design System (locked 2026-06-25). */
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   color: var(--mid);
-  max-width: 720px;
+  max-width: var(--measure-medium);
   margin: 0 auto 1.25rem;
 }
 
@@ -846,12 +908,13 @@ a   { color: inherit; text-decoration: none; }
    elsewhere on the homepage (.hero-mission, .lib-preview-mission).
    Reflective and confident, not instructional. */
 .hero-quote-closing {
+  /* Gold/italic subtitle — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
-  line-height: 1.7;
+  font-size: var(--subtitle-size);
+  line-height: var(--subtitle-line);
   color: var(--gold);
-  max-width: 720px; /* matches .hero-quote-body — one consistent column */
+  max-width: var(--measure-medium); /* matches .hero-quote-body — one consistent column */
   margin: 1.5rem auto 0;
 }
 
@@ -1631,9 +1694,6 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .hero-logo {
     height: 88px;
     margin-bottom: 1.75rem;
-  }
-  .hero-tagline {
-    font-size: clamp(1.9rem, 7vw, 2.6rem);
   }
   .hero-subline {
     font-size: clamp(1.05rem, 2.6vw, 1.2rem);
@@ -3681,17 +3741,47 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 /* ── Queen Ann feature — used on HOMEPAGE only (studio preview section).
    Two equal columns: FormPanel left, poetry image right.
    NOT used on the Studio page — see .studio-poems-row / .studio-panels-row. */
+/* Name now sits once, centered above the pairing (2026-06-25 — replaces
+   the old per-image figcaption + closing line beneath the poem). */
+.studio-ann-feature__label {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  color: var(--cream);
+  text-align: center;
+  margin: 0 0 2rem;
+}
+
 .studio-ann-feature {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
-  align-items: start;
-  /* 820px → 930px (~13%): both the figure image and the poem image fill
-     their column at 100% width, so widening the shared grid scales each
-     proportionally without altering the composition (Susan's 2026-06-25
-     "give the poem more presence" / "enlarge the image" feedback). */
-  max-width: 930px;
-  margin: 0 auto 6rem;
+  /* 4fr / 5fr (2026-06-25, "reduce the image ~10%, enlarge the poem
+     ~10-15%" directive) — was an even 1fr 1fr split; this shifts ~11%
+     of width from the image column to the poem column at desktop
+     widths. Single-column on mobile (see 640px breakpoint) isn't
+     affected by this ratio. */
+  grid-template-columns: 4fr 5fr;
+  gap: 3rem;
+  /* Centered, not top-aligned (2026-06-25, Susan: "not bottom aligned")
+     — the poem column runs taller than the image column, so aligning
+     both to the top left its extra height hanging off the bottom,
+     unbalanced. Centering distributes that height evenly above and
+     below instead. */
+  align-items: center;
+  /* 930px → 760px (~18%, Susan's 2026-06-25 "treat this as a finished
+     exhibition plate" directive): figure and poem image both fill their
+     column at 100% width, so narrowing the shared grid scales each down
+     together by the same proportion — the pairing shrinks as one piece,
+     not two independently resized images — while the unused width
+     becomes deliberate negative space within the 1100px section inner.
+     Gap scaled down to match (3.5rem → 3rem) so the two halves keep
+     reading as a single composition rather than drifting apart. */
+  max-width: 760px;
+  /* No bottom margin — this is the section's last element, so
+     .studio-preview-section's own padding-bottom carries the gap
+     below it (2026-06-25, de-stacking fix). */
+  margin: 0 auto;
 }
 
 /* Alternate layout — poem left, figure right */
@@ -3717,19 +3807,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   mix-blend-mode: screen;
 }
 
-.studio-ann-feature__caption {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
-  line-height: 1.7;
-  color: rgba(250, 247, 242, .55);
-  text-align: center;
-}
-
 @media (max-width: 1024px) {
   .studio-ann-feature {
-    gap: 2.5rem;
-    margin-bottom: 5rem;
+    gap: 2.25rem;
   }
 }
 
@@ -3737,8 +3817,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .studio-ann-feature {
     grid-template-columns: 1fr;
     max-width: 100%;
-    gap: 2rem;
-    margin-bottom: 4rem;
+    gap: 1.75rem;
   }
   .studio-ann-feature--reversed {
     direction: ltr;
@@ -3919,8 +3998,18 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    HOMEPAGE — STUDIO PREVIEW SECTION
 ───────────────────────────────────────────── */
 .studio-preview-section {
+  /* Padding tightened (2026-06-25, "fit more comfortably in the
+     vertical space" directive) — the section's own bottom padding
+     (7rem) was previously stacked on top of .studio-ann-feature's own
+     7.5rem bottom margin below, doubling up to ~14.5rem of dead air
+     below the caption. .studio-ann-feature's margin-bottom is now 0
+     (it's the section's last element); this padding alone carries the
+     gap. */
   background: var(--deep);
-  padding: 7rem 2rem 6rem;
+  /* Bottom nudged back up (2026-06-25) — with the closing line removed
+     beneath the poem, the figures now sit closer to the section's edge
+     and need a touch more breathing room below them. */
+  padding: 5.5rem 2rem 5.5rem;
   border-top: 1px solid rgba(201, 168, 76, .1);
 }
 
@@ -3931,7 +4020,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 .studio-preview-header {
   max-width: 820px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 3rem;
   text-align: center;
 }
 
@@ -3945,9 +4034,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .studio-preview-header h2 {
+  /* H2 — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1.9rem, 3vw, 2.8rem);
-  font-weight: 300;
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
   line-height: 1.2;
   color: var(--cream);
   margin: 0 0 1.25rem;
@@ -3960,7 +4050,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 .studio-preview-intro {
   max-width: 820px;
-  margin: 0 auto 3.5rem;
+  margin: 0 auto 3rem;
   font-family: var(--serif);
   font-size: clamp(1rem, 1.6vw, 1.15rem);
   font-style: italic;
@@ -4004,13 +4094,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 @media (max-width: 1024px) {
-  .studio-preview-section { padding: 6rem 1.75rem 5rem; }
+  .studio-preview-section { padding: 5rem 1.75rem 5rem; }
 }
 
 @media (max-width: 640px) {
-  .studio-preview-section { padding: 5rem 1.25rem 4rem; }
+  .studio-preview-section { padding: 4.5rem 1.25rem 4.5rem; }
   .studio-preview-panels--single { max-width: 320px; }
-  .studio-preview-header { margin-bottom: 3rem; }
+  .studio-preview-header { margin-bottom: 2.5rem; }
+  .studio-preview-intro { margin-bottom: 2.5rem; }
 }
 
 /* ─────────────────────────────────────────────
@@ -4018,7 +4109,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 ───────────────────────────────────────────── */
 .lib-preview-section {
   background: var(--cream);
-  padding: 6rem 2rem 5.5rem;
+  /* Bottom value is the Vertical Rhythm Standard's universal "content
+     end -> Wayfinding Band" gap (see --band-gap in :root) — this is
+     the last section on the homepage before <WayfindingBand />. */
+  padding: 6rem 2rem var(--band-gap);
   border-top: 1px solid var(--mist);
   text-align: center;
 }
@@ -4035,9 +4129,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .lib-preview-section .eyebrow::before { display: none; }
 
 .lib-preview-section h2 {
+  /* H2 — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1.9rem, 3vw, 2.8rem);
-  font-weight: 300;
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
   line-height: 1.2;
   color: var(--deep);
   margin: 0 0 1.25rem;
@@ -4054,11 +4149,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .lib-preview-body {
+  /* Body copy — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: 1.15rem;
-  line-height: 1.9;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   color: var(--deep);
-  max-width: 820px;
+  max-width: var(--measure-medium);
   margin: 0 auto 2.5rem;
 }
 
@@ -4076,10 +4172,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    beneath the section's own body copy. Comfortably readable, not a
    caption: same family/weight register as the scripture line above. */
 .lib-preview-mission {
+  /* Gold/italic subtitle — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-  line-height: 1.7;
+  font-size: var(--subtitle-size);
+  line-height: var(--subtitle-line);
   color: var(--gold);
   max-width: 56ch;
   margin: 0 auto 2.25rem;
@@ -4101,11 +4198,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 @media (max-width: 1024px) {
-  .lib-preview-section { padding: 5.5rem 1.75rem 5rem; }
+  .lib-preview-section { padding: 5.5rem 1.75rem var(--band-gap-md); }
 }
 
 @media (max-width: 640px) {
-  .lib-preview-section { padding: 5rem 1.25rem 4.5rem; }
+  .lib-preview-section { padding: 5rem 1.25rem var(--band-gap-sm); }
 }
 
 /* ─────────────────────────────────────────────
@@ -4214,9 +4311,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .home-coll-text .eyebrow { margin-bottom: 0.5rem; }
 
 .home-coll-text h2 {
+  /* H2 — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(2.1rem, 3.7vw, 3.4rem);
-  font-weight: 300;
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
   letter-spacing: 0.04em;
   color: var(--deep);
   margin: 0 0 0.5rem;
@@ -4224,8 +4322,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .home-coll-sub {
+  /* Gold/italic subtitle — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+  font-size: var(--subtitle-size);
   font-style: italic;
   color: var(--gold);
   margin: 0 0 1.75rem;
@@ -4233,12 +4332,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .home-coll-body {
+  /* Body copy + Medium measure — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
-  line-height: 1.85;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   color: rgba(28, 43, 58, 0.72);
   margin: 0 0 2.25rem;
-  max-width: 52ch;
+  max-width: var(--measure-medium);
 }
 
 .home-coll-cta {
@@ -4354,10 +4454,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    Bumped from .8rem (readability pass, 2026-06-25) — a navigation
    link should be clearly legible, not just decoratively uppercase. */
 .text-link {
+  /* Small link/CTA — Global Design System (locked 2026-06-25). */
   font-family: var(--sans);
-  font-size: .95rem;
-  font-weight: 500;
-  letter-spacing: .1em;
+  font-size: var(--link-size);
+  font-weight: var(--link-weight);
+  letter-spacing: var(--link-tracking);
   text-transform: uppercase;
   color: var(--gold);
   border-bottom: 1px solid rgba(139, 105, 20, 0.45);
@@ -5287,9 +5388,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .lib-hero h1 {
+  /* H1 — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--h1-weight);
+  font-size: var(--h1-size);
   line-height: 1.2;
   color: #faf7f2;
   margin: 0 0 1.5rem;
@@ -5301,11 +5403,13 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .lib-hero__sub {
+  /* Gold/italic subtitle — Global Design System (locked 2026-06-25):
+     was mist/gray; subtitles are always gold (gold-lt on dark). */
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
-  color: #ddd8cf;
-  line-height: 1.9;
+  font-size: var(--subtitle-size);
+  color: var(--gold-lt);
+  line-height: var(--subtitle-line);
   max-width: 62ch;
   margin: 0 auto;
 }
@@ -5427,7 +5531,11 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 ─────────────────────────────────────────────────────────── */
 .poems-gallery-section {
   background: #0e1418;
-  padding: 1rem 2rem 6rem;
+  /* Bottom value is the AwakenArts Vertical Rhythm Standard's
+     universal "content end -> Wayfinding Band" gap (--band-gap,
+     globals.css :root) — this is the last section on /poems before
+     <WayfindingBand />. */
+  padding: 1rem 2rem var(--band-gap);
 }
 
 .poems-gallery {
@@ -5522,10 +5630,11 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .poem-card__excerpt p::after { content: '\201D'; color: var(--gold-lt); }
 
 .poem-card__cta {
+  /* Small link/CTA — Global Design System (locked 2026-06-25). */
   font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-size: var(--link-size);
+  font-weight: var(--link-weight);
+  letter-spacing: var(--link-tracking);
   text-transform: uppercase;
   color: var(--gold-lt);
   text-decoration: none;
@@ -5544,7 +5653,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 @media (max-width: 640px) {
-  .poems-gallery-section { padding: 0.5rem 1.25rem 4.5rem; }
+  .poems-gallery-section { padding: 0.5rem 1.25rem var(--band-gap-sm); }
   .poems-gallery { grid-template-columns: 1fr; max-width: 480px; gap: 3rem; }
 }
 
@@ -5588,38 +5697,45 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .col-hero__eyebrow {
+  /* Gold category label — Global Design System (locked 2026-06-25):
+     was gray (var(--mid)); category labels are always gold. */
   font-family: var(--sans);
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
   text-transform: uppercase;
-  color: var(--mid);
+  color: var(--gold);
   margin: 0;
 }
 
 .col-hero__title {
+  /* H1 — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(2.2rem, 6vw, 4.2rem);
-  font-weight: 400;
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
   line-height: 1.1;
   color: var(--deep);
   margin: 0;
 }
 
 .col-hero__sub {
+  /* Gold/italic subtitle — Global Design System (locked 2026-06-25):
+     was navy; subtitles are always gold. */
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
-  color: var(--deep);
+  font-size: var(--subtitle-size);
+  color: var(--gold);
   margin: 0;
-  line-height: 1.4;
+  line-height: var(--subtitle-line);
 }
 
 .col-hero__body {
+  /* Body copy + Narrow measure — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  font-size: var(--body-size);
   color: var(--mid);
-  line-height: 1.7;
-  max-width: 640px;
+  line-height: var(--body-line);
+  max-width: var(--measure-narrow);
   margin: 1rem auto 0;
 }
 
@@ -6201,9 +6317,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .col-pub-text h2 {
+  /* H2 — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  font-weight: 300;
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
   letter-spacing: 0.03em;
   color: var(--cream);
   margin: 0.75rem 0 1.5rem;
@@ -6216,12 +6333,13 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .col-pub-text p {
+  /* Body copy + Medium measure — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-size: var(--body-size);
   color: rgba(250, 247, 242, 0.8);
-  line-height: 1.75;
+  line-height: var(--body-line);
   margin: 0 0 1.1rem;
-  max-width: 70ch;
+  max-width: var(--measure-medium);
 }
 
 .col-pub-text p em {
@@ -6246,9 +6364,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .col-uses-header h2 {
+  /* H2 — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  font-weight: 300;
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
   letter-spacing: 0.03em;
   color: var(--deep);
   margin: 0.75rem 0 1.25rem;
@@ -6256,12 +6375,13 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .col-uses-intro {
+  /* Body copy + Medium measure — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-size: var(--body-size);
   color: rgba(28, 43, 58, 0.75);
-  line-height: 1.75;
+  line-height: var(--body-line);
   margin: 0;
-  max-width: 66ch;
+  max-width: var(--measure-medium);
 }
 
 /* Method line */
@@ -6326,9 +6446,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .col-works-foundation__text h2 {
+  /* H2 — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
-  font-weight: 300;
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
   letter-spacing: 0.03em;
   color: var(--cream);
   margin: 0.75rem 0 1.5rem;
@@ -6340,18 +6461,13 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .col-works-foundation__text p {
+  /* Body copy + Medium measure — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+  font-size: var(--body-size);
   color: rgba(250, 247, 242, 0.75);
-  /* Widened from 64ch (~520px) — that per-paragraph cap, not the 760px
-     container, was the real source of the narrow/caption-like measure
-     Susan flagged. 720px reads as a calm editorial column rather than
-     a narrow strip, while still sitting inside the 680–760px desktop
-     range she asked for. Slightly taller line-height for the wider
-     line length. */
-  line-height: 1.85;
+  line-height: var(--body-line);
   margin: 0 0 1.25rem;
-  max-width: 720px;
+  max-width: var(--measure-medium);
 }
 
 .col-works-foundation__text .text-link {
@@ -6464,9 +6580,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .col-editions__header h2 {
+  /* H2 — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  font-weight: 300;
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
   letter-spacing: 0.03em;
   color: var(--deep);
   margin: 0.75rem 0 0;
@@ -6528,7 +6645,11 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .col-archive-cta {
-  padding: 5rem 2rem 8rem;
+  /* Bottom value is the AwakenArts Vertical Rhythm Standard's
+     universal "content end -> Wayfinding Band" gap (--band-gap,
+     globals.css :root) — this is the last section on /collection
+     before <WayfindingBand />. */
+  padding: 5rem 2rem var(--band-gap);
   background: var(--cream);
   text-align: center;
   border-top: 1px solid rgba(28, 43, 58, 0.07);
@@ -6553,7 +6674,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 @media (max-width: 640px) {
   .col-archive-statement { padding: 4rem 1.5rem 3.5rem; }
-  .col-archive-cta { padding: 3.5rem 1.5rem 6rem; }
+  .col-archive-cta { padding: 3.5rem 1.5rem var(--band-gap-sm); }
 }
 
 /* ── Shared encounter page layout ────────────────────────────
@@ -6949,7 +7070,11 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .about-main {
   max-width: 820px;
   margin: 0 auto;
-  padding: 7rem 3rem 9rem;
+  /* Bottom value is the AwakenArts Vertical Rhythm Standard's
+     universal "content end -> Wayfinding Band" gap (--band-gap,
+     globals.css :root) — this is the last section on /about before
+     <WayfindingBand />. */
+  padding: 7rem 3rem var(--band-gap);
 }
 
 /* ── Opening — float-based portrait ─────────────────────────
@@ -6970,35 +7095,37 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .about-h1 {
+  /* H1 — Global Design System (locked 2026-06-25). */
   font-family: var(--serif);
-  font-size: clamp(1.75rem, 3vw, 2.3rem);
-  font-weight: 400;
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
   color: var(--deep);
   margin: 0.4rem 0 0.5rem;
   line-height: 1.1;
 }
 
 .about-credentials {
+  /* Gold/italic subtitle — Global Design System (locked 2026-06-25):
+     was mid-gray; subtitles are always gold. */
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.05rem;
-  color: var(--mid);
-  line-height: 1.65;
+  font-size: var(--subtitle-size);
+  color: var(--gold);
+  line-height: var(--subtitle-line);
   margin: 0 0 2rem;
 }
 
-/* ── Body copy — consistent throughout ── */
+/* ── Body copy — Global Design System (locked 2026-06-25) ── */
 .about-body {
   font-family: var(--serif);
-  font-size: 1.2rem;
-  line-height: 1.95;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   color: var(--ink);
   margin: 0 0 1.75rem;
 }
 
 .about-body--quiet {
   color: var(--mid);
-  font-size: 1.05rem;
   margin-top: 2.5rem;
 }
 
@@ -7050,8 +7177,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 @media (max-width: 640px) {
-  .about-main { padding: 4.5rem 1.5rem 6rem; }
-  .about-body { font-size: 1.1rem; }
+  .about-main { padding: 4.5rem 1.5rem var(--band-gap-sm); }
+  /* .about-body font-size override removed — Global Design System body
+     copy (--body-size) is one fixed specification, not adjusted by
+     breakpoint (locked 2026-06-25). */
 }
 
 /* ─────────────────────────────────────────────

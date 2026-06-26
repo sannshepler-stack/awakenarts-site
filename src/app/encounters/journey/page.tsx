@@ -41,7 +41,7 @@ export default function JourneyEncounterPage() {
         <ScrollCue />
       </section>
 
-      <ClosingStrip line="The path continues into stiller water." current="journey" />
+      <ClosingStrip line="The path continues into stiller water." />
     </main>
   )
 }

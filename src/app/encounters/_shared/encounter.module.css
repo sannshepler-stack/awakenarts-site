@@ -79,10 +79,11 @@
 
 /* eyebrow: constant "ENCOUNTERS" label, rule-diamond-rule beneath */
 .encLabel {
+  /* Gold category label — Global Design System (locked 2026-06-25). */
   font-family: var(--enc-sans);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
   text-transform: uppercase;
   margin: 0;
   color: var(--enc-gold-lt);
@@ -111,10 +112,14 @@
 }
 
 .title {
+  /* H1 — Global Design System (locked 2026-06-25): size/weight now
+     match the shared --h1-size/--h1-weight tokens used everywhere
+     else; uppercase treatment is kept as this page's own styling
+     choice (a text-transform, not a size deviation). */
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--h1-weight);
   text-transform: uppercase;
-  font-size: clamp(2.8rem, 8vw, 5rem);
+  font-size: var(--h1-size);
   letter-spacing: 0.03em;
   line-height: 1;
   margin: 0.75rem 0 1.1rem;
@@ -122,9 +127,10 @@
 }
 
 .line {
+  /* Gold/italic subtitle — Global Design System (locked 2026-06-25). */
   font-style: italic;
-  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
-  line-height: 1.55;
+  font-size: var(--subtitle-size);
+  line-height: var(--subtitle-line);
   margin: 0;
   color: var(--enc-gold-lt);
 }
@@ -204,8 +210,18 @@
    encounter (per "Future Growth"). */
 .closingStrip {
   background: #11181d;
-  padding: 3.8rem 1.6rem 4.4rem;
+  /* Bottom value is the AwakenArts Vertical Rhythm Standard's
+     universal "content end -> Wayfinding Band" gap (--band-gap,
+     globals.css :root) — this strip is the last content on every
+     individual encounter page before <WayfindingBand />. */
+  padding: 3.8rem 1.6rem var(--band-gap);
   text-align: center;
+}
+
+@media (max-width: 640px) {
+  .closingStrip {
+    padding-bottom: var(--band-gap-sm);
+  }
 }
 .closingLine {
   font-style: italic;
@@ -214,57 +230,6 @@
   line-height: 1.6;
   margin: 0 0 1.6rem;
 }
-/* Breathing room above the Experience Navigation — per the directive's
- * 48–72px range, this reads as a reflective pause rather than an
- * immediate continuation of the closing line above it. */
-.experienceNavWrap {
-  margin-top: 60px;
-}
-
-/* Experience Navigation — Claude Directive "Experience Navigation
- * Refinement" (2026-06-25). No background, no box, no border, no
- * divider lines beyond the inline "·" separators themselves. Gold
- * typography only, centered, sitting directly on the page's existing
- * dark background (.closingStrip on individual pages, .page on the
- * index) — a chapter guide, not a navigation bar. */
-.experienceNav {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  font-family: var(--enc-sans);
-  font-size: clamp(0.82rem, 1.3vw, 0.92rem);
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.experienceNavItem {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.5rem;
-}
-.experienceNavSep {
-  color: var(--enc-gold-lt);
-  opacity: 0.45;
-}
-.experienceNavLink {
-  color: var(--enc-gold-lt);
-  opacity: 0.62;
-  text-decoration: none;
-  transition: opacity 0.25s ease, color 0.25s ease;
-}
-.experienceNavLink:hover {
-  opacity: 0.9;
-}
-.experienceNavLinkCurrent {
-  color: var(--enc-gold-lt);
-  opacity: 1;
-  text-decoration: underline;
-  text-decoration-color: rgba(217, 181, 104, 0.55);
-  text-underline-offset: 0.3em;
-}
-
 /* Responsive — collapse to centered layout on narrow viewports */
 @media (max-width: 720px) {
   .hero {

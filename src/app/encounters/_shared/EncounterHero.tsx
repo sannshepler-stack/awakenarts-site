@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
 import WayfindingBand from '@/components/WayfindingBand'
-import { ExperienceNav, type ExperienceStageSlug } from './ExperienceNav'
+import Footer from '@/components/Footer'
 import styles from './encounter.module.css'
 
 // Shared chrome/typography for every Encounters page. See
@@ -54,33 +54,25 @@ export function ScrollCue({ href = '#continue' }: { href?: string }) {
   )
 }
 
-export function ClosingStrip({
-  line,
-  current,
-}: {
-  line: string
-  /** Slug of the encounter being viewed, so its stage highlights in the
-   *  Experience Navigation below. */
-  current?: ExperienceStageSlug
-}) {
-  // The reflective closing line belongs to the encounter itself and
-  // sits on the same dark background as the Experience Navigation
-  // beneath it (Claude Directive "Experience Navigation Refinement,"
-  // 2026-06-25) — that navigation is part of the Encounter's own
-  // sequence, not the site's global nav, so it lives here rather than
-  // in a separate band. The global Wayfinding Band follows after
-  // generous breathing room, carrying only the permanent site nav —
-  // visitors always return to the complete AwakenArts navigation
-  // rather than being locked into a linear sequence.
+export function ClosingStrip({ line }: { line: string }) {
+  // Per Susan's "Global Page Architecture Standard" directive
+  // (2026-06-25): the per-stage text navigation ("Encounter I ·
+  // Journey · Encounter II · The Deep · ...") that used to sit below
+  // the reflective line has been removed entirely, not just
+  // de-numbered — "Do not duplicate navigation by listing Encounter
+  // I/II/III... This text navigation should be removed... the cards
+  // already communicate [the sequence]." The cards on /encounters are
+  // the navigation; an individual Encounter page goes straight from
+  // its own reflective closing line to the global Wayfinding Band,
+  // then the Standard Footer — same architecture every primary page
+  // shares.
   return (
     <>
       <section id="continue" className={styles.closingStrip}>
         <p className={`${cormorant.className} ${styles.closingLine}`}>{line}</p>
-        <div className={styles.experienceNavWrap}>
-          <ExperienceNav current={current} />
-        </div>
       </section>
       <WayfindingBand />
+      <Footer />
     </>
   )
 }

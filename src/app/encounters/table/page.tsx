@@ -51,7 +51,7 @@ export default function TableEncounterPage() {
         <ScrollCue />
       </section>
 
-      <ClosingStrip line="Welcome is followed by listening." current="table" />
+      <ClosingStrip line="Welcome is followed by listening." />
     </main>
   )
 }

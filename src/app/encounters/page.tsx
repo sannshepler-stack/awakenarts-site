@@ -15,13 +15,16 @@
 
 import Link from 'next/link'
 import WayfindingBand from '@/components/WayfindingBand'
-import { ExperienceNav } from './_shared/ExperienceNav'
+import Footer from '@/components/Footer'
 import styles from './encounters-index.module.css'
 
+// Card kickers ("Encounter I", "Encounter II"...) were removed 2026-06-25
+// per Susan: no numbering, no repeating the word "Encounter" — the
+// sequence should read by title alone, and stay clean as more
+// encounters are added later.
 const ENCOUNTERS = [
   {
     slug: 'journey',
-    label: 'Encounter I',
     title: 'Journey',
     mantra: 'I begin.',
     image: '/images/encounters/journey/journey-01-web.png',
@@ -29,7 +32,6 @@ const ENCOUNTERS = [
   },
   {
     slug: 'deep',
-    label: 'Encounter II',
     title: 'The Deep',
     mantra: 'I encounter.',
     image: '/images/encounters/deep/deep-01-web.png',
@@ -37,7 +39,6 @@ const ENCOUNTERS = [
   },
   {
     slug: 'table',
-    label: 'Encounter III',
     title: 'The Table',
     mantra: 'I receive.',
     image: '/images/encounters/table/table-01-web.png',
@@ -45,7 +46,6 @@ const ENCOUNTERS = [
   },
   {
     slug: 'word',
-    label: 'Encounter IV',
     title: 'The Word',
     mantra: 'I listen.',
     image: '/images/encounters/word/word-01-web.png',
@@ -53,7 +53,6 @@ const ENCOUNTERS = [
   },
   {
     slug: 'continue',
-    label: 'Encounter V',
     title: 'Continue',
     mantra: 'I walk on.',
     image: '/images/encounters/continue/continue-01-web.png',
@@ -88,7 +87,6 @@ export default function EncountersIndexPage() {
           >
             <div className={styles.cardScrim} />
             <div className={styles.cardInner}>
-              <p className={styles.cardLabel}>{e.label}</p>
               <p className={styles.cardTitle}>{e.title}</p>
               <p className={styles.cardMantra}>{e.mantra}</p>
             </div>
@@ -96,18 +94,17 @@ export default function EncountersIndexPage() {
         ))}
       </nav>
 
-      {/* Experience Navigation (Claude Directive "Experience Navigation
-          Refinement," 2026-06-25): belongs to the Encounter sequence
-          itself, not the site's global nav — no bar, no band, no box,
-          gold typography only, directly on the page's existing dark
-          background. No single stage is "current" on the index, so
-          nothing is highlighted here; each link still moves a visitor
-          straight into that stage. */}
-      <div className={styles.experienceNavWrap}>
-        <ExperienceNav />
-      </div>
-
+      {/* Per Susan's "Global Page Architecture Standard" directive
+          (2026-06-25): the text navigation that used to sit below the
+          card grid ("Encounter I · Journey · Encounter II · The Deep ·
+          ...") has been removed entirely, not just de-numbered — "Do
+          not duplicate navigation by listing Encounter I/II/III...
+          This text navigation should be removed... the cards already
+          communicate [the sequence]." The cards are the navigation;
+          generous breathing space now leads straight from the grid
+          into the global Wayfinding Band, then the Standard Footer. */}
       <WayfindingBand />
+      <Footer />
     </main>
   )
 }

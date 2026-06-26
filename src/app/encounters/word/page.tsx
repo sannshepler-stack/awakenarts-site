@@ -53,7 +53,7 @@ export default function WordEncounterPage() {
         <ScrollCue />
       </section>
 
-      <ClosingStrip line="The word heard becomes a way to walk." current="word" />
+      <ClosingStrip line="The word heard becomes a way to walk." />
     </main>
   )
 }
