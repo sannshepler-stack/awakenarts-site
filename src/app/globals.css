@@ -3756,12 +3756,15 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 .studio-ann-feature {
   display: grid;
-  /* 4fr / 5fr (2026-06-25, "reduce the image ~10%, enlarge the poem
-     ~10-15%" directive) — was an even 1fr 1fr split; this shifts ~11%
-     of width from the image column to the poem column at desktop
-     widths. Single-column on mobile (see 640px breakpoint) isn't
-     affected by this ratio. */
-  grid-template-columns: 4fr 5fr;
+  /* 20fr / 21fr at max-width 795px (2026-06-25, "the [image] is more
+     substantial [good] — enlarge the poem ~10% too" directive). The
+     image column's absolute width is held essentially unchanged from
+     the prior 21fr/20fr-at-760px pass (~364px either way) — only the
+     poem column grows, and the container's max-width was widened
+     (760px -> 795px) to give it the room to do that without taking
+     space back from the image. Single-column on mobile (see 640px
+     breakpoint) isn't affected by this ratio. */
+  grid-template-columns: 20fr 21fr;
   gap: 3rem;
   /* Centered, not top-aligned (2026-06-25, Susan: "not bottom aligned")
      — the poem column runs taller than the image column, so aligning
@@ -3776,8 +3779,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      not two independently resized images — while the unused width
      becomes deliberate negative space within the 1100px section inner.
      Gap scaled down to match (3.5rem → 3rem) so the two halves keep
-     reading as a single composition rather than drifting apart. */
-  max-width: 760px;
+     reading as a single composition rather than drifting apart.
+     Widened again 760px -> 795px (2026-06-25) so the poem column
+     could grow ~10% without shrinking the image column (see
+     grid-template-columns comment above). */
+  max-width: 795px;
   /* No bottom margin — this is the section's last element, so
      .studio-preview-section's own padding-bottom carries the gap
      below it (2026-06-25, de-stacking fix). */
@@ -4048,16 +4054,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   font-style: italic;
 }
 
-.studio-preview-intro {
-  max-width: 820px;
-  margin: 0 auto 3rem;
-  font-family: var(--serif);
-  font-size: clamp(1rem, 1.6vw, 1.15rem);
-  font-style: italic;
-  line-height: 1.7;
-  color: rgba(250, 247, 242, .75);
-  text-align: center;
-}
+/* .studio-preview-intro removed (2026-06-25, Susan: "composition was
+   top heavy — the message is enough with the images and the
+   heading") — the reflective sentence beneath the image+poem pairing
+   was cut entirely; heading + figures now carry the section alone. */
 
 /* Single symbolic threshold panel — centered, breathing room on both sides.
    Homepage shows Queen Ann only; the full collection lives in the Studio. */
@@ -4101,7 +4101,6 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .studio-preview-section { padding: 4.5rem 1.25rem 4.5rem; }
   .studio-preview-panels--single { max-width: 320px; }
   .studio-preview-header { margin-bottom: 2.5rem; }
-  .studio-preview-intro { margin-bottom: 2.5rem; }
 }
 
 /* ─────────────────────────────────────────────

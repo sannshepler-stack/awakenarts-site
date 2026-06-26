@@ -221,13 +221,6 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <p className="studio-preview-intro">
-            In AwakenArts, language becomes image. The poem no longer
-            describes the figure — it becomes the figure. Reading and
-            seeing become one experience, inviting recognition through
-            both language and form.
-          </p>
-
           {/* Queen Ann — silhouette alongside her concrete poetry form.
               mix-blend-mode: screen dissolves the dark fill so the
               poem reads as clean white text against the navy field.
