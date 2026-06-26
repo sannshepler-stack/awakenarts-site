@@ -29,19 +29,38 @@ import styles from './AtmosphericHeader.module.css'
  * own background) via padding-top, so the gap is one consistent
  * color rather than a strip of the page's base background showing
  * through between two different creams.
+ *
+ * `tall` (added 2026-06-26, homepage Matthew 13:34 section refinement):
+ * a one-off, ~25% taller variant for the single instance where the
+ * landscape is the pivot between the Queen Ann encounter and
+ * Scripture — "a quiet landscape that lets the visitor exhale," with
+ * more visual presence than a normal divider but still short of a
+ * hero image. Scoped to this prop so every other AtmosphericHeader
+ * instance site-wide keeps its standard height.
  */
 
 interface AtmosphericHeaderProps {
   src: string
   alt: string
   flush?: boolean
+  tall?: boolean
 }
 
-export default function AtmosphericHeader({ src, alt, flush }: AtmosphericHeaderProps) {
+export default function AtmosphericHeader({ src, alt, flush, tall }: AtmosphericHeaderProps) {
+  const classNames = [
+    styles.header,
+    flush ? styles.flush : '',
+  ].filter(Boolean).join(' ')
+
   return (
-    <div className={flush ? `${styles.header} ${styles.flush}` : styles.header}>
+    <div className={classNames}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={src} alt={alt} className={styles.img} loading="lazy" />
+      <img
+        src={src}
+        alt={alt}
+        className={tall ? `${styles.img} ${styles.imgTall}` : styles.img}
+        loading="lazy"
+      />
     </div>
   )
 }

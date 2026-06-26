@@ -5,7 +5,6 @@ import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
-import formPanelStyles from '@/components/forms/FormPanel.module.css'
 
 // The homepage explicitly sets its canonical to "/" so the trailing-slash
 // and bare-domain forms collapse to a single URL in search results.
@@ -20,11 +19,22 @@ export const metadata: Metadata = {
 /* ── Page ──────────────────────────────────────────────── */
 /*
  * Homepage — The Threshold
- * Alignment + Subtraction pass (May 2026):
- * 4-section structure: Hero → Studio preview → Poems preview →
- * The AwakenArts Collection. Encounters section removed — Encounters
- * functions through direct navigation, not homepage explanation.
- * Collection imagery removed — silhouettes belong to Studio.
+ *
+ * Homepage Reformation Directive (June 2026): a coherent visual
+ * journey that relies on the symbolic work itself rather than
+ * explanation. "Show more. Explain less." Seven movements, each
+ * progressively quieter, alternating orientation and encounter:
+ *   1. Hero               — the emotional entrance; image dominant
+ *   2. AwakenArts Intro    — pure orientation, one restrained line
+ *   3. Collection          — navy architectural framework, cream
+ *                            type, the complete uncropped cover
+ *   4. Queen Ann Intro     — title page; name + a single quotation
+ *   5. Queen Ann Encounter — still + poem as one literary spread
+ *   6. Matthew 13:34       — the quiet, concluding reflection
+ *   7. Footer
+ * The former "Discover symbolic language" transition has been
+ * removed entirely — the Queen Ann encounter now resolves directly
+ * into Matthew 13:34 with no replacement band or divider.
  *
  * Editorial framework (June 2026 recalibration): the works are not
  * symbolic art accompanied by Christian reference — they extend a
@@ -78,11 +88,6 @@ export default function HomePage() {
             Discover symbolic language through image and poem.
           </p>
 
-          <p className="hero-subline">
-            AwakenArts brings image and poem together in symbolic forms
-            that invite recognition rather than explanation.
-          </p>
-
           <Link href="/encounters" className="hero-cta">
             Encounters <span className="arrow" aria-hidden="true">→</span>
           </Link>
@@ -128,21 +133,39 @@ export default function HomePage() {
 
       </section>
 
+      {/* ── AWAKENARTS INTRODUCTION ───────────────────────────────
+          Section 2 — pure orientation, nothing more. This is the
+          existing introductory line, relocated out of the Hero so
+          the Hero itself stays purely visual ("avoid unnecessary
+          introductory text"). Retained verbatim, not expanded —
+          its only purpose is to orient the visitor before the
+          Collection establishes the architectural framework below.
+      ──────────────────────────────────────────────────────────── */}
+      <section className="home-intro" aria-label="Introduction">
+        <p className="home-intro__text">
+          AwakenArts brings image and poem together in symbolic forms
+          that invite recognition rather than explanation.
+        </p>
+      </section>
+
       {/* ── THE COLLECTION ───────────────────────────────────────
-          Section 2 — immediately below the hero.
-          The Collection answers: "What do I actually do with AwakenArts?"
-          Cover image + purpose statement + CTA.
-          Studio, Poems, Encounters follow as supporting destinations.
+          Section 3 — the first major structural section of the
+          Homepage. Presented on a navy field per the Homepage
+          Reformation Directive: the darker ground establishes the
+          Collection as AwakenArts' architectural framework and
+          creates a clear visual transition before the featured
+          symbolic work. Cream typography, restrained gold accents,
+          the complete uncropped cover, generous surrounding space.
       ──────────────────────────────────────────────────────────── */}
       <section id="collection" className="home-coll-section" aria-labelledby="home-coll-heading">
         <div className="home-coll-inner">
 
           <div className="home-coll-cover">
             <Image
-              src="/images/collection/collection-cover-light.png"
+              src="/images/collection/collection-cover.jpg"
               alt="The Collection — a growing collection of symbolic works from AwakenArts"
-              width={390}
-              height={504}
+              width={1122}
+              height={1402}
               className="home-coll-cover__img"
               loading="lazy"
             />
@@ -153,10 +176,9 @@ export default function HomePage() {
             <h2 id="home-coll-heading">The Collection</h2>
             <p className="home-coll-sub">A growing collection of symbolic works.</p>
             <p className="home-coll-body">
-              The Collection brings together the symbolic works of AwakenArts
-              — each pairing image and poem to reveal meaning through symbolic
-              language. Together they form a growing body of encounters that
-              invite reflection, conversation, and deeper recognition.
+              Each work pairs image and poem to reveal meaning through
+              symbolic language — together forming a growing collection
+              of encounters that invite reflection and recognition.
             </p>
             <Link href="/collection" className="home-coll-cta">
               Collection <span aria-hidden="true">→</span>
@@ -166,128 +188,93 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── BIBLICAL FOUNDATION ───────────────────────────────────
-          Section 3 — literary/theological grounding after the
-          Collection (revised 2026-06-25). Purpose: establish that
-          symbolic language is not an AwakenArts invention but an
-          enduring literary tradition Scripture itself already uses.
-          Grounding, not apologetics — literary, thoughtful, welcoming.
+      {/* ── QUEEN ANN: INTRODUCTION & ENCOUNTER ───────────────────
+          A single flat cream field — no navy "stage," no rounded
+          card — carrying three quiet movements, encountered rather
+          than explained:
+            1. Queen Ann Introduction — a title page. Name and a
+               single short quotation from the poem, creating
+               anticipation rather than explanation.
+            2. Queen Ann Encounter — the portrait still and the poem
+               as facing pages of one open book, equal partners.
+            3. Matthew 13:34 (the foundation, placed last, quiet) —
+               the encounter resolves directly into it; the former
+               "Discover symbolic language" transition has been
+               removed entirely, with no replacement band or divider.
+          Revised per Susan's June 2026 review: the navy stage and
+          rounded bottom corners read as an accidental dark strip and
+          a "card" rather than a publication, so both have been
+          removed — the cream begins directly where the Collection
+          section's navy ends. See the POEMS / EDITIONS SHOWCASE
+          block in globals.css.
       ──────────────────────────────────────────────────────────── */}
-      <AtmosphericHeader
-        src="/images/headers/biblical-foundation.png"
-        alt="Sunrise over hills and a winding river, seen through a worn stone window — a threshold image."
-        flush
-      />
-      <section className="hero-quote-section hero-quote-section--headed" aria-label="Biblical foundation">
-        <p className="hero-quote-text">
-          &ldquo;He did not say anything to them without using a parable.&rdquo;
-        </p>
-        <p className="hero-quote-cite">Matthew 13:34</p>
-        <p className="hero-quote-body">
-          Throughout Scripture, truth is frequently communicated through
-          figurative language rather than direct explanation. The Psalms,
-          Proverbs, prophetic visions, and especially the parables of
-          Christ reveal meaning through image, metaphor, symbol, and
-          narrative.
-        </p>
-        <p className="hero-quote-body">
-          AwakenArts intentionally works within this enduring literary
-          tradition, bringing image and poem together as symbolic forms
-          that invite recognition through attentive engagement rather
-          than explanation alone.
-        </p>
-        <p className="hero-quote-closing">
-          Symbolic language invites recognition before explanation.
-        </p>
-      </section>
+      <section className="poems-showcase-section" aria-label="Queen Ann">
+        <div className="poems-showcase-inner">
 
-      {/* ── LANGUAGE MADE VISIBLE ─────────────────────────────────
-          Repurposed per Susan's "Preserve and Repurpose" directive
-          (2026-06-25): no longer a navigation destination pointing to
-          /studio — a contemplative pause that demonstrates, rather
-          than explains, the AwakenArts USP (recognizing symbolic
-          language through image and poem). Visitors stop, observe,
-          read, recognize, then continue naturally into the next
-          section. No CTA — the silhouette/poem pairing is the point.
-      ──────────────────────────────────────────────────────────── */}
-      <section className="studio-preview-section" aria-labelledby="studio-preview-heading">
-        <div className="studio-preview-inner">
-
-          <div className="studio-preview-header">
-            <p className="eyebrow">Language Made Visible</p>
-            <h2 id="studio-preview-heading">
-              Language becomes<br />
-              <em>a symbolic and visual form</em>
-            </h2>
+          {/* 1. Queen Ann Introduction — the title page before the
+              encounter. Name + a brief quotation from the poem, set
+              as a continuing thought rather than a closed citation;
+              no explanatory paragraph. */}
+          <div className="poems-showcase-intro">
+            <p className="poems-showcase-intro__title">Queen Ann</p>
+            <p className="poems-showcase-intro__quote">
+              when the night strikes with silver light&hellip;
+            </p>
           </div>
 
-          {/* Queen Ann — silhouette alongside her concrete poetry form.
-              mix-blend-mode: screen dissolves the dark fill so the
-              poem reads as clean white text against the navy field.
-              Name now sits once, centered above the whole pairing,
-              rather than as a per-image caption plus a closing line
-              beneath the poem (removed 2026-06-25 — Susan: the closing
-              line was adding wording at the bottom of the section). */}
-          <p className="studio-ann-feature__label">Queen Ann</p>
-          <div className="studio-ann-feature">
-            <div className="studio-ann-feature__panel">
-              <figure className={formPanelStyles.panel}>
-                <div className={formPanelStyles.imageFrame}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    className={formPanelStyles.image}
-                    src="/images/forms/queen-ann-still.png"
-                    alt="Queen Ann — atmospheric still: a windswept figure with form-silhouette overlay."
-                    style={{ objectPosition: '60% center' }}
-                    loading="lazy"
-                  />
-                </div>
-              </figure>
-            </div>
-            <div className="studio-ann-feature__poem">
+          {/* 2. Queen Ann Encounter — the portrait still and the
+              poem as facing pages of one open book: equal height,
+              equal importance, identical top alignment, no captions.
+              The imagery now performs the work previously done by
+              explanatory text. */}
+          <div className="poems-showcase-ann">
+            <div className="poems-showcase-ann__frame">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/forms/ann-text.png"
-                alt="Queen Ann — the concrete poetry form; language taking the shape of the figure"
-                className="studio-ann-feature__poem-img"
+                src="/images/forms/queen-ann-still.png"
+                alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
+                loading="lazy"
+              />
+            </div>
+            <div className="poems-showcase-ann__text">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/forms/ann-text-dark.png"
+                alt="Queen Ann — the poem, rendered in concrete poetry form"
+                className="poems-showcase-ann__poem-img"
                 loading="lazy"
               />
             </div>
           </div>
 
         </div>
-      </section>
 
-      {/* ── SECTION 4: LIBRARY PREVIEW ───────────────────────────
-          Companion readings — literary and symbolic, not explanatory.
-          After Collection.
-
-          Threshold Header removed (2026-06-25, Susan: "clashing with
-          the queen ann section") — the manuscript header previously
-          sat here, directly beneath the Queen Ann feature above, and
-          read as a second competing image moment back-to-back with
-          it. .lib-preview-section's own padding-top (6rem desktop)
-          carries the gap in its place. The same manuscript image
-          remains the permanent threshold for the /poems page itself
-          — see src/app/poems/page.tsx — this change only removes its
-          homepage placement.
-      ──────────────────────────────────────────────────────────── */}
-      <section className="lib-preview-section" aria-labelledby="lib-preview-heading">
-        <div className="lib-preview-inner">
-          <p className="eyebrow">Poems</p>
-          <h2 id="lib-preview-heading">
-            Image and poem<br />
-            <em>become symbolic language.</em>
-          </h2>
-          <p className="lib-preview-body">
-            AwakenArts poems unite image and language in symbolic forms
-            that invite recognition rather than explanation. Each work
-            offers a glimpse into the language of symbol through carefully
-            paired visual and poetic expression.
-          </p>
-          <p className="lib-preview-mission">
-            Discover symbolic language through image and poem.
-          </p>
+        {/* 3. Matthew 13:34 — the foundation. Placed last, quiet and
+            secondary: the theological/literary grounding after the
+            viewer has already encountered the image and poem. The
+            encounter resolves directly into it — no transitional
+            band between them. */}
+        <div className="poems-showcase-foundation">
+          <AtmosphericHeader
+            src="/images/headers/biblical-foundation.jpg"
+            alt="Sunrise over hills and a winding river, seen through a worn stone window — a threshold image."
+            tall
+          />
+          <div className="poems-showcase-foundation__inner">
+            <p className="hero-quote-text">
+              He did not say anything to them without using a parable.
+            </p>
+            <p className="hero-quote-cite">Matthew 13:34</p>
+            <p className="hero-quote-body">
+              AwakenArts works within that same enduring tradition —
+              bringing image and poem together as symbolic forms that
+              invite recognition through attentive engagement, not
+              explanation.
+            </p>
+            <p className="hero-quote-closing">
+              Symbolic language invites recognition before explanation.
+            </p>
+          </div>
         </div>
       </section>
 

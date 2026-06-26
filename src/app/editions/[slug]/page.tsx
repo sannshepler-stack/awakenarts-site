@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
+import ProtectedImage from '@/components/ProtectedImage'
 import { editions } from '@/data/editions'
 
 export function generateStaticParams() {
@@ -38,8 +39,7 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
         </section>
 
         <section className="edition-sheet-section">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <ProtectedImage
             src={edition.contactSheet}
             alt={edition.contactSheetAlt}
             className="edition-sheet-img"

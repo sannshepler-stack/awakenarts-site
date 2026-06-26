@@ -44,3 +44,22 @@
   .flush { margin-bottom: 0; }
   .img { height: 200px; }
 }
+
+/* ── `tall` variant — homepage Matthew 13:34 section only ──
+   Now ~53% taller than the standard heights above (300px -> 460px
+   desktop): a further small bump (2026-06-26, "Homepage Refinement"
+   pass) to strengthen the transition, per Susan's "consider adding a
+   small amount of additional height if it strengthens the
+   transition." Crop stays the same wide/cinematic object-position;
+   only the rendered height changes, so nothing is zoomed in. Kept
+   well short of hero scale — its role is rest before Scripture, not
+   a second hero image. */
+.imgTall {
+  height: 460px;
+}
+@media (max-width: 768px) {
+  .imgTall { height: 390px; }
+}
+@media (max-width: 640px) {
+  .imgTall { height: 300px; }
+}

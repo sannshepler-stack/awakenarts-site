@@ -54,10 +54,18 @@ export const metadata: Metadata = {
  *
  * Scope: a work appears here only if it has a completed Figure
  * Edition (src/data/editions.ts) — currently Dragon, Bowls, Ballerina,
- * Grismere, Poppy, i.e. all five. Queen Ann, Dove, Bear, Butterfly,
+ * Grismere, Poppy, and Queen Ann, i.e. all six. Dove, Bear, Butterfly,
  * and Pottery remain off this page — none has a completed Edition
  * yet. As additional Editions are completed, they may be added here
  * following this same standard.
+ *
+ * Queen Ann added 2026-06-26: image is queen-ann-figure.jpg, cropped
+ * tight from the Edition's own page 3 ("THE FIGURE") render — same
+ * crown-and-gown artwork used inside the book, no mat/border showing,
+ * matching the Dragon/Ballerina/Grismere treatment. Title and excerpt
+ * are read directly off page 6 ("Recognition I"): the section headline
+ * and its "— THE IMAGE" pull-quote, the same source convention used
+ * for every other tile.
  */
 
 interface PoemPreview {
@@ -126,6 +134,18 @@ const poems: PoemPreview[] = [
     },
     excerpt: 'Her eyes shine in the bright lights of little girls.',
     edition: { label: 'View the Edition', href: '/editions/ballerina' },
+  },
+  {
+    slug: 'queen-ann',
+    kicker: 'Queen Ann',
+    title: 'Between Two Kingdoms',
+    image: {
+      src: '/images/editions/queen-ann-figure.jpg',
+      alt: 'Queen Ann — a crowned figure in a gilded gown looking out over a mountain vista at sunset, the Edition’s own figure artwork.',
+    },
+    excerpt:
+      'She stands at the threshold between a kingdom that is ending and one that cannot yet be fully seen.',
+    edition: { label: 'View the Edition', href: '/editions/queen-ann' },
   },
 ]
 
