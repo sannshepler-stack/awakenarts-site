@@ -121,6 +121,34 @@ export default function EncountersIndexPage() {
           band, matching how every other page on the site structures
           Nav -> main content -> WayfindingBand -> Footer as siblings. */}
     </main>
+
+    {/* 2026-06-27: "A Path of Recognition" explainer — the same revised
+        graphic (recognition-revision.png) Susan put in place on the
+        Collection page, reused here. Placed as a sibling cream band
+        (not inside <main>) so it isn't constrained by .page's dark
+        background — same reasoning as WayfindingBand/Footer above.
+        Mirrors the Collection page's use of this graphic: a quiet
+        "how this works" explainer placed right before the page hands
+        off to the Wayfinding Band. See AwakenArts_Site_Architecture.md,
+        "Free resource: The AwakenArts Encounter Journal." */}
+    <section className={styles.recognition} aria-labelledby="encounters-recognition-heading">
+      <div className={styles.recognitionInner}>
+        <div className={styles.recognitionHeader}>
+          <p className={styles.recognitionEyebrow}>How an Encounter Works</p>
+          <h2 id="encounters-recognition-heading" className={styles.recognitionTitle}>
+            A Path of Recognition
+          </h2>
+        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/collection/recognition-revision.png"
+          alt="A Path of Recognition — five steps: Longing, Recognition, The Figure, The Word, The Path — the journey through which each Encounter is experienced"
+          className={styles.recognitionImg}
+          loading="lazy"
+        />
+      </div>
+    </section>
+
     <WayfindingBand />
     <Footer />
     </>

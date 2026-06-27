@@ -228,9 +228,15 @@ export default function CollectionPage() {
               <p className="eyebrow">How the Editions Work</p>
               <h2 id="col-recognition-heading">A Path of Recognition</h2>
             </div>
+            {/* 2026-06-27: swapped recognition-sample.png -> recognition-revision.png
+                (Susan's revised crop). The revision drops the image's own
+                embedded "A PATH OF RECOGNITION" title bar and bottom footer
+                strip, which duplicated the heading already rendered above
+                in .col-recognition__header — the revised crop is just the
+                five steps themselves. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/collection/recognition-sample.png"
+              src="/images/collection/recognition-revision.png"
               alt="A Path of Recognition — five steps: Longing, Recognition, The Figure, The Word, The Path — the journey through which the Collection is experienced"
               className="col-recognition__img"
               loading="lazy"
