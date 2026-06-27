@@ -134,7 +134,7 @@ export default function EncountersIndexPage() {
     <section className={styles.recognition} aria-labelledby="encounters-recognition-heading">
       <div className={styles.recognitionInner}>
         <div className={styles.recognitionHeader}>
-          <p className={styles.recognitionEyebrow}>How an Encounter Works</p>
+          <p className={styles.recognitionEyebrow}>The Shape of the Journey</p>
           <h2 id="encounters-recognition-heading" className={styles.recognitionTitle}>
             A Path of Recognition
           </h2>
@@ -142,7 +142,7 @@ export default function EncountersIndexPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/collection/recognition-revision.png"
-          alt="A Path of Recognition — five steps: Longing, Recognition, The Figure, The Word, The Path — the journey through which each Encounter is experienced"
+          alt="A Path of Recognition — five steps: Longing, Recognition, The Figure, The Word, The Path — the journey through which the AwakenArts Collection is experienced"
           className={styles.recognitionImg}
           loading="lazy"
         />
