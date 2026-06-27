@@ -34,6 +34,23 @@ This is the publishing architecture of AwakenArts. Every primary page on the sit
 
 **Architectural principle, restated:** the visitor moves naturally through image, language, and symbol before making navigational decisions. Future pages should be built to inherit this structure from the start, not have it retrofitted afterward.
 
+## Unlisted Page System (locked 2026-06-27)
+
+A recurring need: a page should exist, fully built and live on the production site, without being publicly discoverable yet — so Susan can call it up by direct URL (in a meeting, an email, a proposal) before deciding whether it belongs in primary navigation. This is the standing recipe for that. It is a system, not a one-off: any future page can follow it.
+
+**An unlisted page still inherits the full Universal Page Structure** (Nav → content → WayfindingBand → Footer) — it looks and feels like any other page on the site. The only difference is discoverability:
+
+1. **No entry in `src/components/Nav.tsx`'s `links` array.**
+2. **No entry in `WayfindingBand.tsx`'s `PRIMARY_LINKS` or `Footer.tsx`'s link sets** (those two stay untouched — they are the locked, fixed link sets described above).
+3. **`robots: { index: false, follow: true }`** added to the page's own `metadata` export, so search engines don't index it.
+4. **The route added to `DISALLOWED_PATHS` in `src/app/robots.ts`** — belt-and-suspenders, matching the existing convention used for the set-aside encounter routes (`/encounters/vase`, `/encounters/dragon`, etc.).
+
+The page is reachable by anyone who has the URL, renders identically to a published page, and ships through the normal commit/push/deploy pipeline — it simply isn't *linked* from anywhere on the site yet.
+
+**To publish an unlisted page later:** remove its `robots` override, remove it from `DISALLOWED_PATHS`, and add it to `Nav.tsx` (and WayfindingBand/Footer if it belongs in universal navigation). Two reversible steps — promotion never requires rebuilding the page.
+
+**Current roster of unlisted pages:** `/workshops` — built 2026-06-27, content-complete, withheld from navigation until Susan decides to publish it.
+
 ## AwakenArts Global Design System (locked 2026-06-25) — rollout complete
 
 This is the technical implementation of Section 3 ("Visual Language") of `AwakenArts_Editorial_Identity_and_Design_Standard.md`. Six typographic roles, two structural standards, and one image philosophy now govern every primary page — established once as CSS custom properties in `src/app/globals.css` `:root`, referenced everywhere via `var(--token)`, never adjusted by eye page to page.

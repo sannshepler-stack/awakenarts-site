@@ -35,6 +35,12 @@ const ALLOWED_BOTS = [
 // route (now a redirect into /encounters/journey) are all set aside —
 // not deleted, just unlinked from the new index — so they stay
 // disallowed rather than indexed as standalone results.
+//
+// Unlisted Page System (2026-06-27): pages built and live on the site
+// but deliberately left out of Nav/WayfindingBand/Footer, reachable only
+// by direct URL until published into navigation. Listed here so search
+// engines don't surface them early. See AwakenArts_Site_Architecture.md
+// -> "Unlisted Page System" for the full convention.
 const DISALLOWED_PATHS = [
   '/encounters/vase',
   '/encounters/dragon',
@@ -42,6 +48,7 @@ const DISALLOWED_PATHS = [
   '/encounters/butterfly',
   '/encounters/continuum',
   '/encounters/mermaid',
+  '/workshops',
   '/api/',
   '/_next/',
 ]

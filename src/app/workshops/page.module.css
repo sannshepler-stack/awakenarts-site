@@ -1,0 +1,396 @@
+/* ─── /workshops — Workshops Page ───────────────────────────────────────────
+   AwakenArts · Symbolic Facilitation Workshops
+   Built per the Global Page Architecture Standard (Nav -> content sections
+   -> WayfindingBand -> Footer). Follows the journal/collection convention:
+   a dark hero, alternating cream/navy content sections, shared design
+   tokens from globals.css :root (no new colors or type scales introduced).
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* ─── Hero (dark) ───────────────────────────────────────────────────────── */
+.hero {
+  background: var(--deep);
+  color: var(--cream);
+  padding: 8rem 2rem 5rem;
+  text-align: center;
+}
+
+.heroInner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--serif);
+  font-weight: var(--h1-weight);
+  font-size: var(--h1-size);
+  line-height: 1.1;
+  letter-spacing: 0.005em;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+}
+
+.lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--subtitle-size);
+  line-height: var(--subtitle-line);
+  color: var(--gold-lt);
+  margin: 0 auto 1.5rem;
+  max-width: var(--measure-medium);
+}
+
+.intro {
+  font-family: var(--serif);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: rgba(250, 247, 242, 0.9);
+  max-width: var(--measure-medium);
+  margin: 0 auto 2.5rem;
+}
+
+.heroCta {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: var(--link-size);
+  font-weight: var(--link-weight);
+  letter-spacing: var(--link-tracking);
+  text-transform: uppercase;
+  color: var(--cream);
+  border-bottom: 2px solid var(--gold-lt);
+  padding-bottom: 4px;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.heroCta:hover {
+  color: var(--gold-lt);
+}
+
+/* ─── Section header (shared by cream sections) ────────────────────────── */
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3.5rem;
+}
+
+.sectionHeader .eyebrow {
+  color: var(--gold);
+}
+
+.sectionHeading {
+  font-family: var(--serif);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  line-height: 1.25;
+  color: var(--deep);
+  margin: 0 0 1.25rem;
+}
+
+.sectionLede {
+  font-family: var(--serif);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--mid);
+  max-width: var(--measure-medium);
+  margin: 0 auto;
+}
+
+/* ─── Three Ways to Begin (cream) ───────────────────────────────────────── */
+.waysSection {
+  background: var(--cream);
+  padding: 7rem 2rem;
+}
+
+.waysGrid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.wayCard {
+  background: #fff;
+  border: 1px solid var(--mist);
+  padding: 2.25rem 2rem;
+}
+
+.wayLabel {
+  font-family: var(--sans);
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.9rem;
+  display: block;
+}
+
+.wayTitle {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--deep);
+  margin: 0 0 0.85rem;
+}
+
+.wayBody {
+  font-family: var(--serif);
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--mid);
+  margin: 0;
+}
+
+/* ─── Series at a Glance (navy) ─────────────────────────────────────────── */
+.glanceSection {
+  background: var(--deep);
+  color: var(--cream);
+  padding: 7rem 2rem;
+}
+
+.glanceSection .eyebrow {
+  color: var(--gold-lt);
+}
+
+.glanceSection .sectionHeading {
+  color: var(--cream);
+}
+
+.glanceSection .sectionLede {
+  color: rgba(250, 247, 242, 0.85);
+}
+
+.glanceTable {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.glanceTable th {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  text-align: left;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(250, 247, 242, 0.25);
+}
+
+.glanceTable td {
+  font-family: var(--serif);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: rgba(250, 247, 242, 0.92);
+  padding: 1.1rem 1rem;
+  border-bottom: 1px solid rgba(250, 247, 242, 0.12);
+  vertical-align: top;
+}
+
+.glanceTable td:first-child {
+  color: var(--gold-lt);
+  font-family: var(--sans);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.glanceEdition {
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.glanceTheme {
+  display: block;
+  font-style: italic;
+  color: var(--gold-lt);
+  font-size: 0.86rem;
+  margin-top: 0.2rem;
+}
+
+.glanceNote {
+  max-width: 1100px;
+  margin: 2.5rem auto 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: rgba(250, 247, 242, 0.75);
+}
+
+/* ─── Session Shape (cream) ─────────────────────────────────────────────── */
+.shapeSection {
+  background: var(--cream);
+  padding: 7rem 2rem;
+}
+
+.shapeGrid {
+  max-width: 1100px;
+  margin: 0 auto 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.movement {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-top: 2px solid var(--gold-lt);
+}
+
+.movementNum {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.movementName {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--deep);
+  margin: 0 0 0.5rem;
+}
+
+.movementDesc {
+  font-family: var(--serif);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--mid);
+  margin: 0;
+}
+
+.timingNote {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--mid);
+}
+
+.timingNote strong {
+  color: var(--deep);
+}
+
+/* ─── What's Provided (warm) ────────────────────────────────────────────── */
+.providedSection {
+  background: var(--gold-bg);
+  padding: 7rem 2rem;
+  border-top: 1px solid var(--mist);
+  border-bottom: 1px solid var(--mist);
+}
+
+.providedGrid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2.5rem;
+}
+
+.providedItem {
+  font-family: var(--serif);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--deep);
+  padding-left: 1.4rem;
+  position: relative;
+  margin: 0;
+}
+
+.providedItem::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+/* ─── Closing CTA (cream) ───────────────────────────────────────────────── */
+.ctaSection {
+  background: var(--cream);
+  padding: 7rem 2rem var(--band-gap);
+  text-align: center;
+}
+
+.ctaInner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.ctaHeading {
+  font-family: var(--serif);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  color: var(--deep);
+  margin: 0 0 1.25rem;
+}
+
+.ctaBody {
+  font-family: var(--serif);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--mid);
+  margin: 0 auto 2rem;
+  max-width: var(--measure-medium);
+}
+
+.ctaLink {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: var(--link-size);
+  font-weight: var(--link-weight);
+  letter-spacing: var(--link-tracking);
+  text-transform: uppercase;
+  color: var(--deep);
+  border-bottom: 2px solid rgba(28, 43, 58, 0.5);
+  padding-bottom: 4px;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ctaLink:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .waysGrid { grid-template-columns: 1fr; }
+  .shapeGrid { grid-template-columns: repeat(2, 1fr); }
+  .providedGrid { grid-template-columns: 1fr; }
+  .glanceTable { font-size: 0.9rem; }
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 6.5rem 1.25rem 4rem; }
+  .waysSection,
+  .glanceSection,
+  .shapeSection,
+  .providedSection { padding: 5rem 1.25rem; }
+  .ctaSection { padding: 5rem 1.25rem var(--band-gap-sm); }
+  .shapeGrid { grid-template-columns: 1fr; }
+  .glanceTable, .glanceTable thead { display: block; }
+  .glanceTable tbody { display: block; }
+  .glanceTable tr { display: block; padding: 1rem 0; border-bottom: 1px solid rgba(250, 247, 242, 0.12); }
+  .glanceTable thead tr { display: none; }
+  .glanceTable td { display: block; border-bottom: none; padding: 0.25rem 0; }
+  .glanceTable td:first-child { color: var(--gold-lt); }
+}

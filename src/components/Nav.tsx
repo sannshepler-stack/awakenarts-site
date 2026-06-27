@@ -19,6 +19,12 @@ const links = [
   { label: 'About',      href: '/about',      cta: false },
 ]
 
+// Unlisted Page System (locked 2026-06-27): some pages are built and live
+// on the site but deliberately left out of this list (and out of
+// WayfindingBand / Footer) so they're reachable only by direct URL —
+// e.g. /workshops. See AwakenArts_Site_Architecture.md -> "Unlisted Page
+// System" for the full convention and current roster.
+
 export default function Nav() {
   const [open, setOpen]         = useState(false)
   const [scrolled, setScrolled] = useState(false)
