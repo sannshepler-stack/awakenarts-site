@@ -328,6 +328,10 @@
   .formatsTable { font-size: 0.9rem; }
 }
 
+@media (max-width: 1024px) {
+  .closingNote { padding-bottom: var(--band-gap-md); }
+}
+
 @media (max-width: 640px) {
   .hero { padding: 6.5rem 1.25rem 4rem; }
   .creamSection,

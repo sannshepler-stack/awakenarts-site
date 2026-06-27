@@ -218,6 +218,12 @@
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .closingStrip {
+    padding-bottom: var(--band-gap-md);
+  }
+}
+
 @media (max-width: 640px) {
   .closingStrip {
     padding-bottom: var(--band-gap-sm);

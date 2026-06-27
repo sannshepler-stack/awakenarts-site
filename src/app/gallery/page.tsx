@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
-import FooterSocial from '@/components/FooterSocial'
+import Footer from '@/components/Footer'
 
 // RETIRED 2026-06-25 — "Retire Gallery and Reinstate Journal" directive.
 // The site no longer needs a dedicated Gallery: this imagery now lives
@@ -147,60 +147,7 @@ export default function GalleryPage() {
       </section>
 
       <WayfindingBand />
-
-      {/* ── FOOTER ── */}
-      <footer className="site-footer" aria-label="Site footer">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <Link href="/" aria-label="AwakenArts home">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/brand/logo-reversed.svg"
-                alt="AwakenArts"
-                className="footer-logo"
-                loading="lazy"
-              />
-            </Link>
-            <p>
-              An artistic body of work shaped through image and language.
-              The works express emotion and meaning in symbolic form, where
-              word and image reveal archetypal patterns of thought and
-              inward experience. By Susan Ann Shepler.
-            </p>
-            <FooterSocial />
-          </div>
-
-          <div className="footer-col">
-            <h4>Explore</h4>
-            <ul>
-              <li><Link href="/encounters">Path</Link></li>
-              <li><Link href="/collection">Collection</Link></li>
-              <li><Link href="/gallery">Gallery</Link></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h4>The Work</h4>
-            <ul>
-              <li><Link href="/journal">Journal</Link></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h4>About</h4>
-            <ul>
-              <li><Link href="/about">Formation &amp; Provenance</Link></li>
-              <li><Link href="/privacy">Privacy Policy</Link></li>
-              <li><Link href="/terms">Terms of Use</Link></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <span>© 2026 AwakenArts · awakenarts.com · All Rights Reserved</span>
-          <span>© Susan Ann Shepler · Confidential</span>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }

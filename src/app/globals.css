@@ -5561,6 +5561,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   border-color: rgba(201, 168, 76, 0.9);
 }
 
+@media (max-width: 1024px) {
+  .poems-gallery-section { padding-bottom: var(--band-gap-md); }
+}
+
 @media (max-width: 980px) {
   .poems-gallery { grid-template-columns: repeat(2, 1fr); gap: 2.75rem 2rem; }
 }
@@ -6292,18 +6296,27 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .col-archive-cta {
   /* 2026-06-26, Susan's directive: pull the CTA up into the visual
      wake of A Path of Recognition rather than letting it float in
-     the dead zone before the footer. Top padding intentionally now
-     reads smaller than bottom is generous (more room above the link
-     than below it), so the CTA reads as recognition's concluding
-     line rather than a separate, floating footer link. This is a
-     deliberate, documented exception to the universal --band-gap
-     "content end -> Wayfinding Band" value used everywhere else on
-     the site (see .col-recognition's matching bottom-padding trim
-     just above it, which does the other half of the 40-60px move). */
-  padding: 3.5rem 2rem 3rem;
+     the dead zone before the footer. Top padding intentionally reads
+     smaller than the universal rhythm (more room below the link than
+     above it), so the CTA reads as recognition's concluding line
+     rather than a separate, floating footer link (see
+     .col-recognition's matching bottom-padding trim just above it,
+     which does the other half of the 40-60px move).
+     2026-06-27: the bottom value was previously a hardcoded 3rem —
+     well under the universal --band-gap (6rem), leaving this page's
+     gap before the Wayfinding Band noticeably tighter than every
+     other page. Converted to var(--band-gap) so the *asymmetry*
+     (small top, standard bottom) stays the deliberate choice, while
+     the actual content-end-to-band distance matches the rest of the
+     site rather than reading as its own one-off exception. */
+  padding: 3.5rem 2rem var(--band-gap);
   background: var(--cream);
   text-align: center;
   border-top: 1px solid rgba(28, 43, 58, 0.07);
+}
+
+@media (max-width: 1024px) {
+  .col-archive-cta { padding-bottom: var(--band-gap-md); }
 }
 
 .col-archive-cta__link {
@@ -6324,7 +6337,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 @media (max-width: 640px) {
-  .col-archive-cta { padding: 3rem 1.5rem 2.5rem; }
+  .col-archive-cta { padding: 3rem 1.5rem var(--band-gap-sm); }
 }
 
 /* ── Shared encounter page layout ────────────────────────────
@@ -6826,6 +6839,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   }
 }
 
+@media (max-width: 1024px) {
+  .about-main { padding-bottom: var(--band-gap-md); }
+}
+
 @media (max-width: 640px) {
   .about-main { padding: 4.5rem 1.5rem var(--band-gap-sm); }
   /* .about-body font-size override removed — Global Design System body
@@ -6976,7 +6993,17 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 .gal-grid-section {
   background: var(--deep);
-  padding: 1rem 2rem 6rem;
+  /* 2026-06-27: bottom value converted from a hardcoded 6rem to
+     var(--band-gap) — numerically identical, but now wired to the
+     universal "content end -> Wayfinding Band" token so this retired
+     page still follows the site-wide rhythm rather than drifting on
+     its own. Page is noindexed/unlinked from primary nav, but kept
+     consistent in case it's ever restored. */
+  padding: 1rem 2rem var(--band-gap);
+}
+
+@media (max-width: 1024px) {
+  .gal-grid-section { padding-bottom: var(--band-gap-md); }
 }
 
 .gal-grid {
@@ -7056,5 +7083,5 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 @media (max-width: 640px) {
   .gal-hero { padding: 6rem 1.5rem 3rem; }
-  .gal-grid-section { padding: 1rem 1.25rem 4.5rem; }
+  .gal-grid-section { padding: 1rem 1.25rem var(--band-gap-sm); }
 }
