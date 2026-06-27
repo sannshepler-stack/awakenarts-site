@@ -24,8 +24,10 @@ type Props = {
   pdfHref: string
   /** Filename suggested to the browser's download dialog */
   fileName: string
-  /** Tag identifying which offer this is (passed to /api/subscribe, e.g. for ConvertKit tagging later) */
+  /** Tag identifying which offer this is (passed to /api/subscribe, e.g. for Kit tagging later) */
   source: string
+  /** What to call the file in the fallback link, e.g. "the Journal" — keep it lowercase/no article if you want "your file" phrasing instead */
+  itemLabel?: string
   submitLabel?: string
   thanksText?: string
   note?: string
@@ -35,6 +37,7 @@ export default function EmailGateDownload({
   pdfHref,
   fileName,
   source,
+  itemLabel = 'your file',
   submitLabel = 'Send Me the Download →',
   thanksText = "You're on the list — your download is on its way.",
   note = 'No selling. No noise. Only what the work requires.',
@@ -97,7 +100,7 @@ export default function EmailGateDownload({
               textDecoration: 'underline',
             }}
           >
-            Download didn&rsquo;t start? Click here →
+            If your download doesn&rsquo;t begin automatically, download {itemLabel} here →
           </a>
         </p>
       </div>

@@ -36,6 +36,11 @@ export default function JourneyEncounterPage() {
           <p className={`${cormorant.className} ${styles.line}`}>
             Every journey begins before we know where it leads.
           </p>
+          <span className={`${cormorant.className} ${styles.scripture}`}>
+            &ldquo;By faith Abraham obeyed and went, even though he did not
+            know where he was going.&rdquo;
+            <span className={styles.ref}>Hebrews 11:8</span>
+          </span>
         </div>
 
         <ScrollCue />

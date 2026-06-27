@@ -98,28 +98,23 @@ export default function EncountersIndexPage() {
 
       {/* 2026-06-27: free companion download — "The AwakenArts Encounter
           Journal" (built earlier this session, sitting unused at
-          public/files/free/ until now). Email-gated instant download:
-          ConvertKit isn't connected yet (Susan is setting up the account
-          separately), so /api/subscribe runs in placeholder mode for now
-          — it validates and logs the email, but the download itself is
-          never blocked on that. Swap in CONVERTKIT_API_KEY +
-          CONVERTKIT_FORM_ID env vars later and this starts working for
-          real with no code change. See EmailGateDownload component and
-          src/app/api/subscribe/route.ts. */}
+          public/files/free/ until now). Email-gated instant download via
+          Kit (KIT_API_KEY + KIT_FORM_ID, see src/app/api/subscribe/
+          route.ts) — the download itself is never blocked on that call
+          succeeding. See EmailGateDownload component. */}
       <div className={styles.journalCard}>
         <p className={styles.journalEyebrow}>Free Companion</p>
         <h2 className={styles.journalTitle}>The AwakenArts Encounter Journal</h2>
         <p className={styles.journalCopy}>
-          A short, self-guided companion to these five Encounters — the
-          same four movements, traced once for each doorway. Free, instant
-          download.
+          A short, self-guided companion to the five introductory Encounters.
         </p>
         <EmailGateDownload
           pdfHref="/files/free/AwakenArts_Encounter_Journal.pdf"
           fileName="AwakenArts_Encounter_Journal.pdf"
           source="encounters-journal"
+          itemLabel="the Journal"
           submitLabel="Send Me the Journal →"
-          thanksText="You're on the list — your journal is downloading now. Welcome to AwakenArts."
+          thanksText="Welcome to AwakenArts. Your Encounter Journal is downloading now."
         />
       </div>
 

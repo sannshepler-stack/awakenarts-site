@@ -42,11 +42,18 @@ export default function ContinueEncounterPage() {
             <span className={styles.ref}>Psalm 121:8</span>
           </span>
           {/*
-            AwakenArts Echo — the notes say to omit rather than force one
-            here if nothing speaks naturally of journey, hope, or faithful
-            movement. Leaving it out for now; add one the same way Table's
-            is set, with its source title, if Susan finds a line that fits.
+            2026-06-27: not an AwakenArts Echo — there's no real corpus
+            line that fits, and Susan asked not to force/fabricate one.
+            This is original reflective copy instead: no quotation marks,
+            no .echoRef source line, since it isn't a quote and isn't
+            attributed to anything. Reuses .echo purely for its italic/
+            mist typography, matching the visual rhythm of the other four
+            pages without claiming to be sourced material.
           */}
+          <span className={`${cormorant.className} ${styles.echo}`}>
+            Recognition does not end when the page does — it becomes part
+            of what follows.
+          </span>
         </div>
 
         <ScrollCue href="#continue" />
