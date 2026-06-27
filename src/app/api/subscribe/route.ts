@@ -130,3 +130,32 @@ export async function POST(req: NextRequest) {
   console.log('[subscribe:kit] subscriber added to Kit', { email, source, formId })
   return NextResponse.json({ ok: true, subscribed: true })
 }
+
+// TEMPORARY DIAGNOSTIC — 2026-06-27. Production was returning 404 "form
+// not found" for KIT_FORM_ID=9618788. This GET handler calls Kit's own
+// "List forms" endpoint with the same KIT_API_KEY so we can see the real
+// form id(s) Kit has on file for this account, instead of guessing.
+// Returns only form id/name/type/archived — no API key, no subscriber
+// data. Remove this handler once the correct KIT_FORM_ID is confirmed
+// and set in Vercel.
+export async function GET() {
+  const apiKey = process.env.KIT_API_KEY
+  if (!apiKey) {
+    return NextResponse.json({ ok: false, message: 'KIT_API_KEY not set in this environment.' })
+  }
+  try {
+    const res = await fetch('https://api.kit.com/v4/forms?status=all', {
+      headers: { 'X-Kit-Api-Key': apiKey },
+    })
+    const text = await res.text()
+    let parsed: unknown = null
+    try {
+      parsed = text ? JSON.parse(text) : null
+    } catch {
+      // leave parsed as null, fall back to raw text below
+    }
+    return NextResponse.json({ status: res.status, body: parsed ?? text })
+  } catch (err) {
+    return NextResponse.json({ ok: false, error: String(err) })
+  }
+}
