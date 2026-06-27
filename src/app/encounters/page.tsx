@@ -62,6 +62,7 @@ const ENCOUNTERS = [
 
 export default function EncountersIndexPage() {
   return (
+    <>
     <main className={styles.page}>
       <div className={styles.intro}>
         <Link href="/" className={styles.brand}>
@@ -108,9 +109,20 @@ export default function EncountersIndexPage() {
           is now deliberately wider than the universal --band-gap rhythm
           (see .page in encounters-index.module.css) — a visual pause
           meant to let a visitor finish the five doorways before meeting
-          the site's navigation, not just a content/band transition. */}
-      <WayfindingBand />
-      <Footer />
+          the site's navigation, not just a content/band transition.
+
+          2026-06-27 structural fix: WayfindingBand and Footer used to
+          be nested *inside* this <main>, which meant .page's
+          padding-bottom (the gap meant to sit between the grid and the
+          band) actually landed after the Footer instead — invisible,
+          since the Footer was already the page's last visible content.
+          Moving both outside </main> so the padding renders where it
+          was always meant to: as real space between the cards and the
+          band, matching how every other page on the site structures
+          Nav -> main content -> WayfindingBand -> Footer as siblings. */}
     </main>
+    <WayfindingBand />
+    <Footer />
+    </>
   )
 }
