@@ -126,6 +126,18 @@ Susan's directive "Begin New Encounter Architecture" replaces the Path experienc
 - **Figure-tied routes set aside, not deleted:** Dragon, Bowls/Vase, Queen Ann, Butterfly, Continuum, and the old Mermaid prototype (the five-movement scroll built under that route) are unlinked from nav and the new Encounters index, noindexed via `robots.ts`/layout metadata, and left in place on disk. `/encounters/mermaid` now permanently redirects to `/encounters/journey`.
 - **AwakenArts Echo:** The Table uses a line from "Angel Gardens" ("I sow my love with Heaven's care…"); The Word uses a line from "Swan Sings" ("She gave a warning. You see what you believe."), added 2026-06-25 at Susan's direction. Continue still omits the Echo block (per the Continue notes' own instruction to omit rather than force one).
 
+### Free resource: The AwakenArts Encounter Journal (2026-06-27)
+
+Susan shared a Chat-ideated concept doc ("THE JOURNEY — ENCOUNTER SERIES STRUCTURE") proposing a new six-stage rhythm (Arrive/Open/Behold/Resonate/Receive/Integrate) and a 5-figure hero-image set (Mermaid/Dragon/Vessel/Queen Ann/Ballerina) — i.e., the figure-tied set that was deliberately set aside above, not the live Encounters. Her direction was explicit: the concept "goes too deep for production needs now," and she asked how to turn it into a lighter journal experience, leaving the exact figure set and format to judgment ("your best judgements going forward... I was thinking that the images could lead to pages").
+
+**Decision: retire Chat's six-stage rhythm; reuse the locked Recognition Model instead.** AwakenArts already has one canonical framework — **Encounter → Recognition → Reflection → Integration** — documented in `AwakenArts_Guide_to_Symbolic_Facilitation.pdf` ("The Recognition Model") and operationalized in `AwakenArts_Participant_Handouts.pdf`. Introducing a second, six-stage framework for one concept doc would contradict the one-system standard this whole architecture doc exists to enforce. The Recognition Model is explicitly designed to work solo, with no facilitator — so it maps directly onto a free, self-guided resource without modification.
+
+**What was built:** `AwakenArts_Encounter_Journal.pdf` (repo root and `public/files/free/`) — a free, 8-page, visitor-facing companion. Cover, a "How to Use This Journal" page explaining the four movements, one spread per live Encounter (Journey → Deep → Table → Word → Continue, in locked sequence) using each page's real title/line/Scripture/Echo copy and hero image (no new photography), the same four Recognition Model prompts repeated on every spread, and a closing page pointing to `/collection` and cross-selling the deeper facilitator `Guide to Symbolic Facilitation`. Each spread ends with a link back to its live page (`awakenarts.com/encounters/<slug>`) — directly implementing Susan's "the images could lead to pages" note as a funnel from the free PDF back to the production site, rather than the PDF being a closed, standalone artifact.
+
+**Naming:** titled *The AwakenArts Encounter Journal*, distinct from the existing *Guide to Symbolic Facilitation* (a deeper facilitator/practitioner book) — same Recognition Model, different audience and depth, no naming collision.
+
+**Not yet decided:** whether/how this PDF gets a dedicated download page or CTA on the live site (e.g., linked from `/encounters` as a free offering). The PDF itself is the complete deliverable for this pass; a site-side download surface is a natural next step, not yet built.
+
 ## Navigation (4 items)
 
 **ENCOUNTERS · COLLECTION · GALLERY · ABOUT**
