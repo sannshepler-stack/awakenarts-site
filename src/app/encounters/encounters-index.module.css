@@ -9,15 +9,17 @@
   min-height: 100vh;
   background: #0e1418;
   color: #faf7f2;
-  /* 2026-06-27 composition rebalance: bottom value is now a deliberate,
-     documented exception to the universal --band-gap "content end ->
-     Wayfinding Band" rhythm (globals.css :root) — see the comment on
-     .grid below and the matching note in page.tsx. This page closes on
-     five doorways, not a paragraph, so it earns a longer pause than the
-     site's standard transition before a visitor reaches navigation.
-     .grid carries no margin of its own beneath it, so this is the
-     entire gap. */
-  padding: 6.5rem 1.6rem 11rem;
+  /* 2026-06-27 composition rebalance: bottom value uses the site's
+     --band-gap-pause tier (globals.css :root) rather than the standard
+     --band-gap — see the comment on .grid below and the matching note
+     in page.tsx. This page closes on five doorways, not a paragraph,
+     so it earns a longer pause than the site's standard transition
+     before a visitor reaches navigation, but the value is still
+     defined relative to --band-gap (1.5x at every breakpoint) rather
+     than a one-off number, so it stays in scheme with the rest of the
+     page. .grid carries no margin of its own beneath it, so this is
+     the entire gap. */
+  padding: 6.5rem 1.6rem var(--band-gap-pause);
 }
 
 .intro {
@@ -88,11 +90,12 @@
   max-width: 1180px;
   /* 2026-06-27 composition rebalance: the gap before the Wayfinding
      Band is now intentionally wider than every other page's --band-gap
-     (6rem) — it's grown to 11rem desktop / 8rem at <=640px (see media
-     query below). Treat this as a visual pause, not empty space: the
-     five doorways are the page's whole statement, and a visitor should
-     finish encountering them before arriving at site navigation. .grid
-     still carries no margin of its own beneath it — the pause lives
+     (6rem) — it uses --band-gap-pause instead (9rem desktop / 7.5rem
+     at <=1024px / 6rem at <=640px; see media queries below). Treat
+     this as a visual pause, not empty space: the five doorways are
+     the page's whole statement, and a visitor should finish
+     encountering them before arriving at site navigation. .grid still
+     carries no margin of its own beneath it — the pause lives
      entirely in .page's padding-bottom so it stays one clean value. */
   margin: 0 auto;
 }
@@ -145,6 +148,12 @@
   margin: 0;
 }
 
+@media (max-width: 1024px) {
+  .page {
+    padding-bottom: var(--band-gap-pause-md);
+  }
+}
+
 @media (max-width: 980px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -154,8 +163,8 @@
 @media (max-width: 640px) {
   .page {
     /* Scaled-down version of the same 2026-06-27 pause, not the
-       universal --band-gap-sm (4rem) used elsewhere on the site. */
-    padding-bottom: 8rem;
+       universal --band-gap-sm used elsewhere on the site. */
+    padding-bottom: var(--band-gap-pause-sm);
   }
 }
 

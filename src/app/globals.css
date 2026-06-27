@@ -38,6 +38,21 @@
   --band-gap-md: 5rem; /* <=1024px */
   --band-gap-sm: 4rem; /* <=640px */
 
+  /* "Pause" tier (2026-06-27) — for the rare page whose last content
+     block is a terminal visual statement (a card grid, a single image,
+     a closing gesture) rather than continuing prose, and so earns a
+     longer breath before the Wayfinding Band than the standard
+     transition above. Fixed at 1.5x --band-gap at every breakpoint, so
+     it stays visibly tied to the standard rhythm rather than becoming
+     its own arbitrary number — substantial, but never out of scheme
+     with the rest of the page. Do not reach for this by default; most
+     pages end on prose and should use --band-gap. See
+     AwakenArts_Site_Architecture.md -> "Vertical Rhythm Standard" for
+     the current roster of pages using this tier. */
+  --band-gap-pause:    9rem;   /* default / desktop */
+  --band-gap-pause-md: 7.5rem; /* <=1024px */
+  --band-gap-pause-sm: 6rem;   /* <=640px */
+
   /* AwakenArts Global Design System (locked 2026-06-25). One locked
      value per typographic role, shared by every primary page. Color
      stays contextual (navy on cream, cream/white on dark) — only
