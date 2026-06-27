@@ -178,6 +178,62 @@
   }
 }
 
+/* ── Free Journal download ──────────────────────────────────────
+   2026-06-27: a light card floating on the dark .page, sitting right
+   after the card grid, offering the free companion PDF
+   (AwakenArts_Encounter_Journal.pdf) via an email-gated instant
+   download (EmailGateDownload component). Cream/light card on the
+   dark background (rather than a full-width band) keeps this as a
+   single, contained "gift" moment rather than another full section —
+   the wider "A Path of Recognition" band below it bridges onward to
+   the Collection. Reuses the existing global .form-field/.btn-submit
+   form styles (built for cream backgrounds), so only the card chrome
+   and heading styles are defined here. */
+.journalCard {
+  background: var(--cream);
+  color: var(--deep);
+  max-width: 560px;
+  margin: 4rem auto 0;
+  padding: 2.75rem 2.5rem;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+}
+
+.journalEyebrow {
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.75rem;
+}
+
+.journalTitle {
+  font-size: clamp(1.5rem, 2.4vw, 1.85rem);
+  font-weight: var(--h2-weight);
+  color: var(--deep);
+  margin: 0 0 0.85rem;
+}
+
+.journalCopy {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--mid);
+  margin: 0 0 1.75rem;
+}
+
+.journalCard form {
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .journalCard {
+    margin-top: 3rem;
+    padding: 2.25rem 1.5rem;
+  }
+}
+
 /* ── A Path of Recognition ──────────────────────────────────────
    2026-06-27: cream explainer band, sibling to .page (not nested
    inside it) so it isn't constrained by the dark background — same

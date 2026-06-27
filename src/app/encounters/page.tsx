@@ -16,6 +16,7 @@
 import Link from 'next/link'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
+import EmailGateDownload from '@/components/EmailGateDownload'
 import styles from './encounters-index.module.css'
 
 // Card kickers ("Encounter I", "Encounter II"...) were removed 2026-06-25
@@ -94,6 +95,33 @@ export default function EncountersIndexPage() {
           </Link>
         ))}
       </nav>
+
+      {/* 2026-06-27: free companion download — "The AwakenArts Encounter
+          Journal" (built earlier this session, sitting unused at
+          public/files/free/ until now). Email-gated instant download:
+          ConvertKit isn't connected yet (Susan is setting up the account
+          separately), so /api/subscribe runs in placeholder mode for now
+          — it validates and logs the email, but the download itself is
+          never blocked on that. Swap in CONVERTKIT_API_KEY +
+          CONVERTKIT_FORM_ID env vars later and this starts working for
+          real with no code change. See EmailGateDownload component and
+          src/app/api/subscribe/route.ts. */}
+      <div className={styles.journalCard}>
+        <p className={styles.journalEyebrow}>Free Companion</p>
+        <h2 className={styles.journalTitle}>The AwakenArts Encounter Journal</h2>
+        <p className={styles.journalCopy}>
+          A short, self-guided companion to these five Encounters — the
+          same four movements, traced once for each doorway. Free, instant
+          download.
+        </p>
+        <EmailGateDownload
+          pdfHref="/files/free/AwakenArts_Encounter_Journal.pdf"
+          fileName="AwakenArts_Encounter_Journal.pdf"
+          source="encounters-journal"
+          submitLabel="Send Me the Journal →"
+          thanksText="You're on the list — your journal is downloading now. Welcome to AwakenArts."
+        />
+      </div>
 
       {/* Per Susan's "Global Page Architecture Standard" directive
           (2026-06-25): the text navigation that used to sit below the
