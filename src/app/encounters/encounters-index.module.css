@@ -9,17 +9,15 @@
   min-height: 100vh;
   background: #0e1418;
   color: #faf7f2;
-  /* 2026-06-27 composition rebalance: bottom value uses the site's
-     --band-gap-pause tier (globals.css :root) rather than the standard
-     --band-gap — see the comment on .grid below and the matching note
-     in page.tsx. This page closes on five doorways, not a paragraph,
-     so it earns a longer pause than the site's standard transition
-     before a visitor reaches navigation, but the value is still
-     defined relative to --band-gap (1.5x at every breakpoint) rather
-     than a one-off number, so it stays in scheme with the rest of the
-     page. .grid carries no margin of its own beneath it, so this is
-     the entire gap. */
-  padding: 6.5rem 1.6rem var(--band-gap-pause);
+  /* 2026-06-27: bottom value is the universal --band-gap (globals.css
+     :root) — the same token every other page uses before the
+     Wayfinding Band. A longer "pause" tier was tried for this page's
+     terminal card grid, but in practice on a live build it read as
+     too distanced from the rest of the site's rhythm; the standard
+     gap reads as the right amount of breath without breaking
+     consistency. .grid carries no margin of its own beneath it, so
+     this is the entire gap. */
+  padding: 6.5rem 1.6rem var(--band-gap);
 }
 
 .intro {
@@ -88,14 +86,9 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
   max-width: 1180px;
-  /* 2026-06-27 composition rebalance: the gap before the Wayfinding
-     Band is now intentionally wider than every other page's --band-gap
-     (6rem) — it uses --band-gap-pause instead (9rem desktop / 7.5rem
-     at <=1024px / 6rem at <=640px; see media queries below). Treat
-     this as a visual pause, not empty space: the five doorways are
-     the page's whole statement, and a visitor should finish
-     encountering them before arriving at site navigation. .grid still
-     carries no margin of its own beneath it — the pause lives
+  /* 2026-06-27: the gap before the Wayfinding Band uses the universal
+     --band-gap tier, same as every other page — see .page above.
+     .grid carries no margin of its own beneath it; the gap lives
      entirely in .page's padding-bottom so it stays one clean value. */
   margin: 0 auto;
 }
@@ -150,7 +143,7 @@
 
 @media (max-width: 1024px) {
   .page {
-    padding-bottom: var(--band-gap-pause-md);
+    padding-bottom: var(--band-gap-md);
   }
 }
 
@@ -162,9 +155,7 @@
 
 @media (max-width: 640px) {
   .page {
-    /* Scaled-down version of the same 2026-06-27 pause, not the
-       universal --band-gap-sm used elsewhere on the site. */
-    padding-bottom: var(--band-gap-pause-sm);
+    padding-bottom: var(--band-gap-sm);
   }
 }
 
