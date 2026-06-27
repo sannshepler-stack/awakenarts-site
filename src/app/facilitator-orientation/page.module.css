@@ -1,0 +1,344 @@
+/* ─── /facilitator-orientation — Facilitator Orientation & Quick-Reference ──
+   AwakenArts · Unlisted companion page to the Workshops series.
+   Built per the Global Page Architecture Standard (Nav -> content sections
+   -> WayfindingBand -> Footer), following the /workshops convention:
+   dark hero, alternating cream/navy sections, shared design tokens from
+   globals.css :root. Content mirrors AwakenArts_Facilitator_Orientation.pdf
+   exactly — a working quick-reference, not new programming.
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* ─── Hero (dark) ───────────────────────────────────────────────────────── */
+.hero {
+  background: var(--deep);
+  color: var(--cream);
+  padding: 8rem 2rem 5rem;
+  text-align: center;
+}
+
+.heroInner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--serif);
+  font-weight: var(--h1-weight);
+  font-size: var(--h1-size);
+  line-height: 1.15;
+  letter-spacing: 0.005em;
+  color: var(--cream);
+  margin-bottom: 1.25rem;
+}
+
+.lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--subtitle-size);
+  line-height: var(--subtitle-line);
+  color: var(--gold-lt);
+  margin: 0 auto 2rem;
+  max-width: var(--measure-medium);
+}
+
+.backLink {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: var(--link-size);
+  font-weight: var(--link-weight);
+  letter-spacing: var(--link-tracking);
+  text-transform: uppercase;
+  color: var(--cream);
+  border-bottom: 2px solid var(--gold-lt);
+  padding-bottom: 4px;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.backLink:hover {
+  color: var(--gold-lt);
+}
+
+/* ─── Shared section header ─────────────────────────────────────────────── */
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2.75rem;
+}
+
+.sectionHeader .eyebrow {
+  color: var(--gold);
+}
+
+.sectionHeading {
+  font-family: var(--serif);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  line-height: 1.25;
+  color: var(--deep);
+  margin: 0 0 1.1rem;
+}
+
+.sectionLede {
+  font-family: var(--serif);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--mid);
+  max-width: var(--measure-medium);
+  margin: 0 auto;
+}
+
+/* ─── Cream section shell ────────────────────────────────────────────────── */
+.creamSection {
+  background: var(--cream);
+  padding: 5.5rem 2rem;
+}
+
+/* ─── Navy section shell ─────────────────────────────────────────────────── */
+.navySection {
+  background: var(--deep);
+  color: var(--cream);
+  padding: 5.5rem 2rem;
+}
+
+.navySection .eyebrow {
+  color: var(--gold-lt);
+}
+
+.navySection .sectionHeading {
+  color: var(--cream);
+}
+
+.navySection .sectionLede {
+  color: rgba(250, 247, 242, 0.85);
+}
+
+/* ─── Simple checklist (Before You Begin / Opening / Closing & After) ──── */
+.checklist {
+  max-width: 700px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  font-family: var(--serif);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  padding-left: 1.6rem;
+  position: relative;
+  margin-bottom: 1.1rem;
+}
+
+.checklist li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+.navySection .checklist li::before {
+  color: var(--gold-lt);
+}
+
+/* ─── The Ladder (4-step grid, mirrors /workshops .shapeGrid) ──────────── */
+.ladderGrid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.rung {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-top: 2px solid var(--gold-lt);
+}
+
+.rungNum {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.rungName {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--deep);
+  margin: 0 0 0.5rem;
+}
+
+.rungDesc {
+  font-family: var(--serif);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--mid);
+  margin: 0;
+}
+
+/* ─── Do / Don't (two-column, navy) ─────────────────────────────────────── */
+.doDontGrid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.doDontCol {
+  list-style: none;
+  padding: 0;
+}
+
+.doDontLabel {
+  display: block;
+  font-family: var(--sans);
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  margin-bottom: 1.25rem;
+}
+
+.doDontCol li {
+  font-family: var(--serif);
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: rgba(250, 247, 242, 0.92);
+  padding-left: 1.4rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.doDontCol li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold-lt);
+}
+
+/* ─── Watch For (warm caution band) ─────────────────────────────────────── */
+.watchSection {
+  background: var(--gold-bg);
+  padding: 4.5rem 2rem;
+  border-top: 1px solid var(--mist);
+  border-bottom: 1px solid var(--mist);
+  text-align: center;
+}
+
+.watchInner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.watchLabel {
+  display: block;
+  font-family: var(--sans);
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.1rem;
+}
+
+.watchBody {
+  font-family: var(--serif);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--deep);
+  margin: 0;
+}
+
+/* ─── Session Formats at a Glance (navy table) ──────────────────────────── */
+.formatsTable {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.formatsTable th {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  text-align: left;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(250, 247, 242, 0.25);
+}
+
+.formatsTable td {
+  font-family: var(--serif);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: rgba(250, 247, 242, 0.92);
+  padding: 1.1rem 1rem;
+  border-bottom: 1px solid rgba(250, 247, 242, 0.12);
+  vertical-align: top;
+}
+
+.formatsTable td:first-child {
+  color: var(--gold-lt);
+  font-family: var(--sans);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ─── Closing note (small, cream) ───────────────────────────────────────── */
+.closingNote {
+  background: var(--cream);
+  padding: 4rem 2rem var(--band-gap);
+  text-align: center;
+}
+
+.closingNoteText {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--mid);
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .ladderGrid { grid-template-columns: repeat(2, 1fr); }
+  .doDontGrid { grid-template-columns: 1fr; gap: 2rem; }
+  .formatsTable { font-size: 0.9rem; }
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 6.5rem 1.25rem 4rem; }
+  .creamSection,
+  .navySection { padding: 4rem 1.25rem; }
+  .watchSection { padding: 3.5rem 1.25rem; }
+  .closingNote { padding: 3.5rem 1.25rem var(--band-gap-sm); }
+  .ladderGrid { grid-template-columns: 1fr; }
+  .formatsTable, .formatsTable thead { display: block; }
+  .formatsTable tbody { display: block; }
+  .formatsTable tr { display: block; padding: 1rem 0; border-bottom: 1px solid rgba(250, 247, 242, 0.12); }
+  .formatsTable thead tr { display: none; }
+  .formatsTable td { display: block; border-bottom: none; padding: 0.25rem 0; }
+  .formatsTable td:first-child { color: var(--gold-lt); }
+}

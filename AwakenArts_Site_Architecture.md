@@ -49,7 +49,9 @@ The page is reachable by anyone who has the URL, renders identically to a publis
 
 **To publish an unlisted page later:** remove its `robots` override, remove it from `DISALLOWED_PATHS`, and add it to `Nav.tsx` (and WayfindingBand/Footer if it belongs in universal navigation). Two reversible steps — promotion never requires rebuilding the page.
 
-**Current roster of unlisted pages:** `/workshops` — built 2026-06-27, content-complete, withheld from navigation until Susan decides to publish it.
+**Current roster of unlisted pages:**
+- `/workshops` — built 2026-06-27, content-complete, withheld from navigation until Susan decides to publish it.
+- `/facilitator-orientation` — built 2026-06-27, companion to `/workshops`; mirrors `AwakenArts_Facilitator_Orientation.pdf` as a single scrollable page rather than a multi-page sequence, consistent with the site's "one page, many chapters" rhythm.
 
 ## AwakenArts Global Design System (locked 2026-06-25) — rollout complete
 
