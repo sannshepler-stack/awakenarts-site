@@ -5,10 +5,17 @@
 // /encounters, but written generic enough (props-driven) to reuse on other
 // pages later (Collection, Workshops, etc.) for other free downloads.
 //
-// Design intent, per Susan's directive: instant download, gated by email.
-// The email step never blocks the file — if the list-provider call fails
-// or is still a placeholder (see /api/subscribe), the visitor still gets
-// the download. We're capturing a lead, not running a paywall.
+// Design intent: instant download, gated by email and confirmed signup.
+//
+// 2026-06-27 update, per Susan: the success screen (and the download it
+// triggers) now only appears once /api/subscribe confirms Kit actually
+// created the subscriber (`subscribed: true`) — this supersedes the
+// earlier "never block the download" rule, after production was found
+// showing success while Kit had zero subscribers. If the subscribe call
+// fails, the form shows an error and lets the visitor retry instead of
+// silently handing over the file. The one exception is local dev with no
+// Kit keys configured at all (`placeholder: true`), where there's
+// nothing real to confirm yet.
 //
 // Reuses the site's existing global form styles (.form-field, .btn-submit,
 // .form-note, .form-thanks in globals.css) rather than inventing new ones —
@@ -63,16 +70,28 @@ export default function EmailGateDownload({
 
     setStatus('submitting')
 
+    let data: { ok?: boolean; subscribed?: boolean; placeholder?: boolean; message?: string }
     try {
-      await fetch('/api/subscribe', {
+      const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: trimmed, source }),
       })
+      data = await res.json().catch(() => ({ ok: false }))
     } catch {
-      // A network hiccup on the list signup should never block the
-      // download itself -- the visitor asked for the file, not for the
-      // subscribe call to succeed.
+      setStatus('idle')
+      setError("We couldn't reach the server just now. Please try again.")
+      return
+    }
+
+    // Only show success (and fire the download) once Kit has actually
+    // confirmed the subscriber, or we're in the no-keys-configured dev
+    // placeholder. Anything else is a real failure — surface it and let
+    // the visitor retry rather than silently handing over the file.
+    if (!data.ok || (!data.subscribed && !data.placeholder)) {
+      setStatus('idle')
+      setError(data.message || "We couldn't add you to the list just now. Please try again.")
+      return
     }
 
     setStatus('done')

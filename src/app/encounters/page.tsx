@@ -98,10 +98,11 @@ export default function EncountersIndexPage() {
 
       {/* 2026-06-27: free companion download — "The AwakenArts Encounter
           Journal" (built earlier this session, sitting unused at
-          public/files/free/ until now). Email-gated instant download via
-          Kit (KIT_API_KEY + KIT_FORM_ID, see src/app/api/subscribe/
-          route.ts) — the download itself is never blocked on that call
-          succeeding. See EmailGateDownload component. */}
+          public/files/free/ until now). Email-gated download via Kit
+          (KIT_API_KEY + KIT_FORM_ID, see src/app/api/subscribe/route.ts)
+          — the download now only fires once Kit confirms the subscriber
+          was actually created, per Susan's directive. See
+          EmailGateDownload component. */}
       <div className={styles.journalCard}>
         <p className={styles.journalEyebrow}>Free Companion</p>
         <h2 className={styles.journalTitle}>The AwakenArts Encounter Journal</h2>

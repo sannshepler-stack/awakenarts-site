@@ -26,10 +26,18 @@ import { NextRequest, NextResponse } from 'next/server'
 // anywhere. No code change is needed once the real values are added to
 // the environment.
 //
-// Hard rule throughout: the email step must never block the download.
-// A visitor asked for a free file, not for our list-provider integration
-// to succeed -- so every code path below returns { ok: true } unless the
-// email itself was invalid.
+// 2026-06-27 update, per Susan: production was showing the download
+// success screen even though Kit had zero subscribers — because every
+// code path below used to swallow Kit's response and always return
+// { ok: true }. That made it impossible to tell a real success from a
+// silent failure. Per Susan's explicit instruction, this route now
+// reports the *actual* outcome of the Kit call, and EmailGateDownload
+// only shows its success state / fires the download once this route
+// confirms `subscribed: true`. Full error detail (status + Kit's
+// response body) is logged server-side via console.error so failures
+// show up in Vercel's Runtime Logs (Project → Logs, or `vercel logs`),
+// and a short, safe summary is returned to the client so the form can
+// tell the visitor something went wrong and let them retry.
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -54,9 +62,17 @@ export async function POST(req: NextRequest) {
   const apiKey = process.env.KIT_API_KEY
   const formId = process.env.KIT_FORM_ID
 
+  // Dev-only fallback: with no keys configured at all (e.g. a fresh local
+  // checkout with no .env.local yet), there's nothing real to confirm, so
+  // we let the form proceed as if subscribed. This should never trigger
+  // in production once KIT_API_KEY/KIT_FORM_ID are set on Vercel — if it
+  // does, that itself is the bug (the env vars aren't reaching the
+  // running function; see the log line below).
   if (!apiKey || !formId) {
-    console.log(`[subscribe:placeholder] ${email} (source: ${source}) — Kit not connected yet.`)
-    return NextResponse.json({ ok: true, placeholder: true })
+    console.log(
+      `[subscribe:placeholder] ${email} (source: ${source}) — KIT_API_KEY/KIT_FORM_ID not set in this environment (apiKey present: ${!!apiKey}, formId present: ${!!formId}).`
+    )
+    return NextResponse.json({ ok: true, subscribed: false, placeholder: true })
   }
 
   // Pass along where on the site this signup came from, when available,
@@ -64,8 +80,9 @@ export async function POST(req: NextRequest) {
   // see "Encounters Journal" vs. any future gate without extra setup).
   const referrer = req.headers.get('referer') || undefined
 
+  let kitRes: Response
   try {
-    const res = await fetch(`https://api.kit.com/v4/forms/${formId}/subscribers`, {
+    kitRes = await fetch(`https://api.kit.com/v4/forms/${formId}/subscribers`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -73,16 +90,43 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({ email_address: email, referrer }),
     })
-
-    if (!res.ok) {
-      const text = await res.text()
-      console.error('[subscribe:kit] request failed', res.status, text, '(source:', source, ')')
-      return NextResponse.json({ ok: true, listError: true })
-    }
-
-    return NextResponse.json({ ok: true })
   } catch (err) {
-    console.error('[subscribe:kit] request error', err)
-    return NextResponse.json({ ok: true, listError: true })
+    console.error('[subscribe:kit] network error reaching api.kit.com', err, '(source:', source, ')')
+    return NextResponse.json({
+      ok: false,
+      subscribed: false,
+      message: "We couldn't reach our list provider just now. Please try again in a moment.",
+    })
   }
+
+  const rawBody = await kitRes.text()
+  let parsedBody: unknown = null
+  try {
+    parsedBody = rawBody ? JSON.parse(rawBody) : null
+  } catch {
+    // Kit's error responses are normally JSON; fall back to the raw text
+    // if not so we still log something useful.
+  }
+
+  if (!kitRes.ok) {
+    console.error('[subscribe:kit] Kit rejected the subscriber', {
+      status: kitRes.status,
+      formId,
+      email,
+      source,
+      body: parsedBody ?? rawBody,
+    })
+    const message =
+      kitRes.status === 401
+        ? "Our list provider rejected the request (invalid or revoked API key)."
+        : kitRes.status === 404
+        ? "Our list provider couldn't find that form — check the Form ID."
+        : kitRes.status === 422
+        ? "Our list provider couldn't process that email address."
+        : "We couldn't add you to the list just now. Please try again in a moment."
+    return NextResponse.json({ ok: false, subscribed: false, kitStatus: kitRes.status, message })
+  }
+
+  console.log('[subscribe:kit] subscriber added to Kit', { email, source, formId })
+  return NextResponse.json({ ok: true, subscribed: true })
 }
