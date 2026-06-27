@@ -70,10 +70,10 @@ export default function EncountersIndexPage() {
         <p className={styles.eyebrow}>Encounters</p>
         <h1 className={styles.title}>Encounters</h1>
         <p className={styles.statementPrimary}>
-          Discover symbolic language through image and poem.
+          Every journey begins with a single encounter.
         </p>
         <p className={styles.statementSecondary}>
-          Quiet doorways into the symbolic world of AwakenArts.
+          Begin where you are. The work will meet you there.
         </p>
       </div>
 
@@ -102,7 +102,13 @@ export default function EncountersIndexPage() {
           This text navigation should be removed... the cards already
           communicate [the sequence]." The cards are the navigation;
           generous breathing space now leads straight from the grid
-          into the global Wayfinding Band, then the Standard Footer. */}
+          into the global Wayfinding Band, then the Standard Footer.
+
+          2026-06-27 rebalance: that breathing space beneath the grid
+          is now deliberately wider than the universal --band-gap rhythm
+          (see .page in encounters-index.module.css) — a visual pause
+          meant to let a visitor finish the five doorways before meeting
+          the site's navigation, not just a content/band transition. */}
       <WayfindingBand />
       <Footer />
     </main>

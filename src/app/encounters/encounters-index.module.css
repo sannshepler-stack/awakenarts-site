@@ -9,17 +9,23 @@
   min-height: 100vh;
   background: #0e1418;
   color: #faf7f2;
-  /* Bottom value is the AwakenArts Vertical Rhythm Standard's universal
-     "content end -> Wayfinding Band" gap (--band-gap, globals.css
-     :root) — the card grid is this page's last content, so .page's
-     own padding-bottom is the entire gap; .grid carries no margin of
-     its own beneath it (see .grid below) to avoid double-stacking. */
-  padding: 6.5rem 1.6rem var(--band-gap);
+  /* 2026-06-27 composition rebalance: bottom value is now a deliberate,
+     documented exception to the universal --band-gap "content end ->
+     Wayfinding Band" rhythm (globals.css :root) — see the comment on
+     .grid below and the matching note in page.tsx. This page closes on
+     five doorways, not a paragraph, so it earns a longer pause than the
+     site's standard transition before a visitor reaches navigation.
+     .grid carries no margin of its own beneath it, so this is the
+     entire gap. */
+  padding: 6.5rem 1.6rem 11rem;
 }
 
 .intro {
   max-width: 720px;
-  margin: 0 auto 4rem;
+  /* Bottom margin trimmed from 4rem -> 3rem as part of the same
+     2026-06-27 rebalance: less air inside the heading group itself,
+     so the saved space can be spent below the cards instead. */
+  margin: 0 auto 3rem;
   text-align: center;
 }
 
@@ -42,7 +48,7 @@
   letter-spacing: var(--label-tracking);
   text-transform: uppercase;
   color: #d9b568;
-  margin: 0 0 1rem;
+  margin: 0 0 0.75rem;
 }
 
 .title {
@@ -50,7 +56,7 @@
   font-weight: var(--h1-weight);
   font-size: var(--h1-size);
   letter-spacing: 0.01em;
-  margin: 0 0 1.3rem;
+  margin: 0 0 1rem;
   color: #faf7f2;
 }
 
@@ -63,7 +69,7 @@
   color: #faf7f2;
   font-size: clamp(1.35rem, 2.8vw, 1.85rem);
   line-height: 1.5;
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.5rem;
 }
 
 /* Secondary line — quieter support copy, still legible at a glance. */
@@ -80,11 +86,14 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
   max-width: 1180px;
-  /* No bottom margin here, by design (AwakenArts Vertical Rhythm
-     Standard, 2026-06-25): the gap before the Wayfinding Band now
-     lives entirely in .page's padding-bottom (var(--band-gap)) so
-     this page uses the exact same "content end -> band" spacing as
-     every other major page, instead of a page-specific number. */
+  /* 2026-06-27 composition rebalance: the gap before the Wayfinding
+     Band is now intentionally wider than every other page's --band-gap
+     (6rem) — it's grown to 11rem desktop / 8rem at <=640px (see media
+     query below). Treat this as a visual pause, not empty space: the
+     five doorways are the page's whole statement, and a visitor should
+     finish encountering them before arriving at site navigation. .grid
+     still carries no margin of its own beneath it — the pause lives
+     entirely in .page's padding-bottom so it stays one clean value. */
   margin: 0 auto;
 }
 
@@ -144,7 +153,9 @@
 
 @media (max-width: 640px) {
   .page {
-    padding-bottom: var(--band-gap-sm);
+    /* Scaled-down version of the same 2026-06-27 pause, not the
+       universal --band-gap-sm (4rem) used elsewhere on the site. */
+    padding-bottom: 8rem;
   }
 }
 
