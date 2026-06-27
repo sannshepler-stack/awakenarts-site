@@ -53,6 +53,22 @@ The page is reachable by anyone who has the URL, renders identically to a publis
 - `/workshops` — built 2026-06-27, content-complete, withheld from navigation until Susan decides to publish it.
 - `/facilitator-orientation` — built 2026-06-27, companion to `/workshops`; mirrors `AwakenArts_Facilitator_Orientation.pdf` as a single scrollable page rather than a multi-page sequence, consistent with the site's "one page, many chapters" rhythm.
 
+**Unlisted File Access (same system, applied to raw files, 2026-06-27):** the source documents behind the Workshops materials needed to exist on the live site, in their original created form (not rebuilt as web pages), reachable by direct link, sharable later but not yet. Same recipe as an unlisted page, applied to static files instead of routes:
+
+1. File placed in `public/files/workshops/` (follows the existing `public/files/editions/` convention used for the Figure Edition PDFs) — Next.js serves anything under `public/` at a matching URL automatically, no route code needed.
+2. `/files/workshops/` added to `DISALLOWED_PATHS` in `src/app/robots.ts` — keeps the directory out of search results.
+3. Not linked from anywhere on the site yet — `/workshops` and `/facilitator-orientation` don't surface these links, so they're reachable only to someone with the exact URL.
+
+**Current roster of unlisted files** (all under `https://awakenarts.com/files/workshops/`):
+- `AwakenArts_Workshop_Curriculum.docx`
+- `AwakenArts_Facilitator_Orientation.pdf`
+- `AwakenArts_Participant_Handouts.pdf`
+- `AwakenArts_Intake_Consent_Form.pdf`
+- `AwakenArts_Session_Feedback_Form.pdf`
+- `AwakenArts_Guide_to_Symbolic_Facilitation.pdf`
+
+**To make one shareable later:** just send the direct link — no further build needed. To make one *discoverable*, remove its `/files/workshops/` disallow entry (or move it to a public-facing files directory) and link to it from a page.
+
 ## AwakenArts Global Design System (locked 2026-06-25) — rollout complete
 
 This is the technical implementation of Section 3 ("Visual Language") of `AwakenArts_Editorial_Identity_and_Design_Standard.md`. Six typographic roles, two structural standards, and one image philosophy now govern every primary page — established once as CSS custom properties in `src/app/globals.css` `:root`, referenced everywhere via `var(--token)`, never adjusted by eye page to page.

@@ -50,6 +50,7 @@ const DISALLOWED_PATHS = [
   '/encounters/mermaid',
   '/workshops',
   '/facilitator-orientation',
+  '/files/workshops/',
   '/api/',
   '/_next/',
 ]
