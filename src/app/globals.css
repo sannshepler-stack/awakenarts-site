@@ -7180,7 +7180,12 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 .foundation-body {
   font-family: var(--serif);
-  font-size: var(--body-size);
+  /* 2026-06-28 Readability Primacy revision, per Susan's review: the
+     page asks people to read carefully, so the reading text itself
+     shouldn't be the thing that's hardest to read. +2px is ~11-15%
+     over the shared --body-size floor -- a selective bump to this
+     element only, not a change to the --body-size token itself. */
+  font-size: calc(var(--body-size) + 2px);
   line-height: var(--body-line);
   color: var(--ink);
   margin: 0 0 1.75rem;
@@ -7190,22 +7195,27 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   margin-bottom: 0;
 }
 
-/* Closing credo — the page's three-line resolution. Set apart with a
-   gold rule and generous space above. Left-aligned and no longer
-   italic (2026-06-28: italic gold "signature" styling read as too
-   poetic for a plain statement of belief) — still gold, still set
-   apart, but reading as three plain declarative lines rather than a
-   literary flourish. */
+/* Closing credo — the page's three-line resolution.
+   2026-06-28 revision, per Susan's second review: she liked the
+   plain-spoken three lines but asked for them to feel like "the
+   page's quiet conclusion" rather than more body copy -- centered,
+   italic, a touch more leading, in the established gold. Explicitly
+   NOT larger (she was clear: "not bigger, just a little more
+   distinguished"), so font-size is unchanged from the plain-text
+   pass. This is the one deliberately centered element on an
+   otherwise left-aligned page -- a closing flourish, not the rule. */
 .foundation-credo {
   margin: var(--band-gap-sm) 0 0;
   padding-top: 2.5rem;
   border-top: 1px solid rgba(139, 105, 20, 0.35);
+  text-align: center;
 }
 
 .foundation-credo p {
   font-family: var(--serif);
+  font-style: italic;
   font-size: clamp(1.1rem, 1.8vw, 1.3rem);
-  line-height: 1.65;
+  line-height: 1.9;
   color: var(--gold);
   margin: 0 0 0.65rem;
 }
