@@ -22,25 +22,41 @@ export const metadata: Metadata = {
  *
  * Homepage Reformation Directive (June 2026): a coherent visual
  * journey that relies on the symbolic work itself rather than
- * explanation. "Show more. Explain less." Seven movements, each
- * progressively quieter, alternating orientation and encounter:
+ * explanation. "Show more. Explain less."
+ *
+ * 2026-06-28 Final Editorial Refinement, per Susan: "The homepage is
+ * no longer introducing a website. It is introducing a body of
+ * published work." This is the closing editorial pass before the
+ * Publishing Platform phase — six movements, each progressively
+ * quieter:
  *   1. Hero               — the emotional entrance; image dominant
- *   2. AwakenArts Intro    — pure orientation, one restrained line
- *   3. Collection          — navy architectural framework, cream
+ *   2. Collection          — navy architectural framework, cream
  *                            type, the complete uncropped cover
- *   4. Queen Ann Intro     — title page; name + a single quotation
- *   5. Queen Ann Encounter — still + poem as one literary spread
- *   6. Matthew 13:34       — the quiet, concluding reflection
- *   7. Footer
- * The former "Discover symbolic language" transition has been
- * removed entirely — the Queen Ann encounter now resolves directly
- * into Matthew 13:34 with no replacement band or divider.
+ *   3. Queen Ann Intro     — title page; name + a single quotation
+ *   4. Queen Ann Encounter — still + poem as one literary spread
+ *   5. Matthew 13:34       — the quiet theological threshold,
+ *                            resolving into an invitation to
+ *                            /foundation rather than a closed
+ *                            statement
+ *   6. Footer
+ * The former standalone "AwakenArts Introduction" section (a single
+ * isolated line between Hero and Collection) has been removed
+ * entirely — it repeated the Matthew section's own explanatory
+ * paragraph almost verbatim and served no structural purpose on its
+ * own. The former "Discover symbolic language" transition was
+ * already removed; the Queen Ann encounter resolves directly into
+ * Matthew 13:34 with no replacement band or divider.
  *
  * Editorial framework (June 2026 recalibration): the works are not
  * symbolic art accompanied by Christian reference — they extend a
  * literary mode Scripture itself already uses (parable, poetry,
  * image, figure, type). The homepage should read as an entry into
- * that tradition, not a mood.
+ * that tradition, not a mood. By the time a visitor reaches the
+ * footer, they should understand what AwakenArts is, why it exists,
+ * the Christian foundation it is offered from, and where to continue
+ * — without further explanation. /foundation answers the question
+ * Matthew 13:34 naturally raises; the homepage now invites that next
+ * step instead of closing the thought itself.
  */
 
 export default function HomePage() {
@@ -133,23 +149,8 @@ export default function HomePage() {
 
       </section>
 
-      {/* ── AWAKENARTS INTRODUCTION ───────────────────────────────
-          Section 2 — pure orientation, nothing more. This is the
-          existing introductory line, relocated out of the Hero so
-          the Hero itself stays purely visual ("avoid unnecessary
-          introductory text"). Retained verbatim, not expanded —
-          its only purpose is to orient the visitor before the
-          Collection establishes the architectural framework below.
-      ──────────────────────────────────────────────────────────── */}
-      <section className="home-intro" aria-label="Introduction">
-        <p className="home-intro__text">
-          AwakenArts brings image and poem together in symbolic forms
-          that invite recognition rather than explanation.
-        </p>
-      </section>
-
       {/* ── THE COLLECTION ───────────────────────────────────────
-          Section 3 — the first major structural section of the
+          Section 2 — the first major structural section of the
           Homepage. Presented on a navy field per the Homepage
           Reformation Directive: the darker ground establishes the
           Collection as AwakenArts' architectural framework and
@@ -271,8 +272,16 @@ export default function HomePage() {
               invite recognition through attentive engagement, not
               explanation.
             </p>
-            <p className="hero-quote-closing">
-              Symbolic language invites recognition before explanation.
+            {/* 2026-06-28 Final Editorial Refinement: the former closed
+                statement ("Symbolic language invites recognition before
+                explanation.") is replaced with an invitation forward —
+                continuity, not promotion. This is the homepage's one
+                quiet point of departure toward /foundation. */}
+            <Link href="/foundation" className="hero-quote-closing">
+              Read the Foundation of AwakenArts <span aria-hidden="true">→</span>
+            </Link>
+            <p className="home-foundation-credo">
+              Christ is the center. Scripture is the authority.
             </p>
           </div>
         </div>

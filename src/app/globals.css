@@ -482,28 +482,13 @@ a   { color: inherit; text-decoration: none; }
   color: var(--gold);
   border-bottom-color: var(--gold);
 }
-/* ── HOMEPAGE: AWAKENARTS INTRODUCTION ──────────────────────────
-   Section 2 — pure orientation, nothing more. A single restrained
-   line on the cream field, sitting quietly between the Hero and the
-   navy Collection section below. No heading, no eyebrow. */
-.home-intro {
-  background: #f5f0e8;
-  padding: 3rem 2rem 4.5rem;
-  text-align: center;
-}
-.home-intro__text {
-  font-family: var(--serif);
-  font-size: var(--body-size);
-  font-weight: 300;
-  line-height: var(--body-line);
-  color: rgba(28, 43, 58, 0.78);
-  letter-spacing: .01em;
-  max-width: var(--measure-medium);
-  margin: 0 auto;
-}
-@media (max-width: 640px) {
-  .home-intro { padding: 2.25rem 1.5rem 3.5rem; }
-}
+/* ── HOMEPAGE: AWAKENARTS INTRODUCTION — removed 2026-06-28 ─────
+   Final Editorial Refinement: this isolated orientation line sat
+   between the Hero and Collection sections but repeated the Matthew
+   13:34 section's own explanatory paragraph almost verbatim and
+   interrupted the page's visual rhythm. Removed per Susan's
+   directive; see page.tsx homepage comment block for the current
+   six-movement structure. */
 
 .hero-secondary-sep {
   color: var(--mid);
@@ -827,19 +812,19 @@ a   { color: inherit; text-decoration: none; }
    widths rather than a paragraph. */
 .hero-quote-text {
   font-family: var(--serif);
-  /* Nudged down slightly from the previous pass (2.75rem -> 2.5rem
-     ceiling) per Susan's "not much" correction — still the section's
-     strongest typographic moment. */
-  font-size: clamp(1.75rem, 3.3vw, 2.5rem);
+  /* 2026-06-28 Final Editorial Refinement: reduced ~12% from the prior
+     pass (2.5rem -> 2.2rem ceiling) per Susan's "quieter, more elegant
+     than expansive" direction — the section should read as the
+     homepage's quiet theological threshold, not its loudest moment. */
+  font-size: clamp(1.55rem, 2.9vw, 2.2rem);
   font-weight: 300;
   font-style: italic;
   color: var(--deep);
   max-width: 880px;
-  /* Top margin increased again (20px -> 70px, 2026-06-26 "Homepage
-     Refinement" pass) — on top of the AtmosphericHeader's own
-     built-in spacing, this adds the requested ~40-60px so Scripture
-     feels deliberately introduced rather than attached to the image. */
-  margin: 70px auto 1.75rem;
+  /* Top margin (70px) unchanged — still the deliberate separation from
+     the AtmosphericHeader above. Bottom margin tightened slightly
+     (1.75rem -> 1.5rem) as part of the section-wide spacing review. */
+  margin: 70px auto 1.5rem;
   line-height: 1.45;
 }
 
@@ -884,21 +869,21 @@ a   { color: inherit; text-decoration: none; }
   .hero-secondary-section { padding: 4rem 1.25rem; }
 }
 
-/* Noticeably larger than before (0.82rem -> clamp ~1.05–1.2rem) so the
-   citation feels intentional and authoritative rather than secondary
-   — still well below the quotation's scale above it. */
+/* 2026-06-28 Final Editorial Refinement: de-weighted from the prior
+   pass — lighter weight (500 -> 400), smaller scale, tighter letter
+   spacing, and a much shorter gap beneath it. The reference should
+   read as a quiet attribution, not a secondary heading competing with
+   the quotation above it. */
 .hero-quote-cite {
   font-family: var(--sans);
-  /* Modest increase (2026-06-26) so it reads as a clear secondary
-     heading beneath the quotation, not a caption. */
-  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--gold);
   text-align: center;
   font-style: normal;
-  margin-bottom: 3.25rem;
+  margin-bottom: 2.25rem;
 }
 
 .hero-quote-body {
@@ -908,25 +893,45 @@ a   { color: inherit; text-decoration: none; }
   line-height: var(--body-line);
   color: var(--mid);
   max-width: var(--measure-medium);
-  margin: 0 auto 1.25rem;
+  margin: 0 auto 1rem;
 }
 
-/* Closing thought — a quiet, gold-italic line beneath the two body
-   paragraphs, in the same restrained "mission line" register used
-   elsewhere on the homepage (.hero-mission, .lib-preview-mission).
-   Reflective and confident, not instructional. */
-/* Given its own explicit scale rather than the shared --subtitle-size
-   token (locked 2026-06-25) — a touch larger, with more space above
-   it, so this concluding statement reads as the Homepage's signature
-   rather than a footer-style closing line. */
+/* Foundation transition link — 2026-06-28 Final Editorial Refinement.
+   Replaces the former closed statement ("Symbolic language invites
+   recognition before explanation.") with an invitation to continue
+   into /foundation. Kept in the same gold-italic "signature" register
+   so the transition feels like continuity, not a CTA button. Now an
+   inline link (<Link>, not <p>) — display: inline-block plus the
+   parent's text-align: center keeps it correctly positioned, and
+   inline-level margins don't collapse with the credo line below,
+   giving predictable, tightened spacing. */
 .hero-quote-closing {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.3rem, 2vw, 1.55rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.4rem);
   line-height: 1.6;
   color: var(--gold);
-  max-width: var(--measure-medium); /* matches .hero-quote-body — one consistent column */
-  margin: 2.75rem auto 0;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2rem 0 0;
+  transition: color 0.2s ease-out;
+}
+.hero-quote-closing:hover,
+.hero-quote-closing:focus-visible {
+  color: var(--deep);
+}
+
+/* Credo subtext beneath the Foundation link — smaller and more
+   restrained than the link itself; states the grounding in a single
+   breath rather than restating the Foundation page's own framework.
+   2026-06-28 Final Editorial Refinement. */
+.home-foundation-credo {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  color: var(--mid);
+  margin: 0.75rem 0 0;
 }
 
 /* ─────────────────────────────────────────────
