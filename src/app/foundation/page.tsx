@@ -67,7 +67,7 @@ export default function FoundationPage() {
           <div className="foundation-credo">
             <p>Christ is the center.</p>
             <p>Scripture is the authority.</p>
-            <p>The artistic work is an invitation to reflect within that framework.</p>
+            <p>The artistic work is an invitation to reflect.</p>
           </div>
         </main>
       </div>
