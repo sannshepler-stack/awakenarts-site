@@ -119,7 +119,7 @@ export default function HomePage() {
                 Enter the Encounters <span className="arrow" aria-hidden="true">→</span>
               </Link>
               <p className="hero-invitation__teaser">
-                Guided symbolic experiences through image, poem, and
+                Guided symbolic encounters through image, poem, and
                 Scripture.
               </p>
             </div>
