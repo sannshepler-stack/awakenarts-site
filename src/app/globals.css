@@ -6800,14 +6800,22 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   /* Bottom value is the AwakenArts Vertical Rhythm Standard's
      universal "content end -> Wayfinding Band" gap (--band-gap,
      globals.css :root) — this is the last section on /about before
-     <WayfindingBand />. */
-  padding: 7rem 3rem var(--band-gap);
+     <WayfindingBand />.
+     2026-06-28: top padding reduced (7rem -> 3.5rem) now that an
+     AtmosphericHeader sits directly above this section — the same
+     adjustment already made on /foundation when its header image was
+     added. The header now supplies the page's visual lead-in, so the
+     old large top gap would just be redundant empty space. */
+  padding: 3.5rem 3rem var(--band-gap);
 }
 
 /* ── Opening — float-based portrait ─────────────────────────
    Portrait floats right so heading, credentials, and paragraphs
-   flow naturally around it. Portrait width is modest — enough to
-   establish the author, not compete with the text. */
+   flow naturally around it.
+   2026-06-28: enlarged per Susan's request — from 230px to 300px
+   desktop (and proportionally at tablet/mobile breakpoints below).
+   Still a float within the prose, not a full visual interrupt, but
+   now reads with real presence rather than a modest thumbnail. */
 .about-opening {
   margin-bottom: 2.5rem;
   /* clearfix — contains the float */
@@ -6816,7 +6824,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 .about-portrait {
   float: right;
-  width: 230px;
+  width: 300px;
   display: block;
   margin: 0.35rem 0 2rem 3.5rem;
 }
@@ -6889,7 +6897,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 /* ── Responsive ── */
 @media (max-width: 700px) {
   .about-portrait {
-    width: 180px;
+    width: 230px;
     margin: 0.25rem 0 1.5rem 2.5rem;
   }
 }
@@ -6898,7 +6906,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   /* Portrait stops floating — stacks above the text */
   .about-portrait {
     float: none;
-    width: 160px;
+    width: 210px;
     margin: 0 0 1.75rem;
     display: block;
   }
@@ -6909,7 +6917,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 @media (max-width: 640px) {
-  .about-main { padding: 4.5rem 1.5rem var(--band-gap-sm); }
+  .about-main { padding: 2.5rem 1.5rem var(--band-gap-sm); }
   /* .about-body font-size override removed — Global Design System body
      copy (--body-size) is one fixed specification, not adjusted by
      breakpoint (locked 2026-06-25). */

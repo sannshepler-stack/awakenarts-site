@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
+import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 
@@ -22,6 +23,12 @@ export default function AboutPage() {
   return (
     <>
       <Nav />
+
+      <AtmosphericHeader
+        src="/images/headers/about.jpg"
+        alt="An open book, dried flowers, and a stack of well-worn books on a sunlit table overlooking a hillside at sunset — a quiet place to write and reflect."
+      />
+
       <div className="about-page">
         <main className="about-main">
 
