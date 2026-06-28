@@ -485,7 +485,11 @@ a   { color: inherit; text-decoration: none; }
 .hero-invitations {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  /* 2026-06-28 editorial refinement: widened from 2rem so each
+     invitation reads as its own distinct editorial moment rather than
+     two consecutive paragraphs, now that the teaser copy beneath each
+     is shorter (one or two lines, orientation rather than explanation). */
+  gap: 2.75rem;
   margin: 2.5rem 0 0;
 }
 
@@ -522,7 +526,7 @@ a   { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 640px) {
-  .hero-invitations { gap: 1.6rem; margin-top: 2rem; }
+  .hero-invitations { gap: 2.1rem; margin-top: 2rem; }
 }
 
 

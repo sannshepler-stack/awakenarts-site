@@ -119,8 +119,8 @@ export default function HomePage() {
                 Enter the Encounters <span className="arrow" aria-hidden="true">→</span>
               </Link>
               <p className="hero-invitation__teaser">
-                A series of guided symbolic experiences where image, poem,
-                and Scripture invite personal reflection and recognition.
+                Guided symbolic experiences through image, poem, and
+                Scripture.
               </p>
             </div>
             <div className="hero-invitation">
@@ -128,8 +128,7 @@ export default function HomePage() {
                 Explore the Collection <span className="arrow" aria-hidden="true">→</span>
               </Link>
               <p className="hero-invitation__teaser">
-                Browse the growing library of Figure Editions and discover
-                the unfolding body of work that is AwakenArts.
+                Discover the growing library of AwakenArts Figure Editions.
               </p>
             </div>
           </div>
