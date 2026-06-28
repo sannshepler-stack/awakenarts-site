@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
@@ -104,6 +105,17 @@ export default function AboutPage() {
               form while remaining attentive to the figurative language found
               throughout Scripture.
             </p>
+
+            {/* 2026-06-28: quiet link to /foundation — per Susan's directive,
+                findable near the section explaining AwakenArts' origins, but
+                a single understated line, not a CTA competing with the prose
+                above it. */}
+            <p className="about-body about-body--quiet" style={{ marginBottom: '2.5rem' }}>
+              <Link href="/foundation" className="text-link">
+                Read the Foundation of AwakenArts →
+              </Link>
+            </p>
+
             <p className="about-body about-body--quiet">
               Susan holds an MA in Counseling Psychology from Webster University.
               She is a Certified Transformative Language Artist through the

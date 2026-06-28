@@ -7078,3 +7078,85 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .gal-hero { padding: 6rem 1.5rem 3rem; }
   .gal-grid-section { padding: 1rem 1.25rem var(--band-gap-sm); }
 }
+
+/* ─────────────────────────────────────────────
+   FOUNDATION PAGE (/foundation) — 2026-06-28
+   A quiet, permanent statement of the theological and artistic
+   framework AwakenArts is offered within. Deliberately the most
+   restrained page on the site: single centered narrow column
+   (--measure-narrow, the same width used for quotes and journal
+   prompts elsewhere), no imagery, no decoration beyond the standard
+   eyebrow and a gold rule introducing the closing credo. Findable
+   (footer, a quiet link from /about) but never inserted into the
+   primary visitor journey or main nav, per Susan's directive.
+───────────────────────────────────────────── */
+.foundation-page {
+  background: var(--cream);
+  min-height: 100vh;
+}
+
+.foundation-main {
+  max-width: var(--measure-narrow);
+  margin: 0 auto;
+  padding: 7.5rem 2rem var(--band-gap);
+  text-align: center;
+}
+
+.foundation-eyebrow {
+  /* Centered variant of the shared .eyebrow token. */
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.foundation-h1 {
+  font-family: var(--serif);
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  color: var(--deep);
+  line-height: 1.15;
+  margin: 0 auto 3rem;
+}
+
+.foundation-body {
+  font-family: var(--serif);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--ink);
+  margin: 0 auto 1.75rem;
+}
+
+.foundation-body:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Closing credo — the page's three-line resolution. Set apart with a
+   gold rule and generous space above, larger gold-italic serif type
+   in the same restrained "signature" register as .hero-quote-closing
+   on the homepage, so it reads as a quiet conclusion rather than
+   another paragraph. */
+.foundation-credo {
+  margin: var(--band-gap-sm) auto 0;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(139, 105, 20, 0.35);
+}
+
+.foundation-credo p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  line-height: 1.65;
+  color: var(--gold);
+  margin: 0 0 0.65rem;
+}
+
+.foundation-credo p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .foundation-main { padding-bottom: var(--band-gap-md); }
+}
+
+@media (max-width: 640px) {
+  .foundation-main { padding: 5.5rem 1.5rem var(--band-gap-sm); }
+}

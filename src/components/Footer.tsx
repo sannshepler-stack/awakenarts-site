@@ -34,6 +34,9 @@ const EXPLORE_LINKS = [
 
 const ABOUT_LINKS = [
   { label: 'Formation & Provenance', href: '/about' },
+  // Added 2026-06-28 per Susan's directive: findable from the footer,
+  // but deliberately not in main nav — see /foundation/page.tsx.
+  { label: 'Foundation', href: '/foundation' },
   { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Terms of Use', href: '/terms' },
 ]
