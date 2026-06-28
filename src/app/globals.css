@@ -924,8 +924,14 @@ a   { color: inherit; text-decoration: none; }
 
 .hero-quote-body {
   font-family: var(--serif);
-  /* Body copy + Medium measure — Global Design System (locked 2026-06-25). */
-  font-size: var(--body-size);
+  /* Body copy + Medium measure — Global Design System (locked 2026-06-25).
+     2026-06-28 "Reading Before Decoration" revision: this is the
+     supporting paragraph beneath the Matthew quotation, and the
+     standard is explicit that supporting copy reads at the same floor
+     as primary body text, not below it. Bumped +2px over --body-size,
+     the same selective-override pattern already used on
+     .foundation-body and .home-coll-body. */
+  font-size: calc(var(--body-size) + 2px);
   line-height: var(--body-line);
   color: var(--mid);
   max-width: var(--measure-medium);
@@ -957,17 +963,26 @@ a   { color: inherit; text-decoration: none; }
   color: var(--deep);
 }
 
-/* Credo subtext beneath the Foundation link — smaller and more
-   restrained than the link itself; states the grounding in a single
-   breath rather than restating the Foundation page's own framework.
-   2026-06-28 Final Editorial Refinement. */
+/* Credo subtext beneath the Foundation link — states the grounding in
+   a single breath rather than restating the Foundation page's own
+   framework. 2026-06-28 Final Editorial Refinement.
+   2026-06-28 "Reading Before Decoration" revision, per Susan: this line
+   ("Christ is the center. Scripture is the authority.") is exactly the
+   kind of short editorial/credal statement the new standard calls out
+   by name — it's a conclusion the reader should register, not a
+   caption. At 0.95rem/--mid it was sitting below the body-copy floor
+   and reading as fine print. Raised to a size with real presence
+   (still short of the CTA above it, which stays the section's largest
+   moment) and moved from --mid gray to the established gold so it
+   reads as a quiet statement of conviction, not a footnote. */
 .home-foundation-credo {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: clamp(1.05rem, 1.5vw, 1.15rem);
+  line-height: 1.7;
   letter-spacing: 0.01em;
-  color: var(--mid);
-  margin: 0.75rem 0 0;
+  color: var(--gold);
+  margin: 1rem 0 0;
 }
 
 /* ─────────────────────────────────────────────
