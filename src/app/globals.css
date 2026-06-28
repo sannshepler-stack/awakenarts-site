@@ -78,8 +78,8 @@
   /* Body copy — the single editorial paragraph specification.
      1rem = 18px at this site's html font-size.
 
-     Typography Standard (locked 2026-06-28, see AwakenArts_Site_
-     Architecture.md): AwakenArts is a reading experience, not a
+     Editorial Typography Standard (locked 2026-06-28, see AwakenArts_
+     Site_Architecture.md): AwakenArts is a reading experience, not a
      design portfolio. Never reduce this value to make a section
      look lighter or less dense — edit the copy, adjust spacing, or
      refine the layout first. Readability outranks minimalism. */
@@ -90,6 +90,16 @@
   --link-size: 0.95rem;
   --link-weight: 500;
   --link-tracking: 0.08em;
+
+  /* Captions — auxiliary identification text beneath an image or
+     figure (attribution lines, plate names). Distinct from body copy
+     by long editorial convention — a caption is metadata about the
+     work, not the reading content itself — but still held to its own
+     floor so it never becomes squint-text. Added under the Editorial
+     Typography Standard (locked 2026-06-28) when the per-component
+     caption sizes (0.8rem–1.1rem) were audited for consistency. */
+  --caption-size: 0.85rem;
+  --caption-line: 1.6;
 
   /* Text Width Standard — three widths; no page invents a fourth.
      Narrow: quotes, journal prompts, centered statements.
@@ -6815,13 +6825,14 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .about-caption {
+  /* Caption token — Editorial Typography Standard (locked 2026-06-28). */
   font-family: var(--sans);
-  font-size: 0.8rem;
+  font-size: var(--caption-size);
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--mid);
   margin-top: 0.85rem;
-  line-height: 1.5;
+  line-height: var(--caption-line);
 }
 
 /* ── Continuing prose ── */

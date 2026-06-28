@@ -112,21 +112,37 @@ Following this each time keeps the homepage's reference gap reproducible everywh
 
 **Image Standard** — documented in Section 5 of the identity document (five categories: atmospheric headers, edition covers, encounter cards/hero backgrounds, demonstration images, symbolic compositions). Not yet implemented as shared CSS rules — Encounters renders its images via CSS `background-image`, not `<img>`/`next/image`, which the identity document flags as a known constraint for any future automated, `object-fit`-based image pipeline. Site-wide Editorial Header Image rollout (Collection/About/Journal) remains separately tracked as open work.
 
-## Typography Standard (locked 2026-06-28) — governing standard
+## AwakenArts Editorial Typography Standard (locked 2026-06-28) — governing standard
 
-**AwakenArts is a reading experience, not a design portfolio.**
+Supersedes the original brief "Typography Standard" entry locked the same day; this is its full expansion, written directly from Susan's permanent editorial directive ahead of the Publishing Platform phase.
 
-Maintain comfortable reading sizes throughout the site. Do not reduce body copy below the established standard (`--body-size: 1rem` = 18px at this site's html font-size / `--body-line: 1.8`, see Global Design System above) simply to achieve a lighter visual appearance. If a section feels visually dense, the order of operations is:
-1. Edit the text — shorten it, cut a sentence, split it into two paragraphs.
-2. Adjust spacing — margin, padding, the gap between elements.
-3. Refine the layout — width, alignment, what sits next to what.
-4. Only then consider type size, and even then, never below the body-copy standard for paragraph prose.
+**AwakenArts is a reading experience.** It is not a design portfolio. It is not a marketing landing page. It is a literary publishing environment designed for thoughtful reading and reflection. Typography should always favor readability over visual minimalism.
 
-Readability takes precedence over minimalism. A page that looks lighter because the text got smaller has not actually gotten calmer — it has gotten harder to read, which is the opposite of the goal.
+**The governing hierarchy.** Every future typography decision is checked against this order, and the order itself is not negotiable:
+1. The work is the reason the site exists.
+2. The reading experience helps the reader engage the work.
+3. The design supports the reading experience.
 
-**The editorial benchmark, per Susan:** AwakenArts' audience includes readers like herself — at 75, with a lifetime of reading and teaching. She should not have to lean in to read her own work. If a typographic choice would make her lean toward the screen, it fails the standard regardless of how it looks in a mockup.
+Design serves the reading experience; the reading experience serves the work. A change that serves the design first — quieter, lighter, more minimal — at the expense of the reading experience has the hierarchy backwards, regardless of how good it looks in isolation.
 
-This governs the same `--body-size`/`--body-line` tokens documented under Global Design System above — this section is the *why*, that section is the *what*. Any future instinct to shrink type to resolve visual density should be checked against this standard first, the same way the "Pause" tier and the band-gap audit above were checked against their own precedents before being applied.
+**Readability First.** Body copy stays comfortably readable on desktop, tablet, and mobile. Do not reduce font size simply to create more white space or a lighter visual appearance. If a section feels visually dense, the order of operations is: (1) edit the copy — shorten it, cut a sentence, split it into two paragraphs; (2) improve spacing — margin, padding, the gap between elements; (3) adjust line length / layout — width, alignment, what sits next to what; (4) only then, and only if it genuinely improves readability, consider type size — and never below the body-copy standard for paragraph prose. A page that looks lighter because the text got smaller has not gotten calmer — it has gotten harder to read, which is the opposite of the goal.
+
+**Intended audience.** AwakenArts is written for adults who expect to spend time reading. The experience should invite lingering rather than scanning. Readers should never need to struggle to comfortably read the work. The editorial benchmark, per Susan: the audience includes readers like herself — at 75, with a lifetime of reading and teaching. She should not have to lean in to read her own work. If a typographic choice would make her lean toward the screen, it fails the standard regardless of how it looks in a mockup.
+
+**Editorial philosophy.** White space comes from thoughtful composition, not from shrinking text. The site should feel like reading a beautifully published literary work — typography supporting contemplation rather than visual novelty.
+
+**Consistency — the standard by category, current as of the 2026-06-28 audit:**
+
+- *Body text.* One token, `--body-size: 1rem` (18px at this site's `html` font-size) / `--body-line: 1.8`, used identically for every paragraph of reading prose site-wide (`.foundation-body`, `.about-body`, `.hero-quote-body`, `.home-coll-body`, `.col-hero__body`, etc.). Never reduced below this for density.
+- *Quotations.* Scripture, poem epigraphs, and pull quotes are set at or above the subtitle/body scale, never below it (`.hero-quote-text`, `.poems-showcase-intro__quote`, `.quote-text`) — quotations are permitted to scale *up* for emphasis on a title page or threshold moment, but the standard only ever moves that dial upward, not down.
+- *Introductions.* The shared `--subtitle-size` token (`clamp(1.1rem, 1.6vw, 1.3rem)`, line-height 1.7) is the one specification for every gold/italic introductory line beneath a heading — mission statements, section subtitles, page intros (`.hero-mission`, `.home-coll-sub`, `.col-hero__sub`). One scale, used everywhere that role appears.
+- *Supporting text.* Secondary explanatory paragraphs use the same `--body-size`/`--body-line` token as primary body text — "supporting" describes its place in the hierarchy, not a license to shrink it.
+- *Captions.* New `--caption-size: 0.85rem` / `--caption-line: 1.6` token (added this audit) standardizes the smallest, auxiliary, identification-only text — image attributions and plate names — which by long editorial convention sit below body size because they are metadata about a work, not the reading content itself. The one true outlier found, `.about-caption` (previously a hardcoded 0.8rem), now points at this token. Other caption-like elements already sit at or above this floor (`.encounter-caption p` at 1.1rem, `.gal-card__caption` at 0.95rem) and were left as-is — they already meet the standard.
+- *Navigation.* Two distinct, intentional registers, not an inconsistency: the persistent header `Nav` is condensed wayfinding chrome by long-standing typographic convention (0.84rem desktop / 0.76rem tablet / 0.9rem full-screen mobile menu) — it is never the reading content, so it is not held to the body-copy floor, only to its own legibility floor. The `WayfindingBand` and footer link columns, which function as a continuation of the reading journey rather than transient chrome, use the shared `--link-size: 0.95rem` token. Future nav-like elements should ask which register they belong to — transient chrome, or continued reading — before choosing a size.
+
+Future pages should reach for these tokens by default rather than inventing new sizes; a new typographic need is first checked against this category list before any new value is introduced.
+
+**Overall objective.** Every page should feel like it belongs to the same publishing house — consistency, comfort, restraint, and quiet confidence throughout. This governs the same `--body-size`/`--body-line`/`--caption-size`/`--subtitle-size`/`--link-size` tokens documented under Global Design System above — this section is the *why*, that section is the *what*. Any future instinct to shrink type to resolve visual density, or to introduce a new one-off size, should be checked against this standard first.
 
 ## Encounters architecture (2026-06-25) — supersedes Path
 
