@@ -38,6 +38,17 @@ import { NextRequest, NextResponse } from 'next/server'
 // show up in Vercel's Runtime Logs (Project → Logs, or `vercel logs`),
 // and a short, safe summary is returned to the client so the form can
 // tell the visitor something went wrong and let them retry.
+//
+// 2026-06-28 update, per Kit Support: KIT_FORM_ID=9618789 was already
+// the correct form/ID format — the real bug was the request sequence.
+// POST /v4/forms/{form_id}/subscribers does NOT create a new subscriber;
+// it only adds an *existing* one to the form, so every signup from a new
+// visitor was being rejected. Kit's required flow is two calls:
+//   1. POST /v4/subscribers           — create/upsert the subscriber
+//   2. POST /v4/forms/{form_id}/subscribers — add that subscriber to the form
+// Both calls use the same email_address and the same X-Kit-Api-Key
+// header. User-facing success/failure behavior and error messages are
+// unchanged from before — only the Kit call sequence changed.
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -80,6 +91,56 @@ export async function POST(req: NextRequest) {
   // see "Encounters Journal" vs. any future gate without extra setup).
   const referrer = req.headers.get('referer') || undefined
 
+  // ── Step 1 of 2 — create/upsert the subscriber ──────────────────
+  // POST /v4/forms/{form_id}/subscribers assumes the subscriber already
+  // exists; it will not create one. So every new visitor must first be
+  // created (or matched, if they already exist) via this call before
+  // step 2 can add them to the form.
+  let upsertRes: Response
+  try {
+    upsertRes = await fetch('https://api.kit.com/v4/subscribers', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Kit-Api-Key': apiKey,
+      },
+      body: JSON.stringify({ email_address: email }),
+    })
+  } catch (err) {
+    console.error('[subscribe:kit] network error creating subscriber', err, '(source:', source, ')')
+    return NextResponse.json({
+      ok: false,
+      subscribed: false,
+      message: "We couldn't reach our list provider just now. Please try again in a moment.",
+    })
+  }
+
+  const upsertRawBody = await upsertRes.text()
+  let upsertParsedBody: unknown = null
+  try {
+    upsertParsedBody = upsertRawBody ? JSON.parse(upsertRawBody) : null
+  } catch {
+    // Kit's error responses are normally JSON; fall back to the raw text
+    // if not so we still log something useful.
+  }
+
+  if (!upsertRes.ok) {
+    console.error('[subscribe:kit] Kit rejected subscriber creation', {
+      status: upsertRes.status,
+      email,
+      source,
+      body: upsertParsedBody ?? upsertRawBody,
+    })
+    const message =
+      upsertRes.status === 401
+        ? "Our list provider rejected the request (invalid or revoked API key)."
+        : upsertRes.status === 422
+        ? "Our list provider couldn't process that email address."
+        : "We couldn't add you to the list just now. Please try again in a moment."
+    return NextResponse.json({ ok: false, subscribed: false, kitStatus: upsertRes.status, message })
+  }
+
+  // ── Step 2 of 2 — add the (now-existing) subscriber to the form ──
   let kitRes: Response
   try {
     kitRes = await fetch(`https://api.kit.com/v4/forms/${formId}/subscribers`, {
@@ -91,7 +152,7 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({ email_address: email, referrer }),
     })
   } catch (err) {
-    console.error('[subscribe:kit] network error reaching api.kit.com', err, '(source:', source, ')')
+    console.error('[subscribe:kit] network error adding subscriber to form', err, '(source:', source, ')')
     return NextResponse.json({
       ok: false,
       subscribed: false,
@@ -109,7 +170,7 @@ export async function POST(req: NextRequest) {
   }
 
   if (!kitRes.ok) {
-    console.error('[subscribe:kit] Kit rejected the subscriber', {
+    console.error('[subscribe:kit] Kit rejected adding subscriber to form', {
       status: kitRes.status,
       formId,
       email,
@@ -127,7 +188,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, subscribed: false, kitStatus: kitRes.status, message })
   }
 
-  console.log('[subscribe:kit] subscriber added to Kit', { email, source, formId })
+  console.log('[subscribe:kit] subscriber created and added to Kit form', { email, source, formId })
   return NextResponse.json({ ok: true, subscribed: true })
 }
 
