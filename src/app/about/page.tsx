@@ -49,7 +49,7 @@ export default function AboutPage() {
             <p className="eyebrow">About</p>
             <h1 className="about-h1">Susan Ann Shepler</h1>
             <p className="about-credentials">
-              Artist · Writer · MA Counseling Psychology<br />
+              Artist · Writer · MA Counseling<br />
               Certified Transformative Language Artist
             </p>
             <p className="about-body">

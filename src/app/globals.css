@@ -6841,10 +6841,15 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 .about-credentials {
   /* Gold/italic subtitle — Global Design System (locked 2026-06-25):
-     was mid-gray; subtitles are always gold. */
+     was mid-gray; subtitles are always gold.
+     2026-06-28: bumped +3px over the shared --subtitle-size, per
+     Susan's request to make this line larger -- a selective override
+     on this instance only (the calc() pattern used elsewhere, e.g.
+     .foundation-body), so the shared token used on other pages is
+     untouched. */
   font-family: var(--serif);
   font-style: italic;
-  font-size: var(--subtitle-size);
+  font-size: calc(var(--subtitle-size) + 3px);
   color: var(--gold);
   line-height: var(--subtitle-line);
   margin: 0 0 2rem;
