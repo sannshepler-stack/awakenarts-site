@@ -167,14 +167,29 @@ export default function HomePage() {
           creates a clear visual transition before the featured
           symbolic work. Cream typography, restrained gold accents,
           the complete uncropped cover, generous surrounding space.
-      ──────────────────────────────────────────────────────────── */}
+
+          2026-06-28 Collection Section Editorial Refinement: the hero
+          now promises "Explore the Collection / Discover the growing
+          library of AwakenArts Figure Editions" — this section's job
+          is to fulfill that promise immediately, not describe a page.
+          Copy now names the unit of the work explicitly ("Figure
+          Edition," the term already locked across editions.ts, the
+          Edition pages, Poems, and Workshops) and describes what
+          reading one actually is — image, poem, and reflection as a
+          single published work — rather than a vague "collection of
+          symbolic works." The CTA names the destination's content
+          ("Browse the Figure Editions") instead of repeating the
+          section heading. See AwakenArts_Site_Architecture.md /
+          AwakenArts_Publishing_Platform_Architecture.md Task 1: the
+          Figure Edition is the master publication; this is the
+          library where every one of them lives. */}
       <section id="collection" className="home-coll-section" aria-labelledby="home-coll-heading">
         <div className="home-coll-inner">
 
           <div className="home-coll-cover">
             <Image
               src="/images/collection/collection-cover.jpg"
-              alt="The Collection — a growing collection of symbolic works from AwakenArts"
+              alt="The Collection — the cover of AwakenArts' growing library of Figure Editions"
               width={1122}
               height={1402}
               className="home-coll-cover__img"
@@ -183,16 +198,17 @@ export default function HomePage() {
           </div>
 
           <div className="home-coll-text">
-            <p className="eyebrow">Collection</p>
+            <p className="eyebrow">Figure Editions</p>
             <h2 id="home-coll-heading">The Collection</h2>
-            <p className="home-coll-sub">A growing collection of symbolic works.</p>
+            <p className="home-coll-sub">A growing library of published Figure Editions.</p>
             <p className="home-coll-body">
-              Each work pairs image and poem to reveal meaning through
-              symbolic language — together forming a growing collection
-              of encounters that invite reflection and recognition.
+              Each Figure Edition brings image, poem, and reflection
+              together as a single published work — a complete
+              reading experience built for recognition rather than
+              explanation.
             </p>
             <Link href="/collection" className="home-coll-cta">
-              Collection <span aria-hidden="true">→</span>
+              Browse the Figure Editions <span aria-hidden="true">→</span>
             </Link>
           </div>
 
