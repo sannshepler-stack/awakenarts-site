@@ -101,6 +101,19 @@
   --caption-size: 0.85rem;
   --caption-line: 1.6;
 
+  /* Editorial Invitations — large heading-style entry points, first
+     used on the homepage hero ("Enter the Encounters" / "Explore the
+     Collection," locked 2026-06-28). For pages that want to present a
+     small number of primary doorways as section-headings rather than
+     small navigation links. Title sits between --h2-size and
+     --link-size; teaser is held to the --body-size floor — supporting
+     copy under an invitation is still body copy and is never reduced
+     below the established reading size for visual effect. */
+  --invitation-title-size: clamp(1.35rem, 2.2vw, 1.55rem);
+  --invitation-title-weight: 400;
+  --invitation-teaser-size: clamp(1rem, 1.2vw, 1.11rem);
+  --invitation-teaser-line: 1.7;
+
   /* Text Width Standard — three widths; no page invents a fourth.
      Narrow: quotes, journal prompts, centered statements.
      Medium: editorial introductions (Collection, Poems, About).
@@ -447,61 +460,17 @@ a   { color: inherit; text-decoration: none; }
   margin: 0 0 2.5rem;
 }
 
-/* Restrained gold CTA — quiet underline, no heavy effects. */
-.hero-cta {
-  /* Small link/CTA — Global Design System (locked 2026-06-25). */
-  display: inline-flex;
-  align-items: center;
-  gap: .55rem;
-  font-family: var(--sans);
-  font-size: var(--link-size);
-  font-weight: var(--link-weight);
-  letter-spacing: var(--link-tracking);
-  text-transform: uppercase;
-  color: var(--gold);
-  border: 0;
-  border-bottom: 1px solid rgba(201, 168, 76, 0.7);
-  padding: 0 .1rem .3rem;
-  background: transparent;
-  transition: color .25s ease-out, border-color .25s ease-out;
-}
-.hero-cta .arrow { transition: transform .25s ease-out; }
-.hero-cta:hover {
-  color: var(--deep);
-  border-bottom-color: var(--gold);
-}
-.hero-cta:hover .arrow { transform: translateX(3px); }
+/* ── HOMEPAGE: HERO PRIMARY CTA + SECONDARY NAV — removed 2026-06-28 ──
+   "Hero Typographic Hierarchy" directive: the single small "Encounters
+   →" CTA (.hero-cta) and the quiet Studio/Poems secondary nav
+   (.hero-secondary, .hero-secondary-link, .hero-secondary-sep) have
+   been replaced by the Editorial Invitations below. The hero no
+   longer treats Encounters as the one primary path with Studio/Poems
+   as afterthoughts — it presents exactly two primary doorways
+   ("Enter the Encounters" / "Explore the Collection") at heading
+   weight, each with its own teaser line. See page.tsx and
+   AwakenArts_Site_Architecture.md. */
 
-/* Secondary paths — three quiet links beneath the primary CTA, surfacing
-   the broader body of work (Path, Gallery, About) so encounters reads as
-   one dimension of the site rather than the whole. Understated, not
-   button-like; readable but lower visual weight than the CTA. */
-.hero-secondary {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 1.5rem;
-  margin: 2.5rem 0 0;
-  font-family: var(--serif);
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
-  letter-spacing: 0.02em;
-  color: var(--mid);
-}
-
-@media (max-width: 640px) {
-  .hero-secondary { gap: 0.4rem 1rem; margin: 2rem 0 0; }
-}
-.hero-secondary-link {
-  color: var(--deep);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(28, 43, 58, 0.25);
-  padding-bottom: 2px;
-  transition: color .2s ease-out, border-color .2s ease-out;
-}
-.hero-secondary-link:hover {
-  color: var(--gold);
-  border-bottom-color: var(--gold);
-}
 /* ── HOMEPAGE: AWAKENARTS INTRODUCTION — removed 2026-06-28 ─────
    Final Editorial Refinement: this isolated orientation line sat
    between the Hero and Collection sections but repeated the Matthew
@@ -510,11 +479,50 @@ a   { color: inherit; text-decoration: none; }
    directive; see page.tsx homepage comment block for the current
    six-movement structure. */
 
-.hero-secondary-sep {
+/* Editorial Invitations — the hero's two primary entry points
+   (locked 2026-06-28). Stacked, generously spaced, each an
+   independent doorway rather than a row of links. */
+.hero-invitations {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2.5rem 0 0;
+}
+
+.hero-invitation__title {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  font-family: var(--serif);
+  font-size: var(--invitation-title-size);
+  font-weight: var(--invitation-title-weight);
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.55);
+  padding-bottom: .25rem;
+  transition: color .25s ease-out, border-color .25s ease-out;
+}
+.hero-invitation__title .arrow { transition: transform .25s ease-out; }
+.hero-invitation__title:hover {
+  color: var(--deep);
+  border-bottom-color: var(--gold);
+}
+.hero-invitation__title:hover .arrow { transform: translateX(3px); }
+
+/* Teaser — body copy, not a smaller decorative caption. Held to the
+   --invitation-teaser-size floor (never below --body-size) per the
+   Editorial Typography Standard. */
+.hero-invitation__teaser {
+  font-family: var(--serif);
+  font-size: var(--invitation-teaser-size);
+  line-height: var(--invitation-teaser-line);
   color: var(--mid);
-  opacity: 0.45;
-  font-size: 1rem;
-  user-select: none;
+  max-width: 46ch;
+  margin: 0.6rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .hero-invitations { gap: 1.6rem; margin-top: 2rem; }
 }
 
 
@@ -4380,7 +4388,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .pub-panel-cover__img { width: 180px; }
 }
 
-/* Quiet uppercase text-link. Lighter variant of .hero-cta
+/* Quiet uppercase text-link — the standard small link/CTA
    for use inside body sections on both cream and dark bgs.
    Bumped from .8rem (readability pass, 2026-06-25) — a navigation
    link should be clearly legible, not just decoratively uppercase. */

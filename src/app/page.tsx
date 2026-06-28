@@ -104,24 +104,35 @@ export default function HomePage() {
             Discover symbolic language through image and poem.
           </p>
 
-          <Link href="/encounters" className="hero-cta">
-            Encounters <span className="arrow" aria-hidden="true">→</span>
-          </Link>
-
-          {/*
-           * Secondary paths — quiet, understated, not button-like.
-           * Encounters is now the primary CTA above, so it's dropped
-           * here to avoid a duplicate link to the same destination.
-           */}
-          <nav className="hero-secondary" aria-label="Other paths">
-            <Link href="/studio" className="hero-secondary-link">
-              Studio
-            </Link>
-            <span className="hero-secondary-sep" aria-hidden="true">·</span>
-            <Link href="/poems" className="hero-secondary-link">
-              Poems
-            </Link>
-          </nav>
+          {/* Editorial Invitations — the hero's two primary entry points
+              into AwakenArts (locked 2026-06-28, "Hero Typographic
+              Hierarchy" directive). Replaces the former single small
+              "Encounters →" CTA and the Studio/Poems secondary nav.
+              Per Susan: the hero no longer says "here are some pages" —
+              it says "experience the work" and "explore the body of
+              work." Two heading-weight invitations, each with its own
+              teaser line, not small navigation links. See
+              AwakenArts_Site_Architecture.md. */}
+          <div className="hero-invitations">
+            <div className="hero-invitation">
+              <Link href="/encounters" className="hero-invitation__title">
+                Enter the Encounters <span className="arrow" aria-hidden="true">→</span>
+              </Link>
+              <p className="hero-invitation__teaser">
+                A series of guided symbolic experiences where image, poem,
+                and Scripture invite personal reflection and recognition.
+              </p>
+            </div>
+            <div className="hero-invitation">
+              <Link href="/collection" className="hero-invitation__title">
+                Explore the Collection <span className="arrow" aria-hidden="true">→</span>
+              </Link>
+              <p className="hero-invitation__teaser">
+                Browse the growing library of Figure Editions and discover
+                the unfolding body of work that is AwakenArts.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="hero__media">

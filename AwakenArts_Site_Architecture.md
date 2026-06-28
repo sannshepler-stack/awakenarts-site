@@ -112,6 +112,19 @@ Following this each time keeps the homepage's reference gap reproducible everywh
 
 **Image Standard** — documented in Section 5 of the identity document (five categories: atmospheric headers, edition covers, encounter cards/hero backgrounds, demonstration images, symbolic compositions). Not yet implemented as shared CSS rules — Encounters renders its images via CSS `background-image`, not `<img>`/`next/image`, which the identity document flags as a known constraint for any future automated, `object-fit`-based image pipeline. Site-wide Editorial Header Image rollout (Collection/About/Journal) remains separately tracked as open work.
 
+## Hero Editorial Invitations Standard (locked 2026-06-28)
+
+Per Susan's "Hero Typographic Hierarchy" directive, the homepage hero's single small "Encounters →" CTA and its Studio/Poems secondary nav have been replaced with two **Editorial Invitations** — "Enter the Encounters" and "Explore the Collection" — each presented as a heading-weight link with its own teaser line beneath it, rather than as small navigation links. This is a content decision as much as a typographic one: the hero no longer says "here are some pages," it says "experience the work" or "explore the body of work" — the two primary entry points everything else on the site grows from.
+
+**The hierarchy, locked:**
+- Logo — unchanged.
+- Hero headline ("When Language Shapes a Path") — unchanged, `--h1-size` (clamp 38.4px–56px desktop). Never reduced to make room for the invitations below it.
+- Introductory sentence ("Discover symbolic language...") — unchanged, `--subtitle-size` (clamp ~19.8px–23.4px desktop).
+- Editorial Invitation titles — new `--invitation-title-size` token, clamp(1.35rem, 2.2vw, 1.55rem) ≈ 24.3px–27.9px desktop, serif, gold, sized between `--h2-size` and `--link-size` so they read as section headings rather than links.
+- Invitation teasers — new `--invitation-teaser-size` token, clamp(1rem, 1.2vw, 1.11rem) ≈ 18px–20px desktop, held to the `--body-size` floor (18px) per the Editorial Typography Standard's rule that supporting copy is never reduced below body size for visual effect.
+
+**Where this pattern may extend.** Editorial Invitations were introduced as a hero-specific pattern but are tokenized globally (not hardcoded to `.hero-invitation*`) so any future page that wants to present two or three primary doorways at heading weight — rather than a row of small links — can reuse `--invitation-title-size`/`--invitation-teaser-size` directly.
+
 ## AwakenArts Editorial Typography Standard (locked 2026-06-28) — governing standard
 
 Supersedes the original brief "Typography Standard" entry locked the same day; this is its full expansion, written directly from Susan's permanent editorial directive ahead of the Publishing Platform phase.
