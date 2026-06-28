@@ -7139,13 +7139,19 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 /* ─────────────────────────────────────────────
    FOUNDATION PAGE (/foundation) — 2026-06-28
    A quiet, permanent statement of the theological and artistic
-   framework AwakenArts is offered within. Deliberately the most
-   restrained page on the site: single centered narrow column
+   framework AwakenArts is offered within. A single narrow column
    (--measure-narrow, the same width used for quotes and journal
-   prompts elsewhere), no imagery, no decoration beyond the standard
-   eyebrow and a gold rule introducing the closing credo. Findable
-   (footer, a quiet link from /about) but never inserted into the
-   primary visitor journey or main nav, per Susan's directive.
+   prompts elsewhere), no decoration beyond the standard eyebrow and a
+   gold rule introducing the closing credo. Findable (footer, a quiet
+   link from /about) but never inserted into the primary visitor
+   journey or main nav, per Susan's directive.
+
+   2026-06-28 revision, per Susan: added the standard AtmosphericHeader
+   above this section (see page.tsx), so the page's own top padding no
+   longer needs to carry the full weight of a header-less opening —
+   reduced accordingly. The column was also changed from centered to
+   left-aligned: a statement of belief reads as a statement, not a
+   poem, when it sets like ordinary prose along a left margin.
 ───────────────────────────────────────────── */
 .foundation-page {
   background: var(--cream);
@@ -7155,14 +7161,12 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .foundation-main {
   max-width: var(--measure-narrow);
   margin: 0 auto;
-  padding: 7.5rem 2rem var(--band-gap);
-  text-align: center;
+  padding: 3.5rem 2rem var(--band-gap);
+  text-align: left;
 }
 
 .foundation-eyebrow {
-  /* Centered variant of the shared .eyebrow token. */
-  justify-content: center;
-  margin: 0 auto 1.5rem;
+  margin: 0 0 1.5rem;
 }
 
 .foundation-h1 {
@@ -7171,7 +7175,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   font-weight: var(--h1-weight);
   color: var(--deep);
   line-height: 1.15;
-  margin: 0 auto 3rem;
+  margin: 0 0 3rem;
 }
 
 .foundation-body {
@@ -7179,7 +7183,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   font-size: var(--body-size);
   line-height: var(--body-line);
   color: var(--ink);
-  margin: 0 auto 1.75rem;
+  margin: 0 0 1.75rem;
 }
 
 .foundation-body:last-of-type {
@@ -7187,20 +7191,20 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 /* Closing credo — the page's three-line resolution. Set apart with a
-   gold rule and generous space above, larger gold-italic serif type
-   in the same restrained "signature" register as .hero-quote-closing
-   on the homepage, so it reads as a quiet conclusion rather than
-   another paragraph. */
+   gold rule and generous space above. Left-aligned and no longer
+   italic (2026-06-28: italic gold "signature" styling read as too
+   poetic for a plain statement of belief) — still gold, still set
+   apart, but reading as three plain declarative lines rather than a
+   literary flourish. */
 .foundation-credo {
-  margin: var(--band-gap-sm) auto 0;
+  margin: var(--band-gap-sm) 0 0;
   padding-top: 2.5rem;
   border-top: 1px solid rgba(139, 105, 20, 0.35);
 }
 
 .foundation-credo p {
   font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
   line-height: 1.65;
   color: var(--gold);
   margin: 0 0 0.65rem;
@@ -7215,5 +7219,5 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 @media (max-width: 640px) {
-  .foundation-main { padding: 5.5rem 1.5rem var(--band-gap-sm); }
+  .foundation-main { padding: 2.5rem 1.5rem var(--band-gap-sm); }
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
+import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 
@@ -9,10 +10,19 @@ import Footer from '@/components/Footer'
 // AwakenArts is offered within. Per Susan's directive: accessible but
 // not intrusive — linked from the footer and quietly from /about, but
 // not placed in primary navigation and not inserted into the main
-// visitor journey. Visual treatment is the most restrained on the
-// site: single centered narrow column, no imagery, same typography
-// and cream/dark palette tokens used everywhere else (see
-// .foundation-* rules in globals.css).
+// visitor journey. Same typography and cream/dark palette tokens used
+// everywhere else (see .foundation-* rules in globals.css).
+//
+// 2026-06-28 revision, per Susan: added the standard Atmospheric
+// Header — an open book and quiet window light, chosen from the
+// public/images/library folder (specifically Foundations-page.png,
+// cropped to remove its baked-in caption text so it reads as a plain
+// threshold image, consistent with the site-wide "no text baked into
+// the image" rule already used for every other AtmosphericHeader).
+// The column was also changed from centered to left-aligned, and the
+// copy was tightened into plainer, more direct language — this page
+// is a statement of belief, not devotional writing, so it reads more
+// clearly when it says what it means without literary flourish.
 export const metadata: Metadata = {
   title: 'The Foundation of AwakenArts | Christian Symbolic Art and Reflection',
   description:
@@ -30,6 +40,12 @@ export default function FoundationPage() {
   return (
     <>
       <Nav />
+
+      <AtmosphericHeader
+        src="/images/headers/foundation.jpg"
+        alt="An open book, a cup, and a sprig of greenery on a sunlit windowsill table — a quiet place to read."
+      />
+
       <div className="foundation-page">
         <main className="foundation-main">
           <p className="eyebrow foundation-eyebrow">Foundation</p>
@@ -46,21 +62,19 @@ export default function FoundationPage() {
             The Holy Scriptures are the final authority for faith and life.
           </p>
           <p className="foundation-body">
-            The symbolic images, poems, and reflections presented through
-            AwakenArts are not offered as doctrine, revelation, or spiritual
-            authority. They are creative works intended to encourage careful
-            observation, honest reflection, meaningful conversation, and
-            deeper recognition of the human experience in the light of
-            Scripture.
+            The images, poems, and reflections on this site are not
+            doctrine, revelation, or spiritual authority. They are creative
+            works meant to encourage reflection, conversation, and a closer
+            look at our own lives in light of Scripture.
           </p>
           <p className="foundation-body">
-            Jesus often taught through parables and figurative language.
-            AwakenArts follows that artistic pattern&mdash;not to replace
-            biblical truth, but to invite readers to see, reflect, and engage
-            more deeply with the realities of life and faith.
+            Jesus often taught using parables and figurative language.
+            AwakenArts follows that same pattern&mdash;not to replace
+            Scripture, but to help readers see and reflect more clearly on
+            the realities of life and faith.
           </p>
           <p className="foundation-body">
-            Our hope is that these encounters cultivate humility, wisdom,
+            Our hope is that this work leads to humility, wisdom,
             compassion, and a deeper love for God and for one another.
           </p>
 
