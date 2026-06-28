@@ -4285,9 +4285,16 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .home-coll-body {
-  /* Body copy + Medium measure — Global Design System (locked 2026-06-25). */
+  /* Body copy + Medium measure — Global Design System (locked 2026-06-25).
+     2026-06-28 Readability Primacy revision, per Susan: this is the
+     section's actual reading text, and it was getting lost beneath
+     the heading/subhead. Bumped ~2px (~11%) above the shared
+     --body-size floor — a selective increase to this one paragraph,
+     not a change to the token itself, so the site-wide body standard
+     is untouched elsewhere. See the Readability Primacy Rule in
+     AwakenArts_Site_Architecture.md. */
   font-family: var(--serif);
-  font-size: var(--body-size);
+  font-size: calc(var(--body-size) + 2px);
   line-height: var(--body-line);
   color: rgba(250, 247, 242, 0.78);
   margin: 0 0 2.25rem;
@@ -4299,7 +4306,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   align-items: center;
   gap: 0.4em;
   font-family: var(--serif);
-  font-size: 1.05rem;
+  /* 2026-06-28 Readability Primacy revision: +2px — a call to action
+     should read with confidence, not as a caption. */
+  font-size: calc(1.05rem + 2px);
   font-style: italic;
   color: var(--cream);
   text-decoration: none;

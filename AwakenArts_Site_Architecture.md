@@ -129,6 +129,12 @@ Per Susan's "Hero Typographic Hierarchy" directive, the homepage hero's single s
 
 Supersedes the original brief "Typography Standard" entry locked the same day; this is its full expansion, written directly from Susan's permanent editorial directive ahead of the Publishing Platform phase.
 
+**Readability Primacy Rule (added 2026-06-28, per Susan's review of the homepage Collection section).** Stated in her own words, as the permanent governing sentence for every typography decision from here forward:
+
+> AwakenArts is a publishing environment. Reading comfort always takes precedence over minimalist typography. If there is tension between elegance and readability, choose readability while preserving the site's quiet literary character.
+
+This is not a restatement of "Readability First" below for emphasis — it is the rule that resolves any future disagreement between the two. It governs the homepage, the Collection page, the Edition Reader (once built), the Foundation page, and everything that follows. Practically: the audience is not a designer reviewing the site on a laptop. It includes church members, retreat participants, counselors, and thoughtful readers — many in their 50s, 60s, and 70s, including Susan herself, who reads with intraocular lenses. Never make people work to read. When a section's hierarchy is otherwise correct (heading and subhead read first, exactly as intended) but the reading text itself takes effort to read, the fix is to let the reading text — body copy and calls to action — read with the same confidence as the rest of the page, even if that means it is no longer the smallest, quietest element on screen. A publisher does not whisper the important sentences.
+
 **AwakenArts is a reading experience.** It is not a design portfolio. It is not a marketing landing page. It is a literary publishing environment designed for thoughtful reading and reflection. Typography should always favor readability over visual minimalism.
 
 **The governing hierarchy.** Every future typography decision is checked against this order, and the order itself is not negotiable:
