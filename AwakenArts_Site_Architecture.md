@@ -112,6 +112,22 @@ Following this each time keeps the homepage's reference gap reproducible everywh
 
 **Image Standard** — documented in Section 5 of the identity document (five categories: atmospheric headers, edition covers, encounter cards/hero backgrounds, demonstration images, symbolic compositions). Not yet implemented as shared CSS rules — Encounters renders its images via CSS `background-image`, not `<img>`/`next/image`, which the identity document flags as a known constraint for any future automated, `object-fit`-based image pipeline. Site-wide Editorial Header Image rollout (Collection/About/Journal) remains separately tracked as open work.
 
+## Typography Standard (locked 2026-06-28) — governing standard
+
+**AwakenArts is a reading experience, not a design portfolio.**
+
+Maintain comfortable reading sizes throughout the site. Do not reduce body copy below the established standard (`--body-size: 1rem` = 18px at this site's html font-size / `--body-line: 1.8`, see Global Design System above) simply to achieve a lighter visual appearance. If a section feels visually dense, the order of operations is:
+1. Edit the text — shorten it, cut a sentence, split it into two paragraphs.
+2. Adjust spacing — margin, padding, the gap between elements.
+3. Refine the layout — width, alignment, what sits next to what.
+4. Only then consider type size, and even then, never below the body-copy standard for paragraph prose.
+
+Readability takes precedence over minimalism. A page that looks lighter because the text got smaller has not actually gotten calmer — it has gotten harder to read, which is the opposite of the goal.
+
+**The editorial benchmark, per Susan:** AwakenArts' audience includes readers like herself — at 75, with a lifetime of reading and teaching. She should not have to lean in to read her own work. If a typographic choice would make her lean toward the screen, it fails the standard regardless of how it looks in a mockup.
+
+This governs the same `--body-size`/`--body-line` tokens documented under Global Design System above — this section is the *why*, that section is the *what*. Any future instinct to shrink type to resolve visual density should be checked against this standard first, the same way the "Pause" tier and the band-gap audit above were checked against their own precedents before being applied.
+
 ## Encounters architecture (2026-06-25) — supersedes Path
 
 Susan's directive "Begin New Encounter Architecture" replaces the Path experience described below with **Encounters**. This is an architectural change, not a nav relabel — read this section first; sections below that still say "Path" are historical record of how the template was developed, not the current public structure.

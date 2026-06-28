@@ -76,7 +76,13 @@
   --subtitle-line: 1.7;
 
   /* Body copy — the single editorial paragraph specification.
-     1rem = 18px at this site's html font-size. */
+     1rem = 18px at this site's html font-size.
+
+     Typography Standard (locked 2026-06-28, see AwakenArts_Site_
+     Architecture.md): AwakenArts is a reading experience, not a
+     design portfolio. Never reduce this value to make a section
+     look lighter or less dense — edit the copy, adjust spacing, or
+     refine the layout first. Readability outranks minimalism. */
   --body-size: 1rem;
   --body-line: 1.8;
 
