@@ -130,13 +130,8 @@ export default function GalleryPage() {
       />
       <section className="lib-hero" aria-label="Gallery">
         <div className="lib-hero__inner">
-          <p className="eyebrow">Gallery</p>
-          <h1>Come and see.</h1>
-          <p className="lib-hero__sub">
-            A quiet gallery of the published works of AwakenArts — image and
-            poem paired in symbolic form. Look first; there is nothing to
-            decide here.
-          </p>
+          <p className="eyebrow">AwakenArts</p>
+          <h1>The Gallery</h1>
         </div>
       </section>
 
