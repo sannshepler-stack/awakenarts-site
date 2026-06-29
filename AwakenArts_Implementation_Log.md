@@ -30,7 +30,7 @@ None of this was built for the Reader — it's the existing infrastructure the S
 
 | Phase | Scope | Status | Notes |
 |---|---|---|---|
-| 1 | Extend `Edition`/`EditionSection` types; hand-build `sections` for one pilot Edition (Dragon) | **Not started** | |
+| 1 | Extend `Edition`/`EditionSection` types; hand-build `sections` for one pilot Edition (Dragon) | **Built — `cac1712`** | `tsc --noEmit` clean; no existing consumer reads `.sections` yet, so this is purely additive (confirmed via grep — zero references in `src/app` or `src/components`); the two new image assets (frontispiece, image) visually verified. Other five Editions given `sections: []` stubs to satisfy the now-required field. |
 | 2 | Build `EditionReader`, `EditionReaderSection`, `ProgressMarker`; wire `/editions/dragon/read` | **Not started** | Blocked by Phase 1 |
 | 3 | Point landing-page CTA to `/read`; demote raw PDF link | **Not started** | Blocked by Phase 2 |
 | 4 | Build `extract_reader_assets.py` / `generate_responsive_set.py` against Dragon's PDF | **Not started** | Can run in parallel with Phase 1–3 once Phase 1's hand-built assets exist as a known-good comparison |
@@ -38,7 +38,7 @@ None of this was built for the Reader — it's the existing infrastructure the S
 | 6 | Wire Acquire/email-gate per Edition (`EmailGateDownload` + `/api/subscribe`, tagged per slug) | **Not started** | Blocked by Phase 5; reuses live infrastructure, no new backend work |
 | 7 | Add commerce hook stub (`Edition.access`, `hasAccess()`) | **Not started** | Deliberately last; inert by design |
 
-**Overall: 0 of 7 phases started.** The Spec is approved-for-review, not approved-for-build — no phase begins until Susan signs off on the document itself.
+**Overall: 1 of 7 phases built.** Susan signed off on the document itself, twice — see the 2026-06-29 note under "Workstream structure" below for the record of that approval and what it changed.
 
 ## Two tracks until Dragon's Reader is proven
 
@@ -63,6 +63,12 @@ Per Susan's 2026-06-29 table, the two tracks above are refined into five named w
 | Body of Work | Ongoing | Susan |
 
 Read against everything already recorded in this Log: **Reader Platform / "Ready to implement"** is the one status here that, taken at face value, would mean Phase 1 of the Implementation Specification can begin — which is a change from this Log's standing position that "no phase begins until Susan signs off on the document itself." Recorded here as stated; not yet treated as that sign-off without confirming it directly. **Visitor Experience / "Ready for presentation updates"** covers the two unblocked, no-new-capability fixes already identified (Edition page navigation, Workshops discoverability) plus the copy decisions named in the Relationship Strategy's visitor-experience translation. **Product Development / "Ready for definition"** covers Collection-as-a-product and Retreats — both currently undefined anywhere. **Business Strategy / "Pending key decisions"** is Purchasing (Open Decision #1) and whatever else Susan's product-architecture and customer-journey work surfaces. **Body of Work** — new Figure Editions, poems, and the creative work itself — is recorded here for the first time as its own ongoing workstream, separate from the platform being built to carry it.
+
+**2026-06-29 — Phase 1 approved and built.** The confirmation flagged as missing above has since been given directly, twice: first "Yes — begin Phase 1 now," then reconfirmed as "Approved. Begin Phase 1 exactly as specified. Treat Dragon as the validation of both the engineering and the visitor experience. Implement only the scope defined for Phase 1. Record any discoveries that affect later phases in the Implementation Log rather than expanding Phase 1." Phase 1 was built against that instruction (commit `cac1712`) — scope held to exactly what Section 10's table specifies, nothing pulled forward from Phases 2–4. Three discoveries surfaced while hand-building Dragon's `sections`, recorded here per Susan's instruction rather than used to expand Phase 1 itself:
+
+1. **The 8-section template doesn't cover Dragon's full 11-page PDF.** Page 5 ("Dragon: A Motif") and page 11 ("Facilitator Notes," marked NOT FOR PARTICIPANT DISTRIBUTION in the source PDF itself) have no slot in `frontispiece`/`image`/`encounter`/`word`/`recognition`/`reflection`/`colophon`/`acquire`. Both were excluded from Dragon's `sections` array entirely. Worth a decision before Phase 4's extraction script runs against the other five Editions: confirm the other five PDFs follow the same ~11-page structure with the same two non-template pages, or the script's "generalized" extraction logic will need a per-Edition exception list.
+2. **Two pairs of print pages collapse into one Reader section each.** Recognition (pages 6–7) and Reflection (pages 8–9) each became a single `text` string, since `EditionSection.text` is one field, not a multi-block structure. The combined text is long for a single Reader screen — Phase 2 should decide, when building `EditionReaderSection`, whether that's acceptable as one scrollable screen or whether the template itself needs to grow past 8 sections later. Not resolved here; flagged for Phase 2.
+3. **Source-priority for section copy.** `Dragon_Notes_on_the_Figure.md` (the Figure Development Catalog) self-identifies as non-participant-facing internal reference material and was deliberately not used as a copy source. All Dragon section text was transcribed from the PDF's own already-approved pages, with the colophon cross-checked against `Dragon_Author_Notes.txt`'s matching "Message Delivered" passage for consistency. Worth carrying forward into Phase 5: each Edition likely has an equivalent internal-notes file that shouldn't be mistaken for a copy source when the other five `sections` arrays get hand-built.
 
 ## Open decisions blocking further progress
 
