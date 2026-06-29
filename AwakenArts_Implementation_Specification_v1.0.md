@@ -1,8 +1,8 @@
 # AwakenArts Implementation Specification v1.0
 
-**Status: v1.0 — preserved.** This is not an architecture document. The Site Architecture doc, the Editorial Typography Standard, and the Publishing Platform Architecture doc have already settled *what* AwakenArts is and *why* each surface exists; this document settles *how* one specific capability — turning an approved Figure Edition into a deployed, web-native reading experience — gets built. Nothing here has been implemented yet. Two of the three open questions from the Publishing Platform Architecture doc (Purchasing, the reader-as-separate-route) are addressed directly below; the Dragon naming collision is out of scope for this spec.
+**Status: v1.0 — complete, pending Susan's approval.** This is not an architecture document. The Site Architecture doc, the Editorial Typography Standard, and the Publishing Platform Architecture doc have already settled *what* AwakenArts is and *why* each surface exists; this document settles *how* one specific capability — turning an approved Figure Edition into a deployed, web-native reading experience — gets built. Nothing here has been implemented yet. Two of the three open questions from the Publishing Platform Architecture doc (Purchasing, the reader-as-separate-route) are addressed directly below; the Dragon naming collision is out of scope for this spec. Section 11 was added per Susan's review feedback (2026-06-29) — with it, this is the version she reviews for approval.
 
-**Preservation.** Per Susan's directive (2026-06-29), this document is treated like the Architecture doc it descends from: preserved once complete, not silently rewritten. Any future revision is issued as v1.1, v2.0, etc., appended below this baseline rather than overwriting it. What has actually been built against this v1.0 blueprint — and what still remains — is tracked separately in the **AwakenArts Implementation Log**, so this document stays the stable plan and the Log stays the changing record of progress against it.
+**Preservation.** Once approved, this document is treated like the Architecture doc it descends from: preserved, not silently rewritten. Any future revision is issued as v1.1, v2.0, etc., appended below this baseline rather than overwriting it. What has actually been built against this v1.0 blueprint — and what still remains — is tracked separately in the **AwakenArts Implementation Log**, so this document stays the stable plan and the Log stays the changing record of progress against it.
 
 Every fact below was checked against the live codebase, not assumed: `src/data/editions.ts`, `src/app/editions/[slug]/page.tsx`, `src/components/ProtectedImage.tsx`, `src/components/EmailGateDownload.tsx`, `src/app/api/subscribe/route.ts`, `next.config.js`, and `.gitignore`.
 
@@ -141,6 +141,20 @@ Unchanged from today, and v1.0 introduces no changes to it: there is no `vercel.
 | 5 | Roll the pipeline out to Bowls, Ballerina, Grismere, Poppy, Queen Ann | Repeatable once Phase 4 is proven |
 | 6 | Wire the Acquire/email-gate section per Edition (`EmailGateDownload` + `/api/subscribe`, tagged per slug) | Depends on Phase 5's sections existing; reuses infrastructure already live in production |
 | 7 | Add the commerce hook stub (`Edition.access`, `hasAccess()`) | Deliberately last and inert — lands without blocking or being blocked by Phases 1–6 |
+
+## 11. Future Platform Expansion
+
+Sections 1–10 specify the Reader. This section adds no new build scope and no new phase — Phases 1–7 stay exactly as written above. What it documents is which decisions already made in Sections 1–10 were deliberately kept generic, so building the Reader now doesn't have to be revisited or undone when the platform grows past Figure Editions into the long-term marketing, publishing, and educational platform the Architecture doc's governing claim names.
+
+**Publishing.** The `EditionSection` shape in Section 3 — `id`, an optional `image`, an optional `text` — isn't written to be Edition-specific; it's a generic "one screen of a paced reading experience" unit. `EditionReader` and `EditionReaderSection` (Section 5) consume an array of these without knowing or caring what content lives inside them. That means the same Reader shell, asset pipeline, and responsive image system built here is the same mechanism that could eventually present the already-drafted AwakenArts book (front matter, three parts, appendices) or a Workshop's curriculum materials, rather than requiring a second reading-experience codebase built from scratch when that day comes.
+
+**Marketing.** `/api/subscribe`'s `source` field (used today as a flat string tag) is the seam for audience segmentation: Section 5's `source={`edition-${slug}`}` already produces per-Edition signup data, distinct from the single undifferentiated Encounters Journal list. Nothing in this codebase needs to change for Susan to later message Dragon readers differently from Poppy readers, or run a figure-specific campaign — that capability is built entirely inside Kit (tags, segments, sequences) on top of data this Spec already generates.
+
+**Education.** `hasAccess(edition)` (Section 8) is written against the generic `Edition` shape, not "Figure Edition" specifically. When Workshops or a future course need a gate — a free preview session versus a paid one, public material versus facilitator-only material — the same single function is where that decision gets made, rather than a second entitlement system invented per content type.
+
+**What this section is not.** It is not a commitment to build a book reader, a Workshop gate, or segmented email campaigns. It exists so Phases 1–7 are approved knowing what they're quietly compatible with — and so a future Specification covering any of the above can point back to this section instead of re-litigating whether the Reader's data model was built too narrowly to extend.
+
+This is the thread back to the Architecture doc's governing claim: each decision above was kept open specifically so that building the Reader now doesn't narrow what the marketing, publishing, and educational platform can become later.
 
 ---
 
