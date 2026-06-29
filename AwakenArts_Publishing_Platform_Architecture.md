@@ -177,3 +177,55 @@ This supersedes the assumption, standing until now, that every Figure Edition wo
 **Which Edition is "the featured Edition."** Not restated here as a new choice — Dragon already holds this role in practice. It was named "the most mature Edition on the site" earlier in this document, it was the pilot for Implementation Spec Phase 1, and Phase 2's Reader was built and is being refined against it specifically. This decision confirms that role rather than assigning it freshly: Dragon is the one Edition the public reads in full.
 
 **Downstream effect on the Implementation Specification, flagged for the Implementation Log rather than resolved here:** Spec Phase 5 ("roll the pipeline out to Bowls, Ballerina, Grismere, Poppy, Queen Ann") was written assuming all five would get a Reader identical in kind to Dragon's. That assumption no longer holds. What the other five Editions' `/editions/[slug]` pages and `/read` routes should actually do — a locked preview, an excerpt-only Reader, a straight acquire/purchase prompt, something else — is now an open Product Development question, not an engineering one, and Phase 5 cannot be scoped until it's answered.
+
+---
+
+## 2026-06-29 — Governing Product Decision: Two Reader Experiences
+
+**This supersedes the framing above.** The Product Access Model (immediately above) described one Reader with two access states — free for the featured Edition, gated for the rest. Susan's next directive corrects that: AwakenArts requires **two distinct Reader experiences**, and they are not different permission levels of the same feature. They are different products, serving different purposes, for different audiences, and should not share routing, navigation, calls to action, endings, or relationship with the visitor. Recorded here verbatim against her framing, because it changes what "the Reader" refers to everywhere else in this document and in the Implementation Specification.
+
+**Reader One — Public Reader.** Purpose: introduce AwakenArts. Audience: first-time visitors. Content: an intentionally curated and abridged Figure Edition. Objectives: demonstrate the AwakenArts reading experience, establish trust, communicate the nature of the work, invite the visitor into a continuing relationship, and introduce the complete Figure Edition. It belongs to the public-facing marketing platform. Its purpose is discovery. It should never replace the published product.
+
+**Reader Two — Owner Reader.** Purpose: deliver the complete published Figure Edition. Audience: owners. Content: the complete Edition as authored. Capabilities: a complete web reading experience, download, print, and future owner resources. It belongs to the owner's publication library. Its purpose is ownership.
+
+**Site organization, restated as two surfaces, not one:**
+
+*Public Website* — Encounters, Featured Reader, Collections, About, Foundation, Marketing Platform.
+
+*Owner Platform* — My Library, Complete Figure Editions, Download, Print, Future Collections, Workshop Resources, Facilitator Resources.
+
+The Owner Platform represents the customer's continuing relationship with AwakenArts after acquisition — it is not a richer view of the same page the public sees; it is a different place entirely.
+
+**On the published PDF's own design languages (per Susan's direct review of the source material).** The Figure Edition's pages were not authored as one uniform thing to be "translated to the web" by a single rule. At least three distinct design languages are present: the Figure page (a formal printed spread pairing artwork and title), the Poem page (a designed visual composition in its own right — heading, title hierarchy, the cream field, typographic balance, and the poem together as one authored unit, not a calligram floating in isolation), and the Recognition/Reflection pages (conventional pages built for sustained reading). These should not all become the same kind of web object. For some poems, the composed page itself *is* the artwork closely enough that the Owner Reader should preserve it nearly as authored rather than decomposing it into generic text fields; Recognition and Reflection, by contrast, can become more web-native without losing their meaning, in either Reader.
+
+**Where this leaves the prior Product Access Model language above:** the "one freely accessible Reader, the rest gated" sentence is no longer accurate as a description of the end state — there are now two Reader products, and the featured Edition's Public Reader is one specific instance of Reader One, not a temporarily-free instance of the single Reader every Edition will eventually have. The underlying intent it was protecting — *the Reader is not a substitute for owning the published work* — still holds and is restated more precisely by the Public Reader's own definition above ("It should never replace the published product").
+
+**Status: a stable publishing architecture, per Susan's own framing.** Encounters are the free invitation. The Featured Reader is the curated demonstration. The complete Figure Edition is the product. The Owner Reader is the premium reading environment for that product. Download and Print are delivery options for owners. Full implementation detail — including the still-open dependency on the Purchasing/entitlement decision that the Owner Reader's access control requires — is tracked in `AwakenArts_Reader_Design_Revision_Plan.md` and the Implementation Log, not here; this section records the decision itself.
+
+---
+
+## 2026-06-29 — Governing Directive: Marketing Platform First
+
+**The frame for everything above.** Susan has named what all of this has actually been building toward: not a website with a Reader feature, but the AwakenArts marketing platform itself — which does not yet exist, and which the Figure Editions, Collections, Workshops, Facilitator Resources, Retreats, and Owner Platform all belong to as one publishing ecosystem still in motion. Every implementation decision from here on is a publishing and marketing decision before it is an engineering one, and today's decisions don't get to silently calcify into tomorrow's permanent product presentation — the platform is expected to keep evolving as the products themselves mature.
+
+**The Reader is a marketing instrument, not the product.** The Public Reader's job is not to give away the complete Figure Edition — it exists to establish trust, demonstrate AwakenArts' distinctive quality, create recognition, introduce the symbolic method, create desire to continue, and lead naturally to acquisition. Its implicit message must be "this is the beginning of something larger," never "here is your free Edition." A visitor should leave the Public Reader wanting to own the complete work, not feeling that owning it would be redundant.
+
+**The standing evaluative question, for every feature from here forward, on either platform:** does this strengthen the marketing platform — does it increase understanding of AwakenArts, increase confidence in the work, create a natural desire to continue — or does it risk accidentally satisfying the visitor so completely that the products themselves start to feel unnecessary? This applies most directly to how much of Recognition and Reflection the Public Reader is allowed to show (Section 7 below and the Revision Plan's Section 1): "selected," not "complete," is now a marketing requirement, not only a pacing one. Technical correctness alone no longer constitutes success for the Public Reader; the test is whether it introduces the work, cultivates the relationship, and sustains the longer publishing mission Susan has described.
+
+**Restates, rather than changes, the Two Reader Experiences split above:** the Public Platform exists for discovery and should always invite movement toward ownership; the Owner Platform exists for ownership and continued use and should reward that ownership with the complete experience. Recorded here as confirmation that the architecture above is the correct shape for this directive, not as a new structural decision.
+
+---
+
+## 2026-06-29 — Governing Architectural Principle: Build the House Before Furnishing the Rooms
+
+**The metaphor that now governs how every feature gets evaluated.** AwakenArts is not a set of independent features; it is a publishing house with rooms that each have a specific purpose, and a well-built feature placed in the wrong room is still wrong regardless of its workmanship. From here forward, a feature's architectural placement is decided before its implementation, not alongside it.
+
+**The Public House** — purpose: introduce AwakenArts. Rooms: Homepage, Foundation, Encounters, **Featured Reader (Grismere)**, Collection Preview, About. Everything here exists to help a visitor discover, understand, trust, and desire the work. The Featured Reader is one of these marketing instruments, not the product — it demonstrates the quality of the published work while naturally creating interest in acquiring it.
+
+**The Transition** — between the Public House and ownership. Where visitors discover the Complete Figure Edition, additional Figure Editions, Collections, Workshops, Facilitator Resources, and Retreats. Not a sales interruption — the architectural bridge between discovery and ownership.
+
+**The Owner House** — purpose: support ownership. Rooms: My Library, Complete Figure Editions, Read Online, Download, Print, Collections, Workshop Resources, Facilitator Resources, Retreat Resources. Everything here exists because the visitor has become an owner; this house delivers and supports the published works.
+
+**This resolves a question the Product Access Model section above had left to Dragon by default.** Susan's room list names Grismere directly as the Featured Reader. The earlier note's line — "Dragon already holds this role in practice" — is superseded by this naming, not by silent correction: Dragon remains the engineering pilot the Reader pattern was built and proven against (per the Two Reader Experiences directive, "the Dragon engineering pilot remains valid"), but the room itself, Featured Reader, is Grismere's.
+
+**The design rule going forward:** before implementing any feature, answer "where does this belong" — Public House, Transition, or Owner House — and only then begin implementation. A room-by-room placement of what's already built against this framework, and what's still unplaced, is tracked in `AwakenArts_Reader_Design_Revision_Plan.md` rather than duplicated here.
