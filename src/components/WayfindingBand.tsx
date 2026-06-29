@@ -38,7 +38,7 @@ const PRIMARY_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Encounters', href: '/encounters' },
   { label: 'Collection', href: '/collection' },
-  { label: 'Poems', href: '/poems' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Journal', href: '/journal' },
   { label: 'About', href: '/about' },
 ]
