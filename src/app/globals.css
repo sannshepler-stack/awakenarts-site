@@ -7035,6 +7035,219 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .edition-actions { padding: 0 1.5rem 4.5rem; }
 }
 
+/* ── Edition Reader — Implementation Spec v1.0, Phase 2 (2026-06-29) ────
+   /editions/[slug]/read. Deliberately bare chrome: the .reader-topbar
+   below is the *only* navigation while reading — no global Nav, no
+   WayfindingBand, no site footer. Those return once the visitor exits
+   back to the Edition landing page via the topbar's return anchor. One
+   EditionReaderSection is visible at a time (Task 3's pacing
+   requirement); a section's own text may scroll internally if it's long
+   (see EditionReaderSection.tsx's long-text note), but the Reader itself
+   never scrolls continuously across sections. */
+.reader-shell {
+  min-height: 100vh;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+}
+
+.reader-shell--empty {
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.reader-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.75rem;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(28, 43, 58, 0.08);
+}
+
+.reader-topbar__back {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--mid);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(28, 43, 58, 0.25);
+  padding-bottom: 2px;
+}
+
+.reader-topbar__back:hover {
+  color: var(--deep);
+  border-bottom-color: var(--deep);
+}
+
+.reader-progress {
+  font-family: var(--sans);
+  font-size: var(--caption-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--mid);
+  margin: 0;
+}
+
+.reader-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 4.5rem; /* leaves clearance for the fixed side nav buttons */
+}
+
+.reader-section {
+  width: 100%;
+}
+
+.reader-section--image {
+  display: flex;
+  justify-content: center;
+}
+
+.reader-img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 200px);
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 18px 60px rgba(28, 43, 58, 0.18);
+}
+
+.reader-section--text {
+  display: flex;
+  justify-content: center;
+}
+
+.reader-text {
+  font-family: var(--serif);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--deep);
+  text-align: left;
+  max-width: var(--measure-medium);
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+  padding: 0 0.5rem;
+}
+
+.reader-text p {
+  margin: 0 0 1.4em;
+}
+
+.reader-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Encounter and Colophon — short, contemplative statements; treated like
+   the homepage's closing-signature style rather than as reading body copy. */
+.reader-section--encounter .reader-text,
+.reader-section--colophon .reader-text {
+  text-align: center;
+  font-style: italic;
+  font-size: var(--subtitle-size);
+  line-height: var(--subtitle-line);
+  max-width: var(--measure-narrow);
+}
+
+/* Word — the poem; centered, narrow measure, line breaks preserved. */
+.reader-section--word .reader-text {
+  text-align: center;
+  max-width: var(--measure-narrow);
+}
+
+.reader-section--acquire {
+  text-align: center;
+  max-width: var(--measure-medium);
+  margin: 0 auto;
+}
+
+.reader-acquire__eyebrow {
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.reader-acquire__title {
+  font-family: var(--serif);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  color: var(--deep);
+  margin: 0 0 0.75rem;
+}
+
+.reader-acquire__sub {
+  font-family: var(--serif);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--mid);
+  margin: 0 auto;
+  max-width: var(--measure-narrow);
+}
+
+.reader-acquire__form {
+  max-width: 420px;
+  margin: 1.75rem auto 0;
+  text-align: left;
+}
+
+.reader-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(250, 247, 242, 0.88);
+  border: 1px solid rgba(28, 43, 58, 0.12);
+  box-shadow: 0 4px 16px rgba(28, 43, 58, 0.14);
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--deep);
+  cursor: pointer;
+  z-index: 20;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.reader-nav:hover:not(:disabled) {
+  background: var(--gold);
+  color: var(--cream);
+}
+
+.reader-nav:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.reader-nav--prev { left: 1rem; }
+.reader-nav--next { right: 1rem; }
+
+@media (max-width: 1000px) {
+  .reader-stage { padding: 2rem 3.5rem; }
+}
+
+@media (max-width: 640px) {
+  .reader-topbar { padding: 1rem 1.25rem; }
+  .reader-stage { padding: 1.5rem 2.75rem; }
+  .reader-img { max-height: calc(100vh - 180px); }
+  .reader-text { max-height: calc(100vh - 190px); }
+  .reader-nav { width: 2.25rem; height: 2.25rem; font-size: 1.3rem; }
+  .reader-nav--prev { left: 0.5rem; }
+  .reader-nav--next { right: 0.5rem; }
+}
+
 /* ── Gallery — June 2026 architecture revision ──────────────────────────
    A curated, imagery-only presentation of the symbolic figures. Not a
    reading room. Every card either closes with a quiet CTA forward (into
