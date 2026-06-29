@@ -47,6 +47,18 @@ Carried from the Publishing Platform Architecture doc, current status:
 1. **Purchasing** — still open. Blocks Phase 7's `hasAccess()` from ever becoming real (it stays a permanent stub otherwise).
 2. **Reader as a separate route** — resolved by the Implementation Specification: `/editions/[slug]/read`, distinct from the landing page. No longer open.
 3. **The Dragon naming collision** (`/encounters/dragon` vs. the Dragon Figure Edition) — still open, and unrelated to this Spec's scope.
+4. **Future platform capabilities — the expansion strategy, not new scope.** Per Susan's 2026-06-29 framing, the capabilities below are deliberately sequenced rather than concurrent: each one is read as "comes after the previous one succeeds," not as an unrelated future project competing for priority alongside Phases 1–7.
+   1. Dragon Reader proof (Spec Phases 1–3)
+   2. Five-Edition rollout (Spec Phases 4–5)
+   3. Commerce activation (Spec Phase 7, once Purchasing is decided)
+   4. Collections
+   5. Workshop platform
+   6. Retreat platform
+   7. Presentation/slide libraries
+   8. Facilitator resources
+   9. Additional educational products
+
+   Items 4–9 are not specified anywhere yet — no architecture, no spec, no code. Recording the sequence here is not a commitment to build any of them; it exists so that when one of them is eventually proposed, it's read against this order rather than as a surprise insertion.
 
 ## How this Log is maintained
 
