@@ -191,6 +191,170 @@ Full text, rationale, and the page's relationship to the website's "Acquire" (a 
 
 **Implementation status.** Architecture only. The standard confirms the Colophon's existing position in the Task 2 template (after Reflection, before Acquire) and locks its content, but none of the six built Edition PDFs (Dragon, Bowls, Ballerina, Grismere, Poppy, Queen Ann) have been regenerated with it. Retrofitting all six, and applying it to every Edition built going forward, awaits explicit authorization.
 
+## 2026-06-29 — Edition Closing Page: production authorized, prototype built and reviewed, rollout underway
+
+**Authorization.** Susan: "We need this page and don't be too skimpy on the logo or over do it either." Production begins on the standard recorded immediately above.
+
+**Two refinements made along the way**, both recorded in full in `AwakenArts_Publishing_Platform_Architecture.md` ("Production Authorization + Two Refinements: the Edition Closing Page"):
+
+1. The fixed body line is revised to: "This edition is one work within the AwakenArts Collection. Each edition stands on its own while contributing to a larger body of symbolic exploration." Replaces the original example line; still fixed, word-for-word, across every Edition.
+2. **Exact placement resolved.** Asked where the Colophon lands against the real as-built page order (Reflection → Guided Journaling → Message Delivered → Facilitator Notes), Susan chose the **very last page of the PDF, after Facilitator Notes** — replacing the placeholder brand sign-off currently at the bottom of each Edition's Facilitator Notes page (`pageN_facilitator.py`'s closing `hr`/`ampersand_glyph`/"AWAKENARTS"/tagline block), rather than inserting it directly after Reflection.
+
+**Prototype built and shown.** Rendered against Dragon using the Figure Edition Engine (`AwakenArts_Workbook/Architecture/Figure_Edition_Engine/engine.py`) — the brand mark redrawn natively in PIL (gold double-arc via the same bezier control points as `public/images/brand/logo-mixed.svg`, P052 wordmark, gold rule, italic tagline) rather than a pasted raster, sized to roughly a quarter of the page width. Shown to Susan; she answered the placement question above without objecting to the visual, taken as approval to proceed.
+
+**Implementation status.** Prototype complete. Production rollout — removing the placeholder sign-off from each Edition's Facilitator Notes page, adding the Colophon as a new final page, regenerating all six PDFs (Dragon, Bowls, Ballerina, Grismere, Poppy, Queen Ann) and their contact sheets — is in progress.
+
+## 2026-06-29 — Edition Closing Page: rollout complete, all six Editions
+
+All six Figure Edition PDFs now end on the Colophon as their final page, replacing the old placeholder brand sign-off. Every edition is 12 pages; the fixed body line and footer treatment are identical in substance across all six, varying only in per-edition footer label and house style.
+
+**Dragon, Bowls, Ballerina, Grismere** — built from the shared Figure Edition Engine (`engine.py`). The Colophon template was generalized from the approved Dragon prototype into a single parameterized generator (page number and section label substituted per edition), rendered once per edition, then assembled via `pypdf`: pages 1–10 unchanged, the Facilitator Notes page rebuilt without its old sign-off block, the new Colophon appended as page 12. Overwrote both `public/files/editions/` and the corresponding Workbook master copy for each.
+
+**Poppy** — has no shared-engine build; its own `reportlab`-based script (`AwakenArts_Workbook/06_Poppy/build_poppy_pdf.py`) was edited directly: the old sign-off block removed, a new Colophon page added in Poppy's native Pagella/Lato + navy-cream-gold style (same fixed wording, edition-appropriate visual treatment). All other page footers' "X ⁄ 11" denominators were corrected to "X ⁄ 12" site-wide in that script, since the edition is now 12 pages — a consistency fix made along the way, not separately requested. Rebuilt and overwrote `public/files/editions/Poppy_Figure_Edition.pdf`; no Workbook duplicate exists for Poppy.
+
+**Queen Ann** — no surviving source script for this edition, so the retrofit was done by direct raster edit: the existing page 11 (a single full-page embedded image) was extracted losslessly, the placeholder sign-off region painted over with the page's own background color (bounds located by pixel-row scanning, not estimated by eye), and the new Colophon — rendered via the same parameterized template — appended as page 12. Overwrote `public/files/editions/Queen_Ann_Figure_Edition.pdf`; no Workbook duplicate exists for Queen Ann either.
+
+**Verification.** All six PDFs confirmed at 12 pages with correct mediaboxes. Pages 11–12 of every edition were rendered to image and visually inspected: each Facilitator Notes page is clean with no remnant of the old sign-off, and each Colophon page carries the correct fixed body text, "AwakenArts.com," copyright line, and edition-specific footer label.
+
+**Implementation status.** Complete. The Colophon standard recorded above is now live in every shipped Figure Edition PDF. Applying it to any future Edition build is part of the standard template going forward, not a separate task.
+
+## 2026-06-29 — Edition-Specific Purchase Page (evolves the "Editions Store Retracted" correction)
+
+Per Susan's directive (recorded in full in `AwakenArts_Publishing_Platform_Architecture.md`, "Evolution: the Purchase Page Becomes Its Own Edition-Specific Page"), "Acquire" is promoted from a section of the Edition Preview page to its own route, `/editions/[slug]/purchase`, built once and applied uniformly to all six Editions via the existing `editions.ts` + `generateStaticParams` template. This is explicitly not a centralized Store: each Purchase page has exactly one entry point (that Edition's own Preview page) and is not listed, linked, or indexed anywhere else.
+
+**Built this pass:**
+- `src/data/editions.ts` — added `about` (a short paragraph on the work and the relationship between image and poem) and `themes` (a short list of theme words/phrases) to the `Edition` interface, populated for all six Editions from real authored source material: Dragon's own already-transcribed `sections` text; Bowls's `Bowls_Notes_on_the_Figure.md` (the "Both Sides Now" two-bowl account, in Susan's own words); Ballerina's and Grismere's `*_Notes_on_the_Figure.txt`; Poppy's PDF text layer (`pdftotext -layout`, the only one of the six with an extractable layer); and Queen Ann's `QueenAnn_Notes_on_the_Figure.txt`. No copy was invented.
+- `src/app/editions/[slug]/page.tsx` (Edition Preview) — added an About section, a Themes line, and a "What This Edition Includes" list, all reading as introduction rather than sales copy. Removed the direct `View the Figure Edition (PDF)` link (this had been quietly handing over the complete Edition from the Preview page, contradicting the Preview's own governing constraint that it "must increase desire without ever exposing the complete Edition" — a pre-existing inconsistency, corrected here rather than carried forward). The primary CTA now leads to the new Purchase page.
+- `src/app/editions/[slug]/purchase/page.tsx` (new) — the edition-specific Purchase page: what the visitor receives, what's included, format options (Digital Edition / Print Edition), and delivery, with pricing and checkout explicitly marked "to be announced" per Susan's brief ("Use placeholders where purchasing details are not yet finalized") and per Open Decision #1 below, which remains unresolved. No functioning cart or payment flow exists or was built — placeholder UI only.
+- `globals.css` — new `.edition-about*`, `.edition-themes*`, `.edition-includes*`, and `.purchase-*` rules, matching the site's existing cream/navy/gold token system (`--cream`, `--deep`, `--gold`, `--mid`, `--serif`, `--sans`) and the Edition page's established "minimal by design" register.
+
+**Implementation status.** Built and verified (`tsc --noEmit` clean). Applied to all six current Editions in one pass, not prototyped on a single one first, per Susan's explicit instruction.
+
+## 2026-06-29 — Refinement: About This Edition describes experience, not meaning
+
+Same day, immediately after the above. Susan reviewed the first draft of the About copy (interpretive: "The Dragon holds two things that look like enemies...") and corrected the framing, using Dragon as the example:
+
+> "This edition presents The Dragon as it was created: image and poem together, followed by guided recognition, reflection, and facilitator notes. It is designed for personal reading, discussion, or group exploration. What kind of experience is this edition? Not: What does the Dragon mean? I'd move toward something much simpler."
+
+Followed by the governing rule, stated explicitly for all six Editions:
+
+> "About This Edition → describes the experience. Themes → suggest the territory. The edition itself → does the symbolic work."
+
+**Built this pass:**
+- `src/data/editions.ts` — replaced all six `about` fields with the simpler, structurally identical experience-description (image and poem together, guided recognition, reflection, facilitator notes; for personal reading, discussion, or group exploration), varying only by title. The governing rule is now recorded directly against the `Edition` interface so it survives future edits. `themes` arrays were left as-is — they already read as territory-gestures, not interpretation.
+- `src/app/editions/[slug]/page.tsx` — added "About This Edition" and "Themes" eyebrow labels; removed the separate "What This Edition Includes" section, which had become redundant once About took on that job (it was also still using the older "exploring the figure's meaning" language this refinement retires).
+- `src/app/editions/[slug]/purchase/page.tsx` — trimmed the parallel "What You'll Receive" includes line to just the one detail About doesn't cover (the closing Colophon), since the rest is now stated once, in About.
+- `globals.css` — renamed/simplified the "EDITION PREVIEW — About / Themes / Includes" block to "About This Edition / Themes"; added `.edition-about__eyebrow` / `.edition-themes__eyebrow`; removed the now-unused `.edition-includes*` rules.
+
+## 2026-06-29 — Restructure: the Purchase page stops selling symbolism, starts answering practical questions
+
+Same day, after Susan reviewed a further editorial pass on the Purchase page's own copy and arrived at its governing principle:
+
+> "The Purchase page is not selling symbolism. It's selling a published edition. That subtle shift changes the tone from 'Here's why the Dragon matters…' to 'Here's what you'll receive when you acquire this edition.' ... The literary work has already persuaded the reader. The Purchase page simply removes uncertainty about the format and contents."
+
+Susan specified the resulting section order and content directly: About This Edition (short, generic paragraph), What You'll Receive (a scannable bulleted list, not prose — including two complimentary printable items not previously listed: a printable poem sheet and printable figure image PDF), Formats (just the two delivery formats, pricing removed from this section), Price (its own section, placeholder-only for now), Purchase (one CTA — "Acquire the Figure Edition," not "Buy"), and a single Navigation link back to the Edition's own Preview ("Back to the Collection" eliminated).
+
+**Built this pass — `src/app/editions/[slug]/purchase/page.tsx` fully restructured:**
+- About This Edition — new, generic, publisher-voiced paragraph; deliberately not the same text as the Preview page's own About section or the shared `editions.ts` `about` field (this page no longer reads from `edition.about` at all).
+- What You'll Receive — converted from prose to an eight-item bulleted list (Complete Figure Edition PDF, original image and concrete poem, Recognition pages, Reflection pages, Facilitator Notes, AwakenArts Colophon, complimentary printable poem sheet, complimentary printable figure image "when available").
+- Formats — simplified to title + one line of detail per format; pricing moved out.
+- Price — new section, two lines, both "Price to be announced" pending Open Decision #1.
+- Purchase — new section with a single disabled button ("Acquire the Figure Edition") and a one-line disclosure that purchasing isn't yet active. Still no functioning cart or checkout — this remains an honest placeholder per the standing prohibition on building real payment logic without a resolved entitlement mechanism.
+- Navigation — reduced to the one "← Return to Edition Preview" link.
+- `globals.css` — replaced the old two-column Format-card-with-price layout with the new six-section rule set (`.purchase-about*`, `.purchase-receive__intro`/`__list`, simplified `.purchase-option*` without price, `.purchase-price*`, `.purchase-cta*`); removed now-unused `.purchase-option__price` / `.purchase-options__note` rules.
+
+**Implementation status.** Built and verified (`tsc --noEmit` clean, brace-balance check on both the page and the stylesheet). Applied to all six current Editions in one pass via the shared template — no per-edition prototyping.
+
+**Implementation status.** Built and verified (`tsc --noEmit` clean). Applied uniformly across all six Editions in the same pass.
+
+## 2026-06-29 — Homepage hero: invitations stripped to the two doorway links, no teaser text, no arrows
+
+Same day, per Susan's direct brief on the hero: "Homepage hero image section -- preserve a good sized hero image but work well with AWAKENARTS / When Language Shapes a Path / Discover symbolic language through image and poem. / Enter the Encounters / Explore the Collection / Not explanatory text -- no arrows."
+
+The hero already carried exactly that content (logo, two-line tagline, gold mission line, and the two Editorial Invitations), but each invitation also carried a one-line teaser paragraph beneath it ("Guided symbolic encounters through image, poem, and Scripture." / "Discover the growing library of AwakenArts Figure Editions.") and an arrow glyph after the link text — both explicitly ruled out by this brief.
+
+**Built this pass:**
+- `src/app/page.tsx` — removed both teaser `<p>` elements and both `<span className="arrow">→</span>` glyphs from the hero invitations; removed the now-unnecessary `.hero-invitation` wrapper `<div>`s since each invitation is now a single link with nothing left to group.
+- `src/app/globals.css` — removed the arrow-hover transform rules and the `.hero-invitation__teaser` rule (now unused); pulled the `.hero-invitations` gap back from 2.25rem to 1.5rem (1.25rem on mobile) since the block is now two short lines instead of two short paragraphs-with-teasers; removed the now-unused `--invitation-teaser-size`/`--invitation-teaser-line` tokens from `:root`, leaving `--invitation-title-size`/`-weight` in place since the link styling itself is unchanged.
+- The hero image itself (`.hero__media`, the `<picture>` variants, `object-fit: cover` framing) was left untouched — its size is driven by the grid row height via `align-items: stretch`, which the shorter text column doesn't affect, so the "good sized hero image" requirement was already satisfied structurally and needed no change.
+
+**Implementation status.** Built and verified (`tsc --noEmit` clean, brace-balance check on both files returned 0).
+
+## 2026-06-29 — Gallery: AtmosphericHeader removed (second removal of a threshold header on this page)
+
+Same day, per Susan: "I love the header style on the gallery page but it doesn't work with the page -- remove the header."
+
+The `gallery-banner-3.jpg` AtmosphericHeader (added under the "Banner Height + Seam" rollout, Phase: Apply new image + smoothed transition to Gallery page) is removed from `src/app/gallery/page.tsx`. The page now opens directly on `.lib-hero`. No CSS change was needed: `.lib-hero` already owns its own dark (#0e1418) background and enough top padding (6rem desktop / 4rem mobile) to clear the fixed nav (72px / 56px) on every breakpoint — it was never structurally dependent on the header above it, only visually paired with it via the header's `fadeTo` blend.
+
+Note for continuity: this is the second time a threshold-style header has been tried and pulled from this same page — the original Threshold Header on the former /poems page was removed 2026-06-25 for the same reason ("wasn't reading well"), before AtmosphericHeader was reintroduced here later under the site-wide banner rollout. Recorded here so a third attempt, if proposed, is read against this history rather than as a fresh idea.
+
+**Implementation status.** Built and verified (`tsc --noEmit` clean, brace-balance check returned 0).
+
+## 2026-06-29 — Homepage hero: image elongated, text/image gap closed
+
+Same day, per Susan, immediately after the invitations simplification above: "elongate the hero image rather than flatten its height and move the left content and the hero image close to one another."
+
+This surfaced a side effect of the invitations pass earlier the same day. The previous entry stated the hero image's size was "driven by the grid row height via `align-items: stretch`, which the shorter text column doesn't affect" — that was wrong. `.hero` has no explicit height; with `align-items: stretch` and nothing else fixing the row's height, the row is sized to the taller of the two columns' natural content height, and `.hero__media` had no natural height of its own beyond a `min-height: 420px` floor. Shortening the text column (removing the teaser lines and arrows) meant the row had nothing tall left to stretch to, so it collapsed toward that 420px floor — the image rendered shorter and wider-looking ("flattened") than before, exactly what Susan flagged.
+
+**Built this pass (`src/app/globals.css`):**
+- `.hero__media` `min-height` raised from 420px to 640px on desktop, with a scaled-down 540px floor added at the ≤1024px tablet breakpoint (narrower column, so the same floor would over-crop). This is still a floor, not a fixed height — the row can still grow taller if the text column ever needs more room — but it now guarantees the image reads as tall on its own rather than being squeezed down to match short text. `object-fit: cover` absorbs the added height by cropping a bit more off the sides; the existing `object-position: 70% center` keeps the Queen Ann figure in frame as that happens.
+- `.hero` `column-gap` pulled in from 3rem to 1.5rem on desktop, matching the value already used at the tablet breakpoint, so the text column and the image sit close together instead of spanning the wide desktop gutter. Tablet/mobile gap values were already tight and untouched.
+
+**Implementation status.** Built and verified (`tsc --noEmit` clean, brace-balance check on `globals.css` returned 0).
+
+## 2026-06-29 — Homepage hero: second gutter pass (single composition) + Gallery title-to-tiles gap tightened
+
+Same day, two further refinements per Susan.
+
+**Hero, second pass.** Susan: "Tighten the homepage hero composition by reducing the horizontal gutter between the text column and the hero artwork. Move the artwork left until the headline and illustration read as a single composition rather than two separate panels. Increase the artwork slightly (approximately 5–10%) if needed to maintain balance after repositioning. Preserve the generous outer page margins while making the center of the hero feel more unified."
+
+The first hero pass earlier today had already pulled `.hero`'s desktop `column-gap` from 3rem to 1.5rem; this asked for something tighter than "close together" — "a single composition." Built (`src/app/globals.css`):
+- `column-gap` cut again, 1.5rem → 0.85rem on desktop, 1.5rem → 1rem at the ≤1024px tablet breakpoint.
+- `.hero`'s `grid-template-columns` image fraction raised from `1.1fr` to `1.2fr` (text column's `1fr` unchanged). At this container's max-width this both grows the image's rendered width (~6%, inside the 5–10% asked for) and pulls the image's left edge toward the text column — a smaller gap and a larger image column both move that edge left, which is what "move the artwork left" actually required, since `justify-self: end` on a 100%-width media block has no positioning effect on its own.
+- `.hero__media`'s `min-height` raised by the same proportion, 640px → 688px on desktop and 540px → 580px on tablet, so the image grows in height as well as width rather than just getting wider and flatter.
+- `.hero`'s outer padding (2rem left / 1rem right) was left untouched — only the gutter between the two columns moved, not the page's outer margins, per Susan's explicit "preserve the generous outer page margins."
+
+**Gallery, title-to-tiles gap.** Susan: "Reduce the vertical gap between 'The Gallery' and the first row of contact sheets by perhaps 10–15%. Right now there's a generous amount of empty space. It isn't wrong, but if you eventually have three or four rows of editions, tightening that gap slightly will help the works become the focus sooner."
+
+`.lib-hero` and `.poems-gallery-section` are used only on `/gallery` now (both are vestigial `/poems`-era class names, confirmed by grep — no other page references them), so this was a scoped, safe change. `.poems-gallery-section`'s own top padding was already minimal (1rem), so `.lib-hero`'s bottom padding was effectively the entire visible gap between the H1 and the tile grid. Built (`src/app/globals.css`): `.lib-hero` `padding-bottom` cut 5rem → 4.25rem on desktop (-15%) and 3.5rem → 3rem at the ≤640px breakpoint (-14.3%). Top and side padding on `.lib-hero` were left unchanged — only the title-to-tiles gap moved.
+
+**Implementation status.** Built and verified (`tsc --noEmit` clean, brace-balance check on `globals.css` returned 0).
+
+## 2026-06-29 — Homepage hero: fourth pass, artwork nudged left (translate, not resize)
+
+Same day, per Susan: "moving the artwork 10–20px farther left — not enlarging it, just nudging it slightly toward the headline... subtle visual tension between the two halves without making them touch." She also noted the homepage now reads conceptually clearly.
+
+Distinct from the prior passes, this was explicitly a position-only nudge, not a size change. `.hero__media` already fills its grid column at `width: 100%`, so there's no slack for `justify-self` to use — the only way to move the box itself without touching the grid's track math (which would also move/resize the text column) is a `transform: translateX()` on the media block directly.
+
+**Built (`src/app/globals.css`):**
+- `.hero__media` base rule: `transform: translateX(-16px)`. Desktop's gap is 0.85rem (~13.6px), so this brings the two halves close to touching without crossing into the text column's own content at this viewport.
+- ≤1024px tablet override: `transform: translateX(-10px)` — tablet's gap is 1rem (16px), so the full -16px would have closed it to zero; dialed back to stay inside "close but not touching" at the narrower width.
+- ≤768px mobile override: `transform: none` — the layout stacks into a single column here, so a leftward shift no longer applies and would just push the image toward the edge.
+
+**Implementation status.** Built and verified (`tsc --noEmit` clean, brace-balance check on `globals.css` returned 0).
+
+## 2026-06-29 — Homepage Collection section: body paragraph replaced
+
+Same day, per Susan's exact replacement text: "Each Figure Edition brings image, poem, and reflection together as a single published work. Gallery prints, concrete poems, and companion materials extend the same work, each revealing another aspect of the figure."
+
+Replaces the prior `home-coll-body` copy ("...a complete reading experience built for recognition rather than explanation"). This introduces gallery prints, concrete poems, and companion materials as extensions of the same published work for the first time on the homepage — a small but real claim about product family, so it's worth flagging here in case it needs to line up with how those items are actually offered elsewhere (Collection page, Edition Preview/Purchase pages) as that part of the site develops.
+
+**Built:** `src/app/page.tsx` — `.home-coll-body` paragraph text only, dictated verbatim. No CSS change.
+
+**Implementation status.** Built and verified (`tsc --noEmit` clean, brace-balance check on `page.tsx` returned 0).
+
+## 2026-06-29 — Homepage reader-awareness pass: hero orientation line + Collection claim softened
+
+Susan asked for a homepage evaluation of reader use and goal-awareness. Findings: a first-time visitor isn't told what AwakenArts actually publishes until well past the hero, and the prior Collection paragraph (added same day, see entry above) named "gallery prints, concrete poems, and companion materials" as live extensions of the work before those exist anywhere else on the site. Susan reviewed both findings and approved two of the four proposed fixes, explicitly deferring CTA-hierarchy changes (the calm, no-"buy now" tone is intentional and will resolve naturally once purchasing goes live) and reordering the Wayfinding Band (comprehension happens earlier on the page, not in the closing nav).
+
+**Built**, both in `src/app/page.tsx`:
+- `.hero-mission`: "Discover symbolic language through image and poem." → "Discover symbolic language through image and poem in a growing collection of Figure Editions." One added clause naming the product (Figure Editions) before the visitor commits to Encounters or Collection.
+- `.home-coll-body`: replaced the same-day "Gallery prints, concrete poems, and companion materials extend the same work" sentence — a claim about product types not yet live elsewhere on the site — with "As the collection grows, related visual forms and companion materials extend the same symbolic figure," which states the same growth idea without naming specific unavailable product types.
+
+Susan's own note for the record: the homepage's three sections (Foundation / Encounters / Collection) are stabilizing into the site's real architecture, with Gallery, Journal, and About each now reading as support for one of the three — a sign the project is shifting from page-by-page design to a settled publishing model.
+
+**Implementation status.** Built and verified (`tsc --noEmit` clean, brace-balance check on `page.tsx`: 30/30).
+
 ## Open decisions blocking further progress
 
 Carried from the Publishing Platform Architecture doc, current status:

@@ -113,13 +113,13 @@
      Collection," locked 2026-06-28). For pages that want to present a
      small number of primary doorways as section-headings rather than
      small navigation links. Title sits between --h2-size and
-     --link-size; teaser is held to the --body-size floor — supporting
-     copy under an invitation is still body copy and is never reduced
-     below the established reading size for visual effect. */
+     --link-size.
+     2026-06-29: the teaser tokens (--invitation-teaser-size/-line) were
+     removed here — the hero invitations no longer carry a teaser line
+     beneath them per Susan's "not explanatory text" note — leaving only
+     the title token, still in use. */
   --invitation-title-size: clamp(1.35rem, 2.2vw, 1.55rem);
   --invitation-title-weight: 400;
-  --invitation-teaser-size: clamp(1rem, 1.2vw, 1.11rem);
-  --invitation-teaser-line: 1.7;
 
   /* Text Width Standard — three widths; no page invents a fourth.
      Narrow: quotes, journal prompts, centered statements.
@@ -330,7 +330,42 @@ a   { color: inherit; text-decoration: none; }
        a narrow half.
      - Gap is tight. Text and figure read as one composed moment, not
        two adjacent blocks.
-*/
+
+     2026-06-29, per Susan: "elongate the hero image rather than
+     flatten its height and move the left content and the hero image
+     close to one another." Two related fixes:
+       1. column-gap pulled in from 3rem to 1.5rem (matching the
+          tablet value already in use) so text and figure sit close
+          together rather than spanning the wide desktop gutter.
+       2. .hero__media's min-height raised — see that rule below.
+          Because the row uses align-items: stretch with no explicit
+          height on .hero itself, the image's rendered height was
+          being set by the TEXT column's content height, not by the
+          image. After the 2026-06-29 hero-text simplification
+          shortened the text column, the image's row shrank down
+          toward its old 420px floor — cropping wide and flat instead
+          of tall. Raising the floor restores (and increases) the
+          image's vertical presence independent of how short the
+          text column is.
+
+     2026-06-29, second pass, per Susan: "tighten the gutter further,
+     move the artwork left until headline and illustration read as a
+     single composition, increase the artwork ~5-10% to keep balance
+     after repositioning, preserve the outer page margins." Gap cut
+     again, 1.5rem -> 0.85rem (see column-gap below) — closer than
+     the first pass, since "single composition" calls for more than
+     "close together." The image column's fr-share was increased from
+     1.1fr to 1.2fr (against the text column's unchanged 1fr), which
+     does two things from one change: it grows the image's rendered
+     width (~6% at this container's max-width, inside the 5-10%
+     asked for) and it pulls the image's LEFT edge toward the text
+     column, since a smaller gap plus a larger image column both move
+     that edge leftward. The outer .hero padding (2rem left / 1rem
+     right) is untouched — only the gutter between the two columns
+     moved, not the page's outer margins. .hero__media's min-height
+     was bumped 640px -> 688px (and the tablet override 540px ->
+     580px) by the same ~7.5% so the image grows in both dimensions
+     together rather than just getting wider/flatter. */
 .hero {
   /* Set the cream field explicitly. The mobile breakpoint switches the
      body background to var(--deep) (so other sections don't show a
@@ -349,8 +384,8 @@ a   { color: inherit; text-decoration: none; }
   padding-left: 2rem;
   padding-right: 1rem; /* reduced so the image can reach nearer the right edge */
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-  column-gap: 3rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  column-gap: 0.85rem;
   align-items: stretch;
   max-width: 1500px;
   margin-left: auto;
@@ -405,9 +440,31 @@ a   { color: inherit; text-decoration: none; }
    no border-radius, so nothing reads as a card frame. */
 .hero__media {
   width: 100%;
-  min-height: 420px;
+  /* 2026-06-29, per Susan ("elongate the hero image rather than
+     flatten its height"): raised from 420px. This is a floor, not a
+     fixed height — align-items: stretch on .hero still lets the row
+     grow taller if the text column ever needs more room — but it now
+     guarantees the image reads as tall/dominant on its own, instead
+     of being squeezed down to match a short text column. object-fit:
+     cover absorbs the extra height by cropping a bit more off the
+     sides (object-position keeps the queen figure in frame), which
+     is the desired effect, not a side effect. */
+  min-height: 688px;
   overflow: hidden;
   justify-self: end;
+  /* 2026-06-29, third pass, per Susan: "moving the artwork 10-20px
+     farther left — not enlarging it, just nudging it slightly toward
+     the headline... subtle visual tension between the two halves
+     without making them touch." A pure visual nudge, not a resize —
+     translateX shifts the box itself without changing its width or
+     the grid track math (so the text column's position is
+     untouched). -16px sits inside the asked range and, against the
+     current 0.85rem (~13.6px) gap, brings the two halves close to
+     touching without crossing into the text column's own content on
+     this viewport. Reset to none at the ≤768px breakpoint below,
+     where the layout stacks into one column and a leftward shift no
+     longer makes sense. */
+  transform: translateX(-16px);
 }
 .hero__picture {
   display: block;
@@ -488,26 +545,22 @@ a   { color: inherit; text-decoration: none; }
 
 /* Editorial Invitations — the hero's two primary entry points
    (locked 2026-06-28). Stacked, generously spaced, each an
-   independent doorway rather than a row of links. */
+   independent doorway rather than a row of links.
+
+   2026-06-29, per Susan: reduced to the two doorway links alone — no
+   teaser copy, no arrow glyph ("not explanatory text, no arrows"). With
+   the teaser removed, gap is pulled back from 2.25rem to 1.5rem so the
+   two short lines still read as a deliberate pair rather than two
+   stray links with too much air between them. */
 .hero-invitations {
   display: flex;
   flex-direction: column;
-  /* 2026-06-28 editorial refinement: widened from 2rem so each
-     invitation reads as its own distinct editorial moment rather than
-     two consecutive paragraphs, now that the teaser copy beneath each
-     is shorter (one or two lines, orientation rather than explanation).
-     2026-06-28 small revision: pulled back to 2.25rem — slightly
-     smaller than the 2.5rem margin above the first invitation, so the
-     eye moves naturally from "Enter the Encounters" into "Explore the
-     Collection" rather than reading both gaps as identical. */
-  gap: 2.25rem;
+  gap: 1.5rem;
   margin: 2.5rem 0 0;
 }
 
 .hero-invitation__title {
-  display: inline-flex;
-  align-items: center;
-  gap: .55rem;
+  display: inline-block;
   font-family: var(--serif);
   font-size: var(--invitation-title-size);
   font-weight: var(--invitation-title-weight);
@@ -517,27 +570,13 @@ a   { color: inherit; text-decoration: none; }
   padding-bottom: .25rem;
   transition: color .25s ease-out, border-color .25s ease-out;
 }
-.hero-invitation__title .arrow { transition: transform .25s ease-out; }
 .hero-invitation__title:hover {
   color: var(--deep);
   border-bottom-color: var(--gold);
 }
-.hero-invitation__title:hover .arrow { transform: translateX(3px); }
-
-/* Teaser — body copy, not a smaller decorative caption. Held to the
-   --invitation-teaser-size floor (never below --body-size) per the
-   Editorial Typography Standard. */
-.hero-invitation__teaser {
-  font-family: var(--serif);
-  font-size: var(--invitation-teaser-size);
-  line-height: var(--invitation-teaser-line);
-  color: var(--mid);
-  max-width: 46ch;
-  margin: 0.6rem 0 0;
-}
 
 @media (max-width: 640px) {
-  .hero-invitations { gap: 1.8rem; margin-top: 2rem; }
+  .hero-invitations { gap: 1.25rem; margin-top: 2rem; }
 }
 
 
@@ -863,7 +902,12 @@ a   { color: inherit; text-decoration: none; }
   font-weight: 300;
   font-style: italic;
   color: var(--deep);
-  max-width: 880px;
+  /* 2026-06-29: widened from 880px so the full line ("He did not say
+     anything to them without using a parable.") sits on one line at
+     normal desktop widths instead of wrapping — the surrounding
+     container was the real bottleneck (see
+     .poems-showcase-foundation__inner below, widened to match). */
+  max-width: 1000px;
   /* Top margin (70px) unchanged — still the deliberate separation from
      the AtmosphericHeader above. Bottom margin tightened slightly
      (1.75rem -> 1.5rem) as part of the section-wide spacing review. */
@@ -1738,12 +1782,26 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    media cap so the figure keeps presence. */
 @media (max-width: 1024px) {
   .hero {
-    column-gap: 1.5rem;
+    /* 2026-06-29, second pass: tightened from 1.5rem to match the
+       desktop gutter's second reduction (now 0.85rem) — kept here as
+       its own value rather than just inheriting, since tablet's
+       narrower columns can absorb slightly less tightening. */
+    column-gap: 1rem;
     padding: 2.75rem 1.5rem 4.5rem; /* extra bottom room, scaled down from desktop */
   }
   .hero__text {
     max-width: 520px;
     justify-self: start;
+  }
+  /* 2026-06-29: the desktop min-height (now 688px) scaled down for
+     the narrower tablet column, so the taller floor doesn't crop the
+     image more aggressively than the extra width can absorb. */
+  .hero__media {
+    min-height: 580px;
+    /* Tablet's gap is 1rem (16px) — a -16px nudge here would close
+       it to zero, so this is dialed back to -10px to stay inside
+       "close but not touching" at the narrower width. */
+    transform: translateX(-10px);
   }
 }
 
@@ -1764,6 +1822,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .hero__media {
     justify-self: center;
     max-width: 560px;
+    /* Reset the desktop/tablet leftward nudge — the layout stacks
+       into one column here, so shifting the image left no longer
+       makes sense (and would just push it toward the edge). */
+    transform: none;
   }
   .hero-logo {
     height: 88px;
@@ -4050,6 +4112,22 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   color: var(--gold);
   margin: 0;
 }
+.poems-showcase-intro__tagline {
+  /* 2026-06-29: added per Susan, directly beneath the poem excerpt.
+     First pass (body-size, upright, --mid) read as too "dinky" /
+     unnoticeable next to the gold quote above it. Revised per Susan:
+     "enlarge... so that it works with the other and is larger than
+     it is now" — sized up substantially and made italic/deep-toned so
+     it reads as a deliberate companion statement to the quote, not a
+     quiet footnote, while staying a step below the quote's full gold
+     weight so the two still read as two distinct lines. */
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 1.9vw, 1.45rem);
+  line-height: 1.5;
+  color: var(--deep);
+  margin: 1.1rem 0 0;
+}
 
 /* ── 2. Queen Ann — literary spread, facing pages of one open book ──
    The portrait still (queen-ann-still.png) and the poem panel share
@@ -4115,6 +4193,19 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   max-width: 520px;
   height: auto;
   display: block;
+  /* 2026-06-29: modest +10% size bump, per Susan ("slightly too small
+     for comfortable reading... increase by approximately 8-12%").
+     Applied as a transform rather than a larger max-width/frame so the
+     still's frame, the grid columns, and the two facing pages' equal
+     height are completely untouched — only the poem image itself
+     renders larger, by exactly the same factor at every breakpoint.
+     The poem's own pixel content (line breaks, indentation, shape) is
+     unchanged; this only affects display size. It may bleed a few
+     pixels past its own hairline frame border at full desktop width —
+     intentional, and still well short of the still's own edge-to-edge
+     fill, so the still is not "enlarged to compensate." */
+  transform: scale(1.1);
+  transform-origin: center;
 }
 
 @media (max-width: 1024px) {
@@ -4130,6 +4221,29 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   }
   .poems-showcase-ann__text { aspect-ratio: auto; padding: 1.25rem 1rem; }
   .poems-showcase-ann__poem-img { max-width: 320px; }
+}
+
+.poems-showcase-ann__pdf-link {
+  /* 2026-06-29: added per Susan — a printable PDF link for the Queen
+     Ann encounter. Styled to match the homepage's one other inline
+     CTA-link token (.hero-quote-closing, "Read the Foundation of
+     AwakenArts →") rather than the boxed button used on /editions/
+     [slug], so it reads as a quiet continuation of the page's own
+     voice instead of a storefront action. */
+  text-align: center;
+  margin: 1.75rem 0 0;
+}
+.poems-showcase-ann__pdf-link a {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+}
+.poems-showcase-ann__pdf-link a:hover,
+.poems-showcase-ann__pdf-link a:focus-visible {
+  color: var(--deep);
 }
 
 /* ── 3. Matthew 13:34 — the foundation, quiet and last ──
@@ -4148,7 +4262,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   padding-top: 5rem;
 }
 .poems-showcase-foundation__inner {
-  max-width: 820px;
+  /* 2026-06-29: widened from 820px — this was the real bottleneck
+     forcing the Matthew quote onto two lines. .hero-quote-body,
+     .hero-quote-closing, and .home-foundation-credo each already set
+     their own narrower max-width, so they're unaffected; only
+     .hero-quote-text (also widened, see HERO QUOTE TEXT TOKENS) gains
+     the room it needs to read as one line at normal desktop widths. */
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 2rem;
   text-align: center;
@@ -5353,7 +5473,17 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
    fighting each image's edges individually.
 ─────────────────────────────────────────────────────────── */
 .lib-hero {
-  padding: 6rem 2rem 5rem;
+  /* 2026-06-29, per Susan ("reduce the vertical gap between 'The
+     Gallery' and the first row of contact sheets by perhaps
+     10-15%... if you eventually have three or four rows of editions,
+     tightening that gap slightly will help the works become the
+     focus sooner"): bottom padding cut from 5rem to 4.25rem (-15%).
+     .poems-gallery-section's own top padding is already minimal
+     (1rem) so this bottom value is effectively the entire visible
+     gap between the H1 and the tile grid below it. Top padding
+     (clears the fixed nav) and side padding are unchanged — only the
+     title-to-tiles gap moved. */
+  padding: 6rem 2rem 4.25rem;
   background: #0e1418;
   text-align: center;
 }
@@ -5399,7 +5529,9 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 @media (max-width: 640px) {
-  .lib-hero { padding: 4rem 1.25rem 3.5rem; }
+  /* Bottom value scaled down the same ~15%, 2026-06-29 (see desktop
+     rule's comment). */
+  .lib-hero { padding: 4rem 1.25rem 3rem; }
 }
 
 /* ── Poems page gallery (/poems) ──────────────────────────
@@ -7033,6 +7165,261 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .edition-hero { padding: 5.5rem 1.5rem 2rem; }
   .edition-sheet-section { padding: 0 1.25rem 2.5rem; }
   .edition-actions { padding: 0 1.5rem 4.5rem; }
+}
+
+/* ─────────────────────────────────────────────
+   EDITION PREVIEW — About This Edition / Themes
+   Added 2026-06-29, per Susan's relayed brief: the Preview page
+   introduces the work without becoming a sales page.
+
+   Revised same day per the governing rule (see editions.ts): About This
+   Edition describes the experience (format + how it's used), Themes
+   suggests the territory in a few words, and the Edition itself does the
+   symbolic work — so neither section on this page interprets meaning.
+   The former separate "What This Edition Includes" block was removed as
+   redundant once About took on that job; this is the simplified result.
+
+   Text content lives in editions.ts (`about`, `themes`), transcribed from
+   each Edition's own real source material. Centered, single text column,
+   matching the page's existing centered-hero register rather than
+   introducing a new left-aligned layout.
+───────────────────────────────────────────── */
+.edition-about {
+  max-width: var(--measure-medium);
+  margin: 0 auto;
+  padding: 0 2rem 2.5rem;
+  text-align: center;
+}
+
+.edition-about__eyebrow {
+  justify-content: center;
+  margin: 0 0 1rem;
+}
+
+.edition-about__body {
+  font-family: var(--serif);
+  font-size: calc(var(--body-size) + 1px);
+  line-height: var(--body-line);
+  color: var(--deep);
+  margin: 0 0 2rem;
+}
+
+.edition-themes__eyebrow {
+  justify-content: center;
+  margin: 0 0 0.75rem;
+}
+
+.edition-themes {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--mid);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .edition-about { padding: 0 1.5rem 2rem; }
+}
+
+/* ─────────────────────────────────────────────
+   PURCHASE PAGE (/editions/[slug]/purchase)
+   Added 2026-06-29 — the edition-specific Purchase page. See
+   AwakenArts_Publishing_Platform_Architecture.md, "Evolution: the
+   Purchase Page Becomes Its Own Edition-Specific Page." Visually a
+   continuation of the Edition Preview's register (same tokens, same
+   minimal-by-design footer/actions), not a new storefront aesthetic.
+
+   Restructured same day per Susan's governing principle: "The Purchase
+   page is not selling symbolism. It's selling a published edition." Six
+   sections, each answering one practical question: About This Edition
+   (short, generic), What You'll Receive (scannable bulleted list, not
+   prose), Formats, Price (its own section, placeholder-only), Purchase
+   (a single disabled CTA — no functioning cart or checkout exists), and
+   one Navigation link back to the Edition's own Preview.
+───────────────────────────────────────────── */
+.purchase-page {
+  background: var(--cream);
+  min-height: 100vh;
+}
+
+.purchase-hero {
+  padding: 7rem 2rem 2rem;
+  text-align: center;
+}
+
+.purchase-hero__eyebrow {
+  justify-content: center;
+}
+
+.purchase-hero__title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 400;
+  color: var(--deep);
+  margin: 0.75rem 0 0;
+}
+
+.purchase-hero__kicker {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin: 0.5rem 0 0;
+}
+
+.purchase-cover-section {
+  padding: 0 2rem 2.5rem;
+}
+
+.purchase-cover-img {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 14px 48px rgba(28, 43, 58, 0.16);
+}
+
+.purchase-about {
+  max-width: var(--measure-medium);
+  margin: 0 auto;
+  padding: 0 2rem 2.25rem;
+}
+
+.purchase-about__eyebrow {
+  margin: 0 0 1rem;
+}
+
+.purchase-about__body {
+  font-family: var(--serif);
+  font-size: calc(var(--body-size) + 1px);
+  line-height: var(--body-line);
+  color: var(--deep);
+  margin: 0;
+}
+
+.purchase-receive {
+  max-width: var(--measure-medium);
+  margin: 0 auto;
+  padding: 2.25rem 2rem 2.5rem;
+  border-top: 1px solid rgba(28, 43, 58, 0.08);
+}
+
+.purchase-receive__eyebrow {
+  margin: 0 0 1rem;
+}
+
+.purchase-receive__intro {
+  font-family: var(--sans);
+  font-size: var(--body-size);
+  color: var(--deep);
+  margin: 0 0 0.85rem;
+}
+
+.purchase-receive__list {
+  font-family: var(--serif);
+  font-size: calc(var(--body-size) + 1px);
+  line-height: 1.7;
+  color: var(--deep);
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.purchase-receive__list li {
+  margin: 0 0 0.4rem;
+}
+
+.purchase-options {
+  max-width: var(--measure-medium);
+  margin: 0 auto;
+  padding: 2.25rem 2rem 2.5rem;
+  border-top: 1px solid rgba(28, 43, 58, 0.08);
+}
+
+.purchase-option {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(28, 43, 58, 0.08);
+}
+
+.purchase-option:last-of-type {
+  border-bottom: none;
+}
+
+.purchase-option__title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--deep);
+  margin: 0;
+}
+
+.purchase-option__detail {
+  font-family: var(--serif);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--mid);
+  margin: 0.5rem 0 0;
+}
+
+.purchase-price {
+  max-width: var(--measure-medium);
+  margin: 0 auto;
+  padding: 2.25rem 2rem 2.5rem;
+  border-top: 1px solid rgba(28, 43, 58, 0.08);
+}
+
+.purchase-price__eyebrow {
+  margin: 0 0 1rem;
+}
+
+.purchase-price__line {
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--deep);
+  margin: 0 0 0.5rem;
+}
+
+.purchase-cta {
+  max-width: var(--measure-medium);
+  margin: 0 auto;
+  padding: 2.5rem 2rem 3rem;
+  text-align: center;
+  border-top: 1px solid rgba(28, 43, 58, 0.08);
+}
+
+.purchase-cta__button {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--deep);
+  border: none;
+  border-radius: 2px;
+  padding: 0.95rem 2.25rem;
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.purchase-cta__note {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--mid);
+  margin: 1rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .purchase-hero { padding: 5.5rem 1.5rem 1.75rem; }
+  .purchase-cover-section { padding: 0 1.25rem 2rem; }
+  .purchase-about { padding: 0 1.5rem 1.75rem; }
+  .purchase-receive { padding: 1.75rem 1.5rem 2rem; }
+  .purchase-options { padding: 1.75rem 1.5rem 2rem; }
+  .purchase-price { padding: 1.75rem 1.5rem 2rem; }
+  .purchase-cta { padding: 2rem 1.5rem 2.5rem; }
 }
 
 /* ── Edition Reader — Implementation Spec v1.0, Phase 2 (2026-06-29) ────

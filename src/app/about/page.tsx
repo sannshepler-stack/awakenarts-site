@@ -27,6 +27,7 @@ export default function AboutPage() {
       <AtmosphericHeader
         src="/images/headers/about.jpg"
         alt="An open book, dried flowers, and a stack of well-worn books on a sunlit table overlooking a hillside at sunset — a quiet place to write and reflect."
+        fadeTo="#f5f0e8"
       />
 
       <div className="about-page">

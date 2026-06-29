@@ -101,36 +101,26 @@ export default function HomePage() {
               the headline, echoed again on /encounters and in the Poems
               preview section below. */}
           <p className="hero-mission">
-            Discover symbolic language through image and poem.
+            Discover symbolic language through image and poem in a
+            growing collection of Figure Editions.
           </p>
 
           {/* Editorial Invitations — the hero's two primary entry points
               into AwakenArts (locked 2026-06-28, "Hero Typographic
               Hierarchy" directive). Replaces the former single small
               "Encounters →" CTA and the Studio/Poems secondary nav.
-              Per Susan: the hero no longer says "here are some pages" —
-              it says "experience the work" and "explore the body of
-              work." Two heading-weight invitations, each with its own
-              teaser line, not small navigation links. See
-              AwakenArts_Site_Architecture.md. */}
+
+              2026-06-29, per Susan: stripped down to the two doorways
+              alone — no explanatory teaser line beneath either, no arrow
+              glyph. The hero's job is the entrance; the destination
+              pages do the explaining. */}
           <div className="hero-invitations">
-            <div className="hero-invitation">
-              <Link href="/encounters" className="hero-invitation__title">
-                Enter the Encounters <span className="arrow" aria-hidden="true">→</span>
-              </Link>
-              <p className="hero-invitation__teaser">
-                Guided symbolic encounters through image, poem, and
-                Scripture.
-              </p>
-            </div>
-            <div className="hero-invitation">
-              <Link href="/collection" className="hero-invitation__title">
-                Explore the Collection <span className="arrow" aria-hidden="true">→</span>
-              </Link>
-              <p className="hero-invitation__teaser">
-                Discover the growing library of AwakenArts Figure Editions.
-              </p>
-            </div>
+            <Link href="/encounters" className="hero-invitation__title">
+              Enter the Encounters
+            </Link>
+            <Link href="/collection" className="hero-invitation__title">
+              Explore the Collection
+            </Link>
           </div>
         </div>
 
@@ -203,9 +193,9 @@ export default function HomePage() {
             <p className="home-coll-sub">A growing library of published Figure Editions.</p>
             <p className="home-coll-body">
               Each Figure Edition brings image, poem, and reflection
-              together as a single published work — a complete
-              reading experience built for recognition rather than
-              explanation.
+              together as a single published work. As the collection
+              grows, related visual forms and companion materials
+              extend the same symbolic figure.
             </p>
             <Link href="/collection" className="home-coll-cta">
               Browse the Figure Editions <span aria-hidden="true">→</span>
@@ -247,13 +237,29 @@ export default function HomePage() {
             <p className="poems-showcase-intro__quote">
               when the night strikes with silver light&hellip;
             </p>
+            {/* 2026-06-29: per Susan, a quiet statement of the studio's
+                method placed directly beneath the poem excerpt — its own
+                smaller, non-italic line so it reads as an editorial aside
+                rather than a continuation of the quotation above it. */}
+            <p className="poems-showcase-intro__tagline">
+              Every AwakenArts work is born as both image and poem.
+            </p>
           </div>
 
           {/* 2. Queen Ann Encounter — the portrait still and the
               poem as facing pages of one open book: equal height,
               equal importance, identical top alignment, no captions.
               The imagery now performs the work previously done by
-              explanatory text. */}
+              explanatory text.
+              2026-06-29: swapped the poem image for a tighter crop
+              (ann-text-dark-crop.png) — the original file carried a
+              wide margin of blank page around the actual poem text, so
+              even filling its frame completely the poem read as quieter
+              and smaller than the edge-to-edge photo opposite it.
+              Cropping in on the text itself (same 2:3 ratio, so the
+              "facing pages" parity with the photo's frame is unchanged)
+              makes the poem's own presence in the frame match the
+              photo's, addressing Susan's "one dominates the other." */}
           <div className="poems-showcase-ann">
             <div className="poems-showcase-ann__frame">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -266,13 +272,35 @@ export default function HomePage() {
             <div className="poems-showcase-ann__text">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/forms/ann-text-dark.png"
+                src="/images/forms/ann-text-dark-crop.png"
                 alt="Queen Ann — the poem, rendered in concrete poetry form"
                 className="poems-showcase-ann__poem-img"
                 loading="lazy"
               />
             </div>
           </div>
+
+          {/* 2026-06-29: printable PDF link, per Susan — "Ann can be
+              linked to a pdf that is printable in some form or style."
+              Revised same day: Susan asked to remove the link to the
+              Edition (the multi-page Figure Edition product PDF) — this
+              section is one of the few places the poem itself is
+              offered, not the published Edition. Now points to a new,
+              standalone single-page printable PDF of just the poem
+              (public/files/poems/Queen_Ann_Poem.pdf), built fresh from
+              the same poem artwork, with no Edition framing or Colophon.
+              Revised again same day, per Susan: "Download the Poem
+              (PDF)" reads as offering a complimentary resource, not
+              issuing an instruction the way "Print the poem" did. */}
+          <p className="poems-showcase-ann__pdf-link">
+            <a
+              href="/files/poems/Queen_Ann_Poem.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download the Poem (PDF) <span aria-hidden="true">→</span>
+            </a>
+          </p>
 
         </div>
 
@@ -286,6 +314,8 @@ export default function HomePage() {
             src="/images/headers/biblical-foundation.jpg"
             alt="Sunrise over hills and a winding river, seen through a worn stone window — a threshold image."
             tall
+            fadeTo="#f5f0e8"
+            fadeHeight={25}
           />
           <div className="poems-showcase-foundation__inner">
             <p className="hero-quote-text">

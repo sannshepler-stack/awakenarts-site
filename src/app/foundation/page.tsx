@@ -44,6 +44,7 @@ export default function FoundationPage() {
       <AtmosphericHeader
         src="/images/headers/foundation.jpg"
         alt="An open book, a cup, and a sprig of greenery on a sunlit windowsill table — a quiet place to read."
+        fadeTo="#f5f0e8"
       />
 
       <div className="foundation-page">

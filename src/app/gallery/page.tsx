@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
-import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 
@@ -41,6 +40,17 @@ export const metadata: Metadata = {
  * drafts or placeholder text. Scope: a work appears here only if it has a
  * completed Figure Edition (src/data/editions.ts) — currently Dragon,
  * Bowls, Ballerina, Grismere, Poppy, and Queen Ann.
+ *
+ * AtmosphericHeader removed again, 2026-06-29: per Susan, "I love the
+ * header style on the gallery page but it doesn't work with the page."
+ * The gallery-banner-3.jpg header (added under the "Banner Height + Seam"
+ * rollout) is gone; the page now opens directly on `.lib-hero`, which
+ * already carries its own dark (#0e1418) field and enough top padding to
+ * clear the fixed nav on every breakpoint, so no other section needed to
+ * change. This is the second time a threshold header has been tried and
+ * removed from this specific page — see the `.lib-hero` comment in
+ * globals.css for the first (2026-06-25) removal, of the prior Poems
+ * page's Threshold Header.
  */
 
 interface GalleryTile {
@@ -124,10 +134,6 @@ export default function GalleryPage() {
     <>
       <Nav />
 
-      <AtmosphericHeader
-        src="/images/headers/poetry-manuscript.jpg"
-        alt="An open handwritten manuscript in warm golden light, dried flowers cast in shadow across the page, a fountain pen resting at the edge — language becoming form."
-      />
       <section className="lib-hero" aria-label="Gallery">
         <div className="lib-hero__inner">
           <p className="eyebrow">AwakenArts</p>

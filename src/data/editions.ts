@@ -13,6 +13,31 @@ export interface Edition {
   pdf: string
   sections: EditionSection[]   // NEW — drives the Reader (Implementation Spec v1.0, Section 3)
   access?: 'free' | 'gated'    // NEW — commerce hook, defaults to 'free', read by nothing in v1.0
+  // about / themes — added 2026-06-29 for the Edition Preview page's new
+  // About This Edition + Themes sections and the new edition-specific
+  // Purchase page (see AwakenArts_Publishing_Platform_Architecture.md,
+  // "Evolution: the Purchase Page Becomes Its Own Edition-Specific Page").
+  //
+  // Governing rule, locked the same day per Susan, after reviewing a first
+  // draft that leaned too far into interpretation ("What does the Dragon
+  // mean?" rather than "What kind of experience is this edition?"):
+  //   - About This Edition -> describes the experience (the format: image
+  //     and poem together, guided recognition, reflection, facilitator
+  //     notes; how it's meant to be used — personal reading, discussion,
+  //     group exploration). Identical in structure across every Edition,
+  //     since the underlying 12-page template is now identical across all
+  //     six. Only the title varies.
+  //   - Themes -> suggests the territory in a few words. Not an
+  //     explanation, just a gesture toward what the Edition is about.
+  //   - The Edition itself -> does the actual symbolic work. The
+  //     website's job is to introduce and orient, not to interpret on the
+  //     Edition's behalf.
+  // Themes are transcribed/distilled from real authored source material —
+  // each Edition's own Workbook "Notes on the Figure" file, the Edition's
+  // own PDF text where extractable, or (Dragon) the Edition's own already-
+  // transcribed `sections` text — never invented.
+  about: string
+  themes: string[]
 }
 
 // EditionSection — one screen of the paced Reader experience (Implementation
@@ -47,6 +72,9 @@ export const editions: Edition[] = [
     contactSheet: '/images/editions/dragon-contact-sheet-web.jpg',
     contactSheetAlt: 'Contact sheet preview of all eleven pages of The Dragon Figure Edition',
     pdf: '/files/editions/Dragon_Figure_Edition.pdf',
+    about:
+      'This edition presents The Dragon as it was created: image and poem together, followed by guided recognition, reflection, and facilitator notes. It is designed for personal reading, discussion, or group exploration.',
+    themes: ['Reconciliation', 'Wholeness', 'Strength and Tenderness', 'Not This or That, but And'],
     // Hand-built per Implementation Specification v1.0, Phase 1. Text is
     // transcribed faithfully from the approved PDF's own participant-facing
     // pages (and, for the colophon, cross-checked against Dragon_Author_Notes.txt's
@@ -144,6 +172,9 @@ export const editions: Edition[] = [
     contactSheet: '/images/editions/bowls-contact-sheet-web.jpg',
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Bowls Figure Edition',
     pdf: '/files/editions/Bowls_Figure_Edition.pdf',
+    about:
+      'This edition presents Bowls as it was created: image and poem together, followed by guided recognition, reflection, and facilitator notes. It is designed for personal reading, discussion, or group exploration.',
+    themes: ['Duality of the Feminine', 'Wholeness, Not Repair', "Finding One's Voice", 'The Ordinary as Sacred'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
   {
@@ -153,6 +184,9 @@ export const editions: Edition[] = [
     contactSheet: '/images/editions/ballerina-contact-sheet-web.jpg',
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Ballerina Figure Edition',
     pdf: '/files/editions/Ballerina_Figure_Edition.pdf',
+    about:
+      'This edition presents Ballerina as it was created: image and poem together, followed by guided recognition, reflection, and facilitator notes. It is designed for personal reading, discussion, or group exploration.',
+    themes: ['Movement and Stillness', 'Embodied Wisdom', 'Multiplicity Held as One', 'Trust'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
   {
@@ -162,6 +196,9 @@ export const editions: Edition[] = [
     contactSheet: '/images/editions/grismere-contact-sheet-web.jpg',
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Grismere Figure Edition',
     pdf: '/files/editions/Grismere_Figure_Edition.pdf',
+    about:
+      'This edition presents Grismere as it was created: image and poem together, followed by guided recognition, reflection, and facilitator notes. It is designed for personal reading, discussion, or group exploration.',
+    themes: ['Conscious Awareness', 'The Hidden Self', 'Mystery Beneath the Surface', 'Psalm 18:16'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
   {
@@ -171,6 +208,9 @@ export const editions: Edition[] = [
     contactSheet: '/images/editions/poppy-contact-sheet-web.jpg',
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Poppy Figure Edition',
     pdf: '/files/editions/Poppy_Figure_Edition.pdf',
+    about:
+      'This edition presents Poppy as it was created: image and poem together, followed by guided recognition, reflection, and facilitator notes. It is designed for personal reading, discussion, or group exploration.',
+    themes: ['Inheritance', 'Love Carried Forward', 'Recognition', 'Continuity Across Generations'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
   {
@@ -180,6 +220,9 @@ export const editions: Edition[] = [
     contactSheet: '/images/editions/queen-ann-contact-sheet-web.jpg',
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Queen Ann Figure Edition',
     pdf: '/files/editions/Queen_Ann_Figure_Edition.pdf',
+    about:
+      'This edition presents Queen Ann as it was created: image and poem together, followed by guided recognition, reflection, and facilitator notes. It is designed for personal reading, discussion, or group exploration.',
+    themes: ['Transition and Relinquishment', 'Pilgrimage', 'Trust Beyond Possession', 'The Kingdom Beyond the One That Ends'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
 ]

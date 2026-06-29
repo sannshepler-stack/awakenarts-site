@@ -384,3 +384,51 @@ Susan's directive, in full:
 **Relationship to Acquire.** This is the PDF Edition's own internal closing page — a fixed page rendered into each Edition document itself. It is separate from "Acquire," which (per the product-family correction directly above) is a section of the website's Edition Preview page, not a page inside the PDF. The two sit next to each other in the Edition's reading order but serve different jobs: the Colophon closes the book; Acquire is the website's path to obtaining it.
 
 **Implementation status.** Architecture only. None of the six built Edition PDFs (Dragon, Bowls, Ballerina, Grismere, Poppy, Queen Ann) have been regenerated with this closing page yet. Applying it retroactively to all six, and to every Edition built from here forward, is production work — laying out and rendering a new page into each existing PDF — and awaits explicit authorization before any file is touched.
+
+---
+
+## 2026-06-29 — Production Authorization + Two Refinements: the Edition Closing Page
+
+**Authorization.** Susan: "We need this page and don't be too skimpy on the logo or over do it either." This authorizes building the standard closing page specified immediately above — architecture work is done; production begins.
+
+**Refinement 1 — the fixed body line is revised.** Susan's original example line in the standard above —
+
+> This edition is part of the AwakenArts Collection—a growing body of symbolic works created through image, poetry, and reflection to invite recognition rather than explanation.
+
+— is replaced with:
+
+> This edition is one work within the AwakenArts Collection. Each edition stands on its own while contributing to a larger body of symbolic exploration.
+
+This is the same fixed, word-for-word line described above (changes only with explicit direction, not per-Edition); only its wording changes, not its role on the page or its position in the standard.
+
+**Refinement 2 — exact placement, resolved.** The standard above says the Colophon is placed "after the final reflection page." In the as-built Editions, the real page order runs Reflection → Guided Journaling → Message Delivered → Facilitator Notes, and Facilitator Notes already ends with a small placeholder brand sign-off (a gold rule, a stylized "&" placeholder glyph, the tracked "AWAKENARTS" wordmark, and an Edition-specific tagline). Asked to resolve where the new standalone Colophon lands against that real structure, Susan chose: the **very last page of the PDF, after Facilitator Notes** — replacing that placeholder sign-off, not inserted right after Reflection. The Colophon is the closing page of the entire document, facilitator appendix included, not a divider in the middle of the reading order.
+
+**Logo treatment.** The real AwakenArts brand mark — gold double-arc + "AWAKENARTS" wordmark + gold rule + the italic tagline "When Language Shapes a Path" (already baked into the brand lockup, per `public/images/brand/logo-mixed.svg`) — replaces the placeholder ampersand glyph used in the existing facilitator sign-off. Rendered directly in the Figure Edition Engine's own palette and type system (gold double arc redrawn via the same bezier path geometry as the SVG lockup, P052 wordmark) rather than as a pasted image, so it ages consistently with the rest of each Edition's typography. Sized at roughly a quarter of the page's width — present and legible as the page's anchor, neither a token mark nor a dominant graphic — per "don't be too skimpy on the logo or overdo it either."
+
+**Implementation status.** A prototype Colophon page was built and rendered against Dragon and shown to Susan for review; she confirmed the placement question above without objection to the visual design. Production now proceeds: remove the placeholder sign-off block from each Edition's Facilitator Notes page, add the Colophon as a new final page, and regenerate all six Edition PDFs (Dragon, Bowls, Ballerina, Grismere, Poppy, Queen Ann).
+
+---
+
+## 2026-06-29 — Evolution: the Purchase Page Becomes Its Own Edition-Specific Page
+
+**This evolves, rather than re-retracts, the "Editions Store Retracted" correction above.** That correction is not wrong and is not being undone: there is still no centralized Store, no flat catalog, no generic storefront, and no second navigable destination that lists every Edition for sale in one place. What changes is narrower — whether "Acquire" stays folded into the Edition Preview page as a section of it, or becomes its own page belonging to that same Edition.
+
+A conceptual brief (relayed by Susan, attributed to "Chat") proposed two distinct page types per Edition — an Edition Preview page and a Purchase page — illustrated with a non-literal mockup. Read literally, this conflicted with the standing directive that "purchasing is not a separate page reached from Edition Preview — it grows from Edition Preview" and that "this rules out a distinct 'Acquire' destination with its own address." That conflict was surfaced to Susan directly rather than silently built around. Her resolution, in full:
+
+> The architecture should be expressed generically: Collection → Edition Preview → Purchase Page, and that pattern repeats for Dragon, Grismere, Poppy, Bowls, Ballerina, Queen Ann, and every future edition. The architecture has evolved. Each edition now has two distinct pages: an Edition Preview page and a Purchase page. The Preview page introduces the work and the edition. The Purchase page presents the acquisition details for that specific edition. This is not a general storefront; it is an edition-specific purchasing path.
+
+She later restated the same boundary even more explicitly: "The Purchase Page is not a separate product family or standalone store. It belongs exclusively to the edition it serves and exists only to present acquisition information for that specific edition. Continue to avoid a centralized Store page... This is an evolution of the edition architecture, not a change to the principle that AwakenArts does not use a generic storefront."
+
+**What this changes.** "Acquire" is no longer only a section/state of the Edition Preview page. It is promoted to a real, separate route — `/editions/[slug]/purchase` — but that route exists once per Edition, is reached only from that Edition's own Preview page, and has no independent entry point, navigation listing, or cross-Edition index. There is exactly one way in: Collection → that Edition's Preview → that Edition's Purchase page.
+
+**What does not change.** The governing principle that "each Figure Edition becomes the center of its own product family" still stands — the Purchase page is one more member of that family (alongside Reader, Workshop Kit, Slides, Facilitator Notes), scoped to its own Edition, not a shared catalog page that happens to take a slug parameter. "Think like a publisher rather than an online retailer" still governs the tone: the Preview page remains an introduction to the work, not a sales page; the Purchase page answers practical acquisition questions (what is received, what is included, how it is delivered) without becoming a storefront. Pricing and the purchasing/entitlement mechanism remain unresolved (Open Decision #1, `AwakenArts_Product_Architecture.md`) — the Purchase page is built with explicit placeholders wherever those details are not yet finalized, and carries no functioning checkout.
+
+**Updated Architectural Sequence.** The Task 1 sequence above —
+
+> Homepage → Encounters → Gallery (Appreciation) → Collection (The published body of work) → Edition Preview (Contact Sheet Marketing Presentation) → Featured Reader (where applicable) or Complete Figure Edition → Owner Platform.
+
+— gains one room, inserted between Edition Preview and the Featured Reader / Complete Figure Edition fork:
+
+> Homepage → Encounters → Gallery (Appreciation) → Collection (The published body of work) → Edition Preview (Contact Sheet Marketing Presentation) → **Purchase Page (edition-specific acquisition details)** → Featured Reader (where applicable) or Complete Figure Edition → Owner Platform.
+
+**Implementation status.** Authorized and built. Applied uniformly, via the existing data-driven `editions.ts` + `generateStaticParams` template, across all six current Editions (Dragon, Bowls, Ballerina, Grismere, Poppy, Queen Ann) and every future one added to that array — per Susan's instruction not to treat this as a single-Edition prototype. The Edition Preview page's direct link to the full Edition PDF has been removed in the same pass; the Preview page now leads to the Purchase page rather than handing over the complete Edition itself, correcting a standing inconsistency with the Edition Preview's own governing constraint ("it must increase desire without ever exposing the complete Edition").

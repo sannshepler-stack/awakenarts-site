@@ -37,6 +37,23 @@ import styles from './AtmosphericHeader.module.css'
  * more visual presence than a normal divider but still short of a
  * hero image. Scoped to this prop so every other AtmosphericHeader
  * instance site-wide keeps its standard height.
+ *
+ * `fadeTo` (added 2026-06-29, "Banner Height + Seam" directive): a CSS
+ * color the bottom of the image dissolves into, so it reads as one
+ * continuous composition with whatever section follows rather than a
+ * hard-edged photo butting against a flat-colored block. Pass the
+ * exact background color of the section immediately below. Implies
+ * flush spacing (no separate gap beneath the fade) — the fade itself
+ * is the transition.
+ *
+ * `fadeHeight` (added 2026-06-29, Matthew section refinement): optional
+ * override of the fade zone's height, as a percentage of the image's
+ * own height (the CSS default is 34%). Per Susan's note on the
+ * biblical-foundation landscape — "preserve another 5-10% of the
+ * lower landscape before beginning the fade" so the stone wall and
+ * shoreline stay grounded — pass a smaller number (e.g. 25) to start
+ * the fade lower and reveal more of the image above it, without
+ * changing the transition itself. Only meaningful alongside `fadeTo`.
  */
 
 interface AtmosphericHeaderProps {
@@ -44,12 +61,14 @@ interface AtmosphericHeaderProps {
   alt: string
   flush?: boolean
   tall?: boolean
+  fadeTo?: string
+  fadeHeight?: number
 }
 
-export default function AtmosphericHeader({ src, alt, flush, tall }: AtmosphericHeaderProps) {
+export default function AtmosphericHeader({ src, alt, flush, tall, fadeTo, fadeHeight }: AtmosphericHeaderProps) {
   const classNames = [
     styles.header,
-    flush ? styles.flush : '',
+    flush || fadeTo ? styles.flush : '',
   ].filter(Boolean).join(' ')
 
   return (
@@ -61,6 +80,16 @@ export default function AtmosphericHeader({ src, alt, flush, tall }: Atmospheric
         className={tall ? `${styles.img} ${styles.imgTall}` : styles.img}
         loading="lazy"
       />
+      {fadeTo ? (
+        <div
+          className={styles.fade}
+          style={{
+            background: `linear-gradient(to bottom, transparent, ${fadeTo})`,
+            ...(fadeHeight ? { height: `${fadeHeight}%` } : {}),
+          }}
+          aria-hidden="true"
+        />
+      ) : null}
     </div>
   )
 }
