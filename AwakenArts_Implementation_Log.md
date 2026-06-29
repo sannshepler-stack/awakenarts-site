@@ -40,6 +40,16 @@ None of this was built for the Reader — it's the existing infrastructure the S
 
 **Overall: 0 of 7 phases started.** The Spec is approved-for-review, not approved-for-build — no phase begins until Susan signs off on the document itself.
 
+## Two tracks until Dragon's Reader is proven
+
+Per Susan's 2026-06-29 framing, work runs on two parallel tracks rather than one sequential one, until Dragon's Reader is complete — at which point the two merge:
+
+**Engineering Track (Claude).** Phase 1 Reader → Validate → Roll out → Pipeline → Commerce hook. Roughly corresponds to Spec Phases 1–7 above, phrased here as a working arc rather than a strict phase order.
+
+**Publishing Track (Susan).** Platform presentation, marketing strategy, product architecture, customer journey, brand evolution. None of these five areas has an architecture, spec, or log entry yet — as of this entry they exist only as named work areas, not specified work.
+
+**The merge point.** Once Dragon's Reader is complete and proven, the two tracks combine: the engineering work supports the marketing strategy, and the marketing strategy puts the engineering to use. Until then, neither track is sequenced ahead of or blocked by the other — they run concurrently.
+
 ## Open decisions blocking further progress
 
 Carried from the Publishing Platform Architecture doc, current status:
