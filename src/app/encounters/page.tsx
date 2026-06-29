@@ -66,9 +66,6 @@ export default function EncountersIndexPage() {
     <>
     <main className={styles.page}>
       <div className={styles.intro}>
-        <Link href="/" className={styles.brand}>
-          AWAKENARTS
-        </Link>
         <p className={styles.eyebrow}>Encounters</p>
         <h1 className={styles.title}>Encounters</h1>
         <p className={styles.statementPrimary}>
