@@ -2,6 +2,15 @@
 
 **Status: proposal, pending review.** Nothing in this document has been implemented. Per the directive that opened this phase, this is architecture only — no code, no routes, no components have been written. The Site Architecture doc and Editorial Typography Standard already locked govern how anything here would eventually be built; this document governs what gets built and how it relates.
 
+**The governing claim (2026-06-29, per Susan).** AwakenArts began as a body of symbolic creative work. It is becoming a marketing platform for that body of work — built to sustain, present, and grow an audience around it for years, not just to host it. Every task in this document, and in the Implementation Specification and Implementation Log that now follow from it, is judged against that claim: does it make the work easier to discover, read, return to, and eventually support.
+
+**Document hierarchy.** This document, the Implementation Specification, and the Implementation Log are now three distinct, deliberately separate tiers, not drafts of one another:
+- **Publishing Platform Architecture** (this document) — the vision and governing principles. What gets built, and why.
+- **Implementation Specification** — the technical blueprint. How a given capability gets built, in concrete, reviewable detail.
+- **Implementation Log** — what has actually been built against a given Specification, and what remains. The record of reality, kept separate from the plan.
+
+Each tier is preserved once complete, not silently rewritten — later changes are issued as new versions (v1.1, v2.0) or new dated entries, appended rather than overwriting what came before.
+
 **How this document is grounded.** Before drafting, I read the current codebase rather than designing from a blank page: `src/data/editions.ts` (the six live Figure Editions), `src/app/editions/[slug]/page.tsx` (the current minimal Edition page), `src/app/collection/page.tsx`, `src/app/encounters/page.tsx` and the legacy figure-tied Encounter pages still in the repo, `src/app/poems/page.tsx`, the Journal's territory/entry system, and `src/app/workshops/page.tsx`. Three things that came out of that reading shape everything below, and are worth stating up front:
 
 1. **A Figure Edition page already exists** at `/editions/[slug]` — title, contact sheet, a link out to the PDF, a link back to Collection. It is real but thin. Task 2 below is the template for what it should become.
