@@ -356,3 +356,31 @@ Susan's own statement of the principle this diagram makes concrete: "The Edition
 **What is retracted, stated plainly so the correction cannot be missed on a later read-through:** the Editions Store (Level 2, above) — as a separate page, a flat catalog, a "bookstore shelf," or any independent commerce destination — is not being built. Everything that section described as belonging to a Store instead belongs to, and is reached from, the Edition Preview page of whichever Figure Edition it relates to.
 
 **Implementation status.** The Gallery rename (poems → gallery, links removed from its cards) proceeded immediately per Susan's explicit authorization and is now built and committed. Per her instruction — "Then revise the architectural documents to reflect this product-family model before additional implementation continues" — no further implementation (Edition Preview refinement, the product-family build-out, or anything Store-related) begins until this correction and its companion entries in the Implementation Specification context (`AwakenArts_Reader_Design_Revision_Plan.md`) and Implementation Log are in place. This section, together with those, satisfies that condition.
+
+---
+
+## 2026-06-29 — Standard: the Edition Closing Page (Publisher's Imprint)
+
+This specifies, in full, the Colophon section (#7) of the Figure Edition template defined in Task 2 above. Where Task 2 named the section and its position but left its content open, Susan has now locked the content itself as a fixed, reusable closing page — a publisher's imprint, not bespoke per-Edition copy.
+
+Susan's directive, in full:
+
+> For the Editions I would make it a standard closing page that never changes except for the copyright year if needed. For example:
+>
+> AwakenArts (logo)
+> An AwakenArts Symbolic Edition
+> When Language Shapes a Path.
+> This edition is part of the AwakenArts Collection—a growing body of symbolic works created through image, poetry, and reflection to invite recognition rather than explanation.
+> Explore additional editions, encounters, and resources at:
+> AwakenArts.com
+> © Susan Ann Shepler. All rights reserved.
+>
+> This becomes part of your publishing identity, much like a publisher's imprint page. Readers will come to expect it, and every edition will quietly reinforce the AwakenArts brand without interrupting the symbolic experience. I would place it after the final reflection page, so the encounter is complete before the reader arrives at the publishing information. That makes it feel like the closing page of a carefully produced book rather than an advertisement.
+
+**What this fixes in place.** Every completed Figure Edition (Dragon, Bowls, Ballerina, Grismere, Poppy, Queen Ann, and any built afterward) closes with the same imprint page, word-for-word, with only the copyright year subject to change. The "When Language Shapes a Path." line is a fixed AwakenArts brand tagline on this page, not an Edition-specific subtitle — it does not vary per Edition. No other line varies either.
+
+**Where it sits.** This confirms, rather than changes, the Figure Edition template's existing sequence from Task 2: Frontispiece → Image → Encounter → Word → Recognition → Reflection → **Colophon** → Acquire. The Colophon (this standard closing page) comes immediately after Reflection — after the symbolic encounter is complete — and before Acquire, so the reader meets the publishing identity only once the work itself is finished, "the closing page of a carefully produced book rather than an advertisement."
+
+**Relationship to Acquire.** This is the PDF Edition's own internal closing page — a fixed page rendered into each Edition document itself. It is separate from "Acquire," which (per the product-family correction directly above) is a section of the website's Edition Preview page, not a page inside the PDF. The two sit next to each other in the Edition's reading order but serve different jobs: the Colophon closes the book; Acquire is the website's path to obtaining it.
+
+**Implementation status.** Architecture only. None of the six built Edition PDFs (Dragon, Bowls, Ballerina, Grismere, Poppy, Queen Ann) have been regenerated with this closing page yet. Applying it retroactively to all six, and to every Edition built from here forward, is production work — laying out and rendering a new page into each existing PDF — and awaits explicit authorization before any file is touched.

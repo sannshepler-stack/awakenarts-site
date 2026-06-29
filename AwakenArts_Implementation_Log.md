@@ -175,6 +175,22 @@ The family list, named directly: Complete Figure Edition, Read Online, Download,
 
 **Implementation status going forward.** Per Susan's instruction, no further implementation — Edition Preview's actual refinement, any per-Edition product-family build-out, or anything Acquire/purchasing-related — begins until this correction is recorded across all three documents, which this entry and its companions satisfy. The Gallery rename above is the one exception, already authorized and already built ahead of this correction.
 
+## 2026-06-29 — Standard: the Edition Closing Page (Publisher's Imprint)
+
+**Specifies the Colophon (#7) section of the Figure Edition template (Task 2, `AwakenArts_Publishing_Platform_Architecture.md`).** Susan, in full: "For the Editions I would make it a standard closing page that never changes except for the copyright year if needed... This becomes part of your publishing identity, much like a publisher's imprint page. Readers will come to expect it, and every edition will quietly reinforce the AwakenArts brand without interrupting the symbolic experience. I would place it after the final reflection page, so the encounter is complete before the reader arrives at the publishing information." Her example text:
+
+> AwakenArts (logo)
+> An AwakenArts Symbolic Edition
+> When Language Shapes a Path.
+> This edition is part of the AwakenArts Collection—a growing body of symbolic works created through image, poetry, and reflection to invite recognition rather than explanation.
+> Explore additional editions, encounters, and resources at:
+> AwakenArts.com
+> © Susan Ann Shepler. All rights reserved.
+
+Full text, rationale, and the page's relationship to the website's "Acquire" (a different thing — Acquire lives on Edition Preview, this Colophon lives inside the PDF itself) recorded in `AwakenArts_Publishing_Platform_Architecture.md`, "Standard: the Edition Closing Page (Publisher's Imprint)."
+
+**Implementation status.** Architecture only. The standard confirms the Colophon's existing position in the Task 2 template (after Reflection, before Acquire) and locks its content, but none of the six built Edition PDFs (Dragon, Bowls, Ballerina, Grismere, Poppy, Queen Ann) have been regenerated with it. Retrofitting all six, and applying it to every Edition built going forward, awaits explicit authorization.
+
 ## Open decisions blocking further progress
 
 Carried from the Publishing Platform Architecture doc, current status:
