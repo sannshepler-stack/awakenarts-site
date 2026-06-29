@@ -83,9 +83,6 @@ export default function CollectionPage() {
           <div className="col-hero__inner">
             <p className="eyebrow col-hero__eyebrow">AwakenArts</p>
             <h1 className="col-hero__title">The Collection</h1>
-            <p className="col-hero__sub">
-              An AwakenArts Resource &amp; Guide
-            </p>
           </div>
         </section>
 
