@@ -237,3 +237,68 @@ The Owner Platform represents the customer's continuing relationship with Awaken
 **This formalizes the design rule above into a standing process requirement, not a new architecture.** The houses and rooms named above are now treated as a sufficiently developed blueprint that implementation work is no longer feature-driven — it's blueprint-driven. Concretely: every implementation proposal, from here forward, states its architectural location (Public Platform, Transition, or Owner Platform — equivalently, which room) before any discussion of how it would be built. Architecture determines implementation; implementation does not determine architecture. "Can this be built?" is no longer the operative question — "where does this belong?" is, and it's answered first.
 
 **Restated once more, in the terms this directive used:** the Featured Reader belongs to the Public Platform because its job is to introduce the work; the Complete Figure Edition belongs to the Owner Platform because its job is to fulfill ownership; the marketing transition is the connective tissue between the two, not an interruption of either; and Collections, Workshops, Facilitator Resources, and Retreats are each introduced only at the relationship stage the Relationship Strategy document already names for them, not all at once. None of this changes the room assignments two sections above — it confirms them as the blueprint, and commits future work to checking against it first.
+
+---
+
+## 2026-06-29 — Room Placement Decision: Gallery (formerly Poems)
+
+**This resolves one half of the open placement question the Revision Plan's room map (Section 8) had flagged rather than guessed at.** Susan's directive, in full:
+
+> The current Poems page should be renamed Gallery. The Gallery is not part of the marketing sequence. Its purpose is quiet browsing and appreciation. It presents the published Edition works through representative artwork, the Edition titles, and the existing descriptive text. The Gallery allows visitors to become familiar with the published works without asking them to make decisions.
+
+Followed immediately by a one-line refinement: **"Remove links."** Read together, this is not two instructions but one: the Gallery's defining property is that it asks nothing of the visitor — no link, button, or path forward that turns browsing into a decision. This sets the Gallery apart from every other Public House room, all of which exist to move a visitor somewhere. The Gallery is the one room in the house that doesn't.
+
+**Placement:** Public House, alongside Encounters — confirmed explicitly by the Architectural Sequence recorded below, which places Gallery directly after Encounters and before Collection.
+
+**What this means for `/poems` as built today:** the page currently functions as a curated excerpt gallery and (per the Revision Plan's room map) was already informally serving this appreciation role — but it currently links each tile back toward its Edition. Per "Remove links," that linking behavior is no longer correct for this room; Collection and Edition Preview (below) are where a visitor is invited to move from familiarity toward a decision, not Gallery. Renaming the page and removing its links is implementation, not architecture — recorded here as newly specified scope, not yet built, per the standing "architecture before implementation" discipline this document has followed all day.
+
+---
+
+## 2026-06-29 — Collection, Edition Preview, and the Architectural Sequence
+
+**This resolves the second half of the open placement question** (the Revision Plan's room map had flagged `/collection` as ambiguously spanning two rooms at once) **and adds a new room that didn't exist in any prior version of the house.** Susan's directive, in full:
+
+> **Collection.** The Collection page remains as it exists today. Its purpose is to introduce the AwakenArts Collection as a published body of work. The Current Editions section remains. The contact sheets remain interactive. Selecting a contact sheet should continue opening the enlarged contact sheet presentation.
+>
+> **Edition Preview.** The enlarged contact sheet pages become the Edition Preview. These pages are not document viewers. They are the marketing presentation for each Figure Edition. The contact sheet remains the visual centerpiece. Around it, develop the presentation that naturally increases appreciation for the Edition and introduces the opportunities related to it. These pages should explain the Edition, deepen familiarity with it, and naturally lead visitors toward the complete range of related offerings. These may include, where appropriate: the Complete Figure Edition, the Featured Reader (Grismere), related Figure Editions, future Collections, workshop applications, facilitator resources, author notes, retreat opportunities, and other products connected to that Edition. Nothing on these pages should give away the complete Edition. Everything on these pages should increase understanding, confidence, and desire to continue. These pages become the principal marketing hubs for the Figure Editions.
+>
+> **Featured Reader.** The Featured Reader remains a separate marketing instrument. It demonstrates the AwakenArts reading experience. It is not the product. Grismere remains the preferred Featured Reader candidate.
+>
+> **Complete Figure Edition.** The Complete Figure Edition remains the published product. Ownership leads to the Owner Platform, where readers may: Read Online, Download, Print. This experience is separate from the public marketing platform.
+>
+> **Architectural Sequence:** Homepage → Encounters → Gallery (Appreciation) → Collection (The published body of work) → Edition Preview (Contact Sheet Marketing Presentation) → Featured Reader (where applicable) or Complete Figure Edition → Owner Platform. Every page should perform one architectural function. No page should attempt to perform the work of the page that follows it.
+
+**What's resolved by this:**
+
+1. **`/collection`'s split identity is resolved, not eliminated — it's named correctly as two rooms in sequence rather than one room doing two jobs.** Collection (Public House, "introduce the published body of work") and Edition Preview (Transition — "the principal marketing hubs for the Figure Editions," the room that does the work of leading toward ownership) are now distinct rooms with distinct jobs, occupying what is currently one page (`/collection`) and one interaction (opening an enlarged contact sheet) respectively. The room map's open question is closed: Collection stays Public House; the enlarged contact sheet view is Transition, under a new name.
+2. **Edition Preview is new architecture — a room that did not exist in the Build-the-House directive's original list.** It sits in the Transition house, between Collection and the Featured Reader/Complete Figure Edition fork. Its governing constraint, stated twice in the directive, is asymmetric with everything else in Transition: it must increase desire without ever exposing the complete Edition — the same restraint principle that governs the Featured Reader, applied one room earlier.
+3. **The full Architectural Sequence is now explicit, room by room, for the first time.** Every prior directive named houses and rooms; this is the first to also name the order visitors move through them, and to state the governing rule for the whole sequence: "No page should attempt to perform the work of the page that follows it" — a direct, generalized restatement of the Marketing Platform First evaluative question (does this satisfy the visitor so completely the next room becomes unnecessary?).
+
+**What this changes in already-recorded architecture:** nothing is contradicted. Featured Reader (Grismere) and Complete Figure Edition's roles are reconfirmed exactly as the Build-the-House and Two Reader Experiences directives already stated them. What's added is the missing connective room (Edition Preview) and the explicit sequence linking every room named since the Build-the-House directive into one ordered path.
+
+**Implementation status:** none of this is built. The enlarged contact-sheet view exists today as a simple image viewer, not a marketing presentation — becoming Edition Preview is new scope, not a rename. Recorded here as architecture; queued behind the standing review gate (Product Architecture Initiative) before construction begins, per "Architectural Blueprints Before Construction."
+
+---
+
+## 2026-06-29 — Two Levels of Acquisition: Edition Preview vs. the Editions Store
+
+**Susan's framing, stated directly: "Think like a publisher rather than an online retailer."** This governs how the directive below is read — the two levels named are not redundant, they answer different questions for different visitors.
+
+**Level 1 — Edition Preview, specified down to content.** Every Edition's Preview page (the room named in the section above) is now specified to a concrete content list, given by Susan using The Dragon as the worked example: contact sheet, what this Edition explores, what is included, who it is for, related Editions, workshop applications, facilitator resources, testimonials (later), and a single closing call to action — "Acquire The Dragon." Susan's own statement of its job: "that page sells Dragon." The same structure applies to Grismere, Bowls, Queen Ann, and every other Edition Preview — one page per Edition, each telling that Edition's own story, because, in her words, "every Edition tells a different story."
+
+**Level 2 — A single Editions Store.** A second, separate page — working name "Figure Editions" or "Acquire Editions" — that Susan explicitly distinguishes from Level 1: "This page is not about meaning. It is simply the storefront." Per Edition, it shows only: cover, title, one sentence, available formats, price, and an Acquire action. Her own analogy: "Think of it as the bookstore shelf." This is new architecture — no prior directive named a flat catalog page distinct from each Edition's own marketing page.
+
+**The Store's scope, per Susan's immediate follow-up, extends beyond Figure Editions:** the Store's full category list is Figure Editions, Collections, Workshop Guides, Facilitator Resources, Retreat Materials, Gift Certificates, and Future Courses. This makes the Store the single catalog surface for the entire AwakenArts commercial line named in `AwakenArts_Product_Architecture.md` — not a Figure-Editions-only shelf. Gift Certificates and Future Courses are newly named here for the first time in any document in this hierarchy; flagged as new product concepts, not yet defined in purpose or audience, and not addressed by the Product Architecture document's existing reconciliation work.
+
+**A diagrammed path confirms how Level 1 and Level 2 relate, rather than compete:**
+
+```
+Gallery → Collection → Edition Preview (The Dragon) → ┬─ Acquire Dragon
+                                                        └─ Figure Editions Store → Dragon / Grismere / Bowls / Queen Ann / etc.
+```
+
+An Edition Preview's own "Acquire" leads directly to acquiring that Edition. The same Preview can also offer a path sideways into the full Store — for a visitor who wants to browse everything rather than commit to the one Edition they arrived to read about. The Store, in turn, leads back into individual Editions (and, per its expanded category list, into Collections, Workshop Guides, and the other product lines) rather than being a dead end.
+
+**What this resolves and what it doesn't.** This specifies two new pages — Edition Preview's content list and the Editions Store — and confirms they're complementary rooms, not competing designs for the same job. It does **not** resolve the Purchasing/entitlement mechanism itself (Open Decision #1 in the Implementation Log): what "Acquire" actually does — payment processing, access grant, fulfillment — remains undecided. What's new is that the pages that mechanism will sit behind now have a name and a content shape; the mechanism does not yet.
+
+**Implementation status:** architecture only, recorded per the same discipline as every directive above. Nothing here is built; both new pages are queued behind the standing review gates already in force.

@@ -105,12 +105,12 @@ Susan's directive asks one question of every feature before implementation: wher
 
 **Featured Reader (Grismere) — named but not yet built.** The room exists in the directive; the occupant doesn't yet exist in code. What's live at `/editions/[slug]/read` today is Dragon's Reader, which is correctly understood as the engineering pilot, not a misplaced occupant of this room — it was never the Featured Reader, only the proof that the room's pattern works. Track A above is the work of actually furnishing this room with Grismere.
 
-**Two rooms whose placement is genuinely unclear and shouldn't be guessed at:**
+**Both rooms below are now resolved by Susan's direct answer — recorded 2026-06-29, superseding the "ask before assuming" posture this section originally took.**
 
-- **`/collection`**, as built, does two things the directive's room list now splits apart: it previews the body of work (Public House's "Collection Preview") and it lists the six Editions with acquire-style links toward owning them (which reads as Transition — discovering "additional Figure Editions" and "Collections" on the way to ownership). It currently lives in one room without knowing it's two.
-- **`/poems`**, the curated excerpt gallery across all six Editions, isn't named in either the Public House or Transition room lists. It functions like a second, more diffuse "Collection Preview," which suggests it belongs in Public House beside it — but that's an inference, not something Susan has stated, and the directive's instruction is to ask before implementing, not to assume.
+- **`/collection` — resolved.** Susan's Collection directive keeps `/collection` exactly as built (Current Editions section, interactive contact sheets) and names its purpose precisely: "introduce the AwakenArts Collection as a published body of work." That's Public House. The acquire-style path this section had flagged as `/collection`'s second job isn't a misplaced feature of the page itself — it's a separate room one step later. Selecting a contact sheet opens what Susan now names the **Edition Preview**, a new Transition room (see Architecture doc, 2026-06-29). `/collection` stays single-purpose; the page it currently links to needs to become that new room's actual occupant rather than the plain document viewer it is today.
+- **`/poems` — resolved, and renamed.** Susan's directive: rename to **Gallery**. Placement: Public House, beside Encounters — confirmed by the Architectural Sequence (Section 9 below), which runs Encounters → Gallery → Collection. Purpose: "quiet browsing and appreciation," explicitly **not** part of the marketing sequence. Per Susan's follow-up ("Remove links"), the Gallery's defining trait is that it asks the visitor for no decision at all — every other Public House and Transition room moves a visitor somewhere; this is the one room that doesn't. The page's current excerpt-tile links back to each Edition no longer belong on this page under that rule.
 
-Recommend asking Susan directly which room each of these belongs in before touching either page, rather than this plan guessing on her behalf.
+**Newly named room, not previously tracked anywhere in this plan: Edition Preview.** Sits in the Transition house, between Collection and the Featured Reader/Complete Figure Edition fork. Occupies the interaction currently built as "open the enlarged contact sheet" — but that occupant is a placeholder; today it is a plain image viewer, not a marketing presentation. Its job per Susan's directive: explain the Edition, deepen familiarity, and lead toward (where appropriate) the Complete Figure Edition, the Featured Reader, related Editions, future Collections, workshops, facilitator resources, author notes, and retreats — while never giving away the complete Edition. This is the room the map above still shows as unbuilt.
 
 **Workshops material — split across two houses, only one of which exists yet.** `/workshops` (unlisted) and `/facilitator-orientation` (unlisted) currently hold both the introduction to what a workshop is (Transition's job) and the actual curriculum, intake forms, and handouts (Owner House's "Workshop Resources" and "Facilitator Resources" job) on the same unlisted pages, with no distinction between the two. This is the clearest existing case of a feature built before its room existed: it isn't misplaced so much as built in a house that didn't have separate rooms yet at the time.
 
@@ -121,3 +121,27 @@ Recommend asking Susan directly which room each of these belongs in before touch
 ---
 
 Per the Governing Directive: no rollout resumes, and no Phase 1 data-model change is made, until this plan is reviewed and approved.
+
+---
+
+## 9. Architectural Sequence and the Acquire/Store split (2026-06-29)
+
+**The full visitor path, named for the first time.** Susan's Collection directive states the complete order a visitor moves through, room by room: **Homepage → Encounters → Gallery (Appreciation) → Collection (the published body of work) → Edition Preview (Contact Sheet Marketing Presentation) → Featured Reader (where applicable) or Complete Figure Edition → Owner Platform.** Governing rule attached to it: "No page should attempt to perform the work of the page that follows it." This confirms and replaces Section 8's "genuinely unclear" framing for `/collection` and Gallery (Section 8 above has been updated to match) and fixes their order relative to the new Edition Preview room.
+
+**The Acquire step itself now has two distinct rooms, not one.** A follow-up diagram from Susan splits what this plan had been treating as a single "acquire" beat at the end of each Edition Preview:
+
+```
+Gallery → Collection → Edition Preview (The Dragon) → ┬─ Acquire Dragon
+                                                        └─ Figure Editions Store → Dragon / Grismere / Bowls / Queen Ann / etc.
+```
+
+Read together with her explicit framing ("think like a publisher rather than an online retailer"), this names two purchasing levels:
+
+- **Level 1 — Per-Edition marketing page.** Every Edition has its own dedicated page (Edition Preview, per the directive above) because, in Susan's words, "every Edition tells a different story." Its content, per her own worked example for The Dragon: contact sheet, what this Edition explores, what is included, who it is for, related Editions, workshop applications, facilitator resources, testimonials (later), and a single "Acquire [The Dragon]" call to action. This is not new architecture — it's the Edition Preview room, now specified down to its actual content blocks rather than only its purpose.
+- **Level 2 — A single Editions Store.** A second, separate page (working names offered: "Figure Editions" or "Acquire Editions") that is deliberately *not* about meaning — "it is simply the storefront." Per Edition, it shows only: cover, title, one sentence, available formats, price, and an Acquire action. Susan's own analogy: "the bookstore shelf." This is new scope — a flat, catalog-style page that did not exist in any prior version of this plan or the Architecture doc, sitting structurally beside the Edition Previews rather than inside the Encounters→Gallery→Collection sequence above it.
+
+**A further directive extends the Store beyond Figure Editions alone.** Susan's next message lists the Store's full category set: Figure Editions, Collections, Workshop Guides, Facilitator Resources, Retreat Materials, Gift Certificates, Future Courses. This confirms the Store (Level 2) is the single catalog surface for AwakenArts' entire commercial product line, not only the six Figure Editions — consistent with `AwakenArts_Product_Architecture.md`'s four product families, several of which (Workshop Guide Series, Collections, Retreats) previously had no named website surface at all. Gift Certificates and Future Courses are newly named products with no prior mention anywhere in this documentation hierarchy — flagged here, not designed further, pending Susan's review.
+
+**What this resolves and what it doesn't.** This sharpens Edition Preview's content (Level 1) and adds the Store as a second, catalog-style room (Level 2) — both architecture. It does **not** resolve Open Decision #1 (the Purchasing/entitlement mechanism — what "Acquire" actually does technically: payment processor, access grant, fulfillment). That remains the same open dependency already named in Section 7 and the Implementation Log; what's new is that the *pages* the mechanism will live behind are now named, while the mechanism itself is still undecided.
+
+**Status: architecture only.** No code has changed. The standing line above this section — no rollout resumes until this plan is reviewed and approved — still governs.
