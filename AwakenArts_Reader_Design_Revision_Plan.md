@@ -145,3 +145,51 @@ Read together with her explicit framing ("think like a publisher rather than an 
 **What this resolves and what it doesn't.** This sharpens Edition Preview's content (Level 1) and adds the Store as a second, catalog-style room (Level 2) — both architecture. It does **not** resolve Open Decision #1 (the Purchasing/entitlement mechanism — what "Acquire" actually does technically: payment processor, access grant, fulfillment). That remains the same open dependency already named in Section 7 and the Implementation Log; what's new is that the *pages* the mechanism will live behind are now named, while the mechanism itself is still undecided.
 
 **Status: architecture only.** No code has changed. The standing line above this section — no rollout resumes until this plan is reviewed and approved — still governs.
+
+---
+
+## 10. Correction (2026-06-29) — the Store is retracted; Edition Preview is the product family's center
+
+**Section 9's Level 2 (the Editions Store) is retracted by Susan, in the same conversation, before any of it was built.** Her words: "Do not design a separate Store page at this time. Instead, strengthen the Edition Preview pages so they naturally become the entry point into each Edition's product family. The purchasing architecture should emerge from the Edition pages themselves rather than from a generic storefront." Per this plan's own append-don't-rewrite discipline, Section 9 stands unedited above as the record of what was proposed and then overruled; this section is the correction, not a deletion.
+
+**What remains true from Section 9:** the Architectural Sequence (Homepage → Encounters → Gallery → Collection → Edition Preview → Featured Reader/Complete Figure Edition → Owner Platform) and Level 1's content list for Edition Preview (contact sheet, what this Edition explores, what is included, who it is for, related Editions, workshop applications, facilitator resources, testimonials, an Acquire call to action) are unaffected by the retraction — only Level 2, the separate catalog page, is withdrawn.
+
+**Edition Preview is not a new route — it is the existing enlarged contact-sheet page, refined in place.** Susan: "Refine these pages rather than creating a separate Preview page — the enlarged contact sheet remains the centerpiece." This had already been the position taken in Section 8 above ("occupies the interaction currently built as 'open the enlarged contact sheet'"); this correction forecloses any reading of Section 9's Store language as implying Edition Preview itself was ever meant to be a new address — only the now-retracted Store was that, and it is gone.
+
+**The governing model going forward: each Figure Edition is the center of its own product family, and Edition Preview is that center.** Susan: "Dragon doesn't have 'a PDF.' Dragon has a family: Edition, Reader, Workshop Kit, Slides, Facilitator Notes, Collections, Future Retreat use. Those aren't separate products floating around the site." And, naming Edition Preview specifically: "The Edition Preview (the enlarged contact-sheet page) is not simply introducing the Edition. It is the center of the product family. Everything radiates from that page."
+
+**Dragon's family, as Susan diagrammed it:**
+
+```
+                THE DRAGON
+            (Edition Preview)
+         Contact Sheet Overview
+         What this Edition explores
+         Why it matters
+         What is included
+                    |
+       +------------+------------+
+       |            |            |
+       v            v            v
+   Acquire       Featured     Related
+   Edition        Reader      Editions
+       |
+       v
+ Owner Resources
+  - Read Online
+  - Download
+  - Print
+ Future Resources
+  - Workshop Kit
+  - Presentation Slides
+  - Facilitator Notes
+  - Participant Materials
+  - Collections containing Dragon
+  - Retreat Resources
+```
+
+This both confirms and sharpens Section 9's Level 1 content list: Acquire, Featured Reader, and Related Editions are the three immediate branches from Edition Preview, and Acquire itself branches further into Owner Resources (the existing Owner Platform items — Read Online, Download, Print) and Future Resources (Workshop Kit, Presentation Slides derived from the Edition, Facilitator Notes, Participant Materials, Collections containing the Edition, retreat resources) — the same family list Susan named directly: "Complete Figure Edition, Read Online, Download, Print, Workshop Kit, Presentation Slides (derived from the Edition), Facilitator Notes, Participant Materials, Collections containing the Edition, Future retreat resources."
+
+**Purchasing has no separate page or route of its own.** Susan: "The purchasing page is not separate from the Edition Preview. It grows naturally from it." Acquire is a branch of Edition Preview, not a different room reached from it — this rules out a distinct "Acquire" address with its own design language, consistent with the retraction of the Store above. Open Decision #1 (the Purchasing/entitlement mechanism itself — payment processor, access grant, fulfillment) remains exactly as open as before; what changes is where that mechanism's UI lives: inside Edition Preview, not on a page beside or beyond it.
+
+**Implementation status.** The Gallery rename (poems → gallery, per-card Edition links removed) is built and committed — Susan authorized it for immediate implementation ahead of this correction, separately from the Store retraction. Per her instruction to revise the architectural documents "before additional implementation continues," no work begins on refining Edition Preview itself, or on any per-Edition product family, until this section and its companions in the Architecture doc and Implementation Log are recorded — which this section satisfies.

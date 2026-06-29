@@ -302,3 +302,57 @@ An Edition Preview's own "Acquire" leads directly to acquiring that Edition. The
 **What this resolves and what it doesn't.** This specifies two new pages — Edition Preview's content list and the Editions Store — and confirms they're complementary rooms, not competing designs for the same job. It does **not** resolve the Purchasing/entitlement mechanism itself (Open Decision #1 in the Implementation Log): what "Acquire" actually does — payment processing, access grant, fulfillment — remains undecided. What's new is that the pages that mechanism will sit behind now have a name and a content shape; the mechanism does not yet.
 
 **Implementation status:** architecture only, recorded per the same discipline as every directive above. Nothing here is built; both new pages are queued behind the standing review gates already in force.
+
+---
+
+## 2026-06-29 — Correction: Editions Store Retracted; Each Figure Edition Is the Center of Its Own Product Family
+
+**This retracts Level 2 above.** Per append-don't-rewrite discipline, the "Editions Store" section is not deleted — it stands above as a record of architecture that was proposed and then explicitly overruled, in this same conversation, before any of it was built. Susan's retraction, in full:
+
+> The Edition remains the source publication. The surrounding products derive from the Edition rather than existing independently. Do not design a separate Store page at this time. Instead, strengthen the Edition Preview pages so they naturally become the entry point into each Edition's product family. The purchasing architecture should emerge from the Edition pages themselves rather than from a generic storefront.
+
+**What this changes.** The "Two Levels of Acquisition" framing above is wrong: there are not two complementary rooms (an Edition Preview and a separate Editions Store). There is one room — Edition Preview — and everything else, including purchasing, grows out of it rather than living beside it as an independent page. No flat catalog page, no "bookstore shelf," no second navigable destination for commerce is to be designed at this time.
+
+**Edition Preview, restated precisely: not a new route.** Per Susan's explicit correction, Edition Preview is not a page to be built — it is the existing enlarged contact-sheet page (reached today from `/collection`), refined in place. "Refine these pages rather than creating a separate Preview page — the enlarged contact sheet remains the centerpiece — develop the surrounding presentation that introduces the Figure Edition and the products and resources related to it." This confirms and sharpens the Edition Preview section recorded above (2026-06-29, "Collection, Edition Preview, and the Architectural Sequence") — that section already located Edition Preview at the existing enlarged-contact-sheet interaction rather than a new address; this correction rules out any reading of "Editions Store" implying a second, separate route alongside it.
+
+**The governing principle: each Figure Edition becomes the center of its own product family.** Susan's framing, verbatim: "Dragon doesn't have 'a PDF.' Dragon has a family: Edition, Reader, Workshop Kit, Slides, Facilitator Notes, Collections, Future Retreat use. Those aren't separate products floating around the site." A Figure Edition is not one product with a list of optional add-ons sold elsewhere — it is the hub a whole family of related offerings belongs to and radiates from.
+
+**The family, named in full (per Susan's follow-up, as the products are developed):** Complete Figure Edition, Read Online, Download, Print, Workshop Kit, Presentation Slides (derived from the Edition), Facilitator Notes, Participant Materials, Collections containing the Edition, future retreat resources.
+
+**The product family's shape, per Susan's diagram — Edition Preview as the center, not an introduction to something else:**
+
+```
+                THE DRAGON
+            (Edition Preview)
+         Contact Sheet Overview
+         What this Edition explores
+         Why it matters
+         What is included
+                    |
+       +------------+------------+
+       |            |            |
+       v            v            v
+   Acquire       Featured     Related
+   Edition        Reader      Editions
+       |
+       v
+ Owner Resources
+  - Read Online
+  - Download
+  - Print
+ Future Resources
+  - Workshop Kit
+  - Presentation Slides
+  - Facilitator Notes
+  - Participant Materials
+  - Collections containing Dragon
+  - Retreat Resources
+```
+
+Susan's own statement of the principle this diagram makes concrete: "The Edition Preview (the enlarged contact-sheet page) is not simply introducing the Edition. It is the center of the product family. Everything radiates from that page."
+
+**Purchasing is not a separate page reached from Edition Preview — it grows from Edition Preview.** Susan's correction, verbatim: "The purchasing page is not separate from the Edition Preview. It grows naturally from it." This rules out a distinct "Acquire" destination with its own address and its own design language; "Acquire" is a state or section of the Edition Preview page itself, not a different room.
+
+**What is retracted, stated plainly so the correction cannot be missed on a later read-through:** the Editions Store (Level 2, above) — as a separate page, a flat catalog, a "bookstore shelf," or any independent commerce destination — is not being built. Everything that section described as belonging to a Store instead belongs to, and is reached from, the Edition Preview page of whichever Figure Edition it relates to.
+
+**Implementation status.** The Gallery rename (poems → gallery, links removed from its cards) proceeded immediately per Susan's explicit authorization and is now built and committed. Per her instruction — "Then revise the architectural documents to reflect this product-family model before additional implementation continues" — no further implementation (Edition Preview refinement, the product-family build-out, or anything Store-related) begins until this correction and its companion entries in the Implementation Specification context (`AwakenArts_Reader_Design_Revision_Plan.md`) and Implementation Log are in place. This section, together with those, satisfies that condition.

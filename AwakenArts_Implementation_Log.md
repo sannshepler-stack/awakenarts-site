@@ -129,6 +129,52 @@ Four rapid-fire directives the same day, all recorded here and cross-referenced 
 
 **Implementation status: none of this is built.** Per the standing freezes already in force (Reader Platform rollout pending Revision Plan approval; product-family implementation pending Product Architecture review), this is recorded as architecture only. Newly identified, not-yet-started implementation scope: renaming `/poems` to Gallery and removing its links; building Edition Preview as an actual marketing presentation (today it's a plain contact-sheet image viewer); building the Editions Store page from scratch.
 
+## 2026-06-29 — Gallery rename implemented; Editions Store retracted; Each Figure Edition is the center of its own product family
+
+**Gallery rename: built and committed (`70b5084`), per Susan's explicit immediate authorization.** `/gallery` now carries the former `/poems` content — the same six tiles (Poppy, Dragon, Grismere, Bowls, Ballerina, Queen Ann), same images and excerpts — with the per-card "View the Edition" link removed from every tile, per "Remove links." `/poems` now redirects to `/gallery` (same pattern as the existing `/begin` → `/` redirect). `Nav.tsx`, `Footer.tsx`, and `WayfindingBand.tsx` updated from Poems/`/poems` to Gallery/`/gallery`. `tsc --noEmit` clean. This is the first piece of implementation actually completed against today's directives — everything else recorded below is architecture only, per Susan's own sequencing ("proceed now with the Gallery rename... then revise the architectural documents... before additional implementation continues").
+
+**The Editions Store (item 3 in the entry above) is retracted, not built.** Susan's correction, in full: "The Edition remains the source publication. The surrounding products derive from the Edition rather than existing independently. Do not design a separate Store page at this time. Instead, strengthen the Edition Preview pages so they naturally become the entry point into each Edition's product family. The purchasing architecture should emerge from the Edition pages themselves rather than from a generic storefront." No Store page, catalog, or "bookstore shelf" is to be designed. Per this Log's own append-don't-rewrite discipline, the prior entry stands above as the record of what was proposed and then overruled before any of it was built.
+
+**Edition Preview reconfirmed as the existing enlarged contact-sheet page, refined in place — not a new route.** This was already this Log's working assumption (see "Implementation status" in the entry above: "building Edition Preview as an actual marketing presentation" of the page that already exists); Susan's correction forecloses any reading otherwise.
+
+**New governing model: each Figure Edition is the center of its own product family.** Susan: "Dragon doesn't have 'a PDF.' Dragon has a family: Edition, Reader, Workshop Kit, Slides, Facilitator Notes, Collections, Future Retreat use. Those aren't separate products floating around the site." And, naming Edition Preview's role directly: "The Edition Preview (the enlarged contact-sheet page) is not simply introducing the Edition. It is the center of the product family. Everything radiates from that page." Diagrammed for Dragon specifically:
+
+```
+                THE DRAGON
+            (Edition Preview)
+         Contact Sheet Overview
+         What this Edition explores
+         Why it matters
+         What is included
+                    |
+       +------------+------------+
+       |            |            |
+       v            v            v
+   Acquire       Featured     Related
+   Edition        Reader      Editions
+       |
+       v
+ Owner Resources
+  - Read Online
+  - Download
+  - Print
+ Future Resources
+  - Workshop Kit
+  - Presentation Slides
+  - Facilitator Notes
+  - Participant Materials
+  - Collections containing Dragon
+  - Retreat Resources
+```
+
+The family list, named directly: Complete Figure Edition, Read Online, Download, Print, Workshop Kit, Presentation Slides (derived from the Edition), Facilitator Notes, Participant Materials, Collections containing the Edition, future retreat resources.
+
+**Purchasing has no separate page.** Susan: "The purchasing page is not separate from the Edition Preview. It grows naturally from it." Acquire is a branch of Edition Preview, not an independent destination — consistent with, and the direct reason for, the Store's retraction above. Open Decision #1 below is unchanged in substance (the mechanism is still undecided); what changes is where its eventual UI lives.
+
+**Recorded in full, same day, in both companion documents:** `AwakenArts_Publishing_Platform_Architecture.md` ("Correction: Editions Store Retracted; Each Figure Edition Is the Center of Its Own Product Family") and `AwakenArts_Reader_Design_Revision_Plan.md` (Section 10, "the Store is retracted; Edition Preview is the product family's center").
+
+**Implementation status going forward.** Per Susan's instruction, no further implementation — Edition Preview's actual refinement, any per-Edition product-family build-out, or anything Acquire/purchasing-related — begins until this correction is recorded across all three documents, which this entry and its companions satisfy. The Gallery rename above is the one exception, already authorized and already built ahead of this correction.
+
 ## Open decisions blocking further progress
 
 Carried from the Publishing Platform Architecture doc, current status:
