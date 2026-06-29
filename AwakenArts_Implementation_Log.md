@@ -50,6 +50,20 @@ Per Susan's 2026-06-29 framing, work runs on two parallel tracks rather than one
 
 **The merge point.** Once Dragon's Reader is complete and proven, the two tracks combine: the engineering work supports the marketing strategy, and the marketing strategy puts the engineering to use. Until then, neither track is sequenced ahead of or blocked by the other — they run concurrently.
 
+## Workstream structure (2026-06-29 refinement)
+
+Per Susan's 2026-06-29 table, the two tracks above are refined into five named workstreams, each with its own status and lead. This refines the Two Tracks framing rather than replacing it — Reader Platform is the Engineering Track; Visitor Experience, Product Development, and Business Strategy together are what the Publishing Track named only loosely; Body of Work is new to this framing, naming the actual creative output as its own ongoing workstream distinct from the platform built around it.
+
+| Workstream | Status | Lead |
+|---|---|---|
+| Reader Platform | Ready to implement | Claude |
+| Visitor Experience | Ready for presentation updates | Claude + Susan |
+| Product Development | Ready for definition | Susan |
+| Business Strategy | Pending key decisions | Susan |
+| Body of Work | Ongoing | Susan |
+
+Read against everything already recorded in this Log: **Reader Platform / "Ready to implement"** is the one status here that, taken at face value, would mean Phase 1 of the Implementation Specification can begin — which is a change from this Log's standing position that "no phase begins until Susan signs off on the document itself." Recorded here as stated; not yet treated as that sign-off without confirming it directly. **Visitor Experience / "Ready for presentation updates"** covers the two unblocked, no-new-capability fixes already identified (Edition page navigation, Workshops discoverability) plus the copy decisions named in the Relationship Strategy's visitor-experience translation. **Product Development / "Ready for definition"** covers Collection-as-a-product and Retreats — both currently undefined anywhere. **Business Strategy / "Pending key decisions"** is Purchasing (Open Decision #1) and whatever else Susan's product-architecture and customer-journey work surfaces. **Body of Work** — new Figure Editions, poems, and the creative work itself — is recorded here for the first time as its own ongoing workstream, separate from the platform being built to carry it.
+
 ## Open decisions blocking further progress
 
 Carried from the Publishing Platform Architecture doc, current status:
