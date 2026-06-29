@@ -153,7 +153,27 @@ Both belong at the natural close of the reading experience — after the Colopho
 Three decisions in this document are flagged rather than assumed, because they affect what gets built next:
 
 1. **The Dragon naming collision** — retire the old figure-tied `/encounters/dragon` (and vase/queen/butterfly) pages and fold their intent into the Edition's own "Encounter" section, as recommended above? Or keep them as a separate, distinct experience type?
-2. **Purchasing** — is a Figure Edition meant to remain free indefinitely (with "purchasing" meaning a printed copy or voluntary support), or is a paid-access tier intended for some or all Editions?
+2. **Purchasing** — ~~is a Figure Edition meant to remain free indefinitely (with "purchasing" meaning a printed copy or voluntary support), or is a paid-access tier intended for some or all Editions?~~ **Partially resolved 2026-06-29** — see "Product Access Model (Governing Decision)" below: a paid/gated tier is intended for every Edition except the featured one (Dragon). The exact mechanism (individual purchase, Collections, membership) is still open.
 3. **The reader as a separate route** — does `/editions/[slug]/read` as a distinct address from the Edition's landing page match your intent, or did you picture the reading experience opening in place on the same page?
 
 Per the original directive: this is where I stop. No implementation has begun. I'm ready to proceed in phases once you've reviewed this and the three questions above are settled.
+
+---
+
+## 2026-06-29 — Product Access Model (Governing Decision)
+
+This supersedes the assumption, standing until now, that every Figure Edition would have a freely accessible Reader. Recorded here verbatim against Susan's framing, because it changes what "Acquire" (Task 2, item 8) and Task 3's reading experience mean for five of the six Editions, and because it partially resolves Open Question #2 below.
+
+**The governing principle.** The Reader's purpose is to introduce the AwakenArts body of work, not to replace the commercial Editions. The Reader is not a substitute for owning the published work.
+
+**Public experience** — freely accessible: the homepage, Encounters, Collection browsing, and **one complete Figure Edition Reader** (the featured Edition). This single Reader is the demonstration of the AwakenArts publication experience.
+
+**Commercial experience** — the remaining Figure Editions are not freely readable in full. After the featured Edition, continued access becomes part of the product relationship. Future access models may include individual Edition purchases, Collections, memberships, or other commercial offerings — the mechanism is undecided, but the governing principle (Reader ≠ ownership substitute) applies regardless of which mechanism is eventually chosen.
+
+**Relationship continuity.** The relationship continues before purchase through Encounters and the featured Reader. After the featured Reader, the visitor should meet a natural invitation to acquire additional Editions, not unrestricted access to the complete body of work.
+
+**Resolves Open Question #2 (Purchasing) — partially.** The question was whether a Figure Edition stays free indefinitely (with "purchasing" meaning a printed copy or voluntary support) or whether a paid-access tier is intended. Answer: a paid/gated tier is intended, for every Edition except the featured one. What remains open is the mechanism itself — individual purchase, Collections, membership, or some combination — which is Business Strategy work, not yet decided.
+
+**Which Edition is "the featured Edition."** Not restated here as a new choice — Dragon already holds this role in practice. It was named "the most mature Edition on the site" earlier in this document, it was the pilot for Implementation Spec Phase 1, and Phase 2's Reader was built and is being refined against it specifically. This decision confirms that role rather than assigning it freshly: Dragon is the one Edition the public reads in full.
+
+**Downstream effect on the Implementation Specification, flagged for the Implementation Log rather than resolved here:** Spec Phase 5 ("roll the pipeline out to Bowls, Ballerina, Grismere, Poppy, Queen Ann") was written assuming all five would get a Reader identical in kind to Dragon's. That assumption no longer holds. What the other five Editions' `/editions/[slug]` pages and `/read` routes should actually do — a locked preview, an excerpt-only Reader, a straight acquire/purchase prompt, something else — is now an open Product Development question, not an engineering one, and Phase 5 cannot be scoped until it's answered.
