@@ -4216,10 +4216,16 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 .poems-showcase-ann__poem-img {
   width: 100%;
-  /* Raised again (480px -> 520px) for the same reason — greater
-     visual presence for the poem page while the photographic still
-     remains only slightly the more dominant of the two. */
-  max-width: 520px;
+  /* Raised to 520px for the same reason — greater visual presence for
+     the poem page while the photographic still remains only slightly
+     the more dominant of the two.
+     2026-07-07, per Susan: reduced by 15% (520px -> 442px) — the poem
+     was reading a little larger than the still, working against the
+     "equal partners" pairing. Reduced here at the base cap rather than
+     on the transform below, so the two stay proportional at every
+     breakpoint (each responsive max-width below is also reduced 15%
+     for the same reason). */
+  max-width: 442px;
   height: auto;
   display: block;
   /* 2026-06-29: modest +10% size bump, per Susan ("slightly too small
@@ -4239,7 +4245,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 @media (max-width: 1024px) {
   .poems-showcase-ann { gap: 2.25rem; max-width: 640px; }
-  .poems-showcase-ann__poem-img { max-width: 340px; }
+  .poems-showcase-ann__poem-img { max-width: 289px; } /* 2026-07-07: 340px, reduced 15% */
 }
 
 @media (max-width: 640px) {
@@ -4253,7 +4259,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      removed. This also means the poem now sits in the first (left)
      column on desktop/tablet, image second (right). */
   .poems-showcase-ann__text { aspect-ratio: auto; padding: 1.25rem 1rem; }
-  .poems-showcase-ann__poem-img { max-width: 320px; }
+  .poems-showcase-ann__poem-img { max-width: 272px; } /* 2026-07-07: 320px, reduced 15% */
 }
 
 .poems-showcase-ann__pdf-link {
