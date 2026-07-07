@@ -1,51 +1,75 @@
 # AwakenArts — AI Assistant Orientation
 
-> **Read this file first. Then read the two documents named below. Do not consult any other brief, framework, or older document unless explicitly told to.**
+> **Read this file first. Then consult `AwakenArts_Documentation_Map.md` to identify which governing documents apply to your task.**
 
-## The orientation set
+---
 
-Three documents govern AwakenArts. Together they answer: what the work IS, what we are DOING now, and how the repository is BUILT. An AI assistant working on this project should hold all three before suggesting changes.
+## What AwakenArts Is
 
-1. **`AwakenArts-THE-FORMS.docx`** *(root)* — also available as `docs/THE_FORMS.md`.
-   What the work IS. The ontology. The forms are the product; the website is a threshold; figures arise from forms; spiritual orientation is restrained and Christ-centered without being performative; AI imagery is atmosphere, not core. This is the floor. Never violate it.
+AwakenArts is a literary publishing imprint expressed through symbolic language. The primary product is the **Figure Edition** — a designed publication presenting a single symbolic figure through image, poem, and structured reflection. Six Figure Editions are currently live: Dragon, Bowls, Ballerina, Grismere, Poppy, and Queen Ann.
 
-2. **`AwakenArts-Forward-Brief-Production-Phase.docx`** *(root)* — also available as `docs/FORWARD_BRIEF_PRODUCTION_PHASE.md`.
-   What we are DOING now (production phase, May 2026 onward). New vocabulary (Symbolic Form, Collection, Threshold, Encounter, Emergence, Silhouette, Atmosphere). Public/protected layer architecture. Production pipeline. Page-by-page website reorientation.
+The website is not a portfolio or gallery. It is an editorial threshold — a publication that leads visitors into a body of symbolic work. Every design decision, piece of copy, and navigation element serves the work. The work does not serve the site.
 
-3. **`docs/ENCOUNTER_SYSTEM.md`** — what the repository actually contains right now (components, palette, routes, hard constraints). Read this before touching code.
+---
 
-## Operational rules for AI assistants
+## The Governing Document Set
 
-- **Form leads, figure follows.** Any change to imagery, components, or copy must reflect this ordering.
-- **Restraint is the posture.** When in doubt: fewer forms shown, more atmosphere held back, more concealment at the public surface.
-- **AI generates atmosphere, never form.** The symbolic forms are authored. Do not propose AI generation of forms themselves.
-- **No game-like, oracle-deck, fantasy-franchise, or spectacle-animation framing.** These are explicitly retired. The "flip card" interaction is being phased out in favor of silhouette + atmosphere emergence.
-- **The public site is the Threshold; the Collection is protected.** Do not propose full archive views, browsable catalogs, or readable-completeness layouts for the public surface.
-- **Repository-anchored work only.** A change is real only when it is implemented in the repo, locally verifiable, and committed. Conceptual reconciliation and documentation-only progress are out of scope for implementation passes.
-- **One concrete target per pass.** Inspect → identify one target → make the change → verify locally → commit. No simultaneous route/nav/metadata rewrites.
+Consult `AwakenArts_Documentation_Map.md` to determine which document governs any specific decision. The map is the authoritative index; update it whenever a governing document is added or superseded.
 
-## Vocabulary
+The current governing set, in consultation order:
 
-Use these terms consistently. They replace earlier looser language ("cards," "decks," "items," "Guidance Deck," "the Set").
+| Question | Document |
+|---|---|
+| What is AwakenArts? What are its values and identity? | `AwakenArts_Editorial_Identity_and_Design_Standard.md` |
+| What gets built next? What phase are we in? | `AwakenArts_Production_Roadmap.md` |
+| How is a specific page or component built? | `AwakenArts_Site_Architecture.md` |
+| Why was a major architectural decision made? | `AwakenArts_Publishing_Platform_Architecture.md` |
+| How does the Figure Edition Reader get built? | `AwakenArts_Implementation_Specification_v1.0.md` |
+| What is currently live vs. still pending? | `AwakenArts_Implementation_Log.md` |
+| Why is a Figure Edition built this way? | `AwakenArts_Editorial_Philosophy.md` |
+| How should a Figure Edition be produced? | `AwakenArts_Figure_Edition_Production_Standard.md` |
+| What were Susan's editorial decisions for Dragon? | `Dragon_Editorial_Responses.md` |
 
-- **Symbolic Form** — the primary authored object.
-- **The Collection** — the protected body of completed forms.
-- **The Threshold** — the public-facing website.
-- **Encounter** — a visitor's contemplative meeting with a single form.
-- **Emergence** — the slow reveal mechanic: hover, atmosphere, partial recognition.
-- **Silhouette** — the contour from which a form's visual identity arises.
-- **Atmosphere** — the AI-generated environmental tone clipped into the silhouette.
+---
 
-## What is NOT canonical orientation
+## Current Site Architecture
 
-Any document not named above (older project briefs, prior governing frameworks, reconciliation notes, session starters) is historical reference at best. Do not adopt their framing, vocabulary, or directives without explicit instruction from Susan.
+**Navigation (live):** Encounters · Collection · Gallery · Journal · About
 
-## Operational details
+**Primary pages:**
+- `/` — Homepage
+- `/encounters` — Encounters index; five movement pages (Deep, Word, Table, Path, Continue)
+- `/collection` — Edition catalog; links to `/editions/[slug]` preview pages
+- `/gallery` — Gallery of visual works
+- `/journal` — Journal index and entry pages
+- `/about` — About Susan Ann Shepler
+- `/foundation` — Biblical and theological foundation (unlisted from nav)
+- `/sketchbook` — Artist's Studio / work in progress (unlisted from nav)
+- `/workshops` — Workshop materials (unlisted from nav)
 
-- **Local path:** `/Users/sashe/Projects/AwakenArts/awakenarts-site`
-- **Stack:** Next.js 14, TypeScript, deployed via Vercel
-- **Deploy flow:** local build → commit → `git push origin main` → Vercel auto-deploys in ~60s → verify on mobile + desktop
-- **Operational docs:** `docs/SEO_HANDOFF.md` for SEO/indexing state and open external steps.
+**Key components:** `Nav.tsx`, `WayfindingBand.tsx`, `AtmosphericHeader.tsx`, `ProtectedImage.tsx`, `EmailGateDownload.tsx`
+
+**Stack:** Next.js 14, TypeScript, deployed via Vercel  
+**Local path:** `/Users/sashe/Projects/AwakenArts/awakenarts-site`  
+**Deploy flow:** local build → commit → `git push origin main` → Vercel auto-deploys (~60s) → verify on live site
+
+---
+
+## Operational Rules
+
+- **The work is primary.** Every change to imagery, copy, or components serves the symbolic work, not the other way around.
+- **Restraint is the posture.** When in doubt: less is more. The site should feel like a carefully edited publication, not a marketing website.
+- **Symbolic forms are authored, not generated.** Do not propose AI generation of figures, poems, or symbolic content. Atmospheric imagery may use AI generation; symbolic figures may not.
+- **No explaining what should be encountered.** The site invites recognition; it does not explain the work before the visitor has met it.
+- **One concrete target per pass.** Inspect → identify one target → make the change → verify locally → commit. Do not simultaneously rewrite routes, nav, metadata, and copy in one pass.
+- **Repository-anchored work only.** A change is real only when it is implemented in the repo, locally verifiable, and committed.
+- **Update the Documentation Map in the same commit** when a governing document is added, changed, or superseded.
+
+---
+
+## Historical Documents
+
+Documents in `docs/` (THE_FORMS.md, FORWARD_BRIEF_PRODUCTION_PHASE.md, ENCOUNTER_SYSTEM.md, WRITING_STYLE_GUIDE.md, etc.) reflect an earlier phase of the project (May 2026) and are retained as historical record. **Do not consult them as current authority.** Their content has been absorbed into the current governing set. The Documentation Map identifies the status of every document in the repository.
 
 ---
 

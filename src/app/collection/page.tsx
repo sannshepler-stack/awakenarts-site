@@ -188,13 +188,14 @@ export default function CollectionPage() {
                 <em>Everything else grows from them.</em>
               </h2>
               <p>
-                These original visual-literary pieces serve as points of entry
-                into reflection, discussion, recognition, and inquiry — through
-                image, symbol, poetry, and story, gathered into a growing body
-                of symbolic encounters.
+                Each Figure Edition invites readers into a symbolic story
+                that becomes a way of recognizing the patterns that shape
+                ordinary life — built from an original visual-literary
+                work: image, symbol, and poem, gathered into a growing
+                body of symbolic encounters.
               </p>
               <p>
-                Each Edition extends a single work into language, method, and
+                Each Edition extends its work into language, method, and
                 resource — companion materials that carry its themes into
                 conversation and continued exploration.
               </p>

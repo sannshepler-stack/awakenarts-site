@@ -91,7 +91,11 @@ export default function HomePage() {
           />
 
           {/* Primary tagline — the studio's full identity phrase.
-              Two spans let the second line indent for a balanced shape. */}
+              2026-06-30, per Susan ("Oops — Where Language Shapes a
+              Path remains"): the headline is restored to its original
+              two-line title treatment. The new copy added earlier today
+              belongs below it as the mission line — the reason the work
+              is done, not the headline itself. */}
           <h1 className="hero-tagline">
             <span>When Language</span>
             <span>Shapes a Path</span>
@@ -99,10 +103,13 @@ export default function HomePage() {
 
           {/* Mission line — restates the AwakenArts USP directly beneath
               the headline, echoed again on /encounters and in the Poems
-              preview section below. */}
+              preview section below.
+              2026-06-30, per Susan: both sentences of today's new hero
+              copy now live here together, beneath the restored
+              headline — the reason AwakenArts does this work. */}
           <p className="hero-mission">
-            Discover symbolic language through image and poem in a
-            growing collection of Figure Editions.
+            AwakenArts begins with encounter rather than explanation.
+            Here, the soul recognizes what the mind alone cannot.
           </p>
 
           {/* Editorial Invitations — the hero's two primary entry points
@@ -229,26 +236,28 @@ export default function HomePage() {
         <div className="poems-showcase-inner">
 
           {/* 1. Queen Ann Introduction — the title page before the
-              encounter. Name + a brief quotation from the poem, set
-              as a continuing thought rather than a closed citation;
-              no explanatory paragraph. */}
+              encounter. Title, then a single orientation line — no
+              poem excerpt here.
+              2026-06-30, per Susan's "single purpose per element"
+              directive: the poem excerpt ("when the night strikes
+              with silver light…") used to sit here as a second,
+              competing focal point under the title. It has moved to
+              the Invitation to Read, directly above the poem-download
+              link, where it can do its real job — drawing the visitor
+              toward the full poem. What remains here is one quiet
+              orientation line explaining why an image and a poem
+              appear together at all, sized and weighted as secondary
+              to the title rather than as a second headline. */}
           <div className="poems-showcase-intro">
             <p className="poems-showcase-intro__title">Queen Ann</p>
-            <p className="poems-showcase-intro__quote">
-              when the night strikes with silver light&hellip;
-            </p>
-            {/* 2026-06-29: per Susan, a quiet statement of the studio's
-                method placed directly beneath the poem excerpt — its own
-                smaller, non-italic line so it reads as an editorial aside
-                rather than a continuation of the quotation above it. */}
             <p className="poems-showcase-intro__tagline">
               Every AwakenArts work is born as both image and poem.
             </p>
           </div>
 
-          {/* 2. Queen Ann Encounter — the portrait still and the
-              poem as facing pages of one open book: equal height,
-              equal importance, identical top alignment, no captions.
+          {/* 2. Queen Ann Encounter — the poem and the portrait still
+              as facing pages of one open book: equal height, equal
+              importance, identical top alignment, no captions.
               The imagery now performs the work previously done by
               explanatory text.
               2026-06-29: swapped the poem image for a tighter crop
@@ -259,16 +268,17 @@ export default function HomePage() {
               Cropping in on the text itself (same 2:3 ratio, so the
               "facing pages" parity with the photo's frame is unchanged)
               makes the poem's own presence in the frame match the
-              photo's, addressing Susan's "one dominates the other." */}
+              photo's, addressing Susan's "one dominates the other."
+              2026-07-07, per Susan: the poem must read first, on every
+              screen size, not just be reordered on mobile via CSS. The
+              poem block now comes first in markup, the photo second —
+              this fixes both the mobile stacking order and puts the
+              poem in the first (left) desktop column, image second
+              (right), as she explicitly asked for. The previous
+              mobile-only `order` swap in globals.css is no longer
+              needed with the DOM itself in the right order, and has
+              been removed. */}
           <div className="poems-showcase-ann">
-            <div className="poems-showcase-ann__frame">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/forms/queen-ann-still.png"
-                alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
-                loading="lazy"
-              />
-            </div>
             <div className="poems-showcase-ann__text">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -278,7 +288,26 @@ export default function HomePage() {
                 loading="lazy"
               />
             </div>
+            <div className="poems-showcase-ann__frame">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/forms/queen-ann-still.png"
+                alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
+                loading="lazy"
+              />
+            </div>
           </div>
+
+          {/* 2026-06-30 — Invitation to Read, per Susan's "single
+              purpose per element" directive: the poem excerpt that
+              used to sit under the title page heading now lives here,
+              immediately above the download link, sized down so it
+              reads as an invitation rather than a heading — its job is
+              to draw the visitor toward the full poem, not to explain
+              the work a second time. */}
+          <p className="poems-showcase-ann__excerpt">
+            when the night strikes with silver light&hellip;
+          </p>
 
           {/* 2026-06-29: printable PDF link, per Susan — "Ann can be
               linked to a pdf that is printable in some form or style."

@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import {
   Chrome,
   Eyebrow,
-  ScrollCue,
   ClosingStrip,
   cormorant,
   inter,
@@ -47,8 +46,6 @@ export default function TableEncounterPage() {
             <span className={styles.echoRef}>Angel Gardens</span>
           </span>
         </div>
-
-        <ScrollCue />
       </section>
 
       <ClosingStrip line="Welcome is followed by listening." />

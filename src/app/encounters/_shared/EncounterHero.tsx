@@ -45,15 +45,6 @@ export function Eyebrow() {
   )
 }
 
-export function ScrollCue({ href = '#continue' }: { href?: string }) {
-  return (
-    <a href={href} className={styles.scrollCue}>
-      <span className={styles.scrollArrow} aria-hidden="true">↓</span>
-      <span className={styles.scrollWord}>Scroll</span>
-    </a>
-  )
-}
-
 export function ClosingStrip({ line }: { line: string }) {
   // Per Susan's "Global Page Architecture Standard" directive
   // (2026-06-25): the per-stage text navigation ("Encounter I ·

@@ -104,7 +104,7 @@ export default function EncountersIndexPage() {
         <p className={styles.journalEyebrow}>Free Companion</p>
         <h2 className={styles.journalTitle}>The AwakenArts Encounter Journal</h2>
         <p className={styles.journalCopy}>
-          A short, self-guided companion to the five introductory Encounters.
+          A self-guided companion to the Encounters.
         </p>
         <EmailGateDownload
           pdfHref="/files/free/AwakenArts_Encounter_Journal.pdf"

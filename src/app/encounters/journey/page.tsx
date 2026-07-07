@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import {
   Chrome,
   Eyebrow,
-  ScrollCue,
   ClosingStrip,
   cormorant,
   inter,
@@ -42,8 +41,6 @@ export default function JourneyEncounterPage() {
             <span className={styles.ref}>Hebrews 11:8</span>
           </span>
         </div>
-
-        <ScrollCue />
       </section>
 
       <ClosingStrip line="The path continues into stiller water." />

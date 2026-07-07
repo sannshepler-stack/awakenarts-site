@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import {
   Chrome,
   Eyebrow,
-  ScrollCue,
   ClosingStrip,
   cormorant,
   inter,
@@ -55,8 +54,6 @@ export default function ContinueEncounterPage() {
             of what follows.
           </span>
         </div>
-
-        <ScrollCue href="#continue" />
       </section>
 
       <ClosingStrip line="Continue exploring these themes through the AwakenArts Collection." />

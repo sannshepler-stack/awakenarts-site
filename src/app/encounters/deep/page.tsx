@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import {
   Chrome,
   Eyebrow,
-  ScrollCue,
   ClosingStrip,
   cormorant,
   inter,
@@ -42,8 +41,6 @@ export default function DeepEncounterPage() {
             <span className={styles.ref}>Psalm 42:7</span>
           </span>
         </div>
-
-        <ScrollCue />
       </section>
 
       <ClosingStrip line="From the deep, a table is being prepared." />

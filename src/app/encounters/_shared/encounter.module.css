@@ -11,8 +11,14 @@
  *
  * Per the image production standard: the hero background is a
  * photographic image only (a "-web" production asset, no baked-in
- * type). All typography, the scroll cue, and the closing strip are
- * built live in HTML/CSS here — never baked into the image.
+ * type). All typography and the closing strip are built live in
+ * HTML/CSS here — never baked into the image.
+ *
+ * 2026-06-30: the scroll-down cue ("ScrollCue") that used to sit at
+ * the bottom of each hero was removed site-wide per Susan's
+ * directive — it implied an extra required step and interrupted the
+ * reading experience. Pages now end their hero and flow straight to
+ * the closing strip with no in-between prompt.
  */
 
 /* --enc-gold / --enc-gold-lt / --enc-cream / --enc-mist are declared in
@@ -177,34 +183,6 @@
   opacity: 0.9;
 }
 
-/* Scroll cue — bottom-left of the hero */
-.scrollCue {
-  position: absolute;
-  left: clamp(1.5rem, 7vw, 7rem);
-  bottom: 3.4rem;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-  color: var(--enc-gold-lt);
-}
-.scrollArrow {
-  font-size: 0.85rem;
-  display: inline-block;
-  animation: encBob 2.2s ease-in-out infinite;
-}
-@keyframes encBob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(3px); }
-}
-.scrollWord {
-  font-family: var(--enc-sans);
-  font-size: 0.66rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
 /* Closing strip — quiet, beneath the hero. Room for future sections to
    be inserted between the hero and this strip without redesigning the
    encounter (per "Future Growth"). */
@@ -213,8 +191,12 @@
   /* Bottom value is the AwakenArts Vertical Rhythm Standard's
      universal "content end -> Wayfinding Band" gap (--band-gap,
      globals.css :root) — this strip is the last content on every
-     individual encounter page before <WayfindingBand />. */
-  padding: 3.8rem 1.6rem var(--band-gap);
+     individual encounter page before <WayfindingBand />.
+     2026-06-30: top padding increased (3.8rem -> 5.2rem) per Susan's
+     request for "more space around" the closing line, so the thought
+     has more quiet room on its own rather than feeling tucked under
+     the hero. */
+  padding: 5.2rem 1.6rem var(--band-gap);
   text-align: center;
 }
 
@@ -226,15 +208,22 @@
 
 @media (max-width: 640px) {
   .closingStrip {
+    padding-top: 4rem;
     padding-bottom: var(--band-gap-sm);
   }
 }
 .closingLine {
+  /* 2026-06-30: color brightened (--enc-mist -> --enc-cream) and size
+     nudged up so the line reads clearly against the dark strip —
+     per Susan's "make sure the text ... is visible." Width capped and
+     centered so it sits as one quiet, deliberate thought rather than
+     a directive — per "as a thought not a journal prompt." */
   font-style: italic;
-  color: var(--enc-mist);
-  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
-  line-height: 1.6;
-  margin: 0 0 1.6rem;
+  color: var(--enc-cream);
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  line-height: 1.7;
+  max-width: 38rem;
+  margin: 0 auto;
 }
 /* Responsive — collapse to centered layout on narrow viewports */
 @media (max-width: 720px) {
@@ -248,10 +237,4 @@
     text-align: center;
   }
   .eyebrowRule { justify-content: center; }
-  .scrollCue {
-    left: 0;
-    right: 0;
-    bottom: 2.2rem;
-    justify-content: center;
-  }
 }

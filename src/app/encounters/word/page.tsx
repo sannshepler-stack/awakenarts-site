@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import {
   Chrome,
   Eyebrow,
-  ScrollCue,
   ClosingStrip,
   cormorant,
   inter,
@@ -49,8 +48,6 @@ export default function WordEncounterPage() {
             <span className={styles.echoRef}>Swan Sings</span>
           </span>
         </div>
-
-        <ScrollCue />
       </section>
 
       <ClosingStrip line="The word heard becomes a way to walk." />

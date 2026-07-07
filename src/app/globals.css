@@ -4113,20 +4113,41 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   margin: 0;
 }
 .poems-showcase-intro__tagline {
-  /* 2026-06-29: added per Susan, directly beneath the poem excerpt.
-     First pass (body-size, upright, --mid) read as too "dinky" /
-     unnoticeable next to the gold quote above it. Revised per Susan:
-     "enlarge... so that it works with the other and is larger than
-     it is now" — sized up substantially and made italic/deep-toned so
-     it reads as a deliberate companion statement to the quote, not a
-     quiet footnote, while staying a step below the quote's full gold
-     weight so the two still read as two distinct lines. */
+  /* 2026-06-30, per Susan's "single purpose per element" directive:
+     this is now the only line beneath the title (the poem excerpt
+     that used to sit above it has moved to the Invitation to Read,
+     above the download link). As the title page's lone orientation
+     line — explaining why an image and poem appear together, not
+     making its own statement — it has been brought back down from
+     the enlarged "companion to the gold quote" treatment of the prior
+     pass to a quiet, secondary register: body-scale, muted --mid
+     tone, modest top margin off the title. */
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.2rem, 1.9vw, 1.45rem);
+  font-size: calc(var(--body-size) + 2px);
+  line-height: 1.6;
+  color: var(--mid);
+  margin: 0.85rem 0 0;
+}
+
+.poems-showcase-ann__excerpt {
+  /* 2026-06-30, added per Susan's "single purpose per element"
+     directive: the poem excerpt formerly under the title page heading
+     ("when the night strikes with silver light…") now sits here,
+     directly above the download link, sized down from its old
+     title-page scale so it functions as an invitation toward the full
+     poem rather than a second heading. Top margin carries the same
+     spacing that used to sit on .poems-showcase-ann__pdf-link (the
+     gap belongs between the image pair and this line, now the first
+     element of the Invitation); the link's own top margin is tightened
+     so the excerpt and link read as one unit. */
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
   line-height: 1.5;
-  color: var(--deep);
-  margin: 1.1rem 0 0;
+  color: var(--gold);
+  text-align: center;
+  margin: 1.75rem 0 0.5rem;
 }
 
 /* ── 2. Queen Ann — literary spread, facing pages of one open book ──
@@ -4163,6 +4184,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   object-fit: cover;
   object-position: center;
   display: block;
+  /* 2026-07-07, per Susan: with the poem now first (left) and the
+     photo second (right), the photo is mirrored horizontally so Ann's
+     gaze/hair now stream toward the left — the same direction the
+     poem sits — so the two "model one another" rather than facing
+     each other across a gutter. A CSS transform, not a change to the
+     source asset, so it stays reversible and the original file is
+     untouched. */
+  transform: scaleX(-1);
 }
 
 /* Margins reduced (2rem → 1.25rem) and the poem image's cap raised
@@ -4219,6 +4248,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
     gap: 1.75rem;
     max-width: 360px;
   }
+  /* 2026-07-07, per Susan: poem now comes first in markup itself (see
+     app/page.tsx), so no `order` override is needed here anymore —
+     removed. This also means the poem now sits in the first (left)
+     column on desktop/tablet, image second (right). */
   .poems-showcase-ann__text { aspect-ratio: auto; padding: 1.25rem 1rem; }
   .poems-showcase-ann__poem-img { max-width: 320px; }
 }
@@ -4229,9 +4262,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      CTA-link token (.hero-quote-closing, "Read the Foundation of
      AwakenArts →") rather than the boxed button used on /editions/
      [slug], so it reads as a quiet continuation of the page's own
-     voice instead of a storefront action. */
+     voice instead of a storefront action.
+     2026-06-30: top margin removed (1.75rem -> 0) — that gap now
+     lives on .poems-showcase-ann__excerpt, the new element directly
+     above this one, so the excerpt and the link sit close together
+     as a single two-line invitation rather than two separately
+     spaced elements. */
   text-align: center;
-  margin: 1.75rem 0 0;
+  margin: 0;
 }
 .poems-showcase-ann__pdf-link a {
   font-family: var(--serif);
@@ -6985,12 +7023,19 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
      in favor of raising the shared --subtitle-size token itself
      (see :root) -- Susan's point was that the size was inconsistent
      and too small across every page that uses this token, not just
-     this one, so the fix belongs at the token. */
+     this one, so the fix belongs at the token.
+     2026-06-30: a deliberate, scoped exception to that rule — Susan
+     added a third credentials line (the two certifications now each
+     carry their acronym, TLAN/CJT) and asked for the block to read
+     smaller now that it's three lines instead of two. This is a
+     one-off reduction on .about-credentials only, not a change to the
+     shared --subtitle-size token -- every other subtitle on the site
+     is unaffected. */
   font-family: var(--serif);
   font-style: italic;
-  font-size: var(--subtitle-size);
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
   color: var(--gold);
-  line-height: var(--subtitle-line);
+  line-height: 1.55;
   margin: 0 0 2rem;
 }
 
@@ -7036,6 +7081,48 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 /* ── Continuing prose ── */
 .about-body-section {
   /* No max-width cap — flows at full column width */
+}
+
+/* "How the Work Emerged" — a distinct section within the continuing
+   prose (2026-07-07, per Susan). Sized as a secondary heading, well
+   below .about-h1, so it reads as a section within the page rather
+   than competing with "Susan Ann Shepler" at the top. */
+.about-h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  font-weight: var(--h1-weight);
+  color: var(--deep);
+  margin: 2.5rem 0 1.25rem;
+  line-height: 1.25;
+}
+
+/* ── Final invitations — Foundation + Sketchbook ──────────────
+   2026-06-30, per Susan: the page's last expression before the
+   footer — two quiet, equally-weighted destinations, not a "More
+   About" section. No heading, normal paragraph spacing (the
+   .about-body--quiet rhythm above already supplies the lead-in
+   gap), so this reads as the narrative's natural close rather than
+   a new block. Both items share identical typography — neither
+   link is allowed to read as more prominent than the other. */
+.about-links {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.about-links__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+.about-links__desc {
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--mid);
 }
 
 /* ── Responsive ── */

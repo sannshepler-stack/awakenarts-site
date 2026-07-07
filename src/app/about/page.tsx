@@ -49,9 +49,16 @@ export default function AboutPage() {
             />
             <p className="eyebrow">About</p>
             <h1 className="about-h1">Susan Ann Shepler</h1>
+            {/* 2026-06-30, per Susan's revision: the two professional
+                certifications now get their own lines, each with its
+                governing body's acronym, beneath the unchanged
+                "Artist · Writer · MA Counseling" line. Three lines
+                instead of two — see .about-credentials in globals.css
+                for the matching size reduction. */}
             <p className="about-credentials">
               Artist · Writer · MA Counseling<br />
-              Certified Transformative Language Artist
+              Certified Transformative Language Artist (TLAN)<br />
+              Certified Journal Instructor (CJT)
             </p>
             <p className="about-body">
               AwakenArts began through a long practice of working with language,
@@ -114,14 +121,33 @@ export default function AboutPage() {
               throughout Scripture.
             </p>
 
-            {/* 2026-06-28: quiet link to /foundation — per Susan's directive,
-                findable near the section explaining AwakenArts' origins, but
-                a single understated line, not a CTA competing with the prose
-                above it. */}
-            <p className="about-body about-body--quiet" style={{ marginBottom: '2.5rem' }}>
-              <Link href="/foundation" className="text-link">
-                Read the Foundation of AwakenArts →
-              </Link>
+            {/* 2026-07-07, per Susan's directive — a new section on how
+                the work itself came to be, distinct from the surrounding
+                paragraphs about what the work explores. Given its own
+                heading (.about-h2) so it reads as a section, not a
+                continuation of the prose above it. */}
+            <h2 className="about-h2">How the Work Emerged</h2>
+            <p className="about-body">
+              The poems of AwakenArts emerged through a creative dialogue between
+              image and language. Sometimes an image came first and called for
+              words. At other times, the poem revealed something more about the
+              image. Neither led for long. Each continually informed the other.
+            </p>
+            <p className="about-body">
+              That creative process became a meeting place where symbolic patterns
+              surfaced long before I could fully explain them. Carl Jung described
+              this as the unconscious giving symbolic form to realities that lie
+              beyond ordinary awareness. Whether understood psychologically,
+              artistically, or spiritually, these images consistently revealed
+              truths that required years of reflection to more fully articulate.
+            </p>
+            <p className="about-body">
+              The poems themselves have remained remarkably unchanged. What
+              matured over time was not the symbolic work, but the language
+              surrounding it. The Figure Editions and Companions represent that
+              continuing effort&mdash;to accompany the poems with literary,
+              psychological, and Christian reflection while remaining faithful to
+              what the images had expressed from the beginning.
             </p>
 
             <p className="about-body about-body--quiet">
@@ -131,6 +157,35 @@ export default function AboutPage() {
               as a Journal Instructor through the Center for Journal Therapy in
               Denver, Colorado.
             </p>
+
+            {/* 2026-06-30, per Susan's directive: the page's final
+                expression is two quiet, equally-weighted destinations —
+                not a "More About" section, not cards, no heading. The
+                visitor finishes the narrative, then is offered two
+                places to go next. Normal paragraph spacing only (no
+                large gap) so this reads as a continuation of the page,
+                not a new section. Foundation and Sketchbook are
+                deliberately given identical treatment — until the
+                Sketchbook existed, the Foundation link stood alone and
+                read as more prominent than intended. */}
+            <div className="about-links">
+              <p className="about-links__item">
+                <Link href="/foundation" className="text-link">
+                  Read the Foundation of AwakenArts <span aria-hidden="true">→</span>
+                </Link>
+                <span className="about-links__desc">
+                  The literary and biblical foundations of the work.
+                </span>
+              </p>
+              <p className="about-links__item">
+                <Link href="/sketchbook" className="text-link">
+                  Visit the Artist&rsquo;s Sketchbook <span aria-hidden="true">→</span>
+                </Link>
+                <span className="about-links__desc">
+                  Original artwork by Susan Ann Shepler.
+                </span>
+              </p>
+            </div>
           </div>
 
         </main>
