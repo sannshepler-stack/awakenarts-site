@@ -60,18 +60,6 @@ export default function AboutPage() {
               Certified Transformative Language Artist (TLAN)<br />
               Certified Journal Instructor (CJT)
             </p>
-            <p className="about-body">
-              AwakenArts began through a long practice of working with language,
-              image, and symbolic form. The works are shaped from language itself,
-              where poetic structure and figure carry meaning together rather than
-              one explaining the other.
-            </p>
-            <p className="about-body">
-              Each work begins as a poem before any visual structure is considered.
-              Through revision, rhythm, spacing, repetition, and arrangement, the
-              language gradually gathers into visible form. The shape is not imposed
-              afterward. The words construct the figure.
-            </p>
           </div>
 
           {/* ── MERRI — visual interrupt ───────────────────────────────
@@ -93,39 +81,35 @@ export default function AboutPage() {
           </figure>
 
           {/* ── CONTINUING PROSE ──────────────────────────────────── */}
+          {/* 2026-07-07, per Susan's directive: full content replacement
+              of the page body below the opening bio, organized into
+              three named sections — About AwakenArts, How the Work
+              Emerged, About the Author. Portrait, Merri image, and the
+              closing Foundation/Sketchbook links are unchanged; only
+              the prose content itself was replaced. */}
           <div className="about-body-section">
+            <h2 className="about-h2">About AwakenArts</h2>
             <p className="about-body">
-              The resulting works form a non-linear path through symbolic experience,
-              tension, conflict, longing, recognition, and awareness. The figures are
-              not fixed symbols with single meanings. They approach human experience
-              through layered forms that often hold opposing realities at once —
-              innocence and performance, beauty and fracture, fear and grace,
-              concealment and revelation, strength and vulnerability.
+              AwakenArts explores human experience through symbolic poems, figures,
+              and literary encounters. Rather than offering fixed interpretations,
+              the work invites readers into a process of recognition through image,
+              language, and reflection.
             </p>
             <p className="about-body">
-              Many of the works emerge from recurring patterns found across personal
-              experience, culture, story, faith, inward conflict, and symbolic life.
-              Rather than offering fixed interpretation, AwakenArts approaches these
-              figures as forms to encounter, reflect upon, and gradually recognize.
+              The figures approach experiences that often resist ordinary
+              explanation&mdash;conflict and reconciliation, longing and belonging,
+              strength and vulnerability, concealment and revelation. They are not
+              presented as puzzles to solve, but as invitations to notice what feels
+              deeply familiar before attempting to explain it.
             </p>
             <p className="about-body">
-              We live among symbols whether we notice them or not. Images shape memory,
-              stories organize identity, and language itself can take visible form.
-              AwakenArts explores these realities through symbolic poetic forms,
-              readings, and literary encounters shaped through image, figure, tension,
-              and awareness.
-            </p>
-            <p className="about-body">
-              The work draws from poetry, parable, allegory, archetype, and symbolic
-              form while remaining attentive to the figurative language found
-              throughout Scripture.
+              The work draws from poetry, parable, allegory, archetypal patterns,
+              and the rich figurative language found throughout Scripture. While
+              informed by psychology and symbolic tradition, AwakenArts finds its
+              deepest orientation in the Christian story, where recognition
+              ultimately points toward reconciliation in Christ.
             </p>
 
-            {/* 2026-07-07, per Susan's directive — a new section on how
-                the work itself came to be, distinct from the surrounding
-                paragraphs about what the work explores. Given its own
-                heading (.about-h2) so it reads as a section, not a
-                continuation of the prose above it. */}
             <h2 className="about-h2">How the Work Emerged</h2>
             <p className="about-body">
               The poems of AwakenArts emerged through a creative dialogue between
@@ -145,17 +129,18 @@ export default function AboutPage() {
               The poems themselves have remained remarkably unchanged. What
               matured over time was not the symbolic work, but the language
               surrounding it. The Figure Editions and Companions represent that
-              continuing effort&mdash;to accompany the poems with literary,
-              psychological, and Christian reflection while remaining faithful to
-              what the images had expressed from the beginning.
+              continuing effort to accompany the poems with literary, psychological,
+              and Christian reflection while remaining faithful to what they had
+              expressed from the beginning.
             </p>
 
+            <h2 className="about-h2">About the Author</h2>
             <p className="about-body about-body--quiet">
-              Susan holds an MA in Counseling Psychology from Webster University.
-              She is a Certified Transformative Language Artist through the
-              Transformative Language Arts Network and also earned certification
-              as a Journal Instructor through the Center for Journal Therapy in
-              Denver, Colorado.
+              Susan Ann Shepler holds a Master of Arts in Counseling Psychology from
+              Webster University. She is a Certified Transformative Language Artist
+              through the Transformative Language Arts Network and a Certified
+              Journal Instructor through the Center for Journal Therapy in Denver,
+              Colorado.
             </p>
 
             {/* 2026-06-30, per Susan's directive: the page's final
