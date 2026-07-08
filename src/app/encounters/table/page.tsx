@@ -32,18 +32,24 @@ export default function TableEncounterPage() {
         <div className={styles.heroInner}>
           <Eyebrow />
           <h1 className={`${cormorant.className} ${styles.title}`}>The Table</h1>
+          {/* 2026-07-08, Encounters Revision: two opening statements
+              replace the former single line, per Susan's directive. */}
           <p className={`${cormorant.className} ${styles.line}`}>
-            A place prepared for us often becomes the place where we begin to
-            recognize ourselves.
+            Some moments invite us to stop striving and simply receive.
           </p>
+          <p className={`${cormorant.className} ${styles.lineSecond}`}>
+            What we need most is often waiting for us.
+          </p>
+          {/* 2026-07-08: per Susan's directive, Psalm 23:5 and the Angel
+              Gardens echo are both removed. The Swindoll quote becomes
+              this page's single Christian companion — given the primary
+              (.scripture) treatment since it is now the only quote on
+              the page. */}
           <span className={`${cormorant.className} ${styles.scripture}`}>
-            &ldquo;You prepare a table before me in the presence of my
-            enemies…&rdquo;
-            <span className={styles.ref}>Psalm 23:5</span>
-          </span>
-          <span className={`${cormorant.className} ${styles.echo}`}>
-            &ldquo;I sow my love with Heaven&rsquo;s care…&rdquo;
-            <span className={styles.echoRef}>Angel Gardens</span>
+            &ldquo;We must cease striving and trust God to provide what He
+            thinks is best and in whatever time He chooses to make it
+            available.&rdquo;
+            <span className={styles.ref}>Charles R. Swindoll</span>
           </span>
         </div>
       </section>

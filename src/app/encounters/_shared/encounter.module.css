@@ -141,6 +141,19 @@
   color: var(--enc-gold-lt);
 }
 
+/* 2026-07-08, Encounters Revision: each hero now carries two opening
+   statements instead of one. .lineSecond reuses the identical
+   --subtitle-size/--subtitle-line tokens as .line (no new type scale
+   introduced) and simply adds a small margin-top so the two sentences
+   read as a related pair rather than one run-on line. */
+.lineSecond {
+  font-style: italic;
+  font-size: var(--subtitle-size);
+  line-height: var(--subtitle-line);
+  margin: 0.45rem 0 0;
+  color: var(--enc-gold-lt);
+}
+
 /* Scripture and Echo are poetry — they should read as poetry, at a size
    and line-height that invite reading rather than glancing. Readable
    first, atmospheric second. */

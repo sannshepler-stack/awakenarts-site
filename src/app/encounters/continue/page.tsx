@@ -32,26 +32,23 @@ export default function ContinueEncounterPage() {
         <div className={styles.heroInner}>
           <Eyebrow />
           <h1 className={`${cormorant.className} ${styles.title}`}>Continue</h1>
+          {/* 2026-07-08, Encounters Revision: two opening statements
+              replace the former single line, per Susan's directive. */}
           <p className={`${cormorant.className} ${styles.line}`}>
-            Recognition is not a place to remain. It becomes a way to walk.
+            Every new day is a new beginning.
           </p>
+          <p className={`${cormorant.className} ${styles.lineSecond}`}>
+            There is always more to learn, more ways to grow, and more to
+            discover.
+          </p>
+          {/* 2026-07-08: pared down to one quote per Encounter page —
+              the C.S. Lewis companion quote is removed. Psalm 121:8
+              stands alone as this page's single Christian companion,
+              matching Journey, Deep, and Word. */}
           <span className={`${cormorant.className} ${styles.scripture}`}>
             &ldquo;The Lord will watch over your coming and going both now
             and forevermore.&rdquo;
             <span className={styles.ref}>Psalm 121:8</span>
-          </span>
-          {/*
-            2026-06-27: not an AwakenArts Echo — there's no real corpus
-            line that fits, and Susan asked not to force/fabricate one.
-            This is original reflective copy instead: no quotation marks,
-            no .echoRef source line, since it isn't a quote and isn't
-            attributed to anything. Reuses .echo purely for its italic/
-            mist typography, matching the visual rhythm of the other four
-            pages without claiming to be sourced material.
-          */}
-          <span className={`${cormorant.className} ${styles.echo}`}>
-            Recognition does not end when the page does — it becomes part
-            of what follows.
           </span>
         </div>
       </section>

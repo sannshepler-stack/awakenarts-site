@@ -1194,6 +1194,176 @@ Pages 1, 2, 3, and 8 confirmed in full conformance. Two findings on pages 4–7:
 
 **Implementation status.** Review complete. No revisions have been made to the Journal itself — findings are presented for Susan's direction, per instruction that this phase was verification, not editing.
 
+## 2026-07-07 — Encounter Journal revised and republished (Scripture/Echo distinction)
+
+Per Susan's approval of the Conformance Review, implemented the two approved fixes only. **Scripture/Echo distinction (pages 5 and 6):** Scripture is now visually primary — navy ink (`#1C2B3A`) quote text, gold (`#8b6914`) reference line — and the AwakenArts Echo quote is now visually secondary — muted gray (`#8a8a8a`) quote text, muted gold-gray (`#ab9a68`) reference line — mirroring the brighter/dimmer relationship the live `/encounters/table` and `/encounters/word` pages already carry (`.scripture` vs `.echo` in `encounter.module.css`) but which the Journal had flattened. No wording changed on either page. **Closing page (page 8):** reviewed again; confirmed no update needed — "The AwakenArts Guide to Symbolic Facilitation" and "the AwakenArts Collection" both remain the current, correct product names per `AwakenArts_Product_Architecture.md`. Deliberately did not add a direct link to `/workshops` — that page is intentionally unlisted ("live but... reachable only by direct URL until Susan decides to publish it into navigation" per `AwakenArts_Site_Architecture.md`), and deep-linking it from a widely-distributed free PDF would be a bigger publication decision than this targeted revision authorized.
+
+**Scripture sequencing was explicitly not touched**, per instruction — remains an open editorial question for a future series-wide decision, not applied here.
+
+**Method:** rather than rebuilding the Journal from scratch (no source generation script exists in the repo), patched only the two affected pages surgically — white-out plus redrawn text at the same position or the old, undifferentiated Scripture/Echo blocks — and left pages 1–4, 7, and 8 byte-identical to the prior version. Verified visually (rendered every page) and via metadata/link-text extraction that all `awakenarts.com/...` links, the document title, and page count (8) are unchanged.
+
+**Built:** `AwakenArts_Encounter_Journal.pdf` (repo root) and `public/files/free/AwakenArts_Encounter_Journal.pdf` both replaced with the revised version.
+
+**Implementation status.** Complete. This revised Journal is now the current public edition of the free AwakenArts resource.
+
+## 2026-07-08 — Encounters Revision: website pages and printable Journal rebuilt to a shared production template
+
+Per Susan's "Encounters Revision — Final Implementation Brief," which superseded her own preceding draft directive on the same day and explicitly retired the three legacy planning files (`table-01-web-notes.txt`, `word-01-web-notes.txt`, `continue-01-notes.txt` — confirmed stale before this work began: they still referenced the "Scroll Cue" field removed site-wide 2026-06-30, and `continue-01-notes.txt` misattributed Psalm 119:105 to Continue when the live site and Journal both use Psalm 121:8 for Continue and 119:105 for The Word only, per Susan's own clarification in the brief). `public/images/encounters/mock-up.png` ("Thought Path #1 / The Invitation") is adopted as the printable Journal's production template; `journey-02-web.png` and `deep-02-web.png` are confirmed as the only two new hero images (Table, Word, Continue keep their existing `-01-web` images, per Susan's own note); `footer-01.png` is adopted as the shared "path forward" image for the bottom of every Journal Encounter page.
+
+**Website — all five Encounter pages (`src/app/encounters/{journey,deep,table,word,continue}/page.tsx`).** Each hero now carries two opening statements (new `.lineSecond` style added to `encounter.module.css`, reusing the existing `--subtitle-size`/`--subtitle-line` tokens rather than forking a new one) in place of the former single line, and a single Christian companion per Susan's exact copy: Journey retains Hebrews 11:8; Deep's Scripture is replaced (Psalm 42:7 → Proverbs 20:5); Table's Scripture (Psalm 23:5) and the Angel Gardens echo are both removed, replaced by a single Swindoll quote given the primary (`.scripture`) treatment since it's now the page's only quote; Word retains Psalm 119:105 and drops the Swan Sings echo; Continue retains Psalm 121:8 as Scripture and replaces its former unattributed reflective line with an attributed C.S. Lewis quote in the secondary (`.echo`) slot. Journey and Deep's hero images updated to the `-02-web` files.
+
+**Printable Journal (`AwakenArts_Encounter_Journal.pdf`).** Pages 3–7 (the five Encounters) fully rebuilt from scratch against the mock-up template — full-bleed hero band (scrim + cream/gold title treatment, matching the website hero's own visual language, since the source photos aren't uniformly pale like the mock-up's demo image), two opening statements, a "Journal Reflection" label (added to satisfy the brief's explicit content requirement, since the mock-up itself doesn't show one), two reflection questions each with three ruled writing lines, a closing invitation kept in the cream field rather than overlaid on the photo (an overlay placement was tried first and found illegible against several of the brighter source images — moved for legibility, not decoration), and the shared `footer-01.png` path image as a purely visual closer. Page 2 ("How to Use This Journal") was also rewritten — not requested explicitly, but required for consistency: its prior text described the four-movement Encounter/Recognition/Reflection/Integration model, which the rebuilt pages no longer show. New copy describes the actual two-question/one-invitation structure while preserving the page's original tone and its closing paragraph naming the five Encounters in order. Pages 1 and 8 are byte-identical to the prior version (copied through via `pypdf`, not regenerated). The functioning "Continue this encounter" link to each `/encounters/<slug>` page is preserved on every rebuilt page (`reportlab.Canvas.linkURL`, verified present and correct on all five pages after build).
+
+**Image production.** Band composites for the PDF are saved as JPEG rather than PNG after an initial build came in at 38.5MB — JPEG at quality 88 brought the file to 3.2MB, checked against a rendered page to confirm no visible quality loss. Separately, per Susan's request for two media from one set of assets, CMYK 300dpi TIFF masters were generated for all five hero images plus `footer-01.png` (`journey-02-print-cmyk.tiff` etc., saved alongside each source file). **Flagged directly, not glossed over:** the source images are 1402–1536px wide; at true 300dpi that supports clean print reproduction only up to about 4.7–5.1 inches of width, not a full 8.5" letter bleed. The CMYK conversion is correct as far as color space goes, but if these images are ever sent to a commercial press at full page width, higher-resolution source photography would be needed first — noted here so it isn't discovered only at the print stage.
+
+**Verification.** `tsc --noEmit` clean after the website page edits. All 8 Journal pages rendered to image and visually checked; all 5 continue-links extracted via `pypdf` and confirmed pointing to the correct `awakenarts.com/encounters/<slug>` URLs; metadata (title, author, subject) confirmed intact; both `AwakenArts_Encounter_Journal.pdf` (repo root) and `public/files/free/AwakenArts_Encounter_Journal.pdf` replaced and confirmed byte-identical to each other. The live download link on `/encounters` (`pdfHref="/files/free/AwakenArts_Encounter_Journal.pdf"`) required no code change since the filename and path are unchanged.
+
+**Implementation status.** Complete. This is the current public Encounters experience across both the website and the free Journal download.
+
+## 2026-07-08 — Encounter Journal: final design refinements (numbering, bottom image, white space)
+
+Per Susan's review of the rebuilt Journal ("The journal redesign is a significant improvement... A few final refinements will strengthen the printed journal even further"), five refinements applied to the five rebuilt Encounter pages (3–7):
+
+1. **Numbered markers removed.** The "1./2./3." markers before the opening statements and each reflection question are gone; all body text now sits on one quiet left margin with no list treatment, so the page reads as invitation rather than assignment.
+2. **Bottom landscape image removed.** The shared `footer-01.png` path band at the bottom of each page is retired. The hero image is now each page's only photograph.
+3. **Hero image prominence preserved** — untouched (232pt full-bleed band, scrim, cream/gold title treatment).
+4. **White space increased, not filled.** The space reclaimed by removing the bottom band was deliberately left as open cream field beneath the closing invitation — line spacing and inter-section gaps were loosened slightly, but no new content, rule, or ornament was added to occupy it. The closing invitation ("Are you ready to begin?" etc.) is now the last visual element on the page.
+5. **"Journal Reflection" label softened.** Reduced from 8.5pt gold to 7.5pt light-gold (`--enc-gold-lt` equivalent), with wider letter-spacing and more room above and below it, so it now reads as a quiet transition rather than a section heading.
+
+Image production (RGB web + CMYK 300dpi print, per Susan's point 6) was already completed in the prior entry for all five hero images; that work is unaffected by this pass. `footer-01-print-cmyk.tiff` remains on disk as an unused asset now that the bottom band is retired — left in place rather than deleted, in case it's wanted elsewhere.
+
+**Verification.** All 8 pages re-rendered and visually checked; all 5 continue-links and metadata re-verified via `pypdf` after rebuild. File size dropped further (2.1MB, from 3.2MB) with one fewer embedded image per page.
+
+**Built:** `AwakenArts_Encounter_Journal.pdf` (repo root) and `public/files/free/AwakenArts_Encounter_Journal.pdf` both replaced with the refined version; confirmed byte-identical to each other.
+
+**Implementation status.** Complete. This refined Journal is now the current public edition.
+
+## 2026-07-08 — Encounter Journal: "How to Use" page removed; continue-links removed; renumbered
+
+Two further directives, same day. First: "Permanently remove the How to Use page — unnecessary." Second, sent while the first was in progress: "Remove gold text under Are you ready to begin (as it appears across all pages)."
+
+**"How to Use This Journal" removed entirely.** The journal is now seven pages, not eight: cover, the five Encounters, closing — down from cover, How to Use, five Encounters, closing. The five Encounter pages are renumbered 2–6 (were 3–7).
+
+**Closing page footer corrected.** The closing/colophon page is still carried over from the source PDF with its title, copy, and links-styled text untouched — but as the new last page it needed its footer to read "· 7," not "· 8." Rather than rebuild the page, only the footer band (rule, "AWAKENARTS," page number) was whited out and redrawn with the corrected number via a `merge_page` overlay, the same surgical technique used for the earlier Scripture/Echo patch. Everything above the footer on that page is pixel-identical to before. (Note for the record: the whiteout covers the old "· 8" visually but doesn't delete its underlying text object, so raw text-layer extraction — not normal viewing or printing — would see both numbers superimposed; this is the same known characteristic of the whiteout-patch method used earlier this session, not a new issue.)
+
+**The small gold "Continue this encounter — awakenarts.com/encounters/[slug]" line beneath each closing invitation is removed from all five Encounter pages.** This was also the one working hyperlink on those pages (via `reportlab.Canvas.linkURL`); removing the line removes the link along with it, per Susan's instruction to remove the text "as it appears across all pages" — not replaced elsewhere. Each page's closing invitation (e.g., "Are you ready to begin?") is now the single, final visual element before the footer.
+
+**Verification.** All 7 pages re-rendered and visually checked, including a close-up crop of the closing page's footer to confirm no visual ghosting from the whiteout. Metadata confirmed intact; page count confirmed at 7.
+
+**Built:** `AwakenArts_Encounter_Journal.pdf` (repo root) and `public/files/free/AwakenArts_Encounter_Journal.pdf` both replaced; confirmed byte-identical to each other.
+
+**Implementation status.** Complete. This seven-page Journal is now the current public edition.
+
+## 2026-07-08 — Encounter Journal: renamed, closing page rebuilt
+
+Two further directives, same day. First: "Change name of document to A Journal Companion to the Five Encounters." Second: "Revise the last page," with new copy and layout supplied directly.
+
+**Renamed.** The cover page's subtitle beneath "The Encounter Journal" changes from "A Self-Guided Companion to the Five Encounters" to "A Journal Companion to the Five Encounters." Patched via the whiteout+redraw technique (text band located by pixel-scanning a 200dpi render: centered, x 161–449pt, y 527–539pt, muted warm gray, Times-Italic ~14pt) rather than rebuilding the cover — everything else on that page (title, author line, epigraph) is untouched. The PDF's `/Subject` metadata field, which already mirrored this subtitle text, was updated to match.
+
+**Closing page rebuilt in full,** from Susan's own drafted copy and layout (a centered `<div align="center">` composition): title "Continue," "Thank you for taking this journey," a short paragraph on the Collection, an invitation to continue at awakenarts.com (linked, gold), the real AwakenArts brand mark, a second standalone awakenarts.com link, and the copyright line — replacing the prior closing page's two-link "Guide to Symbolic Facilitation" copy entirely. The brand mark is the actual logo asset (`public/images/brand/logo-navy.svg`, the navy double-arc + wordmark + tagline variant), rasterized via `cairosvg` (newly installed) rather than a text placeholder or a hand-redrawn approximation. Both awakenarts.com mentions carry real `linkURL` annotations.
+
+**Verification.** Both patched/rebuilt pages rendered and visually checked; metadata confirmed (`/Subject` updated); both link annotations on the closing page confirmed pointing to `https://awakenarts.com`. Page count remains 7.
+
+**Built:** `AwakenArts_Encounter_Journal.pdf` (repo root) and `public/files/free/AwakenArts_Encounter_Journal.pdf` both replaced; confirmed byte-identical to each other.
+
+**Implementation status.** Complete. This is the current public edition.
+
+## 2026-07-08 — Encounter Journal: closing page, final pass
+
+Susan reviewed the rebuilt closing page ("substantial improvement... a graceful farewell") and asked for five refinements, four of them affirming what to keep:
+
+1. **"Continue" heading removed.** "Thank you for taking this journey" is now the page's opening line, given more top white space and more weight (19pt italic, up from 13pt as a subordinate subtitle) since it now carries the page on its own.
+2. **Middle paragraph strengthened.** "The five Encounters are only the beginning. The journey continues throughout the AwakenArts Collection..." — "the same themes continue" became "the journey continues," echoing the journal's own title back at its close.
+3. **Invitation sentence kept verbatim**, per Susan ("It doesn't feel promotional. It feels hospitable.").
+4. **Logo kept as built**, per Susan ("Perfect. Exactly where it belongs.").
+5. **Repeated "awakenarts.com" beneath the logo removed** — the link already lives naturally in the invitation paragraph; the logo now sits alone above the copyright line.
+
+**Verification.** Rendered and visually checked; confirmed exactly one link annotation remains on the page (`https://awakenarts.com`, in the invitation paragraph), down from two.
+
+**Built:** `AwakenArts_Encounter_Journal.pdf` (repo root) and `public/files/free/AwakenArts_Encounter_Journal.pdf` both replaced; confirmed byte-identical to each other.
+
+**Implementation status.** Complete. This is the current public edition.
+
+## 2026-07-08 — Encounter Journal: closing page, one-word-level wording pass
+
+Susan revised the closing page's middle paragraph once more: "invite deeper reflection and conversation" → "invite further reflection and discovery." Applied as a direct text swap, no layout change. Rendered and confirmed; both live copies (`AwakenArts_Encounter_Journal.pdf`, `public/files/free/AwakenArts_Encounter_Journal.pdf`) replaced and byte-identical to each other.
+
+**Implementation status.** Complete. This is the current public edition.
+
+## 2026-07-08 — Encounter Journal: cover page rebuilt, brand-forward
+
+Susan shared a sketch of a new front-page structure: logo mark, AWAKENARTS wordmark, title, "When Language Shapes a Path" tagline, author. Asked whether this replaced the current subtitle ("A Journal Companion to the Five Encounters," renamed earlier today) and the epigraph ("Symbols do not explain. They reveal."), or added to them — Susan chose to replace both.
+
+**Cover rebuilt in full** (previously only ever patched): the real AwakenArts arc mark (cropped from `public/images/brand/logo-navy.svg`, rasterized via `cairosvg`, wordmark/rule/tagline cropped out since the cover sets those as its own live text), "AWAKENARTS" wordmark, "The Encounter Journal" title (unchanged), "When Language Shapes a Path" tagline, "Susan Ann Shepler." The subtitle and epigraph are both retired. Since every page is now generated fresh, this build no longer reads anything from the original source PDF at all — the last remaining carried-over content (the cover) has been fully superseded by original construction.
+
+**Verification.** Rendered and visually checked; page count (7), metadata, and the closing page's link annotation all reconfirmed unchanged.
+
+**Built:** `AwakenArts_Encounter_Journal.pdf` (repo root) and `public/files/free/AwakenArts_Encounter_Journal.pdf` both replaced; confirmed byte-identical to each other.
+
+**Implementation status.** Complete. This is the current public edition — cover through closing, every page now built directly from source assets and approved copy rather than inherited from the pre-redesign file.
+
+## 2026-07-08 — Encounter Journal: cover uses the complete logo lockup
+
+Susan's refinement: "Use the complete AwakenArts logo exactly as it exists... No separate 'AWAKENARTS' text." The cover now uses the full logo image (`logo-navy.svg` rasterized whole — arc mark, AWAKENARTS wordmark, rule, and tagline together, the same asset already used on the closing page) rather than a cropped arc-only mark paired with hand-set wordmark text. Below the logo: title, tagline, author, unchanged from the prior pass.
+
+**Noted for the record, not corrected without asking:** because the tagline "When Language Shapes a Path" is baked into the logo asset itself, it now appears twice on the cover — once small beneath the wordmark inside the logo, once larger in italic beneath the title. This is a direct, faithful consequence of using the logo "exactly as it exists" combined with keeping the separately-specified tagline line; flagging it in case the repetition isn't wanted on a second look, rather than silently choosing to drop one instance.
+
+**Verification.** Rendered and visually checked; page count (7), metadata, and the closing page's link annotation reconfirmed unchanged.
+
+**Built:** `AwakenArts_Encounter_Journal.pdf` (repo root) and `public/files/free/AwakenArts_Encounter_Journal.pdf` both replaced; confirmed byte-identical to each other.
+
+**Implementation status.** Complete. This is the current public edition.
+
+## 2026-07-08 — Encounter Journal: cover, duplicate tagline resolved
+
+Following the flag raised in the prior entry, Susan confirmed: remove the tagline beneath "The Encounter Journal." The cover now carries "When Language Shapes a Path" exactly once — inside the logo lockup — followed directly by the title and "Susan Ann Shepler," no second tagline line.
+
+**Verification.** Rendered and visually checked; page count (7), and the closing page's link annotation reconfirmed unchanged.
+
+**Built:** `AwakenArts_Encounter_Journal.pdf` (repo root) and `public/files/free/AwakenArts_Encounter_Journal.pdf` both replaced; confirmed byte-identical to each other.
+
+**Implementation status.** Complete. This is the current public edition.
+
+## 2026-07-08 — Encounter Journal: cover, author line tightened
+
+Susan: move "Susan Ann Shepler" up a quarter to half inch. Gap between the title and the author line reduced from 50pt to 22pt (~0.39in), within the requested range. Rendered and confirmed; both live copies replaced and byte-identical to each other.
+
+**Implementation status.** Complete. This is the current public edition.
+
+## 2026-07-08 — Encounters index: card thumbnails synced to the revised image set
+
+Susan flagged that the individual Encounter hero pages were updated correctly, but `/encounters`'s own card grid (`src/app/encounters/page.tsx`) was still pulling the old images — the two are separate hardcoded `ENCOUNTERS` arrays (`encounters/page.tsx` for the index, and each `encounters/<slug>/page.tsx` for its own hero), so the earlier hero-image swap never touched the index.
+
+**Journey and Deep cards** now use `journey-02-web.png` / `deep-02-web.png` (open golden path / warm coastal path), matching their individual pages, with the same `center 55%` crop position tuned for those photos — the old `-01` images (enclosed forest path; darker shoreline figure) are no longer referenced anywhere in the redesigned Encounters. **Table, Word, and Continue cards** were already on their correct, current `-01-web` images (confirmed against Susan's descriptions: warm table/chairs; Bible/table/window light; crossroads signpost) — no change needed there. Card titles and mantras (I begin. / I encounter. / I receive. / I listen. / I walk on.) are untouched.
+
+**Verification.** `tsc --noEmit` clean.
+
+**Implementation status.** Complete. The Encounters index and the individual Encounter pages now draw from the same image set.
+
+## 2026-07-08 — The Table: orphan word fixed
+
+Susan flagged an orphaned "us" on The Table's second opening statement. "What we need most is often already waiting for us." → "What we need most is often waiting for us." (dropped "already"). Applied to both `src/app/encounters/table/page.tsx` and the Journal build script, so the website page and the Journal's Table page stay in sync.
+
+**Verification.** `tsc --noEmit` clean; Journal rebuilt and rendered, confirmed the line now wraps without an orphan; both live Journal copies replaced and byte-identical.
+
+**Implementation status.** Complete.
+
+## 2026-07-08 — Continue: pared to one quote
+
+Susan: "Paring down to one quote per encounter page — remove the C.S. Lewis quote from continue page." Removed the Lewis `.echo` block from `src/app/encounters/continue/page.tsx`; Psalm 121:8 now stands alone as Continue's single companion, matching the one-quote pattern already in place on Journey, Deep, Table, and Word. The Journal PDF was unaffected — it never displayed companion quotes.
+
+**Verification.** `tsc --noEmit` clean.
+
+**Implementation status.** Complete. Every Encounter page now carries exactly one Christian companion quote.
+
+## 2026-07-08 — The Word: Scripture line shortened to fit
+
+Susan asked to shorten Psalm 119:105 to fit the line: "Your word is a lamp to my feet…" (ellipsis), dropping "and a light to my path." Confirmed this is standard, acceptable practice for a truncated quotation — the core sense (God's word as guidance) holds even though the verse's parallelism is cut short. Applied to `src/app/encounters/word/page.tsx`. The Journal PDF never displayed this quote, so no corresponding change was needed there.
+
+**Verification.** `tsc --noEmit` clean.
+
+**Implementation status.** Complete.
+
 ## How this Log is maintained
 
 Each phase, once actually built and verified (`tsc` clean, visual check, committed), gets its row in the table above updated from "Not started" to "Built — `<commit hash>`," with a short note on what was verified. Entries are never deleted or rewritten to look like they happened differently than they did — if a phase is revised mid-build, that's a new dated note under it, not an edit to the original.

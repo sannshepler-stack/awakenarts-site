@@ -25,20 +25,32 @@ import styles from './encounters-index.module.css'
 // encounters are added later.
 const ENCOUNTERS = [
   {
+    // 2026-07-08: swapped to the revised open golden-path/horizon image
+    // (journey-02-web.png), matching the individual Journey page hero
+    // — the old image (journey-01-web.png) was an enclosed forest path,
+    // no longer used anywhere in the redesigned Encounters. Position
+    // matches the value tuned for this photo on /encounters/journey.
     slug: 'journey',
     title: 'Journey',
     mantra: 'I begin.',
-    image: '/images/encounters/journey/journey-01-web.png',
-    position: 'center 38%',
+    image: '/images/encounters/journey/journey-02-web.png',
+    position: 'center 55%',
   },
   {
+    // 2026-07-08: swapped to the revised warm coastal-path image
+    // (deep-02-web.png), matching the individual Deep page hero — the
+    // old image (deep-01-web.png, a darker shoreline figure) is no
+    // longer used anywhere in the redesigned Encounters.
     slug: 'deep',
     title: 'The Deep',
     mantra: 'I encounter.',
-    image: '/images/encounters/deep/deep-01-web.png',
-    position: 'center',
+    image: '/images/encounters/deep/deep-02-web.png',
+    position: 'center 55%',
   },
   {
+    // Table, Word, and Continue keep their existing -01-web images —
+    // confirmed 2026-07-08 as already the current/"revised" set;
+    // there is no -02 replacement for these three, per Susan.
     slug: 'table',
     title: 'The Table',
     mantra: 'I receive.',

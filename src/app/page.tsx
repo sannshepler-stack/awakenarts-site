@@ -104,12 +104,18 @@ export default function HomePage() {
           {/* Mission line — restates the AwakenArts USP directly beneath
               the headline, echoed again on /encounters and in the Poems
               preview section below.
-              2026-06-30, per Susan: both sentences of today's new hero
-              copy now live here together, beneath the restored
-              headline — the reason AwakenArts does this work. */}
+              2026-07-07, per Susan: the two-sentence version read as
+              too large and bulky against the hero image — pared down
+              to one tighter sentence, same font-size/line-height token
+              (--subtitle-size is a shared Global Design System value
+              used on five other pages; not touched here, so this stays
+              consistent with the rest of the site rather than
+              introducing a one-off size). The "bulk" reduction comes
+              from shorter copy and tighter component spacing below,
+              not a smaller type scale. */}
           <p className="hero-mission">
-            AwakenArts begins with encounter rather than explanation.
-            Here, the soul recognizes what the mind alone cannot.
+            AwakenArts begins with encounter, not explanation&mdash;recognizing
+            what the mind alone cannot.
           </p>
 
           {/* Editorial Invitations — the hero's two primary entry points

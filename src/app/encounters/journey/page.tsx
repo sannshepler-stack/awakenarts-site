@@ -21,8 +21,8 @@ export default function JourneyEncounterPage() {
         <div
           className={styles.heroBg}
           style={{
-            backgroundImage: "url('/images/encounters/journey/journey-01-web.png')",
-            backgroundPosition: 'center 38%',
+            backgroundImage: "url('/images/encounters/journey/journey-02-web.png')",
+            backgroundPosition: 'center 55%',
           }}
         />
         <div className={styles.heroScrim} />
@@ -32,8 +32,13 @@ export default function JourneyEncounterPage() {
         <div className={styles.heroInner}>
           <Eyebrow />
           <h1 className={`${cormorant.className} ${styles.title}`}>Journey</h1>
+          {/* 2026-07-08, Encounters Revision: two opening statements
+              replace the former single line, per Susan's directive. */}
           <p className={`${cormorant.className} ${styles.line}`}>
-            Every journey begins before we know where it leads.
+            Stepping beyond the familiar opens the way to new discoveries.
+          </p>
+          <p className={`${cormorant.className} ${styles.lineSecond}`}>
+            Every journey is an invitation.
           </p>
           <span className={`${cormorant.className} ${styles.scripture}`}>
             &ldquo;By faith Abraham obeyed and went, even though he did not
