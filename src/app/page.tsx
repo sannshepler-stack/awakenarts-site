@@ -20,38 +20,48 @@ export const metadata: Metadata = {
 /*
  * Homepage — The Threshold
  *
- * Homepage Reformation Directive (June 2026): a coherent visual
- * journey that relies on the symbolic work itself rather than
- * explanation. "Show more. Explain less."
+ * 2026-07-10 "Homepage Refinement — Production Pass," per Susan: a
+ * refinement of content hierarchy and visitor flow, not visual
+ * language — typography, spacing, and overall aesthetic are preserved
+ * wherever possible. The homepage now unfolds as one guided journey,
+ * each stage with a single purpose and a single primary invitation:
  *
- * 2026-06-28 Final Editorial Refinement, per Susan: "The homepage is
- * no longer introducing a website. It is introducing a body of
- * published work." This is the closing editorial pass before the
- * Publishing Platform phase — six movements, each progressively
- * quieter:
- *   1. Hero               — the emotional entrance; image dominant
- *   2. Collection          — navy architectural framework, cream
- *                            type, the complete uncropped cover
- *   3. Queen Ann Intro     — title page; name + a single quotation
- *   4. Queen Ann Encounter — still + poem as one literary spread
- *   5. Matthew 13:34       — the quiet theological threshold,
- *                            resolving into an invitation to
- *                            /foundation rather than a closed
- *                            statement
+ *   1. Invitation  — Hero. One CTA only ("Enter the Encounters");
+ *                     the former competing "Explore the Collection"
+ *                     doorway is removed now that Collection has its
+ *                     own clear invitation immediately below.
+ *   2. Discovery   — The Collection. Navy architectural framework,
+ *                     cream type, the complete uncropped cover.
+ *                     Introduces the Figure Editions as the central
+ *                     published body of work; the broader explanation
+ *                     of companion works and the growing library
+ *                     lives on /collection itself, not here.
+ *   3. Understanding — The AwakenArts Method. Answers the question
+ *                     Discovery naturally raises ("what is happening
+ *                     here?"). Deliberately quiet — a thoughtful
+ *                     pause, not a second headline moment — and
+ *                     written as an introduction to a future
+ *                     standalone Method page, not a full explanation.
+ *   4. Embodiment  — Queen Ann Introduction & Encounter. Still + poem
+ *                     as one literary spread, the Method made visible
+ *                     in an actual work.
+ *   5. Foundation  — Matthew 13:34, the quiet theological threshold,
+ *                     resolving into an invitation to /foundation
+ *                     rather than a closed statement.
  *   6. Footer
- * The former standalone "AwakenArts Introduction" section (a single
- * isolated line between Hero and Collection) has been removed
- * entirely — it repeated the Matthew section's own explanatory
- * paragraph almost verbatim and served no structural purpose on its
- * own. The former "Discover symbolic language" transition was
- * already removed; the Queen Ann encounter resolves directly into
- * Matthew 13:34 with no replacement band or divider.
  *
- * Editorial framework (June 2026 recalibration): the works are not
- * symbolic art accompanied by Christian reference — they extend a
- * literary mode Scripture itself already uses (parable, poetry,
- * image, figure, type). The homepage should read as an entry into
- * that tradition, not a mood. By the time a visitor reaches the
+ * This supersedes the previous six-movement ordering (2026-06-28
+ * Final Editorial Refinement), which placed Collection first but had
+ * no Method section at all. The Method section itself was added
+ * 2026-07-10 directly after the Hero, then moved here — after
+ * Collection, before Queen Ann — the same day, once Susan clarified
+ * the narrative hierarchy: Discovery before Understanding.
+ *
+ * Editorial framework (June 2026 recalibration, still standing): the
+ * works are not symbolic art accompanied by Christian reference —
+ * they extend a literary mode Scripture itself already uses (parable,
+ * poetry, image, figure, type). The homepage should read as an entry
+ * into that tradition, not a mood. By the time a visitor reaches the
  * footer, they should understand what AwakenArts is, why it exists,
  * the Christian foundation it is offered from, and where to continue
  * — without further explanation. /foundation answers the question
@@ -104,35 +114,51 @@ export default function HomePage() {
           {/* Mission line — restates the AwakenArts USP directly beneath
               the headline, echoed again on /encounters and in the Poems
               preview section below.
-              2026-07-07, per Susan: the two-sentence version read as
-              too large and bulky against the hero image — pared down
-              to one tighter sentence, same font-size/line-height token
-              (--subtitle-size is a shared Global Design System value
-              used on five other pages; not touched here, so this stays
-              consistent with the rest of the site rather than
-              introducing a one-off size). The "bulk" reduction comes
-              from shorter copy and tighter component spacing below,
-              not a smaller type scale. */}
+              2026-07-10, per Susan's "Homepage Refinement — Production
+              Pass": supersedes the 2026-07-07 pared-down single
+              sentence. The mission line now carries the "every life
+              tells its story in images" framing that the Method
+              section (below) builds on — two sentences, deliberately,
+              so the Hero itself plants the idea the rest of the
+              homepage develops.
+              2026-07-10, "Hero Typography Refinement" (same day, later
+              pass), per Susan: the title must stay the Hero's clear
+              focal point, so this line now (1) breaks after the first
+              sentence — <br /> between them, not two separate <p>
+              elements, so they still read as one supporting thought
+              with a natural pause, not two competing statements — and
+              (2) is decoupled from the shared --subtitle-size token
+              (see globals.css) and reduced ~17%, so it reads as a
+              quiet, discoverable invitation rather than a second
+              headline. */}
           <p className="hero-mission">
-            AwakenArts begins with encounter, not explanation&mdash;recognizing
-            what the mind alone cannot.
+            Every life tells its story in images.
+            <br />
+            AwakenArts invites you to recognize the symbolic language
+            already present in your life through image, poem,
+            reflection, and conversation.
           </p>
 
-          {/* Editorial Invitations — the hero's two primary entry points
-              into AwakenArts (locked 2026-06-28, "Hero Typographic
-              Hierarchy" directive). Replaces the former single small
-              "Encounters →" CTA and the Studio/Poems secondary nav.
+          {/* Editorial Invitations — the hero's entry point(s) into
+              AwakenArts (locked 2026-06-28, "Hero Typographic
+              Hierarchy" directive; single-CTA revision 2026-07-10).
 
-              2026-06-29, per Susan: stripped down to the two doorways
-              alone — no explanatory teaser line beneath either, no arrow
-              glyph. The hero's job is the entrance; the destination
-              pages do the explaining. */}
+              2026-06-29, per Susan: stripped down to the doorway link(s)
+              alone — no explanatory teaser line beneath, no arrow glyph.
+              The hero's job is the entrance; the destination pages do
+              the explaining.
+
+              2026-07-10, per Susan's "Homepage Refinement — Production
+              Pass": the Hero now carries exactly one CTA. The former
+              second doorway, "Explore the Collection," is removed —
+              Collection has since moved to the very next section, with
+              its own clear "Explore the Collection →" invitation, so a
+              second competing CTA in the Hero itself no longer serves a
+              purpose. .hero-invitations remains a flex column built for
+              N doorways; removing one required no layout change. */}
           <div className="hero-invitations">
             <Link href="/encounters" className="hero-invitation__title">
               Enter the Encounters
-            </Link>
-            <Link href="/collection" className="hero-invitation__title">
-              Explore the Collection
             </Link>
           </div>
         </div>
@@ -163,26 +189,44 @@ export default function HomePage() {
       </section>
 
       {/* ── THE COLLECTION ───────────────────────────────────────
-          Section 2 — the first major structural section of the
-          Homepage. Presented on a navy field per the Homepage
-          Reformation Directive: the darker ground establishes the
-          Collection as AwakenArts' architectural framework and
-          creates a clear visual transition before the featured
-          symbolic work. Cream typography, restrained gold accents,
-          the complete uncropped cover, generous surrounding space.
+          Stage 2, Discovery — immediately after the Hero. Presented on
+          a navy field per the Homepage Reformation Directive: the
+          darker ground establishes the Collection as AwakenArts'
+          architectural framework and creates a clear visual transition
+          before the Method section that follows. Cream typography,
+          restrained gold accents, the complete uncropped cover,
+          generous surrounding space.
 
           2026-06-28 Collection Section Editorial Refinement: the hero
-          now promises "Explore the Collection / Discover the growing
-          library of AwakenArts Figure Editions" — this section's job
-          is to fulfill that promise immediately, not describe a page.
-          Copy now names the unit of the work explicitly ("Figure
-          Edition," the term already locked across editions.ts, the
-          Edition pages, Poems, and Workshops) and describes what
-          reading one actually is — image, poem, and reflection as a
-          single published work — rather than a vague "collection of
-          symbolic works." The CTA names the destination's content
-          ("Browse the Figure Editions") instead of repeating the
-          section heading. See AwakenArts_Site_Architecture.md /
+          now promises "Explore the Collection" — this section's job is
+          to fulfill that promise immediately, not describe a page.
+          Copy names the unit of the work explicitly ("Figure Edition,"
+          the term already locked across editions.ts, the Edition
+          pages, Poems, and Workshops) and describes what reading one
+          actually is — image, poem, and reflection as a single
+          published work.
+
+          2026-07-10, per Susan's "Homepage Refinement — Production
+          Pass": the CTA renamed "Explore the Collection →" (was
+          "Browse the Figure Editions →"), echoing the Hero's own
+          language and becoming this section's one primary invitation.
+
+          2026-07-10, per Susan's "Homepage Production Directive —
+          Collection Section Refinement" (same day, second pass): this
+          section stops functioning like a navigation item describing
+          how the Collection is organized, and becomes a gallery
+          entrance. Subtitle and body copy rewritten as invitation, not
+          description — no mention of the library "growing," no
+          publishing-model language, no companion-resource detail; all
+          of that stays on /collection, whose own job is to explain
+          once a visitor has already stepped inside. Success test, per
+          Susan: a visitor should think "I'd like to explore these
+          Figure Editions," not "I understand what Figure Editions
+          are." The CTA itself is restyled in globals.css from a quiet
+          underlined text link to a solid gold button — "the button
+          opens the door," in her words — the section's one confident
+          invitation forward, ending on movement rather than
+          explanation. See AwakenArts_Site_Architecture.md /
           AwakenArts_Publishing_Platform_Architecture.md Task 1: the
           Figure Edition is the master publication; this is the
           library where every one of them lives. */}
@@ -203,63 +247,128 @@ export default function HomePage() {
           <div className="home-coll-text">
             <p className="eyebrow">Figure Editions</p>
             <h2 id="home-coll-heading">The Collection</h2>
-            <p className="home-coll-sub">A growing library of published Figure Editions.</p>
+            <p className="home-coll-sub">
+              Where image, poem, and reflection become a single
+              symbolic journey.
+            </p>
             <p className="home-coll-body">
-              Each Figure Edition brings image, poem, and reflection
-              together as a single published work. As the collection
-              grows, related visual forms and companion materials
-              extend the same symbolic figure.
+              Each Figure Edition explores a symbolic figure through
+              image, poem, and reflection&mdash;inviting recognition
+              rather than explanation, and opening new ways of seeing
+              ordinary life.
             </p>
             <Link href="/collection" className="home-coll-cta">
-              Browse the Figure Editions <span aria-hidden="true">→</span>
+              Explore the Collection <span aria-hidden="true">→</span>
             </Link>
           </div>
 
         </div>
       </section>
 
-      {/* ── QUEEN ANN: INTRODUCTION & ENCOUNTER ───────────────────
-          A single flat cream field — no navy "stage," no rounded
-          card — carrying three quiet movements, encountered rather
-          than explained:
-            1. Queen Ann Introduction — a title page. Name and a
-               single short quotation from the poem, creating
-               anticipation rather than explanation.
-            2. Queen Ann Encounter — the portrait still and the poem
-               as facing pages of one open book, equal partners.
-            3. Matthew 13:34 (the foundation, placed last, quiet) —
-               the encounter resolves directly into it; the former
-               "Discover symbolic language" transition has been
-               removed entirely, with no replacement band or divider.
-          Revised per Susan's June 2026 review: the navy stage and
-          rounded bottom corners read as an accidental dark strip and
-          a "card" rather than a publication, so both have been
-          removed — the cream begins directly where the Collection
-          section's navy ends. See the POEMS / EDITIONS SHOWCASE
-          block in globals.css.
-      ──────────────────────────────────────────────────────────── */}
-      <section className="poems-showcase-section" aria-label="Queen Ann">
-        <div className="poems-showcase-inner">
+      {/* ── THE AWAKENARTS METHOD ─────────────────────────────────────
+          Stage 3, Understanding. First added 2026-07-10 directly after
+          the Hero, per Susan's "establish the AwakenArts Method as the
+          conceptual center" directive; moved here, after Collection,
+          the same day per her "Homepage Refinement — Production Pass"
+          clarification of the narrative hierarchy — Discovery before
+          Understanding. This section now answers the question
+          Discovery naturally raises: "what is happening here?"
 
-          {/* 1. Queen Ann Introduction — the title page before the
-              encounter. Title, then a single orientation line — no
-              poem excerpt here.
-              2026-06-30, per Susan's "single purpose per element"
-              directive: the poem excerpt ("when the night strikes
-              with silver light…") used to sit here as a second,
-              competing focal point under the title. It has moved to
-              the Invitation to Read, directly above the poem-download
-              link, where it can do its real job — drawing the visitor
-              toward the full poem. What remains here is one quiet
-              orientation line explaining why an image and a poem
-              appear together at all, sized and weighted as secondary
-              to the title rather than as a second headline. */}
-          <div className="poems-showcase-intro">
-            <p className="poems-showcase-intro__title">Queen Ann</p>
-            <p className="poems-showcase-intro__tagline">
-              Every AwakenArts work is born as both image and poem.
-            </p>
-          </div>
+          Deliberately quiet by design — reduced typographic dominance
+          (see globals.css's "HOMEPAGE: THE AWAKENARTS METHOD" block),
+          no image, still no mention of workshops or Sketchbook. The
+          two former explanatory paragraphs are combined into one
+          continuous paragraph per Susan's direction. The section is
+          written as an introduction to the standalone Method page
+          (src/app/method/page.tsx, shipped 2026-07-10), not a
+          complete explanation — see the CTA note below.
+
+          Method CTA: originally "Learn More About the AwakenArts
+          Method →," held as static placeholder text
+          (.home-method-future) until /method existed, then wired to a
+          real <Link> the same day the page shipped.
+          2026-07-10, later still the same day, per Susan: "the Method
+          is no longer a placeholder — it's becoming one of the
+          foundational pages — the homepage invitation should reflect
+          that." Copy strengthened to "Discover the AwakenArts Method
+          →" (her preference over "Explore," to avoid echoing the
+          Collection CTA's own "Explore the Collection"). Class renamed
+          .home-method-future -> .home-method-cta, since "future" no
+          longer describes it. Visual treatment upgraded from a plain
+          text link to an outlined "framed link" (see globals.css) —
+          more presence than before, still deliberately lighter than
+          .home-coll-cta's solid button: an invitation to keep reading,
+          not a second product CTA. */}
+      <section className="home-method-section" aria-labelledby="home-method-heading">
+        <div className="home-method-inner">
+          <p className="eyebrow">The AwakenArts Method</p>
+          <h2 id="home-method-heading">
+            People tell their stories with facts.{' '}
+            <em>They reveal their lives through images.</em>
+          </h2>
+          <p className="home-method-body">
+            Long before we settle on words, certain pictures return to
+            us&mdash;in conversation, in memory, and in the stories we
+            tell about our own lives. AwakenArts begins there, with the
+            images a life has already chosen, not with a theory placed
+            over them. AwakenArts is a practice of attention&mdash;learning
+            to notice an image and remain with it long enough for
+            recognition to emerge.
+          </p>
+          <Link href="/method" className="home-method-cta">
+            Discover the AwakenArts Method <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </section>
+
+      {/* ── QUEEN ANN INTRODUCTION — dark title band ───────────────
+          2026-07-10, per Susan: "let the [Queen Ann title] section
+          band be dark." This is NOT a reintroduction of the navy
+          "stage + rounded card" removed in the June 2026 review (see
+          the .poems-showcase-section comment below) — it's a true
+          full-bleed band, structured like .home-coll-section: its own
+          <section>, full-width navy background, sitting between
+          Collection and the cream Queen Ann Encounter. Title and
+          tagline only — no image, no poem-excerpt, no card edges.
+          2026-06-30, per Susan's "single purpose per element"
+          directive: the poem excerpt ("when the night strikes with
+          silver light…") that used to sit here has moved to the
+          Invitation to Read, directly above the poem-download link.
+          What remains here is the title plus one quiet orientation
+          line — secondary to the title, not a second headline.
+          2026-07-10, later the same day, per Susan: tagline copy
+          replaced ("Every AwakenArts work is born as both image and
+          poem." -> "There is a Kingdom beyond the one that ends.") —
+          now a line from/evocative of Queen Ann's own poem rather
+          than a general statement about how AwakenArts works, fitting
+          this band's role as Queen Ann's title page specifically. */}
+      <section className="poems-showcase-intro" aria-label="Queen Ann">
+        <div className="poems-showcase-intro__inner">
+          <p className="poems-showcase-intro__title">Queen Ann</p>
+          <p className="poems-showcase-intro__tagline">
+            There is a Kingdom beyond the one that ends.
+          </p>
+        </div>
+      </section>
+
+      {/* ── QUEEN ANN ENCOUNTER & FOUNDATION ───────────────────────
+          A flat cream field carrying two quiet movements, encountered
+          rather than explained:
+            1. Queen Ann Encounter — the portrait still and the poem
+               as facing pages of one open book, equal partners.
+            2. Matthew 13:34 (the foundation, placed last, quiet) —
+               the encounter resolves directly into it; no replacement
+               band or divider between them.
+          Revised per Susan's June 2026 review: the navy stage and
+          rounded bottom corners that used to wrap the title page (see
+          .poems-showcase-intro above, since split into its own
+          full-bleed section) read as an accidental dark strip and a
+          "card" rather than a publication, so both were removed —
+          this field begins directly where the Introduction band above
+          it ends. See the POEMS / EDITIONS SHOWCASE block in
+          globals.css. */}
+      <section className="poems-showcase-section" aria-label="Queen Ann Encounter">
+        <div className="poems-showcase-inner">
 
           {/* 2. Queen Ann Encounter — the poem and the portrait still
               as facing pages of one open book: equal height, equal
@@ -357,11 +466,30 @@ export default function HomePage() {
               He did not say anything to them without using a parable.
             </p>
             <p className="hero-quote-cite">Matthew 13:34</p>
+            {/* 2026-07-10, per Susan's directive: the homepage close is
+                trimmed to threshold image + Scripture + one short bridge
+                line + a CTA to /foundation. The longer explanatory
+                paragraph that used to sit here ("AwakenArts works within
+                that same enduring tradition — bringing image and poem
+                together as symbolic forms that invite recognition
+                through attentive engagement, not explanation.") and the
+                "Christ is the center. Scripture is the authority." credo
+                line below it are removed from the homepage — both ideas
+                already live in full on /foundation (see
+                src/app/foundation/page.tsx), which is exactly where
+                Susan wants the complete statement read, without
+                interrupting the homepage's flow.
+
+                2026-07-10 "Foundation Section Refinement," per Susan:
+                copy unchanged, but .hero-quote-text/.hero-quote-cite/
+                .hero-quote-body/.hero-quote-closing were retyped and
+                respaced in globals.css so Scripture, citation, and
+                this bridge line read as one closing meditation —
+                Scripture -> Reflection -> Invitation — rather than
+                three stacked blocks. See globals.css for the full
+                rationale on each rule. */}
             <p className="hero-quote-body">
-              AwakenArts works within that same enduring tradition —
-              bringing image and poem together as symbolic forms that
-              invite recognition through attentive engagement, not
-              explanation.
+              AwakenArts works within that same tradition.
             </p>
             {/* 2026-06-28 Final Editorial Refinement: the former closed
                 statement ("Symbolic language invites recognition before
@@ -371,9 +499,6 @@ export default function HomePage() {
             <Link href="/foundation" className="hero-quote-closing">
               Read the Foundation of AwakenArts <span aria-hidden="true">→</span>
             </Link>
-            <p className="home-foundation-credo">
-              Christ is the center. Scripture is the authority.
-            </p>
           </div>
         </div>
       </section>

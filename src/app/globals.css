@@ -137,6 +137,21 @@
 html {
   scroll-behavior: smooth;
   font-size: 18px; /* rem base — all rem values scale from this */
+  /* 2026-07-10, per Susan (iPhone report — the "right margin under the
+     hamburger" bug persisting after the 2026-07-07 nav-links 100vw
+     fix below): overflow-x: hidden was only ever set on <body>, not
+     <html>. On iOS Safari specifically, the element that actually
+     scrolls the page is <html>, not <body> — overflow-x: hidden on
+     body alone doesn't reliably stop horizontal rubber-band scrolling
+     there, which is exactly the "content shifts left, gap appears on
+     the right" symptom being reported. This is the standard, minimal
+     fix for that class of bug: belt-and-suspenders alongside the
+     existing body rule and the .nav-links fix below, not a
+     replacement for either. width: 100% pinned alongside it so
+     nothing can silently establish a wider-than-viewport scrollable
+     area at the root. */
+  overflow-x: hidden;
+  width: 100%;
 }
 body {
   background: #f5f0e8;
@@ -145,6 +160,8 @@ body {
   font-size: 1rem;
   line-height: 1.85;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 img { max-width: 100%; display: block; }
 a   { color: inherit; text-decoration: none; }
@@ -384,8 +401,22 @@ a   { color: inherit; text-decoration: none; }
   padding-left: 2rem;
   padding-right: 1rem; /* reduced so the image can reach nearer the right edge */
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-  column-gap: 0.85rem;
+  /* 2026-07-10, second pass: a screenshot review showed the first pass
+     (column-gap + translateX alone) left a real ~200px gap — the
+     actual driver wasn't grid slack, it was that .hero__text's box
+     (up to 580px) is far wider than the mission copy's real line
+     length (~430px at this content), so text-align:left glyphs stop
+     well short of the column's own edge, and no amount of
+     column-gap/transform tuning on the *image* side reaches that kind
+     of "invisible" space. Rebalanced the track ratio itself (1:1.2 ->
+     0.85:1.2) so the text column is no longer allocated more width
+     than its content will ever use — a modest, deliberate shift of
+     unused space away from the empty column, not toward enlarging the
+     image column beyond a small, controlled amount. */
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.2fr);
+  /* column-gap cut ~18% (0.85rem -> 0.7rem, first pass). max-width and
+     padding are untouched. */
+  column-gap: 0.7rem;
   align-items: stretch;
   max-width: 1500px;
   margin-left: auto;
@@ -448,8 +479,14 @@ a   { color: inherit; text-decoration: none; }
      of being squeezed down to match a short text column. object-fit:
      cover absorbs the extra height by cropping a bit more off the
      sides (object-position keeps the queen figure in frame), which
-     is the desired effect, not a side effect. */
-  min-height: 688px;
+     is the desired effect, not a side effect.
+     2026-07-10 "Tighten Homepage Hero Layout," per Susan: trimmed
+     ~5.5% (688px -> 650px) — "slightly reduce the size of the artwork
+     if necessary to achieve better visual balance." object-fit: cover
+     and object-position are untouched, so the crop framing and the
+     artwork's own proportions are exactly as before, just at a
+     slightly smaller scale — no distortion, no re-crop. */
+  min-height: 650px;
   overflow: hidden;
   justify-self: end;
   /* 2026-06-29, third pass, per Susan: "moving the artwork 10-20px
@@ -458,13 +495,21 @@ a   { color: inherit; text-decoration: none; }
      without making them touch." A pure visual nudge, not a resize —
      translateX shifts the box itself without changing its width or
      the grid track math (so the text column's position is
-     untouched). -16px sits inside the asked range and, against the
-     current 0.85rem (~13.6px) gap, brings the two halves close to
-     touching without crossing into the text column's own content on
-     this viewport. Reset to none at the ≤768px breakpoint below,
-     where the layout stacks into one column and a leftward shift no
-     longer makes sense. */
-  transform: translateX(-16px);
+     untouched).
+     2026-07-10, first pass: nudged -16px -> -30px, reasoned against
+     the text column's *box* width (580px). A screenshot review showed
+     this undercorrected badly — a ~200px gap remained.
+     2026-07-10, second pass, corrected reasoning: the real reference
+     point isn't the column's box width, it's where the mission copy's
+     glyphs actually stop (~430px at this content — well short of even
+     the box width, let alone the wider pre-rebalance grid track), so
+     there was far more real headroom than the first pass assumed.
+     Combined with rebalancing the grid ratio above, the pull is
+     increased substantially to -70px. This is deliberately no longer
+     a small "nudge" — it's the primary mechanism closing a gap that
+     was roughly 4x larger than intended. Reset to none at the ≤768px
+     breakpoint below, where the layout stacks into one column. */
+  transform: translateX(-70px);
 }
 .hero__picture {
   display: block;
@@ -506,13 +551,19 @@ a   { color: inherit; text-decoration: none; }
    statements elsewhere on the site (see .lib-preview-mission). */
 .hero-mission {
   /* Gold/italic subtitle — Global Design System (locked 2026-06-25).
-     Font-size and line-height reference the shared --subtitle-size/
-     --subtitle-line tokens, unchanged, so this stays consistent with
-     every other page that uses the same subtitle role (Collection,
-     About, etc.) — see the token's own comment in :root. */
+     2026-07-10 "Hero Typography Refinement," per Susan: the title must
+     remain the Hero's dominant element, and this supporting line had
+     grown too visually prominent after the copy lengthened to two
+     sentences. Decoupled from the shared --subtitle-size token (used
+     on five other pages — Collection, About, etc.; left untouched
+     there) and given its own explicit scale, ~17% smaller, so it
+     reads as a quiet, discoverable invitation rather than a second
+     headline. line-height keeps referencing --subtitle-line — a
+     unitless ratio, so "generous line spacing" is preserved even at
+     the smaller size, per her explicit note not to lose that. */
   font-family: var(--serif);
   font-style: italic;
-  font-size: var(--subtitle-size);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
   line-height: var(--subtitle-line);
   color: var(--gold);
   /* 2026-07-07, per Susan: reduced from 1.25rem — component-specific
@@ -899,17 +950,23 @@ a   { color: inherit; text-decoration: none; }
    POEMS / EDITIONS SHOWCASE block below.)
 ───────────────────────────────────────────── */
 /* The Scripture quotation — the literary and theological resolution
-   of the Homepage. Set large enough to be the section's strongest
-   moment (June 2026 refinement), sentence case with no quotation
-   marks, generous line-height for a single composed line at most
-   widths rather than a paragraph. */
+   of the Homepage. Sentence case with no quotation marks, generous
+   line-height for a single composed line at most widths rather than
+   a paragraph.
+   2026-07-10 "Foundation Section Refinement," per Susan: this section
+   should feel like a quiet benediction — Scripture -> Reflection ->
+   Invitation, read as one closing meditation, not three stacked
+   blocks. Two changes here: (1) font-size reduced ~18% from the prior
+   2026-06-28 pass (2.2rem -> 1.85rem ceiling) so the quotation reads
+   as a contemplative quote rather than a headline, while remaining
+   the section's visual anchor; (2) bottom margin tightened
+   (1.5rem -> 0.85rem) to bind the verse to its citation as one
+   thought, per her "the visual gap is too large" note. Top margin
+   (70px) unchanged — still the deliberate separation from the
+   AtmosphericHeader above; that gap isn't part of this refinement. */
 .hero-quote-text {
   font-family: var(--serif);
-  /* 2026-06-28 Final Editorial Refinement: reduced ~12% from the prior
-     pass (2.5rem -> 2.2rem ceiling) per Susan's "quieter, more elegant
-     than expansive" direction — the section should read as the
-     homepage's quiet theological threshold, not its loudest moment. */
-  font-size: clamp(1.55rem, 2.9vw, 2.2rem);
+  font-size: clamp(1.3rem, 2.4vw, 1.85rem);
   font-weight: 300;
   font-style: italic;
   color: var(--deep);
@@ -919,10 +976,7 @@ a   { color: inherit; text-decoration: none; }
      container was the real bottleneck (see
      .poems-showcase-foundation__inner below, widened to match). */
   max-width: 1000px;
-  /* Top margin (70px) unchanged — still the deliberate separation from
-     the AtmosphericHeader above. Bottom margin tightened slightly
-     (1.75rem -> 1.5rem) as part of the section-wide spacing review. */
-  margin: 70px auto 1.5rem;
+  margin: 70px auto 0.85rem;
   line-height: 1.45;
 }
 
@@ -969,9 +1023,14 @@ a   { color: inherit; text-decoration: none; }
 
 /* 2026-06-28 Final Editorial Refinement: de-weighted from the prior
    pass — lighter weight (500 -> 400), smaller scale, tighter letter
-   spacing, and a much shorter gap beneath it. The reference should
-   read as a quiet attribution, not a secondary heading competing with
-   the quotation above it. */
+   spacing. The reference should read as a quiet attribution, not a
+   secondary heading competing with the quotation above it.
+   2026-07-10 "Foundation Section Refinement," per Susan: margin-bottom
+   cut from 2.25rem to 0.85rem — the citation and the bridge line
+   below it (.hero-quote-body) are "one thought," not two separately
+   spaced elements, so the gap between them now matches the gap above
+   (verse -> citation), binding all three into a single close-set
+   group before the CTA's own, more generous separation. */
 .hero-quote-cite {
   font-family: var(--sans);
   font-size: clamp(1rem, 1.3vw, 1.15rem);
@@ -981,23 +1040,32 @@ a   { color: inherit; text-decoration: none; }
   color: var(--gold);
   text-align: center;
   font-style: normal;
-  margin-bottom: 2.25rem;
+  margin-bottom: 0.85rem;
 }
 
+/* The bridge line — "AwakenArts works within that same tradition."
+   2026-07-10 "Foundation Section Refinement," per Susan: restyled to
+   carry the same visual importance as MATTHEW 13:34 above it, per her
+   "the bridge line doesn't need to be smaller — it should read as the
+   concluding thought flowing from the verse" direction. Previously
+   set in plain, muted --mid gray at the shared body-copy floor, which
+   read as a separate explanatory paragraph rather than part of the
+   same meditation; now serif italic in --deep (matching
+   .hero-quote-text's own register) at a size closer to the citation's
+   presence, so Scripture, citation, and bridge line read as one
+   continuous thought rather than three stacked blocks. No longer
+   reuses the generic Global Design System body-copy spec, since this
+   is no longer a supporting paragraph — it's the third beat of the
+   quotation itself. */
 .hero-quote-body {
   font-family: var(--serif);
-  /* Body copy + Medium measure — Global Design System (locked 2026-06-25).
-     2026-06-28 "Reading Before Decoration" revision: this is the
-     supporting paragraph beneath the Matthew quotation, and the
-     standard is explicit that supporting copy reads at the same floor
-     as primary body text, not below it. Bumped +2px over --body-size,
-     the same selective-override pattern already used on
-     .foundation-body and .home-coll-body. */
-  font-size: calc(var(--body-size) + 2px);
-  line-height: var(--body-line);
-  color: var(--mid);
-  max-width: var(--measure-medium);
-  margin: 0 auto 1rem;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--deep);
+  max-width: 620px;
+  margin: 0 auto;
 }
 
 /* Foundation transition link — 2026-06-28 Final Editorial Refinement.
@@ -1017,7 +1085,13 @@ a   { color: inherit; text-decoration: none; }
   color: var(--gold);
   text-decoration: none;
   display: inline-block;
-  margin: 2rem 0 0;
+  /* 2026-07-10 "Foundation Section Refinement," per Susan: nudged up
+     from 2rem now that the verse/citation/bridge-line trio above sits
+     much closer together (see .hero-quote-text/.hero-quote-cite). The
+     CTA should read as the composition's final, distinct step —
+     Scripture -> Reflection -> Invitation — not a fourth line in the
+     same close-set group. */
+  margin: 2.5rem 0 0;
   transition: color 0.2s ease-out;
 }
 .hero-quote-closing:hover,
@@ -1036,7 +1110,15 @@ a   { color: inherit; text-decoration: none; }
    and reading as fine print. Raised to a size with real presence
    (still short of the CTA above it, which stays the section's largest
    moment) and moved from --mid gray to the established gold so it
-   reads as a quiet statement of conviction, not a footnote. */
+   reads as a quiet statement of conviction, not a footnote.
+
+   2026-07-10: per Susan's directive to trim the homepage close to
+   threshold image + Scripture + a short bridge line + CTA, this credo
+   line no longer appears on the homepage — the full statement it's
+   part of now lives only on /foundation (.foundation-credo, its own
+   separate rule below). Left in place, unused, rather than deleted,
+   since removing rules isn't this pass's objective; safe to retire in
+   a future CSS-cleanup pass if it stays unused. */
 .home-foundation-credo {
   font-family: var(--serif);
   font-style: italic;
@@ -1799,6 +1881,22 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    sizes, and the media column's max-width per breakpoint.
 ───────────────────────────────────────────── */
 
+/* Laptop — a screenshot review of the base -30px/-16px values (first
+   pass, 2026-07-10) showed both undercorrected: the real reference
+   point for a safe pull is where the mission copy's glyphs actually
+   stop (well short of any column's box width, at any breakpoint), not
+   the column width itself. Second pass scales this tier's pull up to
+   -40px to match the corrected desktop value (-70px) proportionally
+   for this narrower band (very common laptop widths — 1280px, 1366px,
+   1440px browser windows all fall inside it). Still deliberately more
+   conservative than desktop, since this band's columns are narrower
+   in absolute terms and there's less room to be wrong. */
+@media (max-width: 1450px) {
+  .hero__media {
+    transform: translateX(-40px);
+  }
+}
+
 /* Tablet — tighten gap and padding. Text stays left-anchored; no
    media cap so the figure keeps presence. */
 @media (max-width: 1024px) {
@@ -1819,10 +1917,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      image more aggressively than the extra width can absorb. */
   .hero__media {
     min-height: 580px;
-    /* Tablet's gap is 1rem (16px) — a -16px nudge here would close
-       it to zero, so this is dialed back to -10px to stay inside
-       "close but not touching" at the narrower width. */
-    transform: translateX(-10px);
+    /* 2026-07-10, second pass: doubled from -10px to -20px, matching
+       the corrected reasoning applied to the other tiers above (real
+       reference point is where the mission copy's glyphs stop, not
+       the column's box width) — but kept more conservative than the
+       larger tiers, since Tablet's 520px text column and 1rem gap
+       leave the least absolute room of any non-stacked breakpoint to
+       be wrong. */
+    transform: translateX(-20px);
   }
 }
 
@@ -4074,21 +4176,25 @@ form { display: flex; flex-direction: column; gap: 1rem; }
       the former transition section has been removed entirely)
 ───────────────────────────────────────────── */
 
-/* Flat cream field — no navy "stage," no rounded card. Per Susan's
-   review (June 2026): the navy stage + rounded panel made this read
-   as a card floating on a dark strip rather than a publication. The
-   cream begins directly where the Collection section's navy ends,
-   with clean architectural edges throughout. Generous top padding
-   replaces the old stage/panel padding so the encounter still feels
-   like entering a gallery, not compressed against the section above. */
+/* Flat cream field — no navy "stage," no rounded card wrapping the
+   whole Queen Ann movement. Per Susan's review (June 2026): the navy
+   stage + rounded panel made the title page read as a card floating
+   on a dark strip rather than a publication.
+   2026-07-10: Susan asked for the title band itself to go dark again
+   ("let the section band be dark") — but as its own true full-bleed
+   section (.poems-showcase-intro, above this one in page.tsx), not a
+   card wrapping this field. This field now begins directly where that
+   Introduction band ends, with clean architectural edges throughout,
+   the same principle Susan asked for in June, just moved one section
+   earlier. */
 .poems-showcase-section {
   background: var(--cream);
-  /* Top padding nudged up slightly (7rem -> 7.5rem) while the
-     intro-to-pair gap below is tightened substantially — net effect
-     is less total dead space, with the heading/quote/image pair
-     reading as one composed unit sitting deliberately within the
-     field rather than floating near the top of an oversized one. */
-  padding: 7.5rem 0 var(--band-gap);
+  /* Top padding reduced (7.5rem -> 5rem) now that the Introduction
+     band above provides its own preceding padding and a hard navy ->
+     cream color cut — this field no longer needs to manufacture extra
+     top breathing room on its own; the cut itself reads as the
+     deliberate beat. Bottom padding (--band-gap) unchanged. */
+  padding: 5rem 0 var(--band-gap);
 }
 
 .poems-showcase-inner {
@@ -4099,26 +4205,49 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 /* ── 1. Queen Ann Introduction — a literary title page, not a
    heading with supporting copy. Name set as a quiet, tracked label;
-   a single short quotation beneath it, unquoted and trailing into an
-   ellipsis, reads as the opening of the work rather than a floating
-   citation. Generous margin beneath before the images begin — the
-   heading introduces the work, it does not compete with it. */
+   a single orientation line beneath it. The heading introduces the
+   work, it does not compete with it.
+   2026-07-10, per Susan: "let the [Queen Ann title] section band be
+   dark." This is now its own full-bleed <section> (see page.tsx),
+   structured like .home-coll-section: full-width navy background, a
+   thin gold hairline (same token as .home-coll-section's own
+   border-top) marking the seam with the Collection band above it, an
+   inner wrapper holding the centered title+tagline at a readable
+   measure. This is NOT the navy "stage + rounded card" Susan removed
+   in the June 2026 review — that wrapped the whole title page in a
+   floating panel; this is a true section-width band, edge to edge. */
 .poems-showcase-intro {
+  background: var(--deep);
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+  padding: 5rem 2rem;
+}
+.poems-showcase-intro__inner {
   max-width: 760px;
-  /* Tightened (4.5rem -> 2.5rem) so the title page and the image
-     pair below read as one unified composition rather than two
-     pieces separated by excess cream space. */
-  margin: 0 auto 2.5rem;
+  margin: 0 auto;
   text-align: center;
 }
+/* 2026-07-10 "Queen Ann Section Refinement," per Susan: QUEEN ANN was
+   carrying too much visual authority for a title page that introduces
+   the artwork rather than competing with it. Decoupled from the
+   shared --h2-size token (used site-wide for real section titles like
+   "The Collection") and given its own explicit scale, ~17% smaller —
+   the same "own scale, not the shared token" pattern already used by
+   .poems-showcase-intro__quote just below. Margin-bottom widened
+   (0.75rem -> 1.5rem) per her "allow more breathing room between the
+   title and supporting line" note; the tagline's own top margin was
+   removed to match (see .poems-showcase-intro__tagline) so this one
+   value is the single source of the gap between them.
+   2026-07-10, later the same day: color switched --deep -> --cream
+   now that this title page sits on a navy band instead of the cream
+   field (see .poems-showcase-intro above). */
 .poems-showcase-intro__title {
   font-family: var(--serif);
-  font-size: var(--h2-size);
+  font-size: clamp(1.6rem, 2.65vw, 2.1rem);
   font-weight: var(--h2-weight);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--deep);
-  margin: 0 0 0.75rem;
+  color: var(--cream);
+  margin: 0 0 1.5rem;
   line-height: 1.1;
 }
 .poems-showcase-intro__quote {
@@ -4141,14 +4270,31 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      line — explaining why an image and poem appear together, not
      making its own statement — it has been brought back down from
      the enlarged "companion to the gold quote" treatment of the prior
-     pass to a quiet, secondary register: body-scale, muted --mid
-     tone, modest top margin off the title. */
+     pass to a quiet, secondary register: body-scale, modest top
+     margin off the title.
+     2026-07-10 "Queen Ann Section Refinement," per Susan: "the
+     supporting line should become visually more important through
+     relationship, not through size" — font-size is unchanged (and now
+     reads with relatively more weight simply because the title above
+     it has shrunk), but color moves from muted --mid gray to --gold,
+     the site's established register for a quiet line that still
+     matters (see .home-coll-sub, .hero-quote-body). Top margin removed
+     — .poems-showcase-intro__title's own bottom margin (1.5rem) is now
+     the single value governing the gap between title and tagline, per
+     her "more breathing room" note above. The title introduces; this
+     line interprets — the eye should continue down into the artwork,
+     not settle on either line.
+     2026-07-10, later the same day: gold read as too light/thin on
+     the new dark band at this size — per Susan, bumped up and
+     switched to --cream, the same color as the title above it, so
+     title and tagline read as one unified, legible statement on navy
+     rather than the tagline receding. */
   font-family: var(--serif);
   font-style: italic;
-  font-size: calc(var(--body-size) + 2px);
+  font-size: clamp(1.2rem, 1.9vw, 1.35rem);
   line-height: 1.6;
-  color: var(--mid);
-  margin: 0.85rem 0 0;
+  color: var(--cream);
+  margin: 0;
 }
 
 .poems-showcase-ann__excerpt {
@@ -4340,18 +4486,18 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 @media (max-width: 1024px) {
-  .poems-showcase-section { padding: 5rem 0 var(--band-gap-md); }
+  .poems-showcase-section { padding: 4rem 0 var(--band-gap-md); }
   .poems-showcase-inner { padding: 0 1.75rem; }
-  .poems-showcase-intro { margin-bottom: 2rem; }
+  .poems-showcase-intro { padding: 4rem 1.75rem; }
   .poems-showcase-foundation { padding-top: 3.5rem; }
   .poems-showcase-foundation__inner { padding: 0 1.75rem; }
 }
 @media (max-width: 640px) {
-  .poems-showcase-section { padding: 3.5rem 0 var(--band-gap-sm); }
+  .poems-showcase-section { padding: 3rem 0 var(--band-gap-sm); }
   .poems-showcase-inner { padding: 0 1.25rem; }
   .poems-showcase-foundation { padding-top: 3rem; }
   .poems-showcase-foundation__inner { padding: 0 1.25rem; }
-  .poems-showcase-intro { margin-bottom: 1.5rem; }
+  .poems-showcase-intro { padding: 3.5rem 1.25rem; }
 }
 
 /* ─────────────────────────────────────────────
@@ -4423,6 +4569,145 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 /* ─────────────────────────────────────────────
    REUSABLE UTILITIES — homepage sections
 ───────────────────────────────────────────── */
+
+/* ── HOMEPAGE: THE AWAKENARTS METHOD ─────────────────────────────────────
+   Added 2026-07-10, per Susan's "establish the AwakenArts Method as the
+   conceptual center of the public website" directive. Originally sat
+   immediately after the Hero; moved after the Collection section the
+   same day per her "Homepage Refinement — Production Pass"
+   clarification (Discovery before Understanding) — see page.tsx for
+   the current position and full rationale. Answers "what is happening
+   here?", the question Discovery naturally raises.
+
+   Quiet and text-only by design: no image, no mention of workshops or
+   Sketchbook. Per the directive, the emphasis is symbolic attention —
+   noticing an image and staying with it — not symbolic interpretation
+   (see AwakenArts_Editorial_Philosophy.md's recognition-over-
+   interpretation principle).
+
+   2026-07-10 refinement, same day: reduced the opening statement's
+   typographic dominance so the section reads as a thoughtful pause,
+   not a second headline moment. h2 drops from the standard --h2-size
+   (used for real section titles like "The Collection") to a smaller,
+   italic, quote-like scale — modeled on .hero-quote-text, the site's
+   existing "quiet threshold" pattern, rather than inventing a new one.
+   The former two body paragraphs are combined into one continuous
+   paragraph, closing on a CTA into the now-live standalone Method
+   page (.home-method-cta, originally a non-linking placeholder before
+   /method existed — see page.tsx's comment for that history).
+
+   Background matches .hero's raw #f5f0e8 exactly (not var(--cream),
+   which is a slightly lighter/pinker panel tone used for elevated
+   cards elsewhere) so the Method section reads as a continuation of
+   the same quiet cream field the Queen Ann section (below it) also
+   uses — the one hard color cut on the page remains the Collection
+   section's navy field, immediately before this section.
+─────────────────────────────────────────────────────────────────────────── */
+.home-method-section {
+  background: #f5f0e8;
+  /* 2026-07-10 "AwakenArts Method CTA" refinement, per Susan: bottom
+     padding reduced (7rem -> 5rem) so the section doesn't leave the
+     CTA sitting in an oversized void before the Queen Ann band below
+     — the CTA should read as this section's own confident conclusion,
+     not something floating between two sections. */
+  padding: 6rem 2rem 5rem;
+}
+
+.home-method-inner {
+  max-width: var(--measure-medium);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-method-inner .eyebrow {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.home-method-inner .eyebrow::before { display: none; }
+
+.home-method-inner h2 {
+  /* Reduced-dominance opening statement — quieter than a standard H2
+     section title (contrast .home-coll-text h2 or .coll-header h2,
+     both on --h2-size). Modeled on .hero-quote-text's "quiet
+     threshold" treatment: smaller, italic, generously line-spaced, so
+     it reads as a reflective statement rather than a headline. */
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  color: var(--deep);
+  line-height: 1.55;
+  max-width: 32ch;
+  margin: 0 auto 1.75rem;
+}
+.home-method-inner h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.home-method-body {
+  /* Body copy + Medium measure — Global Design System (locked 2026-06-25). */
+  font-family: var(--serif);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--mid);
+  max-width: var(--measure-medium);
+  margin: 0 auto;
+}
+
+/* CTA into /method. Renamed .home-method-future -> .home-method-cta
+   2026-07-10 (later the same day), per Susan: "the Method is no
+   longer a placeholder — it's becoming one of the foundational pages
+   — the homepage invitation should reflect that." Three changes from
+   the original quiet text link:
+
+   1. Copy strengthened: "Learn More About the AwakenArts Method" ->
+      "Discover the AwakenArts Method" — her stated preference over
+      "Explore" (which would echo .home-coll-cta's own "Explore the
+      Collection" and blur the two CTAs' distinct roles).
+   2. Visual treatment upgraded from a bare text link to a "framed
+      link" — a thin gold outline and generous button-like padding,
+      giving it real presence — per her "more substantial than a
+      simple text link" note.
+   3. Still deliberately lighter than .home-coll-cta: serif italic
+      (not .home-coll-cta's uppercase sans), transparent fill (not
+      solid gold), so the two CTAs stay clearly distinct in kind, not
+      just in size — per the site-wide principle that buttons say
+      "experience something" and text-derived invitations say
+      "understand something." This sits between the two: more
+      presence than a plain link, still visibly secondary to the one
+      solid button on the page.
+
+   Margin-top (0.85rem) unchanged from the prior pass — still the
+   tight paragraph-to-CTA relationship Susan asked for; the border
+   here doesn't need extra separation to read as its own element. */
+.home-method-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid rgba(139, 105, 20, 0.45);
+  border-radius: 2px;
+  padding: 0.75rem 1.75rem;
+  text-decoration: none;
+  margin: 0.85rem 0 0;
+  transition: border-color 0.2s ease-out, background-color 0.2s ease-out, color 0.2s ease-out;
+}
+.home-method-cta:hover,
+.home-method-cta:focus-visible {
+  border-color: var(--gold);
+  background-color: rgba(139, 105, 20, 0.06);
+  color: var(--deep);
+}
+
+@media (max-width: 640px) {
+  .home-method-section { padding: 4.5rem 1.5rem 3.5rem; }
+}
 
 /* ── HOMEPAGE: COLLECTION SECTION ───────────────────────────────────────────
    Positioned immediately below the opening statement.
@@ -4508,25 +4793,39 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   max-width: var(--measure-medium);
 }
 
+/* 2026-07-10 "Collection Section Refinement," per Susan: "give the
+   CTA greater visual confidence — it should feel like the natural
+   destination of the section rather than a simple text link... the
+   button opens the door." Rebuilt from a quiet underlined text link
+   into a solid button, on the same uppercase-sans/padding/border-
+   radius proportions as the site's other real button
+   (.purchase-cta__button), but filled gold rather than navy — navy-
+   on-cream would disappear against this section's own navy field,
+   where gold already reads as the confident, high-contrast accent
+   (the cover's gold edge, the eyebrow label, etc). This is the
+   section's one ending: a single confident invitation forward, not an
+   explanatory close. */
 .home-coll-cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.4em;
-  font-family: var(--serif);
-  /* 2026-06-28 Readability Primacy revision: +2px — a call to action
-     should read with confidence, not as a caption. */
-  font-size: calc(1.05rem + 2px);
-  font-style: italic;
-  color: var(--cream);
+  gap: 0.6em;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--deep);
+  background: var(--gold-lt);
+  border: none;
+  border-radius: 2px;
+  padding: 1rem 2.25rem;
   text-decoration: none;
-  border-bottom: 1px solid rgba(250, 247, 242, 0.35);
-  padding-bottom: 3px;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .home-coll-cta:hover {
-  color: var(--gold-lt);
-  border-color: var(--gold-lt);
+  background-color: var(--cream);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 860px) {
@@ -7979,4 +8278,183 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 @media (max-width: 640px) {
   .foundation-main { padding: 2.5rem 1.5rem var(--band-gap-sm); }
+}
+
+/* ─────────────────────────────────────────────
+   METHOD PAGE — /method
+   Added 2026-07-10, per Susan's "The AwakenArts Method is no longer a
+   placeholder concept" directive. Structured as /foundation's own
+   sibling — single-column editorial statement, not a product page —
+   with its own .method-* namespace (values mirror .foundation-*'s
+   tokens for visual consistency, kept separate per this codebase's
+   established pattern of page-specific class prefixes even where
+   styling is nearly identical — see .col-hero__eyebrow / .gal-hero /
+   .lib-hero, all variations on the same shared .eyebrow utility).
+───────────────────────────────────────────── */
+.method-page {
+  background: var(--cream);
+  min-height: 100vh;
+}
+
+.method-main {
+  max-width: var(--measure-narrow);
+  margin: 0 auto;
+  padding: 3.5rem 2rem var(--band-gap);
+  text-align: left;
+}
+
+.method-eyebrow {
+  margin: 0 0 1.5rem;
+}
+
+.method-h1 {
+  font-family: var(--serif);
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  color: var(--deep);
+  line-height: 1.15;
+  margin: 0 0 1.25rem;
+}
+
+/* The hero's quote-like line — same role as .home-coll-sub or the
+   homepage Method section's own h2 (this is literally the same
+   sentence), so it gets the same gold-italic subtitle treatment. */
+.method-lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--subtitle-size);
+  line-height: var(--subtitle-line);
+  color: var(--gold);
+  margin: 0 0 3rem;
+  max-width: 52ch;
+}
+
+/* The opening line of the Introduction — Susan's addendum sentence,
+   "the heart of the AwakenArts Method." Set apart from ordinary body
+   copy (larger, italic, ink rather than the --mid tone body text
+   uses) since it's the page's real thesis statement, not supporting
+   prose — everything after it develops this one sentence. */
+.method-opening {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  line-height: 1.6;
+  color: var(--deep);
+  margin: 0 0 1.75rem;
+}
+
+.method-body {
+  font-family: var(--serif);
+  font-size: calc(var(--body-size) + 2px);
+  line-height: var(--body-line);
+  color: var(--ink);
+  margin: 0 0 1.75rem;
+}
+
+.method-h2 {
+  font-family: var(--serif);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  color: var(--deep);
+  line-height: 1.2;
+  margin: 3rem 0 1.25rem;
+}
+
+/* A Practice of Attention — five short imperatives, each its own
+   line, generously spaced so they read as a quiet sequence to sit
+   with rather than a checklist to complete. No bullets/numbers: per
+   Susan's "not instructional" design intent, this should feel like a
+   short stanza, not a set of steps. */
+.method-list {
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+}
+.method-list li {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: calc(var(--body-size) + 2px);
+  line-height: 1.9;
+  color: var(--deep);
+}
+
+/* Living Symbols — the same quiet-sequence treatment, but the items
+   are short enough to run inline with generous separation rather than
+   stack, since these are examples of a category, not sequential
+   steps. */
+.method-list--inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+.method-list--inline li {
+  line-height: 1.6;
+}
+
+/* Image · Poem · Reflection · Conversation — label + short
+   description, the same "movement" pairing pattern used on the
+   Workshops page (label, then what it does), reimplemented here in
+   globals.css's page-prose register rather than a scoped CSS module,
+   to stay consistent with this page's otherwise plain editorial
+   styling. */
+.method-forms {
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.method-forms li {
+  font-family: var(--serif);
+  font-size: calc(var(--body-size) + 2px);
+  line-height: var(--body-line);
+  color: var(--ink);
+}
+.method-forms__label {
+  font-style: italic;
+  color: var(--gold);
+  margin-right: 0.5em;
+}
+
+/* Closing Foundation acknowledgment — same "quiet conclusion" credo
+   treatment as .foundation-credo (centered, italic, gold, top border),
+   plus a CTA link to /foundation itself, since this page's job is to
+   point onward rather than restate the Foundation Statement in full. */
+.method-credo {
+  margin: var(--band-gap-sm) 0 0;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(139, 105, 20, 0.35);
+  text-align: center;
+}
+.method-credo p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--mid);
+  max-width: 56ch;
+  margin: 0 auto 1.25rem;
+}
+.method-credo__link {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+}
+.method-credo__link:hover,
+.method-credo__link:focus-visible {
+  color: var(--deep);
+}
+
+@media (max-width: 1024px) {
+  .method-main { padding-bottom: var(--band-gap-md); }
+}
+
+@media (max-width: 640px) {
+  .method-main { padding: 2.5rem 1.5rem var(--band-gap-sm); }
+  .method-h1 { margin-bottom: 1rem; }
 }

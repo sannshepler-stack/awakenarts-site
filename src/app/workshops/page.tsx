@@ -1,111 +1,105 @@
-// ─── /workshops — Workshops Page ─────────────────────────────────────────────
-// AwakenArts · Symbolic Facilitation Workshops
-//
-// Built per the Global Page Architecture Standard: Nav -> page content ->
-// WayfindingBand -> Footer. Content is drawn directly from the Workshop
-// Curriculum (AwakenArts_Workshop_Curriculum.docx) — the Series at a Glance
-// table, the Three Ways to Begin formats, the four-movement session shape,
-// and the Materials Checklist all mirror that document rather than
-// inventing new programming. No pricing or booking system exists yet, so
-// the page closes on a direct email inquiry rather than a self-serve form.
-// ─────────────────────────────────────────────────────────────────────────────
-
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Nav from '@/components/Nav'
+import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import styles from './page.module.css'
 
-// Unlisted Page System (2026-06-27): this page is live but deliberately
-// unlinked from Nav/WayfindingBand/Footer — reachable only by direct URL
-// until Susan decides to publish it into navigation. robots: noindex
-// keeps it out of search results in the meantime (matching the
-// DISALLOWED_PATHS entry in src/app/robots.ts). See
-// AwakenArts_Site_Architecture.md -> "Unlisted Page System".
+// ─── /workshops — Workshops Page ─────────────────────────────────────────────
+// AwakenArts · Unlisted page.
+//
+// 2026-07-10 rebuild, per Susan's "Create the Workshops Page" Production
+// Directive: this replaces the 2026-06-27 curriculum-first build (a
+// six-session GLANCE table mapped one Edition per session, a "What's
+// Included" materials checklist, "Three Ways to Begin" format cards — see
+// git history / the old page.module.css this shares a filename with) with a
+// philosophy-first page that answers one question: "what happens when the
+// AwakenArts Method is practiced together?" Not an advertisement for
+// classes — the next chapter of /method, not a separate product. No
+// scheduling, no pricing, no curriculum table.
+//
+// Hero rebuilt to match /method's own pattern (AtmosphericHeader image ->
+// eyebrow -> h1 -> lede, cream field) instead of the prior solid-navy hero
+// block, per Susan's "visual and literary continuity with the Method page"
+// instruction. Header image is ambiance-bible-2.png — not yet used
+// elsewhere, but the same warm books-and-light family as /method's
+// poetry-manuscript.jpg (open book, dried botanicals, low golden light),
+// so the two pages read as one visual family without repeating the exact
+// same photograph. No asset in the library depicts an actual gathering of
+// people (the site never photographs real people — every figure is
+// painted/illustrated); this is the closest existing match to "gathering,
+// reflection, conversation, attentive presence" without commissioning a
+// new image, which is outside this pass's scope.
+//
+// Per the Unlisted Page System (matching /method and /foundation's own
+// precedent): built and live, reachable by direct URL, not yet placed in
+// Nav/WayfindingBand/Footer or indexed — publishing into navigation is a
+// separate decision, not addressed by this directive.
 export const metadata: Metadata = {
-  title: 'Workshops — AwakenArts',
+  title: 'Workshops | AwakenArts',
   description:
-    'Symbolic Facilitation Workshops — a six-session series, taster sessions, and ongoing groups built on the AwakenArts Figure Editions and the Recognition Model.',
+    'What happens when the AwakenArts Method is practiced together — recognition, deepened in the presence of others.',
   alternates: { canonical: '/workshops' },
   robots: { index: false, follow: true },
   openGraph: {
     url: '/workshops',
-    title: 'Workshops — AwakenArts',
+    title: 'Workshops | AwakenArts',
     description:
-      'Symbolic Facilitation Workshops — a six-session series, taster sessions, and ongoing groups built on the AwakenArts Figure Editions.',
+      'What happens when the AwakenArts Method is practiced together — recognition, deepened in the presence of others.',
   },
 }
 
-const GLANCE = [
-  {
-    session: 'Session 1',
-    edition: 'Poppy — “Her Mother’s Hands”',
-    theme: 'Love & Inheritance',
-    emphasis: 'Encounter — building trust in noticing, low-stakes entry',
-  },
-  {
-    session: 'Session 2',
-    edition: 'Bowls — “Two Forms, One Light”',
-    theme: 'Balance & Belonging',
-    emphasis: 'Recognition — meeting without competing or comparing',
-  },
-  {
-    session: 'Session 3',
-    edition: 'Ballerina — “The Many Become One”',
-    theme: 'Playfulness & Becoming',
-    emphasis: 'Reflection — performance vs. authentic self',
-  },
-  {
-    session: 'Session 4',
-    edition: 'Dragon — “The Dragon”',
-    theme: 'Identity & Wholeness',
-    emphasis: 'Recognition — integrating what feels like opposites',
-  },
-  {
-    session: 'Session 5',
-    edition: 'Grismere — “A Lure Toward the Depths”',
-    theme: 'Longing & Mystery',
-    emphasis: 'Reflection — sitting with what resists easy meaning',
-  },
-  {
-    session: 'Session 6',
-    edition: 'Queen Ann — “Between Two Kingdoms”',
-    theme: 'Threshold & Becoming',
-    emphasis: 'Integration — carrying recognition into what’s next',
-  },
+const EXPERIENCE = [
+  'Notice recurring images.',
+  'Become curious before explaining.',
+  'Remain with an image rather than rushing toward interpretation.',
+  'Discover recognition through conversation.',
+  'Carry recognition into ordinary life.',
 ]
 
-const MOVEMENTS = [
-  {
-    num: '1',
-    name: 'Encounter',
-    desc: 'An unhurried, silent sitting with the figure and its poem, before anyone is asked what it means.',
-  },
-  {
-    num: '2',
-    name: 'Recognition',
-    desc: 'The moment something in the figure touches something true in a participant’s own life.',
-  },
-  {
-    num: '3',
-    name: 'Reflection',
-    desc: 'Putting language around what’s surfaced — through a round of observations, open discussion, and journaling.',
-  },
-  {
-    num: '4',
-    name: 'Integration',
-    desc: 'A closing gesture toward carrying what’s been recognized out of the room, in its own time.',
-  },
+const PRACTICE = [
+  'We practice noticing before explaining.',
+  'We practice becoming curious about the images that naturally arise in conversation.',
+  'We practice remaining with an image long enough for recognition to emerge.',
+  'We practice listening together.',
 ]
 
-const PROVIDED = [
-  'Edition copies (printed or digital) for each figure used in the series',
-  'Facilitator Orientation & Quick-Reference handout',
-  'Participant Recognition Model card',
-  'Session worksheets — individual, group, and return-session formats',
-  'Journals or notebooks for participants',
-  'Intake / consent form, reviewed before the first session',
-  'Feedback form, distributed after the final session or at the series midpoint',
+const RHYTHM = [
+  'Notice',
+  'Become Curious',
+  'Remain with the Image',
+  'Recognition',
+  'Conversation',
+  'Integration',
+]
+
+const FORMATS = [
+  {
+    name: 'Introductory Workshop',
+    desc:
+      'A single gathering that introduces the Method through one accessible Figure Edition — a first encounter with noticing, before any commitment to a longer series.',
+  },
+  {
+    name: 'Figure Edition Workshop',
+    desc:
+      'A focused gathering built around one Figure Edition, giving a group time to notice, remain, and recognize together within a single symbolic landscape.',
+  },
+  {
+    name: 'Church Retreat',
+    desc:
+      'A weekend or extended gathering that brings the Method into a retreat setting, pairing quiet attention with a community’s own rhythms of worship and reflection.',
+  },
+  {
+    name: 'Library & Community Programs',
+    desc:
+      'A public offering suited to libraries, community centers, and reading groups — an accessible entry point for anyone curious about symbolic attention, regardless of background.',
+  },
+  {
+    name: 'Ongoing Recognition Groups',
+    desc:
+      'A continuing group that returns to the practice regularly, building the kind of shared attention that only develops over time and repeated encounter.',
+  },
 ]
 
 const INQUIRY_MAILTO =
@@ -116,183 +110,100 @@ export default function WorkshopsPage() {
     <>
       <Nav />
 
-      {/* ── Hero ──────────────────────────────────────────────────────── */}
-      <main className={styles.hero}>
-        <div className={styles.heroInner}>
-          <span className={styles.eyebrow}>Workshops</span>
-          <h1 className={styles.title}>Symbolic Facilitation Workshops</h1>
-          <p className={styles.lede}>
-            Six sessions. Six figures. One practice of noticing.
+      <AtmosphericHeader
+        src="/images/library/ambiance-bible-2.png"
+        alt="An open journal with a sketched figure, stacked books, and dried botanicals, overlooking hills at sunset — a quiet place for shared reflection."
+        fadeTo="#f5f0e8"
+      />
+
+      <div className={styles.page}>
+        <main className={styles.main}>
+          <p className={`eyebrow ${styles.eyebrow}`}>Workshops</p>
+          <h1 className={styles.h1}>Workshops</h1>
+          <p className={styles.lede}>Recognition deepens in the presence of others.</p>
+
+          {/* Introduction — no section heading, flows directly from the
+              hero, same as /method's own opening movement. Links back to
+              /method by name, the explicit continuity Susan asked for. */}
+          <p className={styles.body}>
+            The workshops are where the{' '}
+            <Link href="/method" className={styles.inlineLink}>
+              AwakenArts Method
+            </Link>{' '}
+            becomes lived experience. The emphasis is not teaching
+            symbolism. The emphasis is learning how to notice.
           </p>
-          <p className={styles.intro}>
-            This series turns the practice taught in <em>The AwakenArts Guide
-            to Symbolic Facilitation</em> into a runnable group experience: an
-            unhurried encounter with a figure and a poem, room for whatever
-            surfaces, and a closing gesture toward carrying it forward. The
-            Recognition Model — Encounter, Recognition, Reflection,
-            Integration — is the lens for every session; the Figure Editions
-            are the material.
-          </p>
-          <a className={styles.heroCta} href={INQUIRY_MAILTO}>
-            Inquire About a Workshop
-          </a>
-        </div>
-      </main>
 
-      {/* ── Three Ways to Begin ──────────────────────────────────────── */}
-      <section className={styles.waysSection} aria-labelledby="ways-heading">
-        <div className={styles.sectionHeader}>
-          <span className={styles.eyebrow}>Formats</span>
-          <h2 id="ways-heading" className={styles.sectionHeading}>
-            Three Ways to Begin
-          </h2>
-          <p className={styles.sectionLede}>
-            The same four-movement shape, run at three different scales —
-            from a single sampler to an ongoing practice.
-          </p>
-        </div>
-
-        <div className={styles.waysGrid}>
-          <div className={styles.wayCard}>
-            <span className={styles.wayLabel}>Full Series</span>
-            <h3 className={styles.wayTitle}>Six-Session Series</h3>
-            <p className={styles.wayBody}>
-              Weekly or biweekly sessions, one Edition per session, moving
-              from a gentle entry point toward material that asks more of
-              participants. The full arc described below.
-            </p>
-          </div>
-
-          <div className={styles.wayCard}>
-            <span className={styles.wayLabel}>Sampler</span>
-            <h3 className={styles.wayTitle}>Taster Session</h3>
-            <p className={styles.wayBody}>
-              A single 90-minute introduction using one accessible Edition —
-              Poppy or Bowls work well as a first encounter. Useful as an
-              open house before a group commits to the full series.
-            </p>
-          </div>
-
-          <div className={styles.wayCard}>
-            <span className={styles.wayLabel}>Continuing</span>
-            <h3 className={styles.wayTitle}>Ongoing / Return Group</h3>
-            <p className={styles.wayBody}>
-              Once a group has completed the series, return sessions revisit
-              a figure already encountered — a brief check-in, a silent
-              re-encounter, and discussion focused on what&rsquo;s different
-              this time.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Series at a Glance ───────────────────────────────────────── */}
-      <section className={styles.glanceSection} aria-labelledby="glance-heading">
-        <div className={styles.sectionHeader}>
-          <span className={styles.eyebrow}>The Full Series</span>
-          <h2 id="glance-heading" className={styles.sectionHeading}>
-            Series at a Glance
-          </h2>
-          <p className={styles.sectionLede}>
-            The sequence moves from gentler entry points toward material
-            that asks more of participants, closing on a figure of
-            transition.
-          </p>
-        </div>
-
-        <table className={styles.glanceTable}>
-          <thead>
-            <tr>
-              <th scope="col">Session</th>
-              <th scope="col">Edition &amp; Theme</th>
-              <th scope="col">Recognition Model Emphasis</th>
-            </tr>
-          </thead>
-          <tbody>
-            {GLANCE.map((row) => (
-              <tr key={row.session}>
-                <td>{row.session}</td>
-                <td>
-                  <span className={styles.glanceEdition}>{row.edition}</span>
-                  <span className={styles.glanceTheme}>{row.theme}</span>
-                </td>
-                <td>{row.emphasis}</td>
-              </tr>
+          <h2 className={styles.h2}>The Workshop Experience</h2>
+          <p className={styles.body}>In a workshop, participants learn to:</p>
+          <ul className={styles.list} aria-label="The Workshop Experience">
+            {EXPERIENCE.map((line) => (
+              <li key={line}>{line}</li>
             ))}
-          </tbody>
-        </table>
+          </ul>
 
-        <p className={styles.glanceNote}>
-          Adjust the order to fit a particular group&rsquo;s pace — this is a
-          suggested arc, not a required one.
-        </p>
-      </section>
+          <h2 className={styles.h2}>What We Practice Together</h2>
+          <ul className={styles.list} aria-label="What We Practice Together">
+            {PRACTICE.map((line) => (
+              <li key={line}>{line}</li>
+            ))}
+          </ul>
 
-      {/* ── What Each Session Holds ──────────────────────────────────── */}
-      <section className={styles.shapeSection} aria-labelledby="shape-heading">
-        <div className={styles.sectionHeader}>
-          <span className={styles.eyebrow}>The Shape</span>
-          <h2 id="shape-heading" className={styles.sectionHeading}>
-            What Each Session Holds
-          </h2>
-        </div>
-
-        <div className={styles.shapeGrid}>
-          {MOVEMENTS.map((m) => (
-            <div key={m.num} className={styles.movement}>
-              <span className={styles.movementNum}>{m.num}</span>
-              <h3 className={styles.movementName}>{m.name}</h3>
-              <p className={styles.movementDesc}>{m.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <p className={styles.timingNote}>
-          Each group session runs roughly <strong>90 minutes</strong> for
-          four to ten participants: arrival and centering, opening, a silent
-          encounter with the figure and poem, a round of observations, open
-          discussion, individual reflection, and a closing. One-on-one
-          sessions use the Guide&rsquo;s <strong>45–60 minute</strong> Individual
-          format instead.
-        </p>
-      </section>
-
-      {/* ── What's Included ──────────────────────────────────────────── */}
-      <section className={styles.providedSection} aria-labelledby="provided-heading">
-        <div className={styles.sectionHeader}>
-          <span className={styles.eyebrow}>Materials</span>
-          <h2 id="provided-heading" className={styles.sectionHeading}>
-            What&rsquo;s Included
-          </h2>
-        </div>
-
-        <div className={styles.providedGrid}>
-          {PROVIDED.map((item) => (
-            <p key={item} className={styles.providedItem}>
-              {item}
-            </p>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Closing CTA ───────────────────────────────────────────────── */}
-      <section className={styles.ctaSection} aria-labelledby="cta-heading">
-        <div className={styles.ctaInner}>
-          <h2 id="cta-heading" className={styles.ctaHeading}>
-            Begin a Series
-          </h2>
-          <p className={styles.ctaBody}>
-            Workshops can run as a six-session group series, a single taster
-            session, one-on-one, or as an ongoing return group for those
-            who&rsquo;ve already completed the series. To ask about scheduling a
-            workshop or bringing this practice to your own group, reach out
-            directly.
+          <h2 className={styles.h2}>Every Workshop Begins the Same Way</h2>
+          <p className={styles.body}>
+            Regardless of which Figure Edition a workshop gathers around, it
+            moves through the same rhythm:
           </p>
-          <a className={styles.ctaLink} href={INQUIRY_MAILTO}>
-            Email Susan →
-          </a>
-        </div>
-      </section>
+          <ol className={styles.rhythm} aria-label="The rhythm of the Method">
+            {RHYTHM.map((step, i) => (
+              <li key={step}>
+                <span className={styles.rhythmStep}>{step}</span>
+                {i < RHYTHM.length - 1 && (
+                  <span className={styles.rhythmArrow} aria-hidden="true">
+                    &darr;
+                  </span>
+                )}
+              </li>
+            ))}
+          </ol>
+          <p className={styles.body}>
+            This rhythm is the organizing structure for every workshop,
+            regardless of edition.
+          </p>
+
+          <h2 className={styles.h2}>Figure Editions</h2>
+          <p className={styles.body}>
+            Every workshop begins with one Figure Edition. The Figure
+            Edition provides the symbolic landscape through which
+            participants practice the Method together.
+          </p>
+          <p className={styles.body}>
+            <Link href="/collection" className="text-link">
+              Explore the Figure Editions <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </p>
+
+          <h2 className={styles.h2}>Workshop Formats</h2>
+          <ul className={styles.formats} aria-label="Workshop Formats">
+            {FORMATS.map((f) => (
+              <li key={f.name}>
+                <span className={styles.formatsName}>{f.name}</span>
+                <p className={styles.formatsDesc}>{f.desc}</p>
+              </li>
+            ))}
+          </ul>
+
+          <div className={styles.closing}>
+            <p>
+              Recognition is rarely a solitary experience. It deepens as we
+              learn to see alongside others.
+            </p>
+            <a className={styles.closingLink} href={INQUIRY_MAILTO}>
+              Inquire About a Workshop <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </main>
+      </div>
 
       <WayfindingBand />
       <Footer />
