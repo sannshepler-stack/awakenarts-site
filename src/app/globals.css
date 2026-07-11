@@ -4805,6 +4805,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    (the cover's gold edge, the eyebrow label, etc). This is the
    section's one ending: a single confident invitation forward, not an
    explanatory close. */
+/* 2026-07-11, per Susan: the solid gold fill read as too stark against
+   the section's navy field. Switched to cream — same solid-button
+   confidence (still the one filled CTA on the page, per the
+   buttons-vs-text-links principle), just a quieter fill. Hover fades
+   toward a soft cream-gold blend (#EBDFC0, ~30% --gold-lt into
+   --cream) rather than swapping to a second flat color, so the
+   transition itself reads as a fade, per her note. */
 .home-coll-cta {
   display: inline-flex;
   align-items: center;
@@ -4815,7 +4822,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--deep);
-  background: var(--gold-lt);
+  background: var(--cream);
   border: none;
   border-radius: 2px;
   padding: 1rem 2.25rem;
@@ -4824,7 +4831,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .home-coll-cta:hover {
-  background-color: var(--cream);
+  background-color: #EBDFC0;
   transform: translateY(-1px);
 }
 

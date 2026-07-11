@@ -167,15 +167,25 @@ export default function HomePage() {
           <picture className="hero__picture">
             <source
               media="(max-width: 640px)"
-              srcSet="/images/brand/queen-ann-hero-mobile.jpg"
+              srcSet="/images/brand/chess-ann-hero-mobile.jpg"
             />
             <source
               media="(max-width: 1024px)"
-              srcSet="/images/brand/queen-ann-hero-tablet.jpg"
+              srcSet="/images/brand/chess-ann-hero-tablet.jpg"
             />
+            {/* 2026-07-11 — Susan's brand-image swap, confirmed and
+                extended to all three breakpoints. Recolored to the
+                site's --deep navy (#1C2B3A) in her own edit
+                (Chess-Ann.jpg.png, full-res 3934x3269). Desktop cropped
+                to match .hero__media's actual rendered aspect (~1.3:1)
+                so object-fit: cover doesn't re-crop further. Tablet and
+                mobile crops were pixel-matched against the original
+                maroon crops (queen-ann-hero-tablet.jpg / -mobile.jpg) so
+                the King/Queen framing is identical to what was already
+                tuned — same crop boxes, applied to the new source. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/brand/queen-ann-hero-desktop.jpg"
+              src="/images/brand/chess-ann-hero-desktop.jpg"
               alt="Queen Ann — a painted figure standing within a symbolic narrative, central to the AwakenArts identity"
               className="hero__img"
               width={1600}
