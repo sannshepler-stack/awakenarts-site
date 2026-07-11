@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: '%s | AwakenArts',
   },
   description:
-    'AwakenArts is an artistic body of work shaped through image and language — symbolic poetic forms and literary encounters by Susan Ann Shepler, suited to personal reflection, discussion, retreats, and teaching.',
+    'AwakenArts invites readers to discover symbolic language through image, poem, and reflection. Through Figure Editions, Encounters, and original artwork, Susan Ann Shepler offers thoughtful resources that encourage personal recognition, meaningful conversation, and deeper engagement within the Christian tradition.',
   applicationName: 'AwakenArts',
   authors: [{ name: 'Susan Ann Shepler', url: SITE_URL + '/about' }],
   creator: 'Susan Ann Shepler',
@@ -26,14 +26,20 @@ export const metadata: Metadata = {
   keywords: [
     'AwakenArts',
     'Susan Ann Shepler',
-    'Christian tradition',
-    'Biblical imagery',
-    'parable and poetry',
-    'concrete poetry',
-    'symbolic imagery',
-    'symbolic figures',
+    'Figure Editions',
+    'Encounters',
+    'symbolic language',
     'figurative language',
-    'Whispers of Awareness',
+    'symbolic imagery',
+    'Christian reflection',
+    'Christian art',
+    'original artwork',
+    'image and poem',
+    'visual poetry',
+    'literary art',
+    'reflective journaling',
+    'workshops',
+    'Georgetown Texas artist',
   ],
   alternates: {
     canonical: '/',
@@ -44,14 +50,14 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'AwakenArts is an artistic body of work shaped through image and language. The works express emotion and meaning in symbolic form, where word and image reveal archetypal patterns of thought and inward experience. By Susan Ann Shepler.',
+      'AwakenArts explores symbolic language through image, poem, and reflection. Figure Editions, Encounters, and original artwork invite readers into meaningful recognition and thoughtful conversation shaped by the Christian story. Created by Susan Ann Shepler.',
     locale: 'en_US',
     images: [
       {
-        url: '/images/brand/queen-ann-hero-desktop.jpg',
-        width: 1600,
-        height: 1100,
-        alt: 'Queen Ann — a painted figure standing within a symbolic narrative, central to the AwakenArts identity',
+        url: '/images/brand/og-hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Chess Ann — a symbolic word-figure central to the AwakenArts collection',
       },
     ],
   },
@@ -59,8 +65,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'AwakenArts is an artistic body of work shaped through image and language — symbolic forms and literary encounters where word and image reveal archetypal patterns of thought and inward experience. By Susan Ann Shepler.',
-    images: ['/images/brand/queen-ann-hero-desktop.jpg'],
+      'Discover symbolic language through image, poem, and reflection. Explore Figure Editions, Encounters, and original artwork by Susan Ann Shepler that invite recognition, reflection, and meaningful conversation within the Christian tradition.',
+    images: ['/images/brand/og-hero.jpg'],
   },
   robots: {
     index: true,
@@ -74,6 +80,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
 }
 

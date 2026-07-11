@@ -58,7 +58,6 @@ interface GalleryTile {
   kicker: string
   title: string
   image: { src: string; alt: string }
-  excerpt: string
 }
 
 const tiles: GalleryTile[] = [
@@ -70,7 +69,6 @@ const tiles: GalleryTile[] = [
       src: '/images/atmosphere/poppy.png',
       alt: 'Poppy — a golden hillside of poppies in bloom at sunset, the same photograph used inside the Poppy Edition.',
     },
-    excerpt: 'She has her mother’s hands.',
   },
   {
     slug: 'dragon',
@@ -80,50 +78,42 @@ const tiles: GalleryTile[] = [
       src: '/images/editions/dragon-figure.jpg',
       alt: 'The Dragon — a watercolor study of a winged dragon coiled and rising, the Edition’s own figure artwork.',
     },
-    excerpt: "The dragon didn't seem to know tails and heads are one somehow.",
   },
   {
     slug: 'grismere',
     kicker: 'Grismere',
-    title: 'A Lure Toward the Depths',
+    title: 'Mermaid Grismere',
     image: {
       src: '/images/editions/grismere-figure.jpg',
       alt: 'Grismere — a watercolor mermaid with flowing hair, seated on a rock above the waves, the Edition’s own figure artwork.',
     },
-    excerpt:
-      'Far out to sea… where nighttime fishermen fear to troll to learn your mysteries.',
   },
   {
     slug: 'bowls',
     kicker: 'Bowls',
-    title: 'Two Forms, One Light',
+    title: 'Both Sides Now',
     image: {
       src: '/images/editions/bowls-figure.jpg',
       alt: 'Bowls — two ceramic bowls, one blue and one warm, glowing with concentric rings of light, the Edition’s own figure photograph.',
     },
-    excerpt:
-      'Neither side is the finished one and neither is the copy — they are simply two, sharing the same morning light, neither one waiting for permission to be there.',
   },
   {
     slug: 'ballerina',
     kicker: 'Ballerina',
-    title: 'The Many Become One',
+    title: 'Love Ballet',
     image: {
       src: '/images/editions/ballerina-figure.jpg',
       alt: 'Ballerina — a watercolor study of a young dancer in pink tutu and pointe shoes, mid-pose, the Edition’s own figure artwork.',
     },
-    excerpt: 'Her eyes shine in the bright lights of little girls.',
   },
   {
     slug: 'queen-ann',
-    kicker: 'Queen Ann',
-    title: 'Between Two Kingdoms',
+    kicker: 'Queen',
+    title: 'Queen Ann',
     image: {
       src: '/images/editions/queen-ann-figure.jpg',
       alt: 'Queen Ann — a crowned figure in a gilded gown looking out over a mountain vista at sunset, the Edition’s own figure artwork.',
     },
-    excerpt:
-      'She stands at the threshold between a kingdom that is ending and one that cannot yet be fully seen.',
   },
 ]
 
@@ -143,7 +133,7 @@ export default function GalleryPage() {
 
       <section className="poems-gallery-section" aria-label="Gallery tiles">
         <div className="poems-gallery">
-          {tiles.map(({ slug, kicker, title, image, excerpt }) => (
+          {tiles.map(({ slug, kicker, title, image }) => (
             <article key={slug} className="poem-card">
               <div className="poem-card__imageFrame">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -157,9 +147,6 @@ export default function GalleryPage() {
               <div className="poem-card__body">
                 <p className="poem-card__kicker">{kicker}</p>
                 <h2 className="poem-card__title">{title}</h2>
-                <blockquote className="poem-card__excerpt">
-                  <p>{excerpt}</p>
-                </blockquote>
               </div>
             </article>
           ))}
