@@ -211,8 +211,9 @@ export const editions: Edition[] = [
         // in globals.css).
         id: 'recognition',
         background: '/images/editions/dragon/read/recognition-bg.jpg',
+        // No redundant "Recognition" text heading, dropped 2026-07-12
+        // (follow-up) — the banner already has the title baked in.
         text:
-          'Recognition\n\n' +
           '"The dragon didn’t seem to know tails and heads are one somehow."\n\n' +
           'Observe\n' +
           'The dragon is not an enemy to be defeated. It is a living metaphor for the ways we become divided within ourselves. What appears to be conflict is often the struggle between the self that strives, judges, and controls, and the self that simply longs to live. The battle is not between two creatures, but within one life that has forgotten its own wholeness.\n\n' +
@@ -279,8 +280,9 @@ export const editions: Edition[] = [
         // reading area.
         id: 'reflection',
         background: '/images/editions/dragon/read/reflection-bg.jpg',
+        // No redundant "Reflection" text heading, dropped 2026-07-12
+        // (follow-up) — the banner already has the title baked in.
         text:
-          'Reflection\n\n' +
           'These questions are an invitation to notice what is already present. There is nothing to conquer, only something to recognize.\n\n' +
           'Where Do I Notice Division Within Myself?\n' +
           'Where in your life have you begun treating two parts of yourself as though one must win and the other must lose? Where might strength and tenderness, action and rest, discipline and grace already belong together?\n\n' +
