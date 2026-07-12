@@ -88,8 +88,39 @@ export default function EditionReaderSection({
   }
 
   if (section.text) {
+    // Recognition's background art is a landscape banner paired with long,
+    // internally-scrolling text — stretching it to a CSS cover background
+    // behind the whole (very tall) section would crush/crop it. It renders
+    // as a real <img> banner above the text instead. Every other
+    // background image here is a portrait full-page piece behind
+    // comparatively short text, where a CSS cover background works.
+    const useBanner = section.id === 'recognition'
+    const style =
+      section.background && !useBanner
+        ? { backgroundImage: `url(${section.background})` }
+        : undefined
     return (
-      <div className={`reader-section reader-section--text reader-section--${section.id}`}>
+      <div
+        className={`reader-section reader-section--text reader-section--${section.id}${
+          section.background && !useBanner ? ' reader-section--has-bg' : ''
+        }`}
+        style={style}
+      >
+        {section.background && useBanner && (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img src={section.background} alt="" className="reader-section__banner" aria-hidden="true" />
+        )}
+        {section.id === 'colophon' && (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            src="/images/brand/AwakenArts-Logo-Primary.svg"
+            alt="AwakenArts"
+            className="reader-colophon__logo"
+          />
+        )}
+        {section.id === 'message-delivered' && (
+          <span className="reader-ampersand" aria-hidden="true">&amp;</span>
+        )}
         <div className="reader-text">
           <TextBlock text={section.text} />
         </div>

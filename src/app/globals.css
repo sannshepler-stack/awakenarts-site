@@ -7980,6 +7980,123 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   max-width: var(--measure-narrow);
 }
 
+/* ── Dragon Production revision (2026-07-12) — background-art text
+   sections, Recognition banner, Message Delivered's navy/gold field, and
+   the Colophon wordmark. Written generically by section id, not
+   Dragon-specific, so any future Edition's sections can reuse the same
+   `background` field and get the same treatment. ───────────────────── */
+
+.reader-section--has-bg {
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  box-shadow: 0 18px 60px rgba(28, 43, 58, 0.14);
+  padding: 3rem 2.5rem 2.5rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.reader-section--has-bg .reader-text {
+  max-height: calc(100vh - 280px);
+}
+
+/* Word — title is baked into the art; give it room to breathe before the
+   poem begins, and keep the poem itself easy to read against a light,
+   textured field. */
+.reader-section--word.reader-section--has-bg {
+  padding-top: 11rem;
+}
+
+/* Journal / Living the Message / Colophon — shorter text, sits comfortably
+   in the lower, quieter portion of each background image. */
+.reader-section--journal.reader-section--has-bg,
+.reader-section--living-message.reader-section--has-bg {
+  padding-top: 7rem;
+}
+
+.reader-section--journal .reader-text,
+.reader-section--living-message .reader-text {
+  text-align: center;
+  max-width: var(--measure-narrow);
+}
+
+/* Recognition — banner image above the (long, internally-scrolling) text,
+   rather than a stretched cover background. */
+.reader-section__banner {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  border-radius: 4px;
+}
+
+.reader-section--recognition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Message Delivered — navy field, gold ampersand as the page's visual
+   protagonist, per the Production Standard's ampersand guidance. No
+   background image; this is a pure color/typography treatment. */
+.reader-section--message-delivered {
+  background: #0F2340;
+  border-radius: 4px;
+  box-shadow: 0 18px 60px rgba(15, 35, 64, 0.35);
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem 2.75rem;
+  text-align: center;
+}
+
+.reader-ampersand {
+  display: block;
+  font-family: var(--serif);
+  font-size: 6rem;
+  line-height: 1;
+  color: #C8A24A;
+  margin-bottom: 1rem;
+}
+
+.reader-section--message-delivered .reader-text {
+  text-align: center;
+  max-width: var(--measure-narrow);
+  color: #FAF7F2;
+  margin: 0 auto;
+}
+
+.reader-section--message-delivered .reader-text p:first-child {
+  font-family: var(--sans);
+  font-size: var(--caption-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: #C8A24A;
+}
+
+/* Colophon — AwakenArts wordmark above the closing text. */
+.reader-colophon__logo {
+  display: block;
+  width: min(70%, 280px);
+  height: auto;
+  margin: 0 auto 1.75rem;
+}
+
+.reader-section--colophon.reader-section--has-bg {
+  padding-top: 3.5rem;
+}
+
+.reader-section--colophon .reader-text {
+  text-align: center;
+  max-width: var(--measure-narrow);
+}
+
+@media (max-width: 640px) {
+  .reader-section--has-bg { padding: 2rem 1.5rem 1.75rem; }
+  .reader-section--word.reader-section--has-bg { padding-top: 6rem; }
+  .reader-ampersand { font-size: 4rem; }
+}
+
 .reader-section--acquire {
   text-align: center;
   max-width: var(--measure-medium);

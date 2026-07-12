@@ -46,14 +46,32 @@ export interface Edition {
 // and the 8-section template (frontispiece, image, encounter, word,
 // recognition, reflection, colophon, acquire) this id list follows.
 export interface EditionSection {
-  id: 'frontispiece' | 'image' | 'encounter' | 'word' | 'recognition' | 'reflection' | 'colophon' | 'acquire'
+  id:
+    | 'frontispiece'
+    | 'image'
+    | 'encounter'
+    | 'word'
+    | 'recognition'
+    | 'larger-story'
+    | 'reflection'
+    | 'journal'
+    | 'message-delivered'
+    | 'living-message'
+    | 'colophon'
+    | 'acquire'
   image?: {
     desktop: string
     tablet: string
     mobile: string
     alt: string
   }
-  text?: string   // for Encounter / Word / Recognition / Reflection / Colophon
+  // background — a single decorative full-bleed image behind a text section
+  // (added for the Dragon Production revision, 2026-07-12). Unlike `image`,
+  // this is not the section's entire content — text still renders on top —
+  // so it doesn't need desktop/tablet/mobile art direction, just one
+  // reasonably-sized asset with background-size: cover.
+  background?: string
+  text?: string   // for Encounter / Word / Recognition / Reflection / Colophon / etc.
 }
 
 // contactSheet paths point to web-optimized JPEGs (~1280px wide, ~150-190KB
@@ -108,7 +126,15 @@ export const editions: Edition[] = [
         text: 'Be still. Let the figure arrive before the explanation does.',
       },
       {
+        // Page 4 — Dragon Poem. Revised 2026-07-12 per DRAGON-PRODUCTION.docx:
+        // atmospheric watercolor field is now the primary visual (title
+        // "The Dragon Fight" baked into the artwork itself), with the
+        // dragon reduced to a quiet abstracted accent rather than a full
+        // illustration — the figure frames the reading experience instead
+        // of interrupting it. Poem text is unchanged; only the artwork
+        // behind it changed. Asset: Workbook 04_Atmosphere/dragon-background.png.
         id: 'word',
+        background: '/images/editions/dragon/read/word-bg.jpg',
         text:
           'cranked its weight like an iron crane with\n' +
           'its frame, torching breath across the sky\n' +
@@ -125,40 +151,125 @@ export const editions: Edition[] = [
           '— Susan Ann Shepler',
       },
       {
+        // Recognition — revised 2026-07-12 per DRAGON-PRODUCTION.docx.
+        // Header uses the approved atmospheric banner (RECOGNITION baked
+        // into the art), Workbook 04_Atmosphere/dragon-header-1.png.
         id: 'recognition',
+        background: '/images/editions/dragon/read/recognition-bg.jpg',
         text:
-          'Recognition · I — The Illusion of Opposition\n\n' +
+          'Recognition\n\n' +
           '"The dragon didn’t seem to know tails and heads are one somehow."\n\n' +
-          'OBSERVE\n' +
-          'The dragon in this image is not one thing fighting another. It is one body, made of opposing parts that were never meant to be at war: claws and wings, fire and breath, fury and flight. What looks like conflict at first glance is, on closer recognition, a single creature whose nature has simply not yet been reconciled within itself.\n\n' +
-          '01 EXPLORE THE PATTERN\n' +
-          'A Battle the Dragon Did Not Choose\n' +
-          'The dragon did not choose to be divided. It was born holding both halves — strength and tenderness, action and stillness — and mistook their difference for a battle to be won, rather than a wholeness to be claimed.\n\n' +
-          'Recognition · II — The Word That Reconciles\n\n' +
-          '02 DEVELOP THE INSIGHT\n' +
-          'Rage as a Revealer, Not an Enemy\n' +
-          'The dragon’s rage is not the enemy of its peace — it is the part of the dragon still waiting to be heard. What looks like the thing to be defeated is often the thing asking, loudest, to be reconciled.\n\n' +
-          '03 RETURN TO THE IMAGE\n' +
-          'The Word That Reconciles\n' +
-          'The ampersand is the dragon’s real shape, once seen rightly: not this or that, but and. Strength and tenderness. Sun and moon. Action and reflection — made to live as one.',
+          'Observe\n' +
+          'The dragon is not an enemy to be defeated. It is a living metaphor for the ways we become divided within ourselves. What appears to be conflict is often the struggle between the self that strives, judges, and controls, and the self that simply longs to live. The battle is not between two creatures, but within one life that has forgotten its own wholeness.\n\n' +
+          '01 · Recognize the Division — A Battle the Dragon Did Not Choose\n' +
+          'The dragon did not choose to be divided. Like us, it learned to mistake difference for opposition. Strength and tenderness, action and stillness, discipline and rest were never created to compete. The conflict began when one part believed the other had to lose.\n\n' +
+          '02 · Notice the Judge — The Voice That Keeps the Battle Alive\n' +
+          'The deepest struggle is not with our thoughts but with the voice that continually measures them. Self-judgment keeps the battle alive by insisting that one part of us must conquer another. Thoughts arise naturally. They are not failures. What softens the division is not resistance, but presence.\n\n' +
+          '03 · Return to the Image — The Word That Reconciles\n' +
+          'The ampersand reveals the dragon’s true form: not this or that, but and. Presence replaces striving. Recognition quiets judgment. What once appeared divided begins to belong together. The parts were never meant to destroy one another — they were made to live as one.',
       },
       {
+        // The Larger Story — new page, added 2026-07-12. Text is the Good
+        // Copy master's final, sixteen-times-revised wording (Dragon_Figure_
+        // Edition_11_Good_Copy.docx, Page 6), APPROVED and closed 2026-07-07.
+        // Susan's own framing of the page: Scripture names the divided
+        // condition, Augustine confesses it, the Dragon helps the reader
+        // recognize it, Christ alone reconciles it. Plain text, no
+        // background art — none was specified for this page.
+        id: 'larger-story',
+        text:
+          'The Larger Story\n\n' +
+          'Christian Scripture and tradition have long named the divided heart, and the God who alone can unite it.\n\n' +
+          'Scripture\n' +
+          '"A double minded man is unstable in all his ways." — James 1:8 (KJV)\n\n' +
+          'The Christian Tradition\n' +
+          '"Thus did my two wills, one new, and the other old, one carnal, the other spiritual, struggle within me; and by their discord, undid my soul." — Augustine, Confessions, Book VIII\n\n' +
+          'Augustine’s confession reminds us that the Dragon is not inventing a struggle. The Dragon gives symbolic form to one the Christian tradition has long recognized.\n\n' +
+          'Returning to the Dragon\n' +
+          'The Dragon gives symbolic form to a human struggle. Scripture names that struggle. Augustine gives voice to the experience of living it.\n\n' +
+          'The divided heart is not only the Dragon’s story. It is ours.\n\n' +
+          'The Dragon teaches us to recognize the struggle. Scripture reveals the One who reconciles it.\n\n' +
+          'Carry that recognition with you — not as confidence in your own insight, but as an invitation to receive more fully the reconciling work of Christ.',
+      },
+      {
+        // Reflection — revised 2026-07-12 per DRAGON-PRODUCTION.docx (five
+        // prompts, replacing the prior three-question "Where It Meets You").
         id: 'reflection',
         text:
-          'Where It Meets You\n\n' +
-          'Where Am I Fighting Myself?\n' +
-          'Name one place in your own life where two parts of you — feeling and duty, rest and ambition, gentleness and strength — have been treated as enemies rather than as one whole still learning to live together.\n\n' +
-          'What Part of Me Have I Called the Enemy?\n' +
-          'The part of you that feels too much, wants too much, or resists too much may not be the obstacle to your peace. It may be the part still waiting to be reconciled, the way the dragon’s rage was never separate from its longing for rest.\n\n' +
+          'Reflection\n\n' +
+          'These questions are an invitation to notice what is already present. There is nothing to conquer, only something to recognize.\n\n' +
+          'Where Do I Notice Division Within Myself?\n' +
+          'Where in your life have you begun treating two parts of yourself as though one must win and the other must lose? Where might strength and tenderness, action and rest, discipline and grace already belong together?\n\n' +
+          'Where Does the Voice of Judgment Appear?\n' +
+          'Notice the voice that measures, compares, condemns, or continually asks you to be more than you are in this moment. What happens when you simply recognize that voice without believing everything it says?\n\n' +
+          'What Am I Still Trying to Conquer?\n' +
+          'Is there a part of yourself you have been resisting, correcting, or trying to overcome? What if it is not asking to be defeated, but understood?\n\n' +
           'What Would "And" Look Like Here?\n' +
-          'Rather than choosing one side of yourself over the other, what would it look like to hold both — not this or that, but and — the way the dragon’s wings and claws were always one creature, not two?\n\n' +
-          'Return to whichever question stayed with you the most. There is no need to resolve it today — only to let it stay open, the way recognition usually works.',
+          'Rather than choosing one side of yourself over another, what might it look like to hold both with compassion? Where might presence replace striving, and recognition replace judgment?\n\n' +
+          'Carry One Recognition With You\n' +
+          'As you leave this page, carry one simple recognition into your ordinary life. Notice what changes when you stop fighting yourself and begin paying attention with kindness.',
       },
       {
-        id: 'colophon',
+        // Journal — new page, added 2026-07-12 per DRAGON-PRODUCTION.docx.
+        // Background: Workbook 04_Atmosphere/journal-bkg.png (ruled lines,
+        // archway motif).
+        id: 'journal',
+        background: '/images/editions/dragon/read/journal-bg.jpg',
         text:
-          'The Dragon fulfills his duty by bringing the message that the parts were made to live as one. The ampersand (&) is not ornament but revelation: strength and tenderness, sun and moon, action and reflection — made to live as one.\n\n' +
-          'Not this or that. But and.',
+          'Journal\n\n' +
+          'Choose one recognition from this Edition to carry with you today.\n\n' +
+          'You do not need to resolve it. You do not need to fix it. Simply notice what returns to your attention as you move through ordinary life.\n\n' +
+          'Often the deepest changes begin, not with certainty, but with quiet recognition.',
+      },
+      {
+        // Message Delivered — split out of the old combined `colophon`
+        // section, 2026-07-12, per DRAGON-PRODUCTION.docx. Body copy
+        // revised; design retained as specified: navy field, gold
+        // ampersand as the page's visual protagonist, no added imagery.
+        id: 'message-delivered',
+        text:
+          'Message Delivered\n\n' +
+          'The dragon’s message is not about defeating ourselves, but about recognizing the places where we have become divided.\n\n' +
+          'The voice that judges, strives, and condemns cannot create the peace it seeks. What is separated is not healed through greater effort, but through recognition.\n\n' +
+          'Presence softens what striving cannot.\n\n' +
+          'The parts were never meant to compete.\n' +
+          'They were made to live as one.\n\n' +
+          'Not this or that.\n' +
+          'But and.',
+      },
+      {
+        // Living the Message — new page, added 2026-07-12. Text is Susan's
+        // final revision, confirmed 2026-07-12, superseding the Good Copy
+        // master's own version of this page. Background: Workbook
+        // 04_Atmosphere/living-message.png.
+        id: 'living-message',
+        background: '/images/editions/dragon/read/living-message-bg.jpg',
+        text:
+          'Living the Message\n\n' +
+          'Recognition rarely arrives all at once. It continues quietly as we begin to notice the same pattern in ordinary moments. The invitation is not to master the message, but to live with it.\n\n' +
+          'What recognition has remained with you?\n' +
+          'Where have you begun to notice this pattern in your everyday life?\n' +
+          'What changes when you replace judgment with attention?\n' +
+          'Where might "not this or that, but and" invite a different response today?\n\n' +
+          'There is nothing here to complete.\n' +
+          'Simply continue noticing.\n' +
+          'Sometimes the smallest recognition becomes the beginning of the deepest change.',
+      },
+      {
+        // Colophon ("About This Edition") — revised 2026-07-12 per
+        // DRAGON-PRODUCTION.docx: leads with the AwakenArts wordmark
+        // (rendered via the site's own brand asset, not baked into the
+        // background), then the collection statement. Background:
+        // Workbook 04_Atmosphere/colophon-bkg.png.
+        id: 'colophon',
+        background: '/images/editions/dragon/read/colophon-bg.jpg',
+        text:
+          'When Language Shapes a Path\n\n' +
+          'This Figure Edition is part of the AwakenArts collection.\n\n' +
+          'Each Edition stands complete in itself while contributing to a growing body of symbolic exploration through image, poetry, reflection, and conversation.\n\n' +
+          'May these works continue to reveal new recognitions as you return to them over time.\n\n' +
+          'AwakenArts.com\n' +
+          '© 2026 Susan Ann Shepler. All rights reserved.',
       },
       {
         id: 'acquire',
