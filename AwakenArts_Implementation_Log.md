@@ -1384,6 +1384,20 @@ That curation question is superseded, not answered, by what Susan specified next
 
 **Implementation status.** Complete. `/sketchbook` now shows two live Contact Sheets (Julie, May); adding the next finished piece is a one-line addition to `COLLECTION`.
 
+## 2026-07-12 — AwakenArts Publisher Identity: brand system replaced, traced from the approved master
+
+The double-arc logo (five-variant SVG system built around two concentric arcs + "AWAKENARTS" wordmark) is retired. Three prior attempts to build its replacement were hand-coded approximations — font glyphs standing in for the flourish, hand-drawn bezier leaves — built from looking at a reference image rather than from real artwork, which is why each one kept reading as a reinterpretation rather than the approved design. Susan: "You have used your own image logo -- not the one that we created."
+
+She then supplied the actual master: `public/images/library/NEW-LOGO.png`. Adobe's vectorizer was unreachable from this environment (network egress and the file-picker flow both failed), so the file was traced locally with `vtracer` instead — a direct vector trace of the real artwork's curves, not a rebuild. The trace's decomposed path groups (monogram / wordmark / tagline, split by their translate-Y clusters) became the basis for the full production family named in the "AwakenArts Logo Production Assets" work order: `AwakenArts-Logo-Primary.svg` (stacked), `AwakenArts-Logo-Horizontal.svg`, `AwakenArts-Monogram.svg`, single-color Navy/Gold/White/Black versions, the favicon family (svg + 9 PNG sizes + ico), and `og-logo.png`.
+
+**Per the "AwakenArts Publisher Identity" work order,** placements were assigned: Stacked mark → colophon pages, About, Foundation, print materials, title pages (no live colophon page exists in the site yet, so nothing to wire there today); Horizontal mark → website header (hero) and footer; Monogram → favicon, app icon, social profile, watermark. Implemented: `page.tsx` hero now loads `AwakenArts-Logo-Horizontal.svg` (`.hero-logo` switched from fixed-height to width-based sizing — the horizontal lockup is ~5:1, the opposite proportion of the stacked mark the old rule was tuned for). `Footer.tsx`, `studio/page.tsx`, `studio/silhouettes/page.tsx`, and `quotes/page.tsx` all sit on the navy `.site-footer` field, where the Horizontal mark's navy wordmark is invisible — added `AwakenArts-Logo-Horizontal-OnNavy.svg` (same geometry and gold monogram, cream wordmark/tagline/rule) as the practical fix, not a new creative variant, and wired all four footer instances to it. `favicon.ico` / `apple-touch-icon.png` were already Monogram-derived from the prior round, confirmed still correct.
+
+**Cleanup.** `public/images/brand/old-logo/` (the retired double-arc originals and both interim hand-built rounds), the unreferenced `aalogo-final.svg`, and `AwakenArts_Logo_Master.af` (the old double-arc's source file) were all deleted from the project — the new system is confirmed, and all of it remains recoverable from git history (`76dc129`, `8f26ed4`, `001138a`, `49cf83a`) if ever needed.
+
+**Verification.** `tsc --noEmit` clean; every SVG rendered and visually checked at its actual target size (hero width, footer height, favicon 16/32/48px) before wiring; grep confirmed zero remaining references to any retired filename anywhere in `src/`.
+
+**Implementation status.** Complete. With this update, the AwakenArts visual identity is considered established. Future work should focus on developing the Editions and the publishing system rather than continuing to redesign the brand.
+
 ## How this Log is maintained
 
 Each phase, once actually built and verified (`tsc` clean, visual check, committed), gets its row in the table above updated from "Not started" to "Built — `<commit hash>`," with a short note on what was verified. Entries are never deleted or rewritten to look like they happened differently than they did — if a phase is revised mid-build, that's a new dated note under it, not an edit to the original.

@@ -529,14 +529,14 @@ a   { color: inherit; text-decoration: none; }
 
 .hero-logo {
   display: block;
-  /* 2026-07-12: height increased from 112px — the new monogram mark
-     (script "a" + block "A" + leaf, wordmark below) is a stacked/
-     vertical lockup, taller and narrower than the retired wide
-     double-arc lockup. A taller box keeps the "AWAKEN ARTS" wordmark
-     legible; width still follows automatically from the SVG's own
-     aspect ratio. */
-  height: 190px;
-  width: auto;
+  /* 2026-07-12: switched to the approved Horizontal Publisher Mark
+     (monogram left, wordmark + tagline right — see AwakenArts
+     Publisher Identity work order). That lockup is wide and short
+     (~5:1), the opposite of the stacked mark this rule was
+     previously sized for, so sizing now follows width against
+     .hero__text's own 580px column instead of a fixed height. */
+  width: min(100%, 420px);
+  height: auto;
   margin: 0 0 1.5rem; /* left-aligned, no auto-centering */
 }
 
@@ -1957,7 +1957,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
     transform: none;
   }
   .hero-logo {
-    height: 150px;
+    /* Width-based sizing (base rule) already adapts to the narrower
+       stacked column at this breakpoint — no height override needed
+       for the horizontal lockup. */
     margin-bottom: 1.75rem;
   }
   .hero-sub {

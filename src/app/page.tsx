@@ -92,11 +92,11 @@ export default function HomePage() {
           {/* Logo — primary identity placement. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/brand/AwakenArts-Logo-Primary.svg"
+            src="/images/brand/AwakenArts-Logo-Horizontal.svg"
             alt="AwakenArts"
             className="hero-logo"
-            width={937}
-            height={817}
+            width={1237}
+            height={244}
             loading="eager"
           />
 

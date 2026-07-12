@@ -112,7 +112,7 @@ export default function SilhouettesPage() {
           <div className="footer-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/brand/AwakenArts-Monogram.svg"
+              src="/images/brand/AwakenArts-Logo-Horizontal-OnNavy.svg"
               alt="AwakenArts"
               className="footer-logo"
               loading="lazy"

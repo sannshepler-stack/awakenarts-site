@@ -49,11 +49,11 @@ export default function Footer() {
           <Link href="/" aria-label="AwakenArts home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/brand/AwakenArts-Monogram.svg"
+              src="/images/brand/AwakenArts-Logo-Horizontal-OnNavy.svg"
               alt="AwakenArts"
               className="footer-logo"
-              width={753}
-              height={594}
+              width={1237}
+              height={244}
               loading="lazy"
             />
           </Link>
