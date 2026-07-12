@@ -175,12 +175,24 @@ export const editions: Edition[] = [
         // FLUNG" title, blue body text, red closing lines, transparent
         // background), composited over the atmospheric "Dragon Fight" field
         // that previously (mistakenly, then correctly-but-now-superseded)
-        // lived on the Figure page.
+        // lived on the Figure page. Sizing went through two follow-up
+        // passes the same day: first, kept small inside a fixed-aspect
+        // card to clear the background's own baked-in title, which read
+        // as "smashed"/illegible; rebuilt around viewport units instead
+        // (see EditionReaderSection.tsx / globals.css) so the card fills
+        // most of the available height and the poem art renders up to
+        // 70vh — legible, with the title still fully clear above it.
+        // Artwork itself replaced again, same day: Susan supplied her own
+        // updated file, `public/images/forms/dragon-text.png` (1509x2412,
+        // a single dark-ink color treatment throughout rather than the
+        // earlier orange/blue/red multi-color version) — copied in over
+        // the prior Dragon_Poem_Master.png-sourced asset as the new
+        // governing poem artwork.
         id: 'word',
         background: '/images/editions/dragon/read/word-bg.jpg',
         overlayImage: {
           src: '/images/editions/dragon/read/poem-artwork.png',
-          alt: 'The Dragon Flung — the original concrete-poem artwork, dragon-shaped, with orange title, blue body text, and the closing line "Like two sides of a golden coin, the parts were made to live as one." — Susan Ann Shepler',
+          alt: 'The Dragon Flung — the concrete-poem artwork, dragon-shaped, set in a single dark ink, closing with the line "Like two sides of a golden coin, the parts were made to live as one." — Susan Ann Shepler',
         },
       },
       {

@@ -7948,11 +7948,12 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .reader-img--matted {
-  /* Sized down a further 30% (2026-07-12, second pass) at Susan's
-     request, on top of the initial matting — 460px/64% -> 320px/45%. */
-  max-width: min(45%, 320px);
-  max-height: calc(100vh - 320px);
-  padding: 18px;
+  /* Sizing history, 2026-07-12: 460px/64% (first matting) -> 320px/45%
+     (down 30%, second pass) -> confirmed fine, then bumped 135% of that
+     confirmed size (third pass, this value): 320px * 1.35 = 432px. */
+  max-width: min(61%, 432px);
+  max-height: calc(100vh - 260px);
+  padding: 24px;
   background: var(--cream);
   border: 1px solid rgba(28, 43, 58, 0.14);
   box-shadow: 0 14px 44px rgba(28, 43, 58, 0.16);
@@ -8044,27 +8045,28 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
    No text card: the atmospheric field is a full cover background, and the
    poem's own artwork (a real image, not HTML text) sits on top as the
    page's focal point.
-   Resized same day, second pass: the background's own baked-in title
-   ("THE DRAGON FIGHT") sits in roughly the top quarter of the art. The
-   card is locked to that art's own aspect ratio (1400:1822) so the title
-   band always renders at a known, proportional position — background-
-   position: top keeps it anchored there rather than cropped by `cover`
-   on an unrelated box shape. The poem artwork then sits top-aligned
-   (not centered) in the space below the title, sized to leave visible
-   breathing room on all four sides rather than filling/overflowing the
-   page. */
+   Resized same day, third pass: the first resize (aspect-ratio-locked
+   card) kept the poem legible-sized only by keeping the whole card small,
+   which read as "smashed" — a postage stamp, not a piece of art. Rebuilt
+   around viewport units instead of a fixed small card: the card grows to
+   fill most of the available reading height (min-height), `cover` +
+   background-position: top keeps the background's own baked-in title
+   ("THE DRAGON FIGHT") fully visible regardless of the card's resulting
+   width/height ratio, a fixed top padding (23vh) clears that title band,
+   and the poem artwork is allowed up to 70% of the viewport height — big
+   enough to actually read — with only a small bottom margin, since the
+   art below the poem is quiet atmospheric wash with nothing to protect. */
 .reader-section--word.reader-section--image {
   background-size: cover;
   background-position: top center;
-  aspect-ratio: 1400 / 1822;
+  min-height: calc(100vh - 160px);
   width: 100%;
-  max-width: 460px;
-  max-height: calc(100vh - 160px);
+  max-width: 620px;
   box-sizing: border-box;
   border-radius: 4px;
   box-shadow: 0 18px 60px rgba(28, 43, 58, 0.14);
   margin: 0 auto;
-  padding: 36% 11% 8%;
+  padding: 23vh 5% 6vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -8073,7 +8075,14 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .reader-overlay-img {
   display: block;
   max-width: 100%;
-  max-height: 100%;
+  /* vh, not %: the card's height now comes from min-height (indefinite
+     for percentage-resolution purposes), not a fixed aspect-ratio, so a
+     percentage max-height would be ignored.
+     Capped at 60vh, not 70vh (2026-07-12, follow-up): Susan's replacement
+     artwork (dragon-text.png) is a taller/narrower shape than the piece
+     this was tuned for (0.625 vs 0.667 width:height), so at the same
+     height cap it ran too close to the bottom of the page. */
+  max-height: 60vh;
   width: auto;
   height: auto;
   margin: 0 auto;
@@ -8212,7 +8221,8 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 @media (max-width: 640px) {
   .reader-section--has-bg { padding: 2rem 1.5rem 1.75rem; }
   .reader-section--journal.reader-section--has-bg { padding-top: 2rem; background-size: 78% auto; }
-  .reader-section--word.reader-section--image { max-width: 300px; padding: 34% 9% 8%; }
+  .reader-section--word.reader-section--image { padding: 22vh 4% 2vh; }
+  .reader-overlay-img { max-height: 56vh; }
   .reader-ampersand { font-size: 4rem; }
 }
 
@@ -8293,7 +8303,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .reader-topbar { padding: 1rem 1.25rem; }
   .reader-stage { padding: 1.5rem 2.75rem; }
   .reader-img { max-height: calc(100vh - 180px); }
-  .reader-img--matted { max-width: 60%; max-height: calc(100vh - 260px); padding: 12px; }
+  .reader-img--matted { max-width: 81%; max-height: calc(100vh - 220px); padding: 16px; }
   .reader-text { max-height: calc(100vh - 190px); }
   .reader-nav { width: 2.25rem; height: 2.25rem; font-size: 1.3rem; }
   .reader-nav--prev { left: 0.5rem; }
