@@ -241,6 +241,8 @@ export const editions: Edition[] = [
         // wash, open in the middle where the text sits) rather than the
         // darker landscape pieces tried earlier. Blended 35% toward the
         // page cream so it stays a quiet backdrop, not a competing image.
+        // Faded a good bit further the same day (second follow-up): 35%
+        // -> 68% toward the page cream.
         id: 'larger-story',
         background: '/images/editions/dragon/read/larger-story-bg.jpg',
         text:

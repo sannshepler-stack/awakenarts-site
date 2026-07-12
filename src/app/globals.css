@@ -8124,6 +8124,11 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   box-shadow: none;
   border-radius: 0;
   padding-top: 2.5rem;
+  /* Widened a little, 2026-07-12 (follow-up): the writing area (intro
+     text + ruled lines, both inside .reader-text) was capped by the
+     generic has-bg 640px card width. Journal doesn't need the card-style
+     framing of the other has-bg pages, so it gets a bit more room. */
+  max-width: 720px;
 }
 
 .reader-section--journal .reader-text {
