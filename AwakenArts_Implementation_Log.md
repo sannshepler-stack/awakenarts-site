@@ -1398,6 +1398,16 @@ She then supplied the actual master: `public/images/library/NEW-LOGO.png`. Adobe
 
 **Implementation status.** Complete. With this update, the AwakenArts visual identity is considered established. Future work should focus on developing the Editions and the publishing system rather than continuing to redesign the brand.
 
+## 2026-07-12 — Header/footer navy treatment: cream panel replaces white wordmark
+
+Susan flagged that `AwakenArts-Logo-Horizontal-OnNavy.svg`'s white wordmark didn't integrate with the gold monogram, and set a permanent standard: "The navy type is part of the identity. If a dark header requires a white logo, I would rather change the header treatment than change the publisher's mark." Rebuilt the file rather than recolor around it — the gold monogram now sits directly on the navy field (gold already reads on navy, no panel needed there), and the official navy wordmark/tagline sit on a subtle rounded cream panel instead of being recolored. Gold tagline rules unchanged. Same filename, same four call sites (Footer.tsx, studio/page.tsx, studio/silhouettes/page.tsx, quotes/page.tsx) — only Footer.tsx's explicit width/height attributes needed updating, to the panel version's slightly taller viewBox (1263×268 vs. 1237×244).
+
+Per Susan's stated preference to never use a white wordmark anywhere, `AwakenArts-Logo-White.svg` (part of the original approved asset list) is retired — it was never wired into any page, so no code changes needed beyond deleting the file. Recoverable from git history at `49cf83a` if a genuine need for a white-ink version arises later.
+
+**Verification.** `tsc --noEmit` clean; rendered against a navy composite at both header scale and footer scale (48px-equivalent) to confirm the wordmark stays sharp and legible at both sizes.
+
+**Implementation status.** Complete.
+
 ## How this Log is maintained
 
 Each phase, once actually built and verified (`tsc` clean, visual check, committed), gets its row in the table above updated from "Not started" to "Built — `<commit hash>`," with a short note on what was verified. Entries are never deleted or rewritten to look like they happened differently than they did — if a phase is revised mid-build, that's a new dated note under it, not an edit to the original.
