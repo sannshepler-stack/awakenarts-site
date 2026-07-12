@@ -1408,6 +1408,18 @@ Per Susan's stated preference to never use a white wordmark anywhere, `AwakenArt
 
 **Implementation status.** Complete.
 
+## 2026-07-12 — Wordmark rendering defect: root cause and fix
+
+Susan reported the navy-on-cream wordmark still didn't work — "it looks like a bad inking job the way the workmark is bleeding on itself with the empty spaces filled in." Investigated rather than re-guessed at another cosmetic pass.
+
+**Root cause.** "AWAKENARTS" and the tagline were never hand-drawn — they're ordinary typeset text in the master artwork, which the raster trace (vtracer) captured as roughly 230 small overlapping shapes representing anti-alias color bands from the source PNG. On the full-color lockups (Primary, Horizontal) those bands blend smoothly and the eye reads clean letterforms. On every single-color lockup — the four files where the word and tagline get flattened to one flat ink color for a solid navy/gold/black mark — that blending disappears, and the trace's small geometric imprecision at sharp serif vertices and stroke joins (an inherent limit of tracing small raster text, not a redesign and not a file-minification artifact) becomes a visible gap or blob. Confirmed by isolating and re-rendering the raw untraced path data straight from the master trace: the defect was present in the geometry itself, before any merging or minification touched it.
+
+**Fix.** Text is not artwork, so it doesn't need to be traced — it needs to be set. Rebuilt the four single-color files (`AwakenArts-Logo-Horizontal-OnNavy.svg`, `AwakenArts-Logo-Navy.svg`, `AwakenArts-Logo-Gold.svg`, `AwakenArts-Logo-Black.svg`) with the wordmark and tagline as live SVG `<text>`, set in the site's own standing typeface (Cormorant Garamond, already loaded site-wide via `globals.css`) — sized and positioned with `textLength` to occupy the exact footprint the traced version held, so proportions and spacing are unchanged. The gold monogram is untouched in every file: it is genuine hand-illustrated artwork (the botanical "A"), traces cleanly, and was never part of the complaint. The gold tagline rule lines are unchanged. `AwakenArts-Logo-Primary.svg` and `AwakenArts-Logo-Horizontal.svg` (the two full-color lockups) don't exhibit the defect and were left alone.
+
+**Verification.** Rendered all four rebuilt files with `resvg` — a spec-accurate SVG engine with full `textLength` support, a more reliable check than the coarser previewer used earlier in this project — at both full size and footer scale; no gaps, no blobs, rule lines sit cleanly outside the tagline with no overlap. `tsc --noEmit` clean. Re-minified with `svgo` and confirmed the minified output renders identically to the pre-minified version.
+
+**Implementation status.** Complete.
+
 ## How this Log is maintained
 
 Each phase, once actually built and verified (`tsc` clean, visual check, committed), gets its row in the table above updated from "Not started" to "Built — `<commit hash>`," with a short note on what was verified. Entries are never deleted or rewritten to look like they happened differently than they did — if a phase is revised mid-build, that's a new dated note under it, not an edit to the original.
