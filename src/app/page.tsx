@@ -95,8 +95,8 @@ export default function HomePage() {
             src="/images/brand/logo-mixed.svg"
             alt="AwakenArts"
             className="hero-logo"
-            width={500}
-            height={170}
+            width={460}
+            height={420}
             loading="eager"
           />
 

@@ -52,8 +52,8 @@ export default function Footer() {
               src="/images/brand/logo-reversed.svg"
               alt="AwakenArts"
               className="footer-logo"
-              width={500}
-              height={170}
+              width={460}
+              height={350}
               loading="lazy"
             />
           </Link>
