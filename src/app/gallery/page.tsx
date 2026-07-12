@@ -94,7 +94,7 @@ const tiles: GalleryTile[] = [
     title: 'Both Sides Now',
     image: {
       src: '/images/editions/bowls-figure.jpg',
-      alt: 'Bowls — two ceramic bowls, one blue and one warm, glowing with concentric rings of light, the Edition’s own figure photograph.',
+      alt: 'Bowls — a still-life of two blue-and-white patterned bowls of berries on a lace-covered table before an open window overlooking the sea at sunset, the Edition’s own figure photograph.',
     },
   },
   {
