@@ -8031,19 +8031,18 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   max-height: calc(100vh - 280px);
 }
 
-/* Living the Message — shorter text, sits comfortably in the lower,
-   quieter portion of its (now faded) background image.
+/* Living the Message — shorter text, sits comfortably over its (now
+   heavily faded) background image.
    Shrunk 2026-07-12 (follow-up): at the generic has-bg `cover` size the
    arch still overpowered the page. Sized down ~35% and anchored to the
    top so it reads as a quiet accent above the text -- but the top-anchored
-   placement itself didn't read right. Returned the same day to its
-   original centered placement, kept as small as the non-cropping
-   width-based sizing (`<width> auto`, never crops the sides the way
-   `cover` can) reasonably allows. */
-.reader-section--living-message.reader-section--has-bg {
-  background-size: 34% auto;
-  background-position: center;
-}
+   placement itself didn't read right. Returned to centered, then sized
+   down further to 34% width. Reverted again the same day (third
+   follow-up): back to a full-page `cover` background per Susan's
+   explicit call, this time with the source image itself re-faded much
+   further toward the page cream (82%, up from 55%) so full coverage
+   doesn't overpower the text. Uses the generic has-bg cover/center
+   treatment — no override needed. */
 
 .reader-section--living-message .reader-text {
   text-align: center;

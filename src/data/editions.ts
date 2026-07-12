@@ -345,7 +345,10 @@ export const editions: Edition[] = [
         // returned to its original centered placement, sized down further
         // (34% width) so it reads as a small, quiet centered accent behind
         // the text without ever cropping the sides (width-based sizing,
-        // not `cover`).
+        // not `cover`). Reverted again the same day (third follow-up):
+        // Susan asked for it back to a full-page cover, this time with the
+        // source image re-faded much further toward the page cream (82%,
+        // up from 55%) so full coverage stays quiet behind the text.
         id: 'living-message',
         background: '/images/editions/dragon/read/living-message-bg.jpg',
         text:
