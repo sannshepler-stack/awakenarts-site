@@ -156,6 +156,10 @@ export const editions: Edition[] = [
         // dominating on the page; the manuscript's own production note for
         // this page already describes it as "the framed watercolor dragon
         // figure on a cream mat," which the matted CSS treatment matches.
+        // Sizing has gone through several follow-up passes the same day,
+        // each per Susan's direct feedback: confirmed-good size -> bumped
+        // 135% -> bumped another 15% (current, see globals.css for exact
+        // values). All confirmed via WeasyPrint mockup before shipping.
         id: 'image',
         image: {
           desktop: '/images/editions/dragon/read/image-desktop.jpg',
@@ -201,6 +205,10 @@ export const editions: Edition[] = [
         // into the art), Workbook 04_Atmosphere/dragon-header-1.png. Given
         // a little top clearance the same day (follow-up) — the banner sat
         // flush against the top of the reading area with no room above it.
+        // Still read as sitting too high, same day (second follow-up) —
+        // increased further and Reflection was brought in line with it
+        // (see .reader-section--recognition, .reader-section--reflection
+        // in globals.css).
         id: 'recognition',
         background: '/images/editions/dragon/read/recognition-bg.jpg',
         text:
@@ -225,9 +233,16 @@ export const editions: Edition[] = [
         // unchanged. A faded background image was tried 2026-07-12 (two
         // passes, 72% then 90% toward page cream) but still read as too
         // dark/muddying the text — removed the same day per Susan's
-        // explicit "don't use the background" call. Plain cream page,
-        // same treatment as before this revision round.
+        // explicit "don't use the background" call. Plain cream page for
+        // that revision round.
+        // Restored the same day (follow-up): Susan asked for a
+        // gold-toned background specifically, sourced from the Workbook's
+        // 04_Atmosphere/gold-background.png (a pale gold/cream watercolor
+        // wash, open in the middle where the text sits) rather than the
+        // darker landscape pieces tried earlier. Blended 35% toward the
+        // page cream so it stays a quiet backdrop, not a competing image.
         id: 'larger-story',
+        background: '/images/editions/dragon/read/larger-story-bg.jpg',
         text:
           'The Larger Story\n\n' +
           'Christian Scripture and tradition have long named the divided heart, and the God who alone can unite it.\n\n' +
@@ -257,6 +272,9 @@ export const editions: Edition[] = [
         // which read as "header not showing." Re-cropped to match
         // Recognition's own 1536x1024 landscape banner shape, and a
         // "REFLECTION" title baked in (same gold, same position) to match.
+        // Given the same top clearance as Recognition, same day
+        // (follow-up) — it had none and sat flush against the top of the
+        // reading area.
         id: 'reflection',
         background: '/images/editions/dragon/read/reflection-bg.jpg',
         text:
@@ -322,7 +340,12 @@ export const editions: Edition[] = [
         // atmosphere. Do not allow the illustration to dominate the page.")
         // Still read as overpowering rendered full-cover; follow-up the
         // same day sized it down to a 44%-width piece anchored to the top
-        // of the section rather than filling it.
+        // of the section rather than filling it. That top-anchored
+        // placement itself didn't work, same day (second follow-up) —
+        // returned to its original centered placement, sized down further
+        // (34% width) so it reads as a small, quiet centered accent behind
+        // the text without ever cropping the sides (width-based sizing,
+        // not `cover`).
         id: 'living-message',
         background: '/images/editions/dragon/read/living-message-bg.jpg',
         text:

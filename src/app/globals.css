@@ -7950,8 +7950,9 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .reader-img--matted {
   /* Sizing history, 2026-07-12: 460px/64% (first matting) -> 320px/45%
      (down 30%, second pass) -> confirmed fine, then bumped 135% of that
-     confirmed size (third pass, this value): 320px * 1.35 = 432px. */
-  max-width: min(61%, 432px);
+     confirmed size (third pass): 320px * 1.35 = 432px -> increased 15%
+     again (fourth pass, this value): 432px * 1.15 = 497px, 61% * 1.15 = 70%. */
+  max-width: min(70%, 497px);
   max-height: calc(100vh - 260px);
   padding: 24px;
   background: var(--cream);
@@ -8034,11 +8035,14 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
    quieter portion of its (now faded) background image.
    Shrunk 2026-07-12 (follow-up): at the generic has-bg `cover` size the
    arch still overpowered the page. Sized down ~35% and anchored to the
-   top so it reads as a quiet accent above the text, not a filled card. */
+   top so it reads as a quiet accent above the text -- but the top-anchored
+   placement itself didn't read right. Returned the same day to its
+   original centered placement, kept as small as the non-cropping
+   width-based sizing (`<width> auto`, never crops the sides the way
+   `cover` can) reasonably allows. */
 .reader-section--living-message.reader-section--has-bg {
-  background-size: 44% auto;
-  background-position: top center;
-  padding-top: 7rem;
+  background-size: 34% auto;
+  background-position: center;
 }
 
 .reader-section--living-message .reader-text {
@@ -8159,10 +8163,15 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   align-items: center;
 }
 
-/* Recognition — nudged down 2026-07-12 (follow-up): the banner sat flush
-   against the top of the reading area with no breathing room above it. */
-.reader-section--recognition {
-  padding-top: 2.5rem;
+/* Recognition and Reflection — nudged down 2026-07-12 (follow-up): the
+   banner sat flush against the top of the reading area with no breathing
+   room above it. Recognition alone was given padding-top: 2.5rem that
+   same day; still read as sitting too high, so both pages were given
+   more room the same day (second pass) and Reflection was brought in
+   line with Recognition. */
+.reader-section--recognition,
+.reader-section--reflection {
+  padding-top: 4.5rem;
 }
 
 /* Message Delivered — navy field, gold ampersand as the page's visual
@@ -8329,7 +8338,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .reader-topbar { padding: 1rem 1.25rem; }
   .reader-stage { padding: 1.5rem 2.75rem; }
   .reader-img { max-height: calc(100vh - 180px); }
-  .reader-img--matted { max-width: 81%; max-height: calc(100vh - 220px); padding: 16px; }
+  .reader-img--matted { max-width: 93%; max-height: calc(100vh - 220px); padding: 16px; }
   .reader-text { max-height: calc(100vh - 190px); }
   .reader-nav { width: 2.25rem; height: 2.25rem; font-size: 1.3rem; }
   .reader-nav--prev { left: 0.5rem; }
