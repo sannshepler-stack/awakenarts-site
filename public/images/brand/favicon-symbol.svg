@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Favicon symbol: simple 3-leaf sprig emblem, bold solid shapes,
+       navy, no letterforms — legible as an icon at 16px. -->
+  <g fill="#1C2B3A">
+    <path d="M0,0 C-24,-46 -22,-92 0,-136 C22,-92 24,-46 0,0 Z" transform="translate(100,178) rotate(-26)"/>
+    <path d="M0,0 C-26,-50 -24,-100 0,-150 C24,-100 26,-50 0,0 Z" transform="translate(100,178)"/>
+    <path d="M0,0 C-24,-46 -22,-92 0,-136 C22,-92 24,-46 0,0 Z" transform="translate(100,178) rotate(26)"/>
+  </g>
+  <path d="M100,178 L100,196" stroke="#1C2B3A" stroke-width="10" stroke-linecap="round"/>
+</svg>
