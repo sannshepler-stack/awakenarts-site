@@ -70,7 +70,24 @@ export interface EditionSection {
   // this is not the section's entire content — text still renders on top —
   // so it doesn't need desktop/tablet/mobile art direction, just one
   // reasonably-sized asset with background-size: cover.
+  //
+  // Two ids override the generic cover-background treatment in
+  // EditionReaderSection.tsx: 'journal' positions this art as a bottom-
+  // right corner accent (not a full-bleed cover) so it can sit behind real
+  // ruled lines rather than under a full page of text; 'colophon' renders
+  // it as a bottom-band-only strip that fades into the page rather than a
+  // full-page cover. See the Dragon Revision Directive, 2026-07-12.
   background?: string
+  // overlayImage — a single piece of authored artwork (e.g. the Dragon
+  // poem's own concrete-poem image) composited on top of `background`,
+  // with no text field. Added for the Dragon Revision Directive,
+  // 2026-07-12, for the Word/Poem page: the poem is real artwork, not
+  // HTML text, and the atmospheric background supports it rather than
+  // replacing it.
+  overlayImage?: {
+    src: string
+    alt: string
+  }
   text?: string   // for Encounter / Word / Recognition / Reflection / Colophon / etc.
 }
 
@@ -113,49 +130,53 @@ export const editions: Edition[] = [
         },
       },
       {
+        // Encounter — revised 2026-07-12 per the Dragon Revision Directive:
+        // "Restore the original Encounter artwork. Do not leave this page
+        // text-only." Background restores the storm-clouds-parting-to-
+        // sunset atmospheric art; layout and text are unchanged.
         id: 'encounter',
+        background: '/images/editions/dragon/read/encounter-bg.jpg',
         text: 'Be still. Let the figure arrive before the explanation does.',
       },
       {
-        // Corrected 2026-07-12: this is the production layout's actual
-        // "Page 4" (confirmed against Dragon_Figure_Edition_11_Series_
-        // Prototype.pdf — page 4 is a pure full-bleed image, no baked-in
-        // poem text, matching this section exactly; the poem itself is a
-        // separate following page/section, per DRAGON-PRODUCTION.docx's
-        // own instruction not to embed the poem in the artwork). Replaces
-        // the old full-dominance dragon illustration with the approved
-        // atmospheric field — dragon reduced to a quiet accent, title "The
-        // Dragon Fight" baked into the art. Asset: Workbook 04_Atmosphere/
-        // dragon-background.png. (An earlier pass in this same revision
-        // mistakenly applied this art as a background behind the 'word'
-        // text section instead — corrected here.) Also reordered to follow
-        // 'encounter' rather than precede it, matching the approved
-        // production layout's actual page order (Cover, Begin, Image, ...)
-        // — the site previously had Image before Begin, which didn't match.
+        // Figure — reverted 2026-07-12 per the Dragon Revision Directive:
+        // "Replace the current figure with the Dragon figure used on the
+        // Gallery page. Use the original artwork rather than generating a
+        // new dragon." This is the SECOND reversal of this section's art in
+        // the same production day — the 2026-07-12 "corrected" pass earlier
+        // today had replaced the Gallery figure with the atmospheric
+        // "Dragon Fight" field (see the superseded comment this replaces).
+        // The Directive is explicit and is today's governing instruction:
+        // the Gallery's painted dragon (teal/gold, public/images/editions/
+        // dragon-figure.jpg) belongs on the Figure page; the atmospheric
+        // "Dragon Fight" field moves to the Poem ('word') section below,
+        // as the backdrop for the actual poem artwork.
         id: 'image',
         image: {
           desktop: '/images/editions/dragon/read/image-desktop.jpg',
           tablet: '/images/editions/dragon/read/image-tablet.jpg',
           mobile: '/images/editions/dragon/read/image-mobile.jpg',
-          alt: 'The Dragon Fight — an atmospheric watercolor field in warm cream, gold, and blue-gray tones, with the dragon reduced to a quiet abstracted accent in the lower corner, generous negative space held for the poem',
+          alt: 'The Dragon — a painted watercolor figure in teal and gold, wings spread, from the AwakenArts Gallery',
         },
       },
       {
+        // Word / Poem — rebuilt 2026-07-12 per the Dragon Revision
+        // Directive: "Remove the AI-generated poem. Use the original
+        // Dragon poem artwork file. Place the poem over the Dragon Fight
+        // background. The background supports the poem; it does not
+        // replace it. The poem artwork remains the focal point." No `text`
+        // field — the poem is real authored artwork (Dragon_Poem_Master.png,
+        // confirmed against Susan's reference image: orange "THE DRAGON
+        // FLUNG" title, blue body text, red closing lines, transparent
+        // background), composited over the atmospheric "Dragon Fight" field
+        // that previously (mistakenly, then correctly-but-now-superseded)
+        // lived on the Figure page.
         id: 'word',
-        text:
-          'cranked its weight like an iron crane with\n' +
-          'its frame, torching breath across the sky\n' +
-          'down one side. Dragon claws scored\n' +
-          'dragon nails like metal rakes. With\n' +
-          'cut and whack, dragon wings\n' +
-          'cracked. The steaming\n' +
-          'lightning\n' +
-          'bolts of hate\n' +
-          'shouting sun,\n' +
-          'silent moon,\n' +
-          'trembling baby stars,\n\n' +
-          '"Like two sides of a golden coin, the parts were made to live as one."\n' +
-          '— Susan Ann Shepler',
+        background: '/images/editions/dragon/read/word-bg.jpg',
+        overlayImage: {
+          src: '/images/editions/dragon/read/poem-artwork.png',
+          alt: 'The Dragon Flung — the original concrete-poem artwork, dragon-shaped, with orange title, blue body text, and the closing line "Like two sides of a golden coin, the parts were made to live as one." — Susan Ann Shepler',
+        },
       },
       {
         // Recognition — revised 2026-07-12 per DRAGON-PRODUCTION.docx.
@@ -181,9 +202,13 @@ export const editions: Edition[] = [
         // Edition_11_Good_Copy.docx, Page 6), APPROVED and closed 2026-07-07.
         // Susan's own framing of the page: Scripture names the divided
         // condition, Augustine confesses it, the Dragon helps the reader
-        // recognize it, Christ alone reconciles it. Plain text, no
-        // background art — none was specified for this page.
+        // recognize it, Christ alone reconciles it. Approved text is
+        // unchanged; a subtle faded background (landscape with sun and
+        // moon, blended 72% toward the page cream) was added 2026-07-12 per
+        // the Dragon Revision Directive — "Add visual atmosphere. Avoid a
+        // plain text presentation."
         id: 'larger-story',
+        background: '/images/editions/dragon/read/larger-story-bg.jpg',
         text:
           'The Larger Story\n\n' +
           'Christian Scripture and tradition have long named the divided heart, and the God who alone can unite it.\n\n' +
@@ -201,7 +226,14 @@ export const editions: Edition[] = [
       {
         // Reflection — revised 2026-07-12 per DRAGON-PRODUCTION.docx (five
         // prompts, replacing the prior three-question "Where It Meets You").
+        // Banner background added 2026-07-12 per the Dragon Revision
+        // Directive — "Add visual atmosphere similar to Recognition. Avoid a
+        // plain white page." Uses the same swirl-motif atmospheric art family
+        // as Recognition's banner, rendered the same way (a real <img> banner
+        // above the text, not a stretched cover background — see
+        // EditionReaderSection.tsx's useBanner note).
         id: 'reflection',
+        background: '/images/editions/dragon/read/reflection-bg.jpg',
         text:
           'Reflection\n\n' +
           'These questions are an invitation to notice what is already present. There is nothing to conquer, only something to recognize.\n\n' +
@@ -217,11 +249,19 @@ export const editions: Edition[] = [
           'As you leave this page, carry one simple recognition into your ordinary life. Notice what changes when you stop fighting yourself and begin paying attention with kindness.',
       },
       {
-        // Journal — new page, added 2026-07-12 per DRAGON-PRODUCTION.docx.
-        // Background: Workbook 04_Atmosphere/journal-bkg.png (ruled lines,
-        // archway motif).
+        // Journal — revised 2026-07-12 per the Dragon Revision Directive:
+        // "Separate the arch illustration from the journal lines. Remove
+        // ruled lines from the artwork area. Add journal lines only beneath
+        // the introductory text. Preserve generous writing space." The
+        // full-page journal-bkg.png (ruled lines baked in under the whole
+        // page) is replaced with journal-arch.png — the same arch/foliage
+        // art, cropped to just the illustration corner and with its baked-in
+        // ruled lines erased (vertical blur + alpha feather), rendered by
+        // EditionReaderSection.tsx as a bottom-right corner accent rather
+        // than a full-bleed cover. Real CSS-drawn ruled lines are rendered
+        // beneath the intro text separately, in the open writing space below.
         id: 'journal',
-        background: '/images/editions/dragon/read/journal-bg.jpg',
+        background: '/images/editions/dragon/read/journal-arch.png',
         text:
           'Journal\n\n' +
           'Choose one recognition from this Edition to carry with you today.\n\n' +
@@ -248,7 +288,10 @@ export const editions: Edition[] = [
         // Living the Message — new page, added 2026-07-12. Text is Susan's
         // final revision, confirmed 2026-07-12, superseding the Good Copy
         // master's own version of this page. Background: Workbook
-        // 04_Atmosphere/living-message.png.
+        // 04_Atmosphere/living-message.png, faded 55% toward the page
+        // cream (re-rendered 2026-07-12 per the Dragon Revision Directive
+        // — "Fade the arch behind the text. The arch should function as
+        // atmosphere. Do not allow the illustration to dominate the page.")
         id: 'living-message',
         background: '/images/editions/dragon/read/living-message-bg.jpg',
         text:
@@ -266,10 +309,18 @@ export const editions: Edition[] = [
         // Colophon ("About This Edition") — revised 2026-07-12 per
         // DRAGON-PRODUCTION.docx: leads with the AwakenArts wordmark
         // (rendered via the site's own brand asset, not baked into the
-        // background), then the collection statement. Background:
-        // Workbook 04_Atmosphere/colophon-bkg.png.
+        // background), then the collection statement. Background asset
+        // changed 2026-07-12 per the Dragon Revision Directive — "Add the
+        // watercolor landscape/arch image along the bottom of the page.
+        // Fade it naturally into the paper. Let it quietly close the
+        // edition." `colophon-band.png` is the bottom ~52% of the original
+        // colophon-bg.jpg, with its own top edge alpha-feathered to
+        // transparent (pre-composited via PIL, not a CSS mask, so it
+        // renders identically in every browser and in the print PDF).
+        // EditionReaderSection.tsx positions it flush to the bottom of the
+        // section rather than stretching it to a full-page cover.
         id: 'colophon',
-        background: '/images/editions/dragon/read/colophon-bg.jpg',
+        background: '/images/editions/dragon/read/colophon-band.png',
         text:
           'When Language Shapes a Path\n\n' +
           'This Figure Edition is part of the AwakenArts collection.\n\n' +

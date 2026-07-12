@@ -1,11 +1,32 @@
 # Dragon Figure Edition — Production Synchronization Checklist
 
-**Date:** 2026-07-12
-**Governing document:** Susan's Production Master Directive (2026-07-12) — authority order: (1) latest approved production decisions (this conversation) → (2) production master manuscript → (3) production layout files → (4) historical review documents → (5) archived drafts.
+**Date:** 2026-07-12 (round 2 — Dragon Revision Directive)
+**Governing document:** Susan's Production Master Directive (2026-07-12), as extended by the same-day Dragon Revision Directive — authority order: (1) latest approved production decisions (this conversation) → (2) production master manuscript → (3) production layout files → (4) historical review documents → (5) archived drafts.
 
 This checklist compares the website Reader (`src/data/editions.ts`), the production master manuscript (`AwakenArts_Workbook/02_Dragon/Figure_Edition/Dragon_Figure_Edition_11_Good_Copy.docx`), the approved production layout (`Dragon_Figure_Edition_11_Series_Prototype.pdf`, 2026-07-07), and the published PDF (`public/files/editions/Dragon_Figure_Edition.pdf`), as of today.
 
-## Resolved this session
+## Resolved in round 2 — the Dragon Revision Directive (same day, art/layout only)
+
+No reader-facing text changed in this round — every item below is art, layout, or asset-only. Full rationale for each page is in the manuscript's own "ADDENDUM — DRAGON REVISION DIRECTIVE" note.
+
+| Page | Change |
+|---|---|
+| Begin (Encounter) | Restored the original storm-clouds-to-sunset atmospheric artwork as a full-bleed background. This page had drifted to text-only; the Directive was explicit that it must not be. Text switched to light/cream color with a soft shadow for legibility against the now-dark background. |
+| The Image (Figure) | **Reversed back** to the Gallery's painted dragon figure (teal/gold watercolor) — this is the SECOND reversal of this page's art in the same production day. Round 1 had corrected the site to use the atmospheric "Dragon Fight" field here (see round-1 table below); the Directive explicitly overrides that and confirms the Gallery figure belongs here instead, matching the master manuscript's own Page 3 production note ("the framed watercolor dragon figure on a cream mat"). This is the Directive-confirmed, final placement. |
+| The Poem | Removed the plain-text/HTML poem rendering entirely. Now uses the actual authored concrete-poem artwork (`Dragon_Poem_Master.png` — confirmed by direct visual comparison against Susan's own reference image: orange "THE DRAGON FLUNG" title, blue body text, red closing lines, transparent background), composited over the atmospheric "Dragon Fight" field (moved here from the Image page). Background supports the artwork; it is not the page's content. |
+| Recognition | Unchanged. |
+| The Larger Story | Added a subtle full-page background (landscape with sun and moon, faded ~72% toward the page cream) behind the unchanged approved text. |
+| Reflection | Added a banner image above the unchanged approved text — same swirl-motif atmospheric art family and treatment as Recognition's banner. |
+| Journal | Separated the arch illustration from the ruled lines. The art is now an isolated bottom-right corner accent with its own baked-in ruled lines removed (vertical blur + alpha feather). Real ruled lines are drawn beneath the intro text only, in the open writing space. |
+| Message Delivered | Unchanged. |
+| Living the Message | Background faded further (55% toward page cream, up from the round-1 version) so the arch reads as atmosphere, not a dominant illustration. |
+| About This Edition (Colophon) | The watercolor landscape no longer covers the full page. It is now a bottom band only (`colophon-band.png` — the original art's bottom ~52%, pre-feathered to transparent at its own top edge via PIL, not a CSS mask, so it renders identically everywhere including the print PDF). |
+
+Also resolves **Open item 3** from round 1 below ("poem placement") — the Directive confirms poem and figure are two separate pages, and specifies exactly how the poem page's background and artwork relate (background supports, artwork is the focal point).
+
+Master manuscript, website (`editions.ts`, `EditionReaderSection.tsx`, `globals.css`), and the production PDF (`public/files/editions/Dragon_Figure_Edition.pdf`) are all synced to this round as of this checklist update.
+
+## Resolved in round 1 (earlier the same day)
 
 | Item | Status |
 |---|---|
@@ -28,7 +49,10 @@ This checklist compares the website Reader (`src/data/editions.ts`), the product
 
 1. **Standalone title page.** The approved Series Prototype layout has a separate page 3 reading only "THE DRAGON," between Begin and the Image page. DRAGON-PRODUCTION.docx's Page 4 instructions instead bake the title ("The Dragon Fight") directly into the Image page's own art, with no separate title-only page. The website and the regenerated PDF both currently follow DRAGON-PRODUCTION.docx (no separate title page — 11 pages total, not 12). Confirm this is the intended final structure, or say if the standalone title page should be restored.
 2. **Per-page footers on the website Reader.** The PDF/print layout carries a running footer (page number, ampersand, edition + section name) on every page. The web Reader currently has no equivalent. Should this be added to the Reader for visual consistency with the printed piece, or is it PDF-only convention that doesn't belong in the paced web experience?
-3. **Poem placement.** DRAGON-PRODUCTION.docx says the poem "will be added afterward" onto the atmospheric artwork — which could mean it's meant to be physically composited into the Image page's own negative space (one combined page) rather than kept as a separate page (as it is now, both on the website and in the regenerated PDF). Confirm the current two-page approach (art page, then poem page) is correct, or if these should become one composited page.
+
+## Resolved — poem placement (was open item 3)
+
+**Poem placement.** The Dragon Revision Directive resolved this: the Figure and the Poem remain two separate pages/sections (not composited into one), and the Poem page composites the real poem artwork over the atmospheric "Dragon Fight" background — the background supports the poem, it does not replace it, and the poem artwork is the page's focal point. Implemented in both the website and the regenerated PDF.
 
 ## Known limitation
 

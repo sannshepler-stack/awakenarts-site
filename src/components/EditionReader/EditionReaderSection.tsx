@@ -67,6 +67,31 @@ export default function EditionReaderSection({
     )
   }
 
+  // Word/Poem — background art with a single piece of authored artwork
+  // composited on top, no HTML text. Added for the Dragon Revision
+  // Directive, 2026-07-12: the poem is real artwork, not generated text;
+  // the background supports it rather than replacing it. Checked before
+  // the plain `image` and `text` branches since this section has neither
+  // a `desktop/tablet/mobile` image set nor a `text` string.
+  if (section.background && section.overlayImage && !section.text) {
+    return (
+      <div
+        className={`reader-section reader-section--image reader-section--${section.id}`}
+        style={{ backgroundImage: `url(${section.background})` }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={section.overlayImage.src}
+          alt={section.overlayImage.alt}
+          className="reader-overlay-img protected-img"
+          draggable={false}
+          onContextMenu={(e) => e.preventDefault()}
+          onDragStart={(e) => e.preventDefault()}
+        />
+      </div>
+    )
+  }
+
   if (section.image) {
     const { image } = section
     return (
@@ -88,24 +113,39 @@ export default function EditionReaderSection({
   }
 
   if (section.text) {
-    // Recognition's background art is a landscape banner paired with long,
-    // internally-scrolling text — stretching it to a CSS cover background
-    // behind the whole (very tall) section would crush/crop it. It renders
-    // as a real <img> banner above the text instead. Every other
-    // background image here is a portrait full-page piece behind
-    // comparatively short text, where a CSS cover background works.
-    const useBanner = section.id === 'recognition'
+    // Recognition and Reflection's background art are landscape banners
+    // paired with long, internally-scrolling text — stretching either to a
+    // CSS cover background behind the whole (very tall) section would
+    // crush/crop it. Both render as a real <img> banner above the text
+    // instead. Every other background image here is a portrait piece
+    // behind comparatively short text, where a CSS cover background works.
+    const useBanner = section.id === 'recognition' || section.id === 'reflection'
+    // Colophon's background renders as a bottom-band-only strip (a real
+    // <img>, absolutely positioned within the section, masked to fade into
+    // the page above it) rather than a full-page cover — added 2026-07-12
+    // per the Dragon Revision Directive's "fade it naturally into the
+    // paper, let it quietly close the edition."
+    const bottomBand = section.id === 'colophon'
     const style =
-      section.background && !useBanner
+      section.background && !useBanner && !bottomBand
         ? { backgroundImage: `url(${section.background})` }
         : undefined
     return (
       <div
         className={`reader-section reader-section--text reader-section--${section.id}${
-          section.background && !useBanner ? ' reader-section--has-bg' : ''
+          section.background && !useBanner && !bottomBand ? ' reader-section--has-bg' : ''
         }`}
         style={style}
       >
+        {section.background && bottomBand && (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            src={section.background}
+            alt=""
+            className="reader-colophon__band"
+            aria-hidden="true"
+          />
+        )}
         {section.background && useBanner && (
           /* eslint-disable-next-line @next/next/no-img-element */
           <img src={section.background} alt="" className="reader-section__banner" aria-hidden="true" />
@@ -123,6 +163,16 @@ export default function EditionReaderSection({
         )}
         <div className="reader-text">
           <TextBlock text={section.text} />
+          {section.id === 'journal' && (
+            // Real ruled lines, beneath the intro text only — per the
+            // Dragon Revision Directive: "Add journal lines only beneath
+            // the introductory text. Preserve generous writing space."
+            <div className="reader-journal__lines" aria-hidden="true">
+              {Array.from({ length: 7 }).map((_, i) => (
+                <div key={i} className="reader-journal__line" />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     )

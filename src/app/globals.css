@@ -7974,6 +7974,15 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   max-width: var(--measure-narrow);
 }
 
+/* Encounter's restored background (storm clouds parting to a volcanic
+   sunset, 2026-07-12) is dark — the default deep-navy text is unreadable
+   against it, so it switches to a light, warm cream with a soft shadow for
+   legibility, matching Message Delivered's light-on-dark treatment. */
+.reader-section--encounter.reader-section--has-bg .reader-text {
+  color: var(--cream);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+}
+
 /* Word — the poem; centered, narrow measure, line breaks preserved. */
 .reader-section--word .reader-text {
   text-align: center;
@@ -8000,28 +8009,78 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   max-height: calc(100vh - 280px);
 }
 
-/* Word — title is baked into the art; give it room to breathe before the
-   poem begins, and keep the poem itself easy to read against a light,
-   textured field. */
-.reader-section--word.reader-section--has-bg {
-  padding-top: 11rem;
-}
-
-/* Journal / Living the Message / Colophon — shorter text, sits comfortably
-   in the lower, quieter portion of each background image. */
-.reader-section--journal.reader-section--has-bg,
+/* Living the Message — shorter text, sits comfortably in the lower,
+   quieter portion of its (now faded) background image. */
 .reader-section--living-message.reader-section--has-bg {
   padding-top: 7rem;
 }
 
-.reader-section--journal .reader-text,
 .reader-section--living-message .reader-text {
   text-align: center;
   max-width: var(--measure-narrow);
 }
 
-/* Recognition — banner image above the (long, internally-scrolling) text,
-   rather than a stretched cover background. */
+/* Word / Poem — rebuilt 2026-07-12 for the Dragon Revision Directive.
+   No text card: the atmospheric field is a full cover background, and the
+   poem's own artwork (a real image, not HTML text) sits centered on top as
+   the page's focal point. */
+.reader-section--word.reader-section--image {
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  box-shadow: 0 18px 60px rgba(28, 43, 58, 0.14);
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reader-overlay-img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 260px);
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0 8px 30px rgba(28, 43, 58, 0.2));
+}
+
+/* Journal — revised 2026-07-12 for the Dragon Revision Directive. The arch
+   art is a bottom-right corner accent (not a full-bleed cover, and not
+   stretched/cropped), so it can sit quietly behind real ruled lines rather
+   than under a full page of text. No card shadow/edge — it should read as
+   part of the page, not a framed image. */
+.reader-section--journal.reader-section--has-bg {
+  background-size: 62% auto;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  box-shadow: none;
+  border-radius: 0;
+  padding-top: 2.5rem;
+}
+
+.reader-section--journal .reader-text {
+  text-align: left;
+  max-width: var(--measure-narrow);
+}
+
+.reader-journal__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  margin-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.reader-journal__line {
+  width: 100%;
+  border-bottom: 1px solid rgba(28, 43, 58, 0.22);
+}
+
+/* Recognition / Reflection — banner image above the (long, internally-
+   scrolling) text, rather than a stretched cover background. */
 .reader-section__banner {
   display: block;
   width: 100%;
@@ -8031,7 +8090,8 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   border-radius: 4px;
 }
 
-.reader-section--recognition {
+.reader-section--recognition,
+.reader-section--reflection {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8074,26 +8134,52 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   color: #C8A24A;
 }
 
-/* Colophon — AwakenArts wordmark above the closing text. */
+/* Colophon — AwakenArts wordmark above the closing text. Revised
+   2026-07-12 for the Dragon Revision Directive: the watercolor landscape
+   no longer covers the whole page — it sits as a band along the bottom
+   only, masked to fade to transparent at its own top edge so it dissolves
+   into the page rather than reading as a framed photo. */
+.reader-section--colophon {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem 2.5rem;
+}
+
+.reader-colophon__band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1122 / 729;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .reader-colophon__logo {
+  position: relative;
+  z-index: 1;
   display: block;
   width: min(70%, 280px);
   height: auto;
   margin: 0 auto 1.75rem;
 }
 
-.reader-section--colophon.reader-section--has-bg {
-  padding-top: 3.5rem;
-}
-
 .reader-section--colophon .reader-text {
+  position: relative;
+  z-index: 1;
   text-align: center;
   max-width: var(--measure-narrow);
 }
 
 @media (max-width: 640px) {
   .reader-section--has-bg { padding: 2rem 1.5rem 1.75rem; }
-  .reader-section--word.reader-section--has-bg { padding-top: 6rem; }
+  .reader-section--journal.reader-section--has-bg { padding-top: 2rem; background-size: 78% auto; }
+  .reader-section--word.reader-section--image { padding: 1.5rem; }
   .reader-ampersand { font-size: 4rem; }
 }
 
