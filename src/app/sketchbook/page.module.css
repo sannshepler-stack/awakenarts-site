@@ -1,10 +1,16 @@
 /* ── /sketchbook — The Artist's Sketchbook ─────────────────────────
-   Framework-only build, 2026-06-30 (see page.tsx header comment for
-   the full directive). Quiet, studio-like, cream throughout — no dark
-   field, no navy band, no card chrome. Margins and rhythm match the
-   rest of the site (--band-gap, the 1180px measure already used by
-   the Gallery/poems grid). All tile content is placeholder until
-   Susan selects final artwork.
+   Quiet, studio-like, cream throughout — no dark field, no navy band,
+   no card chrome. Margins and rhythm match the rest of the site
+   (--band-gap, the 1180px measure already used by the Gallery/poems
+   grid).
+
+   2026-07-10, per Susan's Collection Sheet directive (refined same day
+   to the landscape Contact Sheet format): the placeholder 3-column
+   thumbnail grid is retired. Each finished piece is now a full Contact
+   Sheet — a single rich landscape production image (painting + title +
+   detail crops + palette + description + shared footer band) — shown
+   large, one beneath the other, rather than cropped into a small
+   uniform tile. See .collection / .sheet / .sheetImg below.
 ─────────────────────────────────────────────────────────────────── */
 
 .page {
@@ -73,71 +79,43 @@
   max-width: 52ch;
 }
 
-/* ── Grid ──────────────────────────────────────────────────────────
-   2026-06-30, per Susan's refined spec: three columns, vertical
-   portrait thumbnails (roughly 4:5 — see .thumb), every tile the
-   same height, equal spacing in both directions. Adding a piece
-   later means adding one object to the PIECES array in page.tsx;
-   this grid reflows on its own and needs no redesign. Drops to 2
-   columns on tablet and 1 on mobile (the thumbnails stay the same
-   shape and stay uniform within each breakpoint — only the column
-   count changes). */
-.grid {
+/* ── Collection ────────────────────────────────────────────────────
+   2026-07-10, per Susan's Collection Sheet directive. Each sheet is a
+   complete, self-contained production asset — it already carries its
+   own title, detail crops, palette, and description inside the image
+   — so this page adds no caption or card chrome around it. Sheets
+   stack in a single column, generously sized, in the order pieces are
+   finished. As more sheets are produced, this simply grows taller;
+   the layout itself doesn't change. */
+.collection {
   max-width: 1180px;
   margin: 0 auto;
   padding: 1rem 2rem var(--band-gap);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-}
-
-.tile {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 5rem;
 }
 
-.thumb {
-  /* Placeholder visual — a quiet, unobtrusive field standing in for
-     future artwork. No icon, no label, no "coming soon" text: per
-     Susan, "no visual clutter."
-
-     2026-06-30, per Susan: "The gallery should be designed around
-     the natural proportions of Susan's artwork, which is
-     predominantly vertical. Avoid cropping images to square formats.
-     The page should present the work as it was created rather than
-     forcing it into a generic gallery grid... Vertical portrait
-     thumbnails (roughly 4:5 or 2:3). Consistent height." Every tile
-     shares this one fixed portrait ratio rather than varying per
-     piece, so the grid reads as calm and even, not a masonry jumble.
-     When a placeholder is replaced with real artwork, render the
-     image inside this frame with object-fit: contain (never cover) —
-     the same "show the whole work, never crop it" approach already
-     used for Edition artwork on the Gallery page (see
-     .poem-card__imageFrame in globals.css) — so the work is always
-     presented as it was created, matted within this consistent
-     portrait frame rather than cropped to fill it. */
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  background: var(--mist);
-  border: 1px solid rgba(28, 43, 58, 0.08);
-  border-radius: 2px;
-}
-
-.tileTitle {
-  font-family: var(--serif);
-  font-size: 1rem;
-  color: var(--mid);
+.sheet {
+  /* Contact Sheets are landscape (roughly 4:3–3:2) — wider than the
+     original portrait Collection Sheet, so the display column is
+     wider too, to keep the painting and detail crops legible. */
   margin: 0;
+  width: 100%;
+  max-width: 1100px;
 }
 
-/* Tablet — 2 columns */
-@media (max-width: 980px) {
-  .grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+.sheetImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 18px 60px rgba(28, 43, 58, 0.18);
 }
 
-/* Mobile — 1 column */
+/* Mobile */
 @media (max-width: 640px) {
   .intro { padding: 6rem 1.25rem 2.5rem; }
-  .grid { grid-template-columns: 1fr; max-width: 420px; padding: 1rem 1.25rem var(--band-gap-sm); gap: 2.5rem; }
+  .collection { padding: 1rem 1.25rem var(--band-gap-sm); gap: 3.5rem; }
 }
