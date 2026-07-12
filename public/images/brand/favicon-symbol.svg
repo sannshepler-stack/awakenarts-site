@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <!-- Favicon symbol: simple 3-leaf sprig emblem, bold solid shapes,
-       navy, no letterforms — legible as an icon at 16px. -->
-  <g fill="#1C2B3A">
-    <path d="M0,0 C-24,-46 -22,-92 0,-136 C22,-92 24,-46 0,0 Z" transform="translate(100,178) rotate(-26)"/>
-    <path d="M0,0 C-26,-50 -24,-100 0,-150 C24,-100 26,-50 0,0 Z" transform="translate(100,178)"/>
-    <path d="M0,0 C-24,-46 -22,-92 0,-136 C22,-92 24,-46 0,0 Z" transform="translate(100,178) rotate(26)"/>
+  <rect x="0" y="0" width="200" height="200" rx="36" fill="#0F2340"/>
+  <g transform="translate(-12.75,10) scale(0.5)" fill="#C8A24A">
+    <text x="185" y="288" text-anchor="middle"
+      font-family="'Cormorant Garamond','TeX Gyre Bonum',Georgia,serif" font-style="italic" font-weight="400"
+      font-size="160" transform="rotate(-5 185 288)">a</text>
+    <text x="263" y="300" text-anchor="middle"
+      font-family="'Cormorant Garamond','TeX Gyre Bonum',Georgia,serif" font-weight="700"
+      font-size="250">A</text>
+    <g>
+      <path d="M270,138 C286,112 308,86 334,54" stroke="#C8A24A" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M276,128 C267,116 270,100 286,90 C296,104 292,120 276,128 Z"/>
+      <path d="M294,104 C287,90 292,74 309,64 C317,78 313,94 294,104 Z"/>
+      <path d="M313,80 C308,65 315,50 332,42 C339,57 333,72 313,80 Z"/>
+    </g>
   </g>
-  <path d="M100,178 L100,196" stroke="#1C2B3A" stroke-width="10" stroke-linecap="round"/>
 </svg>
