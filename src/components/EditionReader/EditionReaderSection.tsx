@@ -176,7 +176,7 @@ export default function EditionReaderSection({
             // Dragon Revision Directive: "Add journal lines only beneath
             // the introductory text. Preserve generous writing space."
             <div className="reader-journal__lines" aria-hidden="true">
-              {Array.from({ length: 7 }).map((_, i) => (
+              {Array.from({ length: 11 }).map((_, i) => (
                 <div key={i} className="reader-journal__line" />
               ))}
             </div>

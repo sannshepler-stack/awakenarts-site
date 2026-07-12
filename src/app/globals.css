@@ -8066,7 +8066,12 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   border-radius: 4px;
   box-shadow: 0 18px 60px rgba(28, 43, 58, 0.14);
   margin: 0 auto;
-  padding: 23vh 5% 6vh;
+  /* Top padding raised 23vh -> 28vh, 2026-07-12 follow-up: the poem's own
+     top edge (its baked-in title) was sitting right against the
+     background's "THE DRAGON FIGHT" title/rule above it. More clearance,
+     and the image itself capped smaller (see .reader-overlay-img), so it
+     reads as centered underneath the title, not touching it. */
+  padding: 28vh 6% 6vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -8081,8 +8086,12 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
      Capped at 60vh, not 70vh (2026-07-12, follow-up): Susan's replacement
      artwork (dragon-text.png) is a taller/narrower shape than the piece
      this was tuned for (0.625 vs 0.667 width:height), so at the same
-     height cap it ran too close to the bottom of the page. */
-  max-height: 60vh;
+     height cap it ran too close to the bottom of the page.
+     Reduced again 60vh -> 50vh, 2026-07-12 follow-up: the top of the
+     poem (its own title) was touching the background's title above it —
+     shrinking it, combined with the increased top padding above, gives
+     it clear, centered breathing room under the page's title. */
+  max-height: 50vh;
   width: auto;
   height: auto;
   margin: 0 auto;
@@ -8095,7 +8104,11 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
    than under a full page of text. No card shadow/edge — it should read as
    part of the page, not a framed image. */
 .reader-section--journal.reader-section--has-bg {
-  background-size: 62% auto;
+  /* Shrunk 2026-07-12 (second pass): the arch was competing with the
+     writing space instead of quietly accenting it. Reduced from 62% to a
+     small corner mark, freeing most of the page for the intro text and
+     ruled lines. */
+  background-size: 26% auto;
   background-position: bottom right;
   background-repeat: no-repeat;
   box-shadow: none;
@@ -8111,7 +8124,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .reader-journal__lines {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 2rem;
   margin-top: 2.5rem;
   padding-bottom: 1rem;
 }
@@ -8220,9 +8233,9 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 @media (max-width: 640px) {
   .reader-section--has-bg { padding: 2rem 1.5rem 1.75rem; }
-  .reader-section--journal.reader-section--has-bg { padding-top: 2rem; background-size: 78% auto; }
-  .reader-section--word.reader-section--image { padding: 22vh 4% 2vh; }
-  .reader-overlay-img { max-height: 56vh; }
+  .reader-section--journal.reader-section--has-bg { padding-top: 2rem; background-size: 34% auto; }
+  .reader-section--word.reader-section--image { padding: 26vh 4% 3vh; }
+  .reader-overlay-img { max-height: 46vh; }
   .reader-ampersand { font-size: 4rem; }
 }
 

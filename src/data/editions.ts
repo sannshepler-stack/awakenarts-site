@@ -220,12 +220,12 @@ export const editions: Edition[] = [
         // Susan's own framing of the page: Scripture names the divided
         // condition, Augustine confesses it, the Dragon helps the reader
         // recognize it, Christ alone reconciles it. Approved text is
-        // unchanged; a subtle faded background (landscape with sun and
-        // moon, blended 72% toward the page cream) was added 2026-07-12 per
-        // the Dragon Revision Directive — "Add visual atmosphere. Avoid a
-        // plain text presentation."
+        // unchanged. A faded background image was tried 2026-07-12 (two
+        // passes, 72% then 90% toward page cream) but still read as too
+        // dark/muddying the text — removed the same day per Susan's
+        // explicit "don't use the background" call. Plain cream page,
+        // same treatment as before this revision round.
         id: 'larger-story',
-        background: '/images/editions/dragon/read/larger-story-bg.jpg',
         text:
           'The Larger Story\n\n' +
           'Christian Scripture and tradition have long named the divided heart, and the God who alone can unite it.\n\n' +
@@ -249,6 +249,12 @@ export const editions: Edition[] = [
         // as Recognition's banner, rendered the same way (a real <img> banner
         // above the text, not a stretched cover background — see
         // EditionReaderSection.tsx's useBanner note).
+        // Fixed same day, follow-up: the source art (dragon-header-2.png) is
+        // portrait-shaped, unlike Recognition's already-landscape source —
+        // resized naively it rendered as a very tall banner with no title,
+        // which read as "header not showing." Re-cropped to match
+        // Recognition's own 1536x1024 landscape banner shape, and a
+        // "REFLECTION" title baked in (same gold, same position) to match.
         id: 'reflection',
         background: '/images/editions/dragon/read/reflection-bg.jpg',
         text:
