@@ -198,7 +198,9 @@ export const editions: Edition[] = [
       {
         // Recognition — revised 2026-07-12 per DRAGON-PRODUCTION.docx.
         // Header uses the approved atmospheric banner (RECOGNITION baked
-        // into the art), Workbook 04_Atmosphere/dragon-header-1.png.
+        // into the art), Workbook 04_Atmosphere/dragon-header-1.png. Given
+        // a little top clearance the same day (follow-up) — the banner sat
+        // flush against the top of the reading area with no room above it.
         id: 'recognition',
         background: '/images/editions/dragon/read/recognition-bg.jpg',
         text:
@@ -283,6 +285,9 @@ export const editions: Edition[] = [
         // EditionReaderSection.tsx as a bottom-right corner accent rather
         // than a full-bleed cover. Real CSS-drawn ruled lines are rendered
         // beneath the intro text separately, in the open writing space below.
+        // Sizing history, same day: 62% -> 26% (lost too much of the arch)
+        // -> 45% (final) — it's fine for the arch to run under the ruled
+        // lines; the only real constraint is staying clear of the heading.
         id: 'journal',
         background: '/images/editions/dragon/read/journal-arch.png',
         text:
@@ -315,6 +320,9 @@ export const editions: Edition[] = [
         // cream (re-rendered 2026-07-12 per the Dragon Revision Directive
         // — "Fade the arch behind the text. The arch should function as
         // atmosphere. Do not allow the illustration to dominate the page.")
+        // Still read as overpowering rendered full-cover; follow-up the
+        // same day sized it down to a 44%-width piece anchored to the top
+        // of the section rather than filling it.
         id: 'living-message',
         background: '/images/editions/dragon/read/living-message-bg.jpg',
         text:

@@ -8031,8 +8031,13 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 /* Living the Message — shorter text, sits comfortably in the lower,
-   quieter portion of its (now faded) background image. */
+   quieter portion of its (now faded) background image.
+   Shrunk 2026-07-12 (follow-up): at the generic has-bg `cover` size the
+   arch still overpowered the page. Sized down ~35% and anchored to the
+   top so it reads as a quiet accent above the text, not a filled card. */
 .reader-section--living-message.reader-section--has-bg {
+  background-size: 44% auto;
+  background-position: top center;
   padding-top: 7rem;
 }
 
@@ -8104,11 +8109,13 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
    than under a full page of text. No card shadow/edge — it should read as
    part of the page, not a framed image. */
 .reader-section--journal.reader-section--has-bg {
-  /* Shrunk 2026-07-12 (second pass): the arch was competing with the
-     writing space instead of quietly accenting it. Reduced from 62% to a
-     small corner mark, freeing most of the page for the intro text and
-     ruled lines. */
-  background-size: 26% auto;
+  /* Sizing history, 2026-07-12: 62% (first pass, too dominant) -> 26%
+     (second pass, lost too much of the arch) -> 45% (third pass, this
+     value). It's fine for the arch to run behind/under the ruled lines
+     (its own top-left edge is already alpha-feathered for exactly this)
+     — the only real constraint is staying clear of the "Journal" heading
+     at the top of the page. */
+  background-size: 45% auto;
   background-position: bottom right;
   background-repeat: no-repeat;
   box-shadow: none;
@@ -8150,6 +8157,12 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Recognition — nudged down 2026-07-12 (follow-up): the banner sat flush
+   against the top of the reading area with no breathing room above it. */
+.reader-section--recognition {
+  padding-top: 2.5rem;
 }
 
 /* Message Delivered — navy field, gold ampersand as the page's visual
@@ -8233,7 +8246,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 @media (max-width: 640px) {
   .reader-section--has-bg { padding: 2rem 1.5rem 1.75rem; }
-  .reader-section--journal.reader-section--has-bg { padding-top: 2rem; background-size: 34% auto; }
+  .reader-section--journal.reader-section--has-bg { padding-top: 2rem; background-size: 55% auto; }
   .reader-section--word.reader-section--image { padding: 26vh 4% 3vh; }
   .reader-overlay-img { max-height: 46vh; }
   .reader-ampersand { font-size: 4rem; }
