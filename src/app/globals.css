@@ -7938,6 +7938,26 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   box-shadow: 0 18px 60px rgba(28, 43, 58, 0.18);
 }
 
+/* Figure — matted presentation, added 2026-07-12: at full-bleed size this
+   piece (wings spread edge to edge) read as too dominating, filling
+   nearly the whole viewport. Scaled down and given a visible cream mat,
+   per the manuscript's own production note describing this page as "the
+   framed watercolor dragon figure on a cream mat." */
+.reader-section--figure-matted {
+  padding: 1.5rem;
+}
+
+.reader-img--matted {
+  /* Sized down a further 30% (2026-07-12, second pass) at Susan's
+     request, on top of the initial matting — 460px/64% -> 320px/45%. */
+  max-width: min(45%, 320px);
+  max-height: calc(100vh - 320px);
+  padding: 18px;
+  background: var(--cream);
+  border: 1px solid rgba(28, 43, 58, 0.14);
+  box-shadow: 0 14px 44px rgba(28, 43, 58, 0.16);
+}
+
 .reader-section--text {
   display: flex;
   justify-content: center;
@@ -8022,25 +8042,38 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 /* Word / Poem — rebuilt 2026-07-12 for the Dragon Revision Directive.
    No text card: the atmospheric field is a full cover background, and the
-   poem's own artwork (a real image, not HTML text) sits centered on top as
-   the page's focal point. */
+   poem's own artwork (a real image, not HTML text) sits on top as the
+   page's focal point.
+   Resized same day, second pass: the background's own baked-in title
+   ("THE DRAGON FIGHT") sits in roughly the top quarter of the art. The
+   card is locked to that art's own aspect ratio (1400:1822) so the title
+   band always renders at a known, proportional position — background-
+   position: top keeps it anchored there rather than cropped by `cover`
+   on an unrelated box shape. The poem artwork then sits top-aligned
+   (not centered) in the space below the title, sized to leave visible
+   breathing room on all four sides rather than filling/overflowing the
+   page. */
 .reader-section--word.reader-section--image {
   background-size: cover;
-  background-position: center;
+  background-position: top center;
+  aspect-ratio: 1400 / 1822;
+  width: 100%;
+  max-width: 460px;
+  max-height: calc(100vh - 160px);
+  box-sizing: border-box;
   border-radius: 4px;
   box-shadow: 0 18px 60px rgba(28, 43, 58, 0.14);
-  max-width: 640px;
   margin: 0 auto;
-  padding: 2.5rem;
+  padding: 36% 11% 8%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .reader-overlay-img {
   display: block;
   max-width: 100%;
-  max-height: calc(100vh - 260px);
+  max-height: 100%;
   width: auto;
   height: auto;
   margin: 0 auto;
@@ -8179,7 +8212,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 @media (max-width: 640px) {
   .reader-section--has-bg { padding: 2rem 1.5rem 1.75rem; }
   .reader-section--journal.reader-section--has-bg { padding-top: 2rem; background-size: 78% auto; }
-  .reader-section--word.reader-section--image { padding: 1.5rem; }
+  .reader-section--word.reader-section--image { max-width: 300px; padding: 34% 9% 8%; }
   .reader-ampersand { font-size: 4rem; }
 }
 
@@ -8260,6 +8293,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .reader-topbar { padding: 1rem 1.25rem; }
   .reader-stage { padding: 1.5rem 2.75rem; }
   .reader-img { max-height: calc(100vh - 180px); }
+  .reader-img--matted { max-width: 60%; max-height: calc(100vh - 260px); padding: 12px; }
   .reader-text { max-height: calc(100vh - 190px); }
   .reader-nav { width: 2.25rem; height: 2.25rem; font-size: 1.3rem; }
   .reader-nav--prev { left: 0.5rem; }

@@ -150,7 +150,12 @@ export const editions: Edition[] = [
         // the Gallery's painted dragon (teal/gold, public/images/editions/
         // dragon-figure.jpg) belongs on the Figure page; the atmospheric
         // "Dragon Fight" field moves to the Poem ('word') section below,
-        // as the backdrop for the actual poem artwork.
+        // as the backdrop for the actual poem artwork. Rendered by
+        // EditionReaderSection.tsx at a smaller, matted size (not
+        // full-bleed) — at full size this wings-spread piece read as too
+        // dominating on the page; the manuscript's own production note for
+        // this page already describes it as "the framed watercolor dragon
+        // figure on a cream mat," which the matted CSS treatment matches.
         id: 'image',
         image: {
           desktop: '/images/editions/dragon/read/image-desktop.jpg',

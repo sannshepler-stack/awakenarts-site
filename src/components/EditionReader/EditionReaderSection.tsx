@@ -94,15 +94,23 @@ export default function EditionReaderSection({
 
   if (section.image) {
     const { image } = section
+    // Figure — matted presentation, added 2026-07-12: at full-bleed size
+    // this piece (wings spread edge to edge, teeth bared) reads as too
+    // dominating/intense filling nearly the whole viewport. The master
+    // manuscript's own production note describes this page as "the framed
+    // watercolor dragon figure on a cream mat" — a contained, matted
+    // presentation, not full-bleed — so it's scaled down and given a
+    // visible cream mat instead, closer to how it reads in the Gallery.
+    const matted = section.id === 'image'
     return (
-      <div className="reader-section reader-section--image">
+      <div className={`reader-section reader-section--image${matted ? ' reader-section--figure-matted' : ''}`}>
         <picture>
           <source media="(max-width: 640px)" srcSet={image.mobile} />
           <source media="(max-width: 1000px)" srcSet={image.tablet} />
           <img
             src={image.desktop}
             alt={image.alt}
-            className="reader-img protected-img"
+            className={`reader-img protected-img${matted ? ' reader-img--matted' : ''}`}
             draggable={false}
             onContextMenu={(e) => e.preventDefault()}
             onDragStart={(e) => e.preventDefault()}
