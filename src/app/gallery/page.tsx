@@ -66,8 +66,8 @@ const tiles: GalleryTile[] = [
     kicker: 'Poppy',
     title: "Her Mother's Hands",
     image: {
-      src: '/images/atmosphere/poppy.png',
-      alt: 'Poppy — a golden hillside of poppies in bloom at sunset, the same photograph used inside the Poppy Edition.',
+      src: '/images/editions/poppy-figure.jpg',
+      alt: 'Poppy — a California poppy field at sunset, the Edition’s own figure photograph.',
     },
   },
   {
