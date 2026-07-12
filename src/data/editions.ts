@@ -113,28 +113,35 @@ export const editions: Edition[] = [
         },
       },
       {
+        id: 'encounter',
+        text: 'Be still. Let the figure arrive before the explanation does.',
+      },
+      {
+        // Corrected 2026-07-12: this is the production layout's actual
+        // "Page 4" (confirmed against Dragon_Figure_Edition_11_Series_
+        // Prototype.pdf — page 4 is a pure full-bleed image, no baked-in
+        // poem text, matching this section exactly; the poem itself is a
+        // separate following page/section, per DRAGON-PRODUCTION.docx's
+        // own instruction not to embed the poem in the artwork). Replaces
+        // the old full-dominance dragon illustration with the approved
+        // atmospheric field — dragon reduced to a quiet accent, title "The
+        // Dragon Fight" baked into the art. Asset: Workbook 04_Atmosphere/
+        // dragon-background.png. (An earlier pass in this same revision
+        // mistakenly applied this art as a background behind the 'word'
+        // text section instead — corrected here.) Also reordered to follow
+        // 'encounter' rather than precede it, matching the approved
+        // production layout's actual page order (Cover, Begin, Image, ...)
+        // — the site previously had Image before Begin, which didn't match.
         id: 'image',
         image: {
           desktop: '/images/editions/dragon/read/image-desktop.jpg',
           tablet: '/images/editions/dragon/read/image-tablet.jpg',
           mobile: '/images/editions/dragon/read/image-mobile.jpg',
-          alt: 'A painted dragon figure in teal and gold tones, wings raised, rendered on a weathered cream ground',
+          alt: 'The Dragon Fight — an atmospheric watercolor field in warm cream, gold, and blue-gray tones, with the dragon reduced to a quiet abstracted accent in the lower corner, generous negative space held for the poem',
         },
       },
       {
-        id: 'encounter',
-        text: 'Be still. Let the figure arrive before the explanation does.',
-      },
-      {
-        // Page 4 — Dragon Poem. Revised 2026-07-12 per DRAGON-PRODUCTION.docx:
-        // atmospheric watercolor field is now the primary visual (title
-        // "The Dragon Fight" baked into the artwork itself), with the
-        // dragon reduced to a quiet abstracted accent rather than a full
-        // illustration — the figure frames the reading experience instead
-        // of interrupting it. Poem text is unchanged; only the artwork
-        // behind it changed. Asset: Workbook 04_Atmosphere/dragon-background.png.
         id: 'word',
-        background: '/images/editions/dragon/read/word-bg.jpg',
         text:
           'cranked its weight like an iron crane with\n' +
           'its frame, torching breath across the sky\n' +
