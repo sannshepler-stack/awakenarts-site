@@ -15,7 +15,13 @@
  */
 
 :root {
-  --hp-gold: #8b6914;
+  /* 2026-07-14, AwakenArts Atmosphere System audit: --hp-gold itself
+     has no current usages in this file (only --hp-gold-lt, the
+     dark-background variant, is referenced below) -- but updated to
+     match the site's approved dark antique gold (#7E5F12, was
+     #8B6914) for consistency in case it's used on a light background
+     later. */
+  --hp-gold: #7E5F12;
   --hp-gold-lt: #d9b568;
   --hp-cream: #faf7f2;
   --hp-mist: #ddd8cf;

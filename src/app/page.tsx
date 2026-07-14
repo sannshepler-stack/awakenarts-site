@@ -478,7 +478,16 @@ export default function HomePage() {
             src="/images/headers/biblical-foundation.jpg"
             alt="Sunrise over hills and a winding river, seen through a worn stone window — a threshold image."
             tall
-            fadeTo="#f5f0e8"
+            /* 2026-07-14, AwakenArts Atmosphere System: briefly given
+               its own Soft Light background, then reverted the same
+               day per Susan -- "do not add a color band between the
+               queen ann section and the matthew quote section." This
+               section inherits .poems-showcase-section's Warm ivory
+               (var(--cream), #FAF7F2) again; fadeTo updated to match
+               that exactly (was #f5f0e8, a slightly-off placeholder
+               predating this token) so the image still fades with no
+               visible seam. */
+            fadeTo="#FAF7F2"
             fadeHeight={25}
           />
           <div className="poems-showcase-foundation__inner">

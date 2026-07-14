@@ -122,7 +122,12 @@
   font-weight: 500;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: #8B6914; /* --gold */
+  /* 2026-07-14, AwakenArts Atmosphere System audit: was a hardcoded
+     #8B6914 that bypassed the --gold token, so it never picked up the
+     2026-07-14 contrast fix (#8B6914 -> #7E5F12). This component is
+     not currently imported anywhere in the app, but fixed for
+     consistency in case it's wired in later. */
+  color: var(--gold);
   cursor: pointer;
   transition: border-color 150ms ease, color 150ms ease;
 }

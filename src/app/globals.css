@@ -5,7 +5,15 @@
 ───────────────────────────────────────────── */
 :root {
   --deep:     #1C2B3A;
-  --gold:     #8B6914;
+  /* 2026-07-14, AwakenArts Atmosphere System contrast pass: darkened
+     from #8B6914 (dl -0.03 in HLS space, same hue/saturation, just
+     less light) after WCAG testing showed the original failed
+     AA-normal (4.5:1) as text on the new Pale parchment and Champagne
+     backgrounds -- 4.25:1 and 4.35:1 measured. This value clears all
+     three light backgrounds in the system with margin: see the
+     Atmosphere System comment below for exact ratios. Visually a very
+     subtle shift, same antique-gold family. */
+  --gold:     #7E5F12;
   --gold-lt:  #C9A84C;
   --gold-bg:  #F5EDD6;
   --cream:    #FAF7F2;
@@ -16,11 +24,138 @@
   --serif:    'Cormorant Garamond', Georgia, serif;
   --sans:     'Inter', system-ui, sans-serif;
 
+  /* AwakenArts Atmosphere System (locked 2026-07-14, roles approved by
+     Susan same day), per her "large uninterrupted areas of ivory and
+     navy can feel somewhat absolute" directive. Nine palette roles —
+     a family of tones closely related to the site's two existing
+     anchors (navy, gold), not new hues. Two are genuinely new colors
+     (--navy-soft, --gold-muted); the other seven are the site's
+     existing tokens, aliased here under their role name so new work
+     can reference the role rather than re-deriving which existing
+     token fills it. Renaming the underlying tokens (--deep, --cream,
+     etc.) was deliberately avoided — hundreds of existing
+     declarations already reference them by their original names;
+     aliasing is additive and non-breaking.
+
+     Deep navy    = --deep      (#1C2B3A) — nav, footer, strongest
+                                  dark sections (e.g. .home-coll-section).
+     Soft navy    = --navy-soft (#354F68) — encounter headings and
+                                  secondary dark sections (e.g. a title
+                                  band introducing a work, not the work
+                                  itself).
+     Warm ivory   = --cream     (#FAF7F2) — primary light background.
+     Pale parchment = --parchment (alias of --warm, #F0EAE0) —
+                                  alternating light sections.
+     Antique gold, dark = --gold (#8B6914) — readable gold text and
+                                  controls on light backgrounds.
+     Antique gold, light = --gold-lt (#C9A84C) — accents on navy.
+     Muted gold   = --gold-muted (#9B8241) — metadata and quiet rules.
+                                  CONTRAST NOTE: fails WCAG AA for
+                                  normal text on every light background
+                                  in this system (~3.1-3.5:1 measured;
+                                  needs 4.5:1) — passes only the AA
+                                  large-text/UI floor (3:1). Reserve for
+                                  large or bold text, rules, icons, and
+                                  non-text accents; do not set body- or
+                                  caption-sized text in it on Warm
+                                  ivory, Pale parchment, or Champagne.
+     Warm mist    = --mist      (#DDD8CF) — borders and dividers.
+                                  Decorative only (1.33:1 against Warm
+                                  ivory) — never carries text.
+     Soft ink     = --ink-soft  (alias of --mid, #5A5550) — secondary
+                                  body text on light backgrounds;
+                                  already the site's established
+                                  body-copy color.
+     Champagne    = --champagne (alias of --gold-bg, #F5EDD6) — very
+                                  restrained highlighted backgrounds
+                                  (small accent panels, not primary
+                                  section fields).
+
+     Three approved page atmospheres, to be alternated to mark a
+     page's own structural transitions — never to decorate empty
+     space:
+       Light      = Warm ivory background, Deep navy text.
+       Soft Light = Pale parchment background, Soft ink text (with
+                    Deep navy / Antique gold for headings and accents,
+                    unchanged — only the body-copy register softens).
+       Dark       = Deep or Soft navy background, Warm ivory text,
+                    restrained Antique gold accents.
+
+     Governing ratio, site-wide: ~70% ivory/parchment (Light + Soft
+     Light), ~20% navy/soft navy (Dark), ~10% gold rules and accents.
+     Avoid: unrelated hues (pinks/greens/blues), bright white as a
+     major background, gold for long body text, per-page one-off
+     colors, and gradients that read as decorative rather than
+     atmospheric. The artwork supplies the site's color experience;
+     these tokens exist to frame it quietly, not compete with it.
+
+     CONTRAST TESTING (WCAG 2.1, computed 2026-07-14 — required by
+     Susan before final approval, re-verified after darkening Antique
+     gold, dark below). Ratios below are exact; AA-normal needs 4.5:1,
+     AA-large/UI needs 3:1.
+       Deep navy on Warm ivory / Pale parchment / Champagne:  13.5 / 12.05 / 12.34 — pass
+       Warm ivory on Deep navy:                                13.5           — pass
+       Warm ivory on Soft navy:                                7.96          — pass
+       Soft ink on Warm ivory / Pale parchment / Champagne:    6.90 / 6.16 / 6.30 — pass
+       Antique gold, dark on Warm ivory:                       5.56          — pass
+       Antique gold, dark on Pale parchment:                   4.97          — pass
+       Antique gold, dark on Champagne:                        5.09          — pass
+       Antique gold, light on Deep navy:                       6.31          — pass
+       Antique gold, light on Soft navy:                       3.72          — FAILS AA-normal, passes AA-large
+       Muted gold on Warm ivory / Pale parchment / Champagne:  3.47/3.10/3.17 — FAIL AA-normal, pass AA-large only
+     Antique gold, dark was darkened from #8B6914 to #7E5F12 (2026-07-14,
+     same-hue/-saturation shift) specifically because the original
+     failed AA-normal on Pale parchment (4.25:1) and Champagne (4.35:1)
+     — .eyebrow labels sit on Pale parchment in the homepage Method
+     section, so this was a real, live issue, not theoretical. Per
+     Susan's direction, fixed at the token rather than reverting the
+     Method section's background. Do not place Antique gold, light
+     body-sized text on Soft navy, and do not place Muted gold
+     body-sized text on any light background — both remain AA-large/UI
+     only, with no exception in place.
+
+     ANTIQUE GOLD USAGE RULE (locked 2026-07-14, per Susan): the two
+     Antique gold variants are chosen by background, not by preference
+     — this is the one rule every future placement must follow.
+       - On light backgrounds (Warm ivory, Pale parchment, Champagne):
+         always --gold (dark antique gold, #7E5F12). This is the only
+         variant proven >= 4.5:1 across all three light backgrounds —
+         use it for every small gold label, link, eyebrow, and button
+         on light ground, no exceptions.
+       - On dark backgrounds (Deep navy, Soft navy): always --gold-lt
+         (light antique gold, #C9A84C). Note --gold-lt on Soft navy is
+         3.72:1 — AA-large/UI only, so keep text set in it at a large
+         or bold size on Soft navy specifically (Deep navy clears
+         AA-normal at 6.31:1, no restriction there).
+     Site-wide audit (2026-07-14): every --gold reference already
+     routes through this one token, so the darkening above applied
+     automatically everywhere it's used as text — journal, workshops,
+     sketchbook, facilitator-orientation, encounters index, Wayfinding
+     Band, and every eyebrow/label/link in this file. Three definitions
+     that duplicate the same color independently of the token (which
+     the fix could not reach automatically) were found and corrected
+     to match: --enc-gold and homeward-paths.module.css's --hp-gold
+     (both dormant -- no current usage, updated for when they are used)
+     and EncounterCard.module.css's hardcoded `color: #8B6914` (also
+     dormant -- the component isn't currently imported anywhere).
+     No other hardcoded gold text color exists outside this token
+     system as of this audit. */
+  --navy-soft:  #354F68;
+  --gold-muted: #9B8241;
+  --parchment:  var(--warm);
+  --ink-soft:   var(--mid);
+  --champagne:  var(--gold-bg);
+
   /* Encounters (2026-06-25) — kept namespaced/separate from the tokens
      above rather than reused, since CSS Modules can't declare :root
      itself (it gets scoped/hashed); these live here so every encounter
-     module (.module.css) can read them as real global custom properties. */
-  --enc-gold:     #8b6914;
+     module (.module.css) can read them as real global custom properties.
+     2026-07-14, AwakenArts Atmosphere System audit: --enc-gold itself
+     has no current usages (only --enc-gold-lt, the dark-background
+     variant, is referenced by encounter modules) -- updated to match
+     the site's approved dark antique gold (#7E5F12, was #8B6914) for
+     consistency in case it's used on a light background later. */
+  --enc-gold:     #7E5F12;
   --enc-gold-lt:  #d9b568;
   --enc-cream:    #faf7f2;
   --enc-mist:     #ddd8cf;
@@ -992,7 +1127,15 @@ a   { color: inherit; text-decoration: none; }
      container was the real bottleneck (see
      .poems-showcase-foundation__inner below, widened to match). */
   max-width: 1000px;
-  margin: 70px auto 0.85rem;
+  /* 2026-07-14 "Foundation Invitation — Vertical Spacing Correction,"
+     per Susan: the old 70px top margin (stacked on top of
+     .poems-showcase-foundation's own padding-top) is consolidated
+     into that single padding value instead, so "image/fade to
+     quotation" has one source of truth — see .poems-showcase-
+     foundation below. Bottom margin (quotation -> "MATTHEW 13:34")
+     widened from 0.85rem (15.3px) to 37px, inside her requested
+     34-40px range. Responsive tiers in the media queries below. */
+  margin: 0 auto 37px;
   line-height: 1.45;
 }
 
@@ -1056,7 +1199,11 @@ a   { color: inherit; text-decoration: none; }
   color: var(--gold);
   text-align: center;
   font-style: normal;
-  margin-bottom: 0.85rem;
+  /* 2026-07-14 "Foundation Invitation — Vertical Spacing Correction,"
+     per Susan: "MATTHEW 13:34" -> bridge line widened from 0.85rem
+     (15.3px) to 41px, inside her requested 38-44px range. Responsive
+     tiers in the media queries below. */
+  margin-bottom: 41px;
 }
 
 /* The bridge line — "AwakenArts works within that same tradition."
@@ -1106,8 +1253,12 @@ a   { color: inherit; text-decoration: none; }
      much closer together (see .hero-quote-text/.hero-quote-cite). The
      CTA should read as the composition's final, distinct step —
      Scripture -> Reflection -> Invitation — not a fourth line in the
-     same close-set group. */
-  margin: 2.5rem 0 0;
+     same close-set group.
+     2026-07-14 "Foundation Invitation — Vertical Spacing Correction,"
+     per Susan: widened further from 2.5rem (45px) to 63px, inside her
+     requested 58-68px range for "supporting sentence to Foundation
+     link." Responsive tiers in the media queries below. */
+  margin: 63px 0 0;
   transition: color 0.2s ease-out;
 }
 .hero-quote-closing:hover,
@@ -4255,7 +4406,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      band above provides its own preceding padding and a hard navy ->
      cream color cut — this field no longer needs to manufacture extra
      top breathing room on its own; the cut itself reads as the
-     deliberate beat. Bottom padding (--band-gap) unchanged. */
+     deliberate beat. Bottom padding (--band-gap) unchanged.
+     2026-07-14, AwakenArts Atmosphere System: briefly split this
+     section's Foundation half onto its own Soft Light (pale
+     parchment) background, then reverted the same day per Susan —
+     "do not add a color band between the queen ann section and the
+     matthew quote section." Queen Ann Encounter and the Matthew 13:34
+     close stay one unbroken Warm ivory field, as before. */
   padding: 5rem 0 var(--band-gap);
 }
 
@@ -4279,7 +4436,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    in the June 2026 review — that wrapped the whole title page in a
    floating panel; this is a true section-width band, edge to edge. */
 .poems-showcase-intro {
-  background: var(--deep);
+  /* Soft navy, not Deep navy (2026-07-14, AwakenArts Atmosphere
+     System): this band is a title page introducing the Queen Ann
+     encounter, not an Edition section carrying the site's strongest
+     navy weight (that role stays with .home-coll-section just above
+     it) -- structurally a transition, which is exactly Soft navy's
+     defined role. Distinguishing the two also breaks up what used to
+     be two back-to-back sections in the identical --deep navy. */
+  background: var(--navy-soft);
   border-top: 1px solid rgba(201, 168, 76, 0.15);
   padding: 5rem 2rem;
 }
@@ -4532,7 +4696,23 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    .hero-quote-text/cite/body/closing tokens — see HERO QUOTE TEXT
    TOKENS above. */
 .poems-showcase-foundation {
-  padding-top: 5rem;
+  /* 2026-07-14, AwakenArts Atmosphere System: briefly given its own
+     Soft Light (pale parchment) background to distinguish it from the
+     Queen Ann Encounter above, then reverted the same day per Susan —
+     "do not add a color band between the queen ann section and the
+     matthew quote section." No background of its own; inherits the
+     parent .poems-showcase-section's Warm ivory, unbroken. */
+  /* 2026-07-14 "Foundation Invitation — Vertical Spacing Correction":
+     sole source of the "image/fade to quotation" gap now that
+     .hero-quote-text's own top margin has been removed — 104px, inside
+     Susan's requested 96-112px range. Also carries a small supplemental
+     padding-bottom (12px) stacked on top of the shared --band-gap token
+     (108px) to reach ~120px for "Foundation link to bottom of section"
+     (target 112-128px), without hand-tuning --band-gap itself, which is
+     documented sitewide as a single shared value. Responsive tiers
+     below. */
+  padding-top: 104px;
+  padding-bottom: 12px;
 }
 .poems-showcase-foundation__inner {
   /* 2026-06-29: widened from 820px — this was the real bottleneck
@@ -4551,15 +4731,25 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .poems-showcase-section { padding: 4rem 0 var(--band-gap-md); }
   .poems-showcase-inner { padding: 0 1.75rem; }
   .poems-showcase-intro { padding: 4rem 1.75rem; }
-  .poems-showcase-foundation { padding-top: 3.5rem; }
+  /* 2026-07-14 spacing correction: ~80% of desktop values, tablet tier */
+  .poems-showcase-foundation { padding-top: 84px; padding-bottom: 10px; }
   .poems-showcase-foundation__inner { padding: 0 1.75rem; }
+  .hero-quote-text { margin-bottom: 30px; }
+  .hero-quote-cite { margin-bottom: 33px; }
+  .hero-quote-closing { margin-top: 50px; }
 }
 @media (max-width: 640px) {
   .poems-showcase-section { padding: 3rem 0 var(--band-gap-sm); }
   .poems-showcase-inner { padding: 0 1.25rem; }
-  .poems-showcase-foundation { padding-top: 3rem; }
+  /* 2026-07-14 spacing correction: ~65% of desktop values, mobile tier —
+     keeps the four moments legible and separated without making the
+     section excessively tall on small screens. */
+  .poems-showcase-foundation { padding-top: 68px; padding-bottom: 8px; }
   .poems-showcase-foundation__inner { padding: 0 1.25rem; }
   .poems-showcase-intro { padding: 3.5rem 1.25rem; }
+  .hero-quote-text { margin-bottom: 24px; }
+  .hero-quote-cite { margin-bottom: 27px; }
+  .hero-quote-closing { margin-top: 41px; }
 }
 
 /* ─────────────────────────────────────────────
@@ -4666,7 +4856,17 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    section's navy field, immediately before this section.
 ─────────────────────────────────────────────────────────────────────────── */
 .home-method-section {
-  background: #f5f0e8;
+  /* Soft Light atmosphere (2026-07-14, AwakenArts Atmosphere System):
+     was #f5f0e8, the same one-off value as .hero directly above it —
+     indistinguishable from the Hero's own Light atmosphere, so the
+     "return to light" after the navy Collection section read as a
+     repeat rather than a new movement. Pale parchment marks Method as
+     its own distinct, quieter beat -- fitting, since this section is
+     already written and typeset as a deliberate pause (see the
+     section's own opening comment in page.tsx). Body copy
+     (.home-method-body) already uses var(--mid) / Soft ink, so no
+     text-color change was needed here. */
+  background: var(--parchment);
   /* 2026-07-10 "AwakenArts Method CTA" refinement, per Susan: bottom
      padding reduced (7rem -> 5rem) so the section doesn't leave the
      CTA sitting in an oversized void before the Queen Ann band below
