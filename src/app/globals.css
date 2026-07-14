@@ -4716,10 +4716,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   margin: 0.85rem 0 0;
   transition: border-color 0.2s ease-out, background-color 0.2s ease-out, color 0.2s ease-out;
 }
+/* 2026-07-14, per Susan, defining the site's standard button
+   hover mechanic: background stays identical to the rest state (no
+   fill), and the border stays static too — the text-color shift
+   alone is enough to read as interactive. Applied here and to
+   .home-coll-cta below. */
 .home-method-cta:hover,
 .home-method-cta:focus-visible {
-  border-color: var(--gold);
-  background-color: rgba(139, 105, 20, 0.06);
   color: var(--deep);
 }
 
@@ -4844,7 +4847,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    weight (sans/uppercase/generous padding) rather than adopting the
    Method CTA's lighter serif-italic treatment, so it still reads as
    the section's one confident anchor — scoped to this button only,
-   not rolled out site-wide. */
+   not rolled out site-wide.
+
+   2026-07-14, per Susan: hover state simplified to match the site's
+   standard button mechanic (see .home-method-cta above) — background
+   stays transparent (identical to rest state, no fill) and the
+   border stays static; only the text color shifts, which reads as
+   enough on its own. Kept the subtle lift (translateY) as the one
+   other hover cue. */
 .home-coll-cta {
   display: inline-flex;
   align-items: center;
@@ -4860,12 +4870,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   border-radius: 2px;
   padding: 1rem 2.25rem;
   text-decoration: none;
-  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .home-coll-cta:hover {
-  border-color: var(--gold-lt);
-  background-color: rgba(201, 168, 76, 0.1);
   color: var(--cream);
   transform: translateY(-1px);
 }
