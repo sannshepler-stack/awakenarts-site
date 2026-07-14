@@ -45,18 +45,33 @@ This section is implemented in code as the **AwakenArts Global Design System**, 
 **Logo & Monogram** (added 2026-07-14, per Susan — the monogram's rendered size had never been governed by a standard, only set ad hoc per placement). The mark is an interlocking cursive/serif "A" woven through a gold leaf sprig — finer-lined than a typical bold wordmark, so it degrades faster at small sizes: the cursive stroke thins to near-invisibility and the leaf veins disappear before the wordmark text next to it shows any comparable loss. Tested empirically by rendering the monogram alone (`AwakenArts-Monogram.svg`) at native pixel widths from 24px to 80px: **the monogram must never render narrower than 40px.** Below that, the cursive "A" and the leaf's inner veins stop reading as distinct strokes. This is a floor on the *monogram's own width*, not the full lockup's — when the monogram sits beside a wordmark (the Horizontal lockups), its share of the total rendered width is roughly a quarter, so the full lockup needs to be sized accordingly.
 
 Canonical asset family and when to use each (all in `public/images/brand/`):
-- `AwakenArts-Logo-Primary.svg` — full stacked lockup (monogram, wordmark, tagline). Use for standalone identity placements with room to be tall (e.g. the Edition reader's colophon).
+- `AwakenArts-Logo-Primary.svg` — full stacked lockup (monogram, wordmark, tagline), original proportions. Use for standalone identity placements with room to be tall.
 - `AwakenArts-Logo-Horizontal.svg` — monogram + wordmark + tagline, side by side (~5:1). Use where the tagline isn't repeated elsewhere on the page.
-- `AwakenArts-Logo-Horizontal-NoTagline.svg` — same lockup with the tagline cropped from the viewBox (paths untouched, just outside the visible frame — stays a live vector). Use wherever the tagline would otherwise repeat page copy (e.g. the homepage hero, directly above the "When Language Shapes a Path" H1).
+- `AwakenArts-Logo-Horizontal-NoTagline.svg` — same lockup with the tagline cropped from the viewBox (paths untouched, just outside the visible frame — stays a live vector). Use wherever the tagline would otherwise repeat page copy (e.g. the homepage hero, directly above the "When Language Shapes a Path" H1). **Known issue (found 2026-07-14, not yet fixed):** the viewBox crop clips the monogram's lower cursive tail — the same defect once found and fixed on the Collection cover raster. Flagged for a future asset-placement fix, not yet corrected.
 - `AwakenArts-Logo-Horizontal-OnNavy.svg` — the horizontal lockup recolored for dark fields (footer, Studio, Quotes).
+- `AwakenArts-Logo-Compact-Horizontal.svg` — **added 2026-07-14, per Susan's "Approved Logo Family" directive.** Emblem + wordmark only (no tagline, no rules), built by reusing the approved Horizontal lockup's own monogram and wordmark paths at a tighter relative scale — emblem ≈1/5 of the wordmark's width, vertically centered on the wordmark's cap-height rather than floating above it. Distinct from `-Horizontal.svg`: a deliberately smaller, tighter-gapped composition for contexts too small for the tagline to read. Transparent background; scale the whole asset proportionally, never emblem and wordmark separately.
+- `AwakenArts-Logo-Stacked-Colophon.svg` — **added 2026-07-14, per the same directive.** A dedicated colophon variant of `-Primary.svg`: the complete gold emblem (A, branch, and flourish scaled together, nothing redrawn) reduced to ≈42–48% of the wordmark's width and optically centered (ink-weighted centroid, not bare bounding-box center) above it, moved closer to the wordmark, with the canvas widened around AWAKENARTS so side margins exceed one cap-height. Wordmark and tagline sizes/positions are untouched from `-Primary.svg`. Legible at the reader colophon's actual 280px display width.
 - `AwakenArts-Monogram.svg` — the mark alone, no wordmark. Use only where space is too tight for the wordmark to be legible at all (favicon, app icons) — never as a substitute for the full lockup somewhere the wordmark would otherwise fit.
 - `AwakenArts-Logo-Navy.svg` / `-Gold.svg` / `-Black.svg` — single-color full-lockup variants for print and non-web contexts.
+
+**Approved Logo Family (locked 2026-07-14, per Susan)** — three legitimate arrangements, not redesigns, all built from the same approved components:
+| Placement | Arrangement | Tagline |
+|---|---|---|
+| Homepage hero | Full horizontal lockup | Yes |
+| Navigation | Compact horizontal logo | No |
+| Colophon | Stacked colophon mark | Yes, if readable at size |
+| Small book cover | Compact horizontal logo | Usually no |
+| Contact sheet | Compact horizontal logo | No |
+| Formal title page | Horizontal or stacked | Yes |
+
+Per Susan: these three prepared assets should be placed as-is into each context, not rebuilt or re-proportioned page by page.
 
 Current placements audited against the 40px floor (2026-07-14):
 - Homepage hero (`.hero-logo`, width up to 420px): monogram renders ≈100px — well clear.
 - Footer (`.footer-logo`, height 48px): monogram renders ≈45px — clear, but the tightest of the CSS-driven placements; do not shrink further.
 - Edition reader colophon (`.reader-colophon__logo`, width up to 280px): monogram renders well above the floor.
 - Collection cover (baked into `collection-cover.jpg`, displayed at 380px): monogram renders ≈40px — sitting exactly on the floor, the one placement worth revisiting if it ever needs to shrink further (e.g. a smaller cover thumbnail elsewhere).
+- Compact Horizontal Logo: emblem ≈19% of the asset's own width — at a 220px placement (typical nav width) the emblem alone renders ≈42px, still clear of the 40px floor; below roughly 210px total width this asset would approach the floor and the plain `AwakenArts-Monogram.svg` should be used instead.
 
 **Header philosophy** — Editorial Header Images function as visual thresholds, not decorative banners: each prepares the visitor for what follows (Biblical Foundation → quiet landscape; Poetry → manuscript/written language). They never carry embedded text and never compete with the page content beneath them. Site-wide rollout to Collection/About/Journal is tracked as open work in `AwakenArts_Site_Architecture.md`.
 
