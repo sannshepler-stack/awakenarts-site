@@ -262,3 +262,33 @@ fill, is trimmed at the corners).
   built for it. Ready to produce from the same approved emblem master
   whenever a specific placement (section transitions, quote markers, page
   endings) is chosen.
+- **Dark-background PNG export family — 2026-07-14, per "DARK FOOTER LOGO
+  — REQUIRED CORRECTION" directive.** Susan required the footer to stop
+  using a live SVG and instead use a dedicated transparent PNG rendered
+  directly from the approved outlined SVG masters
+  (`vector-masters/AwakenArts-Logo-FullHorizontal-Outlined.svg` and
+  `AwakenArts-Logo-CompactHorizontal-Outlined.svg`, both left unchanged).
+  Built via `cairosvg` (true vector rasterization, no browser, no live
+  font) at `background_color=None` for genuine alpha transparency —
+  verified corner/edge alpha == 0 on every file before use.
+  Color treatment: antique-gold emblem untouched; wordmark white (`#fff`);
+  tagline (Full Horizontal only — Compact has none) recolored from white
+  to light-ivory (`#FAF7F2`, the site's own `--cream` value) so it reads
+  as a visually distinct, secondary line under the wordmark; the gold
+  tagline rule (`stroke="#cca157"`) untouched. This recolor lives in
+  `public/images/brand/AwakenArts-Logo-FullHorizontal-OnNavy.svg`
+  (recolor-only derivative of the outlined master, not a redraw).
+  Five PNGs delivered in this folder:
+  `AwakenArts-Logo-FullHorizontal-OnNavy-{2048,1024,512}.png` and
+  `AwakenArts-Logo-CompactHorizontal-OnNavy-{1024,512}.png` (also copied
+  to `public/images/brand/exports/` for live site use).
+  Footer placement: **Compact Horizontal** was selected, not Full —
+  Susan had already flagged (2026-07-14, footer SVG swap) that the
+  tagline isn't readable at footer size, and the compact mark fits the
+  narrow `.footer-brand` column with room to spare. `AwakenArts-Logo-
+  CompactHorizontal-OnNavy-1024.png` is now live in `Footer.tsx` and its
+  three duplicated instances (`/studio`, `/studio/silhouettes`,
+  `/quotes`). Verified with real-CSS/real-font (Cormorant Garamond)
+  mockups against the actual footer navy (`--deep: #1C2B3A`) at both a
+  1200px desktop width and a 390px mobile width before replacing the
+  live SVG.

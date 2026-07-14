@@ -201,9 +201,11 @@ export default function QuotesPage() {
             <Link href="/" aria-label="AwakenArts home">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/brand/AwakenArts-Logo-Horizontal-NoTagline-OnNavy.svg"
+                src="/images/brand/exports/AwakenArts-Logo-CompactHorizontal-OnNavy-1024.png"
                 alt="AwakenArts"
                 className="footer-logo"
+                width={1024}
+                height={165}
                 loading="lazy"
               />
             </Link>
