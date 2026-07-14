@@ -394,10 +394,17 @@ export const editions: Edition[] = [
         // renders identically in every browser and in the print PDF).
         // EditionReaderSection.tsx positions it flush to the bottom of the
         // section rather than stretching it to a full-page cover.
+        // 2026-07-14, per Susan's "AwakenArts Tagline and Hero Rule"
+        // directive: this text used to open with "When Language Shapes
+        // a Path" — the same tagline already baked into the
+        // AwakenArts-Logo-Primary.svg lockup rendered directly above
+        // this text (see EditionReaderSection.tsx, section.id ===
+        // 'colophon'). Removed rather than replaced, matching the
+        // hero's own fix: the text now opens directly on "This Figure
+        // Edition is part of the AwakenArts collection."
         id: 'colophon',
         background: '/images/editions/dragon/read/colophon-band.png',
         text:
-          'When Language Shapes a Path\n\n' +
           'This Figure Edition is part of the AwakenArts collection.\n\n' +
           'Each Edition stands complete in itself while contributing to a growing body of symbolic exploration through image, poetry, reflection, and conversation.\n\n' +
           'May these works continue to reveal new recognitions as you return to them over time.\n\n' +
