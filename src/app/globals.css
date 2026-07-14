@@ -8553,32 +8553,61 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   margin-bottom: 0;
 }
 
-/* Closing credo — the page's three-line resolution.
-   2026-06-28 revision, per Susan's second review: she liked the
-   plain-spoken three lines but asked for them to feel like "the
-   page's quiet conclusion" rather than more body copy -- centered,
-   italic, a touch more leading, in the established gold. Explicitly
-   NOT larger (she was clear: "not bigger, just a little more
-   distinguished"), so font-size is unchanged from the plain-text
-   pass. This is the one deliberately centered element on an
-   otherwise left-aligned page -- a closing flourish, not the rule. */
-.foundation-credo {
+/* Retired 2026-07-14: the three-line doctrinal credo ("Christ is the
+   center. Scripture is the authority. The artistic work is an
+   invitation to reflect.") this page used to close on, superseded by
+   Susan's first-person testimony copy and its own opening/closing
+   refrain below. Not reused elsewhere (checked), so removed rather than
+   left dead. */
+
+/* Opening epigraph — the two-line refrain that opens the page, ahead of
+   the "Foundation" eyebrow. Plain italic, quiet, no border — a lead-in
+   thought, not the page's resolution (that's .foundation-closing,
+   below, where the same two lines return set apart typographically per
+   Susan's request). */
+.foundation-epigraph {
+  margin: 0 0 2.5rem;
+  text-align: center;
+}
+
+.foundation-epigraph p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--ink);
+  margin: 0 0 0.4rem;
+}
+
+.foundation-epigraph p:last-child {
+  margin-bottom: 0;
+}
+
+/* Closing refrain — the same two lines as .foundation-epigraph, set
+   apart typographically per Susan's explicit request: a small-caps,
+   letter-spaced label treatment (the site's existing .eyebrow
+   vocabulary — sans, uppercase-adjacent, gold, tracked out) rather than
+   the italic-serif epigraph style, so the page's closing thought reads
+   as a quiet, deliberate marker rather than a repeated sentence. */
+.foundation-closing {
   margin: var(--band-gap-sm) 0 0;
   padding-top: 2.5rem;
   border-top: 1px solid rgba(139, 105, 20, 0.35);
   text-align: center;
 }
 
-.foundation-credo p {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
-  line-height: 1.9;
+.foundation-closing p {
+  font-family: var(--sans);
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  font-size: 1rem;
+  font-weight: var(--label-weight);
   color: var(--gold);
-  margin: 0 0 0.65rem;
+  line-height: 1.9;
+  margin: 0 0 0.5rem;
 }
 
-.foundation-credo p:last-child {
+.foundation-closing p:last-child {
   margin-bottom: 0;
 }
 

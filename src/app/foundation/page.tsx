@@ -23,16 +23,27 @@ import Footer from '@/components/Footer'
 // copy was tightened into plainer, more direct language — this page
 // is a statement of belief, not devotional writing, so it reads more
 // clearly when it says what it means without literary flourish.
+//
+// 2026-07-14 revision, per Susan: replaced the third-person doctrinal
+// statement above with her own first-person testimony (supplied
+// verbatim). The page now opens and closes on the same two-line
+// refrain — "This is the only journey I can faithfully share. /
+// Throughout my own, I have found Christ to be my true north." — as a
+// deliberate bookend, not a duplication error. Susan asked specifically
+// for the closing instance to be set apart typographically; given a
+// small-caps, letter-spaced treatment (.foundation-closing) distinct
+// from the plain-italic opening epigraph (.foundation-epigraph) and
+// from the now-removed three-line credo this page used to close on.
 export const metadata: Metadata = {
   title: 'The Foundation of AwakenArts | Christian Symbolic Art and Reflection',
   description:
-    'AwakenArts is offered from within the historic Christian faith, with Christ as center and Scripture as final authority. The symbolic art, poems, and reflections are creative works of invitation, not doctrine.',
+    "Susan Ann Shepler on the foundation of AwakenArts: a lifelong journey of recognition through image and symbol, and the Christian faith that has given it language, meaning, and hope. Christ as true north.",
   alternates: { canonical: '/foundation' },
   openGraph: {
     url: '/foundation',
     title: 'The Foundation of AwakenArts',
     description:
-      'AwakenArts is offered from within the historic Christian faith, with Christ as center and Scripture as final authority.',
+      'A lifelong journey of recognition through image and symbol, and the Christian faith that has given it language, meaning, and hope.',
   },
 }
 
@@ -49,40 +60,60 @@ export default function FoundationPage() {
 
       <div className="foundation-page">
         <main className="foundation-main">
+          <div className="foundation-epigraph">
+            <p>This is the only journey I can faithfully share.</p>
+            <p>Throughout my own, I have found Christ to be my true north.</p>
+          </div>
+
           <p className="eyebrow foundation-eyebrow">Foundation</p>
           <h1 className="foundation-h1">The Foundation of AwakenArts</h1>
 
           <p className="foundation-body">
-            AwakenArts is offered from within the historic Christian faith.
+            Every life tells its story in ways that are often quieter than
+            words.
           </p>
           <p className="foundation-body">
-            Jesus Christ is the incarnate Son of God, the one true God, the
-            King of Kings and Lord of Lords. He is the center of this work.
+            Sometimes that story appears through an image, a poem, a
+            memory, or an unexpected moment of recognition. Long before I
+            understood what my own artwork was saying, I sensed that it
+            was inviting me to pay attention. The images often revealed
+            something I had not yet found language to express. They
+            became companions on a lifelong journey of observation,
+            reflection, and discovery.
           </p>
           <p className="foundation-body">
-            The Holy Scriptures are the final authority for faith and life.
+            Over time I came to understand that recognition is only the
+            beginning. Awareness invites acceptance. Acceptance makes
+            honest action possible. Those movements have shaped both my
+            life and the work you find here.
           </p>
           <p className="foundation-body">
-            The images, poems, and reflections on this site are not
-            doctrine, revelation, or spiritual authority. They are creative
-            works meant to encourage reflection, conversation, and a closer
-            look at our own lives in light of Scripture.
+            Looking back, I can see that the path has not been random.
+            Like a traveler who gradually realizes that a single star has
+            been guiding the journey all along, I discovered that the
+            recognitions emerging through image and symbol were
+            consistently leading me toward the same true north.
+          </p>
+          <p className="foundation-body">For me, that true north is Jesus Christ.</p>
+          <p className="foundation-body">
+            The Christian story has given language, meaning, and hope to
+            recognitions that first appeared through image and symbol.
+            Scripture has not diminished those recognitions; it has
+            illuminated them, tested them, and given them their proper
+            place.
           </p>
           <p className="foundation-body">
-            Jesus often taught using parables and figurative language.
-            AwakenArts follows that same pattern&mdash;not to replace
-            Scripture, but to help readers see and reflect more clearly on
-            the realities of life and faith.
-          </p>
-          <p className="foundation-body">
-            Our hope is that this work leads to humility, wisdom,
-            compassion, and a deeper love for God and for one another.
+            AwakenArts is an invitation to notice the symbolic language
+            that often accompanies ordinary life. The images and writings
+            are not presented as answers, but as companions for
+            reflection. They invite readers to pay attention, to
+            recognize what is already present, and to consider where
+            those recognitions may be leading.
           </p>
 
-          <div className="foundation-credo">
-            <p>Christ is the center.</p>
-            <p>Scripture is the authority.</p>
-            <p>The artistic work is an invitation to reflect.</p>
+          <div className="foundation-closing">
+            <p>This is the only journey I can faithfully share.</p>
+            <p>Throughout my own, I have found Christ to be my true north.</p>
           </div>
         </main>
       </div>
