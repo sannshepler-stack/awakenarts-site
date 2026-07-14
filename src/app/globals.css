@@ -1719,15 +1719,19 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .footer-brand p {
   font-size: 1rem;
   line-height: 1.8;
-  /* Widened from 36ch, 2026-07-14: per Susan, once the footer logo
-     dropped its tagline (see AwakenArts-Logo-Horizontal-NoTagline-OnNavy.svg
-     above) it reads noticeably wider than before, and the old 36ch text
-     column started looking narrow/unbalanced underneath it. Rendered
-     both side by side (actual Cormorant Garamond, actual logo file) at
-     36/42/46/50ch to check: 42ch is the point where the paragraph's
-     wrapped line length visually matches the logo's own width without
-     over/undershooting it. */
-  max-width: 42ch;
+  /* Recalibrated 2026-07-14: the 42ch value above was set against a
+     mis-measured logo width, before it was discovered that
+     AwakenArts-Logo-Horizontal-NoTagline.svg was silently clipping the
+     emblem's tail (see that file's own header comment). Once the file
+     was corrected, the footer logo's true rendered width at its 48px
+     CSS height is ~243px (aspect ratio 1236.6/244), not the ~365px
+     the old value assumed. Re-tested with actual Cormorant Garamond
+     and the corrected logo file at 28/30/32/34ch: 28ch matches the
+     logo's width almost to the pixel but wraps into cramped, short
+     lines; 32ch+ overshoots the logo's right edge noticeably. 30ch is
+     the balance point — visually aligned with the logo without
+     crowding the paragraph. */
+  max-width: 30ch;
 }
 
 /* Social profile links in the footer-brand block. Quiet horizontal row,

@@ -53,7 +53,7 @@ export default function Footer() {
               alt="AwakenArts"
               className="footer-logo"
               width={1237}
-              height={163}
+              height={244}
               loading="lazy"
             />
           </Link>
