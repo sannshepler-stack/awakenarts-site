@@ -8610,6 +8610,14 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   margin: 0 auto 1.75rem;
   text-align: center;
   text-decoration: none;
+  /* 2026-07-14: was an <a>, now a <button> (see FoundationPoemLightbox) —
+     reset the browser's default button chrome so it reads identically
+     to the plain image link it replaced. */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
 }
 
 .foundation-poem-thumb {
@@ -8625,6 +8633,62 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   font-style: italic;
   font-size: 0.85rem;
   color: var(--gold);
+}
+
+/* Poem lightbox overlay — 2026-07-14, per Susan (see FoundationPoemLightbox
+   for the full rationale: the raw 594x741 PNG read too small opened bare
+   in a browser tab for actual poem readability). Deep navy scrim matches
+   the site's one other full-bleed dark treatment (Collection section);
+   image sized generously but capped so it never forces scrolling on
+   ordinary desktop/laptop viewports. */
+.foundation-poem-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 43, 58, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 1.5rem;
+  z-index: 1000;
+  cursor: zoom-out;
+}
+
+.foundation-poem-overlay-img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(92vw, 860px);
+  max-height: 86vh;
+  box-shadow: 0 30px 76px rgba(0, 0, 0, 0.45);
+  border-radius: 2px;
+  cursor: default;
+}
+
+.foundation-poem-overlay-close {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.75rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(250, 247, 242, 0.4);
+  color: var(--cream);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  z-index: 1001;
+}
+
+.foundation-poem-overlay-close:hover,
+.foundation-poem-overlay-close:focus-visible {
+  border-color: var(--cream);
+}
+
+@media (max-width: 640px) {
+  .foundation-poem-overlay { padding: 2.5rem 1rem; }
+  .foundation-poem-overlay-close { top: 1rem; right: 1rem; }
 }
 
 /* Retired 2026-07-14: the three-line doctrinal credo ("Christ is the

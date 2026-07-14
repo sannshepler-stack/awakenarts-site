@@ -3,6 +3,7 @@ import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
+import FoundationPoemLightbox from '@/components/FoundationPoemLightbox'
 
 // /foundation — "The Foundation of AwakenArts" (2026-06-28).
 //
@@ -73,6 +74,18 @@ import Footer from '@/components/Footer'
 // colors, alpha-feathered on all four edges), so the full-size view
 // keeps a defined edge while only the small inline preview dissolves
 // into the page's cream ground.
+//
+// 2026-07-14, same day (fourth follow-up), per Susan: the "larger image"
+// at the far end of that link wasn't actually larger enough — the raw
+// PNG is only 594x741 (the artwork's true native resolution, nothing
+// bigger exists to swap in), so opening it in a new browser tab showed
+// it near-native size with no framing, and the poem's finer tapering
+// lines were hard to read. Replaced the plain <a target="_blank"> with
+// FoundationPoemLightbox — same thumbnail, but the click now opens an
+// in-page overlay showing the full image at a deliberately large,
+// controlled size instead of handing off to the browser's own image
+// viewer. Still no new route, so /gallery's "no new decisions" scoping
+// above still holds.
 export const metadata: Metadata = {
   title: 'The Foundation of AwakenArts | Christian Symbolic Art and Reflection',
   description:
@@ -121,20 +134,7 @@ export default function FoundationPage() {
             reflection, and discovery.
           </p>
 
-          <a
-            href="/images/mandala/watery_cross.png"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="foundation-poem-link"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/mandala/watery_cross-thumb.png"
-              alt="A Watery Cross — a shaped poem about a ship anchored near shore, guided by moonlight, its lines tapering into the form of a cross."
-              className="foundation-poem-thumb"
-            />
-            <span className="foundation-poem-caption">A Watery Cross</span>
-          </a>
+          <FoundationPoemLightbox />
 
           <p className="foundation-body">
             Over time I came to understand that recognition is only the
