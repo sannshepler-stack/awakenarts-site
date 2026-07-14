@@ -1725,19 +1725,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .footer-brand p {
   font-size: 1rem;
   line-height: 1.8;
-  /* Corrected 2026-07-14, second pass: removing the ch cap entirely
-     (previous fix) let the statement stretch to match the new, wider
-     50% column and collapse to three lines, with no natural place for
-     the attribution to land. Susan's follow-up asked for four balanced
-     lines with "By Susan Ann Shepler." ending naturally, unbroken.
-     Re-tested against the real Cormorant Garamond metrics (~8.56px per
-     ch at this 18px root): 42ch is the narrowest width that still
-     completes "By Susan Ann Shepler." on one line, and it wraps the
-     full statement into exactly four lines. The column itself stays
-     at 50fr for the grid ratio; the paragraph sits inside it with room
-     to spare, which is what gives the "contained, quiet, spacious"
-     result rather than text stretched edge-to-edge. */
-  max-width: 42ch;
+  /* Widened 2026-07-14, third pass: Susan noted there was still room
+     to use across the line and asked for the first line to read "An
+     artistic body of work shaped through image and" (the rest wrapping
+     at that same width). Re-tested against the real Cormorant Garamond
+     metrics: 45ch is what produces that exact break. The column itself
+     stays at 50fr for the grid ratio; the paragraph sits inside it with
+     room to spare either way. */
+  max-width: 45ch;
 }
 
 /* Social profile links in the footer-brand block. Quiet horizontal row,
