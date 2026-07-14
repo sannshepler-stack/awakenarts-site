@@ -209,6 +209,9 @@ export const editions: Edition[] = [
         // increased further and Reflection was brought in line with it
         // (see .reader-section--recognition, .reader-section--reflection
         // in globals.css).
+        // Wording softened 2026-07-14 (publisher refinement pass): "The
+        // deepest struggle is not with our thoughts" read as too absolute
+        // — now "often less about our thoughts than about."
         id: 'recognition',
         background: '/images/editions/dragon/read/recognition-bg.jpg',
         // No redundant "Recognition" text heading, dropped 2026-07-12
@@ -220,7 +223,7 @@ export const editions: Edition[] = [
           '01 · Recognize the Division — A Battle the Dragon Did Not Choose\n' +
           'The dragon did not choose to be divided. Like us, it learned to mistake difference for opposition. Strength and tenderness, action and stillness, discipline and rest were never created to compete. The conflict began when one part believed the other had to lose.\n\n' +
           '02 · Notice the Judge — The Voice That Keeps the Battle Alive\n' +
-          'The deepest struggle is not with our thoughts but with the voice that continually measures them. Self-judgment keeps the battle alive by insisting that one part of us must conquer another. Thoughts arise naturally. They are not failures. What softens the division is not resistance, but presence.\n\n' +
+          'The deepest struggle is often less about our thoughts than about the voice that continually measures them. Self-judgment keeps the battle alive by insisting that one part of us must conquer another. Thoughts arise naturally. They are not failures. What softens the division is not resistance, but presence.\n\n' +
           '03 · Return to the Image — The Word That Reconciles\n' +
           'The ampersand reveals the dragon’s true form: not this or that, but and. Presence replaces striving. Recognition quiets judgment. What once appeared divided begins to belong together. The parts were never meant to destroy one another — they were made to live as one.',
       },
@@ -244,6 +247,11 @@ export const editions: Edition[] = [
         // page cream so it stays a quiet backdrop, not a competing image.
         // Faded a good bit further the same day (second follow-up): 35%
         // -> 68% toward the page cream.
+        // Wording refined 2026-07-14 (publisher refinement pass, first
+        // small edit to this text since its 2026-07-07 close): "gives
+        // symbolic form to one the Christian tradition" -> "gives
+        // symbolic form to a struggle the Christian tradition" (reads
+        // more naturally).
         id: 'larger-story',
         background: '/images/editions/dragon/read/larger-story-bg.jpg',
         text:
@@ -253,7 +261,7 @@ export const editions: Edition[] = [
           '"A double minded man is unstable in all his ways." — James 1:8 (KJV)\n\n' +
           'The Christian Tradition\n' +
           '"Thus did my two wills, one new, and the other old, one carnal, the other spiritual, struggle within me; and by their discord, undid my soul." — Augustine, Confessions, Book VIII\n\n' +
-          'Augustine’s confession reminds us that the Dragon is not inventing a struggle. The Dragon gives symbolic form to one the Christian tradition has long recognized.\n\n' +
+          'Augustine’s confession reminds us that the Dragon is not inventing a struggle. The Dragon gives symbolic form to a struggle the Christian tradition has long recognized.\n\n' +
           'Returning to the Dragon\n' +
           'The Dragon gives symbolic form to a human struggle. Scripture names that struggle. Augustine gives voice to the experience of living it.\n\n' +
           'The divided heart is not only the Dragon’s story. It is ours.\n\n' +
@@ -310,13 +318,19 @@ export const editions: Edition[] = [
         // Sizing history, same day: 62% -> 26% (lost too much of the arch)
         // -> 45% (final) — it's fine for the arch to run under the ruled
         // lines; the only real constraint is staying clear of the heading.
+        // Closing italic line added 2026-07-14 (publisher refinement pass,
+        // pre-first-edition polish) — "Carry it gently." after the intro
+        // text, for a touch more warmth. Italicized via a Journal-specific
+        // last-paragraph CSS rule (see .reader-section--journal in
+        // globals.css); TextBlock itself has no inline markup.
         id: 'journal',
         background: '/images/editions/dragon/read/journal-arch.png',
         text:
           'Journal\n\n' +
           'Choose one recognition from this Edition to carry with you today.\n\n' +
           'You do not need to resolve it. You do not need to fix it. Simply notice what returns to your attention as you move through ordinary life.\n\n' +
-          'Often the deepest changes begin, not with certainty, but with quiet recognition.',
+          'Often the deepest changes begin, not with certainty, but with quiet recognition.\n\n' +
+          'Carry it gently.',
       },
       {
         // Message Delivered — split out of the old combined `colophon`

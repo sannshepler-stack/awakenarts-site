@@ -8136,6 +8136,15 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   max-width: var(--measure-narrow);
 }
 
+/* Journal's closing line ("Carry it gently."), added 2026-07-14 for a
+   touch more warmth — set in italics to read as a quiet aside after the
+   intro paragraphs, not another instruction. TextBlock has no inline
+   markup, so this targets the last paragraph directly; it works because
+   the ruled lines that follow are a <div>, not a <p>. */
+.reader-section--journal .reader-text p:last-of-type {
+  font-style: italic;
+}
+
 .reader-journal__lines {
   display: flex;
   flex-direction: column;
