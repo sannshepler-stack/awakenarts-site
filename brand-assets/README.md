@@ -225,11 +225,35 @@ fill, is trimmed at the corners).
 - "Contact sheets" has no corresponding page/component in this codebase
   today; the compact PNG/SVG exports are ready whenever that need arises
   (print or otherwise).
-- **16×16 favicon legibility.** The tiny-size legibility test (above) found
-  the complete emblem unclear at 16px and marginal at 32px. Per the
-  addendum's Section 5, this is a stop condition — no simplified mark was
-  created. Whether to commission a separately-approved simplified favicon
-  glyph for 16/32px, or accept the existing rendering as-is, is Susan's call.
+- **16×16 favicon legibility — retested 2026-07-14, still a stop condition.**
+  Per the "Favicon and Emblem Export Directive," the whole export pipeline
+  was rebuilt from scratch directly off `AwakenArts-Emblem-A-Outlined.svg`
+  (see `favicon-masters/AwakenArts-Favicon-Composite.svg` — navy square,
+  ink-bbox centered with computed, not eyeballed, margins: ~10% L/R, ~19%
+  T/B, matching the already-approved favicon.svg's own proportions). Full
+  proofs in `favicon-masters/legibility-proofs/`:
+  `contact-sheet-true-scale.png` (all 9 sizes at true native pixel scale),
+  `true-vs-enlarged-comparison.png` (true pixels vs. fair Lanczos
+  enlargement vs. misleading nearest-neighbor enlargement, side by side),
+  `browser-tab-proof.png`, `mobile-home-screen-proof.png`.
+  Finding: 32px and up are all clearly legible, including under fair
+  (Lanczos) enlargement — no issue. The flat 16×16 raster (i.e. the
+  favicon-16x16.png / favicon.ico's 16px frame, judged honestly rather than
+  by Preview-style nearest-neighbor zoom) is still genuinely marginal — the
+  "A" doesn't read cleanly as a letterform at that literal pixel budget.
+  However, the browser-tab proof — which renders fresh from the vector
+  master at the effective resolution a hidpi display actually uses for a
+  16 CSS-px favicon (e.g. 48 physical px @3x), the same path a modern
+  browser takes when it reads `favicon.svg` directly — reads clearly. So
+  the real risk is narrower than "16px fails everywhere": it's concentrated
+  in contexts that only get the flat bitmap (older/non-SVG-favicon
+  browsers, 1x/non-retina screens, anything that only reads the .ico's
+  16px frame). Per the directive's explicit stop condition, no simplified
+  16px-specific mark was created and nothing was copied into `public/` —
+  candidate exports sit in `favicon-masters/proposed-for-public/` pending
+  Susan's decision: accept as-is (the SVG-favicon path covers most modern
+  hidpi cases), or commission a separately-approved simplified glyph for
+  the small-bitmap fallback case only.
 - **Website decorative emblems (Section 7)** — `public/images/brand/ornaments/`
   does not exist yet. The section lists "possible approved files"
   (`awakenarts-a-emblem.svg`, `awakenarts-botanical-sprig.png`,
