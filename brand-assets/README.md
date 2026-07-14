@@ -225,35 +225,36 @@ fill, is trimmed at the corners).
 - "Contact sheets" has no corresponding page/component in this codebase
   today; the compact PNG/SVG exports are ready whenever that need arises
   (print or otherwise).
-- **16×16 favicon legibility — retested 2026-07-14, still a stop condition.**
-  Per the "Favicon and Emblem Export Directive," the whole export pipeline
-  was rebuilt from scratch directly off `AwakenArts-Emblem-A-Outlined.svg`
-  (see `favicon-masters/AwakenArts-Favicon-Composite.svg` — navy square,
-  ink-bbox centered with computed, not eyeballed, margins: ~10% L/R, ~19%
-  T/B, matching the already-approved favicon.svg's own proportions). Full
-  proofs in `favicon-masters/legibility-proofs/`:
-  `contact-sheet-true-scale.png` (all 9 sizes at true native pixel scale),
-  `true-vs-enlarged-comparison.png` (true pixels vs. fair Lanczos
-  enlargement vs. misleading nearest-neighbor enlargement, side by side),
-  `browser-tab-proof.png`, `mobile-home-screen-proof.png`.
-  Finding: 32px and up are all clearly legible, including under fair
-  (Lanczos) enlargement — no issue. The flat 16×16 raster (i.e. the
-  favicon-16x16.png / favicon.ico's 16px frame, judged honestly rather than
-  by Preview-style nearest-neighbor zoom) is still genuinely marginal — the
-  "A" doesn't read cleanly as a letterform at that literal pixel budget.
-  However, the browser-tab proof — which renders fresh from the vector
-  master at the effective resolution a hidpi display actually uses for a
-  16 CSS-px favicon (e.g. 48 physical px @3x), the same path a modern
-  browser takes when it reads `favicon.svg` directly — reads clearly. So
-  the real risk is narrower than "16px fails everywhere": it's concentrated
-  in contexts that only get the flat bitmap (older/non-SVG-favicon
-  browsers, 1x/non-retina screens, anything that only reads the .ico's
-  16px frame). Per the directive's explicit stop condition, no simplified
-  16px-specific mark was created and nothing was copied into `public/` —
-  candidate exports sit in `favicon-masters/proposed-for-public/` pending
-  Susan's decision: accept as-is (the SVG-favicon path covers most modern
-  hidpi cases), or commission a separately-approved simplified glyph for
-  the small-bitmap fallback case only.
+- **Favicon/emblem identity system — APPROVED AND LOCKED, 2026-07-14.**
+  Susan's own words: "the emblem now behaves as a genuine identity
+  system — from browser favicon through mobile icon to large brand
+  application — without losing the delicacy of the original A. This
+  direction is approved and should be locked as the standard."
+  `favicon-masters/AwakenArts-Favicon-Composite.svg` (navy square,
+  ink-bbox centered with computed, not eyeballed, margins: ~10% L/R,
+  ~19% T/B) is now the standing standard for every favicon/app-icon
+  export going forward — do not rebuild this pipeline from a different
+  starting point without a new directive. The full build record and
+  legibility proofs remain in `favicon-masters/` for reference
+  (`legibility-proofs/`: true-scale contact sheet, true-pixel vs.
+  fair-enlargement vs. misleading-nearest-neighbor comparison,
+  browser-tab proof, mobile home-screen proof).
+  Live since approval: `public/favicon.svg`, `public/favicon.ico`
+  (16/32/48), `public/favicon-16x16.png`, `-32x32.png`, `-48x48.png`,
+  `public/apple-touch-icon.png`, `public/android-chrome-192x192.png`,
+  `-512x512.png`, and `public/site.webmanifest` (new — references the
+  two android-chrome sizes for Android "add to home screen"). All were
+  copied from `favicon-masters/proposed-for-public/` with byte-for-byte
+  verification against what was reviewed — nothing was regenerated at
+  copy time. `src/app/layout.tsx`'s `metadata.icons` was extended to
+  list `favicon.svg` first (so SVG-capable browsers use the true vector
+  source at any pixel density) with the sized PNGs and `.ico` as the
+  fallback chain, plus a `manifest` link.
+  The one open note, not a blocker: the flat 16×16 raster on its own is
+  still the softest link in the chain (legacy/non-SVG-favicon contexts,
+  1x displays) — Susan's approval covers the system as delivered, so no
+  further action here unless a future directive asks for a
+  small-bitmap-specific simplified glyph.
 - **Website decorative emblems (Section 7)** — `public/images/brand/ornaments/`
   does not exist yet. The section lists "possible approved files"
   (`awakenarts-a-emblem.svg`, `awakenarts-botanical-sprig.png`,

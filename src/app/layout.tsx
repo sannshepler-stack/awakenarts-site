@@ -78,10 +78,27 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  /* Favicon/emblem identity system, locked 2026-07-14 per Susan's
+   * "Favicon and Emblem Export Directive" and its approval ("the emblem
+   * now behaves as a genuine identity system — from browser favicon
+   * through mobile icon to large brand application"). Every file below
+   * is rendered directly from the single approved vector master
+   * (brand-assets/vector-masters/AwakenArts-Emblem-A-Outlined.svg) —
+   * see brand-assets/favicon-masters/ for the build and the legibility
+   * proofs. favicon.svg is listed first so SVG-capable browsers use the
+   * true vector source at any pixel density; the ICO and sized PNGs are
+   * the fallback chain for everything else. */
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon.ico' },
+    ],
     apple: '/apple-touch-icon.png',
   },
+  manifest: '/site.webmanifest',
 }
 
 // JSON-LD structured data — Person + Organization + WebSite.
