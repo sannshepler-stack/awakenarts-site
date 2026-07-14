@@ -8553,6 +8553,45 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   margin-bottom: 0;
 }
 
+/* Poem thumbnail — "A Watery Cross," added 2026-07-14. An image link,
+   not a text link, per Susan's explicit direction: the artwork itself
+   (already a finished piece, public/images/mandala/watery_cross.png)
+   sits small and quiet in the reading column, functioning as its own
+   link straight to the full image. ~150px wide echoes the site's
+   existing "preview, not full view" concrete-poem thumbnail convention
+   (see .studio-poem-preview) without borrowing its dark-panel treatment
+   — this one sits directly on the page's own cream ground. */
+.foundation-poem-link {
+  display: block;
+  width: 150px;
+  margin: 0 auto 1.75rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.foundation-poem-thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0 6px 20px rgba(28, 43, 58, 0.16);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.foundation-poem-link:hover .foundation-poem-thumb {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(28, 43, 58, 0.22);
+}
+
+.foundation-poem-caption {
+  display: block;
+  margin-top: 0.6rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--gold);
+}
+
 /* Retired 2026-07-14: the three-line doctrinal credo ("Christ is the
    center. Scripture is the authority. The artistic work is an
    invitation to reflect.") this page used to close on, superseded by

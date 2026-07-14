@@ -52,6 +52,16 @@ import Footer from '@/components/Footer'
 // (a threshold marker, not a label) and the gold color already used
 // quietly elsewhere on this page family (eyebrow, credo) — restrained
 // rather than solemn.
+//
+// 2026-07-14, same day (second follow-up): added a small thumbnail of
+// Susan's own concrete poem "A Watery Cross" (public/images/mandala/
+// watery_cross.png — existing finished artwork, previously unlinked
+// anywhere on the site), placed right after the paragraph that mentions
+// "an image, a poem" as a direct, wordless illustration of that
+// sentence. Per Susan's explicit direction: an image thumbnail, not a
+// text link. It links straight to the artwork itself — no new page —
+// consistent with /gallery's own "no links, no new decisions" scoping,
+// which is why this doesn't live there instead.
 export const metadata: Metadata = {
   title: 'The Foundation of AwakenArts | Christian Symbolic Art and Reflection',
   description:
@@ -99,6 +109,22 @@ export default function FoundationPage() {
             became companions on a lifelong journey of observation,
             reflection, and discovery.
           </p>
+
+          <a
+            href="/images/mandala/watery_cross.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="foundation-poem-link"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/mandala/watery_cross.png"
+              alt="A Watery Cross — a shaped poem about a ship anchored near shore, guided by moonlight, its lines tapering into the form of a cross."
+              className="foundation-poem-thumb"
+            />
+            <span className="foundation-poem-caption">A Watery Cross</span>
+          </a>
+
           <p className="foundation-body">
             Over time I came to understand that recognition is only the
             beginning. Awareness invites acceptance. Acceptance makes
