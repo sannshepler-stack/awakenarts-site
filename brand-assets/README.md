@@ -70,7 +70,37 @@ all sides:
 - `AwakenArts-Logo-FullHorizontal.png` (2400px wide)
 - `AwakenArts-Logo-CompactHorizontal.png` (2000px wide)
 - `AwakenArts-Logo-StackedColophon.png` (1600px wide)
-- `AwakenArts-Emblem-A-Watermark.png` (1200px wide)
+- `AwakenArts-Emblem-A-Watermark.png` (1200px wide) — original single export,
+  kept for reference; superseded for new work by the sized/colored sets below.
+
+#### `png-exports/emblem/`
+Emblem-only exports at fixed sizes, all rendered directly from
+`vector-masters/AwakenArts-Emblem-A-Outlined.svg` (not upscaled from one
+another), padding proportionally identical across every size (~4% margin on
+each side at every resolution):
+- `AwakenArts-Emblem-A-2048.png`
+- `AwakenArts-Emblem-A-1024.png`
+- `AwakenArts-Emblem-A-512.png`
+- `AwakenArts-Emblem-A-256.png`
+
+Uses: contact-sheet watermark source, decorative website placement, formal
+publishing mark, social avatar source, favicon source, print ornament.
+
+#### `png-exports/watermark/`
+Contact-sheet watermark sources, 2000px wide, full opacity (verified: 255
+alpha at full coverage, no baked-in fade) with generous transparent padding.
+Same 93 emblem paths as the vector master in every file — only the fill
+color changes, no shape/detail altered, following the same recolor-only
+precedent already used for the Navy/Gold/Black single-color lockup variants:
+- `AwakenArts-A-Watermark-Gold.png` — the emblem's own original multi-tone
+  gold, unmodified.
+- `AwakenArts-A-Watermark-Navy.png` — flat `#0f2340` recolor.
+- `AwakenArts-A-Watermark-White.png` — flat `#ffffff` recolor.
+
+Any opacity reduction for actual contact-sheet layout (suggested 5–12%,
+tuned to the background) is applied only at placement time in that layout —
+never baked into these master files, and never positioned over a face, poem
+text, signature, or essential symbol.
 
 ## Approved Colors
 
