@@ -102,6 +102,67 @@ tuned to the background) is applied only at placement time in that layout —
 never baked into these master files, and never positioned over a face, poem
 text, signature, or essential symbol.
 
+### `favicon-masters/`
+`AwakenArts-Favicon-Master.svg` — the already-approved favicon presentation
+(built in an earlier session, live since before this addendum): 200×200
+viewBox, deep navy rounded-square background (`#0f2340`, `rx=36`), the same
+93-path gold emblem centered with generous padding, no wordmark, no tagline,
+no gold rules. This addendum did not redraw or reposition it — it archives
+the existing approved artwork as the reference master and derives every
+favicon/social file below from this one file.
+
+`legibility-test/` holds the tiny-size legibility proofs — see below.
+
+#### Tiny-size legibility test (Section 5)
+Rendered the master at 16, 32, 48, 64, 180, and 512px and inspected each
+(proof strip: `legibility-test/proof-strip-16-32-48-64.png`, individual
+files: `legibility-test/favicon-test-{size}.png`).
+
+- **16×16 — fails.** At true rendering size the A, flourish, and leaves
+  compress into an indistinct gold smudge; it does not read as a letterform.
+- **32×32 — marginal.** The A is identifiable if you already know what
+  you're looking for; the flourish and finer leaf/vein details are close to
+  collapsing into noise. Borderline, not clearly reliable.
+- **48×48 and up — clear.** The A, flourish, and botanical branch are all
+  distinct and legible; gold reads cleanly against navy; padding and optical
+  centering hold at every size from here up.
+
+Per the directive's explicit instruction, this is a stop condition: 16px is
+unclear and 32px is marginal, so **no simplified/reduced-detail favicon mark
+has been created.** The existing 16/32/48px assets already live at
+`public/favicon.ico` predate this addendum and are left as they are — this
+finding is flagged for the creative director's decision, not acted on
+unilaterally. If a simplified small-size mark is wanted, it needs a
+separately reviewed and approved derivative per the addendum's Section 8
+governing rule.
+
+### Section 4 — website favicon family (public/)
+The already-approved master above was already live at
+`public/favicon.ico` / `public/apple-touch-icon.png` (both already matched
+spec — `favicon.ico` already multi-resolution 16/32/48, `apple-touch-icon.png`
+already exactly 180×180 — neither was touched). This pass only *added* the
+remaining required filenames the directive lists, all rendered fresh from
+the identical master, nothing redrawn or repositioned:
+- `public/favicon.svg`
+- `public/favicon-16x16.png`
+- `public/favicon-32x32.png`
+- `public/favicon-48x48.png`
+- `public/android-chrome-192x192.png`
+- `public/android-chrome-512x512.png`
+
+These files are **not yet referenced** anywhere — `src/app/layout.tsx`'s
+metadata still only points at `/favicon.ico` and `/apple-touch-icon.png`, as
+it did before this pass. Wiring a manifest or additional `<link>` tags to
+pick these up is a placement decision, not made here.
+
+### `png-exports/social/`
+`AwakenArts-Profile-512.png` and `AwakenArts-Profile-1024.png` — square,
+navy background, centered gold A, rendered from the same favicon master.
+Checked for circular-crop safety: 0% of the gold emblem's pixels fall
+outside the circle inscribed in the square at either size, so a profile-photo
+circular crop loses none of the mark (only navy background, which is a flat
+fill, is trimmed at the corners).
+
 ## Approved Colors
 
 | Context | Wordmark/tagline color | Emblem color |
@@ -164,3 +225,15 @@ text, signature, or essential symbol.
 - "Contact sheets" has no corresponding page/component in this codebase
   today; the compact PNG/SVG exports are ready whenever that need arises
   (print or otherwise).
+- **16×16 favicon legibility.** The tiny-size legibility test (above) found
+  the complete emblem unclear at 16px and marginal at 32px. Per the
+  addendum's Section 5, this is a stop condition — no simplified mark was
+  created. Whether to commission a separately-approved simplified favicon
+  glyph for 16/32px, or accept the existing rendering as-is, is Susan's call.
+- **Website decorative emblems (Section 7)** — `public/images/brand/ornaments/`
+  does not exist yet. The section lists "possible approved files"
+  (`awakenarts-a-emblem.svg`, `awakenarts-botanical-sprig.png`,
+  `awakenarts-leaf-pair.png`) rather than a firm requirement, so nothing was
+  built for it. Ready to produce from the same approved emblem master
+  whenever a specific placement (section transitions, quote markers, page
+  endings) is chosen.
