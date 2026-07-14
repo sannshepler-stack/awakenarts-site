@@ -4819,7 +4819,22 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    buttons-vs-text-links principle), just a quieter fill. Hover fades
    toward a soft cream-gold blend (#EBDFC0, ~30% --gold-lt into
    --cream) rather than swapping to a second flat color, so the
-   transition itself reads as a fade, per her note. */
+   transition itself reads as a fade, per her note.
+
+   2026-07-14, per Susan: even the cream fill still read as
+   "unpleasantly stark" against the navy field — any solid block reads
+   as a hard shape here, regardless of hue. Replaced the fill with a
+   thin gold outline, the same "framed link" language already
+   established for .home-method-cta (see above), rather than searching
+   for a fourth fill color. Adapted for this section's dark ground:
+   --gold-lt (the gold already used for every other accent on navy —
+   eyebrow, cover edge) instead of --gold, transparent instead of
+   cream, and a soft gold-tinted wash on hover rather than a flat
+   color swap, so hover still reads as a fade. Kept this button's own
+   weight (sans/uppercase/generous padding) rather than adopting the
+   Method CTA's lighter serif-italic treatment, so it still reads as
+   the section's one confident anchor — scoped to this button only,
+   not rolled out site-wide. */
 .home-coll-cta {
   display: inline-flex;
   align-items: center;
@@ -4829,17 +4844,19 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--deep);
-  background: var(--cream);
-  border: none;
+  color: var(--gold-lt);
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.5);
   border-radius: 2px;
   padding: 1rem 2.25rem;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .home-coll-cta:hover {
-  background-color: #EBDFC0;
+  border-color: var(--gold-lt);
+  background-color: rgba(201, 168, 76, 0.1);
+  color: var(--cream);
   transform: translateY(-1px);
 }
 
