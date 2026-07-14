@@ -26,14 +26,32 @@ import Footer from '@/components/Footer'
 //
 // 2026-07-14 revision, per Susan: replaced the third-person doctrinal
 // statement above with her own first-person testimony (supplied
-// verbatim). The page now opens and closes on the same two-line
-// refrain — "This is the only journey I can faithfully share. /
-// Throughout my own, I have found Christ to be my true north." — as a
-// deliberate bookend, not a duplication error. Susan asked specifically
-// for the closing instance to be set apart typographically; given a
-// small-caps, letter-spaced treatment (.foundation-closing) distinct
-// from the plain-italic opening epigraph (.foundation-epigraph) and
-// from the now-removed three-line credo this page used to close on.
+// verbatim). The page opens and closes on the same two-line refrain —
+// "This is the only journey I can faithfully share. / Throughout my
+// own, I have found Christ to be my true north." — as a deliberate
+// ceremonial bookend, not a duplication error.
+//
+// 2026-07-14, same day (follow-up round): Susan's governing note for
+// this page — "no longer tries to persuade the reader into reverence.
+// Keep the tone testimonial, grounded, and spare. Avoid language that
+// feels evangelistic, triumphant, or emotionally directive. Let the
+// story carry the meaning... someone letting you stand near a truth,
+// not trying to convert you to it." Two changes followed from that:
+// (1) H1 softened from "The Foundation of AwakenArts" to "My
+// Foundation" — the fuller title read as institutional/third-person
+// beside first-person testimony, and "My True North" (the other option
+// considered) was rejected for front-loading the piece's own quiet,
+// earned turn ("For me, that true north is Jesus Christ") into a
+// headline, which would announce the conclusion instead of letting the
+// reader arrive at it. (2) The closing refrain's small-caps/letter-
+// spaced/bold treatment was replaced (see .foundation-closing in
+// globals.css) — small caps in gold, centered, bordered reads as
+// certificate/church-bulletin typography, which cuts against "not
+// trying to convert you." It now matches the opening epigraph's plain
+// italic serif almost exactly, distinguished only by a quiet top rule
+// (a threshold marker, not a label) and the gold color already used
+// quietly elsewhere on this page family (eyebrow, credo) — restrained
+// rather than solemn.
 export const metadata: Metadata = {
   title: 'The Foundation of AwakenArts | Christian Symbolic Art and Reflection',
   description:
@@ -66,7 +84,7 @@ export default function FoundationPage() {
           </div>
 
           <p className="eyebrow foundation-eyebrow">Foundation</p>
-          <h1 className="foundation-h1">The Foundation of AwakenArts</h1>
+          <h1 className="foundation-h1">My Foundation</h1>
 
           <p className="foundation-body">
             Every life tells its story in ways that are often quieter than
