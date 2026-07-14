@@ -90,40 +90,39 @@ export default function HomePage() {
 
         <div className="hero__text">
           {/* Logo — primary identity placement.
-              2026-07-14, per Susan: the Horizontal lockup's baked-in
-              tagline ("When Language Shapes a Path") directly repeated
-              the H1 immediately below it. Switched to
-              AwakenArts-Logo-Horizontal-NoTagline.svg — same monogram
-              + wordmark, tagline cropped out of the viewBox (paths
-              untouched, just outside the visible frame, so it stays a
-              live vector rather than a flattened raster). The
-              pictorial mark stays; only the redundant text goes,
-              matching the treatment just used to fix the Collection
-              cover's own logo. */}
+              2026-07-14, per Susan's "AwakenArts Tagline and Hero Rule"
+              directive: reversed from the same-day change above (which
+              cropped the tagline OUT of this logo to avoid repeating the
+              H1). The directive's actual rule is the opposite of what
+              that earlier fix assumed — the FULL logo lockup (emblem +
+              AWAKENARTS + tagline) is the approved default, and it is
+              the redundant H1 headline that should go, not the logo's
+              own tagline. Switched back to AwakenArts-Logo-Horizontal.svg
+              (with tagline) accordingly. Per the directive's global rule:
+              never show the tagline twice in the same visible section —
+              use either this full lockup (tagline included, not repeated
+              nearby) or the compact lockup (AwakenArts-Logo-Horizontal-
+              NoTagline.svg, emblem + wordmark only) where the tagline
+              needs to appear separately elsewhere in the composition. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/brand/AwakenArts-Logo-Horizontal-NoTagline.svg"
-            alt="AwakenArts"
+            src="/images/brand/AwakenArts-Logo-Horizontal.svg"
+            alt="AwakenArts — When Language Shapes a Path"
             className="hero-logo"
             width={1237}
-            height={163}
+            height={244}
             loading="eager"
           />
 
-          {/* Primary tagline — the studio's full identity phrase.
-              2026-06-30, per Susan ("Oops — Where Language Shapes a
-              Path remains"): the headline is restored to its original
-              two-line title treatment. The new copy added earlier today
-              belongs below it as the mission line — the reason the work
-              is done, not the headline itself. */}
-          <h1 className="hero-tagline">
-            <span>When Language</span>
-            <span>Shapes a Path</span>
-          </h1>
-
-          {/* Mission line — restates the AwakenArts USP directly beneath
-              the headline, echoed again on /encounters and in the Poems
-              preview section below.
+          {/* Mission line — now the Hero's first line of text; the
+              headline that used to sit above it is gone.
+              2026-07-14, per Susan's "AwakenArts Tagline and Hero Rule"
+              directive: the H1 ("When Language Shapes a Path")
+              repeated the logo's own tagline directly above it —
+              removed rather than replaced, per the directive's explicit
+              "do not invent a replacement headline." This line simply
+              moves up to use the recovered space; its own text and
+              tone are unchanged.
               2026-07-10, per Susan's "Homepage Refinement — Production
               Pass": supersedes the 2026-07-07 pared-down single
               sentence. The mission line now carries the "every life
@@ -132,15 +131,16 @@ export default function HomePage() {
               so the Hero itself plants the idea the rest of the
               homepage develops.
               2026-07-10, "Hero Typography Refinement" (same day, later
-              pass), per Susan: the title must stay the Hero's clear
-              focal point, so this line now (1) breaks after the first
-              sentence — <br /> between them, not two separate <p>
-              elements, so they still read as one supporting thought
-              with a natural pause, not two competing statements — and
-              (2) is decoupled from the shared --subtitle-size token
-              (see globals.css) and reduced ~17%, so it reads as a
-              quiet, discoverable invitation rather than a second
-              headline. */}
+              pass), per Susan: (1) breaks after the first sentence —
+              <br /> between them, not two separate <p> elements, so
+              they still read as one supporting thought with a natural
+              pause, not two competing statements — and (2) is decoupled
+              from the shared --subtitle-size token (see globals.css)
+              and reduced ~17%. That "quiet, discoverable invitation"
+              sizing was calibrated for a supporting line beneath a
+              headline; now that it's the Hero's first line, it still
+              reads correctly at this size — a deliberate quiet opening,
+              not a second headline standing in for the first. */}
           <p className="hero-mission">
             Every life tells its story in images.
             <br />
