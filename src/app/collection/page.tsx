@@ -95,7 +95,7 @@ export default function CollectionPage() {
           <div className="col-banner__inner">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/collection/collection-banner-1400.png"
+              src="/images/collection/collection-banner-02.png"
               alt="The AwakenArts Collection — poetic encounters in shape, symbol, and story — five framed visual-literary works displayed as a gallery wall"
               className="col-banner__img"
               loading="eager"
