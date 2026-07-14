@@ -1,0 +1,136 @@
+# AwakenArts Brand Assets
+
+Organized 2026-07-14 per the "AwakenArts Brand-Asset Organization Directive."
+This folder is a working/reference archive — **nothing here is live-site
+code**. The website continues to read its logo files from
+`public/images/brand/`, untouched by this reorganization.
+
+## Approved Placement Map
+
+| Placement | Approved logo |
+|---|---|
+| Homepage hero and prominent brand placements | Full horizontal logo |
+| Navigation, contact sheets, small covers, footers | Compact horizontal logo |
+| Colophon and formal publishing pages | Stacked colophon logo |
+| Watermark and restrained decorative branding | A emblem |
+
+These are the only three lockup arrangements plus the standalone emblem —
+no other configuration is approved. Placements on a dark/navy field use the
+same arrangement recolored (white/cream wordmark, same gold emblem), not a
+different composition.
+
+## Folder Guide
+
+### `source-svg/`
+Byte-for-byte copies of the eleven logo SVG files as they stood in
+`public/images/brand/` at the moment this archive was created (2026-07-14):
+`AwakenArts-Logo-Horizontal.svg`, `-Horizontal-NoTagline.svg`,
+`-Horizontal-OnNavy.svg`, `-Primary.svg`, `-Compact-Horizontal.svg`,
+`-Compact-Horizontal-OnNavy.svg`, `-Stacked-Colophon.svg`, `-Navy.svg`,
+`-Gold.svg`, `-Black.svg`, `-Monogram.svg`. Reference only — do not edit
+these copies; they exist to document what the source files looked like
+going into the vector-master pass.
+
+*(Note: the directive specified nine files; eleven currently exist in
+`public/images/brand/` — the count grew during this session with the
+addition of `Compact-Horizontal.svg`, `Stacked-Colophon.svg`, and
+`Compact-Horizontal-OnNavy.svg`. All eleven were copied here rather than
+guessing which two to omit — flagged for confirmation.)*
+
+### `fonts/source/`
+The approved typeface, Cormorant Garamond, as supplied by Susan:
+- `CormorantGaramond-Regular.ttf`
+- `CormorantGaramond-SemiBold.ttf` — used for the AWAKENARTS wordmark (weight 600)
+- `CormorantGaramond-Italic.ttf` — used for the tagline (weight 400, italic)
+- `OFL.txt` — SIL Open Font License
+- `CormorantGaramond-README.txt` — the family's own README, as distributed
+
+Not copied into `public/` — the vector masters bake the needed glyphs as
+paths, so the live site has no runtime dependency on these font files.
+
+### `vector-masters/`
+The four approved outlined masters. Each is the exact current production
+file (see "Current state of each master" below) — no redrawing, no
+resizing of internal elements, wordmark and tagline both baked as real
+Cormorant Garamond glyph outlines (via `fontTools`, extracted directly from
+the font files above), never live `<text>`, never a bitmap trace. All four
+have transparent backgrounds.
+
+- `AwakenArts-Logo-FullHorizontal-Outlined.svg`
+- `AwakenArts-Logo-CompactHorizontal-Outlined.svg`
+- `AwakenArts-Logo-StackedColophon-Outlined.svg`
+- `AwakenArts-Emblem-A-Outlined.svg` — the complete gold emblem (A, botanical
+  branch, and flourish) alone, no wordmark. This one was never a text-tracing
+  problem — it's hand-drawn artwork, already pure vector, unchanged.
+
+### `png-exports/`
+Transparent PNGs rendered fresh from the vector masters above (not upscaled
+from any existing smaller PNG), generous transparent padding preserved on
+all sides:
+- `AwakenArts-Logo-FullHorizontal.png` (2400px wide)
+- `AwakenArts-Logo-CompactHorizontal.png` (2000px wide)
+- `AwakenArts-Logo-StackedColophon.png` (1600px wide)
+- `AwakenArts-Emblem-A-Watermark.png` (1200px wide)
+
+## Approved Colors
+
+| Context | Wordmark/tagline color | Emblem color |
+|---|---|---|
+| Cream/light backgrounds | `#0f2340` (navy) | Original multi-tone gold (unchanged per asset) |
+| Navy/dark backgrounds | `#ffffff` (white) | Same gold as above |
+| Single-color navy print variant | `#0f2340` throughout | `#0f2340` |
+| Single-color gold print variant | `#c8a24a` throughout | `#c8a24a` |
+| Single-color black print variant | Black (no fill attribute; default) | Black |
+
+## Font Family and Weights
+
+**Cormorant Garamond** — SIL Open Font License (see `fonts/source/OFL.txt`).
+- Wordmark (AWAKENARTS): SemiBold (600), `.12em` letter-spacing
+- Tagline (When Language Shapes a Path): Italic (400)
+
+## Governing Rules
+
+- **Internal logo elements must never be resized separately.** The emblem
+  and the wordmark each keep their own established proportions; only their
+  relative scale and spacing were tuned (per Susan's explicit approvals),
+  never by redrawing or reconstructing either component.
+- **Approved assets are always scaled proportionally as one complete
+  unit.** Any placement of a master (SVG or PNG) resizes the whole asset
+  uniformly — never stretched, never with the emblem and wordmark scaled
+  independently at display time.
+
+## Current State of Each Master (as of 2026-07-14)
+
+- **Full horizontal**: emblem beside AWAKENARTS + tagline, tagline included.
+  This is the file currently live at `public/images/brand/AwakenArts-Logo-Horizontal.svg`
+  (hero placement, 420px max-width).
+- **Compact horizontal**: emblem + AWAKENARTS only, no tagline, emblem ≈1/5
+  of wordmark width, vertically centered on the wordmark's cap-height.
+  Approved by Susan for navigation/small-cover/contact-sheet/footer use;
+  not yet wired into any page (see Pending Decisions).
+- **Stacked colophon**: emblem centered above AWAKENARTS + tagline, emblem
+  reduced 17.5% from its original stacked proportions and optically
+  (ink-centroid) centered, moved closer to the wordmark. Not yet wired into
+  any page — the reader colophon currently still uses `AwakenArts-Logo-Primary.svg`
+  (the unreduced stacked lockup).
+- **A emblem**: unchanged hand-drawn artwork, no wordmark.
+
+## Pending Decisions (not resolved by this organization pass)
+
+- Footer, `/studio`, `/studio/silhouettes`, and `/quotes` currently show the
+  **full horizontal** lockup on navy (`AwakenArts-Logo-Horizontal-OnNavy.svg`,
+  with tagline). Per the approved placement map above, footers should use
+  the **compact** lockup instead. A matching on-navy compact asset
+  (`AwakenArts-Logo-Compact-Horizontal-OnNavy.svg`) has been built and
+  verified but **not wired in** — awaiting creative-director approval per
+  this directive's Section 5.
+- The reader colophon (`EditionReaderSection.tsx`) currently uses
+  `AwakenArts-Logo-Primary.svg` (unreduced). Whether to switch it to the
+  new `AwakenArts-Logo-Stacked-Colophon.svg` (reduced/re-centered emblem)
+  is likewise pending approval.
+- No logo currently appears in the site's primary navigation bar (`Nav.tsx`)
+  or on the `/sketchbook` page — adding one there is a placement decision,
+  not yet made.
+- "Contact sheets" has no corresponding page/component in this codebase
+  today; the compact PNG/SVG exports are ready whenever that need arises
+  (print or otherwise).
