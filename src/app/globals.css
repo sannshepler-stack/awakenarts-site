@@ -1699,7 +1699,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  /* Fixed 2026-07-14: this defined 4 tracks (2fr 1fr 1fr 1fr = 5fr
+     total) but Footer.tsx only ever renders 3 children (.footer-brand,
+     two .footer-col). The phantom 4th 1fr track sat empty on the
+     right — a full fifth of the row's width doing nothing — which is
+     what Susan was seeing as the footer "losing its visual balance"
+     (Explore/About columns crowded left, dead space past them). Three
+     tracks now, matching the three actual children. */
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 3rem;
   max-width: 1200px;
   margin: 0 auto 3rem;
