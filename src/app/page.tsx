@@ -89,14 +89,24 @@ export default function HomePage() {
       <section className="hero" aria-label="Hero">
 
         <div className="hero__text">
-          {/* Logo — primary identity placement. */}
+          {/* Logo — primary identity placement.
+              2026-07-14, per Susan: the Horizontal lockup's baked-in
+              tagline ("When Language Shapes a Path") directly repeated
+              the H1 immediately below it. Switched to
+              AwakenArts-Logo-Horizontal-NoTagline.svg — same monogram
+              + wordmark, tagline cropped out of the viewBox (paths
+              untouched, just outside the visible frame, so it stays a
+              live vector rather than a flattened raster). The
+              pictorial mark stays; only the redundant text goes,
+              matching the treatment just used to fix the Collection
+              cover's own logo. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/brand/AwakenArts-Logo-Horizontal.svg"
+            src="/images/brand/AwakenArts-Logo-Horizontal-NoTagline.svg"
             alt="AwakenArts"
             className="hero-logo"
             width={1237}
-            height={244}
+            height={163}
             loading="eager"
           />
 
