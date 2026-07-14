@@ -42,6 +42,22 @@ This section is implemented in code as the **AwakenArts Global Design System**, 
 
 **Image treatments** — see Section 5 below.
 
+**Logo & Monogram** (added 2026-07-14, per Susan — the monogram's rendered size had never been governed by a standard, only set ad hoc per placement). The mark is an interlocking cursive/serif "A" woven through a gold leaf sprig — finer-lined than a typical bold wordmark, so it degrades faster at small sizes: the cursive stroke thins to near-invisibility and the leaf veins disappear before the wordmark text next to it shows any comparable loss. Tested empirically by rendering the monogram alone (`AwakenArts-Monogram.svg`) at native pixel widths from 24px to 80px: **the monogram must never render narrower than 40px.** Below that, the cursive "A" and the leaf's inner veins stop reading as distinct strokes. This is a floor on the *monogram's own width*, not the full lockup's — when the monogram sits beside a wordmark (the Horizontal lockups), its share of the total rendered width is roughly a quarter, so the full lockup needs to be sized accordingly.
+
+Canonical asset family and when to use each (all in `public/images/brand/`):
+- `AwakenArts-Logo-Primary.svg` — full stacked lockup (monogram, wordmark, tagline). Use for standalone identity placements with room to be tall (e.g. the Edition reader's colophon).
+- `AwakenArts-Logo-Horizontal.svg` — monogram + wordmark + tagline, side by side (~5:1). Use where the tagline isn't repeated elsewhere on the page.
+- `AwakenArts-Logo-Horizontal-NoTagline.svg` — same lockup with the tagline cropped from the viewBox (paths untouched, just outside the visible frame — stays a live vector). Use wherever the tagline would otherwise repeat page copy (e.g. the homepage hero, directly above the "When Language Shapes a Path" H1).
+- `AwakenArts-Logo-Horizontal-OnNavy.svg` — the horizontal lockup recolored for dark fields (footer, Studio, Quotes).
+- `AwakenArts-Monogram.svg` — the mark alone, no wordmark. Use only where space is too tight for the wordmark to be legible at all (favicon, app icons) — never as a substitute for the full lockup somewhere the wordmark would otherwise fit.
+- `AwakenArts-Logo-Navy.svg` / `-Gold.svg` / `-Black.svg` — single-color full-lockup variants for print and non-web contexts.
+
+Current placements audited against the 40px floor (2026-07-14):
+- Homepage hero (`.hero-logo`, width up to 420px): monogram renders ≈100px — well clear.
+- Footer (`.footer-logo`, height 48px): monogram renders ≈45px — clear, but the tightest of the CSS-driven placements; do not shrink further.
+- Edition reader colophon (`.reader-colophon__logo`, width up to 280px): monogram renders well above the floor.
+- Collection cover (baked into `collection-cover.jpg`, displayed at 380px): monogram renders ≈40px — sitting exactly on the floor, the one placement worth revisiting if it ever needs to shrink further (e.g. a smaller cover thumbnail elsewhere).
+
 **Header philosophy** — Editorial Header Images function as visual thresholds, not decorative banners: each prepares the visitor for what follows (Biblical Foundation → quiet landscape; Poetry → manuscript/written language). They never carry embedded text and never compete with the page content beneath them. Site-wide rollout to Collection/About/Journal is tracked as open work in `AwakenArts_Site_Architecture.md`.
 
 **Footer philosophy** — the footer is the closing page of the publication. It is identical everywhere, never page-specific, and never visually attached to the Wayfinding Band above it. Implemented once (`src/components/Footer.tsx`), reused everywhere.
