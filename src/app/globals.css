@@ -8560,7 +8560,15 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
    link straight to the full image. ~150px wide echoes the site's
    existing "preview, not full view" concrete-poem thumbnail convention
    (see .studio-poem-preview) without borrowing its dark-panel treatment
-   — this one sits directly on the page's own cream ground. */
+   — this one sits directly on the page's own cream ground.
+   Edges alpha-feathered into transparency directly in the PNG (all four
+   sides, ~16% of each dimension), same technique as colophon-band.png /
+   journal-arch.png elsewhere on the site — pre-baked into the asset
+   rather than a CSS mask, so it renders identically everywhere. Per
+   Susan's follow-up request ("the background... faded somewhat into the
+   page"), the box-shadow/border-radius/hover-lift treatment (built for a
+   hard-edged rectangle) is dropped — a shadow behind a feathered image
+   would show its own rectangular outline, undoing the point. */
 .foundation-poem-link {
   display: block;
   width: 150px;
@@ -8573,14 +8581,6 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 3px;
-  box-shadow: 0 6px 20px rgba(28, 43, 58, 0.16);
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-}
-
-.foundation-poem-link:hover .foundation-poem-thumb {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(28, 43, 58, 0.22);
 }
 
 .foundation-poem-caption {

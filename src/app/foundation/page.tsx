@@ -62,6 +62,17 @@ import Footer from '@/components/Footer'
 // text link. It links straight to the artwork itself — no new page —
 // consistent with /gallery's own "no links, no new decisions" scoping,
 // which is why this doesn't live there instead.
+//
+// 2026-07-14, same day (third follow-up): the water in that artwork was
+// faded twice more (see the image's own git history) so the cross has
+// more prominence — first 40%, then 55% once 40% proved too subtle at
+// actual ~150px thumbnail size. Susan then asked for the thumbnail's own
+// background to fade into the page itself. Split into two files at that
+// point: watery_cross.png (the clean 55%-faded rectangle, unchanged,
+// still the link's full-size target) and watery_cross-thumb.png (same
+// colors, alpha-feathered on all four edges), so the full-size view
+// keeps a defined edge while only the small inline preview dissolves
+// into the page's cream ground.
 export const metadata: Metadata = {
   title: 'The Foundation of AwakenArts | Christian Symbolic Art and Reflection',
   description:
@@ -118,7 +129,7 @@ export default function FoundationPage() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/mandala/watery_cross.png"
+              src="/images/mandala/watery_cross-thumb.png"
               alt="A Watery Cross — a shaped poem about a ship anchored near shore, guided by moonlight, its lines tapering into the form of a cross."
               className="foundation-poem-thumb"
             />
