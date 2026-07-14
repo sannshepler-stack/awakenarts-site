@@ -41,6 +41,16 @@ export const metadata: Metadata = {
  * completed Figure Edition (src/data/editions.ts) — currently Dragon,
  * Bowls, Ballerina, Grismere, Poppy, and Queen Ann.
  *
+ * Exception, 2026-07-14: the Poppy tile now uses
+ * poppy-atmospheric-02.jpg — pulled by Susan's explicit direction from
+ * the Poppy Workbook's own atmosphere folder
+ * (AwakenArts_Workbook/06_Poppy/images/atmosphere/poppy-atmospheric-02.png),
+ * replacing the former poppy-figure.jpg (a landscape crop, the one
+ * aspect-ratio outlier in this grid — see the 4:5 vertical-frame note
+ * below). The new painting is portrait and lands almost exactly on the
+ * frame's own 4:5 ratio, so it now sits flush with the rest of the row
+ * instead of needing extra cream matting top and bottom.
+ *
  * AtmosphericHeader removed again, 2026-06-29: per Susan, "I love the
  * header style on the gallery page but it doesn't work with the page."
  * The gallery-banner-3.jpg header (added under the "Banner Height + Seam"
@@ -66,8 +76,8 @@ const tiles: GalleryTile[] = [
     kicker: 'Poppy',
     title: "Her Mother's Hands",
     image: {
-      src: '/images/editions/poppy-figure.jpg',
-      alt: 'Poppy — a California poppy field at sunset, the Edition’s own figure photograph.',
+      src: '/images/editions/poppy-atmospheric-02.jpg',
+      alt: 'Poppy — a golden-hour painting of California poppies on a hillside above a mission bell tower, the Edition’s own atmospheric artwork.',
     },
   },
   {
