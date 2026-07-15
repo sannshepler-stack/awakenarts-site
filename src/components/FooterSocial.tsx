@@ -1,7 +1,12 @@
 /*
- * FooterSocial — the four `rel="me"` profile links rendered in every
+ * FooterSocial — the `rel="me"` profile links rendered in every
  * page footer's footer-brand block. Extracted to a single component so
  * adding a new platform (Substack, Bluesky, etc.) is one edit, not 17.
+ *
+ * Facebook removed 2026-07-15 per Susan: her Facebook is a personal
+ * profile (facebook.com/s.a.shepler), not an AwakenArts business
+ * channel, and should not be presented as one. awakenarts.com remains
+ * the sole authoritative home of the brand.
  *
  * rel="me" tells identity verifiers (IndieAuth, Mastodon) and AI tools
  * that these profiles belong to the same person as this site, building
@@ -15,11 +20,6 @@ const profiles = [
     label: 'Instagram',
     href: 'https://www.instagram.com/s.shepler/',
     aria: 'Susan Ann Shepler on Instagram',
-  },
-  {
-    label: 'Facebook',
-    href: 'https://www.facebook.com/s.a.shepler/',
-    aria: 'Susan Ann Shepler on Facebook',
   },
   {
     label: 'Pinterest',

@@ -222,7 +222,7 @@ export default function QuotesPage() {
             <h4>Explore</h4>
             <ul>
               <li><Link href="/path">The Path</Link></li>
-              <li><Link href="/poems">Poems</Link></li>
+              <li><Link href="/gallery">Poems</Link></li>
             </ul>
           </div>
 
@@ -239,8 +239,8 @@ export default function QuotesPage() {
                   Whispers of Awareness
                 </a>
               </li>
-              <li><Link href="/poems">Concrete Poetry</Link></li>
-              <li><Link href="/poems">Figures</Link></li>
+              <li><Link href="/gallery">Concrete Poetry</Link></li>
+              <li><Link href="/gallery">Figures</Link></li>
             </ul>
           </div>
 
@@ -250,13 +250,15 @@ export default function QuotesPage() {
               <li><Link href="/about">Formation &amp; Provenance</Link></li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Use</Link></li>
+              <li><Link href="/disclaimer">Disclaimer</Link></li>
+              <li><Link href="/copyright">Copyright</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
           <span>© 2026 AwakenArts · awakenarts.com · All Rights Reserved</span>
-          <span>© Susan Ann Shepler · Confidential</span>
+          <span>© Susan Ann Shepler, a Texas sole proprietor</span>
         </div>
       </footer>
     </>

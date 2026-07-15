@@ -138,7 +138,7 @@ export default function SilhouettesPage() {
             <h4>The Work</h4>
             <ul>
               <li><Link href="/encounters">Encounters</Link></li>
-              <li><Link href="/poems">Poems</Link></li>
+              <li><Link href="/gallery">Poems</Link></li>
               <li><Link href="/journal">Journal</Link></li>
             </ul>
           </div>
@@ -148,12 +148,14 @@ export default function SilhouettesPage() {
               <li><Link href="/about">Formation &amp; Provenance</Link></li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Use</Link></li>
+              <li><Link href="/disclaimer">Disclaimer</Link></li>
+              <li><Link href="/copyright">Copyright</Link></li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
           <span>© 2026 AwakenArts · awakenarts.com · All Rights Reserved</span>
-          <span>© Susan Ann Shepler · Confidential</span>
+          <span>© Susan Ann Shepler, a Texas sole proprietor</span>
         </div>
       </footer>
     </>

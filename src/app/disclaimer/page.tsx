@@ -1,8 +1,21 @@
 import Nav from '@/components/Nav'
 
+// Replaced 2026-07-15 per the AwakenArts Legal and Risk Standards
+// package, Stage 1 item 4 of the Controlled Remediation Directive: the
+// prior version was generic "blog"/"authors" template boilerplate
+// ending in a flat US $1 liability cap -- exactly the language the
+// standard instructs not to carry forward. This is the approved
+// Educational and Non-Clinical Disclaimer draft from
+// `02-Website-Legal-Documents.md`, Section A, verbatim except for its
+// two placeholders ([BUSINESS EMAIL], [MONTH DAY, YEAR]), which are
+// filled with Susan's approved interim facts: susan@shepler.us and an
+// effective date of July 15, 2026. No liability-limitation language
+// appears here -- that remains attorney-review-gated per the standard
+// and is not part of this page.
+
 export const metadata = {
   title: 'Disclaimer',
-  description: 'Disclaimer for AwakenArts.com products, services, and website content.',
+  description: 'Educational and non-clinical disclaimer for AwakenArts.com.',
 }
 
 export default function DisclaimerPage() {
@@ -15,78 +28,63 @@ export default function DisclaimerPage() {
 
         <h1 className="legal-page__heading">Disclaimer</h1>
 
+        <h2 className="legal-page__subheading">About AwakenArts</h2>
         <p className="legal-page__body">
-          By using this website and or blog, or making a purchase, user agrees as follows:
+          AwakenArts is operated by Susan Ann Shepler, a Texas sole proprietor. AwakenArts provides
+          artistic, literary, educational, and reflective materials and experiences. Its website,
+          Figure Editions, Companions, presentation slides, workshops, and related resources invite
+          attention, conversation, and personal reflection through image and language.
         </p>
 
+        <h2 className="legal-page__subheading">Not Counseling or Professional Care</h2>
         <p className="legal-page__body">
-          The information, services and products are sold or given to the user with the understanding
-          that neither the author, seller, nor publisher is engaged in rendering any legal, business
-          or financial advice to the purchaser or to the general public. The views and opinions
-          expressed are those of the authors and do not necessarily reflect the official policy or
-          position of AwakenArts.com. Any content provided by our bloggers or authors are of their
-          opinion, and are not intended to malign any religion, ethnic group, club, organization,
-          company, individual or anyone or anything.
+          AwakenArts does not provide counseling, psychotherapy, mental-health assessment,
+          diagnosis, treatment, crisis intervention, medical advice, legal advice, financial advice,
+          or any other licensed professional service. Use of this website, purchase or use of an
+          AwakenArts product, or participation in an AwakenArts workshop does not establish a
+          therapist-client, counselor-client, healthcare-provider, supervisory, fiduciary, or other
+          professional relationship with Susan Ann Shepler or AwakenArts.
         </p>
 
+        <h2 className="legal-page__subheading">Symbolic and Reflective Material</h2>
         <p className="legal-page__body">
-          Although we make strong efforts to make sure our information is accurate, AwakenArts.com
-          cannot guarantee that all the information on this website and or blog is always correct,
-          complete, or up-to-date.
+          Images, poems, questions, prompts, themes, and facilitator observations are invitations to
+          artistic and personal reflection. They are not clinical interpretations, assessments,
+          diagnoses, or statements of fact about any reader or participant. Readers and participants
+          are free to accept, reject, reinterpret, or decline any prompt.
         </p>
 
+        <h2 className="legal-page__subheading">No Guaranteed Outcome</h2>
         <p className="legal-page__body">
-          By purchasing any of our products or services, user agrees to and is knowingly assuming
-          any and all risk associated with using these products or services.
+          AwakenArts does not promise or guarantee any particular personal, emotional, spiritual,
+          educational, professional, financial, or workshop result. Experiences vary according to
+          the person, group, facilitator, setting, and manner of use.
         </p>
 
-        <p className="legal-page__body legal-page__body--caps">
-          TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE PRODUCTS, SERVICES AND INFORMATION ON THIS
-          WEBSITE AND OR BLOG IS PROVIDED &quot;AS IS&quot; AND WITH ALL FAULTS AND AWAKENARTS.COM MAKES NO
-          PROMISES, REPRESENTATIONS, OR WARRANTIES, EITHER EXPRESS, IMPLIED, STATUTORY, OR
-          OTHERWISE, WITH RESPECT TO THE PRODUCTS, SERVICES AND INFORMATION, INCLUDING ITS
-          CONDITION, ITS CONFORMITY TO ANY REPRESENTATION OR DESCRIPTION, OR THE EXISTENCE OF ANY
-          LATENT OR PATENT DEFECTS, AND AWAKENARTS.COM SPECIFICALLY DISCLAIMS ALL IMPLIED (IF ANY)
-          WARRANTIES OF TITLE, MERCHANTABILITY, NONINFRINGEMENT, FITNESS FOR A PARTICULAR PURPOSE,
-          LACK OF VIRUSES, ACCURACY OR COMPLETENESS, QUIET ENJOYMENT, AND QUIET POSSESSION. THE
-          ENTIRE RISK ARISING OUT OF USE OR PERFORMANCE OF THE PRODUCTS, SERVICES AND INFORMATION
-          LIES WITH USER.
-        </p>
-
-        <p className="legal-page__body legal-page__body--caps">
-          TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL AWAKENARTS.COM OR ITS
-          SUPPLIERS BE LIABLE FOR CONSEQUENTIAL, INCIDENTAL, SPECIAL, INDIRECT, OR EXEMPLARY
-          DAMAGES WHATSOEVER ARISING OUT OF OR IN ANY WAY RELATING TO THIS AGREEMENT OR
-          USER&apos;S USE OF OR INABILITY TO USE THE PRODUCTS, SERVICES AND INFORMATION, OR THE
-          PROVISION OR FAILURE TO PROVIDE SUPPORT SERVICES, INCLUDING, BUT NOT LIMITED TO, LOST
-          PROFITS, LOSS OF CONFIDENTIAL OR OTHER INFORMATION, BUSINESS INTERRUPTION, PERSONAL
-          INJURY, LOSS OF PRIVACY, FAILURE TO MEET ANY DUTY (INCLUDING OF GOOD FAITH OR REASONABLE
-          CARE), NEGLIGENCE, COSTS OF PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, OR ANY OTHER
-          CLAIM FOR PECUNIARY OR OTHER LOSS WHATSOEVER, OR FOR ANY CLAIM OR DEMAND AGAINST USER BY
-          ANY OTHER PARTY, EVEN IF AWAKENARTS.COM HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
-          DAMAGES. THESE LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE
-          OF ANY LIMITED REMEDY.
-        </p>
-
-        <p className="legal-page__body legal-page__body--caps">
-          NOTWITHSTANDING ANY DAMAGES USER MAY INCUR FOR ANY REASON WHATSOEVER (INCLUDING, WITHOUT
-          LIMITATION, ALL DAMAGES REFERENCED ABOVE AND ALL DIRECT OR GENERAL DAMAGES), THE ENTIRE
-          LIABILITY OF AWAKENARTS.COM AND ANY OF ITS SUPPLIERS UNDER ANY PROVISION OF THIS
-          AGREEMENT AND YOUR EXCLUSIVE REMEDY FOR ALL OF THE FOREGOING SHALL BE LIMITED TO THE
-          GREATER OF THE AMOUNT ACTUALLY PAID FOR THE PRODUCTS, SERVICES AND INFORMATION OR U.S.
-          $1. THE FOREGOING LIMITATIONS, EXCLUSIONS, AND DISCLAIMERS SHALL APPLY TO THE MAXIMUM
-          EXTENT PERMITTED BY APPLICABLE LAW, EVEN IF ANY REMEDY FAILS ITS ESSENTIAL PURPOSE.
-        </p>
-
+        <h2 className="legal-page__subheading">Personal Responsibility and Professional Assistance</h2>
         <p className="legal-page__body">
-          If any provision of this Agreement is declared invalid or unenforceable, the remaining
-          provisions of this Agreement will remain in effect. AwakenArts.com has the right to
-          modify these terms and conditions at any time.
+          Readers and participants remain responsible for their own choices, participation, and use
+          of the materials. Anyone who needs mental-health care, medical care, crisis assistance,
+          legal advice, financial advice, or another professional service should consult an
+          appropriately qualified and licensed provider. AwakenArts is not an emergency or crisis
+          service.
+        </p>
+
+        <h2 className="legal-page__subheading">External Resources</h2>
+        <p className="legal-page__body">
+          Links to third-party websites or services are provided for convenience or reference.
+          AwakenArts does not control and is not responsible for their content, availability,
+          privacy practices, terms, or services. A link does not necessarily constitute endorsement.
+        </p>
+
+        <h2 className="legal-page__subheading">Contact</h2>
+        <p className="legal-page__body">
+          Questions concerning this Disclaimer may be sent to{' '}
+          <a href="mailto:susan@shepler.us" className="legal-page__link">susan@shepler.us</a>.
         </p>
 
         <p className="legal-page__body legal-page__body--fine">
-          This disclaimer is protected under United States and foreign copyrights. The copying,
-          redistribution, use or publication by you, is strictly prohibited.
+          Effective date: July 15, 2026
         </p>
 
       </main>

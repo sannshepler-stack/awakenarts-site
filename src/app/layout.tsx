@@ -128,8 +128,18 @@ const jsonLd = {
         '@type': 'CollegeOrUniversity',
         name: 'Webster University',
       },
+      // Corrected 2026-07-15 per the AwakenArts Legal and Risk Standards
+      // package, Stage 1 item 3: the credential previously read "Master
+      // in Counseling Psychology — Spirituality and Play Therapy."
+      // "Play Therapy" is explicit clinical-modality language,
+      // prohibited under Section 6 of the standard regardless of
+      // context (the same phrase was already flagged and rejected on
+      // Susan's Instagram bio — see 06-External-Profile-Register.md).
+      // This field now states only the factual degree, per Section 5's
+      // credential standard: the master's degree may appear factually,
+      // but not framed as an active clinical-practice credential.
       hasCredential: [
-        'Master in Counseling Psychology — Spirituality and Play Therapy',
+        "Master's degree in Counseling",
         'Certified Transformative Language Artist',
         'Certified Journal Instructor',
       ],
@@ -139,7 +149,14 @@ const jsonLd = {
       '@id': `${SITE_URL}/#organization`,
       name: 'AwakenArts',
       url: SITE_URL,
-      logo: `${SITE_URL}/images/brand/logo.png`,
+      // Corrected 2026-07-15 per the AwakenArts Legal and Risk
+      // Standards package, Stage 1 item 7: this pointed at
+      // /images/brand/logo.png, a file dated Jul 12 — before the Jul
+      // 14 favicon/emblem identity system was locked as the approved
+      // standard (see brand-assets/README.md). That old file had no
+      // other reference anywhere in the codebase. Now points at the
+      // current approved square emblem export, live since approval.
+      logo: `${SITE_URL}/android-chrome-512x512.png`,
       founder: { '@id': `${SITE_URL}/#person` },
       description:
         'Concrete poetry and symbolic form — language given shape in the same literary mode Scripture itself uses: parable, image, and figure. By Susan Ann Shepler.',

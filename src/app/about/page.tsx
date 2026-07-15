@@ -144,15 +144,18 @@ export default function AboutPage() {
             </p>
 
             {/* 2026-06-30, per Susan's directive: the page's final
-                expression is two quiet, equally-weighted destinations —
-                not a "More About" section, not cards, no heading. The
-                visitor finishes the narrative, then is offered two
-                places to go next. Normal paragraph spacing only (no
-                large gap) so this reads as a continuation of the page,
-                not a new section. Foundation and Sketchbook are
-                deliberately given identical treatment — until the
-                Sketchbook existed, the Foundation link stood alone and
-                read as more prominent than intended. */}
+                expression is a quiet destination — not a "More About"
+                section, not cards, no heading. The visitor finishes the
+                narrative, then is offered a place to go next. Normal
+                paragraph spacing only (no large gap) so this reads as a
+                continuation of the page, not a new section.
+                2026-07-15, per the AwakenArts Legal and Risk Standards
+                package, Stage 1 item 6: the Sketchbook invitation
+                (originally added alongside Foundation with identical
+                treatment) is removed until that product area is ready
+                and approved for public navigation. The /sketchbook
+                route, its assets, and its robots.txt disallow entry are
+                untouched — only this inline invitation is removed. */}
             <div className="about-links">
               <p className="about-links__item">
                 <Link href="/foundation" className="text-link">
@@ -160,14 +163,6 @@ export default function AboutPage() {
                 </Link>
                 <span className="about-links__desc">
                   The literary and biblical foundations of the work.
-                </span>
-              </p>
-              <p className="about-links__item">
-                <Link href="/sketchbook" className="text-link">
-                  Visit the Artist&rsquo;s Sketchbook <span aria-hidden="true">→</span>
-                </Link>
-                <span className="about-links__desc">
-                  Original artwork by Susan Ann Shepler.
                 </span>
               </p>
             </div>

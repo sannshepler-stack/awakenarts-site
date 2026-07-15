@@ -39,6 +39,13 @@ const ABOUT_LINKS = [
   { label: 'Foundation', href: '/foundation' },
   { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Terms of Use', href: '/terms' },
+  // Added 2026-07-15 per the AwakenArts Legal and Risk Standards
+  // package, Stage 1 item 5: the footer must expose Disclaimer and
+  // Copyright/IP links alongside Privacy/Terms. Accessibility is not
+  // added yet — that page doesn't exist until Stage 2 (the standard's
+  // own rule: don't link a route with no approved content).
+  { label: 'Disclaimer', href: '/disclaimer' },
+  { label: 'Copyright', href: '/copyright' },
 ]
 
 export default function Footer() {
@@ -91,7 +98,11 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <span>© 2026 AwakenArts · awakenarts.com · All Rights Reserved</span>
-        <span>© Susan Ann Shepler · Confidential</span>
+        {/* "Confidential" removed 2026-07-15 per the AwakenArts Legal
+            and Risk Standards package, Stage 1 item 5 — a public
+            marketing footer isn't confidential material, and the word
+            has no legal meaning here. */}
+        <span>© Susan Ann Shepler, a Texas sole proprietor</span>
       </div>
     </footer>
   )
