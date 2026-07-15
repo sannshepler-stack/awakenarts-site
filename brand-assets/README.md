@@ -219,6 +219,23 @@ fill, is trimmed at the corners).
   down to 32px by 640px), left-aligned inside a container that shares
   `.hero`'s own max-width/centering. See `AwakenArts_Editorial_Identity_
   and_Design_Standard.md` Section 3 for the full placement note.
+- **Collection cover — clean rebuild, 2026-07-14.** The pale rectangular
+  residue band flagged earlier this same day (see Implementation Log) is
+  resolved: the cover's top zone was rebuilt clean (Compact Horizontal
+  logo + "The Collection" title only, on a fresh flat-cream field), saved
+  as `public/images/collection/collection-cover-clean.png`. The original
+  `collection-cover.jpg` is preserved, untouched, and no longer referenced
+  from the homepage.
+- **Method section leaf ornament, 2026-07-14 (placed, then revised same
+  day).** `awakenarts-leaf-pair.png` (see Section 7 note below) is no
+  longer just a "possible" decorative file — it is now live, once, on the
+  homepage Method section, as a small signature mark between the eyebrow
+  and the opening statement. Website derivative:
+  `public/images/brand/awakenarts-leaf-pair-trimmed.png`, alpha-trimmed to
+  the source's visible-ink bounding box only (no artwork alteration). The
+  source PNG in `brand-assets/` remains the untouched retained master.
+  This is still the only live decorative-emblem placement on the site —
+  see Section 7 note below for the two still-unused retained files.
 
 **Still open, not decided in this pass:**
 - The reader colophon (`EditionReaderSection.tsx`) still uses
@@ -265,12 +282,16 @@ fill, is trimmed at the corners).
   further action here unless a future directive asks for a
   small-bitmap-specific simplified glyph.
 - **Website decorative emblems (Section 7)** — `public/images/brand/ornaments/`
-  does not exist yet. The section lists "possible approved files"
-  (`awakenarts-a-emblem.svg`, `awakenarts-botanical-sprig.png`,
-  `awakenarts-leaf-pair.png`) rather than a firm requirement, so nothing was
-  built for it. Ready to produce from the same approved emblem master
-  whenever a specific placement (section transitions, quote markers, page
-  endings) is chosen.
+  still does not exist as a dedicated directory. Of the three files
+  originally listed as "possible approved files," one is now live:
+  `awakenarts-leaf-pair.png` was placed on the homepage Method section
+  2026-07-14 (see "Resolved" above) — its website derivative lives at
+  `public/images/brand/awakenarts-leaf-pair-trimmed.png`, not in an
+  `ornaments/` directory, since it has exactly one placement today.
+  `awakenarts-a-watermark.png` and `awakenarts-botanical-sprig.png` remain
+  unused and unplaced — still retained-library-only, ready to produce from
+  the same approved emblem master whenever a specific placement (section
+  transitions, quote markers, page endings) is chosen.
 - **Dark-background PNG export family — 2026-07-14, per "DARK FOOTER LOGO
   — REQUIRED CORRECTION" directive.** Susan required the footer to stop
   using a live SVG and instead use a dedicated transparent PNG rendered
