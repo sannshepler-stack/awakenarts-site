@@ -259,7 +259,7 @@ export default function HomePage() {
 
           <div className="home-coll-cover">
             <Image
-              src="/images/collection/collection-cover.jpg"
+              src="/images/collection/collection-cover-clean.png"
               alt="The Collection — the cover of AwakenArts' growing library of Figure Editions"
               width={1122}
               height={1402}
