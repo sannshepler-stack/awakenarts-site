@@ -344,18 +344,30 @@ a   { color: inherit; text-decoration: none; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 200;
+  background: var(--deep);
+  border-bottom: 1px solid rgba(201,168,76,.15);
+}
+/* 2026-07-14 "Header Container Alignment," per Susan: the navy bar
+   (.nav, above) stays a full-bleed edge-to-edge band, but its content
+   is now centered inside .nav-inner using the exact same max-width +
+   auto-margin centering as .hero's own content container (1500px), so
+   the logo's left edge lines up with the page's principal content
+   boundary at every viewport width — not a flat, viewport-relative
+   padding that drifts out of alignment once the viewport exceeds
+   .hero's max-width. Horizontal padding (2rem) is unchanged from
+   before; it's just applied to this centered box instead of the
+   full-width bar directly. */
+.nav-inner {
+  max-width: 1500px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   min-height: 72px; /* matches .hero margin-top — prevents cream strip when logo is hidden */
-  /* Horizontal padding matches .hero padding-left (2rem) so the
-     nav brand and the hero text share the same left edge. */
   padding: .4rem 2rem;
-  background: var(--deep);
-  border-bottom: 1px solid rgba(201,168,76,.15);
   transition: padding .3s;
 }
-.nav--scrolled { padding: .25rem 2rem; }
+.nav--scrolled .nav-inner { padding: .25rem 2rem; }
 
 /* Left: logo + tagline — persistent on all pages */
 .nav-left {
@@ -374,42 +386,38 @@ a   { color: inherit; text-decoration: none; }
   letter-spacing: 0.08em;
   color: #ffffff;
 }
-/* 2026-07-14 "Header Logo Correction," per Susan: the header now carries
-   the complete header logo instead of a text-only wordmark. Two on-navy
-   PNG assets (same production pipeline as the footer logo — outlined
-   SVG master, transparent background, no live-rendered text) swap by
-   breakpoint via plain CSS display toggling below, rather than one
-   asset being shrunk indefinitely. Both are fixed-height / width:auto
-   with no position, transform, or explicit width overrides, so the
-   image can only ever make the nav bar grow taller to fit it — it can
-   never overflow horizontally or clip against the viewport edge. */
+/* 2026-07-14 "Header Logo Correction," per Susan: the header carries the
+   compact/inline lockup (same on-navy, outlined-SVG-master, transparent
+   PNG production pipeline as the footer logo — no live-rendered text).
+   2026-07-14, same-day follow-up: originally swapped between a full
+   lockup (desktop) and this compact one (narrower widths), but the full
+   lockup's tagline read too small to be legible at header height — per
+   Susan, "use the inline logo created for this purpose without the
+   tagline." Now a single asset at every breakpoint, sized down by
+   height only. Fixed-height / width:auto with no position, transform,
+   or explicit width override, so the image can only ever make the nav
+   bar grow taller to fit it — it can never overflow horizontally or
+   clip against the viewport edge. */
 .nav-logo {
-  display: none;
-  height: 44px;
+  display: block;
+  height: 48px;
   width: auto;
   max-width: 100%;
   flex-shrink: 0;
 }
-/* Full lockup (emblem + wordmark + tagline) — desktop only, where there
-   is comfortable width to spare beside the nav links. */
-.nav-logo--full { display: block; }
 
 @media (max-width: 1024px) {
-  /* Compact lockup (no tagline) takes over here — an intentional swap
-     to a shorter, purpose-built asset rather than a shrunk full lockup,
-     so the mark stays crisp and legible as the nav links tighten up. */
-  .nav-logo--full { display: none; }
-  .nav-logo--compact { display: block; height: 40px; }
+  .nav-logo { height: 42px; }
 }
 @media (max-width: 768px) {
   /* Nav links have already moved to the fullscreen hamburger overlay by
-     this tier, so the compact mark is the only thing sharing the bar
-     with the toggle button — sized down slightly further for the
-     shorter 56px mobile nav, still with plenty of clearance. */
-  .nav-logo--compact { height: 34px; }
+     this tier, so the mark is the only thing sharing the bar with the
+     toggle button — sized down slightly further for the shorter 56px
+     mobile nav, still with plenty of clearance. */
+  .nav-logo { height: 36px; }
 }
 @media (max-width: 640px) {
-  .nav-logo--compact { height: 30px; }
+  .nav-logo { height: 32px; }
 }
 
 /* Center: all nav links, evenly spaced */
@@ -1152,10 +1160,12 @@ a   { color: inherit; text-decoration: none; }
      .poems-showcase-foundation's own padding-top) is consolidated
      into that single padding value instead, so "image/fade to
      quotation" has one source of truth — see .poems-showcase-
-     foundation below. Bottom margin (quotation -> "MATTHEW 13:34")
-     widened from 0.85rem (15.3px) to 37px, inside her requested
-     34-40px range. Responsive tiers in the media queries below. */
-  margin: 0 auto 37px;
+     foundation below.
+     2026-07-14 "Matthew Quote Section — Structural Spacing Fix,"
+     same day, per Susan: retuned to 39px, inside her revised
+     36-42px range for "quotation to Matthew citation" (was 37px,
+     already close). Responsive tiers in the media queries below. */
+  margin: 0 auto 39px;
   line-height: 1.45;
 }
 
@@ -1221,9 +1231,12 @@ a   { color: inherit; text-decoration: none; }
   font-style: normal;
   /* 2026-07-14 "Foundation Invitation — Vertical Spacing Correction,"
      per Susan: "MATTHEW 13:34" -> bridge line widened from 0.85rem
-     (15.3px) to 41px, inside her requested 38-44px range. Responsive
-     tiers in the media queries below. */
-  margin-bottom: 41px;
+     (15.3px) to 41px.
+     2026-07-14 "Matthew Quote Section — Structural Spacing Fix," same
+     day, per Susan: retuned to 43px, inside her revised 40-46px range
+     for "citation to supporting sentence." Responsive tiers in the
+     media queries below. */
+  margin-bottom: 43px;
 }
 
 /* The bridge line — "AwakenArts works within that same tradition."
@@ -1275,10 +1288,12 @@ a   { color: inherit; text-decoration: none; }
      Scripture -> Reflection -> Invitation — not a fourth line in the
      same close-set group.
      2026-07-14 "Foundation Invitation — Vertical Spacing Correction,"
-     per Susan: widened further from 2.5rem (45px) to 63px, inside her
-     requested 58-68px range for "supporting sentence to Foundation
-     link." Responsive tiers in the media queries below. */
-  margin: 63px 0 0;
+     per Susan: widened further from 2.5rem (45px) to 63px.
+     2026-07-14 "Matthew Quote Section — Structural Spacing Fix," same
+     day, per Susan: retuned to 52px, inside her revised 48-56px range
+     for "supporting sentence to Foundation link" (tighter than the
+     earlier pass). Responsive tiers in the media queries below. */
+  margin: 52px 0 0;
   transition: color 0.2s ease-out;
 }
 .hero-quote-closing:hover,
@@ -2026,7 +2041,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    padding tracks hero padding-left (1.5rem) at this breakpoint so
    the brand and hero text share the same left edge. */
 @media (max-width: 1024px) {
-  .nav { padding: .4rem 1.5rem; }
+  .nav-inner { padding: .4rem 1.5rem; }
   .nav-links { gap: 1.5rem; }
   .nav-links a { font-size: .76rem; letter-spacing: .10em; }
 }
@@ -2039,12 +2054,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      is never cream — every explicit section sets its own background */
   body { background: var(--deep); }
 
-  .nav {
+  .nav-inner {
     min-height: 56px; /* matches mobile hero margin-top */
     padding: .4rem 1.25rem; /* matches hero padding-left at this breakpoint */
     grid-template-columns: auto 1fr auto;
   }
-  .nav--scrolled { padding: .3rem 1.25rem; }
+  .nav--scrolled .nav-inner { padding: .3rem 1.25rem; }
   .nav-links {
     display: none;
     flex-direction: column;
@@ -2076,11 +2091,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 /* Mobile */
 @media (max-width: 640px) {
-  .nav {
+  .nav-inner {
     padding: .4rem 1rem; /* matches hero padding-left at this breakpoint */
     grid-template-columns: auto 1fr auto;
   }
-  .nav--scrolled { padding: .3rem 1rem; }
+  .nav--scrolled .nav-inner { padding: .3rem 1rem; }
   .gold-rule { padding: 2rem 1.5rem; }
   .tiles-section { padding: 3rem 1.5rem; }
   .tiles-grid { grid-template-columns: 1fr; }
@@ -4430,8 +4445,15 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      parchment) background, then reverted the same day per Susan —
      "do not add a color band between the queen ann section and the
      matthew quote section." Queen Ann Encounter and the Matthew 13:34
-     close stay one unbroken Warm ivory field, as before. */
-  padding: 5rem 0 var(--band-gap);
+     close stay one unbroken Warm ivory field, as before.
+     2026-07-14 "Matthew Quote Section — Structural Spacing Fix," per
+     Susan: bottom padding overridden from var(--band-gap) (108px) to a
+     fixed 96px, inside her explicit 88-104px range for "Foundation
+     link to bottom of quotation section." This is a deliberate,
+     Susan-directed exception scoped to this one selector only — the
+     shared --band-gap token itself is untouched and still governs
+     every other page's content-end -> Wayfinding Band gap. */
+  padding: 5rem 0 96px;
 }
 
 .poems-showcase-inner {
@@ -4722,15 +4744,19 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      parent .poems-showcase-section's Warm ivory, unbroken. */
   /* 2026-07-14 "Foundation Invitation — Vertical Spacing Correction":
      sole source of the "image/fade to quotation" gap now that
-     .hero-quote-text's own top margin has been removed — 104px, inside
-     Susan's requested 96-112px range. Also carries a small supplemental
-     padding-bottom (12px) stacked on top of the shared --band-gap token
-     (108px) to reach ~120px for "Foundation link to bottom of section"
-     (target 112-128px), without hand-tuning --band-gap itself, which is
-     documented sitewide as a single shared value. Responsive tiers
+     .hero-quote-text's own top margin has been removed. Originally set
+     to 104px, plus a supplemental padding-bottom stacked on the shared
+     --band-gap token for the trailing gap.
+     2026-07-14 "Matthew Quote Section — Structural Spacing Fix," same
+     day, per Susan (revised, tighter ranges): padding-top retuned to
+     80px, inside her revised 72-88px range for "end of image fade to
+     quotation." The padding-bottom supplement is removed entirely —
+     the trailing "Foundation link to bottom of section" gap (target
+     88-104px) is now supplied solely by .poems-showcase-section's own
+     padding-bottom (overridden there to a fixed 96px; see that rule
+     for why --band-gap itself isn't used directly). Responsive tiers
      below. */
-  padding-top: 104px;
-  padding-bottom: 12px;
+  padding-top: 80px;
 }
 .poems-showcase-foundation__inner {
   /* 2026-06-29: widened from 820px — this was the real bottleneck
@@ -4746,28 +4772,34 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 @media (max-width: 1024px) {
-  .poems-showcase-section { padding: 4rem 0 var(--band-gap-md); }
+  /* 2026-07-14 "Matthew Quote Section — Structural Spacing Fix": the
+     Foundation section's own bottom padding is overridden here too
+     (96px -> 80px), same fixed-value exception as the desktop rule
+     above — proportional to it, not derived from --band-gap-md, since
+     this section no longer uses the shared token at all. Every other
+     section on the page still uses var(--band-gap-md) as normal. */
+  .poems-showcase-section { padding: 4rem 0 80px; }
   .poems-showcase-inner { padding: 0 1.75rem; }
   .poems-showcase-intro { padding: 4rem 1.75rem; }
-  /* 2026-07-14 spacing correction: ~80% of desktop values, tablet tier */
-  .poems-showcase-foundation { padding-top: 84px; padding-bottom: 10px; }
+  /* ~80% of desktop values, tablet tier */
+  .poems-showcase-foundation { padding-top: 64px; }
   .poems-showcase-foundation__inner { padding: 0 1.75rem; }
-  .hero-quote-text { margin-bottom: 30px; }
-  .hero-quote-cite { margin-bottom: 33px; }
-  .hero-quote-closing { margin-top: 50px; }
+  .hero-quote-text { margin-bottom: 31px; }
+  .hero-quote-cite { margin-bottom: 34px; }
+  .hero-quote-closing { margin-top: 42px; }
 }
 @media (max-width: 640px) {
-  .poems-showcase-section { padding: 3rem 0 var(--band-gap-sm); }
+  .poems-showcase-section { padding: 3rem 0 64px; }
   .poems-showcase-inner { padding: 0 1.25rem; }
-  /* 2026-07-14 spacing correction: ~65% of desktop values, mobile tier —
-     keeps the four moments legible and separated without making the
-     section excessively tall on small screens. */
-  .poems-showcase-foundation { padding-top: 68px; padding-bottom: 8px; }
+  /* ~65% of desktop values, mobile tier — keeps the four moments
+     legible and separated without making the section excessively tall
+     on small screens. */
+  .poems-showcase-foundation { padding-top: 52px; }
   .poems-showcase-foundation__inner { padding: 0 1.25rem; }
   .poems-showcase-intro { padding: 3.5rem 1.25rem; }
-  .hero-quote-text { margin-bottom: 24px; }
-  .hero-quote-cite { margin-bottom: 27px; }
-  .hero-quote-closing { margin-top: 41px; }
+  .hero-quote-text { margin-bottom: 25px; }
+  .hero-quote-cite { margin-bottom: 28px; }
+  .hero-quote-closing { margin-top: 34px; }
 }
 
 /* ─────────────────────────────────────────────
