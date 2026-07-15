@@ -3,9 +3,19 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
-// Nav — text links only.
-// The logo lives in the homepage hero; it is deliberately not repeated here.
-// Keeping a small wordmark link on the left so there is still a way home.
+// Nav — persistent site header.
+// 2026-07-14 "Header Logo Correction," per Susan: the header now carries
+// the complete header logo (full horizontal lockup, on-navy transparent
+// PNG, same production pipeline as the footer logo — no live-rendered
+// text, no baked background). The homepage hero keeps its own separate,
+// larger logo lockup unchanged; this is scoped to the shared nav only.
+// Two pre-built assets swap by breakpoint via CSS (.nav-logo--full /
+// .nav-logo--compact below in globals.css) rather than shrinking one
+// asset indefinitely, so the mark stays legible instead of clipping:
+// full lockup (with tagline) above 1024px, compact lockup (no tagline)
+// at and below it. Both are fixed-height/auto-width with no absolute
+// positioning, negative margins, or transforms, so they can only ever
+// make the nav bar taller, never overflow it horizontally.
 
 // Gallery (formerly Poems) directive (2026-06-29): the Poems page is
 // renamed Gallery — quiet browsing and appreciation, not part of the
@@ -39,10 +49,29 @@ export default function Nav() {
   return (
     <nav className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
 
-      {/* Left: text home link only. No logo image. */}
+      {/* Left: complete header logo. Two pre-built on-navy PNGs swap by
+          breakpoint via CSS display rules (globals.css .nav-logo--full /
+          .nav-logo--compact) — full lockup above 1024px, compact (no
+          tagline) at and below it, so the mark stays legible instead of
+          shrinking indefinitely or clipping. */}
       <div className="nav-left">
         <Link href="/" onClick={close} aria-label="AwakenArts home" className="nav-brand">
-          <span className="nav-tagline">AwakenArts</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/brand/exports/AwakenArts-Logo-FullHorizontal-OnNavy-1024.png"
+            alt="AwakenArts"
+            className="nav-logo nav-logo--full"
+            width={1024}
+            height={217}
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/brand/exports/AwakenArts-Logo-CompactHorizontal-OnNavy-1024.png"
+            alt="AwakenArts"
+            className="nav-logo nav-logo--compact"
+            width={1024}
+            height={165}
+          />
         </Link>
       </div>
 
