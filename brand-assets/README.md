@@ -206,6 +206,12 @@ fill, is trimmed at the corners).
   (the unreduced stacked lockup).
 - **A emblem**: unchanged hand-drawn artwork, no wordmark.
 
+## `retired/`
+
+Non-approved, historical assets kept for reference only — never referenced by live site code, never used as a source for new derivatives.
+
+- `logo-pre-2026-07-14-rebuild.png` — moved here 2026-07-15 per the AwakenArts Legal and Risk Standards package (Stage 1 follow-up). Originally `public/images/brand/logo.png`, dated 2026-07-12 — before the 2026-07-14 favicon/emblem identity system was locked as the approved standard (see "Current State of Each Master" above). 800×817px RGBA. Confirmed by hash comparison: does not match any current approved export (`exports/`, `public/android-chrome-512x512.png`, `public/apple-touch-icon.png`, or `public/images/brand/og-logo.png`) — a distinct, superseded pre-rebuild file. Its only site reference was the JSON-LD `Organization.logo` field in `src/app/layout.tsx`, which now points at `android-chrome-512x512.png` instead (see that file's 2026-07-15 comment). Not deleted — preserved here as historical record, out of `public/` so it can no longer be served or referenced by mistake.
+
 ## Pending Decisions (updated 2026-07-14, closeout pass)
 
 **Resolved since this file was first written:**
