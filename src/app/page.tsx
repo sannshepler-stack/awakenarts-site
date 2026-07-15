@@ -175,24 +175,28 @@ export default function HomePage() {
 
         <div className="hero__media">
           <picture className="hero__picture">
+            {/* 2026-07-14 "Tablet / Small-Laptop Breakpoint Correction,"
+                per Susan: the hero now stacks into one (tall, portrait-
+                shaped) column at <=1080px, matching .hero__media's own
+                min-height in that state — the old "tablet" landscape
+                source (composed for the two-column layout that used to
+                persist down to 768px) would now sit inside a portrait-
+                shaped container and get cropped hard from the sides to
+                fill it, re-introducing the exact over-cropping problem
+                this correction removes. So the mobile portrait source's
+                breakpoint moves up to match the new stacking point
+                (1080px) and the tablet source is retired — below
+                1080px this is now, in full, the approved iPhone design:
+                same stacked layout, same portrait image. */}
             <source
-              media="(max-width: 640px)"
+              media="(max-width: 1080px)"
               srcSet="/images/brand/chess-ann-hero-mobile.jpg"
             />
-            <source
-              media="(max-width: 1024px)"
-              srcSet="/images/brand/chess-ann-hero-tablet.jpg"
-            />
-            {/* 2026-07-11 — Susan's brand-image swap, confirmed and
-                extended to all three breakpoints. Recolored to the
+            {/* 2026-07-11 — Susan's brand-image swap. Recolored to the
                 site's --deep navy (#1C2B3A) in her own edit
                 (Chess-Ann.jpg.png, full-res 3934x3269). Desktop cropped
                 to match .hero__media's actual rendered aspect (~1.3:1)
-                so object-fit: cover doesn't re-crop further. Tablet and
-                mobile crops were pixel-matched against the original
-                maroon crops (queen-ann-hero-tablet.jpg / -mobile.jpg) so
-                the King/Queen framing is identical to what was already
-                tuned — same crop boxes, applied to the new source. */}
+                so object-fit: cover doesn't re-crop further. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/brand/chess-ann-hero-desktop.jpg"

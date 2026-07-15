@@ -1156,16 +1156,23 @@ a   { color: inherit; text-decoration: none; }
      .poems-showcase-foundation__inner below, widened to match). */
   max-width: 1000px;
   /* 2026-07-14 "Foundation Invitation — Vertical Spacing Correction,"
-     per Susan: the old 70px top margin (stacked on top of
-     .poems-showcase-foundation's own padding-top) is consolidated
-     into that single padding value instead, so "image/fade to
-     quotation" has one source of truth — see .poems-showcase-
-     foundation below.
+     per Susan: the old 70px top margin was consolidated into
+     .poems-showcase-foundation's own padding-top, on the reasoning
+     that they were redundant.
      2026-07-14 "Matthew Quote Section — Structural Spacing Fix,"
-     same day, per Susan: retuned to 39px, inside her revised
-     36-42px range for "quotation to Matthew citation" (was 37px,
-     already close). Responsive tiers in the media queries below. */
-  margin: 0 auto 39px;
+     same day, per Susan: bottom margin retuned to 39px, inside her
+     revised 36-42px range for "quotation to Matthew citation."
+     2026-07-14, later same day, per Susan's actual-size correction:
+     that consolidation was a mistake — .poems-showcase-foundation's
+     padding-top sits ABOVE the AtmosphericHeader image (it's the gap
+     between the Queen Ann encounter and the start of the image), not
+     between the image's fade and this text. With no top margin here,
+     the real fade-to-quotation gap was reading as ~0px. Restored a
+     dedicated top margin of 56px, inside her requested 48-64px range
+     for "end of visible fade to quotation" — a new, separate gap
+     added on top of everything else, not a redistribution of any
+     existing spacing. Responsive tiers in the media queries below. */
+  margin: 56px auto 39px;
   line-height: 1.45;
 }
 
@@ -2037,19 +2044,28 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
 }
 
-/* Tablet — compress links before they overflow. Nav horizontal
-   padding tracks hero padding-left (1.5rem) at this breakpoint so
-   the brand and hero text share the same left edge. */
-@media (max-width: 1024px) {
-  .nav-inner { padding: .4rem 1.5rem; }
-  .nav-links { gap: 1.5rem; }
-  .nav-links a { font-size: .76rem; letter-spacing: .10em; }
-}
-
-/* Tablet small — collapse to hamburger. Nav tagline (the AWAKENARTS
-   wordmark) stays visible so the brand reads with authority on every
-   breakpoint, matching the hero criterion. */
-@media (max-width: 768px) {
+/* 2026-07-14 "Tablet / Small-Laptop Breakpoint Correction," per Susan:
+   the previous setup had the desktop nav (five inline links,
+   compressed slightly at <=1024px) persisting all the way down to
+   768px, while Hero's two-column layout also persisted un-stacked
+   down to 768px, tightening its columns and pulling the image further
+   left the narrower it got. In the dead zone between roughly 1024px
+   and 768px, that meant a shrinking two-column hero AND a still-full
+   desktop nav competing for the same narrow width — the exact
+   "neither desktop nor approved mobile" zone she flagged, with risk of
+   horizontal crowding/scrolling and over-aggressive image cropping as
+   object-fit: cover absorbed the shrinking column.
+   Fix: collapse to the approved compact/mobile nav and stacked hero at
+   the SAME breakpoint, moved up to 1080px (inside her requested
+   1024-1100px range), eliminating that in-between zone entirely. Above
+   1080px: exactly the existing, unchanged desktop design (this rule
+   and the "Laptop" translateX pull above are untouched). At and below
+   1080px: exactly the existing, unchanged approved mobile/hamburger
+   design (previously triggered at 768px) — just triggered earlier.
+   The old 1024px "compress links" tablet tier is removed entirely: it
+   only mattered while the desktop nav was still shown that narrow,
+   which no longer happens. */
+@media (max-width: 1080px) {
   /* Dark body background ensures the gap between fixed nav and hero
      is never cream — every explicit section sets its own background */
   body { background: var(--deep); }
@@ -2120,7 +2136,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    HERO RESPONSIVE — single unified section
 
    <picture> selects the variant per breakpoint (mobile 800×1000
-   portrait at <=640px, tablet 1200×900 at <=1024px, desktop
+   portrait at <=640px, tablet 1200×900 at <=1080px, desktop
    1600×1100 above). These rules tune grid gap, padding, type
    sizes, and the media column's max-width per breakpoint.
 ───────────────────────────────────────────── */
@@ -2134,48 +2150,27 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    for this narrower band (very common laptop widths — 1280px, 1366px,
    1440px browser windows all fall inside it). Still deliberately more
    conservative than desktop, since this band's columns are narrower
-   in absolute terms and there's less room to be wrong. */
+   in absolute terms and there's less room to be wrong.
+   2026-07-14 "Tablet / Small-Laptop Breakpoint Correction": this tier
+   now runs all the way down to Hero's stacking breakpoint (1080px, see
+   below) with no gap between them — the two-column layout keeps this
+   same -40px pull at every width where it still appears as two
+   columns, then stacks entirely rather than tightening further. */
 @media (max-width: 1450px) {
   .hero__media {
     transform: translateX(-40px);
   }
 }
 
-/* Tablet — tighten gap and padding. Text stays left-anchored; no
-   media cap so the figure keeps presence. */
-@media (max-width: 1024px) {
-  .hero {
-    /* 2026-06-29, second pass: tightened from 1.5rem to match the
-       desktop gutter's second reduction (now 0.85rem) — kept here as
-       its own value rather than just inheriting, since tablet's
-       narrower columns can absorb slightly less tightening. */
-    column-gap: 1rem;
-    padding: 2.75rem 1.5rem 4.5rem; /* extra bottom room, scaled down from desktop */
-  }
-  .hero__text {
-    max-width: 520px;
-    justify-self: start;
-  }
-  /* 2026-06-29: the desktop min-height (now 688px) scaled down for
-     the narrower tablet column, so the taller floor doesn't crop the
-     image more aggressively than the extra width can absorb. */
-  .hero__media {
-    min-height: 580px;
-    /* 2026-07-10, second pass: doubled from -10px to -20px, matching
-       the corrected reasoning applied to the other tiers above (real
-       reference point is where the mission copy's glyphs stop, not
-       the column's box width) — but kept more conservative than the
-       larger tiers, since Tablet's 520px text column and 1rem gap
-       leave the least absolute room of any non-stacked breakpoint to
-       be wrong. */
-    transform: translateX(-20px);
-  }
-}
-
-/* Mobile — stack into one column. Still one section, one shared
-   background. Gap between text and figure is small so they read as
-   one composed moment rather than two separate sections. */
-@media (max-width: 768px) {
+/* Stack into one column. Still one section, one shared background.
+   Gap between text and figure is small so they read as one composed
+   moment rather than two separate sections.
+   2026-07-14 "Tablet / Small-Laptop Breakpoint Correction," per Susan:
+   moved up from 768px to 1080px, so the hero stacks at the same width
+   the nav collapses to its compact/mobile form — see the NAV section
+   above for the full rationale. Everything inside this rule is
+   otherwise unchanged from the previously-approved mobile design. */
+@media (max-width: 1080px) {
   .hero {
     margin-top: 56px; /* matches the mobile nav height */
     grid-template-columns: 1fr;
@@ -4742,20 +4737,21 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      "do not add a color band between the queen ann section and the
      matthew quote section." No background of its own; inherits the
      parent .poems-showcase-section's Warm ivory, unbroken. */
-  /* 2026-07-14 "Foundation Invitation — Vertical Spacing Correction":
-     sole source of the "image/fade to quotation" gap now that
-     .hero-quote-text's own top margin has been removed. Originally set
-     to 104px, plus a supplemental padding-bottom stacked on the shared
-     --band-gap token for the trailing gap.
-     2026-07-14 "Matthew Quote Section — Structural Spacing Fix," same
-     day, per Susan (revised, tighter ranges): padding-top retuned to
-     80px, inside her revised 72-88px range for "end of image fade to
-     quotation." The padding-bottom supplement is removed entirely —
-     the trailing "Foundation link to bottom of section" gap (target
-     88-104px) is now supplied solely by .poems-showcase-section's own
-     padding-bottom (overridden there to a fixed 96px; see that rule
-     for why --band-gap itself isn't used directly). Responsive tiers
-     below. */
+  /* NOTE this padding-top sits ABOVE the AtmosphericHeader image below
+     (the image is this div's first child) — it's the gap between the
+     Queen Ann encounter above and the start of the image, NOT the gap
+     between the image's fade and the quotation text. It was mislabeled
+     as the "image/fade to quotation" gap through two earlier passes
+     (2026-07-14) before Susan caught the error at actual size — see
+     .hero-quote-text's own margin-top for the real fade-to-quotation
+     gap, which is a separate value on a different element entirely.
+     This padding-top's own value (80px) is otherwise untouched by that
+     correction; it was never the thing she was asking to change.
+     A supplemental padding-bottom that used to live here (for the
+     trailing gap) was removed 2026-07-14 — that gap is now supplied
+     solely by .poems-showcase-section's own padding-bottom (overridden
+     there to a fixed 96px; see that rule for why --band-gap itself
+     isn't used directly). Responsive tiers below. */
   padding-top: 80px;
 }
 .poems-showcase-foundation__inner {
@@ -4784,7 +4780,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   /* ~80% of desktop values, tablet tier */
   .poems-showcase-foundation { padding-top: 64px; }
   .poems-showcase-foundation__inner { padding: 0 1.75rem; }
-  .hero-quote-text { margin-bottom: 31px; }
+  /* margin-top is the fade-to-quotation gap (new, added 2026-07-14
+     actual-size correction); margin-bottom is the unrelated
+     quotation-to-citation gap and is untouched by that correction. */
+  .hero-quote-text { margin-top: 45px; margin-bottom: 31px; }
   .hero-quote-cite { margin-bottom: 34px; }
   .hero-quote-closing { margin-top: 42px; }
 }
@@ -4797,7 +4796,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .poems-showcase-foundation { padding-top: 52px; }
   .poems-showcase-foundation__inner { padding: 0 1.25rem; }
   .poems-showcase-intro { padding: 3.5rem 1.25rem; }
-  .hero-quote-text { margin-bottom: 25px; }
+  .hero-quote-text { margin-top: 36px; margin-bottom: 25px; }
   .hero-quote-cite { margin-bottom: 28px; }
   .hero-quote-closing { margin-top: 34px; }
 }
