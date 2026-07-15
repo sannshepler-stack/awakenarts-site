@@ -206,25 +206,34 @@ fill, is trimmed at the corners).
   (the unreduced stacked lockup).
 - **A emblem**: unchanged hand-drawn artwork, no wordmark.
 
-## Pending Decisions (not resolved by this organization pass)
+## Pending Decisions (updated 2026-07-14, closeout pass)
 
-- Footer, `/studio`, `/studio/silhouettes`, and `/quotes` currently show the
-  **full horizontal** lockup on navy (`AwakenArts-Logo-Horizontal-OnNavy.svg`,
-  with tagline). Per the approved placement map above, footers should use
-  the **compact** lockup instead. A matching on-navy compact asset
-  (`AwakenArts-Logo-Compact-Horizontal-OnNavy.svg`) has been built and
-  verified but **not wired in** — awaiting creative-director approval per
-  this directive's Section 5.
-- The reader colophon (`EditionReaderSection.tsx`) currently uses
+**Resolved since this file was first written:**
+- Footer, `/studio`, `/studio/silhouettes`, and `/quotes` now all use the
+  **compact horizontal** lockup on navy
+  (`exports/AwakenArts-Logo-CompactHorizontal-OnNavy-1024.png`), matching
+  the approved placement map above. No page still shows the full lockup on
+  a navy field.
+- The site's primary navigation bar (`Nav.tsx`) now carries the logo — the
+  same compact on-navy PNG, sized responsively (44px height at desktop,
+  down to 32px by 640px), left-aligned inside a container that shares
+  `.hero`'s own max-width/centering. See `AwakenArts_Editorial_Identity_
+  and_Design_Standard.md` Section 3 for the full placement note.
+
+**Still open, not decided in this pass:**
+- The reader colophon (`EditionReaderSection.tsx`) still uses
   `AwakenArts-Logo-Primary.svg` (unreduced). Whether to switch it to the
-  new `AwakenArts-Logo-Stacked-Colophon.svg` (reduced/re-centered emblem)
-  is likewise pending approval.
-- No logo currently appears in the site's primary navigation bar (`Nav.tsx`)
-  or on the `/sketchbook` page — adding one there is a placement decision,
-  not yet made.
+  purpose-built `AwakenArts-Logo-Stacked-Colophon.svg` (reduced/re-centered
+  emblem) remains pending approval.
+- The `/sketchbook` page still has no logo — adding one there is a
+  placement decision, not yet made.
 - "Contact sheets" has no corresponding page/component in this codebase
   today; the compact PNG/SVG exports are ready whenever that need arises
   (print or otherwise).
+- No decorative/watermark use of `AwakenArts-Emblem-A-Outlined.svg` exists
+  anywhere on the live site yet (favicon derivation only) — the "restrained
+  decorative branding" placement in the approved-arrangements table is
+  still unimplemented.
 - **Favicon/emblem identity system — APPROVED AND LOCKED, 2026-07-14.**
   Susan's own words: "the emblem now behaves as a genuine identity
   system — from browser favicon through mobile icon to large brand
