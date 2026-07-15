@@ -101,8 +101,10 @@ export default function Footer() {
         {/* "Confidential" removed 2026-07-15 per the AwakenArts Legal
             and Risk Standards package, Stage 1 item 5 — a public
             marketing footer isn't confidential material, and the word
-            has no legal meaning here. */}
-        <span>© Susan Ann Shepler, a Texas sole proprietor</span>
+            has no legal meaning here. Wording corrected same day, per
+            Susan's follow-up: full operator-identification sentence
+            rather than a second copyright-style line. */}
+        <span>AwakenArts is operated by Susan Ann Shepler, a Texas sole proprietor.</span>
       </div>
     </footer>
   )

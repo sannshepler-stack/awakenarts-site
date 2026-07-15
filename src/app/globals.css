@@ -3456,9 +3456,18 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 /* Fine-print / last-updated line */
+/* 2026-07-15, per Susan: --mist (#DDD8CF) against the page's --cream
+   background was too faint to read comfortably -- the effective-date
+   line on /copyright was the specific report, but this class is
+   shared by /copyright, /disclaimer, and /terms, so all three are
+   corrected by this one rule. Switched to --mid, the same color
+   already used for ordinary .legal-page__body copy on these same
+   pages -- proven legible, not a new untested value. Font-size and
+   spacing (smaller, extra top margin, to still read as a quiet
+   closing line rather than body text) are unchanged. */
 .legal-page__body--fine {
   font-size: 0.85rem;
-  color: var(--mist);
+  color: var(--mid);
   margin-top: 3rem;
 }
 

@@ -155,7 +155,7 @@ export default function SilhouettesPage() {
         </div>
         <div className="footer-bottom">
           <span>© 2026 AwakenArts · awakenarts.com · All Rights Reserved</span>
-          <span>© Susan Ann Shepler, a Texas sole proprietor</span>
+          <span>AwakenArts is operated by Susan Ann Shepler, a Texas sole proprietor.</span>
         </div>
       </footer>
     </>
