@@ -326,6 +326,23 @@ export default function HomePage() {
       <section className="home-method-section" aria-labelledby="home-method-heading">
         <div className="home-method-inner">
           <p className="eyebrow">The AwakenArts Method</p>
+          {/* 2026-07-14 "Method Leaf — Size and Placement Revision," per
+              Susan: moved from above the eyebrow to directly below it, as
+              a signature mark between the label and the opening statement
+              (eyebrow → leaf → statement). Decorative only — empty alt,
+              ignored by screen readers. Now uses a tightly alpha-trimmed
+              derivative (see globals.css .home-method-ornament) rather
+              than the raw square source, so the CSS margin below is the
+              actual visible gap with no transparent-padding offset math
+              needed. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/brand/awakenarts-leaf-pair-trimmed.png"
+            alt=""
+            className="home-method-ornament"
+            width={636}
+            height={738}
+          />
           <h2 id="home-method-heading">
             People tell their stories with facts.{' '}
             <em>They reveal their lives through images.</em>

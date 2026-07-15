@@ -4932,9 +4932,38 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 .home-method-inner .eyebrow {
   justify-content: center;
-  margin-bottom: 1.25rem;
+  /* 2026-07-14 "Method Leaf — Size and Placement Revision," per Susan:
+     this is now the title-to-leaf gap (requested 16-20px), not a
+     generic eyebrow-to-heading gap — the leaf sits directly beneath
+     the eyebrow now, not the h2. 18px = 1rem at this site's 18px root
+     font-size. */
+  margin-bottom: 18px;
 }
 .home-method-inner .eyebrow::before { display: none; }
+
+/* 2026-07-14 "Method Leaf — Size and Placement Revision," per Susan:
+   moved from above the eyebrow to directly below it (eyebrow → leaf →
+   opening statement). Still the approved transparent leaf-pair asset
+   (brand-assets/awakenarts-leaf-pair.png), used exactly as supplied —
+   not recolored, cropped, or retraced — but now referenced via a
+   tightly alpha-trimmed derivative
+   (public/images/brand/awakenarts-leaf-pair-trimmed.png, 636x738,
+   trimmed to the exact alpha-channel bounding box of the source, no
+   visible artwork removed). Because the trimmed canvas has no
+   meaningful transparent padding left, margin-bottom below is simply
+   the requested visible gap — no offset math needed this time. */
+.home-method-ornament {
+  display: block;
+  width: 36px;
+  height: auto;
+  margin: 0 auto 21px; /* leaf-to-statement gap, requested 18-24px */
+}
+@media (max-width: 640px) {
+  .home-method-ornament {
+    width: 30px;
+    margin: 0 auto 20px;
+  }
+}
 
 .home-method-inner h2 {
   /* Reduced-dominance opening statement — quieter than a standard H2
