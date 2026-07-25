@@ -167,8 +167,16 @@ export default function HomePage() {
               purpose. .hero-invitations remains a flex column built for
               N doorways; removing one required no layout change. */}
           <div className="hero-invitations">
-            <Link href="/encounters" className="hero-invitation__title">
-              Enter the Encounters
+            {/* 2026-07-25, per Susan's "AwakenArts Primer Housing Page"
+                revision directive: "Explore the Path" now leads to the
+                Digital Primer (/primer) first -- orientation before
+                experience. Was /encounters as of the same-day "Integrate
+                the AwakenArts Digital Primer" directive; that pathway now
+                runs Home -> Explore the Path -> Primer -> Encounters, with
+                the Primer's own closing section carrying the visitor on
+                to /encounters from there. */}
+            <Link href="/primer" className="hero-invitation__title">
+              Explore the Path
             </Link>
           </div>
         </div>
