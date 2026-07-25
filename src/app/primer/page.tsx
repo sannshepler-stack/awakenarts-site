@@ -85,7 +85,7 @@ export default function PrimerPage() {
 
         <section className="primer-actions">
           <a
-            href="/files/primer/AwakenArts_Method_Digital_Primer.pdf"
+            href="/files/primer/AwakenArts_Path_Digital_Primer.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="primer-actions__link"
@@ -93,8 +93,8 @@ export default function PrimerPage() {
             Read the Primer <span aria-hidden="true">↗</span>
           </a>
           <a
-            href="/files/primer/AwakenArts_Method_Digital_Primer.pdf"
-            download="AwakenArts_Method_Digital_Primer.pdf"
+            href="/files/primer/AwakenArts_Path_Digital_Primer.pdf"
+            download="AwakenArts_Path_Digital_Primer.pdf"
             className="primer-actions__link"
           >
             Download the Primer <span aria-hidden="true">↓</span>
