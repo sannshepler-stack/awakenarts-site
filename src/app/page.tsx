@@ -167,8 +167,26 @@ export default function HomePage() {
               purpose. .hero-invitations remains a flex column built for
               N doorways; removing one required no layout change. */}
           <div className="hero-invitations">
+            {/* 2026-07-25, per Susan's "Homepage Hero Refinement"
+                directive: back to two doorways, not three -- Browse the
+                Collection removed. The Hero presents the two ways a
+                first-time visitor enters the work (orientation vs.
+                direct experience); the Collection already has its own
+                dedicated section immediately below and remains that
+                section's own invitation, not the Hero's. Same treatment
+                as always for what remains: no teaser copy, no arrow
+                glyphs, a short title alone for each -- "the hero is an
+                opening, not a directory."
+                  - Explore the AwakenArts Path -> /primer (orientation,
+                    understand the work before entering it)
+                  - Experience the Encounters -> /encounters (deliberately
+                    unexplained -- "the phrase itself should create
+                    curiosity," per Susan) */}
+            <Link href="/primer" className="hero-invitation__title">
+              Explore the AwakenArts Path
+            </Link>
             <Link href="/encounters" className="hero-invitation__title">
-              Enter the Encounters
+              Experience the Encounters
             </Link>
           </div>
         </div>

@@ -24,7 +24,14 @@ import Link from 'next/link'
 // renamed Gallery — quiet browsing and appreciation, not part of the
 // marketing sequence. See AwakenArts_Publishing_Platform_Architecture.md.
 const links = [
-  { label: 'Encounters', href: '/encounters', cta: false },
+  // 2026-07-25, per Susan's "AwakenArts Primer Housing Page" revision
+  // directive: "Explore the Path" now leads to the Digital Primer first
+  // (orientation), not directly into Encounters (experience) -- the
+  // Primer's own closing section ("Begin the Encounter Sequence") carries
+  // the visitor onward from there. Encounters itself is untouched and
+  // reachable on its own; this only changes where the site's primary
+  // "Explore the Path" doorway leads.
+  { label: 'Explore the Path', href: '/primer', cta: false },
   { label: 'Collection', href: '/collection', cta: false },
   { label: 'Gallery',    href: '/gallery',    cta: false },
   { label: 'Journal',    href: '/journal',    cta: false },
