@@ -24,7 +24,11 @@ import Link from 'next/link'
 // renamed Gallery — quiet browsing and appreciation, not part of the
 // marketing sequence. See AwakenArts_Publishing_Platform_Architecture.md.
 const links = [
-  { label: 'Encounters', href: '/encounters', cta: false },
+  // 2026-07-25, per Susan: "Encounters" retired as the public name for
+  // this pathway -- nav label updated to "Explore the Path" (route stays
+  // /encounters for now, no restructuring). See AwakenArts Claude Directive
+  // -- Integrate the AwakenArts Digital Primer.
+  { label: 'Explore the Path', href: '/encounters', cta: false },
   { label: 'Collection', href: '/collection', cta: false },
   { label: 'Gallery',    href: '/gallery',    cta: false },
   { label: 'Journal',    href: '/journal',    cta: false },

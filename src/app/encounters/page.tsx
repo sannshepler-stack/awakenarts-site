@@ -88,6 +88,26 @@ export default function EncountersIndexPage() {
         </p>
       </div>
 
+      {/* ── Begin with the Digital Primer ──────────────────────────
+          2026-07-25, per Susan's "Integrate the AwakenArts Digital
+          Primer" directive: the Primer is the first substantial step
+          of this pathway, placed before the five atmospheric
+          Encounter movements below (which are unchanged). Read/
+          Download access is open and ungated on the dedicated /primer
+          page this links to -- no EmailGateDownload here or there. */}
+      <div className={styles.primerCard}>
+        <p className={styles.primerEyebrow}>Begin Here</p>
+        <h2 className={styles.primerTitle}>Begin with the Digital Primer</h2>
+        <p className={styles.primerKicker}>When Language Shapes a Path</p>
+        <p className={styles.primerCopy}>
+          An illustrated introduction to the symbolic language, images,
+          poetry, and reflective approach behind AwakenArts.
+        </p>
+        <Link href="/primer" className={styles.primerCta}>
+          Explore the Digital Primer <span aria-hidden="true">→</span>
+        </Link>
+      </div>
+
       <nav className={styles.grid} aria-label="Encounters">
         {ENCOUNTERS.map((e) => (
           <Link

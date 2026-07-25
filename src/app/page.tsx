@@ -167,8 +167,14 @@ export default function HomePage() {
               purpose. .hero-invitations remains a flex column built for
               N doorways; removing one required no layout change. */}
           <div className="hero-invitations">
+            {/* 2026-07-25, per Susan's "Integrate the AwakenArts Digital
+                Primer" directive: "Encounters" retired as the public name
+                for this pathway -- CTA copy reverted to "Explore the
+                Path" (still links to /encounters; the Digital Primer is
+                now the first substantial step reached from there, see
+                src/app/encounters/page.tsx). */}
             <Link href="/encounters" className="hero-invitation__title">
-              Enter the Encounters
+              Explore the Path
             </Link>
           </div>
         </div>

@@ -90,6 +90,90 @@
   margin: 0;
 }
 
+/* ── Begin with the Digital Primer ────────────────────────────────
+   2026-07-25, per Susan's "Integrate the AwakenArts Digital Primer"
+   directive: the Primer is the first substantial step on this
+   pathway (reached via the homepage's "Explore the Path" CTA), placed
+   before the five atmospheric Encounter movements below -- those stay
+   exactly as they are. Styled as a light card floating on the dark
+   .page background, matching the .journalCard pattern already
+   established further down this file, since both are "a gift sitting
+   on the dark field" moments; sized and positioned as the page's lead
+   content rather than an equal peer of that later card.
+   Read/Download access itself lives on the dedicated /primer page
+   (open, ungated -- see src/app/primer/page.tsx); this card's only
+   job is the introduction and the one CTA onward. */
+.primerCard {
+  background: var(--cream);
+  color: var(--deep);
+  max-width: 640px;
+  margin: 0 auto 4rem;
+  padding: 2.75rem 2.5rem;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+}
+
+.primerEyebrow {
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.75rem;
+}
+
+.primerTitle {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 400;
+  color: var(--deep);
+  margin: 0 0 0.4rem;
+}
+
+.primerKicker {
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--mid);
+  margin: 0 0 1.1rem;
+}
+
+.primerCopy {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--mid);
+  max-width: 480px;
+  margin: 0 auto 1.75rem;
+}
+
+.primerCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--deep);
+  padding: 0.95rem 2.1rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.primerCta:hover,
+.primerCta:focus-visible {
+  background: var(--gold);
+}
+
+@media (max-width: 640px) {
+  .primerCard {
+    margin-bottom: 3rem;
+    padding: 2rem 1.5rem;
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
