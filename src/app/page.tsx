@@ -141,12 +141,22 @@ export default function HomePage() {
               headline; now that it's the Hero's first line, it still
               reads correctly at this size — a deliberate quiet opening,
               not a second headline standing in for the first. */}
+          {/* 2026-07-25, per Susan's "Homepage Hero and Primer Closing
+              Revision" directive: opening statement retained verbatim
+              ("Every life tells its story in images."); the supporting
+              line beneath it is rewritten to state the visitor's
+              benefit plainly, rather than only describing what
+              AwakenArts is -- "recognition becomes language, and
+              language becomes a path forward." No other change to this
+              paragraph's markup, styling, or the hero otherwise. */}
           <p className="hero-mission">
             Every life tells its story in images.
             <br />
-            AwakenArts invites you to recognize the symbolic language
-            already present in your life through image, poem,
-            reflection, and conversation.
+            AwakenArts helps you recognize the symbolic language already
+            present in your life. Through image, poem, reflection, and
+            conversation, what once felt difficult to name begins to
+            take shape. Recognition becomes language, and language
+            becomes a path forward.
           </p>
 
           {/* Editorial Invitations — the hero's entry point(s) into

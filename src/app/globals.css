@@ -8027,7 +8027,13 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 .primer-hero__title {
   font-family: var(--serif);
-  font-size: clamp(2rem, 5vw, 3.4rem);
+  /* 2026-07-25, per Susan: reduced ~17.5% (2rem/5vw/3.4rem ->
+     1.65rem/4.1vw/2.8rem) so the heading no longer competes with the
+     publication cover below it. All three clamp tiers scaled by the
+     same factor, so the mobile floor drops proportionally with the
+     desktop cap -- typeface, weight, color, margin, wording,
+     alignment, and the subtitle beneath it are all untouched. */
+  font-size: clamp(1.65rem, 4.1vw, 2.8rem);
   font-weight: 400;
   color: var(--deep);
   margin: 0.75rem 0 0;
@@ -8078,81 +8084,87 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   padding: 1rem 2rem 5rem;
 }
 
-.primer-actions__link {
+/* ── Primer Action System ─────────────────────────────────────────────
+   2026-07-25, per Susan's "Primer Action System" refinement: Read the
+   Primer, Download the Primer, and Experience the Encounters previously
+   mixed two visual languages (large dark solid buttons vs. a delicate
+   gold underlined text link). Unified into one quieter shared style,
+   .primer-btn -- warm cream/pale-gold fill, thin gold-lt border, navy
+   text, no arrows, same corner radius and hover behavior across all
+   three. Hierarchy preserved through fill weight and width alone, not
+   through different visual languages:
+     - .primer-btn--primary   (Read the Primer)     -- pale gold tint
+     - .primer-btn--secondary (Download the Primer)  -- plain cream
+     - .primer-btn--quiet     (Experience the Encounters) -- same as
+       the two above, narrower padding, no distinguishing fill tint. */
+.primer-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--sans);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--cream);
-  background: var(--deep);
-  padding: 0.95rem 2rem;
+  color: var(--deep);
+  border: 1px solid var(--gold-lt);
   border-radius: 2px;
+  padding: 0.7rem 1.85rem;
   text-decoration: none;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
-.primer-actions__link:hover,
-.primer-actions__link:focus-visible {
-  background: var(--gold);
+.primer-btn:hover,
+.primer-btn:focus-visible {
+  background: var(--gold-lt);
+  border-color: var(--gold);
 }
 
-/* ── Begin the Encounter Sequence ─────────────────────────────────────
-   2026-07-25, per Susan's Revision Directive: the page's single closing
-   handoff, onward into Encounters -- replaces the earlier non-clickable
-   "Seek & Find -- Coming Soon" block. Quiet navy band, same treatment
-   as that earlier block, now carrying a real, clickable CTA since
-   Encounters is a real, live destination. */
-.primer-closing {
-  background: var(--navy-soft);
-  padding: 4rem 2rem;
+.primer-btn--primary {
+  background: rgba(201, 168, 76, 0.16);
+}
+
+.primer-btn--secondary {
+  background: var(--cream);
+}
+
+.primer-btn--quiet {
+  background: var(--cream);
+  padding: 0.6rem 1.5rem;
+}
+
+/* ── Primer Closing ───────────────────────────────────────────────────
+   2026-07-25, per Susan's "Homepage Hero and Primer Closing Revision"
+   directive: replaces the previous "Begin the Encounter Sequence" band
+   entirely -- no heading, no explanatory sentence, no arrow, no word
+   like "Continue," no reference to beginning or readiness. The
+   visitor has already begun by completing the Primer; this shouldn't
+   restart or overexplain the journey. The complete idea, per her own
+   framing: gold line -> pause -> Experience the Encounters.
+   2026-07-25, later the same day, per her "Primer Action System"
+   refinement: the link itself no longer uses .hero-invitation__title
+   (that treatment's underline created a double-rule effect stacked
+   under this section's own divider) -- now .primer-btn--quiet,
+   matching Read/Download's unified style, just narrower. */
+.primer-close {
+  padding: 1rem 2rem 4.5rem;
   text-align: center;
 }
 
-.primer-closing__title {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-style: italic;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  color: var(--cream);
-  margin: 0 0 1rem;
-}
-
-.primer-closing__body {
-  font-size: 0.98rem;
-  line-height: 1.65;
-  color: rgba(250, 247, 242, 0.82);
-  max-width: 460px;
-  margin: 0 auto 1.75rem;
-}
-
-.primer-closing__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--deep);
+.primer-close-divider {
+  width: 96px;
+  height: 1px;
   background: var(--gold);
-  padding: 1rem 2.25rem;
-  border-radius: 2px;
-  text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-.primer-closing__cta:hover,
-.primer-closing__cta:focus-visible {
-  background: var(--cream);
-  transform: translateY(-1px);
+  opacity: 0.4;
+  margin: 0 auto 2.75rem;
 }
 
 @media (max-width: 640px) {
   .primer-hero { padding: 5.5rem 1.5rem 2rem; }
   .primer-cover-section { padding: 0 1.25rem 2.5rem; }
   .primer-actions { padding: 0.5rem 1.5rem 3.5rem; flex-direction: column; align-items: center; }
-  .primer-actions__link { width: 100%; max-width: 320px; text-align: center; }
-  .primer-closing { padding: 3rem 1.5rem; }
+  .primer-btn--primary, .primer-btn--secondary { width: 100%; max-width: 320px; }
+  .primer-btn--quiet { width: 100%; max-width: 260px; }
+  .primer-close { padding: 0.5rem 1.5rem 3.5rem; }
 }
 
 /* ─────────────────────────────────────────────

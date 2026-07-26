@@ -32,9 +32,15 @@ export const metadata: Metadata = {
  *   - /primer is now reached directly: "Explore the Path" (Nav + the
  *     homepage hero CTA) links here first, not to /encounters. See
  *     src/components/Nav.tsx and src/app/page.tsx.
- *   - This page's own closing section now hands the visitor onward to
- *     Encounters ("Begin the Encounter Sequence"), completing the
- *     sequence itself: Home -> Explore the Path -> Primer -> Encounters.
+ *   - This page's own closing section hands the visitor onward to
+ *     Encounters, completing the sequence: Home -> Explore the Path ->
+ *     Primer -> Encounters. Revised again the same day per Susan's
+ *     "Homepage Hero and Primer Closing Revision": the closing is now
+ *     just a thin gold divider and a single quiet text link,
+ *     "Experience the Encounters" -- no heading, no explanatory
+ *     sentence, no filled button, no arrow, no "Begin the Encounter
+ *     Sequence" language. The visitor has already begun by completing
+ *     the Primer; the closing shouldn't restart or overexplain that.
  *   - Public title changed to "The AwakenArts Path / Poetry, Image, and
  *     the Practice of Recognition" -- explicitly not "The AwakenArts
  *     Method" (the source PDF's own internal title), per Susan's
@@ -49,7 +55,7 @@ export const metadata: Metadata = {
  * Structure still mirrors /editions/[slug] (hero eyebrow + title, cover
  * image, purpose copy, action row) rather than inventing new page
  * furniture -- see primer-hero / primer-cover / primer-about /
- * primer-actions / primer-closing in globals.css.
+ * primer-actions / primer-btn / primer-close in globals.css.
  *
  * Access: per Susan's explicit direction, both Read and Download are
  * open and ungated -- no EmailGateDownload. The Primer is the
@@ -92,40 +98,50 @@ export default function PrimerPage() {
           </p>
         </section>
 
+        {/* 2026-07-25, per Susan's "Primer Action System" refinement:
+            arrows removed, dark solid fill replaced with the shared
+            .primer-btn treatment (pale fill, thin gold-lt border, navy
+            text) -- Read keeps primary weight (--primary, pale gold
+            tint), Download reads as secondary (--secondary, plain
+            cream). Destinations/behavior (target, download attr)
+            unchanged. */}
         <section className="primer-actions">
           <a
             href="/files/primer/AwakenArts_Path_Digital_Primer.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="primer-actions__link"
+            className="primer-btn primer-btn--primary"
           >
-            Read the Primer <span aria-hidden="true">↗</span>
+            Read the Primer
           </a>
           <a
             href="/files/primer/AwakenArts_Path_Digital_Primer.pdf"
             download="AwakenArts_Path_Digital_Primer.pdf"
-            className="primer-actions__link"
+            className="primer-btn primer-btn--secondary"
           >
-            Download the Primer <span aria-hidden="true">↓</span>
+            Download the Primer
           </a>
         </section>
 
-        {/* ── Begin the Encounter Sequence ──────────────────────────
-            2026-07-25, per Susan's Revision Directive: the page's one
-            closing handoff, onward into Encounters -- replaces the
-            earlier non-clickable "Seek & Find -- Coming Soon" block,
-            since this page's sequence now ends at Encounters, not Seek
-            & Find (which remains a separate destination -- "sustained
-            practice" -- not chained after the Primer). A single
-            purpose per element: one closing invitation, not two. */}
-        <section className="primer-closing">
-          <h2 className="primer-closing__title">Ready to begin?</h2>
-          <p className="primer-closing__body">
-            Continue into the Encounter Sequence, where image, language,
-            reflection, and Scripture unfold through five movements.
-          </p>
-          <Link href="/encounters" className="primer-closing__cta">
-            Begin the Encounter Sequence <span aria-hidden="true">→</span>
+        {/* ── Primer Closing ────────────────────────────────────────
+            2026-07-25, per Susan's "Homepage Hero and Primer Closing
+            Revision" directive: no heading, no explanatory sentence, no
+            arrow, no reference to an "Encounter Sequence" or to
+            beginning/readiness -- the visitor has already begun by
+            completing the Primer. The complete closing idea, per her
+            own framing: gold line -> pause -> Experience the
+            Encounters.
+            2026-07-25, later the same day, per her "Primer Action
+            System" refinement: the link now uses .primer-btn--quiet
+            (the same unified style as Read/Download, just narrower)
+            instead of .hero-invitation__title -- that treatment's own
+            underline stacked with this section's divider into a double-
+            rule effect; removed in favor of one consistent action
+            language across all three. */}
+        <section className="primer-close">
+          <div className="primer-close-divider" aria-hidden="true" />
+          <Link href="/encounters" className="primer-btn primer-btn--quiet">
+            Experience the Encounters
           </Link>
         </section>
       </main>
