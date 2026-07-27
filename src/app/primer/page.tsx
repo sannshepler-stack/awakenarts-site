@@ -69,7 +69,7 @@ export default function PrimerPage() {
 
       <main className="primer-page">
         <section className="primer-hero">
-          <p className="eyebrow primer-hero__eyebrow">The Digital Primer</p>
+          <p className="eyebrow primer-hero__eyebrow">An Introduction to AwakenArts</p>
           <h1 className="primer-hero__title">The AwakenArts Path</h1>
           <p className="primer-hero__subtitle">
             Poetry, Image, and the Practice of Recognition
@@ -100,24 +100,31 @@ export default function PrimerPage() {
 
         {/* 2026-07-25, per Susan's "Primer Action System" refinement:
             arrows removed, dark solid fill replaced with the shared
-            .primer-btn treatment (pale fill, thin gold-lt border, navy
-            text) -- Read keeps primary weight (--primary, pale gold
-            tint), Download reads as secondary (--secondary, plain
-            cream). Destinations/behavior (target, download attr)
-            unchanged. */}
+            .primer-btn treatment -- Read and Download share one
+            outlined style, differing only in destination. Destinations/
+            behavior (target, download attr) unchanged.
+            2026-07-26, per Susan's "consistent gold-outline system"
+            directive: .primer-btn--primary / --secondary (which added
+            pale-gold-tint and plain-cream background fills on top of
+            the shared style) are removed -- both buttons now render
+            identically via bare .primer-btn (transparent background,
+            gold border and text, pale gold hover only, no navy/brown
+            fill in any state). Hierarchy was never meant to live in
+            fill color; width alone still distinguishes .primer-btn from
+            the narrower .primer-btn--quiet used below. */}
         <section className="primer-actions">
           <a
             href="/files/primer/AwakenArts_Path_Digital_Primer.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="primer-btn primer-btn--primary"
+            className="primer-btn"
           >
             Read the Primer
           </a>
           <a
             href="/files/primer/AwakenArts_Path_Digital_Primer.pdf"
             download="AwakenArts_Path_Digital_Primer.pdf"
-            className="primer-btn primer-btn--secondary"
+            className="primer-btn"
           >
             Download the Primer
           </a>
@@ -137,7 +144,13 @@ export default function PrimerPage() {
             instead of .hero-invitation__title -- that treatment's own
             underline stacked with this section's divider into a double-
             rule effect; removed in favor of one consistent action
-            language across all three. */}
+            language across all three.
+            2026-07-26, per Susan's navigation-ecosystem directive: this
+            CTA is retained verbatim -- "after learning the language and
+            framework of AwakenArts, the natural next step is to enter
+            the Encounters." Encounters now carries the reciprocal
+            invitation back to The Path in its own closing section (see
+            src/app/encounters/page.tsx). */}
         <section className="primer-close">
           <div className="primer-close-divider" aria-hidden="true" />
           <Link href="/encounters" className="primer-btn primer-btn--quiet">

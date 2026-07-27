@@ -12,18 +12,10 @@ import styles from './WayfindingBand.module.css'
  * section of a page and before the site footer, full width, never
  * folded into the footer markup itself.
  *
- * Contains ONLY the primary site navigation:
- *   Home · Encounters · Collection · Poems · Journal · About
  * No icons, no buttons, no explanatory copy, no secondary/contextual
  * navigation (the earlier per-Encounter prev/next row was removed in
  * this directive — visitors always return to the complete AwakenArts
  * navigation rather than being locked into a linear sequence).
- *
- * Home was added 2026-06-25 per the "Global Page Architecture
- * Standard" directive. The header Nav omits a literal "Home" link
- * because its wordmark already links home — but the band has no logo,
- * so Home is listed explicitly here as one of the places a visitor may
- * want to continue.
  *
  * Single reusable component, referenced identically by every page —
  * future changes to links, typography, or spacing happen once, here.
@@ -32,14 +24,35 @@ import styles from './WayfindingBand.module.css'
  * it belongs to the page content above the band, per the standing
  * design principle "reflection belongs to the work, navigation belongs
  * to the website."
- */
+ *
+ * 2026-07-26, per Susan's "Footer Navigation Update" directive: this
+ * band (her "bottom navigation") is brought into alignment with the
+ * current top Nav (src/components/Nav.tsx) rather than carrying its
+ * own separate roster --
+ *   Home · Encounters · Collection · Gallery · Journal · About
+ *   -> The Path · Collections · Gallery · Journals · About
+ * Home is removed (the header Nav's own reasoning for including Home
+ * here -- "the wordmark already links home, so Home is listed
+ * explicitly" -- no longer matches her stated goal that "the top and
+ * bottom navigation should present the same site architecture"; the
+ * top Nav has never carried a literal Home link, so the band no longer
+ * does either). Encounters is removed -- not part of top Nav (it's
+ * reached downstream, via The Path/Primer and Path of Recognition, not
+ * as its own primary nav destination). "Collection" -> "Collections"
+ * and "Journal" -> "Journals" are label-only changes, per her explicit
+ * spec -- the destinations are unchanged (/collection, /journal, the
+ * same routes top Nav's "Collection"/"Journal" links use); only this
+ * band's own wording pluralizes them. Order and routes otherwise match
+ * top Nav exactly: The Path (/primer), Collections (/collection),
+ * Gallery (/gallery), Journals (/journal), About (/about). No styling,
+ * spacing, typography, or hover behavior changed -- WayfindingBand.
+ * module.css is untouched; this is a data-only change. */
 
 const PRIMARY_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'Encounters', href: '/encounters' },
-  { label: 'Collection', href: '/collection' },
+  { label: 'The Path', href: '/primer' },
+  { label: 'Collections', href: '/collection' },
   { label: 'Gallery', href: '/gallery' },
-  { label: 'Journal', href: '/journal' },
+  { label: 'Journals', href: '/journal' },
   { label: 'About', href: '/about' },
 ]
 

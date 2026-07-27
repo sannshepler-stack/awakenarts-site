@@ -38,34 +38,37 @@ export const metadata: Metadata = {
  * the explanation — "These editions are beautiful, I want to open one"
  * comes first. The Banner and Editions run back-to-back as one visual
  * unit (gallery wall, then the product itself); The Works then gives a
- * textual breather before A Path of Recognition's graphic explains the
- * method; Language closes the page as a separate dark beat.
+ * textual breather before the page closes on its own CTA.
  *
  * Visual hierarchy, three tiers:
  *   1. Collection Banner   — the body of work (gallery wall)
  *   2. Edition Preview Sheets — the internal structure of each edition
  *   3. Individual Figure Pages (/editions/[slug]) — the detailed encounter
  *
- * Page structure (revised 2026-06-26, sixth pass):
+ * Page structure (revised 2026-07-26, per Susan's "Architectural Update —
+ * A Path of Recognition" directive):
  *   1. Collection — hero + banner, the visual introduction
  *   2. Current Editions — the product, encountered right after the
  *      Banner. Large, two rows of three, premium-publication
  *      presentation, data-driven (src/data/editions.ts)
  *   3. The Works are the Foundation (dark field) — the textual breather
- *      between the Editions and Recognition graphics; also carries a
- *      condensed "How the Collection is Used" tag list (previously its
- *      own cream section, eliminated as redundant) and no longer links
- *      to a non-existent /studio route
- *   4. A Path of Recognition — the method: "how do these editions
- *      work?" — follows the breather, before interest fades
- *   5. CTA: Enter Encounters — placed right after the Recognition
- *      graphic while that encounter-style imagery is still fresh
- *   6. Language (dark field) — "Works. Language. Method. Resources." —
+ *      after the Editions; also carries a condensed "How the Collection
+ *      is Used" tag list (previously its own cream section, eliminated
+ *      as redundant) and no longer links to a non-existent /studio route
+ *   4. CTA: Enter Encounters — the page's closing invitation
+ *   5. Language (dark field) — "Works. Language. Method. Resources." —
  *      the page's closing beat
  *
+ * 2026-07-26: step 4 used to be "A Path of Recognition," a numbered
+ * five-step graphic explaining "how do these editions work?", with the
+ * Enter Encounters CTA riding its visual wake. That graphic is retired
+ * site-wide per Susan's directive — replaced by a new image-forward
+ * section on the homepage (see src/app/page.tsx) — so this page no
+ * longer duplicates it; Enter Encounters now follows The Works directly.
+ *
  * Dark/light rhythm: cream (Hero, Banner, Editions) → dark (Works) →
- * cream (Recognition, CTA) → dark (Language) — alternating beats rather
- * than one long graphic run or one long text run.
+ * cream (CTA) → dark (Language) — alternating beats rather than one
+ * long graphic run or one long text run.
  */
 
 export default function CollectionPage() {
@@ -215,39 +218,19 @@ export default function CollectionPage() {
           </div>
         </section>
 
-        {/* 5 ── A PATH OF RECOGNITION ────────────────────────────────
-            Explanatory: answers "how do these editions work?" — after
-            the editions have made their impression and the Works
-            breather has given the page a moment of relief.
-        ──────────────────────────────────────────────────────────── */}
-        <section className="col-recognition" aria-labelledby="col-recognition-heading">
-          <div className="col-recognition__inner">
-            <div className="col-recognition__header">
-              <p className="eyebrow">How the Editions Work</p>
-              <h2 id="col-recognition-heading">A Path of Recognition</h2>
-            </div>
-            {/* 2026-06-27: swapped recognition-sample.png -> recognition-revision.png
-                (Susan's revised crop). The revision drops the image's own
-                embedded "A PATH OF RECOGNITION" title bar and bottom footer
-                strip, which duplicated the heading already rendered above
-                in .col-recognition__header — the revised crop is just the
-                five steps themselves. */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/collection/recognition-revision.png"
-              alt="A Path of Recognition — five steps: Longing, Recognition, The Figure, The Word, The Path — the journey through which the Collection is experienced"
-              className="col-recognition__img"
-              loading="lazy"
-            />
-          </div>
-        </section>
+        {/* 2026-07-26, per Susan's "Architectural Update — A Path of
+            Recognition" directive: the numbered five-step graphic that
+            used to sit here (section 5, "A Path of Recognition") is
+            retired site-wide, replaced by a new image-forward section
+            on the homepage (see src/app/page.tsx, "A PATH OF
+            RECOGNITION"). This page no longer duplicates that content —
+            per her design principle, each page contributes something
+            unique rather than repeating the same material. */}
 
         {/* 6 ── CTA: ENTER ENCOUNTERS ────────────────────────────────
-            Follows A Path of Recognition directly — the Recognition
-            graphic (Longing, Recognition, The Figure, The Word, The
-            Path) has just built interest in encounter-style imagery,
-            so the invitation to enter Encounters lands here rather
-            than waiting until after the closing dark passage below.
+            2026-07-26: previously followed A Path of Recognition
+            directly; now follows The Works directly, since that section
+            is gone. Kept as this page's own closing invitation.
         ──────────────────────────────────────────────────────────── */}
         <section className="col-archive-cta">
           <Link href="/encounters" className="col-archive-cta__link">

@@ -181,6 +181,35 @@
      AwakenArts_Site_Architecture.md -> "Vertical Rhythm Standard" for
      the full history if this is ever reconsidered. */
 
+  /* AwakenArts Typography Standard — Cormorant Roman vs Italic (locked
+     2026-07-26, per Susan's "Hero & Typography Standards" directive).
+     Cormorant Garamond is expressive and calligraphic by design; set
+     across a full paragraph, especially in gold, it reads as texture
+     rather than hierarchy — "the eye starts seeing texture instead of
+     hierarchy," her words, prompted by the homepage Hero mission line
+     (see .hero-mission / .hero-mission__lede / __body below) running
+     entirely in italic/gold before this pass.
+
+     Cormorant Roman — use for:
+       page titles, section titles, introductory paragraphs, primary
+       reading text (body prose, explanatory copy).
+
+     Cormorant Italic — reserve for:
+       brief thematic statements (one line, not a paragraph), poetic
+       lines, quotations, subtitles, intentional emphasis.
+
+     Do not italicize full explanatory paragraphs. When a passage
+     mixes a short thematic opener with a longer explanatory sentence
+     (the Hero mission line is the reference case), split them: the
+     opener may stay italic, the explanation should not.
+
+     This is a style rule, independent of size — pair it with the size
+     tokens below (a role's *size* and its *Roman-vs-italic* choice are
+     two separate decisions, both locked here, neither invented per
+     page). AwakenArts should read "like a beautifully designed book";
+     hierarchy comes from restraint, spacing, weight, and placement —
+     not from an increasing number of type treatments. */
+
   /* AwakenArts Global Design System (locked 2026-06-25). One locked
      value per typographic role, shared by every primary page. Color
      stays contextual (navy on cream, cream/white on dark) — only
@@ -251,10 +280,53 @@
      --link-size.
      2026-06-29: the teaser tokens (--invitation-teaser-size/-line) were
      removed here — the hero invitations no longer carry a teaser line
-     beneath them per Susan's "not explanatory text" note — leaving only
-     the title token, still in use. */
-  --invitation-title-size: clamp(1.35rem, 2.2vw, 1.55rem);
-  --invitation-title-weight: 400;
+     beneath them per Susan's "not explanatory text" note.
+     2026-07-26: the title token was removed when its only consumer,
+     .hero-invitation__title, was retired per Susan's "Hero CTA
+     refinement" directive -- then, later the same day, reinstated: the
+     role didn't go away, it just got a new consumer (.hero-invitation
+     __label, "The Path" / "Experience the Encounters"), which had been
+     given its own one-off clamp() instead of referencing this token.
+     Flagged by Susan's "AwakenArts Typography System" directive —
+     shared roles reference shared tokens, not local overrides, even
+     when a role's markup/class name changes.
+     2026-07-26, later still, per her "Hero & Typography Standards"
+     directive: size reduced again, slightly, "so it feels like a
+     refined invitation rather than a heading" (her words from the
+     prior pass, reaffirmed). Roman (not italic) and Deep navy by
+     default -- both already true, no change needed to style/color,
+     only size. A dedicated subtitle token was added below for the
+     supporting line beneath this title -- previously styled off
+     --label-size (a small-caps navigation role), given its own
+     dedicated role per her explicit spec: Cormorant Italic, warm
+     gold, sentence case, no tracking -- "should feel literary rather
+     than navigational," not a caption or a nav label.
+     2026-07-26, one more pass, per her "Hero Invitation" refinement:
+     that dedicated token (--invitation-subtitle-size) is retired in
+     favor of --editorial-italic-size, below -- see that token's own
+     comment. The subtitle line ("An Introduction to AwakenArts") now
+     shares its exact size with the Hero's opening thematic statement
+     ("Every life tells its story in images.") rather than running a
+     visually-similar-but-separately-tuned value: "the distinction
+     between title and subtitle should come from typography and
+     placement, not from making the subtitle noticeably smaller." */
+  --invitation-title-size: clamp(1.2rem, 1.9vw, 1.6rem);
+  --invitation-title-weight: 500;
+
+  /* Cormorant Italic thematic statement / literary subtitle — ONE
+     shared size for every short italic line the site uses as a
+     thematic statement or literary subtitle, per Susan's "Editorial
+     Standard" (2026-07-26): "When Cormorant Italic is used as a
+     thematic statement or literary subtitle, maintain a consistent
+     size throughout the site unless there is a specific reason to
+     establish a different hierarchy." This value is .hero-mission's
+     own font-size (the Hero's opening statement, "Every life tells
+     its story in images.") -- previously a local clamp() on that rule
+     alone -- promoted to a shared token so every other consumer
+     (starting with .hero-invitation__subtitle, "An Introduction to
+     AwakenArts") reads at the identical point size by construction,
+     not by two separately-tuned values that happen to match today. */
+  --editorial-italic-size: clamp(1.05rem, 1.5vw, 1.2rem);
 
   /* Text Width Standard — three widths; no page invents a fourth.
      Narrow: quotes, journal prompts, centered statements.
@@ -555,12 +627,24 @@ a   { color: inherit; text-decoration: none; }
      readable on every breakpoint. */
   background: #f5f0e8;
   margin-top: 72px; /* clears the fixed nav */
-  padding-top: 2.75rem;
+  /* 2026-07-26, per Susan ("the amount of white space may or may not
+     be best for the hero content"): now that align-items: center
+     evens out the top/bottom margin around the text column, the total
+     amount of that margin read as excessive -- padding-top trimmed
+     ~27% (2.75rem -> 2rem) and padding-bottom ~25% (6rem -> 4.5rem,
+     see that value's own history just below) alongside a smaller
+     .hero__media (below), so the whole hero reads tighter without
+     losing the deliberate breathing room the padding-bottom value was
+     originally set to provide. */
+  padding-top: 2rem;
   /* 2026-06-28, per Susan: the Collection section (navy, hard cut)
      arrived before the hero had "finished speaking." +52px of cream
      breathing room below the hero gives the hard color transition
-     room to land as a deliberate beat rather than an abrupt cut. */
-  padding-bottom: 6rem;
+     room to land as a deliberate beat rather than an abrupt cut.
+     2026-07-26: trimmed further (6rem -> 4.5rem) as part of the same
+     "reduce the whitespace" pass above -- still a real, deliberate gap
+     before the hard navy cut into Collection, just a smaller one. */
+  padding-bottom: 4.5rem;
   padding-left: 2rem;
   padding-right: 1rem; /* reduced so the image can reach nearer the right edge */
   display: grid;
@@ -578,9 +662,23 @@ a   { color: inherit; text-decoration: none; }
      image column beyond a small, controlled amount. */
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.2fr);
   /* column-gap cut ~18% (0.85rem -> 0.7rem, first pass). max-width and
-     padding are untouched. */
-  column-gap: 0.7rem;
-  align-items: stretch;
+     padding are untouched.
+     2026-07-26, per Susan ("center content in vertical space... balance
+     content by centering vertically"): align-items switched from
+     stretch to center. The row's height is still governed by whichever
+     column is taller (almost always .hero__media, via its own
+     min-height floor -- see that rule) -- this property only changes
+     how the SHORTER column is positioned within that height. Previously
+     that job was delegated to a per-item override
+     (.hero__text { align-self: center }), which should have produced
+     the same result but wasn't reading as centered on review --
+     centering at the container level is the more direct, single-
+     source-of-truth mechanism, so it now governs both columns
+     uniformly rather than one item overriding a stretch default.
+     .hero__media is unaffected either way: as the taller item, its own
+     natural height already equals the row's height, so stretch and
+     center produce an identical box for it. */
+  align-items: center;
   max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
@@ -590,12 +688,15 @@ a   { color: inherit; text-decoration: none; }
    Hard-anchored to the LEFT edge of its grid cell (justify-self: start)
    so the text block does not drift toward the center of a wide column.
    max-width controls readable line length and prevents the text block
-   from expanding across the cell. */
+   from expanding across the cell.
+   2026-07-26: the per-item align-self: center override that used to
+   live here is removed -- .hero now centers both columns at the
+   container level (see align-items above), so this column no longer
+   needs its own override. */
 .hero__text {
   text-align: left;
   max-width: 580px;
   justify-self: start;
-  align-self: center; /* vertically center text within the stretched row */
   margin-top: 0;
 }
 
@@ -635,21 +736,32 @@ a   { color: inherit; text-decoration: none; }
 .hero__media {
   width: 100%;
   /* 2026-06-29, per Susan ("elongate the hero image rather than
-     flatten its height"): raised from 420px. This is a floor, not a
-     fixed height — align-items: stretch on .hero still lets the row
-     grow taller if the text column ever needs more room — but it now
-     guarantees the image reads as tall/dominant on its own, instead
-     of being squeezed down to match a short text column. object-fit:
-     cover absorbs the extra height by cropping a bit more off the
-     sides (object-position keeps the queen figure in frame), which
-     is the desired effect, not a side effect.
+     flatten its height"): raised from 420px. This was a floor, not a
+     fixed height — object-fit: cover absorbed extra height by
+     cropping a bit more off the sides (object-position keeps the
+     queen figure in frame), which was the desired effect, not a side
+     effect.
      2026-07-10 "Tighten Homepage Hero Layout," per Susan: trimmed
      ~5.5% (688px -> 650px) — "slightly reduce the size of the artwork
      if necessary to achieve better visual balance." object-fit: cover
-     and object-position are untouched, so the crop framing and the
-     artwork's own proportions are exactly as before, just at a
-     slightly smaller scale — no distortion, no re-crop. */
-  min-height: 650px;
+     and object-position were untouched, so the crop framing and the
+     artwork's own proportions stayed exactly as before, just at a
+     slightly smaller scale — no distortion, no re-crop.
+     2026-07-26, per Susan ("the padding and the min height, without
+     squeezing the image -- if reducing it, reduce the whole image,
+     not just squeeze it into a different shape"): min-height is
+     replaced with max-width + aspect-ratio. min-height alone would
+     have shortened the box at the same ~843px rendered width —
+     object-fit: cover would then crop MORE off the top/bottom to fill
+     that shorter shape, changing which part of the artwork shows, the
+     literal "squeeze into a different shape" she flagged. aspect-ratio
+     (843/650, this box's own actual rendered proportions before this
+     change) locks width and height together, so capping max-width
+     (~15% down, 843px -> 720px) shrinks both dimensions in lockstep —
+     the same crop and composition, just smaller, exactly like scaling
+     a photograph down rather than re-cropping it. */
+  max-width: 720px;
+  aspect-ratio: 843 / 650;
   overflow: hidden;
   justify-self: end;
   /* 2026-06-29, third pass, per Susan: "moving the artwork 10-20px
@@ -727,7 +839,20 @@ a   { color: inherit; text-decoration: none; }
 
 /* Mission line — sits between the headline and the body paragraph,
    restating the AwakenArts USP in the gold register used for mission
-   statements elsewhere on the site (see .lib-preview-mission). */
+   statements elsewhere on the site (see .lib-preview-mission).
+   2026-07-26, per Susan's "Cormorant Usage" typography standard: the
+   whole two-sentence line used to run in italic/gold together, which
+   read as "visually ornate... the eye starts seeing texture instead
+   of hierarchy" once the second, longer explanatory sentence was
+   included. Split per her own worked example: the short opening
+   statement (.hero-mission__lede) is the "one-line thematic
+   statement" role and keeps italic/gold; the longer explanatory
+   sentence (.hero-mission__body) is "introductory paragraph / body
+   prose" and switches to roman. Color follows the same logic, not
+   just style — long-form gold text is already flagged elsewhere in
+   this file's own Atmosphere System notes ("avoid... gold for long
+   body text"), so the body half also moves to Deep navy, matching
+   ordinary reading-text color, rather than staying gold in roman. */
 .hero-mission {
   /* Gold/italic subtitle — Global Design System (locked 2026-06-25).
      2026-07-10 "Hero Typography Refinement," per Susan: the title must
@@ -739,17 +864,33 @@ a   { color: inherit; text-decoration: none; }
      reads as a quiet, discoverable invitation rather than a second
      headline. line-height keeps referencing --subtitle-line — a
      unitless ratio, so "generous line spacing" is preserved even at
-     the smaller size, per her explicit note not to lose that. */
+     the smaller size, per her explicit note not to lose that.
+     2026-07-26, per Susan's "Hero Invitation" refinement: this rule's
+     own local clamp() is now the canonical definition of
+     --editorial-italic-size (see :root) -- the one shared size for
+     every Cormorant Italic thematic statement/literary subtitle on
+     the site, referenced by var() here so this line and any other
+     consumer (starting with .hero-invitation__subtitle) can never
+     drift apart. No visual change to this rule; the value is
+     identical, just named and shared now. */
   font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-size: var(--editorial-italic-size);
   line-height: var(--subtitle-line);
-  color: var(--gold);
   /* 2026-07-07, per Susan: reduced from 1.25rem — component-specific
      spacing, not the shared token — as part of pulling the hero's
      text block into a tighter, less bulky unit against the image. */
   margin: 0 0 0.85rem;
   max-width: 46ch;
+}
+
+.hero-mission__lede {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-mission__body {
+  font-style: normal;
+  color: var(--deep);
 }
 
 .hero-sub {
@@ -781,54 +922,147 @@ a   { color: inherit; text-decoration: none; }
    directive; see page.tsx homepage comment block for the current
    six-movement structure. */
 
-/* Editorial Invitations — the hero's primary entry points
-   (locked 2026-06-28). Stacked, generously spaced, each an
-   independent doorway rather than a row of links.
+/* Editorial Invitations — the hero's primary entry point
+   (locked 2026-06-28, extensively revised since).
 
    2026-06-29, per Susan: reduced to the doorway links alone — no
-   teaser copy, no arrow glyph ("not explanatory text, no arrows"). With
-   the teaser removed, gap is pulled back from 2.25rem to 1.5rem so the
-   short lines still read as a deliberate set rather than stray links
-   with too much air between them.
+   teaser copy, no arrow glyph.
 
-   2026-07-25, per Susan's "Homepage Navigation Refinement" directive:
-   briefly three doorways (Explore the AwakenArts Path / Experience the
-   Encounters / Browse the Collection), then pared back to two the same
-   day per her "Homepage Hero Refinement" follow-up — Browse the
-   Collection removed; the Collection already has its own dedicated
-   section immediately below and shouldn't be a Hero doorway too. The
-   Hero now presents just the two ways a first-time visitor enters the
-   work (orientation vs. direct experience): "the hero is an opening,
-   not a directory." Same rule as 2026-06-29 still applies: no teaser
-   copy, no arrows, short titles only. */
+   2026-07-25/26: went from one CTA, to three, to two boxed two-line
+   doorway cards (.primer-btn.hero-doorway at the time — since retired;
+   /encounters' own reciprocal closing is now a single-line
+   .home-coll-cta.home-coll-cta--light-surface button, same as
+   "Experience the Encounters" — see encounters/page.tsx).
+
+   2026-07-26, per Susan's "Hero CTA refinement" directive: back to a
+   single doorway, and the boxed/bordered treatment is retired from the
+   Hero specifically — "no border, no box, no gold frame... the
+   typography, not a button, should invite the visitor to continue."
+   .hero-invitation is pure typography: navy at rest (not gold), a
+   larger serif name line over a smaller quiet subtitle, an animated
+   underline and a shift to gold only on hover, generous surrounding
+   whitespace. The old single-line .hero-invitation__title (gold at
+   rest, permanent underline, navy on hover — functionally the inverse
+   of what's wanted now) is removed; nothing else referenced it.
+   2026-07-26, later still the same day, per her "CTA Refinement"
+   directive: (1) .hero-invitation__label's size is reduced slightly
+   (clamp 1.55–2.05rem -> 1.35–1.8rem) so it reads as "a refined
+   invitation rather than a heading" — subtitle untouched, per her
+   explicit "keep the subtitle as is." (2) This is now a shared,
+   site-wide "one consistent invitation language," not Hero-only:
+   PathOfRecognition's own closing CTA (src/components/
+   PathOfRecognition.tsx) reuses .hero-invitation / __label for
+   "Experience the Encounters" (no subtitle there — see that
+   component's own comment), replacing its former framed
+   .primer-btn--quiet button. Any future change here affects both.
+   2026-07-26, later still, per her "AwakenArts Typography System"
+   directive: .hero-invitation__label/__subtitle's sizes were wired to
+   reference tokens (--invitation-title-size and, at that point,
+   --label-size/-weight/-tracking) instead of local clamp()/values —
+   tokens over invented values, the point of that pass.
+   2026-07-26, one more pass the same day, per her "Hero & Typography
+   Standards" directive: that --label-size mapping for the subtitle
+   turned out to be the wrong role. "An Introduction to AwakenArts" is
+   now Cormorant Italic / Warm gold / sentence case / no tracking — a
+   literary line, not a nav label — via its own new token,
+   --invitation-subtitle-size (see :root). Color is fixed gold, not
+   inherited, so it no longer participates in the hover transition;
+   the underline effect that transition used to drive is removed with
+   it. .hero-invitation__label's own navy-to-gold shift (via color:
+   inherit + .hero-invitation:hover) is now the invitation's one
+   hover cue, on the title line alone. Title size also reduced once
+   more, per her explicit request. See .hero-invitation__label /
+   __subtitle's own rules, just below, for the current CSS. */
 .hero-invitations {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  /* 2026-07-07, per Susan: reduced from 2.5rem as part of tightening
-     the hero text block's overall height, so it sits more comfortably
-     alongside the image rather than reading as a tall, loose stack. */
-  margin: 1.85rem 0 0;
+  /* 2026-07-26: margin increased (1.85rem -> 3rem) per Susan's
+     "generous whitespace around the link so it stands on its own" --
+     now framing a single quiet invitation rather than a stacked pair,
+     it can afford more air above it than the old two-doorway gap did. */
+  margin: 3rem 0 0;
 }
 
-.hero-invitation__title {
+.hero-invitation {
   display: inline-block;
+  text-decoration: none;
+  color: var(--deep);
+  transition: color 0.3s ease;
+}
+
+/* .hero-invitation__eyebrow — retired 2026-07-26. Briefly added a small
+   uppercase gold "EXPLORE" line above the title per Susan's "Hero Path
+   Invitation" directive, then removed the same day ("Explore not
+   needed now") -- back to a single line. Nothing else used this
+   class, so the rule is removed rather than kept as unused dead code;
+   see .hero-invitation__label below for the current single-line CSS. */
+
+.hero-invitation__label {
+  /* AwakenArts Typography System (2026-07-26): references
+     --invitation-title-size/-weight rather than a local clamp — see
+     the token's own comment in :root for why this role's token exists
+     and was reinstated. Roman (no font-style set), color: inherit so
+     it carries the parent's navy-at-rest / gold-on-hover transition —
+     this line is the invitation's one interactive element. */
+  display: block;
   font-family: var(--serif);
   font-size: var(--invitation-title-size);
   font-weight: var(--invitation-title-weight);
-  color: var(--gold);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(201, 168, 76, 0.55);
-  padding-bottom: .25rem;
-  transition: color .25s ease-out, border-color .25s ease-out;
+  letter-spacing: 0.01em;
+  color: inherit;
+  margin: 0;
 }
-.hero-invitation__title:hover {
-  color: var(--deep);
-  border-bottom-color: var(--gold);
+
+/* 2026-07-26, per Susan: the arrow added after the title read too
+   harsh at the title's own full navy/gold strength and weight (500).
+   Color still inherits the title's navy-at-rest/gold-on-hover state
+   (currentColor, so it shifts with the same hover transition, no
+   separate transition needed) -- only weight and opacity are toned
+   down, so it reads as a quiet directional mark, not a second bold
+   word sitting next to "The AwakenArts Path." */
+.hero-invitation__arrow {
+  font-weight: 400;
+  opacity: 0.55;
+}
+
+.hero-invitation__subtitle {
+  /* AwakenArts Typography System (2026-07-26), per Susan's "Hero &
+     Typography Standards" directive: rebuilt from the small-caps
+     .hero-invitation__subtitle used through the previous few passes
+     (sans, uppercase, --label-tracking) to Cormorant Italic, sentence
+     case, no tracking, fixed Warm gold — "should feel literary rather
+     than navigational," explicitly not this site's nav-label register.
+     Color is a fixed var(--gold), not color: inherit -- this line
+     doesn't participate in the label's navy-to-gold hover transition,
+     it's already at that tone; the animated underline used in earlier
+     passes is removed with it; the label's own color shift is now the
+     invitation's sole hover cue.
+     2026-07-26, per Susan's "Hero Invitation" refinement: font-size
+     switched from the retired --invitation-subtitle-size (its own,
+     smaller, separately-tuned clamp) to --editorial-italic-size — the
+     exact point size of the Hero's opening thematic statement, "Every
+     life tells its story in images." Per her "Editorial Standard,"
+     every Cormorant Italic thematic statement/literary subtitle
+     shares one size site-wide unless a hierarchy reason says
+     otherwise; "The Path" / "An Introduction to AwakenArts" should now
+     read as balanced title-and-subtitle typography and placement, not
+     a small caption under a heading. */
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--editorial-italic-size);
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--gold);
+}
+
+.hero-invitation:hover {
+  color: var(--gold);
 }
 
 @media (max-width: 640px) {
-  .hero-invitations { gap: 1.25rem; margin-top: 2rem; }
+  .hero-invitations { margin-top: 2.5rem; }
 }
 
 
@@ -1244,10 +1478,21 @@ a   { color: inherit; text-decoration: none; }
    (verse -> citation), binding all three into a single close-set
    group before the CTA's own, more generous separation. */
 .hero-quote-cite {
+  /* 2026-07-26, per Susan's "Editorial Refinement — Recognition
+     Section & Shared Section Pattern" directive: font-size/weight/
+     letter-spacing switched from a one-off clamp() + 0.08em/400 pair
+     to var(--label-size/-weight/-tracking) — the same caption/label
+     tokens every other small uppercase tag on the site already uses
+     (.home-recognition__label, eyebrows, nav). "MATTHEW 13:34" plays
+     exactly that role here (a citation label under a quotation), so it
+     now reads with the site's one label voice instead of its own
+     invented scale. Color, text-align, and the margin-bottom spacing
+     value below are untouched — those were tuned to this section's own
+     reading rhythm, not the label's typographic identity. */
   font-family: var(--sans);
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
-  font-weight: 400;
-  letter-spacing: 0.08em;
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
   text-transform: uppercase;
   color: var(--gold);
   text-align: center;
@@ -2218,6 +2463,21 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .hero__media {
     justify-self: center;
     max-width: 560px;
+    /* 2026-07-26: the desktop rule's aspect-ratio (843/650, ~1.3:1
+       landscape) must NOT carry down to this breakpoint -- the
+       <picture> element swaps to a genuinely different, portrait-
+       cropped source image here (chess-ann-hero-mobile.jpg, see
+       page.tsx), not just a CSS-resized version of the desktop crop.
+       Forcing that portrait photo into a landscape-shaped box would
+       crop it hard from the top/bottom -- exactly the "squeeze into a
+       different shape" problem Susan flagged for desktop, just
+       reintroduced here instead. Resetting to aspect-ratio: auto and
+       restoring the original min-height: 650px floor reproduces this
+       breakpoint's previous, unchanged behavior: a portrait-shaped
+       column sized by the portrait image's own natural proportions,
+       not the desktop image's ratio. */
+    aspect-ratio: auto;
+    min-height: 650px;
     /* Reset the desktop/tablet leftward nudge — the layout stacks
        into one column here, so shifting the image left no longer
        makes sense (and would just push it toward the edge). */
@@ -4772,7 +5032,38 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    to the panel's full width (its own __inner wrapper re-centers the
    quote text at a readable measure). Reuses the existing
    .hero-quote-text/cite/body/closing tokens — see HERO QUOTE TEXT
-   TOKENS above. */
+   TOKENS above.
+
+   2026-07-26, per Susan's "Editorial Refinement — Recognition Section
+   & Shared Section Pattern" directive (see .home-recognition, "AwakenArts
+   Editorial Section Pattern," for the full model this is reviewed
+   against): reading order here is statement (.hero-quote-text, the
+   verse) -> label (.hero-quote-cite, the citation) -> paragraph
+   (.hero-quote-body, the bridge line) -> CTA (.hero-quote-closing),
+   with the AtmosphericHeader image ahead of all four. That image is
+   deliberately NOT reordered to the end to match Path of Recognition's
+   statement -> paragraph -> CTA -> images sequence: it is a full-bleed
+   atmospheric threshold the section fades out of (see its own comment,
+   "the encounter resolves directly into it"), not a gallery of
+   supporting images following an invitation — a different role than
+   the five-image grid this pattern was written for, so it keeps its
+   place at the head of the section. The four text elements' own
+   internal order and tight-then-generous spacing rhythm (verse/
+   citation/body held close as "one thought," then a wider gap before
+   the CTA) already match the model's shape. Typography was brought
+   into token compliance where a role was a clean match — see
+   .hero-quote-cite, switched to the shared --label-size/-weight/
+   -tracking tokens. .hero-quote-text/-body keep their own hand-tuned
+   clamp() scales rather than the generic --subtitle-size/--body-size
+   tokens: the same documented exception already established for
+   .hero-mission (decoupled from --subtitle-size so it doesn't compete
+   with the Hero title) applies here — this quotation and its bridge
+   line were purpose-tuned across several rounds directly with Susan
+   (see "Foundation Section Refinement," "Foundation Invitation —
+   Vertical Spacing Correction," "Matthew Quote Section — Structural
+   Spacing Fix" above) to read as a quiet closing meditation, not a
+   standard editorial paragraph: a role-appropriate variant, not an
+   invented one-off. Content (all copy) is unchanged. */
 .poems-showcase-foundation {
   /* 2026-07-14, AwakenArts Atmosphere System: briefly given its own
      Soft Light (pale parchment) background to distinguish it from the
@@ -4914,185 +5205,296 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    REUSABLE UTILITIES — homepage sections
 ───────────────────────────────────────────── */
 
-/* ── HOMEPAGE: THE AWAKENARTS METHOD ─────────────────────────────────────
-   Added 2026-07-10, per Susan's "establish the AwakenArts Method as the
-   conceptual center of the public website" directive. Originally sat
-   immediately after the Hero; moved after the Collection section the
-   same day per her "Homepage Refinement — Production Pass"
-   clarification (Discovery before Understanding) — see page.tsx for
-   the current position and full rationale. Answers "what is happening
-   here?", the question Discovery naturally raises.
+/* 2026-07-26, per Susan's "Repurpose the Existing Introductory Section"
+   directive: the .home-method-* rules that used to live here (eyebrow,
+   leaf ornament, quiet italic statement, body copy, framed CTA into
+   /method) are removed — that section's slot on the page (after
+   Collection) now renders PathOfRecognition instead; see page.tsx and
+   "HOMEPAGE: A PATH OF RECOGNITION" below. /method itself is untouched
+   and still live, just no longer linked from here. */
 
-   Quiet and text-only by design: no image, no mention of workshops or
-   Sketchbook. Per the directive, the emphasis is symbolic attention —
-   noticing an image and staying with it — not symbolic interpretation
-   (see AwakenArts_Editorial_Philosophy.md's recognition-over-
-   interpretation principle).
+/* ── AWAKENARTS EDITORIAL SECTION PATTERN (locked 2026-07-26) ───────────
+   Per Susan's "Editorial Refinement — Recognition Section & Shared
+   Section Pattern" directive: A Path of Recognition (below) is the
+   reference model for how an editorial section on this site reads,
+   top to bottom:
 
-   2026-07-10 refinement, same day: reduced the opening statement's
-   typographic dominance so the section reads as a thoughtful pause,
-   not a second headline moment. h2 drops from the standard --h2-size
-   (used for real section titles like "The Collection") to a smaller,
-   italic, quote-like scale — modeled on .hero-quote-text, the site's
-   existing "quiet threshold" pattern, rather than inventing a new one.
-   The former two body paragraphs are combined into one continuous
-   paragraph, closing on a CTA into the now-live standalone Method
-   page (.home-method-cta, originally a non-linking placeholder before
-   /method existed — see page.tsx's comment for that history).
+     1. Section title           (--h2-size/-weight, roman)
+     2. Optional statement(s)   (--subtitle-size/-line — the "lead
+                                 statement / introductory quotation"
+                                 tier; short lines may be Cormorant
+                                 Italic per the Cormorant Usage standard)
+     3. Editorial paragraph     (--body-size/-line, roman prose)
+     4. Invitation / CTA        (present only when the section has a
+                                 next step to offer -- either the
+                                 shared typographic .hero-invitation,
+                                 or the shared boxed .home-coll-cta
+                                 button, per how much visual weight the
+                                 section wants its CTA to carry. Either
+                                 way, reuse the existing component; do
+                                 not invent a third CTA treatment.)
+     5. Visual content          (images, grids — the affirmation of
+                                 what the copy above just invited, not
+                                 a barrier ahead of it)
 
-   Background matches .hero's raw #f5f0e8 exactly (not var(--cream),
-   which is a slightly lighter/pinker panel tone used for elevated
-   cards elsewhere) so the Method section reads as a continuation of
-   the same quiet cream field the Queen Ann section (below it) also
-   uses — the one hard color cut on the page remains the Collection
-   section's navy field, immediately before this section.
-─────────────────────────────────────────────────────────────────────────── */
-.home-method-section {
-  /* Soft Light atmosphere (2026-07-14, AwakenArts Atmosphere System):
-     was #f5f0e8, the same one-off value as .hero directly above it —
-     indistinguishable from the Hero's own Light atmosphere, so the
-     "return to light" after the navy Collection section read as a
-     repeat rather than a new movement. Pale parchment marks Method as
-     its own distinct, quieter beat -- fitting, since this section is
-     already written and typeset as a deliberate pause (see the
-     section's own opening comment in page.tsx). Body copy
-     (.home-method-body) already uses var(--mid) / Soft ink, so no
-     text-color change was needed here. */
-  background: var(--parchment);
-  /* 2026-07-10 "AwakenArts Method CTA" refinement, per Susan: bottom
-     padding reduced (7rem -> 5rem) so the section doesn't leave the
-     CTA sitting in an oversized void before the Queen Ann band below
-     — the CTA should read as this section's own confident conclusion,
-     not something floating between two sections. */
-  padding: 6rem 2rem 5rem;
+   Do not change this sequence per section, and do not invent new
+   font sizes for a section's title/statement/paragraph tiers — use
+   the tokens above, the same ones the Hero and Path of Recognition
+   already reference. Sections may have a documented, role-justified
+   exception to a token (see .hero-mission's own decoupling from
+   --subtitle-size, or the Matthew 13 section's review below), but
+   consistency is the default, variation the exception, not the other
+   way around.
+
+   Applied 2026-07-26 to the Matthew 13:34 / Foundation section (see
+   "3. Matthew 13:34" below, in the POEMS / EDITIONS SHOWCASE block)
+   as the pattern's first reuse elsewhere on the homepage.
+
+   2026-07-26, per Susan's "Visual Balance & Compositional Refinement"
+   directive: Path of Recognition's own CTA (below) moved from
+   .hero-invitation to .home-coll-cta -- a boxed button reads with more
+   visual weight/definition than the quiet typographic invitation,
+   which was contributing to the section's "too much text before any
+   image" top-heaviness. The typography/statement/paragraph tiers
+   above this CTA were tightened, and the gap between this CTA and the
+   five-image sequence was widened, moving the section's center of
+   gravity down toward the imagery -- see .home-recognition__header h2,
+   .home-recognition__statement, and .home-recognition__cta below. */
+
+/* ── HOMEPAGE: A PATH OF RECOGNITION ─────────────────────────────────────
+   2026-07-26, per Susan's "Architectural Update — A Path of Recognition"
+   directive: new homepage-only section, originally placed immediately
+   after the Hero, before the Collection. Replaces the old single-image
+   numbered graphic (recognition-revision.png) that used to live on
+   /collection and /encounters -- both removed the same pass. Component
+   lives at src/components/PathOfRecognition.tsx.
+   2026-07-26, later the same day, per her "Consolidate and Refine"
+   directive: the eyebrow ("The Shape of the Journey") is removed —
+   one title only, no secondary heading. A two-line navy/gold statement
+   and a short, centered, restrained-width paragraph now sit beneath
+   the title, ahead of the five-image sequence, carrying the section's
+   conceptual introduction so the images don't have to (each card is
+   now image + title only — no descriptive line, no gold diamond
+   divider, no hairline rule beneath it; .home-recognition__divider,
+   __line, and __sub from the first pass are removed as no longer
+   used). The closing CTA is unchanged: .primer-close-divider /
+   .primer-btn.primer-btn--quiet, verbatim from /primer's own closing.
+   2026-07-26, later still the same day, per her "Repurpose the
+   Existing Introductory Section" directive: repositioned again, this
+   time into the slot the old "AwakenArts Method" section used to
+   occupy (after Collection, before the Queen Ann band) rather than
+   sitting right after the Hero — see page.tsx. Susan asked that the
+   two sections (Method's language, this section's imagery) merge into
+   one continuous piece rather than stay separate and repeat the same
+   opening line. No property changes needed here: .home-recognition's
+   own cream background and border-top already read correctly right
+   after Collection's navy field, the same way Method's did before it. */
+.home-recognition {
+  background: var(--cream);
+  padding: 5.5rem 2rem 4.5rem;
+  border-top: 1px solid rgba(28, 43, 58, 0.07);
 }
 
-.home-method-inner {
+.home-recognition__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.home-recognition__header {
+  /* 2026-07-26, per Susan's "Editorial Refinement — Recognition
+     Section & Shared Section Pattern" directive: margin-bottom reduced
+     (4rem -> 2rem) now that this header is followed by the CTA, not
+     directly by the five-image grid -- the invitation should read as
+     a continuation of the paragraph above it, not a section break.
+     The larger gap (.home-recognition__cta's own margin-bottom, below)
+     now sits between the CTA and the images instead. */
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-recognition__header h2 {
+  /* 2026-07-26, per Susan's "Visual Balance & Compositional
+     Refinement" directive: title -> statement gap tightened
+     (1.5rem -> 0.75rem) as part of pulling the section's text block
+     into a tighter unit, so the composition's weight can shift toward
+     the CTA -> images gap below instead ("reduce the vertical space
+     between section title -> lead statements"). */
+  font-family: var(--serif);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  color: var(--deep);
+  margin: 0 0 0.75rem;
+}
+
+.home-recognition__statement {
+  /* AwakenArts Typography System (2026-07-26): this is the "lead
+     statement / introductory quotation" tier, so it references
+     --subtitle-size/-line — the same token already used for this role
+     elsewhere (Collection, About, and originally the Hero's own
+     mission line, since decoupled there for a documented, deliberate
+     exception — see .hero-mission's own comment) — rather than a
+     local clamp invented for this one section.
+     2026-07-26, per Susan's "Visual Balance & Compositional
+     Refinement" directive: statement -> paragraph gap tightened
+     (1.5rem -> 1rem), same reasoning as the title margin above.
+     2026-07-26, per Susan's "Recognition Section — Match Established
+     Editorial Typography" directive: font-style: italic added -- this
+     pairing ("People tell their stories with facts. / They reveal
+     their lives through images.") is a thematic introduction, the
+     same role .home-coll-sub plays in the Collection section (Cormorant
+     Italic on --subtitle-size), and was missing the italic style that
+     makes it read as a literary statement rather than upright body
+     text. font-size already referenced --subtitle-size, the same
+     token .home-coll-sub uses, so no size change was needed. Colors
+     (navy first line / gold second line, below) are unchanged --
+     Susan's explicit spec, not Collection's single gold-lt line. */
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--subtitle-size);
+  line-height: var(--subtitle-line);
+  margin: 0 0 1rem;
+}
+
+.home-recognition__statement-navy {
+  color: var(--deep);
+}
+
+.home-recognition__statement-gold {
+  color: var(--gold);
+}
+
+.home-recognition__intro {
+  /* AwakenArts Typography System (2026-07-26): references --body-size/
+     -line, the site's one body-copy specification, rather than a local
+     1rem/1.7 pairing that happened to equal it in one dimension only.
+     Emphasis/distinction from standard body copy still comes through
+     color (a muted navy) and the restrained max-width, not a
+     different size — per the directive's "consistency before
+     variation" principle.
+     2026-07-26, per Susan's "Recognition Section — Match Established
+     Editorial Typography" directive: brought into line with
+     .home-coll-body specifically, not just the generic --body-size
+     token -- (1) font-size matches .home-coll-body's
+     calc(var(--body-size) + 2px), the Readability Primacy bump already
+     applied to Collection's own reading paragraph; (2) max-width
+     switches from a local 620px to var(--measure-medium) (760px),
+     .home-coll-body's own measure; (3) color's alpha is retuned to
+     .home-coll-body's 0.78, same "muted from full strength" logic --
+     the base color itself stays var(--deep)/--ink rather than
+     literally reusing .home-coll-body's cream-based rgba, since that
+     value was mixed for cream text on Collection's navy field and
+     would read as near-white-on-cream (illegible) on this section's
+     light background; --deep is this section's equivalent full-
+     strength ink, muted the same way. line-height already referenced
+     --body-line, matching .home-coll-body already. */
   max-width: var(--measure-medium);
   margin: 0 auto;
+  font-family: var(--serif);
+  font-size: calc(var(--body-size) + 2px);
+  line-height: var(--body-line);
+  color: rgba(28, 43, 58, 0.78);
+}
+
+.home-recognition__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+}
+
+.home-recognition__card {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
-.home-method-inner .eyebrow {
-  justify-content: center;
-  /* 2026-07-14 "Method Leaf — Size and Placement Revision," per Susan:
-     this is now the title-to-leaf gap (requested 16-20px), not a
-     generic eyebrow-to-heading gap — the leaf sits directly beneath
-     the eyebrow now, not the h2. 18px = 1rem at this site's 18px root
-     font-size. */
-  margin-bottom: 18px;
-}
-.home-method-inner .eyebrow::before { display: none; }
-
-/* 2026-07-14 "Method Leaf — Size and Placement Revision," per Susan:
-   moved from above the eyebrow to directly below it (eyebrow → leaf →
-   opening statement). Still the approved transparent leaf-pair asset
-   (brand-assets/awakenarts-leaf-pair.png), used exactly as supplied —
-   not recolored, cropped, or retraced — but now referenced via a
-   tightly alpha-trimmed derivative
-   (public/images/brand/awakenarts-leaf-pair-trimmed.png, 636x738,
-   trimmed to the exact alpha-channel bounding box of the source, no
-   visible artwork removed). Because the trimmed canvas has no
-   meaningful transparent padding left, margin-bottom below is simply
-   the requested visible gap — no offset math needed this time. */
-.home-method-ornament {
+.home-recognition__img {
   display: block;
-  width: 36px;
-  height: auto;
-  margin: 0 auto 21px; /* leaf-to-statement gap, requested 18-24px */
-}
-@media (max-width: 640px) {
-  .home-method-ornament {
-    width: 30px;
-    margin: 0 auto 20px;
-  }
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 3px;
+  margin-bottom: 1.25rem;
 }
 
-.home-method-inner h2 {
-  /* Reduced-dominance opening statement — quieter than a standard H2
-     section title (contrast .home-coll-text h2 or .coll-header h2,
-     both on --h2-size). Modeled on .hero-quote-text's "quiet
-     threshold" treatment: smaller, italic, generously line-spaced, so
-     it reads as a reflective statement rather than a headline. */
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
-  font-weight: 300;
-  letter-spacing: 0.01em;
+.home-recognition__label {
+  font-family: var(--sans);
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
   color: var(--deep);
-  line-height: 1.55;
-  max-width: 32ch;
-  margin: 0 auto 1.75rem;
-}
-.home-method-inner h2 em {
-  font-style: italic;
-  color: var(--gold);
+  margin: 0;
 }
 
-.home-method-body {
-  /* Body copy + Medium measure — Global Design System (locked 2026-06-25). */
-  font-family: var(--serif);
-  font-size: var(--body-size);
-  line-height: var(--body-line);
-  color: var(--mid);
-  max-width: var(--measure-medium);
-  margin: 0 auto;
+.home-recognition__cta {
+  /* 2026-07-26: moved from after the image grid (margin-top, closing
+     the section) to between the intro paragraph and the images
+     (margin-bottom, opening onto them) -- see the component's own
+     history comment for the full reasoning. The generous gap that
+     used to separate the CTA from the section above it now separates
+     it from the images below, which now read as the invitation's
+     visual affirmation, not a barrier before it.
+     2026-07-26, per Susan's "Visual Balance & Compositional
+     Refinement" directive: widened further (4rem -> 6rem) -- "increase
+     the space between CTA -> image sequence," shifting the section's
+     visual center of gravity down toward the five images, which are
+     meant to carry more of the section's weight than the text above
+     them now does. */
+  text-align: center;
+  margin-bottom: 6rem;
 }
 
-/* CTA into /method. Renamed .home-method-future -> .home-method-cta
-   2026-07-10 (later the same day), per Susan: "the Method is no
-   longer a placeholder — it's becoming one of the foundational pages
-   — the homepage invitation should reflect that." Three changes from
-   the original quiet text link:
+/* Path of Recognition's CTA button — reuses .home-coll-cta (see
+   HOMEPAGE COLLECTION SECTION below), the same shared outlined-gold
+   button as "Explore the Collection," per Susan's "Visual Balance &
+   Compositional Refinement" directive: "reuse the existing button
+   component, typography, padding, border, hover animation, and design
+   tokens." Structure/typography/padding/border/border-radius/hover-
+   lift are all inherited unchanged from .home-coll-cta. Only the
+   three color values needed a background-appropriate swap, which now
+   lives as the button's own Light-surface theme
+   (.home-coll-cta--light-surface, see HOMEPAGE COLLECTION SECTION
+   below) rather than a one-off modifier scoped to this section --
+   per Susan's follow-up "Reuse the Same Button Component, Adapt the
+   Theme" directive: one component, two color themes (Dark surface /
+   navy, Light surface / cream), not separate button components per
+   section. */
 
-   1. Copy strengthened: "Learn More About the AwakenArts Method" ->
-      "Discover the AwakenArts Method" — her stated preference over
-      "Explore" (which would echo .home-coll-cta's own "Explore the
-      Collection" and blur the two CTAs' distinct roles).
-   2. Visual treatment upgraded from a bare text link to a "framed
-      link" — a thin gold outline and generous button-like padding,
-      giving it real presence — per her "more substantial than a
-      simple text link" note.
-   3. Still deliberately lighter than .home-coll-cta: serif italic
-      (not .home-coll-cta's uppercase sans), transparent fill (not
-      solid gold), so the two CTAs stay clearly distinct in kind, not
-      just in size — per the site-wide principle that buttons say
-      "experience something" and text-derived invitations say
-      "understand something." This sits between the two: more
-      presence than a plain link, still visibly secondary to the one
-      solid button on the page.
-
-   Margin-top (0.85rem) unchanged from the prior pass — still the
-   tight paragraph-to-CTA relationship Susan asked for; the border
-   here doesn't need extra separation to read as its own element. */
-.home-method-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.05rem;
-  color: var(--gold);
-  background: transparent;
-  border: 1px solid rgba(139, 105, 20, 0.45);
-  border-radius: 2px;
-  padding: 0.75rem 1.75rem;
-  text-decoration: none;
-  margin: 0.85rem 0 0;
-  transition: border-color 0.2s ease-out, background-color 0.2s ease-out, color 0.2s ease-out;
-}
-/* 2026-07-14, per Susan, defining the site's standard button
-   hover mechanic: background stays identical to the rest state (no
-   fill), and the border stays static too — the text-color shift
-   alone is enough to read as interactive. Applied here and to
-   .home-coll-cta below. */
-.home-method-cta:hover,
-.home-method-cta:focus-visible {
-  color: var(--deep);
+@media (max-width: 1024px) {
+  .home-recognition__grid { grid-template-columns: repeat(2, 1fr); row-gap: 3rem; }
 }
 
 @media (max-width: 640px) {
-  .home-method-section { padding: 4.5rem 1.5rem 3.5rem; }
+  .home-recognition { padding: 3.5rem 1.5rem 3rem; }
+  /* 2026-07-26, per Susan's breakpoint-audit request ("look for any
+     large vertical gaps... introduced by the new typography and CTA
+     changes"): this override predates the CTA reorder and the
+     desktop title -> statement tightening above -- it was left at its
+     old value (2.75rem) while the desktop rule it's overriding
+     dropped to 2rem, so mobile was actually showing MORE space here
+     than desktop, backwards from the rest of this pass's intent.
+     Retuned to 1.75rem -- still its own value (mobile keeps a bit more
+     air than desktop's tighter 2rem given the grid stacks to one
+     narrow column below), but no longer inverted. */
+  .home-recognition__header { margin-bottom: 1.75rem; }
+  /* 2026-07-26, same audit: .home-recognition__cta's margin-bottom
+     (6rem / 96px, widened for desktop specifically so the five images
+     read as dominant) had no mobile override at all, so it carried
+     its full desktop value onto a much narrower, shorter viewport --
+     combined with .home-recognition's own padding and the single-
+     column image stack below, this read as an oversized empty gap.
+     Reduced to 3.5rem here -- still clearly more space than the
+     tightened header-to-statement/paragraph gaps above it (the CTA
+     should still read as a deliberate pause before the images), just
+     proportionate to a mobile viewport rather than the desktop value
+     verbatim. */
+  .home-recognition__cta { margin-bottom: 3.5rem; }
+  /* 2026-07-26: the mobile-only 0.95rem override that used to live here
+     is removed — --body-size holds at every breakpoint site-wide (it's
+     a fixed value, not a clamp), so this paragraph now does the same,
+     per the Typography System directive's "sizes should remain
+     consistent from page to page [and breakpoint to breakpoint]." */
+  .home-recognition__grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; row-gap: 2.5rem; }
 }
 
 /* ── HOMEPAGE: COLLECTION SECTION ───────────────────────────────────────────
@@ -5219,8 +5621,29 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    stays transparent (identical to rest state, no fill) and the
    border stays static; only the text color shifts, which reads as
    enough on its own. Kept the subtle lift (translateY) as the one
-   other hover cue. */
+   other hover cue.
+
+   2026-07-26, per Susan's "Reuse the Same Button Component, Adapt the
+   Theme" directive: this is now formally a two-theme component --
+   "One button component, two color themes: Dark surface (navy),
+   Light surface (cream)." Structure, spacing, typography, border
+   weight, and the hover/lift animation live here, unchanged, and are
+   shared by both surfaces. Only the three color values that actually
+   need to differ per background (text/border at rest, and hover
+   color) are pulled into CSS custom properties, defaulted here to the
+   Dark-surface (navy) theme this button was originally built for --
+   the values are identical to what this rule always had, just named
+   and exposed rather than hardcoded, so a second theme can override
+   them without duplicating anything else. See .home-coll-cta--light-
+   surface below for the Light-surface (cream) theme, first used by
+   Path of Recognition's "Experience the Encounters." Any future
+   surface (a third background color, say) is just a third small block
+   of --cta-* overrides, never a new component. */
 .home-coll-cta {
+  --cta-color: var(--gold-lt);
+  --cta-border: rgba(201, 168, 76, 0.5);
+  --cta-hover-color: var(--cream);
+
   display: inline-flex;
   align-items: center;
   gap: 0.6em;
@@ -5229,9 +5652,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold-lt);
+  color: var(--cta-color);
   background: transparent;
-  border: 1px solid rgba(201, 168, 76, 0.5);
+  border: 1px solid var(--cta-border);
   border-radius: 2px;
   padding: 1rem 2.25rem;
   text-decoration: none;
@@ -5239,9 +5662,42 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .home-coll-cta:hover {
-  color: var(--cream);
+  color: var(--cta-hover-color);
   transform: translateY(-1px);
 }
+
+/* Light-surface theme — for this same button on a cream/light
+   background (Path of Recognition's "Experience the Encounters" is
+   the first use). Overrides only the three --cta-* custom properties
+   above; every structural rule (padding, border width, border-radius,
+   font, transition, hover lift) is inherited from .home-coll-cta
+   untouched, per Susan's "same structure, spacing, typography, border
+   weight, and animation... only the theme changes." Values match the
+   light-background gold-outline register already proven elsewhere on
+   cream (.primer-btn): Dark-surface's --gold-lt/--cream pairing reads
+   near-illegible here (light gold and near-white both sit too close
+   to a cream field), so Light-surface uses full-strength --gold at
+   rest and --deep on hover instead — the same relationship (accent at
+   rest, shift toward the surface's own ink color on hover) the Dark-
+   surface theme uses, just with light-surface-appropriate tokens. */
+.home-coll-cta--light-surface {
+  --cta-color: var(--gold);
+  --cta-border: var(--gold);
+  --cta-hover-color: var(--deep);
+}
+
+/* ── Homepage Destination Doorway Cards — retired 2026-07-26 ─────────
+   Briefly held a two-line "title + subtitle" card shape
+   (.home-coll-cta--doorway / -doorway__title / -doorway__subtitle),
+   built on .home-coll-cta for the reciprocal "The AwakenArts Path"
+   invitation on /encounters. Per Susan's very next "AwakenArts Path
+   Button" directive, that card was simplified to a single-line button
+   -- "do not preserve the current two-line card layout" -- so it now
+   reuses bare .home-coll-cta / --light-surface directly, identical in
+   shape to "Explore the Collection" and "Experience the Encounters."
+   Nothing else on the site used this doorway-card shape, so the rules
+   are removed rather than kept as unused dead code; see
+   encounters/page.tsx for the current markup. */
 
 @media (max-width: 860px) {
   .home-coll-inner {
@@ -7103,47 +7559,6 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .col-banner { padding: 0 1.25rem 3.5rem; }
 }
 
-/* ── Recognition Outline ──
-   Orientation graphic introducing how the Collection is experienced,
-   placed between The Works and Current Editions per Susan's "Add
-   Recognition Outline to the Collection" directive (2026-06-26):
-   Banner (cover) -> Recognition Outline -> Current Editions. Artwork
-   used exactly as supplied -- no redesign at this stage. This is an
-   orientation page only; facilitator/workshop development is a later
-   phase and deliberately deferred so it doesn't delay the Collection
-   or the Queen Ann Edition. */
-.col-recognition {
-  background: var(--cream);
-  /* Bottom trimmed 2026-06-26 (6rem -> 4rem) as the other half of
-     pulling "Enter Encounters" up into this section's visual wake —
-     see .col-archive-cta for the matching top-padding trim. */
-  padding: 1rem 2rem 4rem;
-  border-top: 1px solid rgba(28, 43, 58, 0.07);
-}
-
-.col-recognition__inner {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.col-recognition__header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.col-recognition__img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 2px;
-  box-shadow: 0 18px 60px rgba(28, 43, 58, 0.22);
-}
-
-@media (max-width: 640px) {
-  .col-recognition { padding: 0.5rem 1.25rem 2.25rem; }
-  .col-recognition__header { margin-bottom: 1.75rem; }
-}
-
 /* ── Edition Previews ──
    Redesigned 2026-06-26 per "Homepage / Collection Flow Revision":
    the primary product, no longer a row of small thumbnails. Two rows
@@ -7284,10 +7699,12 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
      wake of A Path of Recognition rather than letting it float in
      the dead zone before the footer. Top padding intentionally reads
      smaller than the universal rhythm (more room below the link than
-     above it), so the CTA reads as recognition's concluding line
-     rather than a separate, floating footer link (see
-     .col-recognition's matching bottom-padding trim just above it,
-     which does the other half of the 40-60px move).
+     above it).
+     2026-07-26: A Path of Recognition (the numbered graphic this CTA
+     used to sit directly beneath) is retired site-wide -- see the new
+     homepage-only section in globals.css's "HOMEPAGE: A PATH OF
+     RECOGNITION" block. This CTA now follows The Works directly; kept
+     as the page's own closing invitation regardless, no other change.
      2026-06-27: the bottom value was previously a hardcoded 3rem —
      well under the universal --band-gap (6rem), leaving this page's
      gap before the Wayfinding Band noticeably tighter than every
@@ -8089,14 +8506,26 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
    Primer, Download the Primer, and Experience the Encounters previously
    mixed two visual languages (large dark solid buttons vs. a delicate
    gold underlined text link). Unified into one quieter shared style,
-   .primer-btn -- warm cream/pale-gold fill, thin gold-lt border, navy
-   text, no arrows, same corner radius and hover behavior across all
-   three. Hierarchy preserved through fill weight and width alone, not
-   through different visual languages:
-     - .primer-btn--primary   (Read the Primer)     -- pale gold tint
-     - .primer-btn--secondary (Download the Primer)  -- plain cream
-     - .primer-btn--quiet     (Experience the Encounters) -- same as
-       the two above, narrower padding, no distinguishing fill tint. */
+   .primer-btn.
+   2026-07-26, per Susan's "consistent gold-outline system" directive
+   (three passes the same day): the fill-weight variants
+   (.primer-btn--primary pale-gold tint, .primer-btn--secondary plain
+   cream) and the navy text / gold-lt border / solid-gold-lt hover fill
+   are all removed -- that combination was read back as "brownish" and
+   inconsistent across the three buttons. The corrected, single system:
+     - transparent background at rest, gold (--gold) text and border
+     - :link / :visited pinned explicitly to the same gold, so no
+       browser default (e.g. visited-link purple) can leak in
+     - :hover -- a very pale gold tint only (rgba(201,168,76,0.1)),
+       text and border stay gold
+     - :focus-visible / :active -- background stays transparent, text
+       and border stay gold, plus a real outline ring (2px solid gold,
+       2px offset) so keyboard focus stays perceivable even though the
+       border color itself doesn't change
+     - no navy or brown fill in any state
+   Hierarchy across Read / Download / Experience the Encounters is now
+   width alone -- .primer-btn--quiet (narrower) vs. bare .primer-btn --
+   not fill color. */
 .primer-btn {
   display: inline-flex;
   align-items: center;
@@ -8106,31 +8535,51 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--deep);
-  border: 1px solid var(--gold-lt);
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid var(--gold);
   border-radius: 2px;
   padding: 0.7rem 1.85rem;
   text-decoration: none;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
-.primer-btn:hover,
-.primer-btn:focus-visible {
-  background: var(--gold-lt);
+.primer-btn:link,
+.primer-btn:visited {
+  color: var(--gold);
+  background: transparent;
   border-color: var(--gold);
 }
-
-.primer-btn--primary {
-  background: rgba(201, 168, 76, 0.16);
+.primer-btn:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--gold);
+  color: var(--gold);
 }
-
-.primer-btn--secondary {
-  background: var(--cream);
+.primer-btn:focus-visible,
+.primer-btn:active {
+  background: transparent;
+  border-color: var(--gold);
+  color: var(--gold);
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }
 
 .primer-btn--quiet {
-  background: var(--cream);
   padding: 0.6rem 1.5rem;
 }
+
+/* ── Homepage Hero Doorway Cards — retired 2026-07-26 ────────────────
+   Per Susan's terminology-alignment directive, "The Path" doorway
+   card on /encounters used to reuse .primer-btn's gold system here
+   (.primer-btn.hero-doorway / .hero-doorway__label / __subtitle).
+   Per her later "Primer CTA Refinement" directive, that card briefly
+   moved to a .home-coll-cta / --light-surface / --doorway two-line
+   shape instead, then per her very next "AwakenArts Path Button"
+   directive was simplified further to a bare single-line
+   .home-coll-cta.home-coll-cta--light-surface button -- identical
+   shape to "Explore the Collection" and "Experience the Encounters,"
+   no card layout of its own at all. See encounters/page.tsx for the
+   current markup. Nothing else on the site referenced .hero-doorway,
+   so those rules were removed rather than kept as unused dead code. */
 
 /* ── Primer Closing ───────────────────────────────────────────────────
    2026-07-25, per Susan's "Homepage Hero and Primer Closing Revision"
@@ -8158,11 +8607,44 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   margin: 0 auto 2.75rem;
 }
 
+/* 2026-07-26, per Susan's "Primer Section Refinement" directive: a
+   brief editorial line above the .home-coll-cta button, giving "The
+   AwakenArts Path" the context it lost when its subtitle was removed
+   -- "instead of restoring a second line inside the button, anchor the
+   section with a brief editorial introduction immediately above it...
+   the explanatory language belongs in the page, not inside the
+   button." Cormorant Italic at --editorial-italic-size, the same
+   shared size every other Cormorant Italic thematic statement/literary
+   subtitle on the site uses (Hero, Path of Recognition) -- not a new
+   one-off value. Color is --deep (quiet ink), not gold -- gold stays
+   the button's own accent alone, so the invitation still reads as the
+   one distinct next step rather than competing with the line above
+   it, the same "words introduce, the destination carries the accent"
+   logic already used elsewhere on the homepage. */
+.primer-close-intro {
+  max-width: var(--measure-narrow);
+  margin: 0 auto 1.75rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--editorial-italic-size);
+  line-height: var(--subtitle-line);
+  color: var(--deep);
+}
+
+/* .primer-close-doorway — retired 2026-07-26. Used to cap and center a
+   width:100% doorway card (the reciprocal "The AwakenArts Path"
+   invitation on /encounters) inside this wider, non-flex .primer-close
+   context. Per Susan's "AwakenArts Path Button" directive, that link
+   is now a single-line .home-coll-cta button, which is inline-flex and
+   sizes to its own content -- .primer-close's own text-align:center is
+   enough to center it, the same way it already centers
+   .primer-close-divider above it, so no wrapper/cap is needed. */
+
 @media (max-width: 640px) {
   .primer-hero { padding: 5.5rem 1.5rem 2rem; }
   .primer-cover-section { padding: 0 1.25rem 2.5rem; }
   .primer-actions { padding: 0.5rem 1.5rem 3.5rem; flex-direction: column; align-items: center; }
-  .primer-btn--primary, .primer-btn--secondary { width: 100%; max-width: 320px; }
+  .primer-btn { width: 100%; max-width: 320px; }
   .primer-btn--quiet { width: 100%; max-width: 260px; }
   .primer-close { padding: 0.5rem 1.5rem 3.5rem; }
 }

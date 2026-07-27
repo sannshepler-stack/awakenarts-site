@@ -31,7 +31,10 @@ const links = [
   // the visitor onward from there. Encounters itself is untouched and
   // reachable on its own; this only changes where the site's primary
   // "Explore the Path" doorway leads.
-  { label: 'Explore the Path', href: '/primer', cta: false },
+  // 2026-07-26, per Susan's terminology-alignment pass: label shortened
+  // from "Explore the Path" to "The Path" -- same destination (/primer),
+  // just the settled short name for this section going forward.
+  { label: 'The Path', href: '/primer', cta: false },
   { label: 'Collection', href: '/collection', cta: false },
   { label: 'Gallery',    href: '/gallery',    cta: false },
   { label: 'Journal',    href: '/journal',    cta: false },

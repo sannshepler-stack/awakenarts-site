@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
+import PathOfRecognition from '@/components/PathOfRecognition'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 
@@ -146,17 +147,29 @@ export default function HomePage() {
               ("Every life tells its story in images."); the supporting
               line beneath it is rewritten to state the visitor's
               benefit plainly, rather than only describing what
-              AwakenArts is -- "recognition becomes language, and
-              language becomes a path forward." No other change to this
-              paragraph's markup, styling, or the hero otherwise. */}
+              AwakenArts is.
+              2026-07-26, per Susan's terminology-alignment directive:
+              closing sentence ("Recognition becomes language, and
+              language becomes a path forward.") removed -- paragraph
+              now ends at "...begins to take shape."
+              2026-07-26, later the same day, per her "Cormorant Usage"
+              typography standard: split into two spans -- the short
+              opening statement (.hero-mission__lede, italic/gold, "one-
+              line thematic statement") and the longer explanatory
+              sentence (.hero-mission__body, roman/navy, "body prose")
+              -- rather than running both in italic/gold together. Copy
+              itself is unchanged, just the markup/styling split. */}
           <p className="hero-mission">
-            Every life tells its story in images.
+            <span className="hero-mission__lede">
+              Every life tells its story in images.
+            </span>
             <br />
-            AwakenArts helps you recognize the symbolic language already
-            present in your life. Through image, poem, reflection, and
-            conversation, what once felt difficult to name begins to
-            take shape. Recognition becomes language, and language
-            becomes a path forward.
+            <span className="hero-mission__body">
+              AwakenArts helps you recognize the symbolic language
+              already present in your life. Through image, poem,
+              reflection, and conversation, what once felt difficult to
+              name begins to take shape.
+            </span>
           </p>
 
           {/* Editorial Invitations — the hero's entry point(s) into
@@ -177,26 +190,69 @@ export default function HomePage() {
               purpose. .hero-invitations remains a flex column built for
               N doorways; removing one required no layout change. */}
           <div className="hero-invitations">
-            {/* 2026-07-25, per Susan's "Homepage Hero Refinement"
-                directive: back to two doorways, not three -- Browse the
-                Collection removed. The Hero presents the two ways a
-                first-time visitor enters the work (orientation vs.
-                direct experience); the Collection already has its own
-                dedicated section immediately below and remains that
-                section's own invitation, not the Hero's. Same treatment
-                as always for what remains: no teaser copy, no arrow
-                glyphs, a short title alone for each -- "the hero is an
-                opening, not a directory."
-                  - Explore the AwakenArts Path -> /primer (orientation,
-                    understand the work before entering it)
-                  - Experience the Encounters -> /encounters (deliberately
-                    unexplained -- "the phrase itself should create
-                    curiosity," per Susan) */}
-            <Link href="/primer" className="hero-invitation__title">
-              Explore the AwakenArts Path
-            </Link>
-            <Link href="/encounters" className="hero-invitation__title">
-              Experience the Encounters
+            {/* 2026-07-26, per Susan's "Hero CTA refinement" directive:
+                the boxed two-line doorway cards (.primer-btn.hero-doorway
+                at the time; /encounters' own reciprocal closing now reuses
+                .home-coll-cta--doorway instead) are retired from the Hero
+                specifically -- "no border, no box,
+                no gold frame... the typography, not a button, should
+                invite the visitor to continue." Back to a single
+                doorway (Encounters is reached downstream -- Primer's own
+                closing, the new "A Path of Recognition" section's CTA --
+                not competing here), rendered as pure typography via the
+                new .hero-invitation classes: navy at rest, a larger
+                serif name line over a smaller quiet subtitle, gold color
+                shift and an animated underline only on hover.
+
+                2026-07-26, per Susan's "Primer CTA Naming" directive: the
+                .hero-invitation component itself is untouched -- same
+                markup structure, layout, spacing, typography, and hover
+                behavior. Two content-only changes: (1) label text "The
+                Path" -> "The AwakenArts Path," the same more-descriptive
+                title now used for this destination elsewhere (see
+                /encounters' reciprocal doorway); (2) the
+                .hero-invitation__subtitle span is removed entirely --
+                "the button should become a single-line invitation using
+                the existing Hero button component." No arrow was added
+                at that pass, per her explicit instruction then.
+
+                2026-07-26, per Susan's "Hero Path Invitation" directive:
+                back to two lines, but a different pairing than before --
+                a small uppercase gold "EXPLORE" action identifier over
+                the Cormorant Roman navy title, not a title-plus-
+                description pair. Still no border/frame, no third
+                subtitle line; the whole block is one <Link>, so it's
+                still entirely clickable. Hover is unchanged: only the
+                title shifts toward gold (see .hero-invitation__label /
+                __eyebrow in globals.css); "EXPLORE" is fixed gold at
+                rest and stays that way through hover, the same posture
+                the old subtitle line had.
+
+                2026-07-26, per Susan's follow-up: an arrow is added
+                after the title, inline within .hero-invitation__label
+                so it sits on the same line as "The AwakenArts Path" and
+                inherits that line's own color (navy at rest, gold on
+                hover) -- matching the arrow treatment already used by
+                the other homepage CTAs ("View the Collection →,"
+                "Experience the Encounters →"). aria-hidden, same as
+                those.
+
+                2026-07-26, per Susan: the arrow read too harsh at the
+                title's own full navy/gold strength and weight. Given
+                its own .hero-invitation__arrow class -- same color
+                (inherits the title's navy-at-rest/gold-on-hover), but
+                softened via reduced opacity and roman weight, so it
+                reads as a quiet directional cue rather than a second
+                bold word next to the title.
+
+                2026-07-26, per Susan's follow-up ("Explore not needed
+                now"): the .hero-invitation__eyebrow line is removed --
+                back to a single line, "The AwakenArts Path →,"
+                .hero-invitation__label alone. .hero-invitation__eyebrow
+                itself is retired in globals.css (nothing else used
+                it). */}
+            <Link href="/primer" className="hero-invitation">
+              <span className="hero-invitation__label">The AwakenArts Path <span className="hero-invitation__arrow" aria-hidden="true">→</span></span>
             </Link>
           </div>
         </div>
@@ -245,7 +301,7 @@ export default function HomePage() {
           a navy field per the Homepage Reformation Directive: the
           darker ground establishes the Collection as AwakenArts'
           architectural framework and creates a clear visual transition
-          before the Method section that follows. Cream typography,
+          before A Path of Recognition, which now follows. Cream typography,
           restrained gold accents, the complete uncropped cover,
           generous surrounding space.
 
@@ -309,86 +365,43 @@ export default function HomePage() {
               rather than explanation, and opening new ways of seeing
               ordinary life.
             </p>
+            {/* 2026-07-26, per Susan's directive: label only,
+                "Explore the Collection" -> "View the Collection" --
+                component, typography, spacing, hover behavior, and the
+                arrow are all unchanged. */}
             <Link href="/collection" className="home-coll-cta">
-              Explore the Collection <span aria-hidden="true">→</span>
+              View the Collection <span aria-hidden="true">→</span>
             </Link>
           </div>
 
         </div>
       </section>
 
-      {/* ── THE AWAKENARTS METHOD ─────────────────────────────────────
-          Stage 3, Understanding. First added 2026-07-10 directly after
-          the Hero, per Susan's "establish the AwakenArts Method as the
-          conceptual center" directive; moved here, after Collection,
-          the same day per her "Homepage Refinement — Production Pass"
-          clarification of the narrative hierarchy — Discovery before
-          Understanding. This section now answers the question
-          Discovery naturally raises: "what is happening here?"
-
-          Deliberately quiet by design — reduced typographic dominance
-          (see globals.css's "HOMEPAGE: THE AWAKENARTS METHOD" block),
-          no image, still no mention of workshops or Sketchbook. The
-          two former explanatory paragraphs are combined into one
-          continuous paragraph per Susan's direction. The section is
-          written as an introduction to the standalone Method page
-          (src/app/method/page.tsx, shipped 2026-07-10), not a
-          complete explanation — see the CTA note below.
-
-          Method CTA: originally "Learn More About the AwakenArts
-          Method →," held as static placeholder text
-          (.home-method-future) until /method existed, then wired to a
-          real <Link> the same day the page shipped.
-          2026-07-10, later still the same day, per Susan: "the Method
-          is no longer a placeholder — it's becoming one of the
-          foundational pages — the homepage invitation should reflect
-          that." Copy strengthened to "Discover the AwakenArts Method
-          →" (her preference over "Explore," to avoid echoing the
-          Collection CTA's own "Explore the Collection"). Class renamed
-          .home-method-future -> .home-method-cta, since "future" no
-          longer describes it. Visual treatment upgraded from a plain
-          text link to an outlined "framed link" (see globals.css) —
-          more presence than before, still deliberately lighter than
-          .home-coll-cta's solid button: an invitation to keep reading,
-          not a second product CTA. */}
-      <section className="home-method-section" aria-labelledby="home-method-heading">
-        <div className="home-method-inner">
-          <p className="eyebrow">The AwakenArts Method</p>
-          {/* 2026-07-14 "Method Leaf — Size and Placement Revision," per
-              Susan: moved from above the eyebrow to directly below it, as
-              a signature mark between the label and the opening statement
-              (eyebrow → leaf → statement). Decorative only — empty alt,
-              ignored by screen readers. Now uses a tightly alpha-trimmed
-              derivative (see globals.css .home-method-ornament) rather
-              than the raw square source, so the CSS margin below is the
-              actual visible gap with no transparent-padding offset math
-              needed. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/brand/awakenarts-leaf-pair-trimmed.png"
-            alt=""
-            className="home-method-ornament"
-            width={636}
-            height={738}
-          />
-          <h2 id="home-method-heading">
-            People tell their stories with facts.{' '}
-            <em>They reveal their lives through images.</em>
-          </h2>
-          <p className="home-method-body">
-            Long before we settle on words, certain pictures return to
-            us&mdash;in conversation, in memory, and in the stories we
-            tell about our own lives. AwakenArts begins there, with the
-            images a life has already chosen, not with a theory placed
-            over them. AwakenArts is a practice of attention&mdash;learning
-            to notice an image and remain with it long enough for
-            recognition to emerge.
-          </p>
-          <Link href="/method" className="home-method-cta">
-            Discover the AwakenArts Method <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-      </section>
+      {/* ── A PATH OF RECOGNITION ────────────────────────────────
+          2026-07-26, per Susan's "Repurpose the Existing Introductory
+          Section" directive: this used to be two separate sections —
+          "The AwakenArts Method" (Stage 3, Understanding; first added
+          2026-07-10, most recently living right here after Collection)
+          and a standalone "A Path of Recognition" section placed
+          earlier, right after the Hero (added earlier this same day).
+          Susan flagged that both used the same "People tell their
+          stories with facts / reveal their lives through images" line,
+          and asked that they be merged into one continuous section
+          rather than left as two independent components repeating
+          themselves. The AwakenArts Method section's slot (here, after
+          Collection) is kept; its content -- eyebrow, leaf ornament,
+          "Discover the AwakenArts Method" CTA to /method, and all
+          "method / practice / theory" language -- is retired in favor
+          of PathOfRecognition (src/components/PathOfRecognition.tsx),
+          which now carries both the section's language (title,
+          statement, intro paragraph) and its imagery (the five-image
+          sequence) as one piece: "language introduces the visitor,
+          imagery deepens the experience, the Encounters become the
+          natural invitation to continue." /method itself is untouched
+          and still live, just no longer linked from the homepage --
+          it joins the site's existing Unlisted Page System (see
+          Nav.tsx), reachable by direct URL only. */}
+      <PathOfRecognition />
 
       {/* ── QUEEN ANN INTRODUCTION — dark title band ───────────────
           2026-07-10, per Susan: "let the [Queen Ann title] section

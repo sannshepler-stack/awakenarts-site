@@ -74,9 +74,29 @@
   font-family: var(--enc-sans);
   color: var(--enc-cream);
 }
+/* 2026-07-26, per Susan's "Interior-Page Home Link" directive:
+   .chromeBrand was a styled text link ("AWAKENARTS"); it now wraps
+   the real logo/wordmark image asset instead, so the mark itself
+   (not text standing in for it) is the return-home control. display:
+   block + line-height: 0 keeps the link's own box tight to the image
+   (no inline baseline gap), so it doesn't throw off .chrome's
+   space-between/align-items: center layout against .chromeMenu. */
 .chromeBrand {
-  font-size: 0.92rem; font-weight: 600; letter-spacing: 0.14em;
-  text-decoration: none; color: inherit;
+  display: block;
+  line-height: 0;
+}
+.chromeBrandLogo {
+  display: block;
+  height: 34px;
+  width: auto;
+}
+@media (max-width: 640px) {
+  .chromeBrandLogo {
+    /* Reduced proportionally, per her "on smaller screens, reduce the
+       mark proportionally while keeping it clearly recognizable and
+       easy to tap." */
+    height: 28px;
+  }
 }
 .chromeMenu {
   font-size: 0.74rem; font-weight: 500; letter-spacing: 0.14em;

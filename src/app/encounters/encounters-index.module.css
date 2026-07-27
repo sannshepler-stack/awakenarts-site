@@ -17,6 +17,11 @@
      consistency. .grid carries no margin of its own beneath it, so
      this is the entire gap. */
   padding: 6.5rem 1.6rem var(--band-gap);
+  /* 2026-07-26, per Susan's "Interior-Page Home Link" directive:
+     position: relative added so .brand (below) can be absolutely
+     positioned in this page's own upper-left corner rather than the
+     viewport's. */
+  position: relative;
 }
 
 /* 2026-06-27: min-height: 100vh removed — it was the actual cause of
@@ -38,15 +43,46 @@
   text-align: center;
 }
 
+/* 2026-07-26, per Susan's "Interior-Page Home Link" directive: rebuilt
+   from an inline text wordmark ("AWAKENARTS," never actually rendered
+   in the page's own flow — dead CSS) into the real logo/wordmark
+   asset, positioned in the page's fixed upper-left corner rather than
+   inline with .intro. Same asset and treatment as the individual
+   Encounter pages' own Chrome brand mark (see .chromeBrand in
+   ../_shared/encounter.module.css) so all six pages in this section
+   share one consistent, restrained "return home" language. Absolute
+   position (not the page's document flow) so it reads as a fixed
+   corner mark a visitor can return to at any scroll position within
+   the hero, the same role .chrome plays on the individual pages,
+   without pushing the centered .intro content down to make room for
+   it. */
 .brand {
-  display: inline-block;
-  font-family: var(--enc-sans, inherit);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  color: #faf7f2;
-  text-decoration: none;
-  margin-bottom: 2.4rem;
+  position: absolute;
+  top: 1.8rem;
+  left: 2rem;
+  z-index: 5;
+  display: block;
+  line-height: 0;
+}
+
+.brandLogo {
+  display: block;
+  height: 38px;
+  width: auto;
+}
+
+@media (max-width: 640px) {
+  .brand {
+    top: 1.4rem;
+    left: 1.4rem;
+  }
+  .brandLogo {
+    /* Reduced proportionally, per her "on smaller screens, reduce the
+       mark proportionally while keeping it clearly recognizable and
+       easy to tap" — still well above the ~24px floor where a
+       horizontal wordmark lockup stops reading clearly. */
+    height: 30px;
+  }
 }
 
 .eyebrow {
@@ -247,57 +283,8 @@
   }
 }
 
-/* ── A Path of Recognition ──────────────────────────────────────
-   2026-06-27: cream explainer band, sibling to .page (not nested
-   inside it) so it isn't constrained by the dark background — same
-   structure/role as .col-recognition on the Collection page, reusing
-   the same revised graphic (recognition-revision.png). Sits between
-   the card grid and the Wayfinding Band. */
-.recognition {
-  background: var(--cream);
-  padding: 4.5rem 2rem;
-  border-top: 1px solid rgba(28, 43, 58, 0.07);
-}
-
-.recognitionInner {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.recognitionHeader {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.recognitionEyebrow {
-  font-size: var(--label-size);
-  font-weight: var(--label-weight);
-  letter-spacing: var(--label-tracking);
-  text-transform: uppercase;
-  color: #9c7a2e;
-  margin: 0 0 0.75rem;
-}
-
-.recognitionTitle {
-  font-size: var(--h2-size);
-  font-weight: var(--h2-weight);
-  color: #1c2b3a;
-  margin: 0;
-}
-
-.recognitionImg {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 2px;
-  box-shadow: 0 18px 60px rgba(28, 43, 58, 0.22);
-}
-
-@media (max-width: 640px) {
-  .recognition {
-    padding: 3rem 1.25rem;
-  }
-  .recognitionHeader {
-    margin-bottom: 1.75rem;
-  }
-}
+/* 2026-07-26, per Susan's "Architectural Update — A Path of
+   Recognition" directive: the .recognition* rules that used to live
+   here (cream explainer band, recognition-revision.png) are removed —
+   that graphic is retired site-wide, replaced by a new section on the
+   homepage (see globals.css, "HOMEPAGE: A PATH OF RECOGNITION"). */

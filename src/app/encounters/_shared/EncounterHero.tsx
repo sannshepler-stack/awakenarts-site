@@ -22,8 +22,27 @@ export const inter = Inter({
 export function Chrome() {
   return (
     <div className={styles.chrome}>
-      <Link href="/" className={styles.chromeBrand}>
-        AWAKENARTS
+      {/* 2026-07-26, per Susan's "Interior-Page Home Link" directive:
+          the text wordmark ("AWAKENARTS") is replaced with the actual
+          AwakenArts logo/wordmark asset -- her explicit spec is "use
+          the existing logo/wordmark asset," not styled text standing
+          in for it. Same asset used by the shared Nav/Footer on every
+          other page (the compact on-navy lockup, correct for this
+          dark hero), so the mark itself is identical everywhere on
+          the site; only its size and placement are page-appropriate.
+          aria-label added for the link (the image's own alt is
+          decorative/short); .chromeMenu ("MENU" -> /encounters) is
+          unchanged -- it's a different control (site's Encounters
+          menu, not home) and wasn't part of this directive. */}
+      <Link href="/" className={styles.chromeBrand} aria-label="Return to AwakenArts home">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/brand/exports/AwakenArts-Logo-CompactHorizontal-OnNavy-1024.png"
+          alt="AwakenArts"
+          className={styles.chromeBrandLogo}
+          width={1024}
+          height={165}
+        />
       </Link>
       <Link href="/encounters" className={styles.chromeMenu}>
         MENU
