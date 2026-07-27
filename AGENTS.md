@@ -1,6 +1,6 @@
 # AwakenArts — AI Assistant Orientation
 
-> **Read this file first. Then consult `AwakenArts_Documentation_Map.md` to identify which governing documents apply to your task.**
+> **Read this file first. Then read `AwakenArts_Production_Charter.md` — the supreme governing document, issued 2026-07-27, which takes precedence over every other document and any prior conversation when the two conflict. Then consult `AwakenArts_Documentation_Map.md` to identify which subordinate governing documents apply to your task.**
 
 ---
 
@@ -20,6 +20,7 @@ The current governing set, in consultation order:
 
 | Question | Document |
 |---|---|
+| What governs everything else? Current mission, model, and priorities? | `AwakenArts_Production_Charter.md` — **read first; supersedes all conflicts** |
 | What is AwakenArts? What are its values and identity? | `AwakenArts_Editorial_Identity_and_Design_Standard.md` |
 | What gets built next? What phase are we in? | `AwakenArts_Production_Roadmap.md` |
 | How is a specific page or component built? | `AwakenArts_Site_Architecture.md` |

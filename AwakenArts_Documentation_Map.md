@@ -1,6 +1,6 @@
 # AwakenArts — Documentation Map
 
-**Status: Governing reference. Issued 2026-07-01. Adopted as the repository's primary orientation document 2026-07-01.**
+**Status: Governing reference. Issued 2026-07-01. Adopted as the repository's primary orientation document 2026-07-01. Superseded in authority (not replaced) by `AwakenArts_Production_Charter.md`, issued 2026-07-27 — see below.**
 
 This document identifies every documentation file in the AwakenArts repository and assigns each one an authoritative status. Its purpose is simple: to end the competition between documents. When you or Claude need to know what governs a decision, consult this map first, then go directly to the named document. Do not consult historical or archived documents as current authority.
 
@@ -10,9 +10,18 @@ The documents in each tier below are listed in consultation order — what to re
 
 ---
 
+## The Charter — Read Before Anything Else
+
+**`AwakenArts_Production_Charter.md`** — *Governing document. Version 1.0. Issued 2026-07-27. Includes Addendum A, appended the same day.*
+The supreme governing document for all AwakenArts planning and implementation — mission, the AwakenArts Model (Teach / Publish / Collect / Invite / Continue), website philosophy, content architecture across every level of the site, editorial principles, content stewardship rules, production standards and current priorities, and the division of responsibility across AI collaborators (ChatGPT, Claude, Codex). **When this Charter conflicts with any other document, previous conversation, or prior decision, the Charter takes precedence until it is formally revised.** Read this before the Editorial Identity & Design Standard below, before the Production Roadmap, before any individual specification. Every other document in this map is subordinate to it.
+
+**Addendum A — Commerce & Engagement Architecture** (appended within the same file, below the base Charter). Commerce philosophy, the full commerce ecosystem (website, Editions, Companion Guides, Journals, Prints, Cards, Workshops), The Path's role, Kit's role as the relationship platform, the Monthly Symbol, five named visitor journeys, integration principles, commerce principles, and the standing ecosystem diagram (Discover → Website → Learn/Collect/Participate → Kit Relationship → Return). Governs commerce and engagement specifically; where it conflicts with `AwakenArts_Commerce_Architecture.md` below, the Addendum takes precedence.
+
+---
+
 ## The Governing Set
 
-These are the authoritative documents for ongoing AwakenArts production. Consult these before acting on any question of identity, sequencing, building, or publishing.
+These are the authoritative documents for ongoing AwakenArts production, subordinate to the Charter above. Consult these before acting on any question of identity, sequencing, building, or publishing.
 
 ### 1. Identity and Design
 
@@ -40,8 +49,8 @@ The record of what has actually been built against the Specification, and what r
 
 ### 4. Commerce & Production Architecture
 
-**`AwakenArts_Commerce_Architecture.md`** — *Governing document. Issued 2026-07-01.*
-The permanent commerce and production blueprint for AwakenArts. Defines commercial identity (AwakenArts as a publishing imprint, not a store), the complete revenue architecture (free/paid distinction, revenue streams, pricing model), the customer journey from first encounter through collector/advocate, catalog management, commerce platform requirements, site commerce architecture, and the governance of commercial expansion. Read alongside the Production System. When any document conflicts with this one on a commercial question, return to the governing principle: commerce serves the work; the work does not serve commerce.
+**`AwakenArts_Commerce_Architecture.md`** — *Governing document. Issued 2026-07-01. Subordinate to `AwakenArts_Production_Charter.md` Addendum A (2026-07-27) on any point of conflict.*
+The permanent commerce and production blueprint for AwakenArts. Defines commercial identity (AwakenArts as a publishing imprint, not a store), the complete revenue architecture (free/paid distinction, revenue streams, pricing model), the customer journey from first encounter through collector/advocate, catalog management, commerce platform requirements, site commerce architecture, and the governance of commercial expansion. Read alongside the Production System — and read Addendum A first, since it now governs the ecosystem-level questions (visitor journeys, platform roles, Kit's role, the Monthly Symbol) this document sits beneath. When any document conflicts with this one on a commercial question, return to the governing principle: commerce serves the work; the work does not serve commerce.
 
 ### 5. Production System and Rules
 
@@ -169,6 +178,7 @@ These terms are settled. Once a term is established here, it does not change —
 
 | Question | Document to consult |
 |---|---|
+| What governs everything else? What are current production priorities? | `AwakenArts_Production_Charter.md` |
 | What does AwakenArts stand for? What are its values and identity? | `AwakenArts_Editorial_Identity_and_Design_Standard.md` |
 | What should be built next? What phase are we in? | `AwakenArts_Production_Roadmap.md` |
 | How is a specific page built on the site? | `AwakenArts_Site_Architecture.md` |
@@ -199,4 +209,4 @@ The Documentation Map must never lag behind the documents it describes. Treating
 
 ---
 
-*Issued 2026-07-01. Adopted as repository primary orientation document 2026-07-01.*
+*Issued 2026-07-01. Adopted as repository primary orientation document 2026-07-01. Amended 2026-07-27 to record `AwakenArts_Production_Charter.md` as the repository's supreme governing document.*
