@@ -37,19 +37,20 @@ import styles from './WayfindingBand.module.css'
  * bottom navigation should present the same site architecture"; the
  * top Nav has never carried a literal Home link, so the band no longer
  * does either). Encounters is removed -- not part of top Nav (it's
- * reached downstream, via The Path/Primer and Path of Recognition, not
+ * reached downstream, via The Path and Path of Recognition, not
  * as its own primary nav destination). "Collection" -> "Collections"
  * and "Journal" -> "Journals" are label-only changes, per her explicit
  * spec -- the destinations are unchanged (/collection, /journal, the
  * same routes top Nav's "Collection"/"Journal" links use); only this
  * band's own wording pluralizes them. Order and routes otherwise match
- * top Nav exactly: The Path (/primer), Collections (/collection),
- * Gallery (/gallery), Journals (/journal), About (/about). No styling,
- * spacing, typography, or hover behavior changed -- WayfindingBand.
- * module.css is untouched; this is a data-only change. */
+ * top Nav exactly: The Path (/awakenarts-path, renamed from /primer
+ * 2026-07-27), Collections (/collection), Gallery (/gallery), Journals
+ * (/journal), About (/about). No styling, spacing, typography, or
+ * hover behavior changed -- WayfindingBand.module.css is untouched;
+ * this is a data-only change. */
 
 const PRIMARY_LINKS = [
-  { label: 'The Path', href: '/primer' },
+  { label: 'The Path', href: '/awakenarts-path' },
   { label: 'Collections', href: '/collection' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Journals', href: '/journal' },

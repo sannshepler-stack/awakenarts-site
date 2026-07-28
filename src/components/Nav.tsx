@@ -25,16 +25,19 @@ import Link from 'next/link'
 // marketing sequence. See AwakenArts_Publishing_Platform_Architecture.md.
 const links = [
   // 2026-07-25, per Susan's "AwakenArts Primer Housing Page" revision
-  // directive: "Explore the Path" now leads to the Digital Primer first
+  // directive: "Explore the Path" now leads to the Path document first
   // (orientation), not directly into Encounters (experience) -- the
   // Primer's own closing section ("Begin the Encounter Sequence") carries
   // the visitor onward from there. Encounters itself is untouched and
   // reachable on its own; this only changes where the site's primary
   // "Explore the Path" doorway leads.
   // 2026-07-26, per Susan's terminology-alignment pass: label shortened
-  // from "Explore the Path" to "The Path" -- same destination (/primer),
-  // just the settled short name for this section going forward.
-  { label: 'The Path', href: '/primer', cta: false },
+  // from "Explore the Path" to "The Path" -- same destination, just the
+  // settled short name for this section going forward.
+  // 2026-07-27, per Susan's "no Primer anywhere" directive: destination
+  // route renamed from /primer to /awakenarts-path (permanent redirect
+  // from the old route lives in next.config.js).
+  { label: 'The Path', href: '/awakenarts-path', cta: false },
   { label: 'Collection', href: '/collection', cta: false },
   { label: 'Gallery',    href: '/gallery',    cta: false },
   { label: 'Journal',    href: '/journal',    cta: false },

@@ -929,7 +929,7 @@ a   { color: inherit; text-decoration: none; }
    teaser copy, no arrow glyph.
 
    2026-07-25/26: went from one CTA, to three, to two boxed two-line
-   doorway cards (.primer-btn.hero-doorway at the time — since retired;
+   doorway cards (.path-intro-btn.hero-doorway at the time — since retired;
    /encounters' own reciprocal closing is now a single-line
    .home-coll-cta.home-coll-cta--light-surface button, same as
    "Experience the Encounters" — see encounters/page.tsx).
@@ -954,7 +954,7 @@ a   { color: inherit; text-decoration: none; }
    PathOfRecognition.tsx) reuses .hero-invitation / __label for
    "Experience the Encounters" (no subtitle there — see that
    component's own comment), replacing its former framed
-   .primer-btn--quiet button. Any future change here affects both.
+   .path-intro-btn--quiet button. Any future change here affects both.
    2026-07-26, later still, per her "AwakenArts Typography System"
    directive: .hero-invitation__label/__subtitle's sizes were wired to
    reference tokens (--invitation-title-size and, at that point,
@@ -5277,8 +5277,8 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    now image + title only — no descriptive line, no gold diamond
    divider, no hairline rule beneath it; .home-recognition__divider,
    __line, and __sub from the first pass are removed as no longer
-   used). The closing CTA is unchanged: .primer-close-divider /
-   .primer-btn.primer-btn--quiet, verbatim from /primer's own closing.
+   used). The closing CTA is unchanged: .path-intro-close-divider /
+   .path-intro-btn.path-intro-btn--quiet, verbatim from /awakenarts-path's own closing.
    2026-07-26, later still the same day, per her "Repurpose the
    Existing Introductory Section" directive: repositioned again, this
    time into the slot the old "AwakenArts Method" section used to
@@ -5674,7 +5674,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    untouched, per Susan's "same structure, spacing, typography, border
    weight, and animation... only the theme changes." Values match the
    light-background gold-outline register already proven elsewhere on
-   cream (.primer-btn): Dark-surface's --gold-lt/--cream pairing reads
+   cream (.path-intro-btn): Dark-surface's --gold-lt/--cream pairing reads
    near-illegible here (light gold and near-white both sit too close
    to a cream field), so Light-surface uses full-strength --gold at
    rest and --deep on hover instead — the same relationship (accent at
@@ -8417,32 +8417,36 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
-   PRIMER PAGE — /primer (When Language Shapes a Path)
+   THE AWAKENARTS PATH PAGE — /awakenarts-path (When Language Shapes a Path)
    Added 2026-07-25, per Susan's "Integrate the AwakenArts Digital Primer"
-   directive. Structure deliberately mirrors the Edition Preview page
+   directive (route renamed from /primer to /awakenarts-path, and all
+   "Primer" terminology retired from labels/filenames/routes, 2026-07-27,
+   per her "no Primer anywhere" directive -- see next.config.js for the
+   permanent redirect from the old /primer route). Structure deliberately
+   mirrors the Edition Preview page
    directly above (hero eyebrow + title, cover image, purpose copy,
    action row) -- reusing the same tokens (--deep/--cream/--gold/--mid,
    --serif/--sans, --h1-size family) rather than inventing new visual
    language, per the directive's editorial standards. Scoped as its own
-   primer-* classes (not edition-*) since this isn't a Figure Edition and
+   path-intro-* classes (not edition-*) since this isn't a Figure Edition and
    shouldn't couple to that system's own future changes.
    ═══════════════════════════════════════════════════════════════════════ */
-.primer-page {
+.path-intro-page {
   background: var(--cream);
 }
 
-.primer-hero {
+.path-intro-hero {
   max-width: 760px;
   margin: 0 auto;
   padding: 7rem 2rem 2rem;
   text-align: center;
 }
 
-.primer-hero__eyebrow {
+.path-intro-hero__eyebrow {
   justify-content: center;
 }
 
-.primer-hero__title {
+.path-intro-hero__title {
   font-family: var(--serif);
   /* 2026-07-25, per Susan: reduced ~17.5% (2rem/5vw/3.4rem ->
      1.65rem/4.1vw/2.8rem) so the heading no longer competes with the
@@ -8456,7 +8460,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   margin: 0.75rem 0 0;
 }
 
-.primer-hero__subtitle {
+.path-intro-hero__subtitle {
   font-family: var(--serif);
   font-style: italic;
   font-size: clamp(1.05rem, 2vw, 1.3rem);
@@ -8464,11 +8468,11 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   margin: 0.6rem 0 0;
 }
 
-.primer-cover-section {
+.path-intro-cover-section {
   padding: 0 2rem 3rem;
 }
 
-.primer-cover-img {
+.path-intro-cover-img {
   display: block;
   width: 100%;
   max-width: 460px;
@@ -8478,14 +8482,14 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   box-shadow: 0 18px 60px rgba(28, 43, 58, 0.18);
 }
 
-.primer-about {
+.path-intro-about {
   max-width: 640px;
   margin: 0 auto;
   padding: 0 2rem;
   text-align: center;
 }
 
-.primer-about__body {
+.path-intro-about__body {
   font-family: var(--serif);
   font-size: calc(var(--body-size) + 1px);
   line-height: var(--body-line);
@@ -8493,7 +8497,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   margin: 0 0 1.5rem;
 }
 
-.primer-actions {
+.path-intro-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1.1rem;
@@ -8506,10 +8510,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
    Primer, Download the Primer, and Experience the Encounters previously
    mixed two visual languages (large dark solid buttons vs. a delicate
    gold underlined text link). Unified into one quieter shared style,
-   .primer-btn.
+   .path-intro-btn.
    2026-07-26, per Susan's "consistent gold-outline system" directive
    (three passes the same day): the fill-weight variants
-   (.primer-btn--primary pale-gold tint, .primer-btn--secondary plain
+   (.path-intro-btn--primary pale-gold tint, .path-intro-btn--secondary plain
    cream) and the navy text / gold-lt border / solid-gold-lt hover fill
    are all removed -- that combination was read back as "brownish" and
    inconsistent across the three buttons. The corrected, single system:
@@ -8524,9 +8528,9 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
        border color itself doesn't change
      - no navy or brown fill in any state
    Hierarchy across Read / Download / Experience the Encounters is now
-   width alone -- .primer-btn--quiet (narrower) vs. bare .primer-btn --
+   width alone -- .path-intro-btn--quiet (narrower) vs. bare .path-intro-btn --
    not fill color. */
-.primer-btn {
+.path-intro-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -8543,19 +8547,19 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   text-decoration: none;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
-.primer-btn:link,
-.primer-btn:visited {
+.path-intro-btn:link,
+.path-intro-btn:visited {
   color: var(--gold);
   background: transparent;
   border-color: var(--gold);
 }
-.primer-btn:hover {
+.path-intro-btn:hover {
   background: rgba(201, 168, 76, 0.1);
   border-color: var(--gold);
   color: var(--gold);
 }
-.primer-btn:focus-visible,
-.primer-btn:active {
+.path-intro-btn:focus-visible,
+.path-intro-btn:active {
   background: transparent;
   border-color: var(--gold);
   color: var(--gold);
@@ -8563,14 +8567,14 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   outline-offset: 2px;
 }
 
-.primer-btn--quiet {
+.path-intro-btn--quiet {
   padding: 0.6rem 1.5rem;
 }
 
 /* ── Homepage Hero Doorway Cards — retired 2026-07-26 ────────────────
    Per Susan's terminology-alignment directive, "The Path" doorway
-   card on /encounters used to reuse .primer-btn's gold system here
-   (.primer-btn.hero-doorway / .hero-doorway__label / __subtitle).
+   card on /encounters used to reuse .path-intro-btn's gold system here
+   (.path-intro-btn.hero-doorway / .hero-doorway__label / __subtitle).
    Per her later "Primer CTA Refinement" directive, that card briefly
    moved to a .home-coll-cta / --light-surface / --doorway two-line
    shape instead, then per her very next "AwakenArts Path Button"
@@ -8592,14 +8596,14 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
    2026-07-25, later the same day, per her "Primer Action System"
    refinement: the link itself no longer uses .hero-invitation__title
    (that treatment's underline created a double-rule effect stacked
-   under this section's own divider) -- now .primer-btn--quiet,
+   under this section's own divider) -- now .path-intro-btn--quiet,
    matching Read/Download's unified style, just narrower. */
-.primer-close {
+.path-intro-close {
   padding: 1rem 2rem 4.5rem;
   text-align: center;
 }
 
-.primer-close-divider {
+.path-intro-close-divider {
   width: 96px;
   height: 1px;
   background: var(--gold);
@@ -8621,7 +8625,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
    one distinct next step rather than competing with the line above
    it, the same "words introduce, the destination carries the accent"
    logic already used elsewhere on the homepage. */
-.primer-close-intro {
+.path-intro-close-intro {
   max-width: var(--measure-narrow);
   margin: 0 auto 1.75rem;
   font-family: var(--serif);
@@ -8631,22 +8635,22 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   color: var(--deep);
 }
 
-/* .primer-close-doorway — retired 2026-07-26. Used to cap and center a
+/* .path-intro-close-doorway — retired 2026-07-26. Used to cap and center a
    width:100% doorway card (the reciprocal "The AwakenArts Path"
-   invitation on /encounters) inside this wider, non-flex .primer-close
+   invitation on /encounters) inside this wider, non-flex .path-intro-close
    context. Per Susan's "AwakenArts Path Button" directive, that link
    is now a single-line .home-coll-cta button, which is inline-flex and
-   sizes to its own content -- .primer-close's own text-align:center is
+   sizes to its own content -- .path-intro-close's own text-align:center is
    enough to center it, the same way it already centers
-   .primer-close-divider above it, so no wrapper/cap is needed. */
+   .path-intro-close-divider above it, so no wrapper/cap is needed. */
 
 @media (max-width: 640px) {
-  .primer-hero { padding: 5.5rem 1.5rem 2rem; }
-  .primer-cover-section { padding: 0 1.25rem 2.5rem; }
-  .primer-actions { padding: 0.5rem 1.5rem 3.5rem; flex-direction: column; align-items: center; }
-  .primer-btn { width: 100%; max-width: 320px; }
-  .primer-btn--quiet { width: 100%; max-width: 260px; }
-  .primer-close { padding: 0.5rem 1.5rem 3.5rem; }
+  .path-intro-hero { padding: 5.5rem 1.5rem 2rem; }
+  .path-intro-cover-section { padding: 0 1.25rem 2.5rem; }
+  .path-intro-actions { padding: 0.5rem 1.5rem 3.5rem; flex-direction: column; align-items: center; }
+  .path-intro-btn { width: 100%; max-width: 320px; }
+  .path-intro-btn--quiet { width: 100%; max-width: 260px; }
+  .path-intro-close { padding: 0.5rem 1.5rem 3.5rem; }
 }
 
 /* ─────────────────────────────────────────────

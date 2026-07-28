@@ -240,13 +240,13 @@ export default function EncountersIndexPage() {
         __body: "an illustrated introduction to the symbolic language,
         images, poetry, and reflective approach behind AwakenArts"),
         not a new message. */}
-    <section className="primer-close">
-      <div className="primer-close-divider" aria-hidden="true" />
-      <p className="primer-close-intro">
+    <section className="path-intro-close">
+      <div className="path-intro-close-divider" aria-hidden="true" />
+      <p className="path-intro-close-intro">
         An introduction to the symbolic language, images, and poetry
         behind AwakenArts.
       </p>
-      <Link href="/primer" className="home-coll-cta home-coll-cta--light-surface">
+      <Link href="/awakenarts-path" className="home-coll-cta home-coll-cta--light-surface">
         The AwakenArts Path
       </Link>
     </section>

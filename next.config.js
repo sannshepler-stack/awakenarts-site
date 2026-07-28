@@ -21,6 +21,12 @@ const nextConfig = {
       // /journal-prototype and v2 → /journal  (canonical journal is live)
       { source: '/journal-prototype',    destination: '/journal', permanent: true },
       { source: '/journal-prototype-v2', destination: '/journal', permanent: true },
+      // /primer → /awakenarts-path (2026-07-27, per Susan's "no Primer
+      // anywhere" directive — the route, folder, filenames, and labels
+      // all moved off "Primer" terminology onto "Path." This route was
+      // live on main, so the redirect is permanent rather than a
+      // silent removal.)
+      { source: '/primer', destination: '/awakenarts-path', permanent: true },
     ]
   },
 }

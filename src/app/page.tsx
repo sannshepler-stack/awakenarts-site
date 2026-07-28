@@ -251,7 +251,7 @@ export default function HomePage() {
                 .hero-invitation__label alone. .hero-invitation__eyebrow
                 itself is retired in globals.css (nothing else used
                 it). */}
-            <Link href="/primer" className="hero-invitation">
+            <Link href="/awakenarts-path" className="hero-invitation">
               <span className="hero-invitation__label">The AwakenArts Path <span className="hero-invitation__arrow" aria-hidden="true">→</span></span>
             </Link>
           </div>
