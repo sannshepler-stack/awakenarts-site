@@ -31,25 +31,39 @@ export const metadata: Metadata = {
  *                     the former competing "Explore the Collection"
  *                     doorway is removed now that Collection has its
  *                     own clear invitation immediately below.
- *   2. Discovery   — The Collection. Navy architectural framework,
+ *   2. Foundation  — Matthew 13:34, the quiet theological threshold,
+ *                     resolving into an invitation to /foundation
+ *                     rather than a closed statement.
+ *   3. Discovery   — The Collection. Navy architectural framework,
  *                     cream type, the complete uncropped cover.
  *                     Introduces the Figure Editions as the central
  *                     published body of work; the broader explanation
  *                     of companion works and the growing library
  *                     lives on /collection itself, not here.
- *   3. Understanding — The AwakenArts Method. Answers the question
+ *   4. Understanding — The AwakenArts Method. Answers the question
  *                     Discovery naturally raises ("what is happening
  *                     here?"). Deliberately quiet — a thoughtful
  *                     pause, not a second headline moment — and
  *                     written as an introduction to a future
  *                     standalone Method page, not a full explanation.
- *   4. Embodiment  — Queen Ann Introduction & Encounter. Still + poem
+ *   5. Embodiment  — Queen Ann Introduction & Encounter. Still + poem
  *                     as one literary spread, the Method made visible
  *                     in an actual work.
- *   5. Foundation  — Matthew 13:34, the quiet theological threshold,
- *                     resolving into an invitation to /foundation
- *                     rather than a closed statement.
  *   6. Footer
+ *
+ * 2026-07-29, per Susan's "Homepage Softening" directive: Foundation
+ * (Matthew 13:34) moves from closing the page to section #2, directly
+ * beneath the Hero — "the homepage has become a little harsh," and
+ * opening onto Scripture and a quiet threshold image right after the
+ * Hero softens that flow before the Collection's more architectural
+ * navy band arrives. Foundation is no longer nested inside the same
+ * section as the Queen Ann Encounter — it's now its own full-bleed
+ * section (see .poems-showcase-foundation in globals.css, which
+ * carries its own background + padding rather than inheriting them
+ * from .poems-showcase-section). The Queen Ann Encounter keeps its
+ * place late in the page, now standing alone in what remains of
+ * .poems-showcase-section. Copy, imagery, and the /foundation CTA are
+ * otherwise unchanged.
  *
  * This supersedes the previous six-movement ordering (2026-06-28
  * Final Editorial Refinement), which placed Collection first but had
@@ -67,7 +81,8 @@ export const metadata: Metadata = {
  * the Christian foundation it is offered from, and where to continue
  * — without further explanation. /foundation answers the question
  * Matthew 13:34 naturally raises; the homepage now invites that next
- * step instead of closing the thought itself.
+ * step instead of closing the thought itself — and, as of 2026-07-29,
+ * invites it early rather than only at the close.
  */
 
 export default function HomePage() {
@@ -296,6 +311,42 @@ export default function HomePage() {
 
       </section>
 
+      {/* ── FOUNDATION — Matthew 13:34 ───────────────────────────
+          2026-07-29, per Susan's "Homepage Softening" directive: this
+          used to close the page, nested inside .poems-showcase-section
+          alongside the Queen Ann Encounter (see that section further
+          down, now Queen Ann Encounter only). Moved here as section
+          #2 — directly beneath the Hero — to soften the homepage's
+          opening flow: Scripture and a quiet threshold image now
+          greet the visitor right after the Hero, before the more
+          architectural navy Collection band. Now its own full-bleed
+          section rather than a div sharing .poems-showcase-section's
+          background/padding — see .poems-showcase-foundation in
+          globals.css, which carries its own Warm ivory background and
+          top/bottom padding standing alone. Copy, imagery, and the
+          /foundation CTA are unchanged. */}
+      <section className="poems-showcase-foundation" aria-label="Foundation">
+        <AtmosphericHeader
+          src="/images/headers/biblical-foundation.jpg"
+          alt="Sunrise over hills and a winding river, seen through a worn stone window — a threshold image."
+          tall
+          fadeTo="#FAF7F2"
+          fadeHeight={25}
+        />
+        <div className="poems-showcase-foundation__inner">
+          <p className="hero-quote-text">
+            He did not say anything to them without using a parable.
+          </p>
+          <p className="hero-quote-cite">Matthew 13:34</p>
+          <p className="hero-quote-body">
+            AwakenArts works within that same tradition.
+          </p>
+          <Link href="/foundation" className="hero-quote-closing">
+            Read the Foundation of AwakenArts <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </section>
+
       {/* ── THE COLLECTION ───────────────────────────────────────
           Stage 2, Discovery — immediately after the Hero. Presented on
           a navy field per the Homepage Reformation Directive: the
@@ -433,14 +484,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── QUEEN ANN ENCOUNTER & FOUNDATION ───────────────────────
-          A flat cream field carrying two quiet movements, encountered
-          rather than explained:
-            1. Queen Ann Encounter — the portrait still and the poem
-               as facing pages of one open book, equal partners.
-            2. Matthew 13:34 (the foundation, placed last, quiet) —
-               the encounter resolves directly into it; no replacement
-               band or divider between them.
+      {/* ── QUEEN ANN ENCOUNTER ─────────────────────────────────────
+          A flat cream field: the portrait still and the poem as
+          facing pages of one open book, equal partners.
           Revised per Susan's June 2026 review: the navy stage and
           rounded bottom corners that used to wrap the title page (see
           .poems-showcase-intro above, since split into its own
@@ -448,11 +494,20 @@ export default function HomePage() {
           "card" rather than a publication, so both were removed —
           this field begins directly where the Introduction band above
           it ends. See the POEMS / EDITIONS SHOWCASE block in
-          globals.css. */}
+          globals.css.
+          2026-07-29, per Susan's "Homepage Softening" directive: this
+          section used to close with Matthew 13:34 nested inside it —
+          that block has moved up to its own section #2, directly
+          under the Hero (see FOUNDATION above). This section now ends
+          with the Encounter itself; its own padding-bottom reverts
+          from the Matthew-specific fixed override to the standard
+          shared --band-gap token, since it no longer needs to supply
+          a Foundation-specific closing gap — see .poems-showcase-
+          section in globals.css. */}
       <section className="poems-showcase-section" aria-label="Queen Ann Encounter">
         <div className="poems-showcase-inner">
 
-          {/* 2. Queen Ann Encounter — the poem and the portrait still
+          {/* Queen Ann Encounter — the poem and the portrait still
               as facing pages of one open book: equal height, equal
               importance, identical top alignment, no captions.
               The imagery now performs the work previously done by
@@ -528,69 +583,6 @@ export default function HomePage() {
             </a>
           </p>
 
-        </div>
-
-        {/* 3. Matthew 13:34 — the foundation. Placed last, quiet and
-            secondary: the theological/literary grounding after the
-            viewer has already encountered the image and poem. The
-            encounter resolves directly into it — no transitional
-            band between them. */}
-        <div className="poems-showcase-foundation">
-          <AtmosphericHeader
-            src="/images/headers/biblical-foundation.jpg"
-            alt="Sunrise over hills and a winding river, seen through a worn stone window — a threshold image."
-            tall
-            /* 2026-07-14, AwakenArts Atmosphere System: briefly given
-               its own Soft Light background, then reverted the same
-               day per Susan -- "do not add a color band between the
-               queen ann section and the matthew quote section." This
-               section inherits .poems-showcase-section's Warm ivory
-               (var(--cream), #FAF7F2) again; fadeTo updated to match
-               that exactly (was #f5f0e8, a slightly-off placeholder
-               predating this token) so the image still fades with no
-               visible seam. */
-            fadeTo="#FAF7F2"
-            fadeHeight={25}
-          />
-          <div className="poems-showcase-foundation__inner">
-            <p className="hero-quote-text">
-              He did not say anything to them without using a parable.
-            </p>
-            <p className="hero-quote-cite">Matthew 13:34</p>
-            {/* 2026-07-10, per Susan's directive: the homepage close is
-                trimmed to threshold image + Scripture + one short bridge
-                line + a CTA to /foundation. The longer explanatory
-                paragraph that used to sit here ("AwakenArts works within
-                that same enduring tradition — bringing image and poem
-                together as symbolic forms that invite recognition
-                through attentive engagement, not explanation.") and the
-                "Christ is the center. Scripture is the authority." credo
-                line below it are removed from the homepage — both ideas
-                already live in full on /foundation (see
-                src/app/foundation/page.tsx), which is exactly where
-                Susan wants the complete statement read, without
-                interrupting the homepage's flow.
-
-                2026-07-10 "Foundation Section Refinement," per Susan:
-                copy unchanged, but .hero-quote-text/.hero-quote-cite/
-                .hero-quote-body/.hero-quote-closing were retyped and
-                respaced in globals.css so Scripture, citation, and
-                this bridge line read as one closing meditation —
-                Scripture -> Reflection -> Invitation — rather than
-                three stacked blocks. See globals.css for the full
-                rationale on each rule. */}
-            <p className="hero-quote-body">
-              AwakenArts works within that same tradition.
-            </p>
-            {/* 2026-06-28 Final Editorial Refinement: the former closed
-                statement ("Symbolic language invites recognition before
-                explanation.") is replaced with an invitation forward —
-                continuity, not promotion. This is the homepage's one
-                quiet point of departure toward /foundation. */}
-            <Link href="/foundation" className="hero-quote-closing">
-              Read the Foundation of AwakenArts <span aria-hidden="true">→</span>
-            </Link>
-          </div>
         </div>
       </section>
 

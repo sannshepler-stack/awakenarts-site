@@ -4707,17 +4707,22 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 /* ─────────────────────────────────────────────
    HOMEPAGE — QUEEN ANN: INTRODUCTION & ENCOUNTER
    Single integrated cream panel. Revised 2026-06-26 per the
-   Homepage Reformation Directive — three quiet movements, the
-   encounter resolving directly into the reflection with no
-   transitional band between them —
+   Homepage Reformation Directive — two quiet movements, the title
+   page resolving directly into the encounter with no transitional
+   band between them —
    1. Queen Ann Introduction — a title page: name + a single short
       quotation from the poem, creating anticipation rather than
       explanation
    2. Queen Ann Encounter — still and poem as a literary spread:
       matching proportion and frame so the two are equal visual
       partners, facing pages of one open book
-   3. Matthew 13:34 (the literary foundation, placed last, quiet —
-      the former transition section has been removed entirely)
+
+   2026-07-29, per Susan's "Homepage Softening" directive: Matthew
+   13:34 (the literary foundation) no longer closes this panel — it
+   moved to its own full-bleed section, #2 on the page, directly
+   beneath the Hero. See .poems-showcase-foundation further below,
+   now a standalone <section> with its own background + padding
+   rather than a div inheriting both from this block.
 ───────────────────────────────────────────── */
 
 /* Flat cream field — no navy "stage," no rounded card wrapping the
@@ -4737,21 +4742,21 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      band above provides its own preceding padding and a hard navy ->
      cream color cut — this field no longer needs to manufacture extra
      top breathing room on its own; the cut itself reads as the
-     deliberate beat. Bottom padding (--band-gap) unchanged.
-     2026-07-14, AwakenArts Atmosphere System: briefly split this
-     section's Foundation half onto its own Soft Light (pale
-     parchment) background, then reverted the same day per Susan —
-     "do not add a color band between the queen ann section and the
-     matthew quote section." Queen Ann Encounter and the Matthew 13:34
-     close stay one unbroken Warm ivory field, as before.
+     deliberate beat.
      2026-07-14 "Matthew Quote Section — Structural Spacing Fix," per
-     Susan: bottom padding overridden from var(--band-gap) (108px) to a
-     fixed 96px, inside her explicit 88-104px range for "Foundation
-     link to bottom of quotation section." This is a deliberate,
-     Susan-directed exception scoped to this one selector only — the
-     shared --band-gap token itself is untouched and still governs
-     every other page's content-end -> Wayfinding Band gap. */
-  padding: 5rem 0 96px;
+     Susan: bottom padding was overridden from var(--band-gap) to a
+     fixed 96px, tuned specifically for "Foundation link to bottom of
+     quotation section" — at the time, that Matthew 13:34 block was
+     this section's own closing content.
+     2026-07-29, per Susan's "Homepage Softening" directive: Matthew
+     13:34 has moved out of this section entirely (see .poems-
+     showcase-foundation, now its own section elsewhere on the page),
+     so the Foundation-specific exception no longer applies here — this
+     field now ends with the Queen Ann Encounter itself, the same kind
+     of content-end -> Wayfinding Band gap every other section uses.
+     Reverted to the standard var(--band-gap) token accordingly
+     (96px — numerically unchanged, since --band-gap is itself 6rem). */
+  padding: 5rem 0 var(--band-gap);
 }
 
 .poems-showcase-inner {
@@ -5067,26 +5072,38 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .poems-showcase-foundation {
   /* 2026-07-14, AwakenArts Atmosphere System: briefly given its own
      Soft Light (pale parchment) background to distinguish it from the
-     Queen Ann Encounter above, then reverted the same day per Susan —
-     "do not add a color band between the queen ann section and the
-     matthew quote section." No background of its own; inherits the
-     parent .poems-showcase-section's Warm ivory, unbroken. */
+     Queen Ann Encounter, then reverted the same day per Susan — "do
+     not add a color band between the queen ann section and the
+     matthew quote section." At the time this was a div nested inside
+     .poems-showcase-section, so "no background of its own" meant it
+     simply inherited that parent's Warm ivory.
+     2026-07-29, per Susan's "Homepage Softening" directive: this is
+     now its own full-bleed <section>, positioned directly beneath the
+     Hero (page section #2), no longer nested inside .poems-showcase-
+     section — so it needs to carry that same Warm ivory itself rather
+     than inherit it. Set explicitly here; the reasoning above (one
+     unbroken cream field, no separate color band) still holds, it's
+     just sourced locally now instead of via a parent. */
+  background: var(--cream);
   /* NOTE this padding-top sits ABOVE the AtmosphericHeader image below
-     (the image is this div's first child) — it's the gap between the
-     Queen Ann encounter above and the start of the image, NOT the gap
-     between the image's fade and the quotation text. It was mislabeled
-     as the "image/fade to quotation" gap through two earlier passes
-     (2026-07-14) before Susan caught the error at actual size — see
-     .hero-quote-text's own margin-top for the real fade-to-quotation
-     gap, which is a separate value on a different element entirely.
-     This padding-top's own value (80px) is otherwise untouched by that
-     correction; it was never the thing she was asking to change.
-     A supplemental padding-bottom that used to live here (for the
-     trailing gap) was removed 2026-07-14 — that gap is now supplied
-     solely by .poems-showcase-section's own padding-bottom (overridden
-     there to a fixed 96px; see that rule for why --band-gap itself
-     isn't used directly). Responsive tiers below. */
-  padding-top: 80px;
+     (the image is this section's first child). Originally the gap
+     between the Queen Ann encounter above and the start of the image;
+     now that this section sits directly under the Hero instead, it
+     reads as the gap between the Hero and the threshold image —
+     same role (breathing room before the image begins), same value
+     (80px), just a different neighbor above it. See .hero-quote-text's
+     own margin-top for the separate fade-to-quotation gap, unaffected
+     by this value.
+     Padding-bottom is new as of 2026-07-29: this section used to rely
+     entirely on its parent .poems-showcase-section for the trailing
+     gap (a fixed 96px override, tuned for "Foundation link to bottom
+     of quotation section"). Now that Foundation is a standalone
+     section — the very next thing after it is the Collection band —
+     it needs its own closing gap, so it takes the same numeric value
+     back as the standard var(--band-gap) token (96px), which is what
+     every other section on the page uses for its own content-end gap.
+     Responsive tiers below. */
+  padding: 80px 0 var(--band-gap);
 }
 .poems-showcase-foundation__inner {
   /* 2026-06-29: widened from 820px — this was the real bottleneck
@@ -5102,17 +5119,18 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 @media (max-width: 1024px) {
-  /* 2026-07-14 "Matthew Quote Section — Structural Spacing Fix": the
-     Foundation section's own bottom padding is overridden here too
-     (96px -> 80px), same fixed-value exception as the desktop rule
-     above — proportional to it, not derived from --band-gap-md, since
-     this section no longer uses the shared token at all. Every other
-     section on the page still uses var(--band-gap-md) as normal. */
-  .poems-showcase-section { padding: 4rem 0 80px; }
+  /* 2026-07-29: both sections below reverted to the standard
+     var(--band-gap-md) token for their bottom padding, now that
+     Matthew 13:34 (Foundation) is its own standalone section rather
+     than the closing content of .poems-showcase-section — see the
+     desktop rules above for the full reasoning. Numerically identical
+     to the old fixed 80px override, since --band-gap-md is itself
+     5rem. */
+  .poems-showcase-section { padding: 4rem 0 var(--band-gap-md); }
   .poems-showcase-inner { padding: 0 1.75rem; }
   .poems-showcase-intro { padding: 4rem 1.75rem; }
-  /* ~80% of desktop values, tablet tier */
-  .poems-showcase-foundation { padding-top: 64px; }
+  /* ~80% of the desktop top value, tablet tier */
+  .poems-showcase-foundation { padding: 64px 0 var(--band-gap-md); }
   .poems-showcase-foundation__inner { padding: 0 1.75rem; }
   /* margin-top is the fade-to-quotation gap (new, added 2026-07-14
      actual-size correction); margin-bottom is the unrelated
@@ -5122,12 +5140,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .hero-quote-closing { margin-top: 42px; }
 }
 @media (max-width: 640px) {
-  .poems-showcase-section { padding: 3rem 0 64px; }
+  .poems-showcase-section { padding: 3rem 0 var(--band-gap-sm); }
   .poems-showcase-inner { padding: 0 1.25rem; }
-  /* ~65% of desktop values, mobile tier — keeps the four moments
+  /* ~65% of the desktop top value, mobile tier — keeps the moments
      legible and separated without making the section excessively tall
      on small screens. */
-  .poems-showcase-foundation { padding-top: 52px; }
+  .poems-showcase-foundation { padding: 52px 0 var(--band-gap-sm); }
   .poems-showcase-foundation__inner { padding: 0 1.25rem; }
   .poems-showcase-intro { padding: 3.5rem 1.25rem; }
   .hero-quote-text { margin-top: 36px; margin-bottom: 25px; }
