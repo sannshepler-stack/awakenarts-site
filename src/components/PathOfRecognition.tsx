@@ -86,6 +86,16 @@ import Link from 'next/link'
  * the correct sequence (01 Longing -> 05 The Path). File 02 carries a
  * typo in its own filename ("Recognition_Pathi_02.png") -- referenced
  * as-is rather than renaming an asset outside this pass's scope.
+ *
+ * 2026-08-07 — briefly held a new methodology statement ("Discover how
+ * figurative language promotes recognition and learning."), inserted
+ * between the statement and the intro paragraph, per Susan's
+ * "Figurative Language Methodology Line" directive. Same day, per her
+ * follow-up ("the line of text will work better on the hero section"):
+ * removed from here and placed in the Hero instead, after the mission
+ * paragraph and before the "The AwakenArts Path" invitation — see
+ * page.tsx's Hero section and .hero-method in globals.css. This
+ * section reverts to its 2026-07-26 form, unchanged.
  */
 const PATH_OF_RECOGNITION = [
   { slug: 'longing', image: '/images/recognition/Recognition_Path_01.png', label: 'Longing' },

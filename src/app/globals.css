@@ -643,8 +643,21 @@ a   { color: inherit; text-decoration: none; }
      room to land as a deliberate beat rather than an abrupt cut.
      2026-07-26: trimmed further (6rem -> 4.5rem) as part of the same
      "reduce the whitespace" pass above -- still a real, deliberate gap
-     before the hard navy cut into Collection, just a smaller one. */
-  padding-bottom: 4.5rem;
+     before the hard navy cut into Collection, just a smaller one.
+     2026-08-07, per Susan's "Homepage Section Transitions & Vertical
+     Rhythm" directive: this rationale is stale -- Foundation, not
+     Collection, has followed the Hero directly since the 2026-07-29
+     "Homepage Softening" reorder, and nobody revisited this value
+     when that happened. Stacked against Foundation's own padding-top
+     (see .poems-showcase-foundation below), the combined Hero ->
+     Foundation gap had grown to 152px on desktop -- well past the
+     site's own documented Vertical Rhythm Standard (--band-gap, 96px
+     desktop, the value every other single-color-family section
+     transition on the page uses). Trimmed to 2.5rem (40px) so that,
+     combined with Foundation's own reduced padding-top (56px), the
+     two sections now meet at exactly 96px -- a deliberate, visible
+     gap, just no longer double the site's own standard. */
+  padding-bottom: 2.5rem;
   padding-left: 2rem;
   padding-right: 1rem; /* reduced so the image can reach nearer the right edge */
   display: grid;
@@ -891,6 +904,43 @@ a   { color: inherit; text-decoration: none; }
 .hero-mission__body {
   font-style: normal;
   color: var(--deep);
+}
+
+/* 2026-08-07, per Susan's "Figurative Language Methodology Line"
+   directive (moved here same day from "A Path of Recognition," per
+   her follow-up "the line of text will work better on the hero
+   section" -- see PathOfRecognition.tsx's history comment and this
+   file's own .home-recognition__method removal note above).
+   Kept in the Hero's own serif (var(--serif)) rather than the sans
+   treatment tried in the Path of Recognition section -- the Hero's
+   title, mission line, and invitation label are all Cormorant, and
+   introducing Inter here would be the first sans-serif text in the
+   Hero, a bigger departure than swapping fonts within "A Path of
+   Recognition," which already mixes Inter for its labels/CTA.
+   Reads as "stated, not evoked" through weight (500, medium) and
+   roman style -- not italic, unlike the lede above it.
+   2026-08-07, later the same day, per Susan's "one small change"
+   directive: moved again, from between the mission paragraph and the
+   CTA to directly beneath "The AwakenArts Path →" (see page.tsx --
+   now the last child of .hero-invitations, after the Link), as
+   "supporting language for that link" rather than a fourth peer
+   statement in the mission stack. Font-family, style, weight, size,
+   and color are explicitly untouched, per her "do not otherwise
+   redesign the hero" -- only margin-top changes here, tightened
+   (0.85rem -> 0.5rem) so it reads as attached to the CTA immediately
+   above it rather than carrying the same spaced-sibling rhythm it had
+   under the mission paragraph. .hero-invitations' own margin-top
+   (3rem, separating the whole CTA+support block from the mission
+   paragraph) is untouched. */
+.hero-method {
+  font-family: var(--serif);
+  font-style: normal;
+  font-weight: 500;
+  font-size: var(--editorial-italic-size);
+  line-height: var(--subtitle-line);
+  color: var(--deep);
+  max-width: 46ch;
+  margin: 0.5rem 0 0;
 }
 
 .hero-sub {
@@ -2454,7 +2504,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
     margin-top: 56px; /* matches the mobile nav height */
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 2.5rem 1.25rem 3.75rem;
+    /* 2026-08-07, per Susan's "Homepage Section Transitions & Vertical
+       Rhythm" directive: bottom padding trimmed (3.75rem -> 2rem) to
+       match the desktop rule's own reduction just above -- combined
+       with Foundation's own tablet-tier padding-top (48px, see
+       .poems-showcase-foundation's 1024px override), the Hero ->
+       Foundation gap now lands at 80px, matching --band-gap-md, the
+       site's own tablet-tier Vertical Rhythm Standard. */
+    padding: 2.5rem 1.25rem 2rem;
   }
   .hero__text {
     justify-self: start;
@@ -2501,7 +2558,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 @media (max-width: 640px) {
   .hero {
     gap: 1.25rem;
-    padding: 2rem 1rem 3rem;
+    /* 2026-08-07, per Susan's "Homepage Section Transitions & Vertical
+       Rhythm" directive: bottom padding trimmed (3rem -> 1.75rem) --
+       combined with Foundation's own mobile-tier padding-top (36px,
+       see .poems-showcase-foundation's 640px override), the Hero ->
+       Foundation gap now lands at 64px, matching --band-gap-sm, the
+       site's own mobile-tier Vertical Rhythm Standard. */
+    padding: 2rem 1rem 1.75rem;
   }
   .hero__media {
     max-width: 420px;
@@ -5102,8 +5165,19 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      it needs its own closing gap, so it takes the same numeric value
      back as the standard var(--band-gap) token (96px), which is what
      every other section on the page uses for its own content-end gap.
-     Responsive tiers below. */
-  padding: 80px 0 var(--band-gap);
+     Responsive tiers below.
+     2026-08-07, per Susan's "Homepage Section Transitions & Vertical
+     Rhythm" directive: trimmed 80px -> 56px. Stacked against .hero's
+     own padding-bottom (also trimmed, see that rule), the combined
+     Hero -> Foundation gap had grown to 152px on desktop -- markedly
+     larger than --band-gap (96px) itself, the site's own standard for
+     a single section-to-section transition, even though this is a
+     same-color-family (cream-to-cream) seam that should read lighter
+     than a hard color-change cut, not heavier. Now sums to exactly
+     96px with Hero's own trimmed value -- a deliberate, still-visible
+     gap, just no longer an ad-hoc double-stack inherited from when
+     Collection (not Foundation) used to follow the Hero directly. */
+  padding: 56px 0 var(--band-gap);
 }
 .poems-showcase-foundation__inner {
   /* 2026-06-29: widened from 820px — this was the real bottleneck
@@ -5129,8 +5203,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .poems-showcase-section { padding: 4rem 0 var(--band-gap-md); }
   .poems-showcase-inner { padding: 0 1.75rem; }
   .poems-showcase-intro { padding: 4rem 1.75rem; }
-  /* ~80% of the desktop top value, tablet tier */
-  .poems-showcase-foundation { padding: 64px 0 var(--band-gap-md); }
+  /* 2026-08-07, per Susan's "Homepage Section Transitions & Vertical
+     Rhythm" directive: trimmed 64px -> 48px, matching the desktop
+     tier's own proportional reduction -- combined with Hero's own
+     trimmed padding-bottom at this breakpoint (32px, see .hero's
+     1080px override), sums to 80px, exactly --band-gap-md. */
+  .poems-showcase-foundation { padding: 48px 0 var(--band-gap-md); }
   .poems-showcase-foundation__inner { padding: 0 1.75rem; }
   /* margin-top is the fade-to-quotation gap (new, added 2026-07-14
      actual-size correction); margin-bottom is the unrelated
@@ -5142,10 +5220,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 @media (max-width: 640px) {
   .poems-showcase-section { padding: 3rem 0 var(--band-gap-sm); }
   .poems-showcase-inner { padding: 0 1.25rem; }
-  /* ~65% of the desktop top value, mobile tier — keeps the moments
-     legible and separated without making the section excessively tall
-     on small screens. */
-  .poems-showcase-foundation { padding: 52px 0 var(--band-gap-sm); }
+  /* 2026-08-07, per Susan's "Homepage Section Transitions & Vertical
+     Rhythm" directive: trimmed 52px -> 36px -- combined with Hero's
+     own trimmed padding-bottom at this breakpoint (28px, see .hero's
+     640px override), sums to 64px, exactly --band-gap-sm. */
+  .poems-showcase-foundation { padding: 36px 0 var(--band-gap-sm); }
   .poems-showcase-foundation__inner { padding: 0 1.25rem; }
   .poems-showcase-intro { padding: 3.5rem 1.25rem; }
   .hero-quote-text { margin-top: 36px; margin-bottom: 25px; }
@@ -5307,10 +5386,32 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    opening line. No property changes needed here: .home-recognition's
    own cream background and border-top already read correctly right
    after Collection's navy field, the same way Method's did before it. */
+/* 2026-08-07, per Susan's "Homepage Section Transitions & Vertical
+   Rhythm" directive, second pass: padding-top trimmed (5.5rem ->
+   3.5rem). Paired with .home-coll-section's own reduced bottom
+   padding (see that rule), the Collection -> Recognition seam --
+   the single largest offender found in the full-page audit at 232px
+   combined -- now lands at 128px, a real cut while still reading as
+   a deliberate, generous arrival onto a new cream field after the
+   navy band (not the flat single --band-gap used for the same-tone
+   Hero -> Foundation seam). Padding-bottom (4.5rem) is UNCHANGED --
+   that's the Recognition -> Queen Ann intro seam, explicitly out of
+   scope for this pass. Responsive tiers below and at this rule's
+   existing 640px override. */
 .home-recognition {
   background: var(--cream);
-  padding: 5.5rem 2rem 4.5rem;
+  padding: 3.5rem 2rem 4.5rem;
   border-top: 1px solid rgba(28, 43, 58, 0.07);
+}
+
+@media (max-width: 1024px) {
+  /* 2026-08-07, same directive: tablet tier had no dedicated padding
+     override before this pass (only the grid's own column-count
+     change existed at this breakpoint) -- padding-top inherited the
+     desktop value at every width down to 640px. Combined with
+     Collection's own new tablet bottom padding (64px), lands the
+     seam at 112px on tablet. */
+  .home-recognition { padding-top: 3rem; }
 }
 
 .home-recognition__inner {
@@ -5380,6 +5481,15 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .home-recognition__statement-gold {
   color: var(--gold);
 }
+
+/* .home-recognition__method — removed 2026-08-07, same day it was added.
+   Held the new "Discover how figurative language promotes recognition
+   and learning." methodology statement here briefly, per Susan's
+   "Figurative Language Methodology Line" directive. Her same-day
+   follow-up ("the line of text will work better on the hero section")
+   moved it to the Hero instead — see .hero-method below and
+   PathOfRecognition.tsx's own history comment. This section's rules
+   are otherwise unchanged from 2026-07-26. */
 
 .home-recognition__intro {
   /* AwakenArts Typography System (2026-07-26): references --body-size/
@@ -5483,7 +5593,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 @media (max-width: 640px) {
-  .home-recognition { padding: 3.5rem 1.5rem 3rem; }
+  /* 2026-08-07, per Susan's "Homepage Section Transitions & Vertical
+     Rhythm" directive, second pass: padding-top trimmed (3.5rem ->
+     2.5rem). Combined with Collection's own new mobile bottom padding
+     (56px), the seam lands at 96px, down from 160px. Padding-bottom
+     (3rem) is UNCHANGED -- Recognition -> Queen Ann intro is out of
+     scope for this pass. */
+  .home-recognition { padding: 2.5rem 1.5rem 3rem; }
   /* 2026-07-26, per Susan's breakpoint-audit request ("look for any
      large vertical gaps... introduced by the new typography and CTA
      changes"): this override predates the CTA reorder and the
@@ -5526,11 +5642,45 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    Homepage. The darker ground establishes it as AwakenArts'
    architectural framework and creates a clear visual transition
    before the Queen Ann encounter that follows. Cream typography,
-   restrained gold accents; generous space around the cover. */
+   restrained gold accents; generous space around the cover.
+   2026-08-07, per Susan's "Homepage Section Transitions & Vertical
+   Rhythm" directive, second pass (Foundation -> Collection and
+   Collection -> Recognition, the two highest-priority seams from the
+   full-page audit): top/bottom padding trimmed (8rem/9rem -> 4rem/
+   4.5rem). This section's own generous internal padding was never
+   the problem in isolation -- it's a real color-change seam on both
+   sides (cream Foundation above, cream Recognition below), and per
+   Susan's explicit "preserve the visual integrity of the color change
+   and section hierarchy," Collection keeps meaningfully more padding
+   than a same-tone seam like Hero -> Foundation (trimmed to exactly
+   one --band-gap there). The problem was the STACK: combined with
+   Foundation's own already-standard bottom padding (96px) and
+   Recognition's own top padding, the two seams totaled 224px and
+   232px on desktop -- more than double a single --band-gap (96px).
+   Trimmed values land each seam at 160px (Foundation -> Collection)
+   and 128px (Collection -> Recognition) -- a deliberate, still
+   asymmetric reduction (not a flat "everything is band-gap" pass;
+   Collection keeps the larger share on each side, honoring its role
+   as the page's architectural anchor), clearly more generous than
+   the Hero seam's single band-gap, clearly less than the prior
+   double-stack. Responsive tiers below and at .home-coll-section's
+   existing 640px override. */
 .home-coll-section {
   background: var(--deep);
-  padding: 8rem 3rem 9rem;
+  padding: 4rem 3rem 4.5rem;
   border-top: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+@media (max-width: 1024px) {
+  /* 2026-08-07, same directive: tablet tier had no dedicated padding
+     override before this pass (only .home-coll-inner's ≤860px grid
+     stacking existed) -- it simply inherited the desktop value at
+     every width down to 640px, meaning the Foundation -> Collection
+     and Collection -> Recognition seams were at their WORST (208px /
+     232px) across the entire tablet range. Given an explicit tier
+     here for the first time, proportioned between the new desktop and
+     640px values. */
+  .home-coll-section { padding: 3.5rem 2.25rem 4rem; }
 }
 
 .home-coll-inner {
@@ -5729,7 +5879,15 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 @media (max-width: 640px) {
-  .home-coll-section { padding: 5.5rem 1.5rem 6.5rem; }
+  /* 2026-08-07, per Susan's "Homepage Section Transitions & Vertical
+     Rhythm" directive, second pass: trimmed (5.5rem/6.5rem ->
+     2.5rem/3.5rem), same proportional reduction as the desktop/tablet
+     tiers above -- combined with Foundation's own mobile bottom
+     padding (64px) and Recognition's own mobile top padding (40px,
+     see .home-recognition's 640px override), the two seams now land
+     at 104px (Foundation -> Collection) and 96px (Collection ->
+     Recognition), down from 152px / 160px. */
+  .home-coll-section { padding: 2.5rem 1.5rem 3.5rem; }
   .home-coll-cover__img { width: 290px; }
 }
 

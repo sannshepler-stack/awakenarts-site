@@ -83,6 +83,18 @@ export const metadata: Metadata = {
  * Matthew 13:34 naturally raises; the homepage now invites that next
  * step instead of closing the thought itself — and, as of 2026-07-29,
  * invites it early rather than only at the close.
+ *
+ * 2026-08-07, per Susan's "Switch Matthew and A Path of Recognition"
+ * directive: Foundation (Matthew 13:34) and A Path of Recognition swap
+ * places. A Path of Recognition now sits directly beneath the Hero as
+ * section #2; Foundation moves to sit after Collection, immediately
+ * before the Queen Ann title band, where A Path of Recognition used to
+ * be. Collection keeps its position between them unchanged. Revised
+ * order: Hero -> A Path of Recognition -> Collection -> Foundation ->
+ * Queen Ann Introduction & Encounter -> Footer. No copy, imagery, or
+ * component content changed in this pass -- position only. See the
+ * individual section comments below for each section's own updated
+ * placement note.
  */
 
 export default function HomePage() {
@@ -173,10 +185,25 @@ export default function HomePage() {
               line thematic statement") and the longer explanatory
               sentence (.hero-mission__body, roman/navy, "body prose")
               -- rather than running both in italic/gold together. Copy
-              itself is unchanged, just the markup/styling split. */}
+              itself is unchanged, just the markup/styling split.
+              2026-08-07, per Susan's directive: opening statement
+              changed from "Every life tells its story in images." to
+              "Every life leaves something to be recognized." -- now
+              that A Path of Recognition (opening line: "People tell
+              their stories with facts. / They reveal their lives
+              through images.") sits directly beneath the Hero as
+              section #2 (see the 2026-08-07 "Switch Matthew and A Path
+              of Recognition" reorder below), the old lede repeated the
+              very next section's own "stories... images" language.
+              The new lede sets up "recognition" as the Hero's own
+              theme instead, so the Hero introduces the idea and A Path
+              of Recognition develops it, rather than both opening with
+              the same "story/images" framing back to back. Styling
+              (.hero-mission__lede, italic/gold) and the rest of the
+              paragraph are unchanged. */}
           <p className="hero-mission">
             <span className="hero-mission__lede">
-              Every life tells its story in images.
+              Every life leaves something to be recognized.
             </span>
             <br />
             <span className="hero-mission__body">
@@ -269,6 +296,39 @@ export default function HomePage() {
             <Link href="/awakenarts-path" className="hero-invitation">
               <span className="hero-invitation__label">The AwakenArts Path <span className="hero-invitation__arrow" aria-hidden="true">→</span></span>
             </Link>
+
+            {/* Methodology line — added 2026-08-07, per Susan's
+                "Figurative Language Methodology Line" directive.
+                Originally placed between the mission paragraph and
+                this CTA (per her first follow-up, "the line of text
+                will work better on the hero section"); moved again
+                same day, directly beneath "The AwakenArts Path →," per
+                her "one small change" directive: "supporting language
+                for that link," not a fourth peer statement in the
+                mission stack above. Deliberately minimal change from
+                its prior version -- font-family, style, weight, and
+                color are untouched (see .hero-method in globals.css);
+                only its position (now inside .hero-invitations,
+                trailing the Link) and its margin (tightened to read as
+                directly attached to the CTA above it, not a spaced
+                sibling of the mission paragraph) changed. Names the
+                underlying method explicitly (figurative language:
+                metaphor, poetry, symbolic imagery, parable) so the
+                Hero states plainly, in one line, that AwakenArts is
+                not simply poems, images, journals, or workshops but a
+                consistent methodology toward recognition and
+                learning.
+
+                2026-08-07, later the same day, per Susan's follow-up:
+                wording swapped from "Discover how figurative language
+                promotes recognition and learning." to "Explore the
+                World of Figurative Language" -- a shorter, more direct
+                supporting line under the CTA. Position, styling, and
+                the surrounding rationale above are unchanged; only the
+                copy itself changed. */}
+            <p className="hero-method">
+              Explore the World of Figurative Language
+            </p>
           </div>
         </div>
 
@@ -311,50 +371,56 @@ export default function HomePage() {
 
       </section>
 
-      {/* ── FOUNDATION — Matthew 13:34 ───────────────────────────
-          2026-07-29, per Susan's "Homepage Softening" directive: this
-          used to close the page, nested inside .poems-showcase-section
-          alongside the Queen Ann Encounter (see that section further
-          down, now Queen Ann Encounter only). Moved here as section
-          #2 — directly beneath the Hero — to soften the homepage's
-          opening flow: Scripture and a quiet threshold image now
-          greet the visitor right after the Hero, before the more
-          architectural navy Collection band. Now its own full-bleed
-          section rather than a div sharing .poems-showcase-section's
-          background/padding — see .poems-showcase-foundation in
-          globals.css, which carries its own Warm ivory background and
-          top/bottom padding standing alone. Copy, imagery, and the
-          /foundation CTA are unchanged. */}
-      <section className="poems-showcase-foundation" aria-label="Foundation">
-        <AtmosphericHeader
-          src="/images/headers/biblical-foundation.jpg"
-          alt="Sunrise over hills and a winding river, seen through a worn stone window — a threshold image."
-          tall
-          fadeTo="#FAF7F2"
-          fadeHeight={25}
-        />
-        <div className="poems-showcase-foundation__inner">
-          <p className="hero-quote-text">
-            He did not say anything to them without using a parable.
-          </p>
-          <p className="hero-quote-cite">Matthew 13:34</p>
-          <p className="hero-quote-body">
-            AwakenArts works within that same tradition.
-          </p>
-          <Link href="/foundation" className="hero-quote-closing">
-            Read the Foundation of AwakenArts <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-      </section>
+      {/* ── A PATH OF RECOGNITION ────────────────────────────────
+          2026-08-07, per Susan's "Switch Matthew and A Path of
+          Recognition" directive: this section moves from after
+          Collection to section #2, directly beneath the Hero — trading
+          places with Foundation (Matthew 13:34), which now sits where
+          this section used to be (after Collection, before the Queen
+          Ann title band). Component, copy, and imagery are entirely
+          unchanged; only its position on the page moved.
+
+          2026-07-26, per Susan's "Repurpose the Existing Introductory
+          Section" directive: this used to be two separate sections —
+          "The AwakenArts Method" (Stage 3, Understanding; first added
+          2026-07-10, most recently living right here after Collection)
+          and a standalone "A Path of Recognition" section placed
+          earlier, right after the Hero (added earlier this same day).
+          Susan flagged that both used the same "People tell their
+          stories with facts / reveal their lives through images" line,
+          and asked that they be merged into one continuous section
+          rather than left as two independent components repeating
+          themselves. The AwakenArts Method section's slot (here, after
+          Collection) is kept; its content -- eyebrow, leaf ornament,
+          "Discover the AwakenArts Method" CTA to /method, and all
+          "method / practice / theory" language -- is retired in favor
+          of PathOfRecognition (src/components/PathOfRecognition.tsx),
+          which now carries both the section's language (title,
+          statement, intro paragraph) and its imagery (the five-image
+          sequence) as one piece: "language introduces the visitor,
+          imagery deepens the experience, the Encounters become the
+          natural invitation to continue." /method itself is untouched
+          and still live, just no longer linked from the homepage --
+          it joins the site's existing Unlisted Page System (see
+          Nav.tsx), reachable by direct URL only. */}
+      <PathOfRecognition />
 
       {/* ── THE COLLECTION ───────────────────────────────────────
-          Stage 2, Discovery — immediately after the Hero. Presented on
-          a navy field per the Homepage Reformation Directive: the
-          darker ground establishes the Collection as AwakenArts'
-          architectural framework and creates a clear visual transition
-          before A Path of Recognition, which now follows. Cream typography,
-          restrained gold accents, the complete uncropped cover,
-          generous surrounding space.
+          Stage 2, Discovery. Presented on a navy field per the
+          Homepage Reformation Directive: the darker ground establishes
+          the Collection as AwakenArts' architectural framework and
+          creates a clear visual transition on both sides — from A Path
+          of Recognition into Collection, and from Collection onward
+          into Foundation. Cream typography, restrained gold accents,
+          the complete uncropped cover, generous surrounding space.
+
+          2026-08-07, per Susan's "Switch Matthew and A Path of
+          Recognition" directive: this section's own position is
+          unchanged — it keeps its place between A Path of Recognition
+          and Foundation — but the sections on either side of it have
+          swapped, so it's now preceded by A Path of Recognition
+          (previously followed by it) and followed by Foundation
+          (previously preceded by it).
 
           2026-06-28 Collection Section Editorial Refinement: the hero
           now promises "Explore the Collection" — this section's job is
@@ -428,31 +494,52 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── A PATH OF RECOGNITION ────────────────────────────────
-          2026-07-26, per Susan's "Repurpose the Existing Introductory
-          Section" directive: this used to be two separate sections —
-          "The AwakenArts Method" (Stage 3, Understanding; first added
-          2026-07-10, most recently living right here after Collection)
-          and a standalone "A Path of Recognition" section placed
-          earlier, right after the Hero (added earlier this same day).
-          Susan flagged that both used the same "People tell their
-          stories with facts / reveal their lives through images" line,
-          and asked that they be merged into one continuous section
-          rather than left as two independent components repeating
-          themselves. The AwakenArts Method section's slot (here, after
-          Collection) is kept; its content -- eyebrow, leaf ornament,
-          "Discover the AwakenArts Method" CTA to /method, and all
-          "method / practice / theory" language -- is retired in favor
-          of PathOfRecognition (src/components/PathOfRecognition.tsx),
-          which now carries both the section's language (title,
-          statement, intro paragraph) and its imagery (the five-image
-          sequence) as one piece: "language introduces the visitor,
-          imagery deepens the experience, the Encounters become the
-          natural invitation to continue." /method itself is untouched
-          and still live, just no longer linked from the homepage --
-          it joins the site's existing Unlisted Page System (see
-          Nav.tsx), reachable by direct URL only. */}
-      <PathOfRecognition />
+      {/* ── FOUNDATION — Matthew 13:34 ───────────────────────────
+          2026-08-07, per Susan's "Switch Matthew and A Path of
+          Recognition" directive: this section moves from section #2
+          (directly beneath the Hero) to sit after Collection, directly
+          before the Queen Ann title band — trading places with A Path
+          of Recognition, which now occupies Foundation's former slot
+          beneath the Hero. Copy, imagery, and the /foundation CTA are
+          unchanged; only its position moved. See .poems-showcase-
+          foundation in globals.css for the matching spacing update at
+          this section's new seams (Collection -> Foundation and
+          Foundation -> Queen Ann title band).
+
+          2026-07-29, per Susan's "Homepage Softening" directive: this
+          used to close the page, nested inside .poems-showcase-section
+          alongside the Queen Ann Encounter (see that section further
+          down, now Queen Ann Encounter only). Moved at that time to sit
+          directly beneath the Hero — to soften the homepage's opening
+          flow: Scripture and a quiet threshold image greeting the
+          visitor right after the Hero, before the more architectural
+          navy Collection band. Now its own full-bleed section rather
+          than a div sharing .poems-showcase-section's background/
+          padding — see .poems-showcase-foundation in globals.css,
+          which carries its own Warm ivory background and top/bottom
+          padding standing alone. Copy, imagery, and the /foundation
+          CTA are unchanged. */}
+      <section className="poems-showcase-foundation" aria-label="Foundation">
+        <AtmosphericHeader
+          src="/images/headers/biblical-foundation.jpg"
+          alt="Sunrise over hills and a winding river, seen through a worn stone window — a threshold image."
+          tall
+          fadeTo="#FAF7F2"
+          fadeHeight={25}
+        />
+        <div className="poems-showcase-foundation__inner">
+          <p className="hero-quote-text">
+            He did not say anything to them without using a parable.
+          </p>
+          <p className="hero-quote-cite">Matthew 13:34</p>
+          <p className="hero-quote-body">
+            AwakenArts works within that same tradition.
+          </p>
+          <Link href="/foundation" className="hero-quote-closing">
+            Read the Foundation of AwakenArts <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </section>
 
       {/* ── QUEEN ANN INTRODUCTION — dark title band ───────────────
           2026-07-10, per Susan: "let the [Queen Ann title] section
