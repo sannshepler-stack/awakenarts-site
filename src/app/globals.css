@@ -2568,6 +2568,23 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   }
   .hero__media {
     max-width: 420px;
+    /* 2026-08-08, per Susan ("the space appearing on the iPhone device
+       is still too large"): the 650px min-height set at the 1080px
+       tablet breakpoint above was never revisited for phone widths --
+       it was calibrated as a floor for a ~560px tablet column, not this
+       420px-capped phone column. At an actual rendered width well under
+       420px (e.g. ~343px on a 375px-wide phone after side padding),
+       chess-ann-hero-mobile.jpg's own 4:5 proportions only need ~429px
+       of height, so the inherited 650px floor forced roughly 200px of
+       extra box height beyond the image's natural size at this width --
+       read as an oversized gap before "A Path of Recognition" once the
+       image finished rendering. Reset to the image's real aspect ratio
+       (800x1000 source = 4:5) with no min-height floor, so the box on
+       phones sizes to the image itself rather than a leftover tablet
+       value. Tablet (641-1080px) keeps its intentional 650px floor --
+       unaffected, since this override only applies at 640px and below. */
+    aspect-ratio: 4 / 5;
+    min-height: 0;
   }
 }
 
