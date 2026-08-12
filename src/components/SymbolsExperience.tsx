@@ -9,10 +9,21 @@
 // 2026-08-11 revision, per Susan: cards moved above vocabulary, and the
 // card interaction itself changed from an in-grid crossfade to a large
 // lightbox ("encounter view") — the grid shows fronts only; clicking a
-// card opens it large, front first, with a discreet close control and
-// previous/next controls to move between cards without leaving the
-// lightbox. Full 2:3 (or each card's own native) proportions are
-// preserved throughout via object-fit: contain — nothing is ever cropped.
+// card opens it large, with a discreet close control and previous/next
+// controls to move between cards without leaving the lightbox. Full 2:3
+// (or each card's own native) proportions are preserved throughout via
+// object-fit: contain — nothing is ever cropped.
+//
+// 2026-08-12 correction, per Susan: the visitor has already encountered
+// the front in the gallery grid before clicking a card, so opening the
+// lightbox on the front again read as the complete experience — the
+// left/right nav made it easy to browse every card without ever
+// discovering the back. The lightbox now opens directly to the BACK
+// (the "reflection") of the selected card, and prev/next between cards
+// while the lightbox is open also lands on each card's back, since the
+// visitor is already in "going deeper" mode at that point. A small,
+// explicit "View Image" / "View Reflection" toggle (not just a click on
+// the card itself) lets the visitor move between the two sides.
 //
 // Built as a single client component so the grid, the lightbox, and the
 // vocabulary reveal can share one deep-link entry point (`initialSlug`,
@@ -39,13 +50,19 @@ export default function SymbolsExperience({ initialSlug }: SymbolsExperienceProp
   const openIndex = openSlug ? CARD_SYMBOLS.findIndex((s) => s.slug === openSlug) : -1
   const openSymbol = openIndex >= 0 ? CARD_SYMBOLS[openIndex] : undefined
 
+  // Opening the lightbox is the "go deeper" gesture — the front was
+  // already the gallery encounter, so the lightbox opens straight to
+  // the back (the reflection/scripture side).
   const openCard = useCallback((slug: string) => {
     setOpenSlug(slug)
-    setShowBack(false)
+    setShowBack(true)
   }, [])
 
   const closeCard = useCallback(() => setOpenSlug(null), [])
 
+  // Moving to the next/previous card while the lightbox is already open
+  // keeps the visitor in "reflection" mode rather than resetting them to
+  // the front each time.
   const goTo = useCallback((dir: 1 | -1) => {
     setOpenSlug((current) => {
       if (!current) return current
@@ -53,12 +70,14 @@ export default function SymbolsExperience({ initialSlug }: SymbolsExperienceProp
       const nextIdx = (idx + dir + CARD_SYMBOLS.length) % CARD_SYMBOLS.length
       return CARD_SYMBOLS[nextIdx].slug
     })
-    setShowBack(false)
+    setShowBack(true)
   }, [])
 
   // Deep-link focus: on mount, if a slug was supplied via the URL, select
   // it in the vocabulary reveal and, if it has finished card art, open the
-  // lightbox on that card (front shown first, same as any other open).
+  // lightbox on that card (back/reflection shown first, same as any other
+  // open — arriving via a direct symbol link is itself an act of choosing
+  // that card).
   useEffect(() => {
     if (!initialSlug) return
     const symbol = SYMBOLS.find((s) => s.slug === initialSlug)
@@ -243,38 +262,56 @@ export default function SymbolsExperience({ initialSlug }: SymbolsExperienceProp
             </>
           )}
 
-          <div
-            className="symbols-lightbox__frame"
-            style={{ aspectRatio: openSymbol.aspectRatio }}
-            role="button"
-            tabIndex={0}
-            aria-pressed={showBack}
-            aria-label={`${openSymbol.name} — ${showBack ? 'showing reflection, activate to return to the artwork' : 'activate to reveal its reflection'}`}
-            onClick={(e) => {
-              e.stopPropagation()
-              setShowBack((v) => !v)
-            }}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault()
-                setShowBack((v) => !v)
-              }
-            }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={openSymbol.frontImage}
-              alt={`${openSymbol.name} — card artwork`}
-              className={`symbols-lightbox__img symbols-lightbox__img--front${showBack ? ' is-hidden' : ''}`}
-              draggable={false}
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={openSymbol.backImage}
-              alt={`${openSymbol.name} — reflection and scripture`}
-              className={`symbols-lightbox__img symbols-lightbox__img--back${showBack ? ' is-visible' : ''}`}
-              draggable={false}
-            />
+          <div className="symbols-lightbox__stage" onClick={(e) => e.stopPropagation()}>
+            <div
+              className="symbols-lightbox__frame"
+              style={{ aspectRatio: openSymbol.aspectRatio }}
+              role="button"
+              tabIndex={0}
+              aria-pressed={showBack}
+              aria-label={`${openSymbol.name} — ${showBack ? 'showing reflection, activate to return to the artwork' : 'activate to reveal its reflection'}`}
+              onClick={() => setShowBack((v) => !v)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  setShowBack((v) => !v)
+                }
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={openSymbol.frontImage}
+                alt={`${openSymbol.name} — card artwork`}
+                className={`symbols-lightbox__img symbols-lightbox__img--front${showBack ? ' is-hidden' : ''}`}
+                draggable={false}
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={openSymbol.backImage}
+                alt={`${openSymbol.name} — reflection and scripture`}
+                className={`symbols-lightbox__img symbols-lightbox__img--back${showBack ? ' is-visible' : ''}`}
+                draggable={false}
+              />
+            </div>
+
+            {/* Explicit, visually restrained control for moving between
+                the two sides — the card itself still toggles on click/tap
+                (kept for continuity), but this is the discoverable way to
+                find the other side without relying on an unexplained
+                click on the artwork. */}
+            <button
+              type="button"
+              className="symbols-lightbox__flip-toggle"
+              onClick={() => setShowBack((v) => !v)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.stopPropagation()
+                }
+              }}
+            >
+              {showBack ? 'Card Front' : 'View Reflection'}
+            </button>
           </div>
         </div>
       )}
