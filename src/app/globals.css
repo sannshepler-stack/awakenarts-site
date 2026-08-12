@@ -10154,3 +10154,404 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .method-main { padding: 2.5rem 1.5rem var(--band-gap-sm); }
   .method-h1 { margin-bottom: 1rem; }
 }
+
+/* ─────────────────────────────────────────────
+   SYMBOLS — "Symbols for the Christian Soul" (/symbols, /symbols/[slug])
+   Built 2026-08-11, per Susan's brief. Not a card game — two ways to
+   engage: word -> symbolic meaning (vocabulary), and image -> encounter
+   -> recognition (cards). Literary, spacious, restrained; deliberately
+   plain rather than ornamental — no tarot/oracle-deck framing, no game
+   chrome. See src/components/SymbolsExperience.tsx and
+   src/data/symbols.ts for the data model this styles.
+───────────────────────────────────────────── */
+.symbols-page {
+  background: var(--cream);
+  min-height: 100vh;
+}
+
+/* ── Opening ─────────────────────────────────────────────────────────── */
+.symbols-hero {
+  max-width: var(--measure-narrow);
+  margin: 0 auto;
+  padding: 8.5rem 2rem 3rem;
+  text-align: center;
+}
+.symbols-hero__title {
+  margin: 0 0 1.5rem;
+  line-height: 1.3;
+}
+/* Qualifier — "Symbols for the": small, italic, light. The page isn't
+   primarily about symbols as a subject; it's about the Christian soul,
+   approached through symbols. Per Susan's direction, this line frames
+   rather than competes with the identity line below it. */
+.symbols-hero__title-qualifier {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.2rem, 2.8vw, 1.9rem);
+  color: var(--mid);
+  /* 2026-08-11, per Susan: gap to "Christian Soul" tightened ~20% (0.15em
+     -> 0.12em) so the two lines read as one title with two voices, while
+     keeping a visible pause. Hierarchy/typography/color/centering
+     untouched. */
+  margin: 0 0 0.12em;
+}
+/* Identity — "Christian Soul": the large roman serif, unchanged size. */
+.symbols-hero__title-identity {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 4.6vw, 3.1rem);
+  color: var(--deep);
+}
+.symbols-hero__lead {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.9vw, 1.4rem);
+  color: var(--deep);
+  margin: 0 0 0.9rem;
+}
+.symbols-hero__line {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--mid);
+  margin: 0 0 0.35rem;
+}
+.symbols-hero__line:last-child { margin-bottom: 0; }
+
+/* ── Section 1: Symbol Vocabulary ───────────────────────────────────── */
+.symbols-vocab-section {
+  max-width: var(--measure-wide);
+  margin: 0 auto;
+  /* Top cut from 3rem to 1.5rem 2026-08-11 — paired with the transition's
+     own reduced padding above, per Susan's vertical-rhythm request. */
+  padding: 1.5rem 2rem 1rem;
+}
+.symbols-vocab-heading {
+  font-family: var(--sans);
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin: 0 0 0.6rem;
+}
+/* 2026-08-11, per Susan: small invitation line so visitors understand the
+   words below are selectable — understated, subordinate to the heading,
+   no underline/box/icon so it doesn't read as conventional nav. */
+.symbols-vocab-cue {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--mid);
+  text-align: center;
+  margin: 0 0 1.6rem;
+}
+
+/* The word field itself — a clean, stable grid. This block's height and
+   position never change when a word is selected; only .symbols-vocab-reveal
+   below it updates. */
+.symbols-vocab-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  row-gap: 0.9rem;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.symbols-vocab-item {
+  display: inline-flex;
+  align-items: baseline;
+}
+.symbols-vocab-word {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  letter-spacing: 0.06em;
+  color: var(--deep);
+  background: none;
+  border: none;
+  padding: 0.15rem 0.55rem;
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+.symbols-vocab-word:hover,
+.symbols-vocab-word:focus-visible {
+  color: var(--gold);
+}
+.symbols-vocab-word.is-active {
+  color: var(--gold);
+}
+.symbols-vocab-sep {
+  color: var(--mist);
+  font-family: var(--serif);
+}
+
+/* Fixed reveal area — height reserved at every breakpoint so the word
+   field above never reflows when content appears below it. */
+.symbols-vocab-reveal {
+  min-height: 168px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+  padding: 0 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(28, 43, 58, 0.1);
+}
+.symbols-vocab-reveal__inner {
+  max-width: var(--measure-narrow);
+  animation: symbols-fade-in 0.35s ease-out;
+}
+.symbols-vocab-reveal__inner--empty {
+  animation: none;
+}
+.symbols-vocab-reveal__name {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  letter-spacing: 0.08em;
+  color: var(--deep);
+  margin: 0 0 0.85rem;
+}
+.symbols-vocab-reveal__meanings {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--mid);
+  margin: 0 0 0.6rem;
+}
+.symbols-vocab-reveal__ref {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--gold);
+  margin: 0;
+}
+
+@keyframes symbols-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Transition ──────────────────────────────────────────────────────── */
+.symbols-transition {
+  max-width: var(--measure-narrow);
+  margin: 0 auto;
+  /* 2026-08-11, per Susan: was var(--band-gap) (6rem) top and bottom —
+     stacked with the sections on either side, that put ~12rem of empty
+     space between the card grid and this line, and ~9rem between this
+     line and Symbol Vocabulary. Tightened so Encounter → cards →
+     transition → Vocabulary reads as one continuous experience. See the
+     matching cuts on .symbols-cards-section's bottom padding and
+     .symbols-vocab-section's top padding below. */
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+.symbols-transition p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  line-height: 1.7;
+  color: var(--deep);
+  margin: 0;
+}
+
+/* ── Section 2: Encounter the Symbols ───────────────────────────────── */
+.symbols-cards-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Bottom cut from var(--band-gap) (6rem) to 1.5rem 2026-08-11 — paired
+     with the transition's own reduced padding below, per Susan's
+     vertical-rhythm request. */
+  padding: 0 2rem 1.5rem;
+}
+.symbols-cards-heading {
+  font-family: var(--sans);
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin: 0 0 2.5rem;
+}
+/* 2026-08-11, per Susan's "8-card collection" directive: rebuilt from a
+   flex-wrap row to an explicit CSS Grid. The old flex approach (fixed card
+   HEIGHT, width derived per-card from aspect-ratio) worked for an
+   incidental row of cards but can't guarantee a genuine "4 columns x 2
+   rows" arrangement — flex-wrap just breaks wherever cards stop fitting,
+   which is exactly what caused the earlier 5-card wrap bug. Grid gives
+   every card an equal-width column instead (height now derives from each
+   card's own aspect-ratio via the inline `style={{ aspectRatio }}`, same
+   as before) — rows line up intentionally at 4-across on desktop and
+   2-across below, per CARD_ORDER's fixed sequence in symbols.ts. */
+.symbols-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.75rem 1.5rem;
+  align-items: start;
+}
+/* .symbols-card is now a real <button> — the grid's visual entrance,
+   showing each card's front only. Clicking it opens the lightbox below;
+   the front/back crossfade now lives there instead. Each card's true
+   aspect-ratio is set inline per-card via `style={{ aspectRatio }}` in
+   SymbolsExperience.tsx — width comes from its grid column (equal across
+   the row), height derives from that aspect-ratio, so nothing is
+   cropped, stretched, or padded regardless of each card's native shape. */
+.symbols-card {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 10px 34px rgba(28, 43, 58, 0.16);
+  transition: box-shadow 0.25s ease-out, transform 0.25s ease-out;
+  /* button reset */
+  display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.symbols-card:hover,
+.symbols-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 44px rgba(28, 43, 58, 0.22);
+}
+.symbols-card:focus-visible {
+  outline: 2px solid rgba(126, 95, 18, 0.55); /* --gold at partial opacity */
+  outline-offset: 3px;
+}
+.symbols-card__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 3px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Tablet/narrow: 2 columns x 4 rows instead of 4x2. Threshold matches the
+   site's existing 1024px tablet breakpoint. Deliberately no further
+   1-column breakpoint below this — per Susan, small mobile should stay at
+   2 columns rather than stack to one long column, as long as cards remain
+   tappable (verified down to ~360px-wide viewports at this ratio). */
+@media (max-width: 1024px) {
+  .symbols-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ── Lightbox — the large encounter view ──────────────────────────────── */
+.symbols-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background: rgba(28, 43, 58, 0.93); /* --deep, near-opaque scrim */
+  animation: symbols-fade-in 0.2s ease-out;
+}
+.symbols-lightbox__frame {
+  position: relative;
+  width: 100%;
+  max-width: min(85vw, 560px);
+  max-height: 85vh;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+.symbols-lightbox__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.symbols-lightbox__img--front {
+  position: relative;
+  opacity: 1;
+}
+.symbols-lightbox__img--front.is-hidden {
+  opacity: 0;
+}
+.symbols-lightbox__img--back.is-visible {
+  opacity: 1;
+}
+
+/* Close / prev / next — discreet by design: quiet on the dark scrim,
+   brighten only on hover/focus, no heavy button chrome. */
+.symbols-lightbox__close,
+.symbols-lightbox__nav {
+  position: absolute;
+  background: none;
+  border: none;
+  color: rgba(250, 247, 242, 0.6); /* --cream at partial opacity */
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+  line-height: 1;
+}
+.symbols-lightbox__close:hover,
+.symbols-lightbox__close:focus-visible,
+.symbols-lightbox__nav:hover,
+.symbols-lightbox__nav:focus-visible {
+  color: var(--cream);
+}
+.symbols-lightbox__close:focus-visible,
+.symbols-lightbox__nav:focus-visible {
+  outline: 1px solid rgba(250, 247, 242, 0.5);
+  outline-offset: 4px;
+}
+.symbols-lightbox__close {
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  font-weight: 300;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.symbols-lightbox__nav {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.75rem;
+  font-weight: 300;
+  width: 3rem;
+  height: 3rem;
+}
+.symbols-lightbox__nav--prev { left: 1rem; }
+.symbols-lightbox__nav--next { right: 1rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .symbols-card,
+  .symbols-lightbox,
+  .symbols-lightbox__img,
+  .symbols-vocab-reveal__inner {
+    transition: none;
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .symbols-hero { padding: 6.5rem 1.5rem 2.5rem; }
+  .symbols-vocab-section { padding: 1.25rem 1.25rem 1rem; }
+  .symbols-vocab-reveal { min-height: 200px; }
+  .symbols-transition { padding: 1.25rem 1.5rem; }
+  .symbols-cards-section { padding: 0 1.25rem 1.25rem; }
+  .symbols-cards-grid { gap: 1.75rem; }
+  .symbols-lightbox { padding: 1.25rem; }
+  .symbols-lightbox__close { top: 0.75rem; right: 0.75rem; font-size: 1.75rem; }
+  .symbols-lightbox__nav { font-size: 2.25rem; width: 2.25rem; height: 2.25rem; }
+  .symbols-lightbox__nav--prev { left: 0.25rem; }
+  .symbols-lightbox__nav--next { right: 0.25rem; }
+}

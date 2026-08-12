@@ -38,6 +38,10 @@ const links = [
   // route renamed from /primer to /awakenarts-path (permanent redirect
   // from the old route lives in next.config.js).
   { label: 'The Path', href: '/awakenarts-path', cta: false },
+  // 2026-08-11, per Susan's "Publish the Symbols page" directive: Symbols
+  // enters primary nav directly after The Path. Per her clarification,
+  // Journal keeps its existing position — only Symbols is newly inserted.
+  { label: 'Symbols', href: '/symbols', cta: false },
   { label: 'Collection', href: '/collection', cta: false },
   { label: 'Gallery',    href: '/gallery',    cta: false },
   { label: 'Journal',    href: '/journal',    cta: false },
