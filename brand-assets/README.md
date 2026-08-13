@@ -298,6 +298,45 @@ Non-approved, historical assets kept for reference only — never referenced by 
   unused and unplaced — still retained-library-only, ready to produce from
   the same approved emblem master whenever a specific placement (section
   transitions, quote markers, page endings) is chosen.
+
+- **Print-materials divider — RESOLVED, 2026-08-01.** Susan asked for an
+  AwakenArts-specific divider across all print materials, to mark a
+  "pause" on journal thought pages. `awakenarts-leaf-pair.png` was
+  selected — the same emblem detail already approved as the site's small
+  signature/pause mark (see "Resolved" above) — rather than the taller
+  `awakenarts-botanical-sprig.png` or the full `awakenarts-a-watermark.png`
+  emblem, both of which read as too large/vertical for an inline print
+  pause mark. New folder `png-exports/dividers/` holds the print
+  derivative: alpha-trimmed to the visible-ink bounding box (matching the
+  precedent set by the website's `-trimmed.png` derivative), 4% uniform
+  padding restored on all sides, rendered at three sizes from the same
+  trimmed master — `AwakenArts-Divider-LeafPair-800.png`,
+  `-400.png`, `-200.png`. Source `awakenarts-leaf-pair.png` is unaltered.
+  First live use: the Kings & Queens journal's thought pages (Side by
+  Side, Queen Ann Awareness, King Awareness, Gathering thought page,
+  Final image page), centered between the image and the reflection line,
+  at low opacity — see that journal's own `ASSET_MANIFEST.md` for
+  placement detail. Intended as the standard pause mark for future
+  journals in the series too.
+
+  **Revision, 2026-08-01 (same day):** the mark was refined to a thin
+  gold rule — leaf — thin gold rule, flanking the leaf on either side
+  with breathing room scaled to the page's available white space,
+  matching the gold tone already used on the movement threshold pages
+  rather than the leaf alone. In the Kings & Queens journal this is
+  assembled live in CSS (`.awaken-pause`: flexbox, two `<span>` rule
+  lines around the `-400.png` leaf). For use outside HTML/CSS contexts
+  (Word, InDesign, or any print workflow that can't assemble the mark
+  from parts), the same rule-leaf-rule composition was also flattened
+  into a single standalone PNG per size, transparent background,
+  `AwakenArts-Divider-Complete-2000.png` (2000×266), `-1000.png`
+  (1000×132), `-500.png` (500×65) — proportions matched to the CSS
+  version (leaf ~10% of total width, centered, with the two gold rules
+  filling the remainder at the same semi-transparent gold, `rgba(181,
+  146, 79, 0.55)`). Built from the same `-800.png` trimmed leaf master;
+  no new image assets. This is now the definitive AwakenArts pause
+  mark for all print materials — leaf-only component pieces for
+  CSS/code contexts, complete flattened composite for everything else.
 - **Dark-background PNG export family — 2026-07-14, per "DARK FOOTER LOGO
   — REQUIRED CORRECTION" directive.** Susan required the footer to stop
   using a live SVG and instead use a dedicated transparent PNG rendered
