@@ -1,0 +1,58 @@
+{
+  "generated": "2026-08-13T09:31:58-05:00",
+  "total_records": 4227,
+  "by_source_root": {
+    "LIVE_REPOSITORY": 1521,
+    "CLAUDE_WORKING_FILES": 852,
+    "DESKTOP_GOVERNANCE": 303,
+    "CODEX_DRAGON_WORKING_COPY": 1497,
+    "LEGACY_CARD_ART": 54
+  },
+  "by_file_type": {
+    "docx": 309,
+    "md": 341,
+    "pdf": 317,
+    "js": 24,
+    "ts": 27,
+    "png": 1972,
+    "json": 16,
+    "svg": 217,
+    "txt": 140,
+    "jpg": 523,
+    "mp4": 64,
+    "pptx": 6,
+    "csv": 1,
+    "gif": 8,
+    "webp": 11,
+    "tsx": 165,
+    "css": 41,
+    "patch": 5,
+    "zip": 2,
+    "psd": 38
+  },
+  "by_project_area": {
+    "Workshop development": 11,
+    "General AwakenArts": 500,
+    "Dragon prototype": 248,
+    "Governance / standards": 120,
+    "Research / reference": 55,
+    "Participant material": 1019,
+    "Website": 1171,
+    "Facilitator material": 27,
+    "Visual assets": 936,
+    "Historical / archive": 140
+  },
+  "by_status": {
+    "UNRESOLVED": 762,
+    "REFERENCE": 22,
+    "SUPERSEDED": 4,
+    "CURRENT / WORKING": 260,
+    "CURRENT / GOVERNING": 64,
+    "ORPHANED": 94,
+    "HISTORICAL": 679,
+    "DUPLICATE / REDUNDANT": 2288,
+    "SOURCE MATERIAL": 54
+  },
+  "exact_duplicate_groups": 1237,
+  "same_name_different_content_groups": 108
+}
