@@ -1,12 +1,25 @@
 # AwakenArts — AI Assistant Orientation
 
-> **Read this file first. Then read `AwakenArts_Production_Charter.md` — the supreme governing document, issued 2026-07-27, which takes precedence over every other document and any prior conversation when the two conflict. Then consult `AwakenArts_Documentation_Map.md` to identify which subordinate governing documents apply to your task.**
+> **Read this file first. Then read `AWAKENARTS_CURRENT_MATERIALS.md`, the authoritative current-working-set map. For workshop, Dragon, Companion/facilitator, participant-material, and workshop-related website work, read the New AwakenArts Paradigm (`/Users/sashe/Desktop/Dragon Pass One.docx`) and `AwakenArts_Dragon_Paradigm_Audit_and_Map.md` before older standards. Consult `AwakenArts_Documentation_Map.md` for non-conflicting subordinate guidance, but do not let its earlier Edition-led architecture silently override current governance.**
+
+## Goal 2 governance correction — August 13, 2026
+
+The repository contains valuable documents from several AwakenArts phases. Newer filenames and labels such as “Final,” “Good Copy,” or “Current Production” do not by themselves establish authority.
+
+- `AWAKENARTS_CURRENT_MATERIALS.md` is Susan's primary map of the active working set, source material, superseded material, and unresolved decisions.
+- `/Users/sashe/Desktop/Dragon Pass One.docx` is the **New AwakenArts Paradigm**. Its ten-stage workshop arc and four-deliverable model supersede conflicting earlier workshop, Edition-as-product, and Companion-packaging architecture.
+- `AwakenArts_Dragon_Paradigm_Audit_and_Map.md` is the completed Goal 1 map for applying that paradigm to Dragon and the current site.
+- Older Figure Edition, Companion, Resource, Roadmap, Charter, handoff, and architecture documents may remain useful within their valid domains or as authored source/history. They cannot silently override the New Paradigm on workshop architecture.
+- Preserve non-conflicting identity, authorship, editorial, design, safety, production-discipline, and technical guidance.
+- Surface conflicts requiring creative, theological, or project-direction judgment to Susan. Do not choose for her merely to remove ambiguity.
+- AI should perform discovery, comparison, duplicate detection, classification, cross-referencing, implementation, testing, and maintenance when capable. Susan retains creative authority and project direction.
+- Do not delete substantive AwakenArts work. Before moving files, check imports, URLs, build paths, references, and Git history; update and test dependencies or leave the file in place and classify it.
 
 ---
 
 ## What AwakenArts Is
 
-AwakenArts is a literary publishing imprint expressed through symbolic language. The primary product is the **Figure Edition** — a designed publication presenting a single symbolic figure through image, poem, and structured reflection. Six Figure Editions are currently live: Dragon, Bowls, Ballerina, Grismere, Poppy, and Queen Ann.
+AwakenArts is a literary and workshop practice expressed through symbolic language. Figure Editions remain substantial authored content foundations: designed publications presenting a symbolic figure through image, poem, and structured reflection. Under the New AwakenArts Paradigm, the Edition is no longer assumed to be the primary facilitator product; it becomes the content foundation of an AwakenArts workshop. Six Figure Editions are currently represented on the site: Dragon, Bowls, Ballerina, Grismere, Poppy, and Queen Ann.
 
 The website is not a portfolio or gallery. It is an editorial threshold — a publication that leads visitors into a body of symbolic work. Every design decision, piece of copy, and navigation element serves the work. The work does not serve the site.
 
@@ -14,13 +27,16 @@ The website is not a portfolio or gallery. It is an editorial threshold — a pu
 
 ## The Governing Document Set
 
-Consult `AwakenArts_Documentation_Map.md` to determine which document governs any specific decision. The map is the authoritative index; update it whenever a governing document is added or superseded.
+Start with `AWAKENARTS_CURRENT_MATERIALS.md`. Consult `AwakenArts_Documentation_Map.md` for the older document system and non-conflicting domain guidance; it is no longer sufficient by itself for workshop work and must be read through the Goal 2 governance correction above.
 
 The current governing set, in consultation order:
 
 | Question | Document |
 |---|---|
-| What governs everything else? Current mission, model, and priorities? | `AwakenArts_Production_Charter.md` — **read first; supersedes all conflicts** |
+| What governs the current working set and conflict order? | `AWAKENARTS_CURRENT_MATERIALS.md` — **read first** |
+| What governs workshop purpose, sequence, and deliverables? | `/Users/sashe/Desktop/Dragon Pass One.docx` — **New AwakenArts Paradigm** |
+| What maps current Dragon/site material to that paradigm? | `AwakenArts_Dragon_Paradigm_Audit_and_Map.md` |
+| What governs general production where it does not conflict with the New Paradigm? | `AwakenArts_Production_Charter.md` |
 | What is AwakenArts? What are its values and identity? | `AwakenArts_Editorial_Identity_and_Design_Standard.md` |
 | What gets built next? What phase are we in? | `AwakenArts_Production_Roadmap.md` |
 | How is a specific page or component built? | `AwakenArts_Site_Architecture.md` |
@@ -35,7 +51,7 @@ The current governing set, in consultation order:
 
 ## Current Site Architecture
 
-**Navigation (live):** Encounters · Collection · Gallery · Journal · About
+**Navigation (live):** The Path · Symbols · Collection · Gallery · Journal · About
 
 **Primary pages:**
 - `/` — Homepage
