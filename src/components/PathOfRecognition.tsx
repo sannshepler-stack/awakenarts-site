@@ -97,14 +97,6 @@ import Link from 'next/link'
  * page.tsx's Hero section and .hero-method in globals.css. This
  * section reverts to its 2026-07-26 form, unchanged.
  */
-const PATH_OF_RECOGNITION = [
-  { slug: 'longing', image: '/images/recognition/Recognition_Path_01.png', label: 'Longing' },
-  { slug: 'recognition', image: '/images/recognition/Recognition_Pathi_02.png', label: 'Recognition' },
-  { slug: 'the-figure', image: '/images/recognition/Recognition_Path_03.png', label: 'The Figure' },
-  { slug: 'the-word', image: '/images/recognition/Recognition_Path_04.png', label: 'The Word' },
-  { slug: 'the-path', image: '/images/recognition/Recognition_Path_05.png', label: 'The Path' },
-] as const
-
 export default function PathOfRecognition() {
   return (
     <section className="home-recognition" aria-labelledby="home-recognition-heading">
@@ -138,20 +130,14 @@ export default function PathOfRecognition() {
           </Link>
         </div>
 
-        <div className="home-recognition__grid">
-          {PATH_OF_RECOGNITION.map((step) => (
-            <div key={step.slug} className="home-recognition__card">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={step.image}
-                alt={step.label}
-                className="home-recognition__img"
-                loading="lazy"
-              />
-              <p className="home-recognition__label">{step.label}</p>
-            </div>
-          ))}
-        </div>
+        <figure className="home-recognition__path-image">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/encounters/journey/journey-01-web.png"
+            alt="A quiet path winding through a sunlit forest"
+            loading="lazy"
+          />
+        </figure>
       </div>
     </section>
   )
