@@ -130,6 +130,15 @@ export default function PathOfRecognition() {
           </Link>
         </div>
 
+        <figure className="home-recognition__encounters-image">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/homepage/encounters-journey-ship-v1.png"
+            alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon"
+            loading="lazy"
+          />
+        </figure>
+
       </div>
     </section>
   )

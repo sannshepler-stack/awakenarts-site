@@ -472,7 +472,7 @@ export default function HomePage() {
 
           <div className="home-coll-text">
             <p className="eyebrow">Figure Editions</p>
-            <h2 id="home-coll-heading">Current Workshops</h2>
+            <h2 id="home-coll-heading">Workshops</h2>
             <p className="home-coll-sub">
               Each workshop is anchored in a different Figure Edition.
             </p>
