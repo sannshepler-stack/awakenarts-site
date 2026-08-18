@@ -90,33 +90,6 @@
   color: var(--deep);
 }
 
-/* Workshop Formats — label + one concise paragraph, no cards, no
-   pricing/scheduling. Same "label, then what it is" pairing as
-   /method's .method-forms, adapted for longer descriptions. */
-.formats {
-  list-style: none;
-  margin: 0 0 1.75rem;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
-}
-.formatsName {
-  display: block;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.15rem;
-  color: var(--gold);
-  margin-bottom: 0.4rem;
-}
-.formatsDesc {
-  font-family: var(--serif);
-  font-size: calc(var(--body-size) + 2px);
-  line-height: var(--body-line);
-  color: var(--ink);
-  margin: 0;
-}
-
 /* Closing — same quiet-conclusion credo treatment as /method's
    .method-credo: centered, italic, gold, top border. The inquiry link
    is a "framed link" (outline, not solid fill), matching

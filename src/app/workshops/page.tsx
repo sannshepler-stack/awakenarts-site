@@ -59,34 +59,6 @@ const EXPERIENCE = [
   'You leave with a question, phrase, or recognition to carry into ordinary life.',
 ]
 
-const FORMATS = [
-  {
-    name: 'Introductory Workshop',
-    desc:
-      'A single gathering that introduces the Method through one accessible Figure Edition — a first encounter with noticing, before any commitment to a longer series.',
-  },
-  {
-    name: 'Figure Edition Workshop',
-    desc:
-      'A focused gathering built around one Figure Edition, giving a group time to notice, remain, and recognize together within a single symbolic landscape.',
-  },
-  {
-    name: 'Church Retreat',
-    desc:
-      'A weekend or extended gathering that brings the Method into a retreat setting, pairing quiet attention with a community’s own rhythms of worship and reflection.',
-  },
-  {
-    name: 'Library & Community Programs',
-    desc:
-      'A program Susan brings to libraries, community centers, and reading groups — an accessible entry point for anyone curious about symbolic attention, regardless of background.',
-  },
-  {
-    name: 'Ongoing Recognition Groups',
-    desc:
-      'A continuing group conducted by Susan that returns to the practice regularly, building the kind of shared attention that only develops over time and repeated encounter.',
-  },
-]
-
 const INQUIRY_MAILTO =
   'mailto:susan@shepler.us?subject=AwakenArts%20Workshop%20Inquiry&body=Hi%20Susan%2C%0A%0AI%27d%20like%20to%20ask%20about%20an%20AwakenArts%20workshop.'
 
@@ -157,23 +129,38 @@ export default function WorkshopsPage() {
             </Link>
           </p>
 
-          <h2 className={styles.h2}>Susan&rsquo;s Role</h2>
+          <h2 className={styles.h2}>Workshops with Susan</h2>
           <p className={styles.body}>
-            Susan conducts every AwakenArts workshop herself. She introduces
-            the images and poems, makes room for silence, and guides a
-            conversation in which no one else decides what your experience
-            means. Her role is to hold the journey, not provide the answer.
+            Susan Ann Shepler is an artist, writer, Certified Transformative
+            Language Artist, and Certified Journal Instructor. She holds a
+            Master of Arts in Counseling and created AwakenArts from her
+            sustained work with image, poetry, symbolic language, and
+            reflection. Susan conducts every AwakenArts workshop herself.
+          </p>
+          <p className={styles.body}>
+            Her qualifications inform the care and craft with which she holds
+            a gathering; AwakenArts is an artistic and educational practice,
+            not counseling or therapy.{' '}
+            <Link href="/about" className={styles.inlineLink}>
+              Learn more about Susan
+            </Link>
+            .
           </p>
 
-          <h2 className={styles.h2}>Workshop Formats</h2>
-          <ul className={styles.formats} aria-label="Workshop Formats">
-            {FORMATS.map((f) => (
-              <li key={f.name}>
-                <span className={styles.formatsName}>{f.name}</span>
-                <p className={styles.formatsDesc}>{f.desc}</p>
-              </li>
-            ))}
-          </ul>
+          <h2 className={styles.h2}>The Workshop Landscape</h2>
+          <p className={styles.body}>
+            An AwakenArts workshop may be a single gathering, a return through
+            several Figure Editions, or part of a retreat or community
+            program. It can find a home in libraries, churches, reading
+            groups, and other places where people gather around art, language,
+            story, and reflection.
+          </p>
+          <p className={styles.body}>
+            These are not separate packaged programs. They are different ways
+            the same living practice can meet a particular group, place, and
+            occasion. Susan shapes the invitation in conversation with the
+            people who will host it.
+          </p>
 
           <div className={styles.closing}>
             <p>
