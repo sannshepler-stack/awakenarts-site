@@ -18,7 +18,6 @@ const ENTRIES: Entry[] = [
   { path: '/workshops',                                         changeFrequency: 'monthly', priority: 0.95 },
   { path: '/about',                                              changeFrequency: 'monthly', priority: 0.9 },
   { path: '/awakenarts-path',                                   changeFrequency: 'monthly', priority: 0.9 },
-  { path: '/collection',                                        changeFrequency: 'monthly', priority: 0.9 },
   { path: '/symbols',                                           changeFrequency: 'monthly', priority: 0.8 },
   { path: '/foundation',                                        changeFrequency: 'monthly', priority: 0.7 },
   { path: '/editions/dragon',                                   changeFrequency: 'monthly', priority: 0.8 },

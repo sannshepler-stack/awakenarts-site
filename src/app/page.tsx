@@ -487,8 +487,8 @@ export default function HomePage() {
                 "Explore the Collection" -> "View the Collection" --
                 component, typography, spacing, hover behavior, and the
                 arrow are all unchanged. */}
-            <Link href="/collection" className="home-coll-cta">
-              View the Collection <span aria-hidden="true">→</span>
+            <Link href="/workshops#workshop-worlds" className="home-coll-cta">
+              Meet the Workshop Worlds <span aria-hidden="true">→</span>
             </Link>
           </div>
 

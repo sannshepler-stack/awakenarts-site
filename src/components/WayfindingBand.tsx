@@ -53,7 +53,6 @@ const PRIMARY_LINKS = [
   { label: 'Workshops', href: '/workshops' },
   { label: 'The Path', href: '/awakenarts-path' },
   { label: 'Symbols', href: '/symbols' },
-  { label: 'Collection', href: '/collection' },
   { label: 'Journal', href: '/journal' },
   { label: 'About', href: '/about' },
 ]

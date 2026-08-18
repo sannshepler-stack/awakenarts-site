@@ -28,7 +28,7 @@ import FooterSocial from './FooterSocial'
 const EXPLORE_LINKS = [
   { label: 'Workshops', href: '/workshops' },
   { label: 'Symbols', href: '/symbols' },
-  { label: 'Collection', href: '/collection' },
+  { label: 'Workshop Worlds', href: '/workshops#workshop-worlds' },
   { label: 'Encounters', href: '/encounters' },
   { label: 'Journal', href: '/journal' },
   { label: 'Gallery', href: '/gallery' },

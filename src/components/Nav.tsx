@@ -47,7 +47,6 @@ const links = [
   // enters primary nav directly after The Path. Per her clarification,
   // Journal keeps its existing position — only Symbols is newly inserted.
   { label: 'Symbols', href: '/symbols', cta: false },
-  { label: 'Collection', href: '/collection', cta: false },
   { label: 'Journal',    href: '/journal',    cta: false },
   { label: 'About',      href: '/about',      cta: false },
 ]

@@ -4,6 +4,8 @@ import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
+import ProtectedImage from '@/components/ProtectedImage'
+import { editions } from '@/data/editions'
 import styles from './page.module.css'
 
 // ─── /workshops — Workshops Page ─────────────────────────────────────────────
@@ -116,19 +118,31 @@ export default function WorkshopsPage() {
             repeating the same experience.
           </p>
 
-          <h2 className={styles.h2}>Figure Editions</h2>
+          <section id="workshop-worlds" className={styles.worlds} aria-labelledby="workshop-worlds-heading">
+          <h2 id="workshop-worlds-heading" className={styles.h2}>The Workshop Worlds</h2>
           <p className={styles.body}>
-            A Figure Edition gathers the artwork, poem, story, and reflective
-            questions for one workshop world. It is something Susan brings
-            into the shared experience&mdash;not a lesson participants must
-            study beforehand. The website offers a visual preview of each
-            Edition so you can glimpse the worlds a workshop may enter.
+            Every AwakenArts workshop is anchored in one Figure Edition. Each
+            gathers artwork, poetry, story, and reflective questions into a
+            world Susan and the participants enter together.
           </p>
-          <p className={styles.body}>
-            <Link href="/collection" className="text-link">
-              View the Edition Previews <span aria-hidden="true">&rarr;</span>
-            </Link>
-          </p>
+          <div className={styles.worldGrid}>
+            {editions.map((edition) => (
+              <Link key={edition.slug} href={`/editions/${edition.slug}`} className={styles.worldCard}>
+                <span className={styles.worldFrame}>
+                  <ProtectedImage
+                    src={edition.contactSheet}
+                    alt={edition.contactSheetAlt}
+                    className={styles.worldImage}
+                    loading="lazy"
+                  />
+                </span>
+                <span className={styles.worldKicker}>Workshop World</span>
+                <span className={styles.worldTitle}>{edition.title}</span>
+                <span className={styles.worldAction}>View Preview <span aria-hidden="true">→</span></span>
+              </Link>
+            ))}
+          </div>
+          </section>
 
           <h2 className={styles.h2}>Workshops with Susan</h2>
           <p className={styles.body}>
