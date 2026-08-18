@@ -5551,20 +5551,6 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   color: rgba(28, 43, 58, 0.78);
 }
 
-.home-recognition__path-image {
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-.home-recognition__path-image img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 7;
-  object-fit: cover;
-  border-radius: 3px;
-  object-position: center 58%;
-}
-
 .home-recognition__cta {
   /* 2026-07-26: moved from after the image grid (margin-top, closing
      the section) to between the intro paragraph and the images
@@ -5580,7 +5566,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      meant to carry more of the section's weight than the text above
      them now does. */
   text-align: center;
-  margin-bottom: 6rem;
+  margin-bottom: 0;
 }
 
 /* Path of Recognition's CTA button — reuses .home-coll-cta (see
@@ -5629,13 +5615,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      should still read as a deliberate pause before the images), just
      proportionate to a mobile viewport rather than the desktop value
      verbatim. */
-  .home-recognition__cta { margin-bottom: 3.5rem; }
+  .home-recognition__cta { margin-bottom: 0; }
   /* 2026-07-26: the mobile-only 0.95rem override that used to live here
      is removed — --body-size holds at every breakpoint site-wide (it's
      a fixed value, not a clamp), so this paragraph now does the same,
      per the Typography System directive's "sizes should remain
      consistent from page to page [and breakpoint to breakpoint]." */
-  .home-recognition__path-image img { aspect-ratio: 4 / 3; }
 }
 
 /* ── HOMEPAGE: COLLECTION SECTION ───────────────────────────────────────────

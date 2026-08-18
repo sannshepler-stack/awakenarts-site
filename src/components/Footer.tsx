@@ -28,7 +28,7 @@ import FooterSocial from './FooterSocial'
 const EXPLORE_LINKS = [
   { label: 'Workshops', href: '/workshops' },
   { label: 'Symbols', href: '/symbols' },
-  { label: 'Workshop Worlds', href: '/workshops#workshop-worlds' },
+  { label: 'Current Workshops', href: '/workshops#current-workshops' },
   { label: 'Encounters', href: '/encounters' },
   { label: 'Journal', href: '/journal' },
   { label: 'Gallery', href: '/gallery' },
@@ -67,8 +67,8 @@ export default function Footer() {
             />
           </Link>
           <p>
-            A literary-symbolic practice conducted by Susan Ann Shepler
-            through workshops. Figure Editions, Encounters, Symbols,
+            A literary-symbolic practice conducted through workshops.
+            Figure Editions, Encounters, Symbols,
             poetry, imagery, and journals support and extend the work.
           </p>
           <FooterSocial />

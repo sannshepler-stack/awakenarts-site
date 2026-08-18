@@ -90,7 +90,7 @@ export default function WorkshopsPage() {
           <p className={styles.body}>
             Each workshop begins with something to look at&mdash;perhaps a
             dragon above a burning town, a dancer caught between stillness and
-            motion, or a simple bowl. Susan invites you to stay with the image
+            motion, or a simple bowl. You are invited to stay with the image
             before explaining it. What do you notice? What story have you
             already begun to tell?
           </p>
@@ -118,12 +118,14 @@ export default function WorkshopsPage() {
             repeating the same experience.
           </p>
 
-          <section id="workshop-worlds" className={styles.worlds} aria-labelledby="workshop-worlds-heading">
-          <h2 id="workshop-worlds-heading" className={styles.h2}>The Workshop Worlds</h2>
+          <span id="workshop-worlds" className={styles.anchorAlias} aria-hidden="true" />
+          <span id="collection" className={styles.anchorAlias} aria-hidden="true" />
+          <section id="current-workshops" className={styles.worlds} aria-labelledby="current-workshops-heading">
+          <h2 id="current-workshops-heading" className={styles.h2}>Current Workshops</h2>
           <p className={styles.body}>
             Every AwakenArts workshop is anchored in one Figure Edition. Each
             gathers artwork, poetry, story, and reflective questions into a
-            world Susan and the participants enter together.
+            world participants enter together.
           </p>
           <div className={styles.worldGrid}>
             {editions.map((edition) => (
@@ -136,7 +138,7 @@ export default function WorkshopsPage() {
                     loading="lazy"
                   />
                 </span>
-                <span className={styles.worldKicker}>Workshop World</span>
+                <span className={styles.worldKicker}>Figure Edition</span>
                 <span className={styles.worldTitle}>{edition.title}</span>
                 <span className={styles.worldAction}>View Preview <span aria-hidden="true">→</span></span>
               </Link>
@@ -150,14 +152,14 @@ export default function WorkshopsPage() {
             Language Artist, and Certified Journal Instructor. She holds a
             Master of Arts in Counseling and created AwakenArts from her
             sustained work with image, poetry, symbolic language, and
-            reflection. Susan conducts every AwakenArts workshop herself.
+            reflection. She conducts every AwakenArts workshop herself.
           </p>
           <p className={styles.body}>
             Her qualifications inform the care and craft with which she holds
             a gathering; AwakenArts is an artistic and educational practice,
             not counseling or therapy.{' '}
             <Link href="/about" className={styles.inlineLink}>
-              Learn more about Susan
+              Learn more about her background
             </Link>
             .
           </p>
@@ -173,7 +175,7 @@ export default function WorkshopsPage() {
           <p className={styles.body}>
             These are not separate packaged programs. They are different ways
             the same living practice can meet a particular group, place, and
-            occasion. Susan shapes the invitation in conversation with the
+            occasion. Each invitation is shaped in conversation with the
             people who will host it.
           </p>
 

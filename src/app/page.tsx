@@ -328,7 +328,7 @@ export default function HomePage() {
                 the surrounding rationale above are unchanged; only the
                 copy itself changed. */}
             <p className="hero-method">
-              Literary-symbolic workshops conducted by Susan Ann Shepler
+              Literary-symbolic workshops in image, poetry, and reflection
             </p>
           </div>
         </div>
@@ -472,22 +472,22 @@ export default function HomePage() {
 
           <div className="home-coll-text">
             <p className="eyebrow">Figure Editions</p>
-            <h2 id="home-coll-heading">Workshop Worlds</h2>
+            <h2 id="home-coll-heading">Current Workshops</h2>
             <p className="home-coll-sub">
-              Every workshop begins in a different symbolic world.
+              Each workshop is anchored in a different Figure Edition.
             </p>
             <p className="home-coll-body">
               Dragon, Bowls, Ballerina, Grismere, Poppy, and Queen Ann
               each gather image, poem, story, and reflection into a
-              distinct Figure Edition. Susan brings one of these worlds
-              into every AwakenArts workshop.
+              distinct Figure Edition. Each one opens a different AwakenArts
+              workshop experience.
             </p>
             {/* 2026-07-26, per Susan's directive: label only,
                 "Explore the Collection" -> "View the Collection" --
                 component, typography, spacing, hover behavior, and the
                 arrow are all unchanged. */}
-            <Link href="/workshops#workshop-worlds" className="home-coll-cta">
-              Meet the Workshop Worlds <span aria-hidden="true">→</span>
+            <Link href="/workshops#current-workshops" className="home-coll-cta">
+              View Current Workshops <span aria-hidden="true">→</span>
             </Link>
           </div>
 

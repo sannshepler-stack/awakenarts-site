@@ -94,8 +94,8 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
           <Link href="/workshops" className="edition-actions__link">
             Explore the Workshop Experience <span aria-hidden="true">→</span>
           </Link>
-          <Link href="/workshops#workshop-worlds" className="edition-actions__back">
-            ← Back to the Workshop Worlds
+          <Link href="/workshops#current-workshops" className="edition-actions__back">
+            ← Back to Current Workshops
           </Link>
         </section>
       </main>

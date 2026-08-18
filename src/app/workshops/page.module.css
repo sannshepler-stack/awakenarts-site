@@ -91,6 +91,7 @@
 }
 
 .worlds { scroll-margin-top: 6rem; }
+.anchorAlias { display: block; scroll-margin-top: 6rem; }
 
 .worldGrid {
   display: grid;

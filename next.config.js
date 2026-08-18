@@ -31,7 +31,7 @@ const nextConfig = {
       // rather than through a competing public Collection center.
       {
         source: '/collection',
-        destination: '/workshops#workshop-worlds',
+        destination: '/workshops#current-workshops',
         permanent: true,
       },
       // New AwakenArts Paradigm (2026-08-18): Edition purchase pages
