@@ -15,7 +15,18 @@ type Entry = {
 
 const ENTRIES: Entry[] = [
   { path: '/',                                                   changeFrequency: 'weekly',  priority: 1.0 },
+  { path: '/workshops',                                         changeFrequency: 'monthly', priority: 0.95 },
   { path: '/about',                                              changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/awakenarts-path',                                   changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/collection',                                        changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/symbols',                                           changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/foundation',                                        changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/editions/dragon',                                   changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/editions/bowls',                                    changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/editions/ballerina',                                changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/editions/grismere',                                 changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/editions/poppy',                                    changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/editions/queen-ann',                                changeFrequency: 'monthly', priority: 0.8 },
   // Encounters architecture (2026-06-25) — /encounters is now the
   // primary entrance in its own right, not a transitional doorway, plus
   // each of the five locked encounters.

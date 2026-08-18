@@ -24,6 +24,11 @@ import Link from 'next/link'
 // renamed Gallery — quiet browsing and appreciation, not part of the
 // marketing sequence. See AwakenArts_Publishing_Platform_Architecture.md.
 const links = [
+  // 2026-08-18, New Paradigm activation: Workshops is the central
+  // conducted AwakenArts practice and therefore the first substantive
+  // destination. Gallery remains available through the footer and page
+  // pathways rather than competing with Workshops in primary navigation.
+  { label: 'Workshops', href: '/workshops', cta: false },
   // 2026-07-25, per Susan's "AwakenArts Primer Housing Page" revision
   // directive: "Explore the Path" now leads to the Path document first
   // (orientation), not directly into Encounters (experience) -- the
@@ -43,7 +48,6 @@ const links = [
   // Journal keeps its existing position — only Symbols is newly inserted.
   { label: 'Symbols', href: '/symbols', cta: false },
   { label: 'Collection', href: '/collection', cta: false },
-  { label: 'Gallery',    href: '/gallery',    cta: false },
   { label: 'Journal',    href: '/journal',    cta: false },
   { label: 'About',      href: '/about',      cta: false },
 ]
@@ -51,8 +55,9 @@ const links = [
 // Unlisted Page System (locked 2026-06-27): some pages are built and live
 // on the site but deliberately left out of this list (and out of
 // WayfindingBand / Footer) so they're reachable only by direct URL —
-// e.g. /workshops. See AwakenArts_Site_Architecture.md -> "Unlisted Page
-// System" for the full convention and current roster.
+// see AwakenArts_Site_Architecture.md -> "Unlisted Page System" for the
+// historical convention. The New Paradigm activation above supersedes that
+// treatment for /workshops only.
 
 export default function Nav() {
   const [open, setOpen]         = useState(false)

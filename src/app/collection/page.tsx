@@ -10,13 +10,14 @@ import { editions } from '@/data/editions'
 export const metadata: Metadata = {
   title: 'The Collection — AwakenArts',
   description:
-    'The Collection is the primary resource and guide developed through AwakenArts — original visual-literary works, reflection prompts, discussion questions, and facilitator materials for workshops, retreats, and personal exploration.',
+    'Explore the Figure Editions that provide the changing symbolic worlds of AwakenArts workshops.',
   alternates: { canonical: '/collection' },
   openGraph: {
     url: '/collection',
-    title: 'The Collection — An AwakenArts Resource & Guide',
+    title: 'The Collection — AwakenArts Figure Editions',
     description:
-      'Original visual-literary works, methods, and materials for engaging the language of symbols through reflection, discussion, teaching, and exploration.',
+      'Each Figure Edition brings image, poem, story, and reflection into a distinct AwakenArts workshop world.',
+    images: ['/images/brand/og-hero.jpg'],
   },
 }
 
@@ -122,7 +123,7 @@ export default function CollectionPage() {
             <p className="eyebrow">Editions</p>
             <h2 id="col-editions-heading">Current Editions</h2>
             <p className="col-editions-band__sub">
-              Explore the completed figure editions.
+              Different symbolic worlds. One consistent workshop practice.
             </p>
           </div>
         </section>
@@ -191,26 +192,27 @@ export default function CollectionPage() {
                 <em>Everything else grows from them.</em>
               </h2>
               <p>
-                Each Figure Edition invites readers into a symbolic story
-                that becomes a way of recognizing the patterns that shape
-                ordinary life — built from an original visual-literary
-                work: image, symbol, and poem, gathered into a growing
-                body of symbolic encounters.
+                Each Figure Edition is an authored content world built from
+                image, symbol, poem, story, and reflection. Within an
+                AwakenArts workshop, that world gives participants something
+                concrete to encounter while they notice how meaning takes
+                shape.
               </p>
               <p>
-                Each Edition extends its work into language, method, and
-                resource — companion materials that carry its themes into
-                conversation and continued exploration.
+                The workshop practice remains consistent while the Edition
+                changes. This allows participants to return through new
+                imagery, poetry, questions, and symbolic territory without
+                simply repeating the same experience.
               </p>
 
               <div className="col-pub-uses">
-                <p className="col-pub-uses__label">How it&rsquo;s used</p>
+                <p className="col-pub-uses__label">How the work continues</p>
                 <div className="col-pub-uses__tags">
-                  <span className="col-pub-uses__tag">Reflection</span>
-                  <span className="col-pub-uses__tag">Discussion</span>
-                  <span className="col-pub-uses__tag">Teaching</span>
                   <span className="col-pub-uses__tag">Workshops</span>
+                  <span className="col-pub-uses__tag">Conversation</span>
+                  <span className="col-pub-uses__tag">Reflection</span>
                   <span className="col-pub-uses__tag">Journaling</span>
+                  <span className="col-pub-uses__tag">Return</span>
                 </div>
               </div>
             </div>
@@ -227,15 +229,28 @@ export default function CollectionPage() {
             per her design principle, each page contributes something
             unique rather than repeating the same material. */}
 
-        {/* 6 ── CTA: ENTER ENCOUNTERS ────────────────────────────────
+        {/* 6 ── CONTINUATION PATHS ───────────────────────────────────
             2026-07-26: previously followed A Path of Recognition
             directly; now follows The Works directly, since that section
-            is gone. Kept as this page's own closing invitation.
+            is gone.
+
+            2026-08-13 activation pass: the Collection now hands visitors
+            into two already-built parts of the New AwakenArts pathway —
+            Symbols (encounter/notice) and Workshops (participation) —
+            without changing any Edition's existing Acquire destination.
         ──────────────────────────────────────────────────────────── */}
         <section className="col-archive-cta">
-          <Link href="/encounters" className="col-archive-cta__link">
-            Enter Encounters <span aria-hidden="true">→</span>
-          </Link>
+          <div className="col-archive-cta__paths" aria-label="Continue exploring AwakenArts">
+            <Link href="/symbols" className="col-archive-cta__link">
+              Encounter the Symbols <span aria-hidden="true">→</span>
+            </Link>
+            <Link href="/workshops" className="col-archive-cta__link">
+              Explore Workshops <span aria-hidden="true">→</span>
+            </Link>
+            <Link href="/encounters" className="col-archive-cta__link">
+              Enter Encounters <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </section>
 
 

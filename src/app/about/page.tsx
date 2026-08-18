@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'About — AwakenArts',
   description:
-    'Susan Ann Shepler — artist, writer, and creator of AwakenArts. A body of work shaped through image, language, and symbolic form.',
+    'Susan Ann Shepler — artist, writer, and practitioner who conducts AwakenArts literary-symbolic workshops.',
   alternates: { canonical: '/about' },
   openGraph: {
     url: '/about',
@@ -119,22 +119,31 @@ export default function AboutPage() {
             </p>
             <p className="about-body">
               That creative process became a meeting place where symbolic patterns
-              surfaced long before I could fully explain them. Carl Jung described
-              this as the unconscious giving symbolic form to realities that lie
-              beyond ordinary awareness. Whether understood psychologically,
-              artistically, or spiritually, these images consistently revealed
-              truths that required years of reflection to more fully articulate.
+              surfaced long before I could fully explain them. Whether understood
+              psychologically, artistically, or spiritually, these images
+              consistently revealed truths that required years of reflection to
+              more fully articulate.
             </p>
             <p className="about-body">
               The poems themselves have remained remarkably unchanged. What
               matured over time was not the symbolic work, but the language
-              surrounding it. The Figure Editions and Companions represent that
-              continuing effort to accompany the poems with literary, psychological,
-              and Christian reflection while remaining faithful to what they had
-              expressed from the beginning.
+              surrounding it. The Figure Editions represent that continuing
+              effort: changing symbolic worlds in which image, poem, and reflection
+              can be encountered together while remaining faithful to what the
+              poems expressed from the beginning.
             </p>
 
-            <h2 className="about-h2">About the Author</h2>
+            <h2 className="about-h2">Susan&rsquo;s Practice</h2>
+            <p className="about-body">
+              Today, Susan conducts AwakenArts workshops as a
+              literary-symbolic practice. She holds a consistent sequence of
+              encounter, reflection, writing, and conversation while each Figure
+              Edition brings participants into a different symbolic world. The
+              work invites recognition and conscious language; it does not offer
+              therapy, diagnosis, or a fixed interpretation of an image.
+            </p>
+
+            <h2 className="about-h2">About Susan Ann Shepler</h2>
             <p className="about-body about-body--quiet">
               Susan Ann Shepler holds a Master of Arts in Counseling Psychology from
               Webster University. She is a Certified Transformative Language Artist
@@ -157,6 +166,14 @@ export default function AboutPage() {
                 route, its assets, and its robots.txt disallow entry are
                 untouched — only this inline invitation is removed. */}
             <div className="about-links">
+              <p className="about-links__item">
+                <Link href="/workshops" className="text-link">
+                  Explore AwakenArts Workshops <span aria-hidden="true">→</span>
+                </Link>
+                <span className="about-links__desc">
+                  See how Susan conducts the workshop experience.
+                </span>
+              </p>
               <p className="about-links__item">
                 <Link href="/foundation" className="text-link">
                   Read the Foundation of AwakenArts <span aria-hidden="true">→</span>

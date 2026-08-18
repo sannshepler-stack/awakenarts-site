@@ -14,7 +14,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!edition) return {}
   return {
     title: `${edition.title} — Figure Edition — AwakenArts`,
-    description: `The ${edition.title} Figure Edition, an AwakenArts published work.`,
+    description: `Explore ${edition.title}, a symbolic content world used within the AwakenArts workshop experience.`,
     alternates: { canonical: `/editions/${edition.slug}` },
   }
 }
@@ -33,10 +33,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
  * ("What does the Dragon mean?") rather than orientation. Susan's
  * correction, now the governing rule for this section across all six
  * Editions:
- *   - About This Edition -> describes the experience: the work's format
- *     (image and poem together, guided recognition, reflection, facilitator
- *     notes) and how it's meant to be used (personal reading, discussion,
- *     group exploration). Not what the figure means.
+ *   - About This Edition -> describes the Edition as the changing symbolic
+ *     world used within Susan's consistent workshop practice. It orients
+ *     visitors without explaining what the figure means.
  *   - Themes -> suggests the territory in a few words, nothing more.
  *   - The Edition itself -> does the actual symbolic work. See `editions.ts`
  *     for the full rule as recorded against the data.
@@ -49,13 +48,17 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
  * Preview page itself, which contradicts the Preview's own governing
  * constraint, recorded in AwakenArts_Publishing_Platform_Architecture.md:
  * it "must increase desire without ever exposing the complete Edition." The
- * primary CTA now leads to the new, edition-specific Purchase page
- * (/editions/[slug]/purchase) — see "Evolution: the Purchase Page Becomes
- * Its Own Edition-Specific Page" in that same document.
+ * Under the 2026-08-18 workshop-centered paradigm, purchase routes redirect
+ * here and the public action is an Edition-specific workshop inquiry.
  */
 export default function EditionPage({ params }: { params: { slug: string } }) {
   const edition = editions.find((e) => e.slug === params.slug)
   if (!edition) return notFound()
+  const workshopInquiry = `mailto:susan@shepler.us?subject=${encodeURIComponent(
+    `${edition.title} AwakenArts Workshop Inquiry`,
+  )}&body=${encodeURIComponent(
+    `Hi Susan,\n\nI'd like to ask about an AwakenArts workshop using ${edition.title}.`,
+  )}`
 
   return (
     <>
@@ -85,8 +88,16 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
         </section>
 
         <section className="edition-actions">
-          <Link href={`/editions/${edition.slug}/purchase`} className="edition-actions__link">
-            Acquire {edition.title} <span aria-hidden="true">→</span>
+          {edition.slug === 'dragon' && (
+            <Link href="/editions/dragon/read" className="edition-actions__link">
+              Read the Dragon Edition <span aria-hidden="true">→</span>
+            </Link>
+          )}
+          <a href={workshopInquiry} className="edition-actions__link">
+            Inquire About a Workshop Using {edition.title} <span aria-hidden="true">→</span>
+          </a>
+          <Link href="/workshops" className="edition-actions__link">
+            Explore the Workshop Experience <span aria-hidden="true">→</span>
           </Link>
           <Link href="/collection" className="edition-actions__back">
             ← Back to the Collection

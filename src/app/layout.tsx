@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: '%s | AwakenArts',
   },
   description:
-    'AwakenArts invites readers to discover symbolic language through image, poem, and reflection. Through Figure Editions, Encounters, and original artwork, Susan Ann Shepler offers thoughtful resources that encourage personal recognition, meaningful conversation, and deeper engagement within the Christian tradition.',
+    'AwakenArts is a literary-symbolic workshop practice conducted by Susan Ann Shepler. Figure Editions, Encounters, Symbols, poetry, imagery, and journals support recognition, reflection, and conscious language.',
   applicationName: 'AwakenArts',
   authors: [{ name: 'Susan Ann Shepler', url: SITE_URL + '/about' }],
   creator: 'Susan Ann Shepler',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'AwakenArts explores symbolic language through image, poem, and reflection. Figure Editions, Encounters, and original artwork invite readers into meaningful recognition and thoughtful conversation shaped by the Christian story. Created by Susan Ann Shepler.',
+      'AwakenArts is a literary-symbolic workshop practice conducted by Susan Ann Shepler. Each Figure Edition opens a different symbolic world within a consistent experience of recognition and reflection.',
     locale: 'en_US',
     images: [
       {
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'Discover symbolic language through image, poem, and reflection. Explore Figure Editions, Encounters, and original artwork by Susan Ann Shepler that invite recognition, reflection, and meaningful conversation within the Christian tradition.',
+      'Explore literary-symbolic workshops conducted by Susan Ann Shepler, with changing Figure Editions and a consistent practice of recognition and reflection.',
     images: ['/images/brand/og-hero.jpg'],
   },
   robots: {
@@ -114,9 +114,9 @@ const jsonLd = {
       name: 'Susan Ann Shepler',
       url: `${SITE_URL}/about`,
       image: `${SITE_URL}/images/about/susan-ann-shepler.jpg`,
-      jobTitle: 'Artist and Writer',
+      jobTitle: 'Artist, Writer, and Workshop Practitioner',
       description:
-        'Artist and writer. Creator of AwakenArts and the Within the Circle series of concrete poems and readings, working in the literary-symbolic tradition Scripture itself has always used — parable, image, and figure. Author of Whispers of Awareness (2025).',
+        'Artist, writer, and practitioner who conducts AwakenArts literary-symbolic workshops. Creator of the Within the Circle series of concrete poems and readings, and author of Whispers of Awareness (2025).',
       knowsLanguage: ['en', 'es'],
       address: {
         '@type': 'PostalAddress',
@@ -128,6 +128,15 @@ const jsonLd = {
         '@type': 'CollegeOrUniversity',
         name: 'Webster University',
       },
+      // These are Susan's verified public profiles, already exposed in
+      // the global footer with rel="me". Keep them on the Person entity
+      // rather than implying that separate AwakenArts organization
+      // accounts have been established.
+      sameAs: [
+        'https://www.instagram.com/s.shepler/',
+        'https://www.pinterest.com/sshepler/',
+        'https://www.linkedin.com/in/sannshepler/',
+      ],
       // Corrected 2026-07-15 per the AwakenArts Legal and Risk Standards
       // package, Stage 1 item 3: the credential previously read "Master
       // in Counseling Psychology — Spirituality and Play Therapy."
@@ -159,7 +168,7 @@ const jsonLd = {
       logo: `${SITE_URL}/android-chrome-512x512.png`,
       founder: { '@id': `${SITE_URL}/#person` },
       description:
-        'Concrete poetry and symbolic form — language given shape in the same literary mode Scripture itself uses: parable, image, and figure. By Susan Ann Shepler.',
+        'A literary-symbolic workshop practice conducted by Susan Ann Shepler. Figure Editions, Encounters, Symbols, poetry, imagery, and journals support and extend the experience.',
     },
     {
       '@type': 'WebSite',

@@ -48,7 +48,6 @@ const DISALLOWED_PATHS = [
   '/encounters/butterfly',
   '/encounters/continuum',
   '/encounters/mermaid',
-  '/workshops',
   '/facilitator-orientation',
   '/sketchbook',
   '/files/workshops/',

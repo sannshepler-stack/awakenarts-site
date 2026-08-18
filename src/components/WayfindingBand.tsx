@@ -50,10 +50,11 @@ import styles from './WayfindingBand.module.css'
  * this is a data-only change. */
 
 const PRIMARY_LINKS = [
+  { label: 'Workshops', href: '/workshops' },
   { label: 'The Path', href: '/awakenarts-path' },
-  { label: 'Collections', href: '/collection' },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'Journals', href: '/journal' },
+  { label: 'Symbols', href: '/symbols' },
+  { label: 'Collection', href: '/collection' },
+  { label: 'Journal', href: '/journal' },
   { label: 'About', href: '/about' },
 ]
 

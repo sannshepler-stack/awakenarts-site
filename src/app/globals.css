@@ -10232,6 +10232,44 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 .symbols-hero__line:last-child { margin-bottom: 0; }
 
+/* Activation pathway — keeps the Symbols experience intact and adds a
+   restrained handoff only after the visitor has completed it. */
+.symbols-continuation {
+  max-width: var(--measure-narrow);
+  margin: 0 auto;
+  padding: 4.5rem 2rem 5.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(28, 43, 58, 0.1);
+}
+.symbols-continuation h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+  color: var(--deep);
+  margin: 0 0 1rem;
+}
+.symbols-continuation > p:not(.eyebrow) {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--mid);
+  max-width: 34rem;
+  margin: 0 auto 2rem;
+}
+.symbols-continuation__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem 1.1rem;
+}
+
+.col-archive-cta__paths {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2rem;
+}
+
 /* ── Section 1: Symbol Vocabulary ───────────────────────────────────── */
 .symbols-vocab-section {
   max-width: var(--measure-wide);
@@ -10599,6 +10637,8 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 @media (max-width: 640px) {
   .symbols-hero { padding: 6.5rem 1.5rem 2.5rem; }
+  .symbols-continuation { padding: 3.5rem 1.25rem 4rem; }
+  .symbols-continuation__links { flex-direction: column; align-items: center; }
   .symbols-vocab-section { padding: 1.25rem 1.25rem 1rem; }
   .symbols-vocab-reveal { min-height: 200px; }
   .symbols-transition { padding: 1.25rem 1.5rem; }

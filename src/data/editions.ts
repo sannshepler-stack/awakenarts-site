@@ -13,10 +13,9 @@ export interface Edition {
   pdf: string
   sections: EditionSection[]   // NEW — drives the Reader (Implementation Spec v1.0, Section 3)
   access?: 'free' | 'gated'    // NEW — commerce hook, defaults to 'free', read by nothing in v1.0
-  // about / themes — added 2026-06-29 for the Edition Preview page's new
-  // About This Edition + Themes sections and the new edition-specific
-  // Purchase page (see AwakenArts_Publishing_Platform_Architecture.md,
-  // "Evolution: the Purchase Page Becomes Its Own Edition-Specific Page").
+  // about / themes — Edition Preview orientation. Under the New AwakenArts
+  // Paradigm, `about` describes the Edition as an authored symbolic world
+  // used within Susan-conducted workshops, not as a facilitator product.
   //
   // Governing rule, locked the same day per Susan, after reviewing a first
   // draft that leaned too far into interpretation ("What does the Dragon
@@ -113,7 +112,7 @@ export const editions: Edition[] = [
     contactSheetAlt: 'Contact sheet preview of all eleven pages of The Dragon Figure Edition',
     pdf: '/files/editions/Dragon_Figure_Edition.pdf',
     about:
-      'This edition presents The Dragon as it was created: image and poem together, followed by guided recognition, reflection, and facilitator notes. It is designed for personal reading, discussion, or group exploration.',
+      'The Dragon brings image, poem, story, and reflection into a symbolic world used within the AwakenArts workshop experience. It invites participants to notice how an interpretation changes when the apparent enemy is also trying to protect what its own fire endangers.',
     themes: ['Reconciliation', 'Wholeness', 'Strength and Tenderness', 'Recognition, Not Conquest'],
     // Hand-built per Implementation Specification v1.0, Phase 1. Text is
     // transcribed faithfully from the approved PDF's own participant-facing
@@ -494,7 +493,7 @@ export const editions: Edition[] = [
         background: '/images/editions/dragon/read/colophon-band.png',
         text:
           'This Figure Edition is part of the AwakenArts collection.\n\n' +
-          'Each Edition stands complete in itself while contributing to a growing body of symbolic exploration through image, poetry, reflection, and conversation. The Edition holds the experience; companion materials, when used, help hold the space around it.\n\n' +
+          'Each Edition contributes a distinct symbolic world to the AwakenArts workshop experience. The content changes from Edition to Edition while the underlying practice of encounter, reflection, conversation, and return remains consistent.\n\n' +
           'May these works continue to reveal new recognitions as you return to them over time.\n\n' +
           'AwakenArts.com\n' +
           '© 2026 Susan Ann Shepler. All rights reserved.',
@@ -512,7 +511,7 @@ export const editions: Edition[] = [
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Bowls Figure Edition',
     pdf: '/files/editions/Bowls_Figure_Edition.pdf',
     about:
-      'This edition presents Bowls as it was created: image and poem together, followed by guided recognition, reflection, and facilitator notes. It is designed for personal reading, discussion, or group exploration.',
+      'Bowls brings image, poem, story, and reflection into a symbolic world used within the AwakenArts workshop experience. Its distinct territory allows participants to practice the same underlying attention through questions of duality, voice, and wholeness.',
     themes: ['Duality of the Feminine', 'Wholeness, Not Repair', "Finding One's Voice", 'The Ordinary as Sacred'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
@@ -524,7 +523,7 @@ export const editions: Edition[] = [
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Ballerina Figure Edition',
     pdf: '/files/editions/Ballerina_Figure_Edition.pdf',
     about:
-      'This edition presents Ballerina as it was created: image and poem together, followed by guided recognition, reflection, and facilitator notes. It is designed for personal reading, discussion, or group exploration.',
+      'Ballerina brings image, poem, story, and reflection into a symbolic world used within the AwakenArts workshop experience. Its distinct territory allows participants to practice the same underlying attention through movement, stillness, multiplicity, and trust.',
     themes: ['Movement and Stillness', 'Embodied Wisdom', 'Multiplicity Held as One', 'Trust'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
@@ -536,7 +535,7 @@ export const editions: Edition[] = [
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Grismere Figure Edition',
     pdf: '/files/editions/Grismere_Figure_Edition.pdf',
     about:
-      'This edition presents Grismere as it was created: image and poem together, followed by guided recognition, reflection, and facilitator notes. It is designed for personal reading, discussion, or group exploration.',
+      'Grismere brings image, poem, story, and reflection into a symbolic world used within the AwakenArts workshop experience. Its distinct territory allows participants to practice the same underlying attention at the threshold between what is visible and what remains beneath the surface.',
     themes: ['Conscious Awareness', 'The Hidden Self', 'Mystery Beneath the Surface', 'Psalm 18:16'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
@@ -548,7 +547,7 @@ export const editions: Edition[] = [
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Poppy Figure Edition',
     pdf: '/files/editions/Poppy_Figure_Edition.pdf',
     about:
-      'This edition presents Poppy as it was created: image and poem together, followed by guided recognition, reflection, and facilitator notes. It is designed for personal reading, discussion, or group exploration.',
+      'Poppy brings image, poem, story, and reflection into a symbolic world used within the AwakenArts workshop experience. Its distinct territory allows participants to practice the same underlying attention through inheritance, recognition, love, and continuity across generations.',
     themes: ['Inheritance', 'Love Carried Forward', 'Recognition', 'Continuity Across Generations'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
@@ -560,7 +559,7 @@ export const editions: Edition[] = [
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Queen Ann Figure Edition',
     pdf: '/files/editions/Queen_Ann_Figure_Edition.pdf',
     about:
-      'This edition presents Queen Ann as it was created: image and poem together, followed by guided recognition, reflection, and facilitator notes. It is designed for personal reading, discussion, or group exploration.',
+      'Queen Ann brings image, poem, story, and reflection into a symbolic world used within the AwakenArts workshop experience. Its distinct territory allows participants to practice the same underlying attention through transition, relinquishment, pilgrimage, and trust beyond possession.',
     themes: ['Transition and Relinquishment', 'Pilgrimage', 'Trust Beyond Possession', 'The Kingdom Beyond the One That Ends'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },

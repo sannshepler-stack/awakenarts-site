@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
   openGraph: {
     url: '/',
+    images: ['/images/brand/og-hero.jpg'],
   },
 }
 
@@ -293,8 +294,8 @@ export default function HomePage() {
                 .hero-invitation__label alone. .hero-invitation__eyebrow
                 itself is retired in globals.css (nothing else used
                 it). */}
-            <Link href="/awakenarts-path" className="hero-invitation">
-              <span className="hero-invitation__label">The AwakenArts Path <span className="hero-invitation__arrow" aria-hidden="true">→</span></span>
+            <Link href="/workshops" className="hero-invitation">
+              <span className="hero-invitation__label">Explore Workshops <span className="hero-invitation__arrow" aria-hidden="true">→</span></span>
             </Link>
 
             {/* Methodology line — added 2026-08-07, per Susan's
@@ -327,7 +328,7 @@ export default function HomePage() {
                 the surrounding rationale above are unchanged; only the
                 copy itself changed. */}
             <p className="hero-method">
-              Explore the World of Figurative Language
+              Literary-symbolic workshops conducted by Susan Ann Shepler
             </p>
           </div>
         </div>
@@ -477,10 +478,10 @@ export default function HomePage() {
               symbolic journey.
             </p>
             <p className="home-coll-body">
-              Each Figure Edition explores a symbolic figure through
-              image, poem, and reflection&mdash;inviting recognition
-              rather than explanation, and opening new ways of seeing
-              ordinary life.
+              Each Figure Edition is a changing symbolic world Susan
+              brings into the AwakenArts workshop experience. The
+              underlying practice remains consistent, while image,
+              poem, and reflection open a different field of discovery.
             </p>
             {/* 2026-07-26, per Susan's directive: label only,
                 "Explore the Collection" -> "View the Collection" --

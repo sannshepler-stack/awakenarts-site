@@ -26,10 +26,12 @@ import FooterSocial from './FooterSocial'
  */
 
 const EXPLORE_LINKS = [
+  { label: 'Workshops', href: '/workshops' },
+  { label: 'Symbols', href: '/symbols' },
   { label: 'Collection', href: '/collection' },
-  { label: 'Gallery', href: '/gallery' },
   { label: 'Encounters', href: '/encounters' },
   { label: 'Journal', href: '/journal' },
+  { label: 'Gallery', href: '/gallery' },
 ]
 
 const ABOUT_LINKS = [
@@ -65,10 +67,9 @@ export default function Footer() {
             />
           </Link>
           <p>
-            An artistic body of work shaped through image and language.
-            The works express emotion and meaning in symbolic form, where
-            word and image reveal archetypal patterns of thought and
-            inward experience. By Susan Ann Shepler.
+            A literary-symbolic practice conducted by Susan Ann Shepler
+            through workshops. Figure Editions, Encounters, Symbols,
+            poetry, imagery, and journals support and extend the work.
           </p>
           <FooterSocial />
         </div>
