@@ -328,7 +328,7 @@ export default function HomePage() {
                 the surrounding rationale above are unchanged; only the
                 copy itself changed. */}
             <p className="hero-method">
-              Literary-symbolic workshops in image, poetry, and reflection
+              Literary-symbolic workshops in image, poetry, and reflection.
             </p>
           </div>
         </div>
