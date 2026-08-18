@@ -462,7 +462,7 @@ export default function HomePage() {
           <div className="home-coll-cover">
             <Image
               src="/images/collection/collection-cover-clean.png"
-              alt="The Collection — the cover of AwakenArts' growing library of Figure Editions"
+              alt="AwakenArts Figure Editions — the changing symbolic worlds that anchor the workshops"
               width={1122}
               height={1402}
               className="home-coll-cover__img"
@@ -472,16 +472,15 @@ export default function HomePage() {
 
           <div className="home-coll-text">
             <p className="eyebrow">Figure Editions</p>
-            <h2 id="home-coll-heading">The Collection</h2>
+            <h2 id="home-coll-heading">Workshop Worlds</h2>
             <p className="home-coll-sub">
-              Where image, poem, and reflection become a single
-              symbolic journey.
+              Every workshop begins in a different symbolic world.
             </p>
             <p className="home-coll-body">
-              Each Figure Edition is a changing symbolic world Susan
-              brings into the AwakenArts workshop experience. The
-              underlying practice remains consistent, while image,
-              poem, and reflection open a different field of discovery.
+              Dragon, Bowls, Ballerina, Grismere, Poppy, and Queen Ann
+              each gather image, poem, story, and reflection into a
+              distinct Figure Edition. Susan brings one of these worlds
+              into every AwakenArts workshop.
             </p>
             {/* 2026-07-26, per Susan's directive: label only,
                 "Explore the Collection" -> "View the Collection" --
