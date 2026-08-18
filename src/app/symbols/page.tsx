@@ -43,21 +43,10 @@ export default function SymbolsPage() {
 
         <SymbolsExperience />
 
-        <section className="symbols-continuation" aria-labelledby="symbols-continuation-heading">
-          <p className="eyebrow">Continue</p>
-          <h2 id="symbols-continuation-heading">Stay with what you noticed.</h2>
-          <p>
-            Enter another symbolic world through the Collection, or explore
-            how AwakenArts is practiced with others.
-          </p>
-          <div className="symbols-continuation__links">
-            <Link href="/collection" className="home-coll-cta home-coll-cta--light-surface">
-              Explore the Collection <span aria-hidden="true">→</span>
-            </Link>
-            <Link href="/workshops" className="home-coll-cta home-coll-cta--light-surface">
-              Explore Workshops <span aria-hidden="true">→</span>
-            </Link>
-          </div>
+        <section className="symbols-continuation" aria-label="Continue to Workshops">
+          <Link href="/workshops" className="home-coll-cta home-coll-cta--light-surface">
+            Continue to Workshops <span aria-hidden="true">→</span>
+          </Link>
         </section>
       </main>
 

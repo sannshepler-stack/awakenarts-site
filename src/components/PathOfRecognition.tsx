@@ -133,11 +133,17 @@ export default function PathOfRecognition() {
         <figure className="home-recognition__encounters-image">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/homepage/encounters-journey-ship-v1.png"
+            src="/images/homepage/encounters-symbols-ship-v3.png"
             alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon"
             loading="lazy"
           />
         </figure>
+
+        <div className="home-recognition__cta home-recognition__cta--after-image">
+          <Link href="/symbols" className="home-coll-cta home-coll-cta--light-surface">
+            Explore Christian Symbols <span aria-hidden="true">→</span>
+          </Link>
+        </div>
 
       </div>
     </section>
