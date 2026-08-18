@@ -88,11 +88,6 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
         </section>
 
         <section className="edition-actions">
-          {edition.slug === 'dragon' && (
-            <Link href="/editions/dragon/read" className="edition-actions__link">
-              Read the Dragon Edition <span aria-hidden="true">→</span>
-            </Link>
-          )}
           <a href={workshopInquiry} className="edition-actions__link">
             Inquire About a Workshop Using {edition.title} <span aria-hidden="true">→</span>
           </a>
