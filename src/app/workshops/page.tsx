@@ -121,11 +121,12 @@ export default function WorkshopsPage() {
             A Figure Edition gathers the artwork, poem, story, and reflective
             questions for one workshop world. It is something Susan brings
             into the shared experience&mdash;not a lesson participants must
-            study beforehand.
+            study beforehand. The website offers a visual preview of each
+            Edition so you can glimpse the worlds a workshop may enter.
           </p>
           <p className={styles.body}>
             <Link href="/collection" className="text-link">
-              Explore the Figure Editions <span aria-hidden="true">&rarr;</span>
+              View the Edition Previews <span aria-hidden="true">&rarr;</span>
             </Link>
           </p>
 

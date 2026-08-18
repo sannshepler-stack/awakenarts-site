@@ -147,6 +147,9 @@ export default function CollectionPage() {
                   </span>
                   <span className="col-edition-card__kicker">{edition.kicker}</span>
                   <span className="col-edition-card__title">{edition.title}</span>
+                  <span className="col-edition-card__action">
+                    View Edition Preview <span aria-hidden="true">→</span>
+                  </span>
                 </Link>
               ))}
             </div>

@@ -7889,6 +7889,22 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   color: var(--deep);
 }
 
+.col-edition-card__action {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--gold);
+  border-bottom: 1px solid rgba(139, 105, 20, 0.35);
+  padding-bottom: 0.15rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.col-edition-card:hover .col-edition-card__action,
+.col-edition-card:focus-visible .col-edition-card__action {
+  color: var(--deep);
+  border-color: var(--gold);
+}
+
 @media (max-width: 1024px) {
   .col-editions__grid { grid-template-columns: repeat(2, 1fr); column-gap: 2.25rem; row-gap: 3.5rem; }
 }
