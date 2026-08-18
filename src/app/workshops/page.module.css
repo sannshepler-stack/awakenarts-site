@@ -90,34 +90,6 @@
   color: var(--deep);
 }
 
-/* Every Workshop Begins the Same Way — the six-step rhythm, set as a
-   vertical sequence with quiet arrow dividers rather than a numbered
-   grid (the prior build's four-box .shapeGrid), since this rhythm now
-   describes every workshop as a whole, not one session's internal
-   parts. */
-.rhythm {
-  list-style: none;
-  margin: 0 0 1.75rem;
-  padding: 0;
-  text-align: center;
-}
-.rhythmStep {
-  display: block;
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--deep);
-  padding: 0.6rem 0;
-}
-.rhythmArrow {
-  display: block;
-  color: var(--gold);
-  font-size: 1rem;
-  line-height: 1;
-}
-
 /* Workshop Formats — label + one concise paragraph, no cards, no
    pricing/scheduling. Same "label, then what it is" pairing as
    /method's .method-forms, adapted for longer descriptions. */

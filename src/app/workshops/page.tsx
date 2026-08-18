@@ -39,37 +39,24 @@ import styles from './page.module.css'
 export const metadata: Metadata = {
   title: 'Workshops | AwakenArts',
   description:
-    'Literary-symbolic workshops conducted by Susan Ann Shepler, using imagery, poetry, reflection, and writing to make meaning-making more visible.',
+    'AwakenArts workshops with Susan Ann Shepler invite you to explore an image, follow a story, write, reflect, and discover what you notice.',
   alternates: { canonical: '/workshops' },
   robots: { index: true, follow: true },
   openGraph: {
     url: '/workshops',
     title: 'Workshops | AwakenArts',
     description:
-      'Literary-symbolic workshops conducted by Susan Ann Shepler, using imagery, poetry, reflection, and writing to make meaning-making more visible.',
+      'Come curious. Explore an image, follow a story, write, reflect, and discover what you notice in an AwakenArts workshop with Susan Ann Shepler.',
     images: ['/images/brand/og-hero.jpg'],
   },
 }
 
 const EXPERIENCE = [
-  'Encounter symbolic imagery before receiving an explanation.',
-  'Notice the associations and interpretations that arise.',
-  'Observe what changes when poetry and story add new information.',
-  'Bring recognition into conscious language through reflection and writing.',
-  'Consider what choices become available once a pattern can be seen and named.',
-]
-
-const RHYTHM = [
-  'Orientation',
-  'Encounter',
-  'Association',
-  'Story / Poem',
-  'Disruption',
-  'Meta Shift',
-  'Recognition',
-  'Conscious Language',
-  'Application',
-  'Return',
+  'You meet an image before anyone tells you what it means.',
+  'A poem or story changes the picture—and perhaps your first impression of it.',
+  'You have time to wonder, write, and notice what feels familiar.',
+  'Conversation opens possibilities you may not have seen alone.',
+  'You leave with a question, phrase, or recognition to carry into ordinary life.',
 ]
 
 const FORMATS = [
@@ -118,65 +105,51 @@ export default function WorkshopsPage() {
         <main className={styles.main}>
           <p className={`eyebrow ${styles.eyebrow}`}>Workshops</p>
           <h1 className={styles.h1}>Workshops</h1>
-          <p className={styles.lede}>Recognition deepens in the presence of others.</p>
+          <p className={styles.lede}>
+            Come curious. You do not need to know anything about art, poetry,
+            or symbols.
+          </p>
 
           {/* Introduction — no section heading, flows directly from the
               hero, same as /method's own opening movement. Links back to
               /method by name, the explicit continuity Susan asked for. */}
           <p className={styles.body}>
-            AwakenArts is a literary-symbolic practice conducted by Susan Ann
-            Shepler. The workshops are where the{' '}
-            <Link href="/method" className={styles.inlineLink}>
-              AwakenArts Method
-            </Link>{' '}
-            becomes lived experience through imagery, poetry, reflection,
-            writing, and conversation.
+            Each workshop begins with something to look at&mdash;perhaps a
+            dragon above a burning town, a dancer caught between stillness and
+            motion, or a simple bowl. Susan invites you to stay with the image
+            before explaining it. What do you notice? What story have you
+            already begun to tell?
           </p>
           <p className={styles.body}>
-            We make meaning from what we encounter, often so quickly that an
-            interpretation feels like the event itself. AwakenArts slows that
-            process down. The purpose is not to find the correct meaning of a
-            symbol, but to notice what our own minds assume, supply, expect,
-            resist, and revise.
+            Then poetry, story, quiet writing, and conversation change what is
+            possible to see. There is no correct answer to discover and no
+            pressure to share more than you wish. The pleasure is in the
+            unfolding&mdash;the moment when something once hard to name begins
+            to take shape.
           </p>
 
-          <h2 className={styles.h2}>The Workshop Experience</h2>
-          <p className={styles.body}>In a workshop, participants learn to:</p>
+          <h2 className={styles.h2}>What You&rsquo;ll Experience</h2>
           <ul className={styles.list} aria-label="The Workshop Experience">
             {EXPERIENCE.map((line) => (
               <li key={line}>{line}</li>
             ))}
           </ul>
 
-          <h2 className={styles.h2}>A Consistent Practice</h2>
+          <h2 className={styles.h2}>A Different World Each Time</h2>
           <p className={styles.body}>
-            Regardless of which Figure Edition a workshop gathers around, it
-            moves through the same underlying arc:
-          </p>
-          <ol className={styles.rhythm} aria-label="The rhythm of the Method">
-            {RHYTHM.map((step, i) => (
-              <li key={step}>
-                <span className={styles.rhythmStep}>{step}</span>
-                {i < RHYTHM.length - 1 && (
-                  <span className={styles.rhythmArrow} aria-hidden="true">
-                    &darr;
-                  </span>
-                )}
-              </li>
-            ))}
-          </ol>
-          <p className={styles.body}>
-            The arc remains consistent while the symbolic world changes. A
-            participant can return through Dragon, Bowls, Ballerina, Grismere,
-            Poppy, or Queen Ann and practice the same capacity through
-            different imagery, poetry, questions, and stories.
+            Dragon, Bowls, Ballerina, Grismere, Poppy, and Queen Ann each open
+            a different world of imagery, poetry, questions, and stories. The
+            welcoming shape of the workshop remains familiar, but the journey
+            changes with every Figure Edition. You can return without simply
+            repeating the same experience.
           </p>
 
           <h2 className={styles.h2}>Figure Editions</h2>
           <p className={styles.body}>
-            Every workshop begins with one Figure Edition. The Figure
-            Edition provides the symbolic landscape through which
-            participants practice the Method together.
+            A Figure Edition gathers the artwork, poem, story, and reflective
+            questions for one workshop world. It is something Susan brings
+            into the shared experience&mdash;not a lesson participants must
+            study beforehand.
           </p>
           <p className={styles.body}>
             <Link href="/collection" className="text-link">
@@ -186,11 +159,10 @@ export default function WorkshopsPage() {
 
           <h2 className={styles.h2}>Susan&rsquo;s Role</h2>
           <p className={styles.body}>
-            Susan holds the sequence, introduces each Edition&rsquo;s symbolic
-            material, guides conversation, allows silence, and protects a
-            space in which recognition is invited rather than prescribed.
-            AwakenArts workshops are conducted experiences, not facilitator
-            products or materials for others to purchase and deliver.
+            Susan conducts every AwakenArts workshop herself. She introduces
+            the images and poems, makes room for silence, and guides a
+            conversation in which no one else decides what your experience
+            means. Her role is to hold the journey, not provide the answer.
           </p>
 
           <h2 className={styles.h2}>Workshop Formats</h2>
