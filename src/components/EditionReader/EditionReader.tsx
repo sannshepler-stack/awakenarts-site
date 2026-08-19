@@ -109,6 +109,21 @@ export default function EditionReader({ edition }: { edition: Edition }) {
         <EditionReaderSection section={section} edition={edition} />
       </main>
 
+      {/* 2026-08-19 — chevrons switched from Unicode glyphs ('‹'/'›',
+          rendered via var(--serif), a Google-hosted webfont) to inline
+          SVG paths, per Susan's report that the Next control was
+          invisible/unusable specifically in Safari on macOS, while Prev
+          (grayed, disabled) still appeared. That asymmetry — one glyph
+          painting, its mirror not — matches a known WebKit failure mode:
+          position:fixed elements can fail to repaint a character after
+          an async webfont swap, leaving the glyph blank until some other
+          repaint trigger fires. It could not be reproduced in Chromium
+          (font-swap repaint bugs are WebKit-specific), so it wasn't
+          visible to this repo's own testing. An inline SVG chevron has
+          no font dependency and always paints, closing off that failure
+          mode regardless of which browser is at fault. Same chevron
+          shape/position/size as before — a functional substitution, not
+          a redesign. */}
       <button
         type="button"
         className="reader-nav reader-nav--prev"
@@ -116,7 +131,16 @@ export default function EditionReader({ edition }: { edition: Edition }) {
         disabled={index === 0}
         aria-label="Previous section"
       >
-        ‹
+        <svg viewBox="0 0 24 24" width="1.1em" height="1.1em" aria-hidden="true" focusable="false">
+          <polyline
+            points="15 5, 8 12, 15 19"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </button>
       <button
         type="button"
@@ -125,7 +149,16 @@ export default function EditionReader({ edition }: { edition: Edition }) {
         disabled={index === total - 1}
         aria-label="Next section"
       >
-        ›
+        <svg viewBox="0 0 24 24" width="1.1em" height="1.1em" aria-hidden="true" focusable="false">
+          <polyline
+            points="9 5, 16 12, 9 19"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </button>
     </div>
   )
