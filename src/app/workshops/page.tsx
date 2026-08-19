@@ -79,27 +79,53 @@ export default function WorkshopsPage() {
         <main className={styles.main}>
           <p className={`eyebrow ${styles.eyebrow}`}>Workshops</p>
           <h1 className={styles.h1}>Workshops</h1>
+          {/* 2026-08-19, per Susan's direct instruction: page opening
+              changed to state the workshop's actual premise up front
+              ("we bring our own stories" -> "AwakenArts explores what
+              they hold") rather than opening on a reassurance about
+              required expertise. The prior lede ("Come curious...") is
+              kept, moved to lead the first body paragraph immediately
+              below -- still useful, just no longer the opening line. */}
           <p className={styles.lede}>
-            Come curious. You do not need to know anything about art, poetry,
-            or symbols.
+            We bring our own stories to every experience. AwakenArts
+            explores what they hold.
           </p>
 
           {/* Introduction — no section heading, flows directly from the
-              hero, same as /method's own opening movement. Links back to
-              /method by name, the explicit continuity Susan asked for. */}
+              hero, same as /method's own opening movement.
+              2026-08-19, per Susan's direct instruction: both body
+              paragraphs replaced with her own copy. The prior version
+              opened on a reassurance ("Come curious...") and named
+              specific Edition imagery (dragon, dancer, bowl) before
+              explaining what a workshop actually does. This version
+              states the workshop's real structure directly: a
+              recognizable human story first, poetry and image adding a
+              dimension that often goes unseen.
+              2026-08-19, later the same day, per Susan's follow-up:
+              the former second paragraph ("From there, the workshop
+              develops the ideas within the story. We learn more about
+              what may be happening, consider different points of
+              view, and use writing and conversation to explore where
+              the story meets our own lives.") is eliminated as a
+              separate paragraph and folded into this one, compressed
+              to a single line: "the workshop develops ideas and
+              explores different perspectives on common stories, and
+              shared experiences" -- reframes the movement from
+              individual-story-specific ("where the story meets our
+              own lives") to communal ("common stories, and shared
+              experiences"). The closing sentence about the purpose not
+              being a shared answer is dropped along with the rest of
+              the former second paragraph, per her explicit "eliminate
+              second paragraph" instruction, leaving one consolidated
+              opening paragraph. */}
           <p className={styles.body}>
-            Each workshop begins with something to look at&mdash;perhaps a
-            dragon above a burning town, a dancer caught between stillness and
-            motion, or a simple bowl. You are invited to stay with the image
-            before explaining it. What do you notice? What story have you
-            already begun to tell?
-          </p>
-          <p className={styles.body}>
-            Then poetry, story, quiet writing, and conversation change what is
-            possible to see. There is no correct answer to discover and no
-            pressure to share more than you wish. The pleasure is in the
-            unfolding&mdash;the moment when something once hard to name begins
-            to take shape.
+            Each workshop begins with a story drawn from experiences we
+            recognize and explores relationships, choices, change,
+            loss, belonging, and the many ways we find our place in the
+            world. Poetry and image bring a dimension that often
+            remains unseen. The workshop develops ideas and explores
+            different perspectives on common stories, and shared
+            experiences.
           </p>
 
           <h2 className={styles.h2}>What You&rsquo;ll Experience</h2>
