@@ -123,6 +123,91 @@ export const editions: Edition[] = [
     // marked NOT FOR PARTICIPANT DISTRIBUTION in the source PDF) have no slot in this
     // 8-section template and are deliberately excluded. See the Implementation Log
     // for both exclusions and the recognition/reflection page-combining decision.
+    //
+    // 2026-08-19 — Six-Function Revision Pass, per Susan's direct instruction:
+    // "Use Dragon Reader as the technical and experiential starting point, not
+    // as an untouchable content template... rework the Dragon Reader itself
+    // against the current AwakenArts standards" (ENGAGE / RELATE / TEACH /
+    // TRAIN / INSPIRE / MOVE FORWARD) before Queen Ann or any other Edition is
+    // built. Section-by-section function audit (KEEP verdicts and their
+    // reasoning are recorded here too, not just the changes, so this pass is
+    // legible as a full pass, not a spot-fix):
+    //   frontispiece — ENGAGE (pure visual threshold). KEEP, no text to alter.
+    //   encounter — ENGAGE (readiness/orientation: "Be still. Let the figure
+    //     arrive before the explanation does." sets the contract before the
+    //     actual figure appears next). Already tight and doing exactly one
+    //     job. KEEP verbatim.
+    //   image — ENGAGE (the actual silent visual encounter). KEEP, no text.
+    //   word — ENGAGE continuing, poetry doing real work per Susan's own
+    //     "preserve" instruction. KEEP, no text (artwork only).
+    //   recognition — TEACH, with RELATE threaded through ("one life that has
+    //     forgotten its own wholeness" / "may already belong within one
+    //     life"). Function audit: this section was previously named/framed as
+    //     if the participant is doing the recognizing, when it is actually
+    //     the site explaining the dragon's reversal to them -- an honest
+    //     mismatch Susan named directly. REWRITE (not replace): "Observe" ->
+    //     "What You May Already Sense," with two sentences added acknowledging
+    //     the participant's own first impression (danger/protection) before
+    //     the reveal, so the teaching lands as confirming something already
+    //     felt rather than asserting a reading cold. The three numbered
+    //     movements (01/02/03) and the rest of the prose are unchanged --
+    //     already strong, already revised sixteen times by Susan's own prior
+    //     passes. Section id and banner artwork (RECOGNITION baked into
+    //     dragon-header-1.png) are NOT renamed -- a true rename would require
+    //     new banner art, out of scope for a copy-only pass; flagged below,
+    //     not silently worked around.
+    //   larger-story — RELATE + TEACH, already excellent (Susan's own "the
+    //     page she named as the most important," sixteen-times-revised).
+    //     KEEP verbatim.
+    //   reflection — TRAIN. The four questions are Dragon-specific, not
+    //     generic Encounters-style boilerplate, and are KEPT verbatim. Only
+    //     the closing paragraph is rewritten: "Carry One Recognition With
+    //     You... carry one simple recognition into your ordinary life" ->
+    //     "A Practice, Not a Verdict... return to them when old patterns
+    //     resurface" -- names this section as a repeatable practice (honest
+    //     TRAIN framing) instead of a one-time "carry it forward" close,
+    //     which is Journal's job two sections later and was being said twice.
+    //   journal — MOVE FORWARD via writing, already excellent ("Carry it
+    //     gently"). KEEP verbatim.
+    //   message-delivered — INSPIRE, the arc's culmination. Susan's own
+    //     instruction on this exact page: "Not this or that. But and." stays
+    //     exactly as written, the culmination, not spent earlier. KEEP
+    //     verbatim.
+    //   living-message — MOVE FORWARD (sustained practice, after the
+    //     climax). Function audit: this section was asking a second, near-
+    //     duplicate bank of introspective questions ("What recognition has
+    //     remained with you? Where have you begun to notice this pattern...")
+    //     immediately after Reflection had already asked four and Journal had
+    //     already asked the participant to write -- three consecutive
+    //     "answer more questions" beats diluting the close rather than
+    //     building it, which is the "generic Reflection" redundancy Susan
+    //     flagged. REWRITE: the four repeated questions are replaced with a
+    //     direct statement that no new questions will be needed next time,
+    //     calling back to Recognition's own central line ("not two enemies,
+    //     but one creature divided in sight") -- an earlier line returning
+    //     with altered significance, rather than a fourth round of asking.
+    //     Opening framing and closing three lines ("There is nothing here to
+    //     force to completion...") are unchanged -- already correct MOVE
+    //     FORWARD language.
+    //   colophon — bibliographic close ("About This Edition"), not part of
+    //     the six-function experiential arc. KEEP verbatim.
+    //   acquire — renders EmailGateDownload, product/conversion function, not
+    //     part of the six-function arc. KEEP verbatim.
+    //
+    // What was deliberately NOT done, per Susan's explicit "do not add
+    // complexity merely to satisfy the framework": no new section/id was
+    // added for a formal "Association" beat (the live Workshop Blueprint's
+    // own Goal 1 audit flagged Association as "largely missing... currently
+    // folded into Recognition" for the *facilitated* workshop, where pacing
+    // is timed by a live room). The Reader is already fully participant-
+    // paced -- nothing stops a reader from sitting with Image and Word as
+    // long as they like before advancing -- so the live workshop's specific
+    // gap does not translate one-for-one into a Reader gap requiring a new
+    // section. No section ids were renamed and no artwork was touched;
+    // Recognition and Reflection's banner titles remain baked into their
+    // existing art. This is the architecture Queen Ann and the other four
+    // Editions should now be built against -- proven through Dragon, not
+    // the June Implementation Specification's 8-section template unchanged.
     sections: [
       {
         id: 'frontispiece',
@@ -251,8 +336,8 @@ export const editions: Edition[] = [
         // sentence of the 03 movement, per Susan's own placement choice.
         text:
           '"The dragon didn’t seem to know tails and heads are one somehow."\n\n' +
-          'Observe\n' +
-          'The dragon is not an enemy to be defeated. It is a living metaphor for the ways we become divided within ourselves. What appears to be conflict is often the struggle between the self that strives, judges, and controls, and the self that longs to live whole. The battle is not between two creatures, but within one life that has forgotten its own wholeness.\n\n' +
+          'What You May Already Sense\n' +
+          'You may have felt something when you first met this figure — danger, protection, or both at once. That instinct was not wrong. The dragon is not an enemy to be defeated. It is a living metaphor for the ways we become divided within ourselves. What appears to be conflict is often the struggle between the self that strives, judges, and controls, and the self that longs to live whole. The battle is not between two creatures, but within one life that has forgotten its own wholeness.\n\n' +
           '01 · Recognize the Division — A Battle the Dragon Did Not Choose\n' +
           'The dragon did not choose to be divided. Like us, it learned to mistake difference for opposition. Strength and tenderness, action and stillness, discipline and grace were never created to compete. The conflict began when one part believed the other had to lose.\n\n' +
           '02 · Notice the Judge — The Voice That Keeps the Battle Alive\n' +
@@ -367,8 +452,8 @@ export const editions: Edition[] = [
           'Is there a part of yourself you have been resisting, correcting, or trying to overcome? What if it is not asking first to be defeated, but truthfully understood?\n\n' +
           'What Would Recognition Look Like Here?\n' +
           'Rather than forcing one side of yourself to silence the other, what might it look like to hold both before God with compassion and truth? Where might presence replace striving, and recognition replace judgment?\n\n' +
-          'Carry One Recognition With You\n' +
-          'As you leave this page, carry one simple recognition into your ordinary life. Notice what changes when you stop fighting yourself and begin paying attention with kindness.',
+          'A Practice, Not a Verdict\n' +
+          'These are not questions to answer once and close. Return to them when old patterns resurface, and notice whether the division feels a little less absolute each time.',
       },
       {
         // Journal — revised 2026-07-12 per the Dragon Revision Directive:
@@ -459,10 +544,7 @@ export const editions: Edition[] = [
         text:
           'Living the Message\n\n' +
           'Recognition rarely arrives all at once. It continues quietly as we begin to notice the same pattern in ordinary moments. The invitation is not to master the message, but to live with it.\n\n' +
-          'What recognition has remained with you?\n' +
-          'Where have you begun to notice this pattern in your everyday life?\n' +
-          'What changes when you replace judgment with attention?\n' +
-          'Where might recognition invite a different response today?\n\n' +
+          'You will meet this division again — in a conversation, a decision, a moment of self-judgment. You will not need new questions to recognize it. You will only need to remember: not two enemies, but one creature divided in sight.\n\n' +
           'There is nothing here to force to completion.\n' +
           'Simply continue noticing.\n' +
           'Sometimes the smallest recognition becomes the beginning of the deepest change.',
