@@ -8,13 +8,13 @@ import ProtectedImage from '@/components/ProtectedImage'
 export const metadata: Metadata = {
   title: 'The AwakenArts Path — An Introduction to AwakenArts',
   description:
-    'The AwakenArts Path: Poetry, Image, and the Practice of Recognition — an illustrated introduction to the symbolic language, images, poetry, and reflective approach behind AwakenArts. Read or download it free.',
+    'The AwakenArts Path: Poetry, Image, and Seeing Your Life — an illustrated introduction to the symbolic language, images, poetry, and reflective approach behind AwakenArts. Read or download it free.',
   alternates: { canonical: '/awakenarts-path' },
   openGraph: {
     url: '/awakenarts-path',
     title: 'The AwakenArts Path — An Introduction to AwakenArts',
     description:
-      'Poetry, Image, and the Practice of Recognition — an illustrated introduction to the symbolic language, images, poetry, and reflective approach behind AwakenArts.',
+      'Poetry, Image, and Seeing Your Life — an illustrated introduction to the symbolic language, images, poetry, and reflective approach behind AwakenArts.',
   },
 }
 
@@ -72,11 +72,21 @@ export default function AwakenArtsPathPage() {
       <Nav />
 
       <main className="path-intro-page">
+        {/* 2026-08-19, per the Rework Pass 2 Implementation Standard:
+            subtitle changed from "...the Practice of Recognition" --
+            "recognition" no longer names AwakenArts' fuller model
+            (engage/relate/teach/train/inspire/move forward), and the
+            phrase told a visitor nothing about what they'd get. Note:
+            this same phrase likely still appears inside the PDF itself
+            (its page 4 heading is "Learning the Language of
+            Recognition") -- the PDF asset is unchanged in this pass,
+            so a small mismatch between this page and the document it
+            introduces exists until the PDF is revisited separately. */}
         <section className="path-intro-hero">
           <p className="eyebrow path-intro-hero__eyebrow">An Introduction to AwakenArts</p>
           <h1 className="path-intro-hero__title">The AwakenArts Path</h1>
           <p className="path-intro-hero__subtitle">
-            Poetry, Image, and the Practice of Recognition
+            Poetry, Image, and Seeing Your Life
           </p>
         </section>
 
@@ -90,15 +100,22 @@ export default function AwakenArtsPathPage() {
         </section>
 
         <section className="path-intro-about">
+          {/* 2026-08-19, per the Rework Pass 2 Implementation Standard:
+              prior copy asked the visitor to "learn" AwakenArts'
+              internal vocabulary (symbolic language, recognition vs.
+              explanation) before explaining what the Path actually
+              does for them. Rewritten to name the real, concrete
+              movement -- story/image draws you in, a poem gives it
+              words, reflection helps without dictating meaning -- per
+              Section 7's "Path / core explanation" standard. */}
           <p className="path-intro-about__body">
-            Begin here with an illustrated introduction to the symbolic
-            language, images, poetry, and reflective approach behind
-            AwakenArts.
+            This is a short introduction to how AwakenArts works — read
+            it before your first Encounter or workshop.
           </p>
           <p className="path-intro-about__body">
-            Learn how an image invites attention, how a poem gives
-            language to what is noticed, and how meaning can arrive
-            through recognition rather than explanation.
+            A story or image draws you in. A poem gives it words.
+            Reflection helps you see what you already sensed but hadn&rsquo;t
+            quite named — without anyone telling you what it has to mean.
           </p>
         </section>
 

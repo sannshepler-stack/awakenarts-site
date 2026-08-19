@@ -100,9 +100,32 @@ import Link from 'next/link'
 export default function PathOfRecognition() {
   return (
     <section className="home-recognition" aria-labelledby="home-recognition-heading">
+      {/* 2026-08-19, per the Rework Pass 2 Implementation Standard,
+          Susan's second pass: "A Path of Recognition" named a
+          mechanism (a path, a practice of recognizing) rather than the
+          value underneath it, and no longer matched its own body copy,
+          which already leads with story and image, not the word
+          "recognition." The heading moved through "What the Facts
+          Don't Show," "Uncovering the Stories in Our Lives," and
+          "Uncovering the Stories that Shape Us" before settling on
+          its final, shortest form: "The Stories that Shape Us" --
+          drops "Uncovering" as an unneeded verb and keeps the "shape
+          us" language the intro paragraph's own closing sentence and
+          the Hero now share, so heading and copy use one consistent
+          phrase for the same idea. She also tightened the
+          intro paragraph: "our own lives" -> "our lives" (not a
+          possessive distinction the sentence needs); "AwakenArts
+          begins there, with the images a life has already chosen" ->
+          "AwakenArts begins with the images life chooses" (present
+          tense, no "there," no indefinite article); and the closing
+          sentence rewritten from "Through image, poem, reflection, and
+          conversation, what first feels difficult to name gradually
+          takes shape" to "through image, poem, and understanding, we
+          can name the experiences that shape us." Body statement and
+          both CTAs are unchanged. */}
       <div className="home-recognition__inner">
         <div className="home-recognition__header">
-          <h2 id="home-recognition-heading">A Path of Recognition</h2>
+          <h2 id="home-recognition-heading">The Stories that Shape Us</h2>
 
           <p className="home-recognition__statement">
             <span className="home-recognition__statement-navy">
@@ -117,10 +140,9 @@ export default function PathOfRecognition() {
           <p className="home-recognition__intro">
             Long before we settle on words, certain pictures return to
             us—in conversation, in memory, and in the stories we tell
-            about our own lives. AwakenArts begins there, with the
-            images a life has already chosen. Through image, poem,
-            reflection, and conversation, what first feels difficult to
-            name gradually takes shape.
+            about our lives. AwakenArts begins with the images life
+            chooses. And through image, poem, and understanding, we can
+            name the experiences that shape us.
           </p>
         </div>
 

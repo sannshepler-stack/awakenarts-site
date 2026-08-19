@@ -202,16 +202,43 @@ export default function HomePage() {
               the same "story/images" framing back to back. Styling
               (.hero-mission__lede, italic/gold) and the rest of the
               paragraph are unchanged. */}
+          {/* 2026-08-19, per the Rework Pass 2 Implementation Standard
+              (Everyday-Language Standard, Priority 1: homepage): the
+              prior lede/body asked a first-time visitor to "recognize
+              the symbolic language" before knowing what that meant --
+              recognition was announced rather than earned. Replaced
+              with plain, story-first language. Susan's second pass:
+              "AwakenArts workshops use..." wrongly scoped the whole
+              site's promise down to one offering, and "carry something
+              forward" was still AwakenArts-internal language rather
+              than a stated value -- it didn't say what a visitor
+              gains. Susan supplied lede and body verbatim across a
+              series of "HERO COPY" passes, converging here on her own
+              stated distinction: "Discovery is the process;
+              understanding and possibility are where it leads." The
+              lede reads "appear throughout our lives" (not "teach us
+              about our lives") -- stories as an ongoing presence, not a
+              lesson delivered. Susan's final pass changed the body's
+              outcome clause once more, "understanding" -> "connection"
+              (naming the relational result, not just a cognitive one)
+              and folded the em-dash break into one continuous clause --
+              "the experiences that shape us and lead us toward
+              connection and possibility" -- rather than treating the
+              outcome as a separate trailing thought. Susan's final
+              lede pass dropped the leading "Our": "Stories are lived,
+              told..." rather than "Our stories are lived, told..." --
+              avoids opening on a possessive immediately followed by
+              "our lives" at the sentence's end. Markup/classes
+              unchanged. */}
           <p className="hero-mission">
             <span className="hero-mission__lede">
-              Every life leaves something to be recognized.
+              Stories are lived, told, and appear throughout our lives.
             </span>
             <br />
             <span className="hero-mission__body">
-              AwakenArts helps you recognize the symbolic language
-              already present in your life. Through image, poem,
-              reflection, and conversation, what once felt difficult to
-              name begins to take shape.
+              AwakenArts brings story, poetry, and image together to
+              explore the experiences that shape us and lead us toward
+              connection and possibility.
             </span>
           </p>
 
@@ -327,8 +354,21 @@ export default function HomePage() {
                 supporting line under the CTA. Position, styling, and
                 the surrounding rationale above are unchanged; only the
                 copy itself changed. */}
+            {/* 2026-08-19, per Everyday-Language Standard: "literary-
+                symbolic" is internal AwakenArts vocabulary a first-time
+                visitor hasn't been given yet. Same claim, plainer
+                wording.
+                2026-08-19, later the same day, per Susan's "HERO COPY"
+                passes: "image, poetry, and reflection" -> "story,
+                poetry, image, and shared experience" -> "story, poetry,
+                image, and connection" -> back to "story, poetry, image,
+                and shared experience," this time dropping the
+                "Workshops built around" lead-in entirely -- now a
+                four-term fragment read as a quiet label beneath the
+                CTA rather than a sentence describing workshops
+                specifically. */}
             <p className="hero-method">
-              Literary-symbolic workshops in image, poetry, and reflection.
+              Story, poetry, image, and shared experience.
             </p>
           </div>
         </div>

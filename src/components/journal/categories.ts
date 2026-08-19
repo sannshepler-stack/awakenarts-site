@@ -28,35 +28,44 @@ export interface JournalCategory {
   description: string
 }
 
+// 2026-08-19, per the Rework Pass 2 Implementation Standard's Everyday-
+// Language Standard: "Symbols associated with X, Y, Z" is a glossary
+// entry, not a description of the human territory a visitor is about
+// to enter (Section 7: "Journals: Describe the human territory and the
+// journey through it, not simply the presence of prompts, images, or
+// reflection."). Rewritten to name the actual life situation each
+// territory speaks to, in ordinary language, before naming any symbol.
+// Individual entry orientations (journal-entries.ts) are unchanged in
+// this pass -- this covers the five territory-level descriptions only.
 export const CATEGORIES: ReadonlyArray<JournalCategory> = [
   {
     slug: 'thresholds',
     name: 'Thresholds',
     description:
-      'Symbols associated with transition, crossing points, uncertainty, and movement between states or conditions.',
+      "For the moments when you're leaving one thing and haven't arrived at the next — decisions, change, and the uncertainty in between.",
   },
   {
     slug: 'transformation',
     name: 'Transformation',
     description:
-      'Symbols associated with change, emergence, instability, adaptation, and internal movement.',
+      "For when you're changing, even if it doesn't feel steady yet — becoming someone you weren't before.",
   },
   {
     slug: 'passage',
     name: 'Passage',
     description:
-      'Symbols associated with travel, distance, direction, continuation, and movement through experience.',
+      'For the long stretch of getting somewhere — distance, direction, and what it takes to keep going.',
   },
   {
     slug: 'time-and-memory',
     name: 'Time & Memory',
     description:
-      'Symbols associated with memory, reflection, continuity, seasons, and the passage of time.',
+      'For what you carry with you — memory, the seasons of a life, and what stays even as time moves on.',
   },
   {
     slug: 'power-and-identity',
     name: 'Power & Identity',
     description:
-      'Symbols associated with authority, burden, visibility, responsibility, protection, and identity.',
+      'For questions of who you are and what you carry — responsibility, being seen, protecting what matters, and what it costs to hold power.',
   },
 ]
