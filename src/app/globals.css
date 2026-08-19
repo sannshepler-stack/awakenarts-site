@@ -9591,7 +9591,14 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   line-height: 1;
   color: var(--deep);
   cursor: pointer;
-  z-index: 20;
+  /* 2026-08-19 — bumped from 20, per Susan's report that the Next control
+     was unusable on the frontispiece. Testing (below) could not reproduce
+     a defect in this codebase's own markup/CSS/JS across desktop and four
+     mobile viewports with real physical clicks; this raises the button
+     safely above anything external (browser-extension overlays, a
+     Vercel Toolbar pill, etc.) that could plausibly sit at the same fixed
+     screen position on a live device this repo has no visibility into. */
+  z-index: 60;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
