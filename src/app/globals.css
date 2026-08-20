@@ -792,17 +792,13 @@ a   { color: inherit; text-decoration: none; }
      work rather than half of a split-screen composition" -- not
      another resize pass. Same technique again: max-width trimmed
      ~9.1% (594px -> 540px, within her requested 8-10% band),
-     aspect-ratio (843/650) untouched. Explicitly NOT touched, per her
-     "do not change" list: hero copy, left-column typography,
-     grid-template-columns (the column relationship), .hero's own
-     padding-top/-bottom (the section's spacing), translateX, and
-     justify-self/align-items (the image's position within its
-     column). The section's rendered height necessarily follows the
-     media column down slightly, same as it did in the prior pass --
-     .hero__media is still the taller of the two columns, so its own
-     height still governs the row via align-items: center, exactly as
-     before; nothing about that mechanism changed here. */
-  max-width: 540px;
+     aspect-ratio (843/650) untouched.
+     2026-08-20, later still, per Susan's next follow-up: superseded --
+     "that previous size was better." Reverted 540px -> 594px, back to
+     exactly where the 8-10% reduction pass above landed. See
+     transform, below, for this same directive's second half (a modest
+     column-spacing tighten, not a further resize). */
+  max-width: 594px;
   aspect-ratio: 843 / 650;
   overflow: hidden;
   justify-self: end;
@@ -825,8 +821,20 @@ a   { color: inherit; text-decoration: none; }
      increased substantially to -70px. This is deliberately no longer
      a small "nudge" — it's the primary mechanism closing a gap that
      was roughly 4x larger than intended. Reset to none at the ≤768px
-     breakpoint below, where the layout stacks into one column. */
-  transform: translateX(-70px);
+     breakpoint below, where the layout stacks into one column.
+     2026-08-20, per Susan's "restoration plus a modest column-spacing
+     correction" directive (paired with restoring max-width to 594px,
+     above): "modestly tighten the horizontal relationship between the
+     copy and artwork so they form one composition" is the same intent
+     that originally justified this property back on 2026-06-29/07-10
+     ("move the artwork left... single composition"), so it's the same
+     lever again -- translateX is still a pure position nudge, doesn't
+     touch the image's own size or the grid track math, so the text
+     column and the restored 594px size are both untouched. Pull
+     increased modestly, -70px -> -90px (+20px, ~29%) -- deliberately
+     smaller than the earlier -30px -> -70px jump (~133%), since this
+     pass is a correction, not a rebalancing. */
+  transform: translateX(-90px);
 }
 .hero__picture {
   display: block;
