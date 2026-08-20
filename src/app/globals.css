@@ -5543,9 +5543,21 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    (Section 3: Queen Ann alone). HomeQueenAnnCollection.tsx itself is
    left in the codebase, unused, per the standing no-silent-deletion
    practice. */
+/* 2026-08-20, per Susan: "Add approximately 30-40px of additional
+   space above the Collection compilation image and 30-40px of
+   additional space below the final 'The images are already there...'
+   line before the navy section begins... Keep the internal spacing
+   between the compilation, heading, metaphor statement, examples, and
+   closing sentence unchanged." Only this section's own outer
+   padding-top/padding-bottom change (+35px each, via calc() on top of
+   the existing rem-based values, so the prior spacing scale itself is
+   untouched, just added to) -- every internal gap between the
+   compilation, .qac-premise's own children, etc. is governed by
+   separate rules (.qac-compilation, .section2-question, .section2-
+   examples, .section2-recognition) not touched here. */
 .qac-section {
   background: var(--cream);
-  padding: 4.5rem 2rem var(--band-gap-sm);
+  padding: calc(4.5rem + 35px) 2rem calc(var(--band-gap-sm) + 35px);
   text-align: center;
 }
 .qac-inner {
