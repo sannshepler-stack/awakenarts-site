@@ -73,7 +73,7 @@ export default function HomeSection2() {
 
           <h3 className="section2-dark__title">Workshops</h3>
           <p className="section2-dark__sub">
-            Each workshop is anchored in a different Figure Edition.
+            Each workshop opens a different world of image, poetry, story, and reflection.
           </p>
           <p className="section2-dark__worlds">
             Dragon &middot; Bowls &middot; Ballerina &middot; Grismere &middot; Poppy &middot; Queen Ann
