@@ -189,8 +189,33 @@ export default function WorkshopsPage() {
               are merged into one -- "Workshops with Susan" read as
               trivializing her name/credentials, and "landscape" is not a
               term that fits an AwakenArts workshop. Both paragraph pairs
-              are kept, in the same order, under a single plain heading. */}
+              are kept under a single plain heading.
+              2026-08-20, later the same day, per Susan's direct
+              instruction: full section reorder, not just the two closing
+              paragraphs -- the workshop-format paragraph now leads the
+              whole section, since it actually tells a visitor something
+              about the workshops, ahead of her own bio, which read as
+              "announcing myself" before saying anything substantive.
+              Order is now: what a workshop is / where it happens ->
+              these aren't packaged programs -> Susan's bio -> her
+              qualifications note + link. */}
           <h2 className={styles.h2}>The Workshops</h2>
+          <p className={styles.body}>
+            An AwakenArts workshop may be a single gathering, a return through
+            several Figure Editions, or part of a retreat or community
+            program. It can find a home in libraries, churches, reading
+            groups, and other places where people gather around art, language,
+            story, and reflection.
+          </p>
+          {/* 2026-08-20, per Susan's direct instruction: non-breaking space
+              added before the paragraph's final word so "it" cannot wrap
+              onto its own line and orphan at the end of the section. */}
+          <p className={styles.body}>
+            These are not separate packaged programs. They are different ways
+            the same living practice can meet a particular group, place, and
+            occasion. Each invitation is shaped in conversation with the
+            people who will host&nbsp;it.
+          </p>
           <p className={styles.body}>
             Susan Ann Shepler is an artist, writer, Certified Transformative
             Language Artist, and Certified Journal Instructor. She holds a
@@ -206,25 +231,6 @@ export default function WorkshopsPage() {
               Learn more about her background
             </Link>
             .
-          </p>
-          {/* 2026-08-20, per Susan's direct instruction: non-breaking space
-              added before the paragraph's final word so "it" cannot wrap
-              onto its own line and orphan at the end of the section. */}
-          <p className={styles.body}>
-            These are not separate packaged programs. They are different ways
-            the same living practice can meet a particular group, place, and
-            occasion. Each invitation is shaped in conversation with the
-            people who will host&nbsp;it.
-          </p>
-          {/* 2026-08-20, per Susan's direct instruction: order flipped with
-              the paragraph above -- these two paragraphs' copy is being
-              revised next, order swap only for now. */}
-          <p className={styles.body}>
-            An AwakenArts workshop may be a single gathering, a return through
-            several Figure Editions, or part of a retreat or community
-            program. It can find a home in libraries, churches, reading
-            groups, and other places where people gather around art, language,
-            story, and reflection.
           </p>
 
           <div className={styles.closing}>
