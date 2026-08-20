@@ -2,6 +2,15 @@
 
 > **Read this file first. Then read `AWAKENARTS_CURRENT_MATERIALS.md`, the authoritative current-working-set map. For workshop, Dragon, Companion/facilitator, participant-material, and workshop-related website work, read the New AwakenArts Paradigm (`/Users/sashe/Desktop/Dragon Pass One.docx`) and `AwakenArts_Dragon_Paradigm_Audit_and_Map.md` before older standards. Consult `AwakenArts_Documentation_Map.md` for non-conflicting subordinate guidance, but do not let its earlier Edition-led architecture silently override current governance.**
 
+## Goal 6 governance correction — August 20, 2026
+
+AwakenArts is a Program organized around a recognizable, repeatable Path through symbolic experience. Each stone must have an identifiable function, an intellectual foundation, and relevance to the participant — established by respected writers, psychologists, poets, and relevant Christian sources before any AwakenArts material is introduced. AwakenArts is not designing a method; it is demonstrating one that already exists.
+
+- `AwakenArts_Teaching_Path_Development_Brief.md` is the governing document for this correction. It states the homepage premise, fully builds Stone One ("This Human Experience Already Has a Language" — Robert A. Johnson, William Cullen Bryant, Jung), and records the nine-part Stone Template every future stone must satisfy before any script, slide, or question is written.
+- Do not generate the remaining stones in one pass. Build them one at a time, in separate passes, each fully satisfying the Stone Template before moving to the next.
+- The movement inside a stone is fixed: an authoritative quotation, then ordinary human evidence that participants already speak this language, then — only then — the specific AwakenArts work. Quotations are teaching architecture, not decoration.
+- This operationalizes, at the level of a single stone, the Goal 3 (research before content), Goal 4 (the Path/stones test), and Goal 5 (movement revealed, not imposed) corrections above. Read all four together.
+
 ## Goal 5 governance correction — August 20, 2026
 
 AwakenArts does not impose a self-development process upon symbolic works. It works with the developmental movement that symbolic and archetypal material itself can reveal — from what lies beyond awareness toward recognition, understanding, integration, wholeness, and connection.
@@ -59,6 +68,7 @@ The current governing set, in consultation order:
 |---|---|
 | What governs the current working set and conflict order? | `AWAKENARTS_CURRENT_MATERIALS.md` — **read first** |
 | What is the AwakenArts Path, and what test does every element have to pass? | `AwakenArts_Path_Standard.md` — **the standing scope test for any page, Figure, workshop stage, or piece of copy** |
+| How is a single stone of the Path actually built, content and all? | `AwakenArts_Teaching_Path_Development_Brief.md` — **the nine-part Stone Template; Stone One is fully built as the working example** |
 | What must be researched before any Figure's workshop content is written? | `AwakenArts_Figure_Research_and_Development_Standard.md` — **read before starting Queen Ann or any further Dragon workshop content work** |
 | What governs workshop purpose, sequence, and deliverables? | `/Users/sashe/Desktop/Dragon Pass One.docx` — **New AwakenArts Paradigm** |
 | What maps current Dragon/site material to that paradigm? | `AwakenArts_Dragon_Paradigm_Audit_and_Map.md` |
