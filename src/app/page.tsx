@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
 import PathOfRecognition from '@/components/PathOfRecognition'
+import HomeSection2 from '@/components/HomeSection2'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 
@@ -412,81 +412,21 @@ export default function HomePage() {
 
       </section>
 
-      {/* ── A PATH OF STONES ─────────────────────────────────────
-          2026-08-20, per Susan's "Homepage Section 2: AwakenArts, A
-          Path of Stones" directive: participant-facing introduction to
-          the Program, placed directly after the Hero and before A Path
-          of Recognition. Supersedes this same day's earlier draft of
-          this section (single supporting line, no metaphor examples) —
-          see AwakenArts_Teaching_Path_Development_Brief.md's "The
-          Homepage — The Program Entrance" for the approved language and
-          why this specific sequence (three examples, in this order,
-          not a random or expanded set) was chosen.
-
-          The foundational question is given substantial visual
-          presence (largest text in the section). The three metaphor
-          examples are set as plain, unboxed quote/gloss pairs in a
-          single reading column — no numbered badges, no cards, no
-          step diagram — so their wall -> crossroads -> stepping-stone
-          progression (pain/separation -> journey/choice -> movement
-          forward) is perceptible through reading order and a subtle
-          increase in visual weight toward the third example, not
-          through iconography. Bridge copy, then the reused Collection
-          cover asset (/images/collection/collection-cover-clean.png,
-          already in use in the Collection section below — not
-          duplicated as a file, not regenerated, proportions preserved)
-          as the section's visual evidence, then one CTA into the
-          existing Workshops route. */}
-      <section className="path-of-stones-section" aria-labelledby="path-of-stones-heading">
-        <div className="path-of-stones-inner">
-          <p className="eyebrow">AwakenArts, A Path of Stones</p>
-          <h2 id="path-of-stones-heading" className="path-of-stones-question">
-            Do we use metaphors so routinely that we sometimes stop
-            noticing the images inside our own language?
-          </h2>
-
-          <ul className="path-of-stones-examples">
-            <li className="path-of-stones-examples__item">
-              <p className="path-of-stones-examples__phrase">&ldquo;We&rsquo;ve put up walls.&rdquo;</p>
-              <p className="path-of-stones-examples__gloss">
-                Something painful between us becomes a barrier we can almost see.
-              </p>
-            </li>
-            <li className="path-of-stones-examples__item">
-              <p className="path-of-stones-examples__phrase">&ldquo;I&rsquo;m at a crossroads.&rdquo;</p>
-              <p className="path-of-stones-examples__gloss">
-                A decision becomes a place on a journey.
-              </p>
-            </li>
-            <li className="path-of-stones-examples__item path-of-stones-examples__item--last">
-              <p className="path-of-stones-examples__phrase">&ldquo;It became a stepping stone.&rdquo;</p>
-              <p className="path-of-stones-examples__gloss">
-                An experience becomes something we can stand on to move forward.
-              </p>
-            </li>
-          </ul>
-
-          <p className="path-of-stones-body">
-            The images are already there. We use them to give shape to
-            experiences we are trying to understand.
-          </p>
-
-          <div className="path-of-stones-image">
-            <Image
-              src="/images/collection/collection-cover-clean.png"
-              alt="AwakenArts Figure Editions — the image-poems through which the Path is traveled"
-              width={1122}
-              height={1402}
-              className="path-of-stones-image__img"
-              loading="lazy"
-            />
-          </div>
-
-          <Link href="/workshops#current-workshops" className="path-of-stones-cta">
-            Explore Workshops <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-      </section>
+      {/* ── HOMEPAGE SECTION #2 — INTEGRATED PATH OF STONES + WORKSHOPS
+          2026-08-20, per Susan's "Homepage Section #2 — Integration
+          Job" directive: the former "AwakenArts, A Path of Stones"
+          section (below, superseded) and the former dark Collection/
+          Workshops section (further down, also superseded) were one
+          conceptual movement built in separate passes — recognition ->
+          AwakenArts work -> participation through Workshops. Both
+          independently led to Workshops, both used the same Collection
+          cover image, and Path of Stones alone had grown long enough to
+          erase the homepage's light/dark rhythm. Replaced with one
+          integrated section; see HomeSection2.tsx for the complete
+          rationale (content preserved verbatim, what was economized,
+          the single-image decision, and the "Figure Editions must not
+          compete with Workshops" hierarchy fix). */}
+      <HomeSection2 />
 
       {/* ── A PATH OF RECOGNITION ────────────────────────────────
           2026-08-07, per Susan's "Switch Matthew and A Path of
@@ -522,95 +462,18 @@ export default function HomePage() {
           Nav.tsx), reachable by direct URL only. */}
       <PathOfRecognition />
 
-      {/* ── THE COLLECTION ───────────────────────────────────────
-          Stage 2, Discovery. Presented on a navy field per the
-          Homepage Reformation Directive: the darker ground establishes
-          the Collection as AwakenArts' architectural framework and
-          creates a clear visual transition on both sides — from A Path
-          of Recognition into Collection, and from Collection onward
-          into Foundation. Cream typography, restrained gold accents,
-          the complete uncropped cover, generous surrounding space.
-
-          2026-08-07, per Susan's "Switch Matthew and A Path of
-          Recognition" directive: this section's own position is
-          unchanged — it keeps its place between A Path of Recognition
-          and Foundation — but the sections on either side of it have
-          swapped, so it's now preceded by A Path of Recognition
-          (previously followed by it) and followed by Foundation
-          (previously preceded by it).
-
-          2026-06-28 Collection Section Editorial Refinement: the hero
-          now promises "Explore the Collection" — this section's job is
-          to fulfill that promise immediately, not describe a page.
-          Copy names the unit of the work explicitly ("Figure Edition,"
-          the term already locked across editions.ts, the Edition
-          pages, Poems, and Workshops) and describes what reading one
-          actually is — image, poem, and reflection as a single
-          published work.
-
-          2026-07-10, per Susan's "Homepage Refinement — Production
-          Pass": the CTA renamed "Explore the Collection →" (was
-          "Browse the Figure Editions →"), echoing the Hero's own
-          language and becoming this section's one primary invitation.
-
-          2026-07-10, per Susan's "Homepage Production Directive —
-          Collection Section Refinement" (same day, second pass): this
-          section stops functioning like a navigation item describing
-          how the Collection is organized, and becomes a gallery
-          entrance. Subtitle and body copy rewritten as invitation, not
-          description — no mention of the library "growing," no
-          publishing-model language, no companion-resource detail; all
-          of that stays on /collection, whose own job is to explain
-          once a visitor has already stepped inside. Success test, per
-          Susan: a visitor should think "I'd like to explore these
-          Figure Editions," not "I understand what Figure Editions
-          are." The CTA itself is restyled in globals.css from a quiet
-          underlined text link to a solid gold button — "the button
-          opens the door," in her words — the section's one confident
-          invitation forward, ending on movement rather than
-          explanation. See AwakenArts_Site_Architecture.md /
-          AwakenArts_Publishing_Platform_Architecture.md Task 1: the
-          Figure Edition is the master publication; this is the
-          library where every one of them lives. */}
-      <section id="collection" className="home-coll-section" aria-labelledby="home-coll-heading">
-        <div className="home-coll-inner">
-
-          <div className="home-coll-cover">
-            <Image
-              src="/images/collection/collection-cover-clean.png"
-              alt="AwakenArts Figure Editions — the changing symbolic worlds that anchor the workshops"
-              width={1122}
-              height={1402}
-              className="home-coll-cover__img"
-              loading="lazy"
-            />
-          </div>
-
-          <div className="home-coll-text">
-            <p className="eyebrow">Figure Editions</p>
-            <h2 id="home-coll-heading">Workshops</h2>
-            <p className="home-coll-sub">
-              Each workshop is anchored in a different Figure Edition.
-            </p>
-            <p className="home-coll-body">
-              Dragon, Bowls, Ballerina, Grismere, Poppy, and Queen Ann
-              each gather image, poem, story, and reflection into a
-              distinct Figure Edition. Each one opens a different AwakenArts
-              workshop experience.
-            </p>
-            {/* 2026-07-26, per Susan's directive: label only,
-                "Explore the Collection" -> "View the Collection" --
-                component, typography, spacing, hover behavior, and the
-                arrow are all unchanged. */}
-            <Link href="/workshops#current-workshops" className="home-coll-cta">
-              View Current Workshops <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-
-        </div>
-      </section>
-
       {/* ── FOUNDATION — Matthew 13:34 ───────────────────────────
+          2026-08-20, per Susan's "Homepage Section #2 — Integration
+          Job" directive: the former dark "Collection"/Workshops section
+          (id="collection", .home-coll-section) that used to sit here,
+          between A Path of Recognition and Foundation, is retired — its
+          content is now integrated into HomeSection2.tsx's own dark/
+          practice band, directly above (see A PATH OF RECOGNITION's own
+          updated comment and HomeSection2.tsx). Foundation now follows
+          A Path of Recognition directly. Its own content, position
+          rationale below, and the historical "Collection" references in
+          its comments are otherwise untouched — this pass's boundary
+          was Section #2 only.
           2026-08-07, per Susan's "Switch Matthew and A Path of
           Recognition" directive: this section moves from section #2
           (directly beneath the Hero) to sit after Collection, directly
