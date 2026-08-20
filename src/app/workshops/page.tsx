@@ -184,7 +184,13 @@ export default function WorkshopsPage() {
           </div>
           </section>
 
-          <h2 className={styles.h2}>Workshops with Susan</h2>
+          {/* 2026-08-20, per Susan's direct correction: the two separate
+              headings ("Workshops with Susan" and "The Workshop Landscape")
+              are merged into one -- "Workshops with Susan" read as
+              trivializing her name/credentials, and "landscape" is not a
+              term that fits an AwakenArts workshop. Both paragraph pairs
+              are kept, in the same order, under a single plain heading. */}
+          <h2 className={styles.h2}>The Workshops</h2>
           <p className={styles.body}>
             Susan Ann Shepler is an artist, writer, Certified Transformative
             Language Artist, and Certified Journal Instructor. She holds a
@@ -201,8 +207,6 @@ export default function WorkshopsPage() {
             </Link>
             .
           </p>
-
-          <h2 className={styles.h2}>The Workshop Landscape</h2>
           <p className={styles.body}>
             An AwakenArts workshop may be a single gathering, a return through
             several Figure Editions, or part of a retreat or community
