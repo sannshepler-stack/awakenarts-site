@@ -90,54 +90,41 @@ export default function WorkshopsPage() {
       <div className={styles.page}>
         <main className={styles.main}>
           <p className={`eyebrow ${styles.eyebrow}`}>Workshops</p>
-          <h1 className={styles.h1}>Workshops</h1>
-          {/* 2026-08-19, per Susan's direct instruction: page opening
-              changed to state the workshop's actual premise up front
-              ("we bring our own stories" -> "AwakenArts explores what
-              they hold") rather than opening on a reassurance about
-              required expertise. The prior lede ("Come curious...") is
-              kept, moved to lead the first body paragraph immediately
-              below -- still useful, just no longer the opening line. */}
-          <p className={styles.lede}>
-            We bring our own stories to every experience. AwakenArts
-            explores what they hold.
-          </p>
-
-          {/* Introduction — no section heading, flows directly from the
-              hero, same as /method's own opening movement.
-              2026-08-19, per Susan's direct instruction: both body
-              paragraphs replaced with her own copy. The prior version
-              opened on a reassurance ("Come curious...") and named
-              specific Edition imagery (dragon, dancer, bowl) before
-              explaining what a workshop actually does. This version
-              states the workshop's real structure directly: a
-              recognizable human story first, poetry and image adding a
-              dimension that often goes unseen.
-              2026-08-19, later the same day, per Susan's follow-up:
-              the former second paragraph ("From there, the workshop
-              develops the ideas within the story. We learn more about
-              what may be happening, consider different points of
-              view, and use writing and conversation to explore where
-              the story meets our own lives.") is eliminated as a
-              separate paragraph and folded into this one, compressed
-              to a single line: "the workshop develops ideas and
-              explores different perspectives on common stories, and
-              shared experiences" -- reframes the movement from
-              individual-story-specific ("where the story meets our
-              own lives") to communal ("common stories, and shared
-              experiences"). The closing sentence about the purpose not
-              being a shared answer is dropped along with the rest of
-              the former second paragraph, per her explicit "eliminate
-              second paragraph" instruction, leaving one consolidated
-              opening paragraph. */}
+          {/* 2026-08-20, per Susan's direct instruction: the page is
+              consolidated under one heading, "Attend A Workshop" --
+              replacing the plain "Workshops" title. The prior lede ("We
+              bring our own stories...") and intro paragraph ("Each
+              workshop begins with a story...") are removed; the
+              explanatory paragraphs from the former separate "The
+              Workshops" section (below, which this session built up
+              sentence by sentence) move up to become this heading's
+              opening copy instead -- condensed from four paragraphs to
+              three, per her "first 3 paragraphs maximum" instruction.
+              Order: what a workshop is / where it happens -> not
+              counseling or therapy, not packaged programs -> Susan's
+              background and qualifications (bio and qualifications
+              sentence combined into one paragraph to fit the 3-max). */}
+          <h1 className={styles.h1}>Attend A Workshop</h1>
           <p className={styles.body}>
-            Each workshop begins with a story drawn from experiences we
-            recognize and explores relationships, choices, change,
-            loss, belonging, and the many ways we find our place in the
-            world. Poetry and image bring a dimension that often
-            remains unseen. The workshop develops ideas and explores
-            different perspectives on common stories, and shared
-            experiences.
+            An AwakenArts workshop may be a single gathering, a return
+            through several Figure Editions, or part of a retreat or
+            community program. It can find a home in libraries, churches,
+            reading groups, and other places where people gather around
+            art, language, story, and reflection.
+          </p>
+          <p className={styles.body}>
+            AwakenArts is an artistic and educational practice, not
+            counseling or therapy. These are not separate packaged
+            programs. They are different ways the same living practice can
+            meet a particular group, place, and occasion.
+          </p>
+          <p className={styles.body}>
+            Susan Ann Shepler is an artist, writer, Certified Transformative
+            Language Artist, and Certified Journal Instructor. She holds a
+            Master of Arts in Counseling and created AwakenArts from her
+            sustained work with image, poetry, symbolic language, and
+            reflection. Her qualifications inform the care and craft with
+            which she holds a gathering.
           </p>
 
           <h2 className={styles.h2}>What You&rsquo;ll Experience</h2>
@@ -183,56 +170,6 @@ export default function WorkshopsPage() {
             ))}
           </div>
           </section>
-
-          {/* 2026-08-20, per Susan's direct correction: the two separate
-              headings ("Workshops with Susan" and "The Workshop Landscape")
-              are merged into one -- "Workshops with Susan" read as
-              trivializing her name/credentials, and "landscape" is not a
-              term that fits an AwakenArts workshop. Both paragraph pairs
-              are kept under a single plain heading.
-              2026-08-20, later the same day, per Susan's direct
-              instruction: full section reorder, not just the two closing
-              paragraphs -- the workshop-format paragraph now leads the
-              whole section, since it actually tells a visitor something
-              about the workshops, ahead of her own bio, which read as
-              "announcing myself" before saying anything substantive.
-              Order is now: what a workshop is / where it happens ->
-              these aren't packaged programs -> Susan's bio -> her
-              qualifications note + link. */}
-          <h2 className={styles.h2}>The Workshops</h2>
-          <p className={styles.body}>
-            An AwakenArts workshop may be a single gathering, a return through
-            several Figure Editions, or part of a retreat or community
-            program. It can find a home in libraries, churches, reading
-            groups, and other places where people gather around art, language,
-            story, and reflection.
-          </p>
-          {/* 2026-08-20, per Susan's direct instruction: "AwakenArts is an
-              artistic and educational practice, not counseling or
-              therapy." moves here to lead this paragraph, ahead of "These
-              are not separate packaged programs..." -- relocated from the
-              qualifications paragraph below, where it previously opened
-              that paragraph instead. */}
-          <p className={styles.body}>
-            AwakenArts is an artistic and educational practice, not
-            counseling or therapy. These are not separate packaged
-            programs. They are different ways the same living practice can
-            meet a particular group, place, and occasion.
-          </p>
-          <p className={styles.body}>
-            Susan Ann Shepler is an artist, writer, Certified Transformative
-            Language Artist, and Certified Journal Instructor. She holds a
-            Master of Arts in Counseling and created AwakenArts from her
-            sustained work with image, poetry, symbolic language, and
-            reflection.
-          </p>
-          {/* 2026-08-20: "Learn more about her background" link is still
-              cut for now, per Susan's earlier instruction -- to be added
-              back later. */}
-          <p className={styles.body}>
-            Her qualifications inform the care and craft with which she
-            holds a gathering.
-          </p>
 
           <div className={styles.closing}>
             <p>
