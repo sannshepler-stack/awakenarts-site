@@ -11487,6 +11487,57 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   }
 }
 
+/* ── Transition: Symbol Vocabulary -> Encounters ─────────────────────
+   2026-08-20, per Susan's "From Symbol to Experience" directive: a
+   short bridge closing the cream Symbol Vocabulary movement, echoing
+   .symbols-transition's own eyebrow-less-but-italic treatment further
+   up the page so it reads as a matching, deliberate handoff rather
+   than a new section. Sits inside SymbolsExperience.tsx, after Symbol
+   Vocabulary, immediately before SymbolsEncounters.tsx's dark field. */
+.symbols-to-encounters {
+  max-width: var(--measure-narrow);
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+  text-align: center;
+}
+.symbols-to-encounters__eyebrow {
+  font-family: var(--sans);
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.85rem;
+}
+.symbols-to-encounters__body {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  line-height: 1.7;
+  color: var(--deep);
+  margin: 0;
+}
+
+/* 2026-08-20, per the same directive: SymbolsEncounters.tsx reuses
+   encounters-index.module.css's .page, whose 6.5rem top padding was
+   tuned for /encounters' own eyebrow + h1 + two statement lines. With
+   that intro trimmed to a single line here (see SymbolsEncounters.tsx),
+   the same 6.5rem read as leftover dark space rather than a deliberate
+   pause, especially now that the cream .symbols-to-encounters passage
+   directly above already does the "arriving at something new" work.
+   Doubled selector overrides just padding-top, on top of .page's own
+   shorthand — right/bottom padding (1.6rem / --band-gap) are untouched,
+   and /encounters/page.tsx itself, which still uses .page directly
+   without this class, is unaffected. */
+.symbols-encounters-section.symbols-encounters-section {
+  padding-top: 3rem;
+}
+@media (max-width: 640px) {
+  .symbols-encounters-section.symbols-encounters-section {
+    padding-top: 2.5rem;
+  }
+}
+
 /* Tablet/narrow: 2 columns x 4 rows instead of 4x2. Threshold matches the
    site's existing 1024px tablet breakpoint. Deliberately no further
    1-column breakpoint below this — per Susan, small mobile should stay at

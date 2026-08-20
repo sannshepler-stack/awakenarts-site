@@ -130,12 +130,22 @@ export default function SymbolsExperience({ initialSlug }: SymbolsExperienceProp
 
   return (
     <>
-      {/* ─── Section 1 — Encounter the Symbols (the cards) ───────────────
+      {/* ─── Section 1 — Some Familiar Christian Symbols (the cards) ─────
           The visual entrance. Grid shows fronts only; each card opens a
-          large lightbox on click. */}
+          large lightbox on click.
+          2026-08-20, per Susan's "From Symbol to Experience" directive:
+          heading retitled from "Encounter the Symbols" to "Some Familiar
+          Christian Symbols" — "Encounter" is reserved for the actual
+          Journey/Deep/Table/Word experience below (SymbolsEncounters.tsx),
+          not this identification/gallery step. The /collection page's own
+          "Encounter the Symbols →" CTA link (col-archive-cta__link, in
+          src/app/collection/page.tsx) still points here and still uses
+          the old phrase — left unchanged, as it's a separate navigational
+          element outside this directive's scope; flagged in case Susan
+          wants it updated to match. */}
       <section className="symbols-cards-section" aria-labelledby="symbols-cards-heading">
         <h2 id="symbols-cards-heading" className="symbols-cards-heading">
-          Encounter the Symbols
+          Some Familiar Christian Symbols
         </h2>
 
         <div className="symbols-cards-grid" ref={cardsRef}>
@@ -213,6 +223,29 @@ export default function SymbolsExperience({ initialSlug }: SymbolsExperienceProp
           )}
         </div>
       </section>
+
+      {/* ─── Transition — From Symbol to Experience ─────────────────────
+          2026-08-20, per Susan's "From Symbol to Experience" directive:
+          the dark Encounters field below (SymbolsEncounters.tsx) used to
+          follow Symbol Vocabulary with no bridge — just its own abrupt
+          eyebrow/heading appearing under a stretch of empty cream (the
+          unselected .symbols-vocab-reveal box has real height reserved
+          so the word list above it doesn't jump when a word is first
+          chosen; with nothing selected that reserved height read as
+          dead space right before the cut to dark). This short passage
+          closes the cream Symbol Vocabulary movement on its own terms —
+          symbols aren't only something to identify, they're a way in —
+          and then hands off deliberately to the four Encounter cards.
+          Old "ENCOUNTERS" eyebrow / "Encounters" heading / "Every
+          journey begins with a single encounter" line removed from
+          SymbolsEncounters.tsx itself; see that file's own comment. */}
+      <div className="symbols-to-encounters">
+        <p className="symbols-to-encounters__eyebrow">From Symbol to Experience</p>
+        <p className="symbols-to-encounters__body">
+          Symbols do more than carry meaning. They give us a way to enter
+          an experience and see what it may reveal.
+        </p>
+      </div>
 
       {/* ─── Lightbox — the large encounter view ───────────────────────── */}
       {openSymbol && (

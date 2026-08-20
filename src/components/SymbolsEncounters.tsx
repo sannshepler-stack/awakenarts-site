@@ -39,9 +39,22 @@ import styles from '@/app/encounters/encounters-index.module.css'
  *
  * Intro copy (eyebrow "Encounters," "Every journey begins with a
  * single encounter." / "Begin where you are. The work will meet you
- * there.") is reused verbatim from the same source page for the same
- * reason — established language, not a new introduction invented for
- * this placement.
+ * there.") was originally reused verbatim from the same source page.
+ *
+ * 2026-08-20 update, per Susan's "From Symbol to Experience" directive:
+ * that intro read as a second, redundant page header once the new cream
+ * transition passage (SymbolsExperience.tsx, "From Symbol to
+ * Experience" / "Symbols do more than carry meaning...") was added
+ * immediately above this section — the eyebrow "Encounters," the
+ * heading "Encounters," and "Every journey begins with a single
+ * encounter" all belonged to the former standalone Encounters page
+ * architecture and are removed here per her explicit instruction. The
+ * quieter secondary line, "Begin where you are. The work will meet you
+ * there," is kept — it still reads as a standalone invitation into the
+ * four cards, now picking up directly from the cream transition passage
+ * rather than following a second heading. The section element lost its
+ * heading id in this pass, so its aria-label now points to the visible
+ * cream heading immediately above it instead.
  *
  * SymbolsDeepen.tsx is left in the codebase, unused, per the standing
  * no-silent-deletion practice — it is not reused anywhere else.
@@ -80,15 +93,17 @@ const ENCOUNTERS = [
 
 export default function SymbolsEncounters() {
   return (
-    <section className={styles.page} aria-labelledby="symbols-encounters-heading">
+    <section
+      className={`${styles.page} symbols-encounters-section`}
+      aria-label="From Symbol to Experience — Journey, The Deep, The Table, The Word"
+    >
+      {/* Eyebrow "Encounters", heading "Encounters", and the primary
+          statement "Every journey begins with a single encounter." are
+          removed here per Susan's "From Symbol to Experience" directive
+          — see this file's header comment. The secondary line is kept,
+          now standing alone as the field's own quiet invitation,
+          picking up from the cream transition passage just above it. */}
       <div className={styles.intro}>
-        <p className={styles.eyebrow}>Encounters</p>
-        <h2 id="symbols-encounters-heading" className={styles.title}>
-          Encounters
-        </h2>
-        <p className={styles.statementPrimary}>
-          Every journey begins with a single encounter.
-        </p>
         <p className={styles.statementSecondary}>
           Begin where you are. The work will meet you there.
         </p>
