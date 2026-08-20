@@ -48,13 +48,16 @@ import styles from '@/app/encounters/encounters-index.module.css'
  * immediately above this section — the eyebrow "Encounters," the
  * heading "Encounters," and "Every journey begins with a single
  * encounter" all belonged to the former standalone Encounters page
- * architecture and are removed here per her explicit instruction. The
- * quieter secondary line, "Begin where you are. The work will meet you
- * there," is kept — it still reads as a standalone invitation into the
- * four cards, now picking up directly from the cream transition passage
- * rather than following a second heading. The section element lost its
- * heading id in this pass, so its aria-label now points to the visible
- * cream heading immediately above it instead.
+ * architecture and were removed here per her explicit instruction.
+ *
+ * 2026-08-20, later the same day, per her follow-up — "take this off,
+ * it is old language" (pointing at the remaining secondary line,
+ * "Begin where you are. The work will meet you there.") — that line is
+ * removed too. This section now opens directly into the four cards,
+ * immediately after the cream "From Symbol to Experience" passage
+ * above it; no intro copy of its own remains. The section element's
+ * aria-label (below) already describes the cards directly rather than
+ * depending on this now-removed copy.
  *
  * SymbolsDeepen.tsx is left in the codebase, unused, per the standing
  * no-silent-deletion practice — it is not reused anywhere else.
@@ -97,17 +100,13 @@ export default function SymbolsEncounters() {
       className={`${styles.page} symbols-encounters-section`}
       aria-label="From Symbol to Experience — Journey, The Deep, The Table, The Word"
     >
-      {/* Eyebrow "Encounters", heading "Encounters", and the primary
-          statement "Every journey begins with a single encounter." are
-          removed here per Susan's "From Symbol to Experience" directive
-          — see this file's header comment. The secondary line is kept,
-          now standing alone as the field's own quiet invitation,
-          picking up from the cream transition passage just above it. */}
-      <div className={styles.intro}>
-        <p className={styles.statementSecondary}>
-          Begin where you are. The work will meet you there.
-        </p>
-      </div>
+      {/* Eyebrow "Encounters", heading "Encounters", primary statement
+          "Every journey begins with a single encounter.", and (per
+          Susan's follow-up, "take this off, it is old language")
+          the secondary line "Begin where you are. The work will meet
+          you there." have all been removed — see this file's header
+          comment. .intro itself is no longer used here; the section
+          opens directly into the card grid below. */}
 
       {/* .grid's grid-template-columns is repeat(5, 1fr), tuned for
           /encounters' own five cards (Journey/Deep/Table/Word/
