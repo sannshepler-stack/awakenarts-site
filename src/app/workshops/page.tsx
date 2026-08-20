@@ -84,6 +84,17 @@ const WHAT_TO_EXPECT = [
 const INQUIRY_MAILTO =
   'mailto:susan@shepler.us?subject=AwakenArts%20Workshop%20Inquiry&body=Hi%20Susan%2C%0A%0AI%27d%20like%20to%20ask%20about%20an%20AwakenArts%20workshop.'
 
+// 2026-08-20, later the same day, per Susan's "Move Workshop Imagery
+// Higher" directive: information-hierarchy change only, no copy
+// deleted or rewritten. Order in the JSX below is now: title -> the
+// single opening sentence ("An AwakenArts workshop begins with
+// original images and poetry and follows what the work reveals.") ->
+// Current Workshops (the Figure Edition visual grid, moved
+// substantially higher) -> the rest of "What These Workshops Are"
+// (heading, lede, remaining two paragraphs) -> What to Expect ->
+// Your Facilitator -> Attend a Workshop, unchanged from before. See
+// inline comments at each relocated block.
+
 export default function WorkshopsPage() {
   return (
     <>
@@ -125,40 +136,18 @@ export default function WorkshopsPage() {
               further down the page. */}
           <h1 className={styles.h1}>AwakenArts Workshops</h1>
 
-          <h2 className={styles.h2}>What These Workshops Are</h2>
-          <p className={styles.lede}>
-            A Path of Discovery Through Image, Language, and Symbol
-          </p>
+          {/* 2026-08-20, later the same day, per Susan's "Move Workshop
+              Imagery Higher" directive: information-hierarchy change
+              only, no text deleted or rewritten. Immediately beneath
+              the title, only this one sentence remains — the rest of
+              "What These Workshops Are" (heading, lede, and its other
+              two paragraphs) and the entire "What to Expect" section
+              move down below Current Workshops, in the same order and
+              wording they had before. See those blocks further down
+              for the full relocated content. */}
           <p className={styles.body}>
             An AwakenArts workshop begins with original images and poetry
             and follows what the work reveals.
-          </p>
-          <p className={styles.body}>
-            Through images, metaphor, close reading, symbolic language,
-            conversation, and reflective writing, participants explore
-            patterns in language and experience that may be present before
-            we fully recognize them.
-          </p>
-          <p className={styles.body}>
-            AwakenArts workshops are artistic and educational, offering a
-            path of discovery through images, poetry, symbolic language,
-            conversation, and reflection. We look more closely at what
-            images and words carry, follow their connections, and consider
-            what they may bring into greater awareness.
-          </p>
-
-          <h2 className={styles.h2}>What to Expect</h2>
-          <ul className={styles.list} aria-label="What to Expect">
-            {WHAT_TO_EXPECT.map((item) => (
-              <li key={item.lead}>
-                <strong>{item.lead}</strong> &mdash; {item.text}
-              </li>
-            ))}
-          </ul>
-          <p className={styles.body}>
-            Each workshop travels a different symbolic landscape, but the
-            direction remains the same: toward greater recognition,
-            awareness, wholeness, and connection.
           </p>
 
           <span id="workshop-worlds" className={styles.anchorAlias} aria-hidden="true" />
@@ -188,6 +177,43 @@ export default function WorkshopsPage() {
             ))}
           </div>
           </section>
+
+          {/* 2026-08-20, later the same day, per Susan's "Move Workshop
+              Imagery Higher" directive: this heading, lede, and its
+              remaining two paragraphs (the opening sentence now sits
+              above, beneath the title) relocated here, below Current
+              Workshops. Wording unchanged. */}
+          <h2 className={styles.h2}>What These Workshops Are</h2>
+          <p className={styles.lede}>
+            A Path of Discovery Through Image, Language, and Symbol
+          </p>
+          <p className={styles.body}>
+            Through images, metaphor, close reading, symbolic language,
+            conversation, and reflective writing, participants explore
+            patterns in language and experience that may be present before
+            we fully recognize them.
+          </p>
+          <p className={styles.body}>
+            AwakenArts workshops are artistic and educational, offering a
+            path of discovery through images, poetry, symbolic language,
+            conversation, and reflection. We look more closely at what
+            images and words carry, follow their connections, and consider
+            what they may bring into greater awareness.
+          </p>
+
+          <h2 className={styles.h2}>What to Expect</h2>
+          <ul className={styles.list} aria-label="What to Expect">
+            {WHAT_TO_EXPECT.map((item) => (
+              <li key={item.lead}>
+                <strong>{item.lead}</strong> &mdash; {item.text}
+              </li>
+            ))}
+          </ul>
+          <p className={styles.body}>
+            Each workshop travels a different symbolic landscape, but the
+            direction remains the same: toward greater recognition,
+            awareness, wholeness, and connection.
+          </p>
 
           {/* 2026-08-20, per Susan's directive: a brief facilitator
               identification, moved out of the page's opening and placed
