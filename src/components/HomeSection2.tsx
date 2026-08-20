@@ -92,8 +92,8 @@ export default function HomeSection2() {
           <p className="eyebrow section2-light__eyebrow">AwakenArts, A Path of Stones</p>
 
           <h2 id="section2-heading" className="section2-question">
-            Do we use metaphors so routinely that we sometimes stop
-            noticing the images inside our own language?
+            Do we use metaphors so routinely that we stop noticing how
+            often images appear in the language we use?
           </h2>
 
           <p className="section2-examples">
