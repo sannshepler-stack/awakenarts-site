@@ -785,7 +785,24 @@ a   { color: inherit; text-decoration: none; }
      the copy column) are all deliberately untouched, per "keep the
      current hero composition... two-column relationship exactly as
      they are." */
-  max-width: 594px;
+  /* 2026-08-20, later the same day, per Susan's "one restrained
+     adjustment only" follow-up: the prior pass's result ("substantially
+     better proportioned") just needed a little more cream breathing
+     room so the artwork reads as "a deliberately presented AwakenArts
+     work rather than half of a split-screen composition" -- not
+     another resize pass. Same technique again: max-width trimmed
+     ~9.1% (594px -> 540px, within her requested 8-10% band),
+     aspect-ratio (843/650) untouched. Explicitly NOT touched, per her
+     "do not change" list: hero copy, left-column typography,
+     grid-template-columns (the column relationship), .hero's own
+     padding-top/-bottom (the section's spacing), translateX, and
+     justify-self/align-items (the image's position within its
+     column). The section's rendered height necessarily follows the
+     media column down slightly, same as it did in the prior pass --
+     .hero__media is still the taller of the two columns, so its own
+     height still governs the row via align-items: center, exactly as
+     before; nothing about that mechanism changed here. */
+  max-width: 540px;
   aspect-ratio: 843 / 650;
   overflow: hidden;
   justify-self: end;
