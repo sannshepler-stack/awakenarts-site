@@ -120,6 +120,9 @@ A page-by-page conformance review of `AwakenArts_Encounter_Journal.pdf` (the fre
 
 These documents are completed or proposed — they contain useful analysis and thinking, but are not yet part of the governing set. Some are awaiting formal review; others are diagnostics that informed decisions already made.
 
+**`AwakenArts_Facilitation_Method_Research.md`** — *Completed research, 2026-08-20. Phase B of `AwakenArts_Figure_Research_and_Development_Standard.md`.*
+Surveys established, professionally grounded facilitation methods — Visual Thinking Strategies, Transformative Language Arts, Progoff's Intensive Journal Method, Kolb's Experiential Learning Cycle, IFBPT/CAPF poetry-facilitation credentialing (the clinical/nonclinical line), Pennebaker's expressive-writing research, and Jungian amplification as a live facilitation discipline, not only a research method. Not Dragon-specific — written for use across Figures. Maps each method against Dragon's existing stage architecture (Encounter through Return) to confirm which stages already rest on sound, citable ground and where facilitation risks collapsing a symbol into a stated conclusion rather than holding it open. Does not itself authorize any script or material revision — that follows only after Steps 3–4 of the Figure Research and Development Standard.
+
 **`AwakenArts_Product_Architecture.md`** — *Draft, pending formal review.*
 Maps the complete family of AwakenArts products (Figure Editions, Gallery, Artist's Sketchbook, and related), their purposes, audiences, and site requirements. Drafted 2026-06-29. Well-developed and likely sound, but not yet formally accepted. Consult as useful reference; not yet authoritative.
 
