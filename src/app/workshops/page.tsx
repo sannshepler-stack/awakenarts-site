@@ -53,12 +53,32 @@ export const metadata: Metadata = {
   },
 }
 
-const EXPERIENCE = [
-  'You meet an image before anyone tells you what it means.',
-  'A poem or story changes the picture—and perhaps your first impression of it.',
-  'You have time to wonder, write, and notice what feels familiar.',
-  'Conversation opens possibilities you may not have seen alone.',
-  'You leave with a question, phrase, or recognition to carry into ordinary life.',
+// 2026-08-20, per Susan's "Let's get you the help you need" full page
+// architecture directive: replaces the prior EXPERIENCE list (which
+// described the facilitation model being left behind) with the new
+// "What to Expect" list — image/poetry encounter, familiar language,
+// close reading, connections/amplification, personal reflection.
+const WHAT_TO_EXPECT = [
+  {
+    lead: 'Images and poetry',
+    text: 'encounter an original work and the symbolic territory it opens.',
+  },
+  {
+    lead: 'Language we already know',
+    text: 'discover familiar metaphors and expressions whose images may have become almost invisible through everyday use.',
+  },
+  {
+    lead: 'Close reading and seeing',
+    text: 'look at particular words, lines, images, relationships, rhythms, and details that give the work its substance.',
+  },
+  {
+    lead: 'Connections and amplification',
+    text: 'explore relevant literature, psychology, archetypal understanding, story, and Christian sources where they genuinely illuminate the work.',
+  },
+  {
+    lead: 'Personal reflection',
+    text: 'use conversation and an Edition journal to consider where what has been discovered intersects with lived experience.',
+  },
 ]
 
 const INQUIRY_MAILTO =
@@ -90,57 +110,55 @@ export default function WorkshopsPage() {
       <div className={styles.page}>
         <main className={styles.main}>
           <p className={`eyebrow ${styles.eyebrow}`}>Workshops</p>
-          {/* 2026-08-20, per Susan's direct instruction: the page is
-              consolidated under one heading, "Attend A Workshop" --
-              replacing the plain "Workshops" title. The prior lede ("We
-              bring our own stories...") and intro paragraph ("Each
-              workshop begins with a story...") are removed; the
-              explanatory paragraphs from the former separate "The
-              Workshops" section (below, which this session built up
-              sentence by sentence) move up to become this heading's
-              opening copy instead -- condensed from four paragraphs to
-              three, per her "first 3 paragraphs maximum" instruction.
-              Order: what a workshop is / where it happens -> not
-              counseling or therapy, not packaged programs -> Susan's
-              background and qualifications (bio and qualifications
-              sentence combined into one paragraph to fit the 3-max). */}
-          <h1 className={styles.h1}>Attend A Workshop</h1>
-          <p className={styles.body}>
-            An AwakenArts workshop may be a single gathering, a return
-            through several Figure Editions, or part of a retreat or
-            community program. It can find a home in libraries, churches,
-            reading groups, and other places where people gather around
-            art, language, story, and reflection.
+          {/* 2026-08-20, per Susan's "Let's get you the help you need" full
+              page architecture directive: complete restructure, replacing
+              the prior "Attend A Workshop" opening (which led with format/
+              venue, then her bio) with a page ordered around the visitor's
+              actual sequence of questions -- what are these workshops ->
+              what to expect -> what can I experience (Current Workshops)
+              -> who is leading this (Your Facilitator) -> how do I
+              participate (Attend a Workshop, moved to the bottom as the
+              action, once a visitor has a reason to want it). Her
+              credentials move out of the opening entirely -- per her
+              explicit note that they "interrupt the participant's first
+              question" -- into their own brief Your Facilitator section
+              further down the page. */}
+          <h1 className={styles.h1}>AwakenArts Workshops</h1>
+
+          <h2 className={styles.h2}>What These Workshops Are</h2>
+          <p className={styles.lede}>
+            A Path of Discovery Through Image, Language, and Symbol
           </p>
           <p className={styles.body}>
-            AwakenArts is an artistic and educational practice, not
-            counseling or therapy. These are not separate packaged
-            programs. They are different ways the same living practice can
-            meet a particular group, place, and occasion.
+            An AwakenArts workshop begins with original image and poetry
+            and follows what the work reveals.
           </p>
           <p className={styles.body}>
-            Susan Ann Shepler is an artist, writer, Certified Transformative
-            Language Artist, and Certified Journal Instructor. She holds a
-            Master of Arts in Counseling and created AwakenArts from her
-            sustained work with image, poetry, symbolic language, and
-            reflection. Her qualifications inform the care and craft with
-            which she holds a gathering.
+            Through images, metaphor, close reading, symbolic language,
+            conversation, and reflective writing, participants explore
+            patterns that can be present in our language and experience
+            before we fully recognize them.
+          </p>
+          <p className={styles.body}>
+            The workshop is neither therapy nor a literary analysis class.
+            It is a guided path of discovery&mdash;a way of looking more
+            closely at what images and words carry, following their
+            connections, and considering what they may bring into greater
+            awareness.
           </p>
 
-          <h2 className={styles.h2}>What You&rsquo;ll Experience</h2>
-          <ul className={styles.list} aria-label="The Workshop Experience">
-            {EXPERIENCE.map((line) => (
-              <li key={line}>{line}</li>
+          <h2 className={styles.h2}>What to Expect</h2>
+          <ul className={styles.list} aria-label="What to Expect">
+            {WHAT_TO_EXPECT.map((item) => (
+              <li key={item.lead}>
+                <strong>{item.lead}</strong> &mdash; {item.text}
+              </li>
             ))}
           </ul>
-
-          <h2 className={styles.h2}>A Different World Each Time</h2>
           <p className={styles.body}>
-            Dragon, Bowls, Ballerina, Grismere, Poppy, and Queen Ann each open
-            a different world of imagery, poetry, questions, and stories. The
-            welcoming shape of the workshop remains familiar, but the journey
-            changes with every Figure Edition. You can return without simply
-            repeating the same experience.
+            Each workshop travels a different symbolic landscape, but the
+            direction remains the same: toward greater recognition,
+            awareness, wholeness, and connection.
           </p>
 
           <span id="workshop-worlds" className={styles.anchorAlias} aria-hidden="true" />
@@ -171,6 +189,32 @@ export default function WorkshopsPage() {
           </div>
           </section>
 
+          {/* 2026-08-20, per Susan's directive: a brief facilitator
+              identification, moved out of the page's opening and placed
+              here instead -- after What These Workshops Are, What to
+              Expect, and Current Workshops have already answered "what
+              would I be attending." Name, credentials, and one sentence
+              of context. "That's sufficient," per her explicit note --
+              no bio paragraph, no link, nothing further added here. */}
+          <h2 className={styles.h2}>Your Facilitator</h2>
+          <p className={styles.body}>
+            <strong>Susan Ann Shepler</strong>
+            <br />
+            M.A. Counseling &middot; Certified Journal Instructor &middot;
+            Certified Transformative Language Artist
+          </p>
+          <p className={styles.body}>
+            Creator of AwakenArts and the original image-poem works at the
+            center of its workshops.
+          </p>
+
+          {/* 2026-08-20, per Susan's directive: "Attend a Workshop"
+              belongs near the bottom as the action, once a visitor
+              understands what she would be attending -- not at the top,
+              before she has a reason to want it. Heading added ahead of
+              the existing closing quote + inquiry link; that content is
+              unchanged, now simply named. */}
+          <h2 className={styles.h2}>Attend a Workshop</h2>
           <div className={styles.closing}>
             <p>
               Recognition is rarely a solitary experience. It deepens as we
