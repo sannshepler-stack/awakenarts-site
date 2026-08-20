@@ -5254,14 +5254,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    wrapper introducing "Scripture Speaks in Symbols" directly beneath
    the Matthew citation, inside the same .poems-showcase-foundation__
    inner container (no separate background/padding of its own — this
-   is one continuous section, not two bands). .hero-quote-cite's own
-   margin-bottom (43px) was tuned to bind verse/citation/body as "one
-   thought" when .hero-quote-body sat here; now that a different
-   typographic block (the reused .home-recognition__header/-statement
-   pairing) follows instead, this margin-top gives it room to read as
-   Scripture "developing" the citation's thought rather than
-   continuing the same tight grouping. .home-recognition__header's own
-   inner spacing (title -> statement gap, etc.) is otherwise unchanged. */
+   is one continuous section, not two bands).
+   2026-08-20, later the same day, per Susan's follow-up: superseded —
+   Matthew moved from opening the section to closing it, below the
+   CTA, so "Scripture Speaks in Symbols" is now the section's first
+   content and no longer needs a margin-top gap beneath the citation
+   (the section's own padding-top provides its opening breathing room
+   instead, same as any other section start). Left defined, unused,
+   per no-silent-deletion. */
 .poems-showcase-foundation__symbols {
   margin-top: 2.75rem;
 }

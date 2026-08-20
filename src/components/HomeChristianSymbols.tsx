@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import AtmosphericHeader from '@/components/AtmosphericHeader'
 
 /*
  * HomeChristianSymbols — Christian Symbols + Matthew, one integrated
@@ -7,85 +6,61 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
  *
  * 2026-08-20, per Susan's "revise the architecture" directive: Matthew
  * 13:34 no longer stands as its own homepage section between Workshops
- * and Christian Symbols. It belongs inside Christian Symbols, because
- * it explains why AwakenArts can move from figurative language into
- * Scripture so naturally — "the opening biblical premise within this
- * same composition, not a bridge sitting between sections." The former
- * standalone Foundation section (.poems-showcase-foundation, in
- * page.tsx) is retired; its AtmosphericHeader image and the verse/
- * citation now open THIS component instead, leading directly into
- * "Scripture Speaks in Symbols." This is now the third and final
- * homepage movement after the Hero (THE SCRIPTURAL FIELD), following
- * HomeCollectionPremise.tsx (THE WORK) and HomeSection2.tsx, which now
- * also carries Queen Ann (THE EXPERIENCE) — see that component's own
- * comment.
+ * and Christian Symbols. It belongs inside Christian Symbols. This is
+ * the third and final homepage movement after the Hero (THE SCRIPTURAL
+ * FIELD), following HomeCollectionPremise.tsx (THE WORK) and
+ * HomeSection2.tsx (THE EXPERIENCE).
  *
- * CONTENT CUT: "AwakenArts works within that same tradition." is
- * removed outright, per Susan's explicit instruction — "it becomes
- * unnecessary once Matthew is physically integrated with Christian
- * Symbols. The juxtaposition demonstrates the relationship. We don't
- * need to tell the visitor what the design itself has just made
- * apparent."
+ * CONTENT CUT: "AwakenArts works within that same tradition." and the
+ * former "Read the Foundation of AwakenArts ->" link are both removed
+ * — see git history for the full reasoning (the bridge sentence was
+ * explicit; the link removal was flagged as a judgment call at the
+ * time).
  *
- * JUDGMENT CALL, FLAGGED: the former "Read the Foundation of
- * AwakenArts ->" link (to /foundation) is also removed here, not just
- * the bridge sentence. Susan's own listed sequence for this section
- * ("He did not say anything... / MATTHEW 13:34 / Then Scripture Speaks
- * in Symbols develops that thought") doesn't include it, and keeping
- * it would give this section two competing CTAs (Foundation, then
- * Christian Symbols) where every other homepage section now holds to
- * one. This wasn't explicitly spelled out as "remove the link" the way
- * the bridge sentence was, so it's worth Susan's confirmation rather
- * than treating it as settled — the /foundation page itself is
- * untouched and still reachable via Nav/Footer either way.
+ * 2026-08-20, later the same day, per Susan's follow-up: the section's
+ * internal order reverses again. Matthew no longer opens the section —
+ * the AtmosphericHeader threshold image (biblical-foundation.jpg) is
+ * removed entirely, and the section now starts directly as Christian
+ * Symbols: eyebrow -> "Scripture Speaks in Symbols" -> statement ->
+ * sailboat image -> CTA. The Matthew verse and citation move to the
+ * very end, below the CTA button, as a closing scriptural note rather
+ * than an opening threshold — same size/typography as always
+ * (.hero-quote-text/.hero-quote-cite, untouched). The sailboat image
+ * is now the section's only image.
  *
- * FLOW: AtmosphericHeader (threshold image) -> verse -> citation ->
- * "Christian Symbols" eyebrow / "Scripture Speaks in Symbols" heading
- * / statement (reused verbatim from /symbols' own hero copy, per
- * Susan's earlier "let existing substantive language create the
- * progression" instruction, still honored) -> sailboat image
- * (unchanged, per her explicit instruction not to replace it with
- * either Collection asset) -> single CTA, "Explore Christian Symbols
- * ->". Uses .poems-showcase-foundation/-inner as the section's own
- * shell (background, padding, AtmosphericHeader placement) and reuses
- * .home-recognition__header/-statement/-statement-navy/-gold/
- * -encounters-image/-cta/-cta--after-image directly inside it, rather
- * than nesting the old .home-recognition/.home-recognition__inner
- * wrapper (which supplied its own now-redundant background/padding) —
- * see .poems-showcase-foundation__symbols in globals.css for the
- * connecting spacing. .home-recognition/.home-recognition__inner
- * themselves are left defined, unused, per no-silent-deletion.
+ * FLOW: "Christian Symbols" eyebrow / "Scripture Speaks in Symbols"
+ * heading / statement (reused verbatim from /symbols' own hero copy)
+ * -> sailboat image (unchanged) -> CTA, "Explore Christian Symbols
+ * ->" -> Matthew verse + citation, closing. Uses .poems-showcase-
+ * foundation/-inner as the section's own shell (background, padding)
+ * and reuses .home-recognition__header/-statement/-statement-navy/
+ * -gold/-encounters-image/-cta/-cta--after-image directly inside it,
+ * rather than the old .home-recognition/.home-recognition__inner
+ * wrapper (superseded, left defined per no-silent-deletion).
+ * AtmosphericHeader is no longer imported/used by this component —
+ * see .poems-showcase-foundation in globals.css, whose padding-top was
+ * originally tuned as "gap before the threshold image begins" and now
+ * simply serves as the gap before the eyebrow instead, unchanged
+ * value, still reads correctly as ordinary section-opening breathing
+ * room.
  */
 export default function HomeChristianSymbols() {
   return (
     <section className="poems-showcase-foundation" aria-label="Christian Symbols">
-      <AtmosphericHeader
-        src="/images/headers/biblical-foundation.jpg"
-        alt="Sunrise over hills and a winding river, seen through a worn stone window — a threshold image."
-        fadeTo="#FAF7F2"
-        fadeHeight={25}
-      />
       <div className="poems-showcase-foundation__inner">
 
-        <p className="hero-quote-text">
-          He did not say anything to them without using a parable.
+        <p className="eyebrow">Christian Symbols</p>
+        <h2 id="home-recognition-heading">Scripture Speaks in Symbols</h2>
+
+        <p className="home-recognition__statement">
+          <span className="home-recognition__statement-navy">
+            A lamp. A path. A flower. A vine. A shepherd.
+          </span>
+          <br />
+          <span className="home-recognition__statement-gold">
+            Ordinary things become carriers of meaning.
+          </span>
         </p>
-        <p className="hero-quote-cite">Matthew 13:34</p>
-
-        <div className="poems-showcase-foundation__symbols">
-          <p className="eyebrow">Christian Symbols</p>
-          <h2 id="home-recognition-heading">Scripture Speaks in Symbols</h2>
-
-          <p className="home-recognition__statement">
-            <span className="home-recognition__statement-navy">
-              A lamp. A path. A flower. A vine. A shepherd.
-            </span>
-            <br />
-            <span className="home-recognition__statement-gold">
-              Ordinary things become carriers of meaning.
-            </span>
-          </p>
-        </div>
 
         <figure className="home-recognition__encounters-image">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -101,6 +76,11 @@ export default function HomeChristianSymbols() {
             Explore Christian Symbols <span aria-hidden="true">→</span>
           </Link>
         </div>
+
+        <p className="hero-quote-text">
+          He did not say anything to them without using a parable.
+        </p>
+        <p className="hero-quote-cite">Matthew 13:34</p>
 
       </div>
     </section>
