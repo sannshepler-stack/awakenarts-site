@@ -219,14 +219,16 @@ export default function WorkshopsPage() {
             sustained work with image, poetry, symbolic language, and
             reflection.
           </p>
+          {/* 2026-08-20, per Susan's direct instruction: paragraph now
+              opens with "AwakenArts is an artistic and educational
+              practice, not counseling or therapy." -- the "Her
+              qualifications..." clause follows instead of leading. The
+              "Learn more about her background" link is cut for now, to
+              be added back later. */}
           <p className={styles.body}>
-            Her qualifications inform the care and craft with which she holds
-            a gathering; AwakenArts is an artistic and educational practice,
-            not counseling or therapy.{' '}
-            <Link href="/about" className={styles.inlineLink}>
-              Learn more about her background
-            </Link>
-            .
+            AwakenArts is an artistic and educational practice, not
+            counseling or therapy. Her qualifications inform the care and
+            craft with which she holds a gathering.
           </p>
 
           <div className={styles.closing}>
