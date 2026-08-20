@@ -5421,9 +5421,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    only: reading order, and a slight increase in color/weight across
    the three items so the third (stepping stone / forward movement)
    reads as the sequence's arrival. */
-/* ── HOMEPAGE SECTION 2 — QUEEN ANN / THE ACTUAL WORKS ──────────────────
+/* ── HOMEPAGE — THE AWAKENARTS COLLECTION / QUEEN ANN ───────────────────
    Added 2026-08-20, per Susan's "Homepage Recomposition" directive. See
-   HomeQueenAnnCollection.tsx for the full rationale. Cream field.
+   (originally) HomeQueenAnnCollection.tsx for the full rationale. Cream
+   field, .qac-section/.qac-inner shell.
 
    2026-08-20, later the same day, per Susan's "Reverse It" directive:
    the section's internal order reverses — the Collection Compilation
@@ -5433,9 +5434,18 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    former three-line header (.qac-eyebrow / .qac-title / .qac-tagline)
    is removed from the component entirely and replaced by a single
    quiet identifier, .qac-ann__title. Those three classes are left
-   defined below, unused, rather than deleted — see HomeQueenAnnCollection
-   .tsx's own header comment for the full rationale (no-silent-deletion
-   convention). */
+   defined below, unused, rather than deleted (no-silent-deletion
+   convention).
+
+   2026-08-20, later still, per Susan's "Section Two / Section Three"
+   directive: HomeQueenAnnCollection.tsx (Compilation + Ann in one
+   section) is superseded by two separate components sharing this same
+   .qac-section/.qac-inner shell — HomeCollectionPremise.tsx (Section 2:
+   Compilation + the Path of Stones premise, moved here from HomeSection2
+   's former light band — see .qac-premise below) and HomeQueenAnn.tsx
+   (Section 3: Queen Ann alone). HomeQueenAnnCollection.tsx itself is
+   left in the codebase, unused, per the standing no-silent-deletion
+   practice. */
 .qac-section {
   background: var(--cream);
   padding: 4.5rem 2rem var(--band-gap-sm);
@@ -5444,6 +5454,17 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .qac-inner {
   max-width: 1100px;
   margin: 0 auto;
+}
+/* The Path of Stones premise, now living inside HomeCollectionPremise.tsx
+   directly beneath the Compilation image, in the same cream field —
+   plain wrapper, no background/padding/border of its own (unlike its
+   former home, .section2-light, which needed those to stand as its own
+   band next to a dark Workshops band). Its child typography classes
+   (.section2-light__eyebrow, .section2-question, .section2-examples*,
+   .section2-recognition, all still defined further below) are reused
+   as-is, unchanged. */
+.qac-premise {
+  margin-top: 4rem;
 }
 /* Superseded 2026-08-20 "Reverse It" pass — no longer rendered by
    HomeQueenAnnCollection.tsx. Left defined, unused, per the engagement's
@@ -5471,17 +5492,16 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   margin: 0 0 3rem;
 }
 
-/* .qac-ann — the quiet wrapper introducing Queen Ann beneath the
-   Compilation. .qac-ann__title is deliberately minimal: one small
-   italic serif line, no eyebrow, no uppercase tracking, no separate
-   tagline — "simply and elegantly," per Susan's own phrase, now that
-   the Compilation above it has already done the section's announcing. */
-/* 2026-08-20, per Susan's "aesthetic only" follow-up: give this block
-   more visible separation from the Compilation above it, so it reads
-   as Ann's own distinct space rather than a caption bolted to the
-   image -- while keeping her footprint modest (spread size/scale
-   unchanged, see .qac-spread below). Margin-top increased 3rem ->
-   4.5rem; no content or structural change. */
+/* .qac-ann — originally the quiet wrapper introducing Queen Ann beneath
+   the Compilation, within the shared section. Superseded 2026-08-20
+   "Section Two / Section Three" pass: Queen Ann now has her own
+   standalone section (HomeQueenAnn.tsx) and no longer needs this
+   wrapper's margin-top (the section's own padding-top supplies the
+   gap instead) — left defined, unused, per no-silent-deletion.
+   .qac-ann__title itself IS still used, directly, by HomeQueenAnn.tsx —
+   deliberately minimal: one small italic serif line, no eyebrow, no
+   uppercase tracking, no separate tagline — "simply and elegantly,"
+   per Susan's own phrase. */
 .qac-ann {
   margin-top: 4.5rem;
 }
@@ -5591,16 +5611,30 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 @media (max-width: 640px) {
   .qac-section { padding: 3rem 1.5rem 3rem; }
   .qac-ann { margin-top: 3rem; }
+  .qac-premise { margin-top: 2.75rem; }
   .qac-spread { max-width: 280px; gap: 1rem; }
   .qac-spread__poem-img { max-width: 130px; }
   .qac-pdf-link { margin-bottom: 2.5rem; }
 }
 
-/* ── HOMEPAGE SECTION #2 — INTEGRATED PATH OF STONES + WORKSHOPS ───────
+/* ── HOMEPAGE — PATH OF STONES TYPOGRAPHY + WORKSHOPS (DARK BAND) ──────
    Added 2026-08-20, per Susan's "Homepage Section #2 — Integration Job"
-   directive. See HomeSection2.tsx for the full rationale. One section,
-   two bands (cream premise -> navy practice), no border/gap between
-   them — the color change is the seam. */
+   directive, as one integrated section (cream premise band + navy
+   practice band). See git history / HomeSection2.tsx for that pass's
+   full rationale.
+
+   2026-08-20, later the same day, per Susan's "Section Two / Section
+   Three" follow-up: the premise content moves out into
+   HomeCollectionPremise.tsx (Section 2, beneath the Compilation image).
+   .section2-light and .section2-light__inner (this band's own
+   background/padding/border-top/width wrapper) are no longer used by
+   anyone — HomeCollectionPremise.tsx reuses only the typography classes
+   below (.section2-light__eyebrow, .section2-question, .section2-
+   examples*, .section2-recognition) directly inside .qac-premise
+   instead, since that content now shares .qac-section's single cream
+   field rather than needing its own bordered band. Both wrapper classes
+   left defined, unused, per no-silent-deletion. .section2-dark* (further
+   below) is unchanged and still active, in HomeSection2.tsx. */
 .section2-light {
   background: #f5f0e8;
   padding: var(--band-gap-sm) 2rem 3rem;
@@ -5612,7 +5646,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      840px max-width isn't clipped by its parent — the question needs
      the extra room to hold at two lines. The examples and recognition
      lines beneath it keep their own narrower max-widths and stay
-     centered regardless. */
+     centered regardless. Superseded 2026-08-20: .qac-inner (1100px) is
+     the active parent now, wide enough that this clipping concern no
+     longer applies, but this class is left as-is, unused. */
   max-width: 900px;
   margin: 0 auto;
 }

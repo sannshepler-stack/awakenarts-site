@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
-import HomeQueenAnnCollection from '@/components/HomeQueenAnnCollection'
+import HomeCollectionPremise from '@/components/HomeCollectionPremise'
+import HomeQueenAnn from '@/components/HomeQueenAnn'
 import HomeSection2 from '@/components/HomeSection2'
 import HomeChristianSymbols from '@/components/HomeChristianSymbols'
 import WayfindingBand from '@/components/WayfindingBand'
@@ -102,47 +103,60 @@ export const metadata: Metadata = {
  * Asset Placement" directive: supersedes every ordering above with a
  * five-section architecture built around one guided progression --
  * encounter an actual work, recognize the underlying principle, cross
- * the biblical hinge, arrive at Scripture's own symbolic vocabulary:
+ * the biblical hinge, arrive at Scripture's own symbolic vocabulary.
+ * (This five-section version is itself superseded by the six-section
+ * version below, same day -- kept here for the unbroken history.)
  *
  *   1. Opening   — Hero. Unchanged.
  *   2. Queen Ann / The Actual Works — HomeQueenAnnCollection.tsx, cream.
- *                  NEW. Replaces the former standalone Queen Ann title
- *                  band (.poems-showcase-intro) and Queen Ann Encounter
- *                  (.poems-showcase-section), which are removed from
- *                  this page entirely -- their content (title, tagline,
- *                  poem+portrait spread, excerpt, PDF link) now lives
- *                  in HomeQueenAnnCollection.tsx, reduced in scale and
- *                  followed by the Collection Compilation image, so the
- *                  visitor meets one actual image-poem before learning
- *                  it belongs to a larger body of work. No CTA -- see
- *                  that component's own header comment.
- *   3. A Path of Stones -> Workshops — HomeSection2.tsx. Unchanged
- *                  from the 2026-08-20 "Integration Job" pass, except
- *                  its dark band's image is corrected back to the
- *                  Collection Book Cover (collection-cover-clean.png)
- *                  per Susan's explicit asset map -- see that
- *                  component's own header comment for the full
- *                  supersession note.
- *   4. Foundation — Matthew 13:34, the biblical hinge. Same section,
- *                  same copy; visual weight reduced (the `tall`
- *                  AtmosphericHeader variant is dropped back to the
- *                  site's standard header height) so it reads as a
- *                  transitional threshold between Workshops and
- *                  Christian Symbols, not another full promotional
- *                  section. See that section's own comment below.
- *   5. Christian Symbols — HomeChristianSymbols.tsx, cream. Replaces
- *                  PathOfRecognition.tsx's former slot at the close of
- *                  the page. PathOfRecognition itself is left in place
- *                  in the codebase (unused by this page, per the
- *                  engagement's standing no-silent-deletion practice)
- *                  -- its old "Stories That Shape Us" / Encounters
- *                  copy belonged to the retired Encounters architecture
- *                  and does not carry forward. See that component's
- *                  own header comment for the full rationale.
+ *                  Compilation leads, Queen Ann follows in the same
+ *                  section, reduced in scale, no CTA.
+ *   3. A Path of Stones -> Workshops — HomeSection2.tsx, one section,
+ *                  cream premise band into navy Workshops band.
+ *   4. Foundation — Matthew 13:34, the biblical hinge.
+ *   5. Christian Symbols — HomeChristianSymbols.tsx, cream.
  *   6. Footer.
  *
- * Revised order: Hero -> HomeQueenAnnCollection -> HomeSection2 ->
- * Foundation -> HomeChristianSymbols -> WayfindingBand -> Footer.
+ * 2026-08-20, later the same day, per Susan's "Section Two / Section
+ * Three" follow-up directive, reviewed against a live screenshot:
+ * Queen Ann and the Path of Stones premise trade places relative to
+ * the version above. The Path of Stones question ("Do we use
+ * metaphors...") becomes part of the Collection Compilation section
+ * rather than following Queen Ann; Queen Ann is pulled out into her
+ * own dedicated section that follows instead. Six sections now, not
+ * five:
+ *
+ *   1. Opening — Hero. Unchanged.
+ *   2. The AwakenArts Collection — HomeCollectionPremise.tsx, cream.
+ *                  NEW (replaces HomeQueenAnnCollection.tsx's former
+ *                  role). Collection Compilation leads (its own
+ *                  baked-in title announces the section), directly
+ *                  followed by the Path of Stones premise -- eyebrow,
+ *                  question, three metaphor examples, recognition
+ *                  statement -- moved here verbatim from HomeSection2
+ *                  .tsx's former light band. "This is a body of work"
+ *                  and "here is the premise behind it" as one thought.
+ *   3. Queen Ann — HomeQueenAnn.tsx, cream. NEW (split out of
+ *                  HomeQueenAnnCollection.tsx). One actual work,
+ *                  encountered closely, in her own space: quiet title,
+ *                  reduced poem+portrait spread, excerpt, PDF link. No
+ *                  CTA -- Workshops (practice) follows next.
+ *   4. Workshops — HomeSection2.tsx, now the dark band only (its light
+ *                  band moved to section 2, above). Same image
+ *                  (Collection Book Cover), copy, and CTA as before --
+ *                  see that component's own header comment.
+ *   5. Foundation — Matthew 13:34, the biblical hinge. Unchanged.
+ *   6. Christian Symbols — HomeChristianSymbols.tsx, cream. Unchanged.
+ *   7. Footer.
+ *
+ * HomeQueenAnnCollection.tsx is left in the codebase, unused by this
+ * page, per the engagement's standing no-silent-deletion practice --
+ * see its own header comment and HomeCollectionPremise.tsx / HomeQueenAnn
+ * .tsx's comments for the full supersession trail.
+ *
+ * Revised order: Hero -> HomeCollectionPremise -> HomeQueenAnn ->
+ * HomeSection2 (Workshops) -> Foundation -> HomeChristianSymbols ->
+ * WayfindingBand -> Footer.
  */
 
 export default function HomePage() {
@@ -457,39 +471,43 @@ export default function HomePage() {
 
       </section>
 
-      {/* ── QUEEN ANN / THE ACTUAL WORKS ─────────────────────────
-          2026-08-20, per Susan's "Homepage Recomposition" directive:
-          new section #2, directly beneath the Hero. Lets the visitor
-          encounter an actual AwakenArts image-poem (Queen Ann) before
-          learning it belongs to a larger body of work (the Collection
-          Compilation, revealed below it in the same section). Replaces
-          the former standalone Queen Ann title band and Queen Ann
-          Encounter that used to close the page (see the retired
-          sections' comments further down, kept for history where the
-          JSX itself has moved). See HomeQueenAnnCollection.tsx for the
-          full rationale — the reduced spread scale, the preserved PDF/
-          readable access, the no-CTA decision, and the Compilation
-          crop technique. */}
-      <HomeQueenAnnCollection />
+      {/* ── THE AWAKENARTS COLLECTION ────────────────────────────
+          2026-08-20, per Susan's "Section Two / Section Three"
+          directive: new section #2, directly beneath the Hero. The
+          Collection Compilation leads (its own baked-in title
+          announces the section — "this is a body of original work"),
+          directly followed by the Path of Stones premise (eyebrow,
+          question, three metaphor examples, recognition statement),
+          moved here from HomeSection2.tsx's former light band. See
+          HomeCollectionPremise.tsx for the full rationale. This
+          supersedes the prior pass's HomeQueenAnnCollection.tsx, which
+          combined the Compilation with Queen Ann in one section —
+          Queen Ann now has her own section directly below instead. */}
+      <HomeCollectionPremise />
 
-      {/* ── HOMEPAGE SECTION #2 — INTEGRATED PATH OF STONES + WORKSHOPS
+      {/* ── QUEEN ANN ─────────────────────────────────────────────
+          2026-08-20, per Susan's "Section Two / Section Three"
+          directive: new section #3. One actual AwakenArts work,
+          encountered closely, in her own dedicated space — quiet
+          title, reduced poem+portrait spread, excerpt, PDF link, no
+          CTA. Split out of the former combined HomeQueenAnnCollection
+          .tsx component; see HomeQueenAnn.tsx for the full rationale. */}
+      <HomeQueenAnn />
+
+      {/* ── WORKSHOPS ─────────────────────────────────────────────
           2026-08-20, per Susan's "Homepage Section #2 — Integration
-          Job" directive: the former "AwakenArts, A Path of Stones"
-          section (below, superseded) and the former dark Collection/
-          Workshops section (further down, also superseded) were one
-          conceptual movement built in separate passes — recognition ->
-          AwakenArts work -> participation through Workshops. Both
-          independently led to Workshops, both used the same Collection
-          cover image, and Path of Stones alone had grown long enough to
-          erase the homepage's light/dark rhythm. Replaced with one
-          integrated section; see HomeSection2.tsx for the complete
-          rationale (content preserved verbatim, what was economized,
-          the single-image decision, and the "Figure Editions must not
-          compete with Workshops" hierarchy fix).
-          2026-08-20, per the follow-up "Homepage Recomposition"
-          directive: this is now page section #3 (Queen Ann/The Actual
-          Works, above, is the new section #2) — its own content and
-          image are otherwise unchanged. */}
+          Job" directive: originally built as one integrated section —
+          "AwakenArts, A Path of Stones" (light/premise band) directly
+          into the dark Collection/Workshops band — replacing two
+          formerly separate homepage sections that duplicated the same
+          content and CTA. See git history / HomeSection2.tsx for that
+          pass's full rationale.
+          2026-08-20, later the same day, per the "Section Two /
+          Section Three" follow-up: the light/premise band moves out to
+          HomeCollectionPremise.tsx (section #2, above); Queen Ann gets
+          her own section in between (#3, above). This is now section
+          #4 — the dark Workshops band only. Same image, copy, and CTA
+          as before; see HomeSection2.tsx's own updated header comment. */}
       <HomeSection2 />
 
       {/* ── FOUNDATION — Matthew 13:34, the biblical hinge ───────
