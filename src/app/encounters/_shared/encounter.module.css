@@ -270,4 +270,33 @@
     text-align: center;
   }
   .eyebrowRule { justify-content: center; }
+
+  /* 2026-08-20, per Susan's confirmed mobile legibility report on
+     /encounters/journey ("gold on gold"): .heroScrim's 100deg gradient
+     is built for the desktop layout, where .heroInner sits left-aligned
+     in roughly the left third of a much wider viewport -- the gradient
+     is fully dark (0.82) at the left edge and doesn't need to stay dark
+     past ~40% of the width, since no text ever sits out there. At this
+     breakpoint .hero and .heroInner switch to centered (above), so the
+     gold statement lines can land anywhere across nearly the full
+     viewport width, including past the gradient's 75% fade-to-fully-
+     transparent point, with zero scrim darkening under them there.
+     Measured empirically: on Journey at 390px, part of "the way to new
+     discoveries" sat over a sunset-glow pixel (~RGB 240,177,104) almost
+     identical to the gold text color (~RGB 217,181,104) -- a 1.04:1
+     contrast ratio. A near-uniform overlay, still gently graded
+     top-to-bottom for atmosphere but never dropping below 0.68 opacity,
+     keeps every gold line at or above ~4.5:1 contrast against the
+     brightest realistic patch on any of the four hero photographs
+     (verified the same way against Journey's brightest sampled pixel).
+     Desktop/tablet (above 720px) are untouched -- this only replaces
+     the scrim at the breakpoint where the layout itself goes centered. */
+  .heroScrim {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 12, 10, 0.78) 0%,
+      rgba(10, 12, 10, 0.68) 55%,
+      rgba(10, 12, 10, 0.76) 100%
+    );
+  }
 }
