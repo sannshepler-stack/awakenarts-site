@@ -5982,16 +5982,62 @@ form { display: flex; flex-direction: column; gap: 1rem; }
       sampling of ann-text-dark-crop.png (the poem card source file)
       this pass confirmed its actual paper color is pure white, not
       var(--cream) (#FAF7F2), which the previous pass had guessed. */
+/* 2026-08-20, later still, per Susan's "Open-Book Presentation"
+   directive: the paired poem card + portrait should read unmistakably
+   as an elegant open art book, not two rectangles that happen to
+   share a background. Explicitly NOT a redesign of Queen Ann -- the
+   same two existing image files, same intact poem artwork (no
+   re-typesetting, cropping, or compression), same mirrored portrait
+   crop already established. Presentation-only changes:
+   1) SIZE, considerably larger: max-width 392px -> 600px (the poem
+      page's own rendered width grows from ~182px to ~280px, so its
+      shaped form actually registers rather than reading as a
+      thumbnail), while staying well inside .section2-dark__inner's
+      640px cap so it doesn't dominate the navy section or crowd
+      "Workshops" beneath it.
+   2) GUTTER/SPINE, a convincing one: the previous two independent
+      inset box-shadows (one per half) are replaced by a single
+      absolutely-positioned gradient overlay (::after) centered on the
+      seam -- dark at the exact center, fading to transparent a short
+      distance into each page. This is the standard technique for an
+      open-book gutter shadow and reads far more like a real spine
+      than two separate inset shadows meeting at a hard edge.
+   3) OUTER PAGE DEPTH: the single ambient drop shadow is joined by two
+      much tighter, faint shadows hugging the book's own edge --
+      together they read as the thin stack of paper a real open book
+      has, without any perspective, tilt, or mockup effect. Book stays
+      fully frontal, per "keep the book essentially frontal." */
 .section2-dark__pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  max-width: 392px;
-  margin: 0 auto 2.5rem;
+  max-width: 600px;
+  margin: 0 auto 2.75rem;
   background: #fff;
   border-radius: 3px;
-  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.45);
+  box-shadow:
+    0 1px 0 1px rgba(0, 0, 0, 0.05),
+    0 3px 0 2px rgba(0, 0, 0, 0.04),
+    0 30px 70px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  position: relative;
+}
+.section2-dark__pair::after {
+  /* the book's center gutter/spine shadow */
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 64px;
+  margin-left: -32px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.22) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
 }
 .section2-dark__pair-frame,
 .section2-dark__pair-text {
@@ -6011,18 +6057,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.55rem;
-  /* spine shadow, poem-card side */
-  box-shadow: inset -10px 0 16px -12px rgba(0, 0, 0, 0.3);
-}
-.section2-dark__pair-frame {
-  /* spine shadow, portrait side -- together the two form one
-     continuous fold line down the book's center */
-  box-shadow: inset 10px 0 16px -12px rgba(0, 0, 0, 0.3);
+  padding: 0.85rem;
 }
 .section2-dark__pair-poem-img {
   width: 100%;
-  max-width: 182px;
+  max-width: 280px;
   height: auto;
   display: block;
 }
