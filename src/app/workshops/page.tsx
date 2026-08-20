@@ -130,7 +130,7 @@ export default function WorkshopsPage() {
             A Path of Discovery Through Image, Language, and Symbol
           </p>
           <p className={styles.body}>
-            An AwakenArts workshop begins with original image and poetry
+            An AwakenArts workshop begins with original images and poetry
             and follows what the work reveals.
           </p>
           <p className={styles.body}>
