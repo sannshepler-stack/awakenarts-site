@@ -1,6 +1,6 @@
 # AwakenArts Editions — Teaching Path Development Brief
 
-**Status: Governing document. Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Establishes the permanent template for how every stone of the AwakenArts Path is built, and completes Stone One in full. Remaining stones are built one at a time in subsequent passes — this document deliberately does not generate the whole Path at once.**
+**Status: Governing document. Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Establishes the permanent template for how every stone of the AwakenArts Path is built. Remaining stones are built one at a time in subsequent passes — this document deliberately does not generate the whole Path at once. Amended 2026-08-20, same day, to reconcile the original nine-part Stone Template with `AwakenArts_Path_Standard.md`'s "Laying the Stones" crossing sequence — see the reconciliation table below. Stone One satisfies the nine-part content template; it has not yet been revised against the eight-part crossing sequence (Entry State and Exit State are not yet separately stated) — see the honest status note in that section.**
 
 **Purpose of this document, in Susan's own words:** "all the other standardization directives were meant to keep the system from reverting to old material when formulating new material... We can work from this brief at least until we are able to set a foundation from which to move forward and stop 'designing' a method that already exists — now referred to as a program where the method exists as part of it." AwakenArts is not inventing a method. It is demonstrating one that already exists in established thought, image by image, stone by stone.
 
@@ -130,6 +130,27 @@ Every stone built after this one — beginning with Stone Two, in a future, sepa
 
 This prevents exactly what happened before: a stone written as "Reflection — ask these three questions," with the psychological/symbolic movement, the credible thought supporting it, and what actually changes for the participant left unstated. Every future stone answers all nine before any script, slide, or question is written — matching, at the level of a single stone, the Figure Research Standard's own rule that no production precedes understanding.
 
+### Reconciling the Nine-Part Template with the Laying-the-Stones Crossing Sequence
+
+*Added 2026-08-20, per Susan's "Laying the Stones" directive — reconciled here rather than duplicated, per her explicit instruction.* `AwakenArts_Path_Standard.md` now carries the operational definition of when a stone is actually *laid* — eight elements: Entry State, Foundation, Edition Evidence, Facilitator Movement, Participant Discovery, Why It Matters To You, Exit State, Next Stone. That definition and the nine-part template above are not competing checklists. **The nine-part template above establishes a stone's content — the research and material a stone is built from. The eight-part sequence establishes whether that content actually crosses — whether a participant is shown to arrive somewhere different from where she started.** A stone can satisfy every item in the nine-part template and still not be laid, if no one has stated what changes.
+
+The mapping, item by item:
+
+| Nine-Part Template (content) | Laying-the-Stones Sequence (crossing) | Relationship |
+|---|---|---|
+| — | **Entry State** | New. Not previously required anywhere in the nine-part template. Must be named explicitly, not assumed. |
+| The Foundation | **Foundation** | Same item, same name. The nine-part template's research requirement satisfies this directly. |
+| The AwakenArts Example | **Edition Evidence** | Same item, renamed. "The exact image, word, sentence, metaphor" is a sharper, more specific statement of "how a particular poem/image embodies it." |
+| The Participant Movement | **Facilitator Movement** + **Participant Discovery** | The nine-part template's single item splits into two under the crossing sequence: what the facilitator does, in order (Facilitator Movement), and what that opens for the participant to discover rather than be told (Participant Discovery). Writing "the participant movement" without distinguishing these two risks collapsing discovery into instruction — exactly the failure this split is designed to catch. |
+| Why It Matters To You | **Why It Matters To You** | Same item, same name. |
+| — | **Exit State** | New. Not previously required anywhere in the nine-part template. Must be named explicitly, and must be genuinely different from Entry State, or the stone has not been laid regardless of how much content surrounds it. |
+| The Next Stone | **Next Stone** | Same item, same name. |
+| The Quotation, The Christian Counterpart, The Ordinary-Language Bridge | *(no direct crossing-sequence counterpart)* | These remain content requirements specific to this Program's own teaching architecture (see the Quotation Rule, below) — they feed Foundation and Edition Evidence but are not separately tested by the crossing sequence. |
+
+**The two genuinely new requirements are Entry State and Exit State.** Neither was previously named anywhere in this Program's content template, and their absence is exactly the gap Susan's directive closes: a stone can be extensively researched and beautifully produced and still never state what the participant could not do before it and can do after it — which means it was never actually shown to cross anyone.
+
+**Honest status check against this correction, not glossed over: Stone One, as built above, satisfies the nine-part content template but has not yet been written against the eight-part crossing sequence.** Its Purpose section gestures at an entry condition ("why should I believe this matters?") and its "Why It Matters To You" lines are in place, but Entry State and Exit State have not been separately, explicitly stated, and Facilitator Movement / Participant Discovery have not been split out from the single "Participant Movement" framing used above. Per Susan's instruction not to produce new workshop/deck material during this governance pass, that revision is not made here — it is named as the next concrete task before Stone One can be called *laid* rather than merely *built*.
+
 ---
 
 ## The Quotation Rule
@@ -142,7 +163,7 @@ This prevents exactly what happened before: a stone written as "Reflection — a
 
 This document establishes the Program-level teaching sequence, states the homepage premise, and fully builds Stone One — Johnson, Bryant, and Jung as the authoritative foundation; the ordinary-language bridge; the Dragon/fire example; the participant movement. It records the Stone Template so every future stone is built to the same discipline.
 
-**It does not build Stone Two or any stone after it.** Per Susan's direct instruction, the remaining stones are built one at a time, sequentially, in separate passes — not generated as a complete Path in a single AI pass. It does not implement the homepage hero copy on the live site. It does not complete the Jung quotation bank beyond the one verified, attributed, participant-ready line recorded above. Each of these is real, identified, unfinished work, not silently folded into "complete."
+**It does not build Stone Two or any stone after it.** Per Susan's direct instruction, the remaining stones are built one at a time, sequentially, in separate passes — not generated as a complete Path in a single AI pass. It does not implement the homepage hero copy on the live site. It does not complete the Jung quotation bank beyond the one verified, attributed, participant-ready line recorded above. **It does not yet revise Stone One against the eight-part Laying-the-Stones crossing sequence added 2026-08-20** — Entry State and Exit State are not yet separately named for Stone One, and Facilitator Movement/Participant Discovery are not yet split out from the single Participant Movement framing. Per Susan's instruction not to produce new workshop material during that same governance pass, this revision is named rather than made. Each of these is real, identified, unfinished work, not silently folded into "complete."
 
 ---
 

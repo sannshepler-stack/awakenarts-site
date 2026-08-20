@@ -1,6 +1,6 @@
 # AwakenArts — The Path Standard
 
-**Status: Governing correction. Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Governs the whole of AwakenArts — every page, Figure, workshop, and piece of writing — not a single Figure, edition, or page.**
+**Status: Governing correction. Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Governs the whole of AwakenArts — every page, Figure, workshop, and piece of writing — not a single Figure, edition, or page. Amended 2026-08-20, same day, with the "Laying the Stones" operational definition of a completed crossing (see "What It Means for a Stone to Be Laid," below) — the content template for building that crossing lives in `AwakenArts_Teaching_Path_Development_Brief.md`.**
 
 ---
 
@@ -30,9 +30,30 @@ Read this precisely, because each clause carries weight:
 
 1. **Help set a stone.** Contribute to building or defining a place along the Path — research, authored symbolic content, a new Figure's development, a structural addition to the sequence itself.
 2. **Help someone cross a stone.** Actively move a participant's own capacity forward at that point — facilitation, a Reader sequence, a workshop exercise, a live encounter.
-3. **Give them a reason to continue.** Sustain forward motion without itself being a stone — threshold copy, previews, invitations, wayfinding. (This is the same work already named in `AGENTS.md`'s description of the website as "an editorial threshold... every design decision, piece of copy, and navigation element serves the work.")
+3. **Give them a reason to continue.** Sustain forward motion without itself being a stone — threshold copy, previews, invitations, wayfinding. (This is the same work already named in `AGENTS.md`'s description of the website as "an editorial threshold... every design decision, piece of copy, and navigation element serves the work.") **A CTA or a link to the next page satisfies this test only if the element it closes has already done its own work.** A "continue" button on a page that hasn't accomplished anything is not a reason to continue — it is a hallway. This element must have accomplished enough of its own function to actually prepare the participant for what follows, not merely point at it.
 
 **An element that does none of the three does not belong, regardless of how polished, interesting, or well-executed it is on its own terms.** This is now the standing test for scope — not only when commissioning new work, but at review. If a slide, a page, or a stage cannot be named as setting a stone, helping someone cross one, or giving a reason to continue, the right response is to cut it, not to find a justification for keeping it.
+
+---
+
+## What It Means for a Stone to Be Laid
+
+*Correction, 2026-08-20, per Susan's direct instruction — "Laying the Stones," incorporated system-wide.* Test item 2 above — "help someone cross a stone" — has, until now, been stated without saying what a successful crossing actually requires. That gap is closed here. It is not closed by adding more research or more activity; both, on their own, have already been tried and both, on their own, are insufficient.
+
+**A Path stone is not complete because its subject has been researched, or because an activity, prompt, or presentation section has been created.** Research alone does not constitute a completed stone. Activity alone does not constitute a completed stone. **A stone is laid only when AwakenArts can establish all eight of the following:**
+
+1. **ENTRY STATE** — what the participant can presently see, know, recognize, or understand.
+2. **FOUNDATION** — the researched symbolic, archetypal, literary, Christian, psychological, or facilitative basis for the movement.
+3. **EDITION EVIDENCE** — the exact image, word, sentence, metaphor, symbolic relationship, or other material through which the movement is embodied.
+4. **FACILITATOR MOVEMENT** — what is shown, said, read, compared, asked, investigated, or revealed, and in what order.
+5. **PARTICIPANT DISCOVERY** — what the participant has an opportunity to recognize or understand, rather than simply being told.
+6. **WHY IT MATTERS TO YOU** — the consequential human relevance of the movement.
+7. **EXIT STATE** — what the participant can now see or understand that was less available before crossing the stone.
+8. **NEXT STONE** — why that new capacity or understanding prepares the participant to continue.
+
+**This is now the operational definition of test item 2.** A stone "helps someone cross it" only when Entry State and Exit State can both be named, and are genuinely different from each other — the participant must arrive somewhere different from where she entered. A page, slide, or exercise that cannot state its own Entry State and Exit State has not yet earned the claim that it helps a participant cross anything, no matter how well-researched or well-produced it is.
+
+**The Path is created through successful participant crossings — not through the existence of researched, well-produced material.** This is the system-wide governing rule beneath every document this correction touches: AwakenArts does not create activities and call them a Path. Each stone must be intellectually grounded, embodied in the work, consequential to the participant, facilitatable in a deliberate sequence, and capable of producing identifiable forward movement.
 
 ---
 
@@ -58,4 +79,4 @@ Whether and when to pursue either question is Susan's decision.
 
 ---
 
-*Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Governing.*
+*Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Amended the same day with the Laying-the-Stones definition of a completed crossing. Governing.*
