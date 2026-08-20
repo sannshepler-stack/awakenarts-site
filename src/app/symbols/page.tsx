@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import SymbolsExperience from '@/components/SymbolsExperience'
+import SymbolsDeepen from '@/components/SymbolsDeepen'
 
 // /symbols — "Symbols for the Christian Soul" (built 2026-08-11, per
 // Susan's brief).
@@ -42,6 +43,13 @@ export default function SymbolsPage() {
         </section>
 
         <SymbolsExperience />
+
+        {/* 2026-08-20, per Susan's "Christian Symbols — Placement of the
+            Four Developed Symbolic Territories" directive: the third
+            movement on this page, after Encounter the Symbols and Symbol
+            Vocabulary, before the Workshops handoff below. See
+            SymbolsDeepen.tsx for the full placement rationale. */}
+        <SymbolsDeepen />
 
         <section className="symbols-continuation" aria-label="Continue to Workshops">
           <Link href="/workshops" className="home-coll-cta home-coll-cta--light-surface">

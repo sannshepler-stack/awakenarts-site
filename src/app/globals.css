@@ -10400,6 +10400,105 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 .symbols-hero__line:last-child { margin-bottom: 0; }
 
+/* ── Section 3: Following a Symbol Further ──────────────────────────────
+   Added 2026-08-20, per Susan's "Christian Symbols — Placement of the
+   Four Developed Symbolic Territories" directive. Sits after Symbol
+   Vocabulary, before the Workshops handoff. Deliberately more generous
+   spacing than the tightened Encounter->Vocabulary rhythm above — that
+   pairing was tightened to read as one continuous experience; this
+   section is a new movement, not a continuation of the same beat, so it
+   gets its own clear separation and breathing room instead. */
+.symbols-deepen-divider {
+  max-width: var(--measure-wide);
+  margin: 3.5rem auto 0;
+  border-top: 1px solid rgba(28, 43, 58, 0.14);
+}
+.symbols-deepen-section {
+  max-width: var(--measure-medium);
+  margin: 0 auto;
+  padding: 4.5rem 2rem var(--band-gap-sm);
+  text-align: center;
+}
+.symbols-deepen-eyebrow {
+  font-family: var(--sans);
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.85rem;
+}
+.symbols-deepen-title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.9vw, 2.35rem);
+  color: var(--deep);
+  line-height: 1.25;
+  margin: 0 0 1.25rem;
+}
+.symbols-deepen-intro {
+  font-family: var(--serif);
+  font-size: clamp(1.02rem, 1.6vw, 1.15rem);
+  line-height: 1.75;
+  color: var(--mid);
+  max-width: 62ch;
+  margin: 0 auto 4rem;
+}
+
+/* Four developed fields — left-aligned prose, not cards. No boxes, no
+   numbered steps, matching the site's established "no corporate process
+   graphics" standard; separation between fields comes from generous
+   spacing and a thin rule, not containers. */
+.symbols-deepen-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--band-gap-sm);
+  text-align: left;
+  max-width: 62ch;
+  margin: 0 auto;
+}
+.symbols-deepen-item {
+  padding-top: var(--band-gap-sm);
+  border-top: 1px solid rgba(28, 43, 58, 0.1);
+}
+.symbols-deepen-item:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+.symbols-deepen-item__title {
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  color: var(--deep);
+  margin: 0 0 0.4rem;
+}
+.symbols-deepen-item__ref {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--gold);
+  margin: 0 0 1.25rem;
+}
+.symbols-deepen-item__body {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--ink);
+  margin: 0 0 1.1rem;
+}
+.symbols-deepen-item__body:last-child {
+  margin-bottom: 0;
+}
+.symbols-deepen-item__body em {
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .symbols-deepen-divider { margin-top: 2.5rem; }
+  .symbols-deepen-section { padding: 3rem 1.5rem 2.5rem; }
+  .symbols-deepen-intro { margin-bottom: 2.75rem; }
+  .symbols-deepen-list { gap: 2.5rem; }
+  .symbols-deepen-item { padding-top: 2.5rem; }
+}
+
 /* Activation pathway — keeps the Symbols experience intact and adds a
    restrained handoff only after the visitor has completed it. */
 .symbols-continuation {
