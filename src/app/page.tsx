@@ -412,6 +412,55 @@ export default function HomePage() {
 
       </section>
 
+      {/* ── A PATH OF STONES ─────────────────────────────────────
+          2026-08-20, per Susan's "Incorporate the Path of Stones Across
+          AwakenArts + Homepage" directive: new section, placed directly
+          after the Hero and before A Path of Recognition. Targeted
+          implementation only — hero premise, then this section, then
+          the existing homepage architecture continues unchanged below.
+
+          Presents the Program-level foundational question (approved
+          homepage language, per AwakenArts_Teaching_Path_Development_
+          Brief.md, "The Homepage — The Program Entrance") without
+          attaching it to any specific metaphor field (fire, Dragon, or
+          otherwise — those belong within individual Editions). Reuses
+          the existing Collection cover asset (/images/collection/
+          collection-cover-clean.png, already in use in the Collection
+          section below) rather than generating a new image — presented
+          here as the substantive work the Path is traveled through, not
+          a portfolio montage. Working heading only, per Susan's own
+          note: "we do not yet need to declare it a permanent tagline."
+          CTA routes to the same destination the Collection section
+          below already uses (/workshops#current-workshops) — no new
+          destination invented for this section. */}
+      <section className="path-of-stones-section" aria-labelledby="path-of-stones-heading">
+        <div className="path-of-stones-inner">
+          <p className="eyebrow">AwakenArts, A Path of Stones</p>
+          <h2 id="path-of-stones-heading" className="path-of-stones-question">
+            Do we use metaphors so routinely that we sometimes stop
+            noticing the images inside our own language?
+          </h2>
+          <p className="path-of-stones-body">
+            AwakenArts brings that imaginal and metaphorical language
+            back into conscious view — through image-poems, the
+            substantive works the Path is traveled through.
+          </p>
+          <div className="path-of-stones-image">
+            <Image
+              src="/images/collection/collection-cover-clean.png"
+              alt="AwakenArts Figure Editions — the image-poems through which the Path is traveled"
+              width={1122}
+              height={1402}
+              className="path-of-stones-image__img"
+              loading="lazy"
+            />
+          </div>
+          <Link href="/workshops#current-workshops" className="path-of-stones-cta">
+            Explore the Works <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </section>
+
       {/* ── A PATH OF RECOGNITION ────────────────────────────────
           2026-08-07, per Susan's "Switch Matthew and A Path of
           Recognition" directive: this section moves from after

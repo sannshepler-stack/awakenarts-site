@@ -5403,6 +5403,94 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    gravity down toward the imagery -- see .home-recognition__header h2,
    .home-recognition__statement, and .home-recognition__cta below. */
 
+/* ── HOMEPAGE: A PATH OF STONES ───────────────────────────────────────────
+   2026-08-20, per Susan's "Incorporate the Path of Stones Across
+   AwakenArts + Homepage" directive. New section between the Hero and A
+   Path of Recognition. Cream field (matches the Hero's own #f5f0e8 and
+   A Path of Recognition's cream ground immediately below it, so the
+   three read as one continuous opening movement rather than competing
+   bands) with a thin gold hairline top border, the same seam-marking
+   device already used at .home-coll-section and .home-recognition.
+   Restrained: eyebrow label, the question as the section's one
+   prominent statement, one short supporting line, the reused Collection
+   cover image, one framed-link CTA — no second explanatory paragraph. */
+.path-of-stones-section {
+  background: #f5f0e8;
+  padding: var(--band-gap-sm) 2rem var(--band-gap-sm);
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+  text-align: center;
+}
+
+.path-of-stones-inner {
+  max-width: var(--measure-medium);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.path-of-stones-inner .eyebrow {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.path-of-stones-question {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  line-height: 1.35;
+  color: var(--ink);
+  max-width: 720px;
+  margin: 0 0 1.5rem;
+}
+
+.path-of-stones-body {
+  font-family: var(--serif);
+  font-size: var(--body-size);
+  line-height: 1.6;
+  color: rgba(28, 43, 58, 0.78);
+  max-width: var(--measure-medium);
+  margin: 0 0 2.5rem;
+}
+
+.path-of-stones-image {
+  margin-bottom: 2.5rem;
+}
+
+.path-of-stones-image__img {
+  width: 260px;
+  height: auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+}
+
+/* Framed-link CTA — same restrained "thin outline, fade on hover"
+   language already established for CTAs on light grounds elsewhere on
+   the homepage (see .hero-invitation), rather than a new button style. */
+.path-of-stones-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--sans);
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 0.85rem 1.75rem;
+  border-radius: 2px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.path-of-stones-cta:hover {
+  background: rgba(126, 95, 18, 0.08);
+}
+
+@media (max-width: 640px) {
+  .path-of-stones-section { padding: var(--band-gap-sm) 1.5rem; }
+  .path-of-stones-image__img { width: 200px; }
+}
+
 /* ── HOMEPAGE: A PATH OF RECOGNITION ─────────────────────────────────────
    2026-07-26, per Susan's "Architectural Update — A Path of Recognition"
    directive: new homepage-only section, originally placed immediately
