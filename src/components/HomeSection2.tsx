@@ -73,6 +73,15 @@ import Link from 'next/link'
  * text replaced -- "Each workshop opens a different world of image,
  * poetry, story, and reflection." -> "Image and language can reveal
  * what experience has been trying to tell us." Styling untouched.
+ *
+ * 2026-08-20, later still, per Susan: "Add this to the workshop
+ * section instead of the list of poems" -- .section2-dark__worlds'
+ * content replaced, the Figure Edition name list (Dragon · Bowls ·
+ * Ballerina · Grismere · Poppy · Queen Ann) swapped for a sentence,
+ * "Each workshop brings the work into conversation with our own
+ * experience." Class name/styling kept as-is (plain serif, quiet
+ * cream, mild letter-spacing) since it already suits a short sentence
+ * as well as it suited a list -- only the copy changed.
  */
 export default function HomeSection2() {
   return (
@@ -105,7 +114,7 @@ export default function HomeSection2() {
             Image and language can reveal what experience has been trying to tell us.
           </p>
           <p className="section2-dark__worlds">
-            Dragon &middot; Bowls &middot; Ballerina &middot; Grismere &middot; Poppy &middot; Queen Ann
+            Each workshop brings the work into conversation with our own experience.
           </p>
 
           <Link href="/workshops#current-workshops" className="home-coll-cta">
