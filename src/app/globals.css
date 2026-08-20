@@ -773,7 +773,19 @@ a   { color: inherit; text-decoration: none; }
      (~15% down, 843px -> 720px) shrinks both dimensions in lockstep —
      the same crop and composition, just smaller, exactly like scaling
      a photograph down rather than re-cropping it. */
-  max-width: 720px;
+  /* 2026-08-20, per Susan's "Hero image — scale adjustment only"
+     directive: image was "too dominant," filling almost the entire
+     height/width of the right side -- "a scale correction only."
+     Same technique as the 2026-07-26 pass above: max-width trimmed a
+     further ~17.5% (720px -> 594px, within her requested 15-20%
+     band), aspect-ratio (843/650) untouched so the crop and
+     composition inside the box are pixel-identical, just smaller.
+     Composition, grid-template-columns, justify-self, translateX, and
+     align-items: center (which keeps it vertically balanced against
+     the copy column) are all deliberately untouched, per "keep the
+     current hero composition... two-column relationship exactly as
+     they are." */
+  max-width: 594px;
   aspect-ratio: 843 / 650;
   overflow: hidden;
   justify-self: end;
