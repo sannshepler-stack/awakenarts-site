@@ -35,6 +35,26 @@
  * Explore the Collection ->") from its original /collection-page use —
  * cropped out here via the same aspect-ratio/object-fit technique used
  * elsewhere on the homepage. No new imagery generated.
+ *
+ * 2026-08-20, later the same day, three copy-only revisions from
+ * Susan, no structural/markup change:
+ * 1. Eyebrow: "AwakenArts, A Path of Stones" -> "AwakenArts, The
+ *    Stories that Shape Us" (wording change only; the "Path of
+ *    Stones" name persists elsewhere in the codebase's own history
+ *    comments and in unrelated code, e.g. workshops/page.tsx's own
+ *    comment referencing this section by its old name — left as-is,
+ *    those are dated log entries, not live copy).
+ * 2. Heading: no longer a question. "Do we use metaphors so routinely
+ *    that we stop noticing how often images appear in the language we
+ *    use?" -> "We use metaphors so routinely that we stop noticing how
+ *    often images appear in the language we use." (dropped "Do we,"
+ *    dropped the question mark; .section2-question's styling is
+ *    otherwise untouched and still reads as the section's most
+ *    prominent statement).
+ * 3. Closing line, tightened: "The images are already there. We use
+ *    them to give shape to experiences we are trying to understand."
+ *    -> "The images are already there. We use them to give shape to
+ *    our experiences."
  */
 
 export default function HomeCollectionPremise() {
@@ -53,11 +73,11 @@ export default function HomeCollectionPremise() {
         </div>
 
         <div className="qac-premise">
-          <p className="eyebrow section2-light__eyebrow">AwakenArts, A Path of Stones</p>
+          <p className="eyebrow section2-light__eyebrow">AwakenArts, The Stories that Shape Us</p>
 
           <h2 id="collection-premise-heading" className="section2-question">
-            Do we use metaphors so routinely that we stop
-            noticing how often images appear in the language we use?
+            We use metaphors so routinely that we stop
+            noticing how often images appear in the language we use.
           </h2>
 
           <p className="section2-examples">
@@ -76,7 +96,7 @@ export default function HomeCollectionPremise() {
 
           <p className="section2-recognition">
             The images are already there. We use them to give shape to
-            experiences we are trying to understand.
+            our experiences.
           </p>
         </div>
 
