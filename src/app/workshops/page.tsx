@@ -136,16 +136,15 @@ export default function WorkshopsPage() {
           <p className={styles.body}>
             Through images, metaphor, close reading, symbolic language,
             conversation, and reflective writing, participants explore
-            patterns that can be present in our language and experience
-            before we fully recognize them.
+            patterns in language and experience that may be present before
+            we fully recognize them.
           </p>
           <p className={styles.body}>
-            AwakenArts workshops are artistic and educational, inviting
-            discovery through images, poetry, symbolic language,
-            conversation, and reflection&mdash;a way of looking more
-            closely at what images and words carry, following their
-            connections, and considering what they may bring into greater
-            awareness.
+            AwakenArts workshops are artistic and educational, offering a
+            path of discovery through images, poetry, symbolic language,
+            conversation, and reflection. We look more closely at what
+            images and words carry, follow their connections, and consider
+            what they may bring into greater awareness.
           </p>
 
           <h2 className={styles.h2}>What to Expect</h2>
