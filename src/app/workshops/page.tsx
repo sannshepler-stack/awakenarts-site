@@ -140,8 +140,9 @@ export default function WorkshopsPage() {
             before we fully recognize them.
           </p>
           <p className={styles.body}>
-            The workshop is neither therapy nor a literary analysis class.
-            It is a guided path of discovery&mdash;a way of looking more
+            AwakenArts workshops are artistic and educational, inviting
+            discovery through images, poetry, symbolic language,
+            conversation, and reflection&mdash;a way of looking more
             closely at what images and words carry, following their
             connections, and considering what they may bring into greater
             awareness.
