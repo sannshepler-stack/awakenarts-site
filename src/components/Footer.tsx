@@ -66,10 +66,13 @@ export default function Footer() {
               loading="lazy"
             />
           </Link>
+          {/* 2026-08-20, per Susan's direct instruction ("Use this on
+              the footer"): description copy replaced verbatim. */}
           <p>
-            A literary-symbolic practice conducted through workshops.
-            Figure Editions, Encounters, Symbols,
-            poetry, imagery, and journals support and extend the work.
+            AwakenArts explores what images, poetry, and symbolic
+            language can reveal about our experience. Workshops bring
+            the work into conversation, with journals and other works
+            offering ways to continue.
           </p>
           <FooterSocial />
         </div>

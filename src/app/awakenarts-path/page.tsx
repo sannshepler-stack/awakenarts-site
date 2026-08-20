@@ -170,15 +170,29 @@ export default function AwakenArtsPathPage() {
             rule effect; removed in favor of one consistent action
             language across all three.
             2026-07-26, per Susan's navigation-ecosystem directive: this
-            CTA is retained verbatim -- "after learning the language and
+            CTA was retained verbatim -- "after learning the language and
             framework of AwakenArts, the natural next step is to enter
             the Encounters." Encounters carries the reciprocal invitation
             back to The Path in its own closing section (see
-            src/app/encounters/page.tsx). */}
+            src/app/encounters/page.tsx).
+
+            2026-08-20, per Susan's directive ("Have to remove this from
+            the Path Page / name Christian Symbols and go to symbols
+            page"): destination changed from a direct link into
+            Encounters (/encounters) to Christian Symbols (/symbols).
+            Encounters is no longer a page a visitor is sent to
+            directly -- it's reached from within Symbols, via the "From
+            Symbol to Experience" transition and the Journey/Deep/
+            Table/Word card grid built there this same day (see
+            SymbolsEncounters.tsx). This closing link now hands the
+            Path's visitor to that same entry point rather than
+            bypassing it. Divider, quiet-button treatment, and the "no
+            heading/no explanation" closing philosophy above are
+            unchanged -- only the label and href move. */}
         <section className="path-intro-close">
           <div className="path-intro-close-divider" aria-hidden="true" />
-          <Link href="/encounters" className="path-intro-btn path-intro-btn--quiet">
-            Experience the Encounters
+          <Link href="/symbols" className="path-intro-btn path-intro-btn--quiet">
+            Christian Symbols
           </Link>
         </section>
       </main>
