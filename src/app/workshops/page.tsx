@@ -217,7 +217,7 @@ export default function WorkshopsPage() {
             Language Artist, and Certified Journal Instructor. She holds a
             Master of Arts in Counseling and created AwakenArts from her
             sustained work with image, poetry, symbolic language, and
-            reflection. She conducts every AwakenArts workshop herself.
+            reflection.
           </p>
           <p className={styles.body}>
             Her qualifications inform the care and craft with which she holds
