@@ -207,13 +207,6 @@ export default function WorkshopsPage() {
             </Link>
             .
           </p>
-          <p className={styles.body}>
-            An AwakenArts workshop may be a single gathering, a return through
-            several Figure Editions, or part of a retreat or community
-            program. It can find a home in libraries, churches, reading
-            groups, and other places where people gather around art, language,
-            story, and reflection.
-          </p>
           {/* 2026-08-20, per Susan's direct instruction: non-breaking space
               added before the paragraph's final word so "it" cannot wrap
               onto its own line and orphan at the end of the section. */}
@@ -222,6 +215,16 @@ export default function WorkshopsPage() {
             the same living practice can meet a particular group, place, and
             occasion. Each invitation is shaped in conversation with the
             people who will host&nbsp;it.
+          </p>
+          {/* 2026-08-20, per Susan's direct instruction: order flipped with
+              the paragraph above -- these two paragraphs' copy is being
+              revised next, order swap only for now. */}
+          <p className={styles.body}>
+            An AwakenArts workshop may be a single gathering, a return through
+            several Figure Editions, or part of a retreat or community
+            program. It can find a home in libraries, churches, reading
+            groups, and other places where people gather around art, language,
+            story, and reflection.
           </p>
 
           <div className={styles.closing}>
