@@ -5793,10 +5793,16 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    "bring the metaphor line somewhat closer... while preserving
    generous breathing room" note. Wording, color, italics, alignment,
    and the two-line composition are all unchanged. */
+/* 2026-08-20, per Susan's "reduce by 15%" (sent alongside a screenshot
+   of this heading): all three clamp() terms scaled down uniformly by
+   15% -- min 1.6rem -> 1.36rem, preferred 2.9vw -> 2.47vw, max 1.95rem
+   -> 1.66rem -- so the reduction holds proportionally at every
+   viewport width, not just the desktop plateau. Line-height, color,
+   max-width, and margin are all untouched. */
 .section2-question {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.6rem, 2.9vw, 1.95rem);
+  font-size: clamp(1.36rem, 2.47vw, 1.66rem);
   line-height: 1.35;
   color: var(--ink);
   max-width: 840px;
