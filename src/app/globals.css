@@ -5656,14 +5656,27 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   justify-content: center;
   margin-bottom: 1.25rem;
 }
+/* 2026-08-20, per Susan's "Path of Stones — Typographic Rebalance
+   Only" directive: the question was reading too dominant relative to
+   the Collection Compilation directly above it (now that the two
+   share one section, see HomeCollectionPremise.tsx). Desktop plateau
+   reduced ~17% (2.35rem -> 1.95rem); the min/vw terms are left
+   unchanged, so mobile and narrower-tablet sizing (already governed
+   by the 1.6rem floor and the 2.9vw ramp below the old plateau) is
+   unaffected -- only the point where the question stops growing and
+   holds at its desktop ceiling gets smaller. Bottom margin (gap to the
+   examples line below) also tightened, 2.25rem -> 1.75rem, per her
+   "bring the metaphor line somewhat closer... while preserving
+   generous breathing room" note. Wording, color, italics, alignment,
+   and the two-line composition are all unchanged. */
 .section2-question {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.6rem, 2.9vw, 2.35rem);
+  font-size: clamp(1.6rem, 2.9vw, 1.95rem);
   line-height: 1.35;
   color: var(--ink);
   max-width: 840px;
-  margin: 0 auto 2.25rem;
+  margin: 0 auto 1.75rem;
 }
 
 /* The three examples — a single compact line rather than a stacked
@@ -5671,13 +5684,23 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    vertical length). Same wall -> crossroads -> stepping-stone
    progression, carried by a subtle increase in weight toward the third
    phrase, not by iconography — the recognition statement immediately
-   below does the explanatory work the individual glosses used to do. */
+   below does the explanatory work the individual glosses used to do.
+   2026-08-20, per Susan's "Typographic Rebalance Only" directive: the
+   whole clamp scaled up ~15-18% (1rem/1.7vw/1.15rem ->
+   1.15rem/2vw/1.35rem) -- they were reading as fine-print supporting
+   copy rather than meaningful examples in their own right. Colors,
+   italics, weight progression, and alignment unchanged. */
 .section2-examples {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
   line-height: 1.8;
-  max-width: 620px;
+  /* Widened from 620px alongside the type-size increase above — at the
+     larger size, 620px forced an awkward mid-phrase wrap ("It" /
+     "became a stepping stone."). 900px holds the full line at typical
+     desktop widths, still centered comfortably inside .qac-inner's
+     1100px. */
+  max-width: 900px;
   margin: 0 auto 2rem;
 }
 .section2-examples__item {
