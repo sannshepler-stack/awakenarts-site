@@ -4,7 +4,7 @@ import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import SymbolsExperience from '@/components/SymbolsExperience'
-import SymbolsDeepen from '@/components/SymbolsDeepen'
+import SymbolsEncounters from '@/components/SymbolsEncounters'
 
 // /symbols — "Symbols for the Christian Soul" (built 2026-08-11, per
 // Susan's brief).
@@ -44,12 +44,18 @@ export default function SymbolsPage() {
 
         <SymbolsExperience />
 
-        {/* 2026-08-20, per Susan's "Christian Symbols — Placement of the
-            Four Developed Symbolic Territories" directive: the third
-            movement on this page, after Encounter the Symbols and Symbol
-            Vocabulary, before the Workshops handoff below. See
-            SymbolsDeepen.tsx for the full placement rationale. */}
-        <SymbolsDeepen />
+        {/* 2026-08-20, later the same day, per Susan's "Christian
+            Symbols — Reduce Vocabulary, Restore Encounters" directive:
+            SymbolsDeepen (four new prose essays recreating Journey/The
+            Deep/The Table/The Word from memory of an earlier draft) is
+            superseded by SymbolsEncounters — the same card-grid
+            entrance already established on /encounters/page.tsx,
+            linking to the real, already-built Journey/Deep/Table/Word
+            Encounter pages rather than re-explaining them. See that
+            component's own header comment for the full reasoning.
+            SymbolsDeepen.tsx itself is left in the codebase, unused,
+            per no-silent-deletion. */}
+        <SymbolsEncounters />
 
         <section className="symbols-continuation" aria-label="Continue to Workshops">
           <Link href="/workshops" className="home-coll-cta home-coll-cta--light-surface">

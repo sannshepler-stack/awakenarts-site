@@ -1,3 +1,17 @@
+// SUPERSEDED 2026-08-20, later the same day, per Susan's "Christian
+// Symbols — Reduce Vocabulary, Restore Encounters" directive: this
+// component recreated Journey/The Deep/The Table/The Word as four new
+// prose essays, built from a draft document's copy rather than the
+// already-established Encounters experience. Her explicit correction:
+// "I would have Claude reuse what exists rather than recreate it from
+// our memory of it. That protects the work we've already done." See
+// SymbolsEncounters.tsx (now used in src/app/symbols/page.tsx instead)
+// — it links directly to the real /encounters/journey, /encounters/
+// deep, /encounters/table, /encounters/word pages via the same
+// card-grid entrance already built for /encounters/page.tsx, rather
+// than re-authoring their content. This file is left in the codebase,
+// unused, per the standing no-silent-deletion practice.
+//
 // SymbolsDeepen — "Following a Symbol Further," the third movement on
 // /symbols, per Susan's "Christian Symbols — Placement of the Four
 // Developed Symbolic Territories" directive (2026-08-20).
