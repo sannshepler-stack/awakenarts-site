@@ -207,10 +207,17 @@ export default function WorkshopsPage() {
             groups, and other places where people gather around art, language,
             story, and reflection.
           </p>
+          {/* 2026-08-20, per Susan's direct instruction: "AwakenArts is an
+              artistic and educational practice, not counseling or
+              therapy." moves here to lead this paragraph, ahead of "These
+              are not separate packaged programs..." -- relocated from the
+              qualifications paragraph below, where it previously opened
+              that paragraph instead. */}
           <p className={styles.body}>
-            These are not separate packaged programs. They are different ways
-            the same living practice can meet a particular group, place, and
-            occasion.
+            AwakenArts is an artistic and educational practice, not
+            counseling or therapy. These are not separate packaged
+            programs. They are different ways the same living practice can
+            meet a particular group, place, and occasion.
           </p>
           <p className={styles.body}>
             Susan Ann Shepler is an artist, writer, Certified Transformative
@@ -219,16 +226,12 @@ export default function WorkshopsPage() {
             sustained work with image, poetry, symbolic language, and
             reflection.
           </p>
-          {/* 2026-08-20, per Susan's direct instruction: paragraph now
-              opens with "AwakenArts is an artistic and educational
-              practice, not counseling or therapy." -- the "Her
-              qualifications..." clause follows instead of leading. The
-              "Learn more about her background" link is cut for now, to
-              be added back later. */}
+          {/* 2026-08-20: "Learn more about her background" link is still
+              cut for now, per Susan's earlier instruction -- to be added
+              back later. */}
           <p className={styles.body}>
-            AwakenArts is an artistic and educational practice, not
-            counseling or therapy. Her qualifications inform the care and
-            craft with which she holds a gathering.
+            Her qualifications inform the care and craft with which she
+            holds a gathering.
           </p>
 
           <div className={styles.closing}>
