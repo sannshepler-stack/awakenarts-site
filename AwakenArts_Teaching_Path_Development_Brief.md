@@ -1,6 +1,6 @@
 # AwakenArts Editions — Teaching Path Development Brief
 
-**Status: Governing document. Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Establishes the permanent development checklist for how every stone of the AwakenArts Path is researched. Remaining stones are built one at a time in subsequent passes — this document deliberately does not generate the whole Path at once. Amended 2026-08-20, twice, same day: first to reconcile the nine-part Stone Template with `AwakenArts_Path_Standard.md`'s "Laying the Stones" crossing sequence; then, per Susan's own sharper restatement, to state plainly that the nine-part template is a development checklist, not yet the Path — a stone is only complete once its participant crossing is produced alongside its research foundation, not afterward. Stone One currently satisfies the checklist and is not yet a completed stone under this definition — see the honest status note below.**
+**Status: Governing document. Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Establishes the permanent development checklist for how every stone of the AwakenArts Path is researched. Remaining stones are built one at a time in subsequent passes — this document deliberately does not generate the whole Path at once. Amended 2026-08-20, three times, same day: first to reconcile the nine-part Stone Template with `AwakenArts_Path_Standard.md`'s "Laying the Stones" crossing sequence; then, per Susan's own sharper restatement, to state plainly that the nine-part template is a development checklist, not yet the Path; then to add the Program-level "AwakenArts, A Path of Stones" principle, the foundational homepage question, the Familiar-Language Field Edition requirement, the First Participant Crossing pattern, the Edition Facilitation Map, and the three coordinated participant-materials instruments. Stone One currently satisfies the nine-part checklist and is not yet a completed stone under the Laying-the-Stones definition — see the honest status note below.**
 
 **Purpose of this document, in Susan's own words:** "all the other standardization directives were meant to keep the system from reverting to old material when formulating new material... We can work from this brief at least until we are able to set a foundation from which to move forward and stop 'designing' a method that already exists — now referred to as a program where the method exists as part of it." AwakenArts is not inventing a method. It is demonstrating one that already exists in established thought, image by image, stone by stone.
 
@@ -20,6 +20,20 @@ research → understand the work → establish the teaching path → script → 
 
 ---
 
+## AwakenArts, A Path of Stones
+
+*Added 2026-08-20, per Susan's direct instruction — the developing Program-level principle beneath everything else in this document. This is a working map, not a finished one. Do not prematurely freeze it as branded stages — it must continue to be tested against Jung's process of individuation and against materially different AwakenArts works, not just Dragon.*
+
+**The AwakenArts works themselves provide the substantive places of encounter.** An image-poem is not assigned significance in order to make it useful. Its image, language, metaphor, rhythm, rhyme, form, relationships, recognizability, affect, and symbolic substance are investigated because the creative work may contain meaning beyond the creator's immediate conscious awareness. The Path develops through increasing awareness of what the work reveals — not through meaning AwakenArts supplies to the work from outside it.
+
+**The working movement:**
+
+IMAGE → LANGUAGE → RECOGNITION → AWARENESS → INTEGRATION → WHOLENESS → CONNECTION
+
+This is a developing Program map, tested here for the first time against one work (Dragon) and one figure's fire/speech field. It is not yet confirmed as the shape every AwakenArts work will reveal — per `AwakenArts_Figure_Research_and_Development_Standard.md`'s standing correction, movement is *found* in each work, not imposed on it, and this seven-term movement is a hypothesis to keep testing, not a template to apply.
+
+---
+
 ## The Homepage — The Program Entrance
 
 The homepage must establish immediately what territory AwakenArts occupies and why that territory matters.
@@ -34,7 +48,13 @@ The homepage must establish immediately what territory AwakenArts occupies and w
 
 This is not merely homepage language. It states the premise of the Program. Wholeness and connection are not promotional benefits — they arise from the movement toward awareness and integration that gives archetypal work its consequence. The homepage then begins demonstrating that premise through the same stones participants will encounter more fully throughout the Program.
 
-*(Implementation note, not yet actioned: this hero language has not been checked against the current live homepage copy or built into the site. That is a separate, later step — this document establishes the content, not the build.)*
+**The foundational homepage question, added 2026-08-20, approved homepage language:**
+
+> Do we use metaphors so routinely that we sometimes stop noticing the images inside our own language?
+
+This question expresses a primary purpose of AwakenArts: AwakenArts brings imaginal and metaphorical language back into conscious view through its image-poems. **Do not attach a particular metaphor — fire, Dragon, or any other — to this homepage question.** Specific metaphor fields belong within individual Editions (see "The Familiar-Language Field," below), not on the homepage itself, which speaks to the Program's premise in general before any single work is introduced.
+
+*(Implementation note: as of this amendment, this hero and question language has been checked against the live homepage and is being implemented — see the Documentation Map and AGENTS.md for the implementation record.)*
 
 ---
 
@@ -114,6 +134,58 @@ Now we have something to investigate — not because AwakenArts announced its me
 
 ---
 
+## The Familiar-Language Field — An Edition Requirement
+
+*Added 2026-08-20, per Susan's direct instruction.* **Every Edition must research and develop a substantial Familiar-Language Field surrounding its important images** — the metaphors, idioms, figures of speech, familiar sayings, literary expressions, biblical expressions, and culturally established uses already built around that image in ordinary language. This is not a decorative word list. It provides an early participant crossing by demonstrating that symbolic and metaphorical thought already participates in ordinary language, before any AwakenArts-specific material is introduced — the same discipline Stone One establishes at the Program level (Johnson, Bryant, Jung), now required at the Edition level for each work's own specific image.
+
+**For Dragon, the developing fire/speech field** (preserved from Stone One's working example and expanded here; research and continue expanding rather than treating this as exhaustive):
+
+fiery words · heated words · heated argument · inflammatory language · inflammatory remark · breathing fire · spitting fire · fired up · burning with anger · burning resentment · words that burn · tempers flared · argument flared up · fiery speech · sparked an argument · kindled anger · fanning the flames · adding fuel to the fire · smoldering resentment · playing with fire · a fire in the belly · light a fire under (someone) · catch fire · trial by fire · baptism by fire · fire back · return fire · under fire · hold your fire · fire away · misfire · backfire · a spark of an idea · ignite passion · carry a torch for (someone) · scorched-earth (approach) · where there's smoke there's fire · burn bridges · slow burn · burn out · a burning question · a burning desire · light a fire in (someone)
+
+Each Edition's own field must be researched fresh against that Edition's own images — this list is Dragon's, not a template to reuse verbatim for Queen Ann or any other Figure.
+
+---
+
+## The First Participant Crossing
+
+*Added 2026-08-20, per Susan's direct instruction.* **Dragon's first participation should arise from familiar metaphor rather than abstract symbolic interpretation.** Working example:
+
+> What does "adding fuel to the fire" mean? Can you give an example of when we might use that expression? Do we use metaphors so routinely that we sometimes stop noticing the images inside our own language?
+
+**The purpose is not to obtain a correct answer.** The participant recognizes that she already understands and uses imaginal language. Only afterward does the Edition place that familiar language into relationship with the Dragon image and ask how the image appears to coincide with that language.
+
+**This is fundamentally different from asking "What does the Dragon mean to you?"** That question asks for interpretation before any ground has been prepared for it — exactly the premature-symbolism failure this whole governance track exists to correct. **Do not revert to generic image-response prompts.** The Familiar-Language Field crossing above is the required first move; a generic open-ended "what does this mean to you" is not a substitute for it, however similar the two might look on a slide.
+
+---
+
+## The Edition Facilitation Map
+
+*Added 2026-08-20, per Susan's direct instruction. This is a working map — do not manufacture workshop content merely to fill every heading, and do not treat the sequence as locked until it has been tested against real material.*
+
+The working Edition experience now begins:
+
+IMAGE → FOUNDATIONAL AUTHOR / QUOTATION → FAMILIAR-LANGUAGE FIELD → EARLY PARTICIPATION THROUGH RECOGNIZABLE METAPHOR → RETURN TO / DEEPEN THE IMAGE → RELATED OR AMPLIFYING IMAGERY → ENCOUNTER THE POEM → CLOSE READING OF WORD / LINE / RHYTHM / RHYME / METAPHOR / GRAMMAR / IMAGE → ARCHETYPAL AMPLIFICATION → CHRISTIAN / BIBLICAL COUNTERPART WITHIN THE SAME SYMBOLIC FIELD → LOCATE THE WORK WITHIN THE PATH OF AWARENESS / INDIVIDUATION → PERSONAL RELEVANCE / PERSONAL MYTH → INTEGRATION → WHOLENESS & CONNECTION
+
+This is the Edition-level expression of "AwakenArts, A Path of Stones" above, and should be read alongside it rather than as a separate structure: the Program-level movement (IMAGE → LANGUAGE → RECOGNITION → AWARENESS → INTEGRATION → WHOLENESS → CONNECTION) is the shorter, Program-wide hypothesis; this fourteen-step map is its current, working, Dragon-tested elaboration at the Edition level. Neither is frozen. Both must be tested against materially different works before either is treated as settled Program architecture.
+
+---
+
+## Participant Materials — Three Coordinated Instruments
+
+*Added 2026-08-20, per Susan's direct instruction. Establishes function only — none of these three materials is produced by this document.*
+
+Each developed Edition should anticipate three coordinated participant/teaching instruments:
+
+- **Presentation** — shows, juxtaposes, enlarges, reveals, and teaches.
+- **Participant Syllabus** — allows the participant to follow the intellectual and symbolic journey and preserves sources/references.
+- **Edition Journal** — provides private space for personal engagement, introduced only after sufficient material has been developed to warrant it.
+
+**The poem is provided to participants as part of their materials, positioned so the image encounter can precede reading the poem.** The poem may then be available for participants to follow when it is read aloud — consistent with the Edition Facilitation Map above, where ENCOUNTER THE POEM follows the image, the foundational quotation, and the familiar-language crossing, rather than opening the experience.
+
+**Do not produce these materials yet.** This section establishes their function within the governing documents so that, when production is authorized, it proceeds from an already-settled understanding of what each instrument is for — consistent with this Program's standing rule that no production precedes understanding.
+
+---
+
 ## The Stone Template
 
 Every stone built after this one — beginning with Stone Two, in a future, separate pass — must contain all nine of the following before it is considered built:
@@ -167,8 +239,10 @@ This document establishes the Program-level teaching sequence, states the homepa
 
 **Stone One is not yet a completed stone.** Under Susan's corrected working instruction, completing a stone means producing its participant crossing together with its research foundation — not the checklist now and the crossing later. Stone One currently has the checklist only: Entry State and Exit State are not yet separately named, and Facilitator Movement/Participant Discovery are not yet split out from the single Participant Movement framing used in the checklist draft above. This is the actual next task, named here rather than deferred indefinitely.
 
-**It does not build Stone Two or any stone after it.** Per Susan's direct instruction, the remaining stones are built one at a time, sequentially, in separate passes — not generated as a complete Path in a single AI pass. It does not implement the homepage hero copy on the live site. It does not complete the Jung quotation bank beyond the one verified, attributed, participant-ready line recorded above. Each of these is real, identified, unfinished work, not silently folded into "complete."
+**It does not build Stone Two or any stone after it.** Per Susan's direct instruction, the remaining stones are built one at a time, sequentially, in separate passes — not generated as a complete Path in a single AI pass. It does not complete the Jung quotation bank beyond the one verified, attributed, participant-ready line recorded above. **It establishes, but does not produce, the Familiar-Language Field, the Edition Facilitation Map's content, or the three participant-materials instruments** — these are governing-document function statements, not built Edition materials. Each of these is real, identified, unfinished work, not silently folded into "complete."
+
+**The homepage hero and the foundational metaphor question are, as of this amendment, being implemented on the live site** — see the Documentation Map and AGENTS.md for the implementation record and localhost verification.
 
 ---
 
-*Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Amended twice the same day with the Laying-the-Stones crossing sequence and its sharpened restatement. Governing.*
+*Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Amended three times the same day: the Laying-the-Stones crossing sequence, its sharpened restatement, and the Path of Stones/Familiar-Language Field/Edition Facilitation Map expansion. Governing.*

@@ -1,6 +1,6 @@
 # AwakenArts — The Path Standard
 
-**Status: Governing correction. Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Governs the whole of AwakenArts — every page, Figure, workshop, and piece of writing — not a single Figure, edition, or page. Amended 2026-08-20, twice, same day: first with the "Laying the Stones" operational definition of a completed crossing, then with Susan's own sharper restatement (see "What It Means for a Stone to Be Laid," below, now recorded in her verbatim language). The nine-part development checklist for gathering a stone's research lives in `AwakenArts_Teaching_Path_Development_Brief.md` — it is preparatory, not itself the Path.**
+**Status: Governing correction. Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Governs the whole of AwakenArts — every page, Figure, workshop, and piece of writing — not a single Figure, edition, or page. Amended 2026-08-20, three times, same day: first with the "Laying the Stones" operational definition of a completed crossing, then with Susan's own sharper restatement (see "What It Means for a Stone to Be Laid," below), then with the explicit five-tier governing relationship across the whole system (see "Standing Relationship to Other Governing Documents," below). The nine-part development checklist, the Program-level Path-of-Stones movement, and the Edition Facilitation Map all live in `AwakenArts_Teaching_Path_Development_Brief.md` — this document governs what forward movement means; that one develops and tests it.**
 
 ---
 
@@ -59,6 +59,14 @@ Read this precisely, because each clause carries weight:
 
 ## Standing Relationship to Other Governing Documents
 
+**The governing relationship across the full system, stated explicitly, per Susan's 2026-08-20 instruction:**
+
+1. **`AwakenArts_Path_Standard.md` (this document) governs what constitutes forward movement** — the three-part test, and the eight-part definition of a completed crossing. It does not itself supply any Figure's content.
+2. **`AwakenArts_Teaching_Path_Development_Brief.md` develops and tests the Path** — the Program-level "AwakenArts, A Path of Stones" movement, the nine-part development checklist, the Familiar-Language Field requirement, and the Edition Facilitation Map all live there, as the working discipline every stone and every Edition is built through.
+3. **Edition research establishes the substance of each work** — `AwakenArts_Figure_Research_and_Development_Standard.md` and each Figure's own symbol/facilitation research (e.g. `Dragon_Symbol_Research.md`, `AwakenArts_Facilitation_Method_Research.md`) supply the actual content a stone is built from.
+4. **Edition facilitation documents determine how that particular work carries participants across the stones** — script, sequencing, and the specific Entry/Exit States a given Figure's material produces.
+5. **Presentation, syllabus, and journal serve that established facilitation path** — they do not determine it. Per `AwakenArts_Teaching_Path_Development_Brief.md`'s "Participant Materials" section, production of these three instruments follows only after the facilitation path above is settled. **Do not allow presentation production to determine teaching architecture.**
+
 - **`AwakenArts_Production_Charter.md`** remains supreme. This document sharpens and makes testable a concept the Charter's Addendum A already names ("The Path's role") — it does not compete with or amend the Charter's authority.
 - **`AwakenArts_Editorial_Philosophy.md`**'s reader journey (Encounter → Notice → Recognize → Reflect → Respond → Return to Ordinary Life) is very likely the shape of a single stone, or of the sequence within a Figure — worth confirming explicitly in a future pass, not decided here.
 - **`AwakenArts_Figure_Research_and_Development_Standard.md`** governs how the *content* of a stone is researched and authored before it is built. This document governs whether the resulting stone — and everything built around it — actually belongs on the Path at all. The two are complementary: one is about getting a stone's content right; this one is about whether something should be a stone, a crossing, an invitation, or nothing.
@@ -79,4 +87,4 @@ Whether and when to pursue either question is Susan's decision.
 
 ---
 
-*Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Amended twice the same day with the Laying-the-Stones definition of a completed crossing and its sharpened restatement. Governing.*
+*Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Amended three times the same day: the Laying-the-Stones definition of a completed crossing, its sharpened restatement, and the explicit five-tier governing relationship across the system. Governing.*
