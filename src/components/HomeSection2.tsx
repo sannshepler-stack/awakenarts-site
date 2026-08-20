@@ -68,6 +68,11 @@ import Link from 'next/link'
  * in globals.css changed. See that rule's own comment for the full
  * reasoning, including the pixel-sampling that confirmed the poem
  * card's true background is white, not var(--cream).
+ *
+ * 2026-08-20, later still, copy-only change: .section2-dark__sub's
+ * text replaced -- "Each workshop opens a different world of image,
+ * poetry, story, and reflection." -> "Image and language can reveal
+ * what experience has been trying to tell us." Styling untouched.
  */
 export default function HomeSection2() {
   return (
@@ -97,7 +102,7 @@ export default function HomeSection2() {
 
           <h3 className="section2-dark__title">Workshops</h3>
           <p className="section2-dark__sub">
-            Each workshop opens a different world of image, poetry, story, and reflection.
+            Image and language can reveal what experience has been trying to tell us.
           </p>
           <p className="section2-dark__worlds">
             Dragon &middot; Bowls &middot; Ballerina &middot; Grismere &middot; Poppy &middot; Queen Ann
