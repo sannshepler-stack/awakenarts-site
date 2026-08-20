@@ -6029,12 +6029,19 @@ form { display: flex; flex-direction: column; gap: 1rem; }
       together they read as the thin stack of paper a real open book
       has, without any perspective, tilt, or mockup effect. Book stays
       fully frontal, per "keep the book essentially frontal." */
+/* 2026-08-20, per Susan: "Reduce only the vertical gap between the
+   Queen Ann open-book image and the 'Workshops' heading by
+   approximately 15-20px." margin-bottom only, via calc() on top of
+   the existing 2.75rem value (-18px, mid-range) so the prior value is
+   traceable, not replaced outright. .section2-dark__title's own
+   margin, the gaps between title/sub/worlds/CTA below, and the
+   section's own padding-bottom are all untouched. */
 .section2-dark__pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
   max-width: 600px;
-  margin: 0 auto 2.75rem;
+  margin: 0 auto calc(2.75rem - 18px);
   background: #fff;
   border-radius: 3px;
   box-shadow:
