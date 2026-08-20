@@ -283,9 +283,7 @@ export default function HomePage() {
             </span>
             <br />
             <span className="hero-mission__body">
-              AwakenArts brings story, poetry, and image together to
-              explore the experiences that shape us and lead us toward
-              connection and possibility.
+              AwakenArts explores what our stories tell us.
             </span>
           </p>
 
