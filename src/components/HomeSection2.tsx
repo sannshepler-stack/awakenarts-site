@@ -55,6 +55,19 @@ import Link from 'next/link'
  * the cream band's .qac-poem-solo/.qac-spread__text usage are both
  * superseded by this pass — left defined in globals.css, unused, per
  * no-silent-deletion.
+ *
+ * 2026-08-20, later the same day, per Susan's "Make the queen ann
+ * image 40% larger and put both pages/images on a background that
+ * matches the poem background and make it look like a book" follow-
+ * up: the pair grows 40% as a unit (portrait and poem card already
+ * shared one aspect ratio and size, so scaling both keeps them equal-
+ * height "pages") and the two separately bordered/shadowed cards
+ * become one continuous white "book" surface with a spine shadow at
+ * the seam. No JSX/markup change was needed for this pass — same two
+ * images, same structure, only .section2-dark__pair and its children
+ * in globals.css changed. See that rule's own comment for the full
+ * reasoning, including the pixel-sampling that confirmed the poem
+ * card's true background is white, not var(--cream).
  */
 export default function HomeSection2() {
   return (
