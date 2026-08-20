@@ -69,9 +69,21 @@ export default function WorkshopsPage() {
     <>
       <Nav />
 
+      {/* 2026-08-20, per Susan's "Collection Image — Dual Use" directive:
+          testing the same Collection artwork already used on the homepage
+          (see page.tsx, "AwakenArts, A Path of Stones") as this page's top
+          visual, to establish that workshops arise from Susan's existing
+          body of image-poem work. This is a placement test only — the
+          prior header image (ambiance-bible-2.png) is not deleted, just
+          swapped out here; nothing else on the page is redesigned around
+          it. AtmosphericHeader is built for full-bleed landscape images
+          (~21:6-21:7, object-fit: cover) and collection-cover-clean.png is
+          portrait (1122x1402), so object-fit: cover will crop it to a
+          vertical center slice at this height — flagged for review rather
+          than solved unprompted. */}
       <AtmosphericHeader
-        src="/images/library/ambiance-bible-2.png"
-        alt="An open journal with a sketched figure, stacked books, and dried botanicals, overlooking hills at sunset — a quiet place for shared reflection."
+        src="/images/collection/collection-cover-clean.png"
+        alt="The AwakenArts Collection — the gathered body of image-poem work each workshop draws from."
         fadeTo="#f5f0e8"
       />
 
