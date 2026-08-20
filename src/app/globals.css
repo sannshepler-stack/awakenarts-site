@@ -11250,8 +11250,12 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   max-width: 880px;
   margin: 0 auto;
   /* Top cut from 3rem to 1.5rem 2026-08-11 — paired with the transition's
-     own reduced padding above, per Susan's vertical-rhythm request. */
-  padding: 1.5rem 2rem 1rem;
+     own reduced padding above, per Susan's vertical-rhythm request.
+     Bottom cut from 1rem to 0 2026-08-20, per her "close the gap
+     somewhat between the Symbol Vocabulary and the From Symbol to
+     Experience passage" request — paired with .symbols-vocab-reveal's
+     own reduced margin-top/min-height below. */
+  padding: 1.5rem 2rem 0;
 }
 .symbols-vocab-heading {
   font-family: var(--sans);
@@ -11315,13 +11319,22 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 /* Fixed reveal area — height reserved at every breakpoint so the word
-   field above never reflows when content appears below it. */
+   field above never reflows when content appears below it.
+   2026-08-20, per Susan's "close the gap somewhat between the Symbol
+   Vocabulary and the From Symbol to Experience passage" request:
+   min-height trimmed 168px -> 128px and margin-top 2.5rem -> 1.5rem —
+   still comfortably fits every symbol's fixed 3-item meanings line
+   (name + "A · B · C" + reference, each a single short line at this
+   section's 880px container width) without wrapping, so the
+   no-reflow guarantee this box exists for is unaffected; it's just a
+   smaller reserved footprint. Mobile keeps its own taller 200px
+   min-height (see the max-width: 640px override below), untouched. */
 .symbols-vocab-reveal {
-  min-height: 168px;
+  min-height: 128px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   padding: 0 1rem;
   text-align: center;
   border-top: 1px solid rgba(28, 43, 58, 0.1);
