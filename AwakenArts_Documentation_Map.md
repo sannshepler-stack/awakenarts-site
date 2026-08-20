@@ -23,6 +23,11 @@ The supreme governing document for all AwakenArts planning and implementation �
 
 These are the authoritative documents for ongoing AwakenArts production, subordinate to the Charter above. Consult these before acting on any question of identity, sequencing, building, or publishing.
 
+### 1. Figure Research Method
+
+**`AwakenArts_Figure_Research_and_Development_Standard.md`** — *Governing correction. Issued 2026-08-20.*
+Precedes everything below it for any Figure not yet built. AwakenArts no longer treats a Figure's symbolic content as a scaffold for participant reflection prompts — a Figure is researched and understood as a symbolic field (poem, language, cultural/literary association, human pattern) before any workshop content is written. Defines the production sequence every Figure workshop now follows: research the symbol + research the facilitation method → understand the poem/image → establish the workshop purpose → script → visual direction → participant materials → deck → test. Governs Queen Ann and every Figure after it from the start; does not retroactively invalidate Dragon's current governing document or presentation. Read this before beginning any new Figure's workshop development, and before further Dragon workshop content work.
+
 ### 1. Identity and Design
 
 **`AwakenArts_Editorial_Identity_and_Design_Standard.md`** — *Locked 2026-06-25.*
@@ -179,6 +184,7 @@ These terms are settled. Once a term is established here, it does not change —
 | Question | Document to consult |
 |---|---|
 | What governs everything else? What are current production priorities? | `AwakenArts_Production_Charter.md` |
+| What must be researched before a Figure's workshop content is written? | `AwakenArts_Figure_Research_and_Development_Standard.md` |
 | What does AwakenArts stand for? What are its values and identity? | `AwakenArts_Editorial_Identity_and_Design_Standard.md` |
 | What should be built next? What phase are we in? | `AwakenArts_Production_Roadmap.md` |
 | How is a specific page built on the site? | `AwakenArts_Site_Architecture.md` |

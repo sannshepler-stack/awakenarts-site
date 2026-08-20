@@ -2,6 +2,14 @@
 
 > **Read this file first. Then read `AWAKENARTS_CURRENT_MATERIALS.md`, the authoritative current-working-set map. For workshop, Dragon, Companion/facilitator, participant-material, and workshop-related website work, read the New AwakenArts Paradigm (`/Users/sashe/Desktop/Dragon Pass One.docx`) and `AwakenArts_Dragon_Paradigm_Audit_and_Map.md` before older standards. Consult `AwakenArts_Documentation_Map.md` for non-conflicting subordinate guidance, but do not let its earlier Edition-led architecture silently override current governance.**
 
+## Goal 3 governance correction — August 20, 2026
+
+AwakenArts no longer treats a Figure's symbolic content as a scaffold for participant reflection prompts. A Figure is researched and understood as a symbolic field — poem, language, cultural/literary association, human pattern — before any workshop content is written. Facilitation does not add depth to a Figure; it helps participants encounter and work with depth already established through that research.
+
+- `AwakenArts_Figure_Research_and_Development_Standard.md` is the governing document for this correction. Read it before beginning workshop development for any Figure not yet built (Queen Ann next), and before any further Dragon workshop content work.
+- The production sequence it defines — research the symbol + research the facilitation method → understand the poem/image → establish the workshop purpose → script → visual direction → participant materials → deck → test — governs the order of Figure workshop development from this point forward. Do not begin script, visual, or deck work ahead of the research steps that precede it.
+- This does not retroactively invalidate Dragon's current governing document or presentation; it governs what comes next. See the standard document for the distinction.
+
 ## Goal 2 governance correction — August 13, 2026
 
 The repository contains valuable documents from several AwakenArts phases. Newer filenames and labels such as “Final,” “Good Copy,” or “Current Production” do not by themselves establish authority.
@@ -34,6 +42,7 @@ The current governing set, in consultation order:
 | Question | Document |
 |---|---|
 | What governs the current working set and conflict order? | `AWAKENARTS_CURRENT_MATERIALS.md` — **read first** |
+| What must be researched before any Figure's workshop content is written? | `AwakenArts_Figure_Research_and_Development_Standard.md` — **read before starting Queen Ann or any further Dragon workshop content work** |
 | What governs workshop purpose, sequence, and deliverables? | `/Users/sashe/Desktop/Dragon Pass One.docx` — **New AwakenArts Paradigm** |
 | What maps current Dragon/site material to that paradigm? | `AwakenArts_Dragon_Paradigm_Audit_and_Map.md` |
 | What governs general production where it does not conflict with the New Paradigm? | `AwakenArts_Production_Charter.md` |
@@ -77,6 +86,7 @@ The current governing set, in consultation order:
 - **The work is primary.** Every change to imagery, copy, or components serves the symbolic work, not the other way around.
 - **Restraint is the posture.** When in doubt: less is more. The site should feel like a carefully edited publication, not a marketing website.
 - **Symbolic forms are authored, not generated.** Do not propose AI generation of figures, poems, or symbolic content. Atmospheric imagery may use AI generation; symbolic figures may not.
+- **Depth comes from research, not facilitation.** A Figure is researched and understood as a symbolic field — poem, language, cultural/literary association, human pattern — before any workshop content is written. Facilitation surfaces depth already established through that research; it does not manufacture depth on its own. See `AwakenArts_Figure_Research_and_Development_Standard.md`.
 - **No explaining what should be encountered.** The site invites recognition; it does not explain the work before the visitor has met it.
 - **One concrete target per pass.** Inspect → identify one target → make the change → verify locally → commit. Do not simultaneously rewrite routes, nav, metadata, and copy in one pass.
 - **Repository-anchored work only.** A change is real only when it is implemented in the repo, locally verifiable, and committed.
