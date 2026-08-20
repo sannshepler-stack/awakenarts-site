@@ -27,6 +27,16 @@ Workshop development begins only once that substance is established, and is *dev
 
 ---
 
+## How the Developmental Movement Is Found, Not Imposed
+
+*Correction, 2026-08-20, per Susan's direct instruction:* AwakenArts does not impose a self-development process upon symbolic works. It works with the developmental movement that symbolic and archetypal material itself can reveal — from what lies beyond awareness toward recognition, understanding, integration, wholeness, and connection.
+
+This qualifies Steps 2 and 3 below. Researching the facilitation method (Step 2) is not a search for an external developmental template to select and apply — it is a search for methods capable of *supporting* whatever movement the Figure's own poem, image, and symbolic field (Step 1) already reveal. Understanding the poem/image (Step 3) comes first and governs; a facilitation method's own stage structure — VTS's developmental levels, Kolb's four-stage cycle, a workshop's own prior stage architecture — is a resource that may illuminate that movement. It is never a mold the Figure is poured into.
+
+In practice: when a general framework's shape turns out to resemble a Figure's own revealed movement — as `AwakenArts_Facilitation_Method_Research.md` found with Dragon's existing stages and Kolb's Experiential Learning Cycle — that resemblance is worth recording as a resonance and a piece of confirming evidence, the same way amplification treats a mythological parallel to a poem's image. It is not evidence that the general framework is what generated, or should govern, the Figure's own structure. The test of whether a stage belongs is never "does this match an established model." It is whether the stage follows the movement the specific poem and image actually make.
+
+---
+
 ## The Production Sequence
 
 Every Figure workshop — Dragon's development from here forward, and every Figure after it — follows this order. No step is skipped, and no step is front-loaded ahead of the one before it:

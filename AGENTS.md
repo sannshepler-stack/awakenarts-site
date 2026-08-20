@@ -2,6 +2,14 @@
 
 > **Read this file first. Then read `AWAKENARTS_CURRENT_MATERIALS.md`, the authoritative current-working-set map. For workshop, Dragon, Companion/facilitator, participant-material, and workshop-related website work, read the New AwakenArts Paradigm (`/Users/sashe/Desktop/Dragon Pass One.docx`) and `AwakenArts_Dragon_Paradigm_Audit_and_Map.md` before older standards. Consult `AwakenArts_Documentation_Map.md` for non-conflicting subordinate guidance, but do not let its earlier Edition-led architecture silently override current governance.**
 
+## Goal 5 governance correction — August 20, 2026
+
+AwakenArts does not impose a self-development process upon symbolic works. It works with the developmental movement that symbolic and archetypal material itself can reveal — from what lies beyond awareness toward recognition, understanding, integration, wholeness, and connection.
+
+- This is recorded as a new section in `AwakenArts_Figure_Research_and_Development_Standard.md` ("How the Developmental Movement Is Found, Not Imposed"), qualifying that document's Steps 2–3. Researching a facilitation method is not choosing an external stage template to apply; it is finding methods able to support whatever movement the Figure's own poem, image, and symbolic field already reveal.
+- When a general framework's shape resembles a Figure's own stage architecture — as `AwakenArts_Facilitation_Method_Research.md` found between Dragon's stages and Kolb's Experiential Learning Cycle — record the resemblance as a resonance, the way amplification treats a mythological parallel. Never treat it as the reason the architecture takes the shape it does. That correction is recorded in place in the research document itself, not silently rewritten, per this project's standing convention.
+- The test for whether a stage belongs is never "does this match an established model." It is whether the stage follows the movement the specific poem and image actually make.
+
 ## Goal 4 governance correction — August 20, 2026
 
 The AwakenArts Path is the sequence of stones by which a person can move from encountering symbolic material toward greater capacity to understand the images, language, patterns, and personal myths through which human experience takes shape. Every AwakenArts element — page, Figure, workshop stage, piece of copy, image, or line of facilitator script — must do at least one of three things: help set a stone, help someone cross it, or give them a reason to continue. An element that does none of the three does not belong, regardless of how polished or interesting it is on its own terms.

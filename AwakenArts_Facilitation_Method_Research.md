@@ -40,9 +40,11 @@ A structured, nonclinical journaling method developed by psychologist Ira Progof
 
 ## IV. Kolb's Experiential Learning Cycle
 
+**Correction, 2026-08-20, per Susan's direct instruction, recorded here rather than silently rewritten:** the paragraph below originally presented Kolb's cycle as validating the existing stage architecture because the two "match, stage for stage." That framing has it backward. Per the new section added to `AwakenArts_Figure_Research_and_Development_Standard.md` the same day — "AwakenArts does not impose a self-development process upon symbolic works. It works with the developmental movement that symbolic and archetypal material itself can reveal" — Kolb's cycle is not the authority a stage sequence should be built or judged against. What follows is retained as a recorded resonance, not a governing rationale.
+
 David Kolb's four-stage adult-learning model — Concrete Experience → Reflective Observation → Abstract Conceptualization → Active Experimentation, cycling rather than terminating — is the standard, widely credentialed framework for adult experiential education generally, unconnected to any clinical or therapeutic tradition.
 
-**This maps with unusual precision onto AwakenArts' own stage architecture as a whole**, not just onto one stage: Encounter/Association/Story-Poem is Concrete Experience; Disruption/Meta Shift/Recognition is Reflective Observation moving toward Abstract Conceptualization; Conscious Language is the naming that completes Abstract Conceptualization; Application is, exactly, Active Experimentation; Return is the cycle beginning again rather than a terminus — which is itself a genuinely Kolbian point (the cycle repeats; it does not conclude), and a real piece of independent confirmation that the workshop's own "Return" stage is structurally sound rather than a sentimental bookend. This is the single clearest instance in this research of Susan's own diagnosis proving true in the gentler direction: an entire architecture built through iterative design turns out to already match, stage for stage, an established and citable adult-education model. It did not need to be replaced. It needed to be named.
+**Where a resemblance is worth recording, held as a resonance, not a source of authority:** Encounter/Association/Story-Poem resembles Concrete Experience; Disruption/Meta Shift/Recognition resembles Reflective Observation moving toward Abstract Conceptualization; Conscious Language resembles the naming that completes Abstract Conceptualization; Application resembles Active Experimentation; Return resembling a reopened cycle rather than a terminus is a genuinely Kolbian shape. But the governing question for whether Return belongs, or takes this shape, is not "does it match Kolb" — it is whether re-opening, rather than concluding, is what Dragon's own poem and image actually call for. (Dragon's own closing image — two sides of a coin, per `Dragon_Symbol_Research.md` — is itself never fully resolved into one settled side; a coin doesn't stop being two-sided once you've seen both faces. That the poem's own image resists closure is better evidence for an open "Return" than Kolb's cycle is.) Kolb is retained here as a citable, nonclinical adult-education vocabulary a facilitator may find useful — not as the reason the architecture takes the shape it does.
 
 ---
 
@@ -67,6 +69,8 @@ James Pennebaker's paradigm — writing about emotionally significant material f
 ---
 
 ## Where This Leaves the Existing Stage Architecture
+
+**Read the table below as a table of resonances, not a table of validation.** Per the correction above, no row in this table is evidence that its named method generated, or should govern, the stage next to it. Each row records where an established, citable practice and a stage of Dragon's own architecture point in a similar direction — useful for a facilitator choosing how to hold a moment, not authority for why the moment exists or what shape it must take. That authority belongs to the poem and image alone (`Dragon_Symbol_Research.md`), read for the developmental movement they themselves reveal.
 
 Naming methods against `Dragon_Workshop_Development.docx`'s existing STAGES (Encounter, Association, Story/Poem, Disruption, Meta Shift, Recognition, Conscious Language, Application, Return):
 
