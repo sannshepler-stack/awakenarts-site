@@ -5404,16 +5404,23 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    .home-recognition__statement, and .home-recognition__cta below. */
 
 /* ── HOMEPAGE: A PATH OF STONES ───────────────────────────────────────────
-   2026-08-20, per Susan's "Incorporate the Path of Stones Across
-   AwakenArts + Homepage" directive. New section between the Hero and A
-   Path of Recognition. Cream field (matches the Hero's own #f5f0e8 and
-   A Path of Recognition's cream ground immediately below it, so the
-   three read as one continuous opening movement rather than competing
-   bands) with a thin gold hairline top border, the same seam-marking
+   2026-08-20, per Susan's "Homepage Section 2" directive (supersedes
+   this same day's earlier draft, which had a single supporting line in
+   place of the three metaphor examples below). New section between the
+   Hero and A Path of Recognition. Cream field (matches the Hero's own
+   #f5f0e8 and A Path of Recognition's cream ground immediately below
+   it) with a thin gold hairline top border, the same seam-marking
    device already used at .home-coll-section and .home-recognition.
-   Restrained: eyebrow label, the question as the section's one
-   prominent statement, one short supporting line, the reused Collection
-   cover image, one framed-link CTA — no second explanatory paragraph. */
+
+   The question is the section's one large statement. The three
+   metaphor examples (wall -> crossroads -> stepping stone) are set as
+   plain quote/gloss pairs in a single left-aligned reading column, no
+   boxes/cards/numbering — per Susan's explicit instruction, their
+   progression should be perceptible without turning the section into a
+   diagram. Perceptibility is carried by two quiet typographic moves
+   only: reading order, and a slight increase in color/weight across
+   the three items so the third (stepping stone / forward movement)
+   reads as the sequence's arrival. */
 .path-of-stones-section {
   background: #f5f0e8;
   padding: var(--band-gap-sm) 2rem var(--band-gap-sm);
@@ -5437,11 +5444,73 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .path-of-stones-question {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-size: clamp(1.6rem, 2.9vw, 2.35rem);
   line-height: 1.35;
   color: var(--ink);
   max-width: 720px;
-  margin: 0 0 1.5rem;
+  margin: 0 0 3rem;
+}
+
+/* The three examples — a plain reading column, not a grid of cards.
+   Left-aligned even though the rest of the section is centered: a
+   quote/gloss pair reads more naturally left-aligned, and the column
+   itself stays centered within the section via margin: 0 auto. */
+.path-of-stones-examples {
+  list-style: none;
+  margin: 0 0 3rem;
+  padding: 0;
+  max-width: 480px;
+  width: 100%;
+  text-align: left;
+}
+
+.path-of-stones-examples__item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(28, 43, 58, 0.1);
+}
+
+.path-of-stones-examples__item:first-child {
+  padding-top: 0;
+}
+
+.path-of-stones-examples__item--last {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.path-of-stones-examples__phrase {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: rgba(28, 43, 58, 0.62);
+  margin: 0 0 0.4rem;
+}
+
+.path-of-stones-examples__gloss {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(28, 43, 58, 0.6);
+  margin: 0;
+}
+
+/* Second item — slightly stronger than the first (the sequence is
+   underway: a decision, a journey). */
+.path-of-stones-examples__item:nth-child(2) .path-of-stones-examples__phrase {
+  color: var(--ink);
+}
+.path-of-stones-examples__item:nth-child(2) .path-of-stones-examples__gloss {
+  color: rgba(28, 43, 58, 0.72);
+}
+
+/* Third item — full weight, gold-accented: forward movement, the
+   sequence's arrival, not just another example in the list. */
+.path-of-stones-examples__item--last .path-of-stones-examples__phrase {
+  color: var(--gold);
+  font-weight: 500;
+}
+.path-of-stones-examples__item--last .path-of-stones-examples__gloss {
+  color: var(--ink);
 }
 
 .path-of-stones-body {
@@ -5489,6 +5558,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 @media (max-width: 640px) {
   .path-of-stones-section { padding: var(--band-gap-sm) 1.5rem; }
   .path-of-stones-image__img { width: 200px; }
+  .path-of-stones-examples { max-width: 100%; }
 }
 
 /* ── HOMEPAGE: A PATH OF RECOGNITION ─────────────────────────────────────

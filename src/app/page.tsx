@@ -413,26 +413,30 @@ export default function HomePage() {
       </section>
 
       {/* ── A PATH OF STONES ─────────────────────────────────────
-          2026-08-20, per Susan's "Incorporate the Path of Stones Across
-          AwakenArts + Homepage" directive: new section, placed directly
-          after the Hero and before A Path of Recognition. Targeted
-          implementation only — hero premise, then this section, then
-          the existing homepage architecture continues unchanged below.
+          2026-08-20, per Susan's "Homepage Section 2: AwakenArts, A
+          Path of Stones" directive: participant-facing introduction to
+          the Program, placed directly after the Hero and before A Path
+          of Recognition. Supersedes this same day's earlier draft of
+          this section (single supporting line, no metaphor examples) —
+          see AwakenArts_Teaching_Path_Development_Brief.md's "The
+          Homepage — The Program Entrance" for the approved language and
+          why this specific sequence (three examples, in this order,
+          not a random or expanded set) was chosen.
 
-          Presents the Program-level foundational question (approved
-          homepage language, per AwakenArts_Teaching_Path_Development_
-          Brief.md, "The Homepage — The Program Entrance") without
-          attaching it to any specific metaphor field (fire, Dragon, or
-          otherwise — those belong within individual Editions). Reuses
-          the existing Collection cover asset (/images/collection/
-          collection-cover-clean.png, already in use in the Collection
-          section below) rather than generating a new image — presented
-          here as the substantive work the Path is traveled through, not
-          a portfolio montage. Working heading only, per Susan's own
-          note: "we do not yet need to declare it a permanent tagline."
-          CTA routes to the same destination the Collection section
-          below already uses (/workshops#current-workshops) — no new
-          destination invented for this section. */}
+          The foundational question is given substantial visual
+          presence (largest text in the section). The three metaphor
+          examples are set as plain, unboxed quote/gloss pairs in a
+          single reading column — no numbered badges, no cards, no
+          step diagram — so their wall -> crossroads -> stepping-stone
+          progression (pain/separation -> journey/choice -> movement
+          forward) is perceptible through reading order and a subtle
+          increase in visual weight toward the third example, not
+          through iconography. Bridge copy, then the reused Collection
+          cover asset (/images/collection/collection-cover-clean.png,
+          already in use in the Collection section below — not
+          duplicated as a file, not regenerated, proportions preserved)
+          as the section's visual evidence, then one CTA into the
+          existing Workshops route. */}
       <section className="path-of-stones-section" aria-labelledby="path-of-stones-heading">
         <div className="path-of-stones-inner">
           <p className="eyebrow">AwakenArts, A Path of Stones</p>
@@ -440,11 +444,33 @@ export default function HomePage() {
             Do we use metaphors so routinely that we sometimes stop
             noticing the images inside our own language?
           </h2>
+
+          <ul className="path-of-stones-examples">
+            <li className="path-of-stones-examples__item">
+              <p className="path-of-stones-examples__phrase">&ldquo;We&rsquo;ve put up walls.&rdquo;</p>
+              <p className="path-of-stones-examples__gloss">
+                Something painful between us becomes a barrier we can almost see.
+              </p>
+            </li>
+            <li className="path-of-stones-examples__item">
+              <p className="path-of-stones-examples__phrase">&ldquo;I&rsquo;m at a crossroads.&rdquo;</p>
+              <p className="path-of-stones-examples__gloss">
+                A decision becomes a place on a journey.
+              </p>
+            </li>
+            <li className="path-of-stones-examples__item path-of-stones-examples__item--last">
+              <p className="path-of-stones-examples__phrase">&ldquo;It became a stepping stone.&rdquo;</p>
+              <p className="path-of-stones-examples__gloss">
+                An experience becomes something we can stand on to move forward.
+              </p>
+            </li>
+          </ul>
+
           <p className="path-of-stones-body">
-            AwakenArts brings that imaginal and metaphorical language
-            back into conscious view — through image-poems, the
-            substantive works the Path is traveled through.
+            The images are already there. We use them to give shape to
+            experiences we are trying to understand.
           </p>
+
           <div className="path-of-stones-image">
             <Image
               src="/images/collection/collection-cover-clean.png"
@@ -455,8 +481,9 @@ export default function HomePage() {
               loading="lazy"
             />
           </div>
+
           <Link href="/workshops#current-workshops" className="path-of-stones-cta">
-            Explore the Works <span aria-hidden="true">→</span>
+            Explore Workshops <span aria-hidden="true">→</span>
           </Link>
         </div>
       </section>

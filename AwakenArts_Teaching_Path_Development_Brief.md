@@ -1,6 +1,6 @@
 # AwakenArts Editions — Teaching Path Development Brief
 
-**Status: Governing document. Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Establishes the permanent development checklist for how every stone of the AwakenArts Path is researched. Remaining stones are built one at a time in subsequent passes — this document deliberately does not generate the whole Path at once. Amended 2026-08-20, three times, same day: first to reconcile the nine-part Stone Template with `AwakenArts_Path_Standard.md`'s "Laying the Stones" crossing sequence; then, per Susan's own sharper restatement, to state plainly that the nine-part template is a development checklist, not yet the Path; then to add the Program-level "AwakenArts, A Path of Stones" principle, the foundational homepage question, the Familiar-Language Field Edition requirement, the First Participant Crossing pattern, the Edition Facilitation Map, and the three coordinated participant-materials instruments. Stone One currently satisfies the nine-part checklist and is not yet a completed stone under the Laying-the-Stones definition — see the honest status note below.**
+**Status: Governing document. Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Establishes the permanent development checklist for how every stone of the AwakenArts Path is researched. Remaining stones are built one at a time in subsequent passes — this document deliberately does not generate the whole Path at once. Amended 2026-08-20, four times, same day: to reconcile the nine-part Stone Template with the Laying-the-Stones crossing sequence; to state plainly the checklist is not yet the Path; to add the Program-level "AwakenArts, A Path of Stones" principle, the Familiar-Language Field requirement, the First Participant Crossing pattern, the Edition Facilitation Map, and the participant-materials instruments; and finally to record the homepage's approved Section 2 language in full — the three metaphor examples (wall/crossroads/stepping stone), their sequence rationale, and the bridge copy — as the first public demonstration of the First Participant Crossing principle. Stone One currently satisfies the nine-part checklist and is not yet a completed stone under the Laying-the-Stones definition — see the honest status note below.**
 
 **Purpose of this document, in Susan's own words:** "all the other standardization directives were meant to keep the system from reverting to old material when formulating new material... We can work from this brief at least until we are able to set a foundation from which to move forward and stop 'designing' a method that already exists — now referred to as a program where the method exists as part of it." AwakenArts is not inventing a method. It is demonstrating one that already exists in established thought, image by image, stone by stone.
 
@@ -52,9 +52,23 @@ This is not merely homepage language. It states the premise of the Program. Whol
 
 > Do we use metaphors so routinely that we sometimes stop noticing the images inside our own language?
 
-This question expresses a primary purpose of AwakenArts: AwakenArts brings imaginal and metaphorical language back into conscious view through its image-poems. **Do not attach a particular metaphor — fire, Dragon, or any other — to this homepage question.** Specific metaphor fields belong within individual Editions (see "The Familiar-Language Field," below), not on the homepage itself, which speaks to the Program's premise in general before any single work is introduced.
+This question expresses a primary purpose of AwakenArts: AwakenArts brings imaginal and metaphorical language back into conscious view through its image-poems. **Do not attach a particular Edition's metaphor — fire, Dragon, or any other — to this homepage question.** Specific metaphor fields belong within individual Editions (see "The Familiar-Language Field," below), not on the homepage itself, which speaks to the Program's premise in general before any single work is introduced.
 
-*(Implementation note: as of this amendment, this hero and question language has been checked against the live homepage and is being implemented — see the Documentation Map and AGENTS.md for the implementation record.)*
+**The three homepage metaphor examples, added 2026-08-20, approved Section 2 language — supersedes the single-line supporting copy this section originally carried:**
+
+> "We've put up walls." — Something painful between us becomes a barrier we can almost see.
+>
+> "I'm at a crossroads." — A decision becomes a place on a journey.
+>
+> "It became a stepping stone." — An experience becomes something we can stand on to move forward.
+
+**Present these three, in this order, and only these three.** Do not substitute other metaphors and do not expand this into a generic metaphor lesson. The sequence is intentional and is itself the point being demonstrated: **WALL → CROSSROADS → STEPPING STONE**, or **pain/separation → journey/choice → movement forward**. A visitor should be able to feel the progression by reading the three in order, without the section explaining that a progression is happening.
+
+**Bridge copy, following the three examples, preceding the Collection image:**
+
+> The images are already there. We use them to give shape to experiences we are trying to understand.
+
+*(Implementation note: as of this amendment, this hero, question, three-example sequence, and bridge copy have been checked against the live homepage and implemented as Section 2 — see the Documentation Map and AGENTS.md for the implementation record.)*
 
 ---
 
@@ -155,6 +169,10 @@ Each Edition's own field must be researched fresh against that Edition's own ima
 **The purpose is not to obtain a correct answer.** The participant recognizes that she already understands and uses imaginal language. Only afterward does the Edition place that familiar language into relationship with the Dragon image and ask how the image appears to coincide with that language.
 
 **This is fundamentally different from asking "What does the Dragon mean to you?"** That question asks for interpretation before any ground has been prepared for it — exactly the premature-symbolism failure this whole governance track exists to correct. **Do not revert to generic image-response prompts.** The Familiar-Language Field crossing above is the required first move; a generic open-ended "what does this mean to you" is not a substitute for it, however similar the two might look on a slide.
+
+**The governing principle, stated generally, added 2026-08-20:** Familiar metaphor is an early participant crossing. The examples selected for an Edition must have direction and prepare perception for the symbolic work that follows — they are not an interchangeable, decorative word list, and they are not selected at random. A metaphor field earns its place in the crossing by moving somewhere (see "The Familiar-Language Field," above, and the sequence rationale below), not merely by being recognizable.
+
+**The homepage's own three examples — "We've put up walls," "I'm at a crossroads," "It became a stepping stone" (see "The Homepage — The Program Entrance," above) — are recorded here as the first public demonstration of this principle**, at the Program level rather than a single Edition's: WALL → CROSSROADS → STEPPING STONE, pain/separation → journey/choice → movement forward. Unlike Dragon's fire/speech field (an Edition-specific Familiar-Language Field, all drawn from one image), the homepage three are deliberately general — no single image dominates them — because the homepage speaks to the Program's premise before any specific work is introduced. When building a future Edition's own Familiar-Language Field and First Crossing, both this Dragon example and the homepage's three-example sequence are the working models: the Dragon example shows how one image's own field is mined and sequenced; the homepage three show how a short sequence can carry a felt direction (here, toward movement forward) without any accompanying explanation of that direction.
 
 ---
 
