@@ -2,62 +2,64 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 /*
- * HomeSection2 — Workshops (dark band only).
+ * HomeSection2 — Workshops + Queen Ann.
  *
  * 2026-08-20, per Susan's "Homepage Section #2 — Integration Job"
  * directive: originally built as one integrated section combining
  * "AwakenArts, A Path of Stones" (light/premise band) with this dark
- * Workshops/practice band, replacing two formerly separate homepage
- * sections that both duplicated the same content and CTA. See git
- * history for that pass's full rationale.
+ * Workshops/practice band. See git history for that pass's rationale.
  *
- * 2026-08-20, later the same day, per Susan's follow-up "Section Two /
- * Section Three" directive: the Path of Stones light band is pulled
- * back out of this component and moved into HomeCollectionPremise.tsx
- * instead, where it now follows the Collection Compilation directly
- * (Section 2). Queen Ann gets her own dedicated section in between
- * (HomeQueenAnn.tsx, Section 3). This component keeps only the dark
- * Workshops band — now Section 4 in the page's running order — and is
- * otherwise unchanged: same image, same copy, same CTA. The component
- * name is left as HomeSection2 rather than renamed, to avoid unrelated
- * file churn; its role going forward is "Workshops," not "Section 2."
+ * 2026-08-20, later the same day, per Susan's "Section Two / Section
+ * Three" directive: the Path of Stones light band moved out to
+ * HomeCollectionPremise.tsx; Queen Ann got her own dedicated section
+ * (HomeQueenAnn.tsx) between this component and the Compilation.
  *
- * CONTENT PRESERVED VERBATIM: Workshops as the destination; the
- * anchoring fact that each workshop is anchored in a different Figure
- * Edition; the six current workshop worlds (Dragon, Bowls, Ballerina,
- * Grismere, Poppy, Queen Ann); and the route to Workshops (View
- * Current Workshops ->).
+ * 2026-08-20, later still, per Susan's "revise the architecture"
+ * directive: Queen Ann moves again — out of her own independent
+ * section and into this one. Her reasoning: Ann is a Figure Edition/
+ * workshop world, so she can demonstrate what the workshop material
+ * actually looks like instead of interrupting the Collection -> Path
+ * of Stones progression with a floating third homepage chapter. "She
+ * becomes the concrete example: one of those different worlds looks
+ * like this." The page is now three movements after the Hero, not
+ * five: THE WORK (HomeCollectionPremise) -> THE EXPERIENCE (this
+ * component) -> THE SCRIPTURAL FIELD (HomeChristianSymbols, which now
+ * also absorbs Matthew — see that component's own comment).
  *
- * IMAGE: 2026-08-20, per Susan's "Homepage Recomposition — Architecture
- * and Asset Placement" directive: the Collection BOOK COVER
- * (collection-cover-clean.png, vertical, pale, featuring Ann) belongs
- * here, in the navy Workshops band — it reads well against navy and
- * creates continuity with the Workshops destination page, where the
- * same cover already appears. The Collection COMPILATION
- * (collection-banner-02.png, the wide gallery-wall banner) lives in
- * HomeCollectionPremise.tsx instead — her explicit instruction was not
- * to confuse the two assets or use either one twice.
+ * STRUCTURE: one <section>, two bands. Navy carries the invitation —
+ * book cover, "Each workshop opens a different world...," the six
+ * Figure Edition names, and the CTA ("View Current Workshops ->"),
+ * unchanged from the prior pass, in that order per Susan's explicit
+ * sequence ("Then the Figure Edition names and CTA. Queen Ann follows
+ * as part of this workshop movement"). Cream carries Ann herself,
+ * directly beneath — reuses .qac-section/.qac-inner and the existing
+ * .qac-ann__title/.qac-spread/.qac-excerpt/.qac-pdf-link classes
+ * verbatim from HomeQueenAnn.tsx (now unused, left in place per the
+ * standing no-silent-deletion practice), just retitled from h2 to h3
+ * since Ann is no longer her own document section, and CTA-less as
+ * before. COLOR CHOICE (Susan's explicit discretion: "I would let
+ * Claude determine whether Ann remains within navy or transitions
+ * back to cream, but conceptually she belongs to Workshops"): cream —
+ * her poem+portrait spread, text card, and PDF link were all
+ * originally designed against a light field, and a light/dark/light
+ * rhythm reads Workshops-the-invitation (navy, CTA-driven) and
+ * Ann-the-example (cream, quiet, close reading) as two different
+ * postures within one movement, rather than trying to force her
+ * onto navy. Flagged here as a judgment call, not an assumed
+ * settlement.
  *
- * HIERARCHY: per her explicit instruction, "Figure Editions" does not
- * appear as its own eyebrow/label competing with "Workshops" as though
- * a separate offering. Workshops is named once, as this band's own
- * heading; Figure Edition appears only inside the explanatory
- * sentence, correctly subordinate to Workshops.
- *
- * ONE CTA: "View Current Workshops ->" — this band's single point of
- * arrival.
+ * IMAGE: the Collection BOOK COVER (collection-cover-clean.png)
+ * belongs in the navy band — see prior pass's comment for the full
+ * asset-map rationale. Unchanged.
  *
  * Former light-band CSS (.section2-light*, .section2-question,
- * .section2-examples*, .section2-recognition) is left in place in
- * globals.css, now reused directly by HomeCollectionPremise.tsx rather
- * than orphaned — see that component's own comment. .section2-dark*
- * below is unchanged. .home-coll-cta remains a shared, multi-page
- * button component reused sitewide.
+ * .section2-examples*, .section2-recognition) remains in place,
+ * reused by HomeCollectionPremise.tsx. .section2-dark* is unchanged.
  */
 export default function HomeSection2() {
   return (
     <section className="section2" aria-label="Workshops">
-      {/* ── Dark band — the practice ─────────────────────────── */}
+      {/* ── Navy band — the invitation ───────────────────────── */}
       <div className="section2-dark">
         <div className="section2-dark__inner">
           <div className="section2-dark__image">
@@ -82,6 +84,51 @@ export default function HomeSection2() {
           <Link href="/workshops#current-workshops" className="home-coll-cta">
             View Current Workshops <span aria-hidden="true">→</span>
           </Link>
+        </div>
+      </div>
+
+      {/* ── Cream band — the example ──────────────────────────
+          Queen Ann, demonstrating what one workshop world actually
+          looks like. Not a new independent chapter — see this file's
+          own header comment. */}
+      <div className="qac-section">
+        <div className="qac-inner">
+
+          <h3 className="qac-ann__title">Queen Ann</h3>
+
+          <div className="qac-spread">
+            <div className="qac-spread__text">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/forms/ann-text-dark-crop.png"
+                alt="Queen Ann — the poem, rendered in concrete poetry form"
+                className="qac-spread__poem-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="qac-spread__frame">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/forms/queen-ann-still.png"
+                alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <p className="qac-excerpt">
+            when the night strikes with silver light&hellip;
+          </p>
+          <p className="qac-pdf-link">
+            <a
+              href="/files/poems/Queen_Ann_Poem.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download the Poem (PDF) <span aria-hidden="true">→</span>
+            </a>
+          </p>
+
         </div>
       </div>
     </section>

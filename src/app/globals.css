@@ -5177,6 +5177,19 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    Spacing Fix" above) to read as a quiet closing meditation, not a
    standard editorial paragraph: a role-appropriate variant, not an
    invented one-off. Content (all copy) is unchanged. */
+/* 2026-08-20, per Susan's "revise the architecture" directive: this
+   section is no longer Matthew's own closing meditation — it's now the
+   opening of the merged Christian Symbols section (see
+   HomeChristianSymbols.tsx). .hero-quote-body ("AwakenArts works
+   within that same tradition.") and .hero-quote-closing ("Read the
+   Foundation of AwakenArts ->") are no longer rendered here; the verse
+   and citation now lead directly into "Scripture Speaks in Symbols"
+   (.poems-showcase-foundation__symbols, below .poems-showcase-
+   foundation__inner) instead of a bridge sentence and a second CTA.
+   Both classes are left defined, unused, per no-silent-deletion — see
+   HomeChristianSymbols.tsx's own comment for the full rationale,
+   including the flagged judgment call on removing the Foundation
+   link. */
 .poems-showcase-foundation {
   /* 2026-07-14, AwakenArts Atmosphere System: briefly given its own
      Soft Light (pale parchment) background to distinguish it from the
@@ -5235,6 +5248,22 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   margin: 0 auto;
   padding: 0 2rem;
   text-align: center;
+}
+
+/* 2026-08-20, per Susan's "revise the architecture" directive: the
+   wrapper introducing "Scripture Speaks in Symbols" directly beneath
+   the Matthew citation, inside the same .poems-showcase-foundation__
+   inner container (no separate background/padding of its own — this
+   is one continuous section, not two bands). .hero-quote-cite's own
+   margin-bottom (43px) was tuned to bind verse/citation/body as "one
+   thought" when .hero-quote-body sat here; now that a different
+   typographic block (the reused .home-recognition__header/-statement
+   pairing) follows instead, this margin-top gives it room to read as
+   Scripture "developing" the citation's thought rather than
+   continuing the same tight grouping. .home-recognition__header's own
+   inner spacing (title -> statement gap, etc.) is otherwise unchanged. */
+.poems-showcase-foundation__symbols {
+  margin-top: 2.75rem;
 }
 
 @media (max-width: 1024px) {
@@ -5976,6 +6005,18 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    that's the Recognition -> Queen Ann intro seam, explicitly out of
    scope for this pass. Responsive tiers below and at this rule's
    existing 640px override. */
+/* 2026-08-20, per Susan's "revise the architecture" directive:
+   .home-recognition and .home-recognition__inner (this rule and the
+   next) are superseded — HomeChristianSymbols.tsx no longer wraps its
+   content in them. Their job (cream background, section padding,
+   outer width constraint) is now supplied by .poems-showcase-
+   foundation/-foundation__inner instead, since Christian Symbols and
+   Matthew now share one section rather than each supplying their own.
+   The typography classes below (.home-recognition__header, -statement,
+   -statement-navy/-gold, -encounters-image, -cta, -cta--after-image)
+   ARE still active, reused directly inside .poems-showcase-
+   foundation__inner — see that component's own comment. Both rules
+   left defined, unused, per no-silent-deletion. */
 .home-recognition {
   background: var(--cream);
   padding: 3.5rem 2rem 4.5rem;
