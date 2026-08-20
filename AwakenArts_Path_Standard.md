@@ -1,6 +1,6 @@
 # AwakenArts — The Path Standard
 
-**Status: Governing correction. Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Governs the whole of AwakenArts — every page, Figure, workshop, and piece of writing — not a single Figure, edition, or page. Amended 2026-08-20, same day, with the "Laying the Stones" operational definition of a completed crossing (see "What It Means for a Stone to Be Laid," below) — the content template for building that crossing lives in `AwakenArts_Teaching_Path_Development_Brief.md`.**
+**Status: Governing correction. Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Governs the whole of AwakenArts — every page, Figure, workshop, and piece of writing — not a single Figure, edition, or page. Amended 2026-08-20, twice, same day: first with the "Laying the Stones" operational definition of a completed crossing, then with Susan's own sharper restatement (see "What It Means for a Stone to Be Laid," below, now recorded in her verbatim language). The nine-part development checklist for gathering a stone's research lives in `AwakenArts_Teaching_Path_Development_Brief.md` — it is preparatory, not itself the Path.**
 
 ---
 
@@ -38,20 +38,20 @@ Read this precisely, because each clause carries weight:
 
 ## What It Means for a Stone to Be Laid
 
-*Correction, 2026-08-20, per Susan's direct instruction — "Laying the Stones," incorporated system-wide.* Test item 2 above — "help someone cross a stone" — has, until now, been stated without saying what a successful crossing actually requires. That gap is closed here. It is not closed by adding more research or more activity; both, on their own, have already been tried and both, on their own, are insufficient.
+*Correction, 2026-08-20, per Susan's direct instruction — "Laying the Stones," incorporated system-wide. Sharpened same day, per Susan's own restatement, recorded here verbatim rather than paraphrased.* Test item 2 above — "help someone cross a stone" — has, until now, been stated without saying what a successful crossing actually requires. That gap is closed here. It is not closed by adding more research; research on its own has already been tried and is insufficient on its own.
 
-**A Path stone is not complete because its subject has been researched, or because an activity, prompt, or presentation section has been created.** Research alone does not constitute a completed stone. Activity alone does not constitute a completed stone. **A stone is laid only when AwakenArts can establish all eight of the following:**
+**A Path stone is not complete because its subject has been researched or because an activity, prompt, or presentation section has been created. Research alone does not constitute a completed stone.** A stone is laid when we know how a participant gets onto it, what happens while she is there, and why she is prepared to step from it onto the next one. For every stone document:
 
-1. **ENTRY STATE** — what the participant can presently see, know, recognize, or understand.
-2. **FOUNDATION** — the researched symbolic, archetypal, literary, Christian, psychological, or facilitative basis for the movement.
-3. **EDITION EVIDENCE** — the exact image, word, sentence, metaphor, symbolic relationship, or other material through which the movement is embodied.
-4. **FACILITATOR MOVEMENT** — what is shown, said, read, compared, asked, investigated, or revealed, and in what order.
-5. **PARTICIPANT DISCOVERY** — what the participant has an opportunity to recognize or understand, rather than simply being told.
-6. **WHY IT MATTERS TO YOU** — the consequential human relevance of the movement.
-7. **EXIT STATE** — what the participant can now see or understand that was less available before crossing the stone.
-8. **NEXT STONE** — why that new capacity or understanding prepares the participant to continue.
+1. **ENTRY STATE** — What does the participant know/understand before this stone?
+2. **FOUNDATION** — What establishes why this movement is legitimate?
+3. **EDITION EVIDENCE** — What exact image, word, sentence, metaphor or relationship embodies it?
+4. **FACILITATOR MOVEMENT** — What is shown, said, read, compared, asked or revealed, and in what order?
+5. **PARTICIPANT DISCOVERY** — What is the participant given an opportunity to recognize rather than simply being told?
+6. **WHY IT MATTERS** — What human consequence makes this worth knowing?
+7. **EXIT STATE** — What can the participant now see or understand that she could not see as clearly before?
+8. **NEXT STONE** — Why is she now prepared for the next movement?
 
-**This is now the operational definition of test item 2.** A stone "helps someone cross it" only when Entry State and Exit State can both be named, and are genuinely different from each other — the participant must arrive somewhere different from where she entered. A page, slide, or exercise that cannot state its own Entry State and Exit State has not yet earned the claim that it helps a participant cross anything, no matter how well-researched or well-produced it is.
+**This is now the operational definition of test item 2, and of "completing a stone" system-wide.** From this point forward, completing a stone means producing its participant crossing as well as its research foundation — together, not as research now and crossing later. A stone "helps someone cross it" only when Entry State and Exit State can both be named, and are genuinely different from each other — the participant must arrive somewhere different from where she entered. A page, slide, or exercise that cannot state its own Entry State and Exit State has not yet earned the claim that it helps a participant cross anything, no matter how well-researched or well-produced it is.
 
 **The Path is created through successful participant crossings — not through the existence of researched, well-produced material.** This is the system-wide governing rule beneath every document this correction touches: AwakenArts does not create activities and call them a Path. Each stone must be intellectually grounded, embodied in the work, consequential to the participant, facilitatable in a deliberate sequence, and capable of producing identifiable forward movement.
 
@@ -79,4 +79,4 @@ Whether and when to pursue either question is Susan's decision.
 
 ---
 
-*Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Amended the same day with the Laying-the-Stones definition of a completed crossing. Governing.*
+*Issued 2026-08-20, per Susan Ann Shepler's direct instruction. Amended twice the same day with the Laying-the-Stones definition of a completed crossing and its sharpened restatement. Governing.*
