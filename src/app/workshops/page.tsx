@@ -207,14 +207,10 @@ export default function WorkshopsPage() {
             groups, and other places where people gather around art, language,
             story, and reflection.
           </p>
-          {/* 2026-08-20, per Susan's direct instruction: non-breaking space
-              added before the paragraph's final word so "it" cannot wrap
-              onto its own line and orphan at the end of the section. */}
           <p className={styles.body}>
             These are not separate packaged programs. They are different ways
             the same living practice can meet a particular group, place, and
-            occasion. Each invitation is shaped in conversation with the
-            people who will host&nbsp;it.
+            occasion.
           </p>
           <p className={styles.body}>
             Susan Ann Shepler is an artist, writer, Certified Transformative
