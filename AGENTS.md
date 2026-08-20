@@ -2,6 +2,14 @@
 
 > **Read this file first. Then read `AWAKENARTS_CURRENT_MATERIALS.md`, the authoritative current-working-set map. For workshop, Dragon, Companion/facilitator, participant-material, and workshop-related website work, read the New AwakenArts Paradigm (`/Users/sashe/Desktop/Dragon Pass One.docx`) and `AwakenArts_Dragon_Paradigm_Audit_and_Map.md` before older standards. Consult `AwakenArts_Documentation_Map.md` for non-conflicting subordinate guidance, but do not let its earlier Edition-led architecture silently override current governance.**
 
+## Goal 4 governance correction — August 20, 2026
+
+The AwakenArts Path is the sequence of stones by which a person can move from encountering symbolic material toward greater capacity to understand the images, language, patterns, and personal myths through which human experience takes shape. Every AwakenArts element — page, Figure, workshop stage, piece of copy, image, or line of facilitator script — must do at least one of three things: help set a stone, help someone cross it, or give them a reason to continue. An element that does none of the three does not belong, regardless of how polished or interesting it is on its own terms.
+
+- `AwakenArts_Path_Standard.md` is the governing document for this correction. Read it to understand what a "stone" is, how the three-part test applies, and its open relationship to the site's current Path nav item and to the reader-journey and workshop-arc models in other governing documents.
+- Apply this test at commissioning and at review. If a slide, page, or stage cannot be named as setting a stone, helping someone cross one, or giving a reason to continue, cut it rather than justify it.
+- This governs the whole of AwakenArts, not a single Figure — it sits above the Goal 3 correction below, which governs how a single Figure's content is researched once it's clear a stone is being built.
+
 ## Goal 3 governance correction — August 20, 2026
 
 AwakenArts no longer treats a Figure's symbolic content as a scaffold for participant reflection prompts. A Figure is researched and understood as a symbolic field — poem, language, cultural/literary association, human pattern — before any workshop content is written. Facilitation does not add depth to a Figure; it helps participants encounter and work with depth already established through that research.
@@ -42,6 +50,7 @@ The current governing set, in consultation order:
 | Question | Document |
 |---|---|
 | What governs the current working set and conflict order? | `AWAKENARTS_CURRENT_MATERIALS.md` — **read first** |
+| What is the AwakenArts Path, and what test does every element have to pass? | `AwakenArts_Path_Standard.md` — **the standing scope test for any page, Figure, workshop stage, or piece of copy** |
 | What must be researched before any Figure's workshop content is written? | `AwakenArts_Figure_Research_and_Development_Standard.md` — **read before starting Queen Ann or any further Dragon workshop content work** |
 | What governs workshop purpose, sequence, and deliverables? | `/Users/sashe/Desktop/Dragon Pass One.docx` — **New AwakenArts Paradigm** |
 | What maps current Dragon/site material to that paradigm? | `AwakenArts_Dragon_Paradigm_Audit_and_Map.md` |
@@ -86,6 +95,7 @@ The current governing set, in consultation order:
 - **The work is primary.** Every change to imagery, copy, or components serves the symbolic work, not the other way around.
 - **Restraint is the posture.** When in doubt: less is more. The site should feel like a carefully edited publication, not a marketing website.
 - **Symbolic forms are authored, not generated.** Do not propose AI generation of figures, poems, or symbolic content. Atmospheric imagery may use AI generation; symbolic figures may not.
+- **Every element must set a stone, help someone cross one, or give a reason to continue.** The AwakenArts Path is a sequence of stones moving a person from encounter toward greater capacity to read symbolic material. A page, Figure, workshop stage, or piece of copy that does none of these three does not belong, however polished it is. See `AwakenArts_Path_Standard.md`.
 - **Depth comes from research, not facilitation.** A Figure is researched and understood as a symbolic field — poem, language, cultural/literary association, human pattern — before any workshop content is written. Facilitation surfaces depth already established through that research; it does not manufacture depth on its own. See `AwakenArts_Figure_Research_and_Development_Standard.md`.
 - **No explaining what should be encountered.** The site invites recognition; it does not explain the work before the visitor has met it.
 - **One concrete target per pass.** Inspect → identify one target → make the change → verify locally → commit. Do not simultaneously rewrite routes, nav, metadata, and copy in one pass.

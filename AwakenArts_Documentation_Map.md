@@ -23,6 +23,11 @@ The supreme governing document for all AwakenArts planning and implementation �
 
 These are the authoritative documents for ongoing AwakenArts production, subordinate to the Charter above. Consult these before acting on any question of identity, sequencing, building, or publishing.
 
+### 1. The Path Standard
+
+**`AwakenArts_Path_Standard.md`** — *Governing correction. Issued 2026-08-20.*
+Governs the whole of AwakenArts, not a single Figure or page. Defines the AwakenArts Path as the sequence of stones by which a person moves from encountering symbolic material toward greater capacity to understand the images, language, patterns, and personal myths through which human experience takes shape — and gives the standing three-part test for any element: it must help set a stone, help someone cross one, or give a reason to continue, or it does not belong. Sharpens a concept the Charter's Addendum A already names ("The Path's role") rather than competing with it. Read this before commissioning or reviewing any page, Figure, workshop stage, or piece of copy.
+
 ### 1. Figure Research Method
 
 **`AwakenArts_Figure_Research_and_Development_Standard.md`** — *Governing correction. Issued 2026-08-20.*
@@ -184,6 +189,7 @@ These terms are settled. Once a term is established here, it does not change —
 | Question | Document to consult |
 |---|---|
 | What governs everything else? What are current production priorities? | `AwakenArts_Production_Charter.md` |
+| What is the AwakenArts Path, and what test does every element have to pass? | `AwakenArts_Path_Standard.md` |
 | What must be researched before a Figure's workshop content is written? | `AwakenArts_Figure_Research_and_Development_Standard.md` |
 | What does AwakenArts stand for? What are its values and identity? | `AwakenArts_Editorial_Identity_and_Design_Standard.md` |
 | What should be built next? What phase are we in? | `AwakenArts_Production_Roadmap.md` |
