@@ -46,22 +46,23 @@ import Link from 'next/link'
  * sequence, since the recognition statement immediately after already
  * does the explanatory work the individual glosses used to carry.
  *
- * IMAGE: per her instruction not to let the same image appear twice and
- * to determine the single strongest use of it, rather than defaulting
- * to the asset already in hand — the single Collection cover
- * (collection-cover-clean.png, portrait, used by both former sections)
- * is dropped from this section entirely. The dark/practice band instead
- * uses the existing multi-work gallery-wall banner
- * (collection-banner-02.png, landscape, 1717x916 — previously live only
- * on the dead-code /collection page) once: it visually embodies "a
- * different Figure Edition" plurality (six named worlds) far better
- * than a single cover, which reads as one book, not six. The light/
- * premise band carries no image at all — its job is to make a visitor
- * notice language she already uses, which doesn't need art evidence;
- * the evidence belongs at the moment AwakenArts' actual body of work
- * appears, which is here. This is also a deliberate factor in the
- * section's new economy: removing an image from the premise band cuts
- * real vertical height, not just the examples' own compaction.
+ * IMAGE: 2026-08-20, per Susan's follow-up "Homepage Recomposition —
+ * Architecture and Asset Placement" directive, which supersedes this
+ * component's original image choice below. Her explicit asset map: the
+ * Collection BOOK COVER (collection-cover-clean.png, vertical, pale,
+ * featuring Ann) belongs here, in the navy Workshops band — it reads
+ * well against navy and creates continuity with the Workshops
+ * destination page, where the same cover already appears. The
+ * Collection COMPILATION (collection-banner-02.png, the wide gallery-
+ * wall banner) moved OUT of this component entirely and now lives in
+ * HomeQueenAnnCollection.tsx (Homepage Section 2, cream) instead — her
+ * explicit instruction was not to confuse the two assets or use either
+ * one twice. (Original rationale, superseded: this band briefly used
+ * the Compilation instead, reasoning that six framed works better
+ * represented "a different Figure Edition" plurality than one cover —
+ * corrected per her direct asset-map instruction above.) The light/
+ * premise band still carries no image — see the "no image" reasoning
+ * below, still accurate.
  *
  * HIERARCHY: per her explicit instruction, "Figure Editions" no longer
  * appears as its own eyebrow/label competing with "Workshops" as though
@@ -122,10 +123,10 @@ export default function HomeSection2() {
         <div className="section2-dark__inner">
           <div className="section2-dark__image">
             <Image
-              src="/images/collection/collection-banner-02.png"
-              alt="The AwakenArts Collection — poetic encounters in shape, symbol, and story — six framed visual-literary works displayed as a gallery wall"
-              width={1717}
-              height={916}
+              src="/images/collection/collection-cover-clean.png"
+              alt="AwakenArts Figure Editions — the changing symbolic worlds that anchor the workshops"
+              width={1122}
+              height={1402}
               className="section2-dark__img"
               loading="lazy"
             />

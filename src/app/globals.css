@@ -5421,6 +5421,175 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    only: reading order, and a slight increase in color/weight across
    the three items so the third (stepping stone / forward movement)
    reads as the sequence's arrival. */
+/* ── HOMEPAGE SECTION 2 — QUEEN ANN / THE ACTUAL WORKS ──────────────────
+   Added 2026-08-20, per Susan's "Homepage Recomposition" directive. See
+   HomeQueenAnnCollection.tsx for the full rationale. Cream field.
+
+   2026-08-20, later the same day, per Susan's "Reverse It" directive:
+   the section's internal order reverses — the Collection Compilation
+   now leads (its own baked-in title does the section's announcing, no
+   separate textual heading needed above it), Queen Ann follows,
+   presented as one selected work, quieter than the first pass. The
+   former three-line header (.qac-eyebrow / .qac-title / .qac-tagline)
+   is removed from the component entirely and replaced by a single
+   quiet identifier, .qac-ann__title. Those three classes are left
+   defined below, unused, rather than deleted — see HomeQueenAnnCollection
+   .tsx's own header comment for the full rationale (no-silent-deletion
+   convention). */
+.qac-section {
+  background: var(--cream);
+  padding: 4.5rem 2rem var(--band-gap-sm);
+  text-align: center;
+}
+.qac-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+/* Superseded 2026-08-20 "Reverse It" pass — no longer rendered by
+   HomeQueenAnnCollection.tsx. Left defined, unused, per the engagement's
+   standing no-silent-deletion practice. */
+.qac-eyebrow {
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.qac-title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.65vw, 2.1rem);
+  font-weight: var(--h2-weight);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--deep);
+  margin: 0 0 0.75rem;
+  line-height: 1.1;
+}
+.qac-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  line-height: 1.6;
+  color: var(--gold);
+  margin: 0 0 3rem;
+}
+
+/* .qac-ann — the quiet wrapper introducing Queen Ann beneath the
+   Compilation. .qac-ann__title is deliberately minimal: one small
+   italic serif line, no eyebrow, no uppercase tracking, no separate
+   tagline — "simply and elegantly," per Susan's own phrase, now that
+   the Compilation above it has already done the section's announcing. */
+.qac-ann {
+  margin-top: 3rem;
+}
+.qac-ann__title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.3rem, 1.9vw, 1.6rem);
+  color: var(--deep);
+  margin: 0 0 1.75rem;
+  line-height: 1.3;
+}
+
+/* The spread — same "facing pages of one open book" language as
+   before (equal height, equal importance, matching 2:3 frames).
+   2026-08-20 "Reverse It" pass: reduced again from the first pass's
+   620px, to 480px — per Susan's "Ann can be considerably quieter
+   underneath it" note now that the Compilation leads. Full readability
+   is preserved through the PDF link below, not through this display
+   size. */
+.qac-spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  max-width: 480px;
+  margin: 0 auto 1.5rem;
+}
+.qac-spread__frame {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(28, 43, 58, 0.12);
+}
+.qac-spread__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scaleX(-1);
+}
+.qac-spread__text {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  box-sizing: border-box;
+  border: 1px solid rgba(28, 43, 58, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem;
+}
+.qac-spread__poem-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+}
+
+.qac-excerpt {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.5;
+  color: var(--gold);
+  margin: 0 0 0.5rem;
+}
+.qac-pdf-link {
+  margin: 0 0 4rem;
+}
+.qac-pdf-link a {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(139, 105, 20, 0.35);
+  transition: color 0.2s ease-out, border-color 0.2s ease-out;
+}
+.qac-pdf-link a:hover,
+.qac-pdf-link a:focus-visible {
+  color: var(--deep);
+  border-color: var(--deep);
+}
+
+/* Collection Compilation — cropped to drop its own baked-in lower
+   caption band ("The Works are the Foundation... Explore the
+   Collection ->"), left over from its original /collection-page use.
+   This section has no CTA of its own, so that stale text would read
+   as a false one. Same technique as HomeSection2.tsx's dark-band image
+   (aspect-ratio + object-fit, no new imagery). */
+.qac-compilation {
+  max-width: 900px;
+  aspect-ratio: 1717 / 580;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 18px 50px rgba(28, 43, 58, 0.2);
+}
+.qac-compilation__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+@media (max-width: 640px) {
+  .qac-section { padding: 3rem 1.5rem 3rem; }
+  .qac-ann { margin-top: 2.25rem; }
+  .qac-spread { max-width: 280px; gap: 1rem; }
+  .qac-spread__poem-img { max-width: 130px; }
+  .qac-pdf-link { margin-bottom: 2.5rem; }
+}
+
 /* ── HOMEPAGE SECTION #2 — INTEGRATED PATH OF STONES + WORKSHOPS ───────
    Added 2026-08-20, per Susan's "Homepage Section #2 — Integration Job"
    directive. See HomeSection2.tsx for the full rationale. One section,
@@ -5514,22 +5683,22 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    since that text would otherwise read as a second, competing CTA
    sitting directly above this section's real one. Only the gallery-
    wall artwork itself (top ~63% of the 1717x916 source) is shown. */
+/* 2026-08-20, per Susan's "Homepage Recomposition" directive: reverted
+   to a portrait treatment for the Collection Book Cover (was briefly a
+   cropped landscape frame for the Compilation, which now lives in
+   HomeQueenAnnCollection.tsx instead). No crop needed — the cover
+   doesn't carry a stale caption band the way the Compilation does. */
 .section2-dark__image {
-  width: 100%;
-  max-width: 620px;
-  aspect-ratio: 1717 / 580;
-  overflow: hidden;
-  border-radius: 2px;
-  border: 1px solid rgba(201, 168, 76, 0.25);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
   margin-bottom: 2.5rem;
 }
 .section2-dark__img {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
+  width: 260px;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 2px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
 }
 .section2-dark__title {
   font-family: var(--serif);

@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
-import PathOfRecognition from '@/components/PathOfRecognition'
+import HomeQueenAnnCollection from '@/components/HomeQueenAnnCollection'
 import HomeSection2 from '@/components/HomeSection2'
+import HomeChristianSymbols from '@/components/HomeChristianSymbols'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 
@@ -96,6 +97,52 @@ export const metadata: Metadata = {
  * component content changed in this pass -- position only. See the
  * individual section comments below for each section's own updated
  * placement note.
+ *
+ * 2026-08-20, per Susan's "Homepage Recomposition — Architecture and
+ * Asset Placement" directive: supersedes every ordering above with a
+ * five-section architecture built around one guided progression --
+ * encounter an actual work, recognize the underlying principle, cross
+ * the biblical hinge, arrive at Scripture's own symbolic vocabulary:
+ *
+ *   1. Opening   — Hero. Unchanged.
+ *   2. Queen Ann / The Actual Works — HomeQueenAnnCollection.tsx, cream.
+ *                  NEW. Replaces the former standalone Queen Ann title
+ *                  band (.poems-showcase-intro) and Queen Ann Encounter
+ *                  (.poems-showcase-section), which are removed from
+ *                  this page entirely -- their content (title, tagline,
+ *                  poem+portrait spread, excerpt, PDF link) now lives
+ *                  in HomeQueenAnnCollection.tsx, reduced in scale and
+ *                  followed by the Collection Compilation image, so the
+ *                  visitor meets one actual image-poem before learning
+ *                  it belongs to a larger body of work. No CTA -- see
+ *                  that component's own header comment.
+ *   3. A Path of Stones -> Workshops — HomeSection2.tsx. Unchanged
+ *                  from the 2026-08-20 "Integration Job" pass, except
+ *                  its dark band's image is corrected back to the
+ *                  Collection Book Cover (collection-cover-clean.png)
+ *                  per Susan's explicit asset map -- see that
+ *                  component's own header comment for the full
+ *                  supersession note.
+ *   4. Foundation — Matthew 13:34, the biblical hinge. Same section,
+ *                  same copy; visual weight reduced (the `tall`
+ *                  AtmosphericHeader variant is dropped back to the
+ *                  site's standard header height) so it reads as a
+ *                  transitional threshold between Workshops and
+ *                  Christian Symbols, not another full promotional
+ *                  section. See that section's own comment below.
+ *   5. Christian Symbols — HomeChristianSymbols.tsx, cream. Replaces
+ *                  PathOfRecognition.tsx's former slot at the close of
+ *                  the page. PathOfRecognition itself is left in place
+ *                  in the codebase (unused by this page, per the
+ *                  engagement's standing no-silent-deletion practice)
+ *                  -- its old "Stories That Shape Us" / Encounters
+ *                  copy belonged to the retired Encounters architecture
+ *                  and does not carry forward. See that component's
+ *                  own header comment for the full rationale.
+ *   6. Footer.
+ *
+ * Revised order: Hero -> HomeQueenAnnCollection -> HomeSection2 ->
+ * Foundation -> HomeChristianSymbols -> WayfindingBand -> Footer.
  */
 
 export default function HomePage() {
@@ -412,6 +459,21 @@ export default function HomePage() {
 
       </section>
 
+      {/* ── QUEEN ANN / THE ACTUAL WORKS ─────────────────────────
+          2026-08-20, per Susan's "Homepage Recomposition" directive:
+          new section #2, directly beneath the Hero. Lets the visitor
+          encounter an actual AwakenArts image-poem (Queen Ann) before
+          learning it belongs to a larger body of work (the Collection
+          Compilation, revealed below it in the same section). Replaces
+          the former standalone Queen Ann title band and Queen Ann
+          Encounter that used to close the page (see the retired
+          sections' comments further down, kept for history where the
+          JSX itself has moved). See HomeQueenAnnCollection.tsx for the
+          full rationale — the reduced spread scale, the preserved PDF/
+          readable access, the no-CTA decision, and the Compilation
+          crop technique. */}
+      <HomeQueenAnnCollection />
+
       {/* ── HOMEPAGE SECTION #2 — INTEGRATED PATH OF STONES + WORKSHOPS
           2026-08-20, per Susan's "Homepage Section #2 — Integration
           Job" directive: the former "AwakenArts, A Path of Stones"
@@ -425,84 +487,50 @@ export default function HomePage() {
           integrated section; see HomeSection2.tsx for the complete
           rationale (content preserved verbatim, what was economized,
           the single-image decision, and the "Figure Editions must not
-          compete with Workshops" hierarchy fix). */}
+          compete with Workshops" hierarchy fix).
+          2026-08-20, per the follow-up "Homepage Recomposition"
+          directive: this is now page section #3 (Queen Ann/The Actual
+          Works, above, is the new section #2) — its own content and
+          image are otherwise unchanged. */}
       <HomeSection2 />
 
-      {/* ── A PATH OF RECOGNITION ────────────────────────────────
-          2026-08-07, per Susan's "Switch Matthew and A Path of
-          Recognition" directive: this section moves from after
-          Collection to section #2, directly beneath the Hero — trading
-          places with Foundation (Matthew 13:34), which now sits where
-          this section used to be (after Collection, before the Queen
-          Ann title band). Component, copy, and imagery are entirely
-          unchanged; only its position on the page moved.
-
-          2026-07-26, per Susan's "Repurpose the Existing Introductory
-          Section" directive: this used to be two separate sections —
-          "The AwakenArts Method" (Stage 3, Understanding; first added
-          2026-07-10, most recently living right here after Collection)
-          and a standalone "A Path of Recognition" section placed
-          earlier, right after the Hero (added earlier this same day).
-          Susan flagged that both used the same "People tell their
-          stories with facts / reveal their lives through images" line,
-          and asked that they be merged into one continuous section
-          rather than left as two independent components repeating
-          themselves. The AwakenArts Method section's slot (here, after
-          Collection) is kept; its content -- eyebrow, leaf ornament,
-          "Discover the AwakenArts Method" CTA to /method, and all
-          "method / practice / theory" language -- is retired in favor
-          of PathOfRecognition (src/components/PathOfRecognition.tsx),
-          which now carries both the section's language (title,
-          statement, intro paragraph) and its imagery (the five-image
-          sequence) as one piece: "language introduces the visitor,
-          imagery deepens the experience, the Encounters become the
-          natural invitation to continue." /method itself is untouched
-          and still live, just no longer linked from the homepage --
-          it joins the site's existing Unlisted Page System (see
-          Nav.tsx), reachable by direct URL only. */}
-      <PathOfRecognition />
-
-      {/* ── FOUNDATION — Matthew 13:34 ───────────────────────────
-          2026-08-20, per Susan's "Homepage Section #2 — Integration
-          Job" directive: the former dark "Collection"/Workshops section
-          (id="collection", .home-coll-section) that used to sit here,
-          between A Path of Recognition and Foundation, is retired — its
-          content is now integrated into HomeSection2.tsx's own dark/
-          practice band, directly above (see A PATH OF RECOGNITION's own
-          updated comment and HomeSection2.tsx). Foundation now follows
-          A Path of Recognition directly. Its own content, position
-          rationale below, and the historical "Collection" references in
-          its comments are otherwise untouched — this pass's boundary
-          was Section #2 only.
-          2026-08-07, per Susan's "Switch Matthew and A Path of
-          Recognition" directive: this section moves from section #2
-          (directly beneath the Hero) to sit after Collection, directly
-          before the Queen Ann title band — trading places with A Path
-          of Recognition, which now occupies Foundation's former slot
-          beneath the Hero. Copy, imagery, and the /foundation CTA are
-          unchanged; only its position moved. See .poems-showcase-
-          foundation in globals.css for the matching spacing update at
-          this section's new seams (Collection -> Foundation and
-          Foundation -> Queen Ann title band).
-
-          2026-07-29, per Susan's "Homepage Softening" directive: this
-          used to close the page, nested inside .poems-showcase-section
-          alongside the Queen Ann Encounter (see that section further
-          down, now Queen Ann Encounter only). Moved at that time to sit
-          directly beneath the Hero — to soften the homepage's opening
-          flow: Scripture and a quiet threshold image greeting the
-          visitor right after the Hero, before the more architectural
-          navy Collection band. Now its own full-bleed section rather
-          than a div sharing .poems-showcase-section's background/
-          padding — see .poems-showcase-foundation in globals.css,
-          which carries its own Warm ivory background and top/bottom
-          padding standing alone. Copy, imagery, and the /foundation
-          CTA are unchanged. */}
+      {/* ── FOUNDATION — Matthew 13:34, the biblical hinge ───────
+          2026-08-20, per Susan's follow-up "Homepage Recomposition —
+          Architecture and Asset Placement" directive: this section's
+          job changes from "closing meditation" / "softening the
+          opening" to a compact biblical hinge between A Path of
+          Stones/Workshops (above) and Christian Symbols (below) —
+          figurative language has deep biblical precedent, not just an
+          artistic device AwakenArts chose. Per her explicit "this does
+          not necessarily require another large standalone promotional
+          section... an appropriately weighted transitional treatment"
+          instruction, the only change here is visual weight: the
+          AtmosphericHeader's `tall` prop (530px) is dropped, returning
+          it to the site's standard header height (350px desktop/300
+          tablet/230 mobile) — no copy, imagery, or the /foundation CTA
+          changed, and no new theological exposition was added. A Path
+          of Recognition, which used to sit directly beneath the Hero
+          ahead of this section, is retired from the homepage (see
+          CHRISTIAN SYMBOLS below); Foundation now follows HomeSection2
+          directly.
+          2026-08-20, per Susan's earlier "Homepage Section #2 —
+          Integration Job" directive: the former dark "Collection"/
+          Workshops section (id="collection", .home-coll-section) that
+          used to sit here is retired — its content is now integrated
+          into HomeSection2.tsx's own dark/practice band, directly
+          above. Foundation's own content and the historical
+          "Collection" references in earlier comments are otherwise
+          untouched.
+          2026-08-07 / 2026-07-29 history: this section has moved
+          within the page several times (directly under the Hero, then
+          after Collection); see git history for those intermediate
+          placements. Copy, imagery, and the /foundation CTA have been
+          unchanged since 2026-07-29. See .poems-showcase-foundation in
+          globals.css for the section's spacing. */}
       <section className="poems-showcase-foundation" aria-label="Foundation">
         <AtmosphericHeader
           src="/images/headers/biblical-foundation.jpg"
           alt="Sunrise over hills and a winding river, seen through a worn stone window — a threshold image."
-          tall
           fadeTo="#FAF7F2"
           fadeHeight={25}
         />
@@ -520,137 +548,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── QUEEN ANN INTRODUCTION — dark title band ───────────────
-          2026-07-10, per Susan: "let the [Queen Ann title] section
-          band be dark." This is NOT a reintroduction of the navy
-          "stage + rounded card" removed in the June 2026 review (see
-          the .poems-showcase-section comment below) — it's a true
-          full-bleed band, structured like .home-coll-section: its own
-          <section>, full-width navy background, sitting between
-          Collection and the cream Queen Ann Encounter. Title and
-          tagline only — no image, no poem-excerpt, no card edges.
-          2026-06-30, per Susan's "single purpose per element"
-          directive: the poem excerpt ("when the night strikes with
-          silver light…") that used to sit here has moved to the
-          Invitation to Read, directly above the poem-download link.
-          What remains here is the title plus one quiet orientation
-          line — secondary to the title, not a second headline.
-          2026-07-10, later the same day, per Susan: tagline copy
-          replaced ("Every AwakenArts work is born as both image and
-          poem." -> "There is a Kingdom beyond the one that ends.") —
-          now a line from/evocative of Queen Ann's own poem rather
-          than a general statement about how AwakenArts works, fitting
-          this band's role as Queen Ann's title page specifically. */}
-      <section className="poems-showcase-intro" aria-label="Queen Ann">
-        <div className="poems-showcase-intro__inner">
-          <p className="poems-showcase-intro__title">Queen Ann</p>
-          <p className="poems-showcase-intro__tagline">
-            There is a Kingdom beyond the one that ends.
-          </p>
-        </div>
-      </section>
-
-      {/* ── QUEEN ANN ENCOUNTER ─────────────────────────────────────
-          A flat cream field: the portrait still and the poem as
-          facing pages of one open book, equal partners.
-          Revised per Susan's June 2026 review: the navy stage and
-          rounded bottom corners that used to wrap the title page (see
-          .poems-showcase-intro above, since split into its own
-          full-bleed section) read as an accidental dark strip and a
-          "card" rather than a publication, so both were removed —
-          this field begins directly where the Introduction band above
-          it ends. See the POEMS / EDITIONS SHOWCASE block in
-          globals.css.
-          2026-07-29, per Susan's "Homepage Softening" directive: this
-          section used to close with Matthew 13:34 nested inside it —
-          that block has moved up to its own section #2, directly
-          under the Hero (see FOUNDATION above). This section now ends
-          with the Encounter itself; its own padding-bottom reverts
-          from the Matthew-specific fixed override to the standard
-          shared --band-gap token, since it no longer needs to supply
-          a Foundation-specific closing gap — see .poems-showcase-
-          section in globals.css. */}
-      <section className="poems-showcase-section" aria-label="Queen Ann Encounter">
-        <div className="poems-showcase-inner">
-
-          {/* Queen Ann Encounter — the poem and the portrait still
-              as facing pages of one open book: equal height, equal
-              importance, identical top alignment, no captions.
-              The imagery now performs the work previously done by
-              explanatory text.
-              2026-06-29: swapped the poem image for a tighter crop
-              (ann-text-dark-crop.png) — the original file carried a
-              wide margin of blank page around the actual poem text, so
-              even filling its frame completely the poem read as quieter
-              and smaller than the edge-to-edge photo opposite it.
-              Cropping in on the text itself (same 2:3 ratio, so the
-              "facing pages" parity with the photo's frame is unchanged)
-              makes the poem's own presence in the frame match the
-              photo's, addressing Susan's "one dominates the other."
-              2026-07-07, per Susan: the poem must read first, on every
-              screen size, not just be reordered on mobile via CSS. The
-              poem block now comes first in markup, the photo second —
-              this fixes both the mobile stacking order and puts the
-              poem in the first (left) desktop column, image second
-              (right), as she explicitly asked for. The previous
-              mobile-only `order` swap in globals.css is no longer
-              needed with the DOM itself in the right order, and has
-              been removed. */}
-          <div className="poems-showcase-ann">
-            <div className="poems-showcase-ann__text">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/forms/ann-text-dark-crop.png"
-                alt="Queen Ann — the poem, rendered in concrete poetry form"
-                className="poems-showcase-ann__poem-img"
-                loading="lazy"
-              />
-            </div>
-            <div className="poems-showcase-ann__frame">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/forms/queen-ann-still.png"
-                alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-          {/* 2026-06-30 — Invitation to Read, per Susan's "single
-              purpose per element" directive: the poem excerpt that
-              used to sit under the title page heading now lives here,
-              immediately above the download link, sized down so it
-              reads as an invitation rather than a heading — its job is
-              to draw the visitor toward the full poem, not to explain
-              the work a second time. */}
-          <p className="poems-showcase-ann__excerpt">
-            when the night strikes with silver light&hellip;
-          </p>
-
-          {/* 2026-06-29: printable PDF link, per Susan — "Ann can be
-              linked to a pdf that is printable in some form or style."
-              Revised same day: Susan asked to remove the link to the
-              Edition (the multi-page Figure Edition product PDF) — this
-              section is one of the few places the poem itself is
-              offered, not the published Edition. Now points to a new,
-              standalone single-page printable PDF of just the poem
-              (public/files/poems/Queen_Ann_Poem.pdf), built fresh from
-              the same poem artwork, with no Edition framing or Colophon.
-              Revised again same day, per Susan: "Download the Poem
-              (PDF)" reads as offering a complimentary resource, not
-              issuing an instruction the way "Print the poem" did. */}
-          <p className="poems-showcase-ann__pdf-link">
-            <a
-              href="/files/poems/Queen_Ann_Poem.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download the Poem (PDF) <span aria-hidden="true">→</span>
-            </a>
-          </p>
-
-        </div>
-      </section>
+      {/* ── CHRISTIAN SYMBOLS ─────────────────────────────────────
+          2026-08-20, per Susan's "Homepage Recomposition" directive:
+          new closing section, replacing PathOfRecognition.tsx's former
+          homepage role (that component's own "Stories That Shape Us" /
+          Encounters copy belonged to the retired Encounters
+          architecture — Encounters is no longer a participant-facing
+          offering or homepage destination). PathOfRecognition.tsx
+          itself is left in the codebase, unused by this page, per the
+          engagement's standing no-silent-deletion practice. The former
+          standalone Queen Ann title band (.poems-showcase-intro) and
+          Queen Ann Encounter (.poems-showcase-section) that used to
+          follow Foundation are also retired here — their content now
+          lives earlier on the page, in HomeQueenAnnCollection.tsx (see
+          section #2, above). See HomeChristianSymbols.tsx for the full
+          rationale: reused /symbols hero copy, the unchanged golden
+          sailboat image, and the single "Explore Christian Symbols"
+          CTA. */}
+      <HomeChristianSymbols />
 
       {/* ── WAYFINDING BAND ───────────────────────────────────────
           Global Wayfinding Band Standard (2026-06-25): concludes the
