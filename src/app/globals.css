@@ -5476,8 +5476,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    italic serif line, no eyebrow, no uppercase tracking, no separate
    tagline — "simply and elegantly," per Susan's own phrase, now that
    the Compilation above it has already done the section's announcing. */
+/* 2026-08-20, per Susan's "aesthetic only" follow-up: give this block
+   more visible separation from the Compilation above it, so it reads
+   as Ann's own distinct space rather than a caption bolted to the
+   image -- while keeping her footprint modest (spread size/scale
+   unchanged, see .qac-spread below). Margin-top increased 3rem ->
+   4.5rem; no content or structural change. */
 .qac-ann {
-  margin-top: 3rem;
+  margin-top: 4.5rem;
 }
 .qac-ann__title {
   font-family: var(--serif);
@@ -5584,7 +5590,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 @media (max-width: 640px) {
   .qac-section { padding: 3rem 1.5rem 3rem; }
-  .qac-ann { margin-top: 2.25rem; }
+  .qac-ann { margin-top: 3rem; }
   .qac-spread { max-width: 280px; gap: 1rem; }
   .qac-spread__poem-img { max-width: 130px; }
   .qac-pdf-link { margin-bottom: 2.5rem; }
