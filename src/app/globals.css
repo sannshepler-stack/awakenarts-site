@@ -5527,10 +5527,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    standalone section (HomeQueenAnn.tsx) and no longer needs this
    wrapper's margin-top (the section's own padding-top supplies the
    gap instead) — left defined, unused, per no-silent-deletion.
-   .qac-ann__title itself IS still used, directly, by HomeSection2.tsx
-   (Ann's cream band, now folded into Workshops — see that component's
-   own comment; HomeQueenAnn.tsx, its original user, is itself now
-   superseded/unused) — deliberately minimal: one small italic serif
+   .qac-ann__title was briefly reused by HomeSection2.tsx's cream band;
+   2026-08-20 "Reunite Queen Ann's image and poem" pass removed that
+   band entirely (its content is now redundant with the navy pairing —
+   see HomeSection2.tsx's own comment), so this class is unused again,
+   by any component — left defined, unused, per no-silent-deletion.
+   Deliberately minimal when it was in use: one small italic serif
    line, no eyebrow, no uppercase tracking, no separate tagline —
    "simply and elegantly," per Susan's own phrase. */
 .qac-ann {
@@ -5600,10 +5602,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 /* 2026-08-20, per Susan's "Workshops / Queen Ann adjustment" directive:
-   centers .qac-spread__text alone, now that it's no longer a grid
-   child paired with the portrait (see .qac-spread's own comment).
-   Same 2:3 frame, same poem-card image, just given its own max-width
-   instead of a grid column's 50%. */
+   centered .qac-spread__text alone, when the cream band held only the
+   poem card (portrait moved to navy). Superseded the same day by the
+   "Reunite Queen Ann's image and poem" pass, which removed the cream
+   band entirely and paired the poem card with the portrait in navy
+   instead — see .section2-dark__pair, below. Left defined, unused,
+   per no-silent-deletion. */
 .qac-poem-solo {
   max-width: 300px;
   margin: 0 auto 1.5rem;
@@ -5823,15 +5827,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 /* 2026-08-20, per Susan's "Workshops / Queen Ann adjustment"
    directive: Ann's own portrait (queen-ann-still.png), replacing the
-   Collection Book Cover as the navy band's opening image — "she is an
-   example of the work, not a new hero image," so narrower than the
-   book cover was (200px vs. 260px) to keep her restrained. Same 2:3
-   crop / object-fit: cover treatment already proven on this exact
-   source file in the cream band's own spread below (.qac-spread__frame
-   img) — no new imagery, same file, same crop math, just framed
-   smaller and on its own here. Border/shadow reuse .section2-dark__img
-   's own values for visual continuity with the image treatment this
-   replaces. */
+   Collection Book Cover as the navy band's opening image. Superseded
+   the same day by the "Reunite Queen Ann's image and poem" pass —
+   Susan asked why the poem (left behind in cream) wasn't beside the
+   image of the poem, so the portrait-alone treatment is replaced by
+   .section2-dark__pair, below, which pairs the portrait with the poem
+   card again. Left defined, unused, per no-silent-deletion. */
 .section2-dark__portrait {
   width: 200px;
   aspect-ratio: 2 / 3;
@@ -5847,6 +5848,62 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+/* 2026-08-20, per Susan's "Reunite Queen Ann's image and poem in the
+   navy Workshops section" directive: the poem card (ann-text-dark-
+   crop.png) and the portrait (queen-ann-still.png), side by side, as
+   "one compact example of an AwakenArts image-poem work" — evidence
+   of the work, not the headline, so deliberately smaller than both
+   the former single-portrait treatment (200px) and the original cream
+   spread this echoes (480px total). 280px total width is enough for
+   the poem's shaped form to register without competing with
+   Workshops' own title/sub/worlds/CTA beneath it. Same "facing pages"
+   reading order as the original spread (poem card first/left, portrait
+   second/right, portrait mirrored via scaleX(-1) so she faces toward
+   the poem) — see the ORIGINAL POEMS / EDITIONS SHOWCASE block earlier
+   in this file for that convention's first use. Border/shadow reuse
+   .section2-dark__img's gold-on-navy values (rather than
+   .qac-spread__frame's cream-tuned rgba(28,43,58,...) border, which
+   would all but disappear against navy) for both halves, so the pair
+   reads as one consistent navy-appropriate object. */
+.section2-dark__pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  max-width: 280px;
+  margin: 0 auto 2.5rem;
+}
+.section2-dark__pair-frame,
+.section2-dark__pair-text {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 2px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+.section2-dark__pair-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scaleX(-1);
+}
+.section2-dark__pair-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  padding: 0.4rem;
+}
+.section2-dark__pair-poem-img {
+  width: 100%;
+  max-width: 130px;
+  height: auto;
+  display: block;
 }
 .section2-dark__title {
   font-family: var(--serif);
