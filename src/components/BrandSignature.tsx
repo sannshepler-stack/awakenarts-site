@@ -77,21 +77,59 @@
  * copy. Locked as given; not to be normalized to lowercase without
  * asking her first.
  *
+ * 2026-08-24, later still, per her "SECTION DIVIDER" directive: the
+ * AwakenArts Section Divider ornament (the larger horizontal antique-
+ * gold rule-leaf-rule mark, not the small leaf-only signature mark) is
+ * added beneath the completed tagline, per her framing: "Fade =
+ * movement/arrival. Divider = permanence/identity." Source asset,
+ * identified from brand-assets/README.md's Editorial Ornament System
+ * notes: AwakenArts-Divider-Complete-2000.png -- the flattened
+ * composite (thin gold rule, leaf pair, thin gold rule), already
+ * approved as "the definitive AwakenArts pause mark," not the
+ * LeafPair-only component piece. Copied as-is (no crop, no color
+ * change, no re-export) to public/images/brand/ornaments/ -- the
+ * directory the README already anticipated for exactly this kind of
+ * placement ("Website decorative emblems... ornaments/ still does not
+ * exist... ready to produce... whenever a specific placement (section
+ * transitions...) is chosen").
+ *
+ * Placement: below BOTH lines (never between them), inside its own
+ * wrapper sized to match .brand-signature__text's own 32ch column, so
+ * the ornament's width can be expressed as a real percentage of the
+ * text block per her "40-50% of the text block width" instruction --
+ * currently 45%, hers to adjust after seeing it live. Margin-top gives
+ * it breathing room so it reads as a quiet mark beneath the language,
+ * not an underline. It is a plain <img>, entirely outside the fade
+ * animation -- per her explicit "the divider should be visible
+ * throughout all three fade cycles. It never fades" -- so it renders
+ * at full opacity from first paint and stays that way regardless of
+ * what .brand-signature-fade__line is doing above it.
+ *
  * THIS REMAINS A PROTOTYPE FOR REVIEW, NOT AN APPROVED DESIGN.
  */
 
 export default function BrandSignature() {
   return (
     <section className="brand-signature" aria-label="AwakenArts">
-      <p className="brand-signature__text brand-signature-fade">
-        <span className="brand-signature-fade__line brand-signature-fade__line--1">
-          When Images Become Words
-        </span>
-        <br />
-        <span className="brand-signature-fade__line brand-signature-fade__line--2">
-          And Language Shapes a Path
-        </span>
-      </p>
+      <div className="brand-signature__inner">
+        <p className="brand-signature__text brand-signature-fade">
+          <span className="brand-signature-fade__line brand-signature-fade__line--1">
+            When Images Become Words
+          </span>
+          <br />
+          <span className="brand-signature-fade__line brand-signature-fade__line--2">
+            And Language Shapes a Path
+          </span>
+        </p>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/brand/ornaments/AwakenArts-Divider-Complete-2000.png"
+          alt=""
+          aria-hidden="true"
+          className="brand-signature__divider"
+          loading="lazy"
+        />
+      </div>
     </section>
   )
 }

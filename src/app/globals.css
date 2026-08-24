@@ -5570,6 +5570,15 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   padding: 1rem 2rem 3.5rem;
   text-align: center;
 }
+/* Wraps the tagline text and the Section Divider ornament beneath it
+   in one column, matching .brand-signature__text's own 32ch width --
+   see that rule's history. Lets the divider's width be expressed as a
+   genuine percentage of the text block, per Susan's "40-50% of the
+   text block width" instruction, rather than of the full section. */
+.brand-signature__inner {
+  max-width: 32ch;
+  margin: 0 auto;
+}
 .brand-signature__text {
   font-family: var(--serif);
   font-style: italic;
@@ -5577,12 +5586,28 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   font-size: clamp(1.5rem, 3vw, 2.1rem);
   line-height: 1.5;
   color: var(--gold);
-  max-width: 32ch;
-  margin: 0 auto;
+  margin: 0;
+}
+/* 2026-08-24, per Susan's "SECTION DIVIDER" directive: the AwakenArts
+   Section Divider ornament, placed beneath both completed tagline
+   lines (never between them). Restrained scale -- 45% of the text
+   column, within her requested 40-50% range -- centered, with margin-
+   top for breathing room so it reads as a quiet closing mark rather
+   than an underline. No filters/shadow/glow added; the source PNG is
+   used exactly as exported (antique gold, transparent background).
+   This element sits entirely outside .brand-signature-fade -- it is a
+   plain, always-opaque <img>, not part of any animation, per her
+   explicit "it never fades." */
+.brand-signature__divider {
+  display: block;
+  width: 45%;
+  height: auto;
+  margin: 1.75rem auto 0;
 }
 @media (max-width: 640px) {
   .brand-signature { padding: 0.5rem 1.5rem 2.5rem; }
   .brand-signature__text { font-size: clamp(1.25rem, 5vw, 1.6rem); }
+  .brand-signature__divider { width: 55%; margin-top: 1.25rem; }
 }
 
 /* ── Tagline Soft Phrase Fade (prototype) ─────────────────────────
