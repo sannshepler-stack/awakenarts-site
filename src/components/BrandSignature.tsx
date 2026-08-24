@@ -83,27 +83,51 @@
  * added beneath the completed tagline, per her framing: "Fade =
  * movement/arrival. Divider = permanence/identity." Source asset,
  * identified from brand-assets/README.md's Editorial Ornament System
- * notes: AwakenArts-Divider-Complete-2000.png -- the flattened
- * composite (thin gold rule, leaf pair, thin gold rule), already
- * approved as "the definitive AwakenArts pause mark," not the
- * LeafPair-only component piece. Copied as-is (no crop, no color
- * change, no re-export) to public/images/brand/ornaments/ -- the
- * directory the README already anticipated for exactly this kind of
- * placement ("Website decorative emblems... ornaments/ still does not
- * exist... ready to produce... whenever a specific placement (section
- * transitions...) is chosen").
+ * notes: AwakenArts-Divider-Complete-*.png -- the flattened composite
+ * (thin gold rule, leaf pair, thin gold rule), already approved as
+ * "the definitive AwakenArts pause mark," not the LeafPair-only
+ * component piece. Copied as-is (no crop, no color change, no
+ * re-export) to public/images/brand/ornaments/ -- the directory the
+ * README already anticipated for exactly this kind of placement.
  *
- * Placement: below BOTH lines (never between them), inside its own
- * wrapper sized to match .brand-signature__text's own 32ch column, so
- * the ornament's width can be expressed as a real percentage of the
- * text block per her "40-50% of the text block width" instruction --
- * currently 45%, hers to adjust after seeing it live. Margin-top gives
- * it breathing room so it reads as a quiet mark beneath the language,
- * not an underline. It is a plain <img>, entirely outside the fade
- * animation -- per her explicit "the divider should be visible
- * throughout all three fade cycles. It never fades" -- so it renders
- * at full opacity from first paint and stays that way regardless of
- * what .brand-signature-fade__line is doing above it.
+ * A first pass wrapped the tagline and the divider together in a new
+ * .brand-signature__inner column and sized the divider at 45% of that
+ * column. Two problems, both hers to catch: (1) the wrapper's 32ch
+ * width was computed in the wrapper's own (non-italic, non-serif)
+ * font context, not .brand-signature__text's -- a different ch metric
+ * than the tagline itself used, so the "column" the divider was a
+ * percentage of wasn't reliably the same width as the approved tagline
+ * box. (2) at that computed size the rendered image came out roughly
+ * 130x17px -- a 15x downscale of the 2000px master -- and the
+ * source's gold rule is a single 1px hairline at 55% alpha even in its
+ * own native export (verified: the -500px and -1000px pre-rendered
+ * sizes both measure a 1px-thick rule at full resolution, not just the
+ * -2000px master). Downscaled that far, the hairline all but
+ * disappeared, leaving only the leaf visible -- which read, correctly,
+ * as "the small centered botanical mark," not the rule-leaf-rule
+ * divider. The file itself was never wrong (md5-verified byte-
+ * identical to brand-assets/png-exports/dividers/), only rendered too
+ * small to read as itself.
+ *
+ * Correction, same day: the .brand-signature__inner wrapper is
+ * removed. .brand-signature__text goes back to owning its own 32ch
+ * max-width/margin directly, byte-identical to the pre-divider CSS
+ * (commit eb3db68) -- the tagline's box, centering, typography, and
+ * fade are untouched by the divider work now, not just visually close
+ * to before. The divider is a plain sibling <img> after the tagline,
+ * sized independently (see .brand-signature__divider) at a width
+ * large enough that the rule segments actually read as rule-leaf-rule
+ * rather than collapsing into a blob -- judged visually against
+ * several widths before landing on the current value. Same source
+ * family, still the Complete composite, still copied as-is.
+ *
+ * It remains a plain <img>, entirely outside the fade animation --
+ * per her explicit "the divider should be visible throughout all
+ * three fade cycles. It never fades" -- so it renders at full opacity
+ * from first paint and stays that way regardless of what
+ * .brand-signature-fade__line is doing above it. Verified numerically
+ * via computed opacity at the mid-cycle pause (both text lines at
+ * opacity 0): divider opacity 1, display: block, visibility: visible.
  *
  * THIS REMAINS A PROTOTYPE FOR REVIEW, NOT AN APPROVED DESIGN.
  */
@@ -111,25 +135,23 @@
 export default function BrandSignature() {
   return (
     <section className="brand-signature" aria-label="AwakenArts">
-      <div className="brand-signature__inner">
-        <p className="brand-signature__text brand-signature-fade">
-          <span className="brand-signature-fade__line brand-signature-fade__line--1">
-            When Images Become Words
-          </span>
-          <br />
-          <span className="brand-signature-fade__line brand-signature-fade__line--2">
-            And Language Shapes a Path
-          </span>
-        </p>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/brand/ornaments/AwakenArts-Divider-Complete-2000.png"
-          alt=""
-          aria-hidden="true"
-          className="brand-signature__divider"
-          loading="lazy"
-        />
-      </div>
+      <p className="brand-signature__text brand-signature-fade">
+        <span className="brand-signature-fade__line brand-signature-fade__line--1">
+          When Images Become Words
+        </span>
+        <br />
+        <span className="brand-signature-fade__line brand-signature-fade__line--2">
+          And Language Shapes a Path
+        </span>
+      </p>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/brand/ornaments/AwakenArts-Divider-Complete-2000.png"
+        alt=""
+        aria-hidden="true"
+        className="brand-signature__divider"
+        loading="lazy"
+      />
     </section>
   )
 }

@@ -146,7 +146,18 @@ export default function HomeSection2() {
               on its own second line -- the same problem, relocated to a
               new width. Fixed the same way as before: a non-breaking
               space between "tell" and "us." so those two words always
-              wrap together. */}
+              wrap together.
+
+              2026-08-24, later still, per Susan's conditional follow-up
+              ("If it eliminates the orphan -- use: what experience is
+              telling us."): tried "Images can reveal what experience is
+              telling us." across all eight widths tested before (1920/
+              1440/1280/1024/768/500/390/320). It does NOT clear the bar
+              -- one line at 1920 through 768, but "us." lands alone on
+              its own line again at 500px. Since the condition ("if it
+              eliminates the orphan") isn't met, this wording was not
+              adopted; the prior sentence with the "tell&nbsp;us." fix
+              (verified orphan-free at all eight widths) stays in place. */}
           <p className="section2-dark__sub">
             Images can reveal what experience has been trying to tell&nbsp;us.
           </p>
