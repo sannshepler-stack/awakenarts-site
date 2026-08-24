@@ -337,13 +337,24 @@ export default function HomePage() {
               avoids opening on a possessive immediately followed by
               "our lives" at the sentence's end. Markup/classes
               unchanged. */}
+          {/* 2026-08-24, per Susan's follow-up to the Homepage Revision
+              Directive: once the new Further Understanding statement
+              ("AwakenArts explores what is familiar to us, while opening
+              the way to further understanding.") was live lower on the
+              page, this line's "AwakenArts explores what our stories tell
+              us." read as an echo of it. Her instruction: remove this line
+              from consideration as final Hero copy, but do NOT invent
+              replacement copy now and do NOT touch the new locked Further
+              Understanding sentence -- the Hero is to be reviewed in
+              context separately. So .hero-mission__body and its preceding
+              <br /> are removed here; the surrounding .hero-mission
+              structure and the lede line above are otherwise untouched,
+              ready to receive new body copy once that review happens.
+              FLAGGED: hero-mission needs a body line -- do not add one
+              without Susan's review. */}
           <p className="hero-mission">
             <span className="hero-mission__lede">
               Stories are lived, told, and appear throughout our lives.
-            </span>
-            <br />
-            <span className="hero-mission__body">
-              AwakenArts explores what our stories tell us.
             </span>
           </p>
 
