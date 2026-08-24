@@ -5555,6 +5555,63 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    compilation, .qac-premise's own children, etc. is governed by
    separate rules (.qac-compilation, .section2-question, .section2-
    examples, .section2-recognition) not touched here. */
+/* ── Brand Signature — expanded tagline ──────────────────────────
+   2026-08-24, per Susan's "Homepage Revision Directive," Section 2.
+   Sits in the Hero's own cream field (no hard color cut against the
+   Hero above it — the two read as one continuing field, the tagline
+   simply given its own quiet beat of space) but is a fully separate
+   section from the Hero, satisfying the site's standing "never show
+   the tagline twice in one visible section" rule. Deliberately spare:
+   no eyebrow, no supporting sentence, generous padding on all sides,
+   centered. Sized between the Hero's mission line and its h1 — larger
+   than a supporting statement, not competing with the logo itself. */
+.brand-signature {
+  background: #f5f0e8;
+  padding: 1rem 2rem 3.5rem;
+  text-align: center;
+}
+.brand-signature__text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  line-height: 1.5;
+  color: var(--gold);
+  max-width: 32ch;
+  margin: 0 auto;
+}
+@media (max-width: 640px) {
+  .brand-signature { padding: 0.5rem 1.5rem 2.5rem; }
+  .brand-signature__text { font-size: clamp(1.25rem, 5vw, 1.6rem); }
+}
+
+/* ── Further Understanding — accessibility/depth statement ───────
+   2026-08-24, per Susan's "Homepage Revision Directive," Section 4.
+   A quiet hinge between the Collection section (cream) and Workshops
+   (navy) — not a full section with its own heavy padding/background,
+   just a single centered line marking the turn from "here is the
+   familiar thing" to "here is what we do with it." Cream field,
+   continuing directly from .qac-section above it with no hard cut;
+   Workshops' own navy band still provides the next visible color
+   change, so this doesn't compete with that transition. */
+.further-understanding {
+  background: var(--cream);
+  padding: 0 2rem calc(var(--band-gap-sm) + 35px);
+  text-align: center;
+}
+.further-understanding__text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  line-height: 1.6;
+  color: var(--deep);
+  max-width: 42ch;
+  margin: 0 auto;
+}
+@media (max-width: 640px) {
+  .further-understanding { padding: 0 1.5rem 3rem; }
+}
+
 .qac-section {
   background: var(--cream);
   padding: calc(4.5rem + 35px) 2rem calc(var(--band-gap-sm) + 35px);

@@ -55,6 +55,13 @@
  *    them to give shape to experiences we are trying to understand."
  *    -> "The images are already there. We use them to give shape to
  *    our experiences."
+ *
+ * 2026-08-24, per Susan's "Homepage Revision Directive" (Section 3, the
+ * locked "You already speak in images" USP statement; Section 8, the
+ * Keep/Remove/Revise/Relocate editorial principle): the heading above
+ * is revised to the new locked statement (see its own inline comment),
+ * and the former closing line is removed as now-redundant with it. The
+ * three example quotes and the Compilation image are unchanged.
  */
 
 export default function HomeCollectionPremise() {
@@ -75,9 +82,23 @@ export default function HomeCollectionPremise() {
         <div className="qac-premise">
           <p className="eyebrow section2-light__eyebrow">AwakenArts, The Stories that Shape Us</p>
 
+          {/* 2026-08-24, per Susan's "Homepage Revision Directive," Section
+              3: this heading previously read "We use metaphors so routinely
+              that we stop noticing how often images appear in the language
+              we use." -- already doing nearly the same job as the new
+              locked USP statement (recognizing that everyday language is
+              full of image). Rather than add a separate section for the USP
+              statement and leave this one standing beside it -- two
+              statements making the same point -- the locked statement
+              replaces this heading directly. A Revise, not an addition, per
+              her own Section 8 editorial principle. Wording below is locked
+              verbatim; not to be altered without flagging a concrete
+              problem to her first. The three example quotes are unchanged
+              -- they now serve as this statement's own supporting evidence. */}
           <h2 id="collection-premise-heading" className="section2-question">
-            We use metaphors so routinely that we stop
-            noticing how often images appear in the language we use.
+            You already speak in images. We all do. AwakenArts takes
+            that familiar relationship between image and language and
+            explores what it can reveal.
           </h2>
 
           <p className="section2-examples">
@@ -94,10 +115,13 @@ export default function HomeCollectionPremise() {
             </span>
           </p>
 
-          <p className="section2-recognition">
-            The images are already there. We use them to give shape to
-            our experiences.
-          </p>
+          {/* 2026-08-24, same pass: the former closing line ("The images
+              are already there. We use them to give shape to our
+              experiences.") is removed -- it restated the same claim the
+              new opening statement above now makes directly, so the section
+              was repeating itself top and bottom. The three examples are a
+              sufficient closing beat on their own. Flagged to Susan as a
+              Remove, not assumed silently. */}
         </div>
 
       </div>

@@ -517,6 +517,29 @@ export default function HomePage() {
 
       </section>
 
+      {/* ── BRAND SIGNATURE ────────────────────────────────────────
+          2026-08-24, per Susan's "Homepage Revision Directive":
+          Section 2 — an expanded expression of the logo's own tagline
+          ("When Language Shapes a Path"), not a replacement for it.
+          The logo lockup in the Hero above already carries its tagline
+          baked into the image and stays exactly as it is, per Section
+          1's explicit "do not alter." The site's own standing rule
+          (see .hero-tagline's retirement note, below in globals.css)
+          is never to show the tagline twice in the same visible
+          section — so this expanded line is deliberately placed in
+          its own section, immediately after the Hero rather than
+          inside it, typographically distinct from both the logo image
+          and the Hero's mission paragraph. No eyebrow, no supporting
+          sentence around it, per her explicit "give it sufficient
+          visual space... not surrounded by explanatory copy." */}
+      <section className="brand-signature" aria-label="AwakenArts">
+        <p className="brand-signature__text">
+          When Images Become Words
+          <br />
+          and Language Shapes a Path
+        </p>
+      </section>
+
       {/* ── THE WORK: THE AWAKENARTS COLLECTION ──────────────────
           2026-08-20, per Susan's "revise the architecture" directive:
           movement #1 of three after the Hero. The Collection
@@ -531,6 +554,24 @@ export default function HomePage() {
           rationale. Unchanged from the prior "Section Two / Section
           Three" pass. */}
       <HomeCollectionPremise />
+
+      {/* ── FURTHER UNDERSTANDING ─────────────────────────────────
+          2026-08-24, per Susan's "Homepage Revision Directive":
+          Section 4 — the accessibility/depth statement, doing its own
+          distinct job in the hierarchy (Section 7): after the Hero
+          names the brand and the Collection section makes the core
+          "you already speak in images" claim concrete with examples,
+          this line is the hinge into what AwakenArts does with that
+          recognition, before Workshops shows the concrete practice of
+          it. Wording is locked verbatim, per her explicit instruction
+          not to substitute "ordinary language," "simple language," or
+          "deeper understanding" for "further understanding." */}
+      <section className="further-understanding" aria-label="AwakenArts">
+        <p className="further-understanding__text">
+          AwakenArts explores what is familiar to us, while opening the
+          way to further understanding.
+        </p>
+      </section>
 
       {/* ── THE EXPERIENCE: WORKSHOPS + QUEEN ANN ────────────────
           2026-08-20, per Susan's "revise the architecture" directive:
