@@ -87,13 +87,20 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
           </p>
         </section>
 
+        {/* 2026-08-20, per Susan's direct instruction ("Only 1 button
+            needed... don't add using the dragon... Remove the second
+            button Explore the Workshop Experience"): the two action
+            buttons are reduced to one. The Inquire link's visible
+            label no longer names the Edition (was "...Using {edition
+            .title}") -- the mailto href below it still does, in its
+            subject/body, so the email itself remains Edition-specific
+            even though the button reads the same on every page. The
+            "Explore the Workshop Experience" button (-> /workshops) is
+            removed entirely. Back to Current Workshops is unchanged. */}
         <section className="edition-actions">
           <a href={workshopInquiry} className="edition-actions__link">
-            Inquire About a Workshop Using {edition.title} <span aria-hidden="true">→</span>
+            Inquire About a Workshop <span aria-hidden="true">→</span>
           </a>
-          <Link href="/workshops" className="edition-actions__link">
-            Explore the Workshop Experience <span aria-hidden="true">→</span>
-          </Link>
           <Link href="/workshops#current-workshops" className="edition-actions__back">
             ← Back to Current Workshops
           </Link>
