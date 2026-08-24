@@ -5593,7 +5593,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    familiar thing" to "here is what we do with it." Cream field,
    continuing directly from .qac-section above it with no hard cut;
    Workshops' own navy band still provides the next visible color
-   change, so this doesn't compete with that transition. */
+   change, so this doesn't compete with that transition.
+
+   SUPERSEDED 2026-08-24, later the same day, per Susan's "CLAUDE
+   DIRECTIVE — HOMEPAGE REVISION": the standalone section using these
+   rules is no longer rendered in page.tsx — its sentence is folded
+   into HomeCollectionPremise.tsx's own heading instead, as one
+   combined locked statement. Left defined, unused, per
+   no-silent-deletion. */
 .further-understanding {
   background: var(--cream);
   padding: 0 2rem calc(var(--band-gap-sm) + 35px);

@@ -62,6 +62,15 @@
  * is revised to the new locked statement (see its own inline comment),
  * and the former closing line is removed as now-redundant with it. The
  * three example quotes and the Compilation image are unchanged.
+ *
+ * 2026-08-24, later the same day, per Susan's "CLAUDE DIRECTIVE --
+ * HOMEPAGE REVISION": the heading's locked wording is superseded again
+ * -- one combined sentence now replaces both this section's prior
+ * statement and the separate Further Understanding section's own
+ * sentence (that section is retired in page.tsx). Gallery banner image
+ * confirmed to stay -- explicitly not replaced with the crossroad or
+ * Recognition_Path imagery considered earlier. See the heading's own
+ * inline comment for the full wording rationale.
  */
 
 export default function HomeCollectionPremise() {
@@ -91,14 +100,26 @@ export default function HomeCollectionPremise() {
               statement and leave this one standing beside it -- two
               statements making the same point -- the locked statement
               replaces this heading directly. A Revise, not an addition, per
-              her own Section 8 editorial principle. Wording below is locked
-              verbatim; not to be altered without flagging a concrete
-              problem to her first. The three example quotes are unchanged
-              -- they now serve as this statement's own supporting evidence. */}
+              her own Section 8 editorial principle.
+
+              2026-08-24, later the same day, per Susan's "CLAUDE DIRECTIVE
+              -- HOMEPAGE REVISION": that first locked sentence ("AwakenArts
+              takes that familiar relationship between image and language
+              and explores what it can reveal.") is itself superseded --
+              along with the separate "Further Understanding" section's own
+              sentence ("AwakenArts explores what is familiar to us, while
+              opening the way to further understanding.") -- by ONE new
+              combined locked sentence, below. Her explicit language intent:
+              brings image and language into conversation (the method),
+              begins with familiar images, explores rather than instructs or
+              imposes meaning, and "opens the way" (deliberately not "create
+              a way") toward further understanding. This is now the single
+              statement doing that job on the homepage -- see page.tsx for
+              the standalone Further Understanding section's retirement. */}
           <h2 id="collection-premise-heading" className="section2-question">
-            You already speak in images. We all do. AwakenArts takes
-            that familiar relationship between image and language and
-            explores what it can reveal.
+            You already speak in images. We all do. AwakenArts brings
+            image and language into conversation, exploring familiar
+            images to open the way to further understanding.
           </h2>
 
           <p className="section2-examples">
