@@ -182,16 +182,29 @@ export default function WorkshopsPage() {
               Imagery Higher" directive: this heading, lede, and its
               remaining two paragraphs (the opening sentence now sits
               above, beneath the title) relocated here, below Current
-              Workshops. Wording unchanged. */}
+              Workshops.
+
+              2026-08-24, per Susan's "Workshops page revise" directive:
+              the paragraph that used to open this section ("Through
+              images, metaphor, close reading, symbolic language,
+              conversation, and reflective writing, participants explore
+              patterns...") is removed and replaced with a new opening
+              statement -- her own words, verbatim. Her reasoning: the
+              new line does the introductory job better, and most of the
+              methods that old paragraph listed (close reading, familiar
+              language, connections/amplification) are already explained
+              immediately below under What to Expect, making the old
+              paragraph redundant with it. The second paragraph
+              ("AwakenArts workshops are artistic and educational...")
+              is kept exactly as it was -- not touched by this pass. */}
           <h2 className={styles.h2}>What These Workshops Are</h2>
           <p className={styles.lede}>
             A Path of Discovery Through Image, Language, and Symbol
           </p>
           <p className={styles.body}>
-            Through images, metaphor, close reading, symbolic language,
-            conversation, and reflective writing, participants explore
-            patterns in language and experience that may be present before
-            we fully recognize them.
+            You already speak in images. We all do. AwakenArts takes that
+            familiar relationship between image and language and explores
+            what it can reveal.
           </p>
           <p className={styles.body}>
             AwakenArts workshops are artistic and educational, offering a
