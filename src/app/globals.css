@@ -5594,42 +5594,90 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    review prototype she's now rejecting. Replaced with a restrained
    two-phrase fade-in on the same .brand-signature__text typography
    (unchanged font, size, color, max-width, centering) — only the
-   entrance is new. Pure CSS, no JS. STILL A PROTOTYPE, NOT APPROVED. */
+   entrance is new. Pure CSS, no JS. STILL A PROTOTYPE, NOT APPROVED.
+
+   2026-08-24, later still, per her follow-up ("a limited repeat is
+   better than a single fade... I would not loop it indefinitely"):
+   the sequence (line 1 fades in -> line 2 follows -> hold -> fade/
+   reset) now runs for exactly two full cycles, then a third pass
+   fades in and holds permanently -- no third fade-out, no indefinite
+   loop. Each line carries TWO animations back-to-back with no gap:
+   .brand-signature-fade__line-loop (2 iterations = cycles 1 and 2,
+   fade-in/hold/fade-out/pause) followed immediately by
+   .brand-signature-fade__line-settle (cycle 3, fade-in/hold-forever,
+   fill-mode: forwards, no fade-out). The settle animation's delay is
+   calculated to start the instant the loop's 2 iterations finish, so
+   the two read as one continuous three-cycle sequence rather than two
+   separate effects.
+
+   TIMING (absolute, from page load; line 2 runs the identical shape
+   1s behind line 1 throughout, entrance and exit alike):
+     0.3s  -- line 1 begins fading in
+     1.3s  -- line 2 begins fading in
+     1.9s  -- line 1 fully visible (1.6s fade)
+     2.9s  -- line 2 fully visible -- both lines now visible together
+     5.3s  -- hold ends (2.4s with both visible), line 1 begins
+               fading out
+     6.3s  -- line 2 begins fading out
+     6.9s  -- line 1 fade-out complete
+     7.6s  -- cycle 1 ends for line 1 (0.7s quiet pause), cycle 2
+               begins identically; line 2's own cycle 1 ends at 8.6s
+     14.9s -- line 1's two loop iterations complete; its settle
+               (cycle 3 fade-in) begins immediately
+     15.9s -- line 2's two loop iterations complete; its settle begins
+     16.5s -- line 1 fully, permanently visible (settle complete)
+     17.5s -- line 2 fully, permanently visible -- tagline now
+               complete and still, no further motion. */
+
 .brand-signature-fade__line {
   display: inline-block;
   opacity: 0;
-  animation: brand-signature-fade-in 2.2s ease-out forwards;
+  animation:
+    brand-signature-fade-loop 7.3s ease-in-out 2,
+    brand-signature-fade-settle 1.6s ease-out 1 forwards;
 }
-/* "When Images Become Words" fades in first... */
+/* "When Images Become Words" -- the loop's own delay (0.3s) plus its
+   two iterations (7.3s x 2 = 14.6s) is exactly when the settle
+   animation's delay must begin, so the two animations hand off with
+   no gap and no overlap. */
 .brand-signature-fade__line--1 {
-  animation-delay: 0.2s;
+  animation-delay: 0.3s, 14.9s; /* 0.3 + 7.3*2 = 14.9 */
 }
-/* ...then "And Language Shapes a Path" follows with a soft delayed
-   fade, once the first line is most of the way in. Both simply remain
-   once shown -- no loop/reset, per her "may... if needed" framed as
-   optional and her explicit caution against anything cyclical or
-   mechanical. */
+/* ...then "And Language Shapes a Path" follows with the same soft
+   1-second stagger in every cycle, entrance and exit alike, per her
+   "second phrase follows softly." Same loop/settle handoff logic,
+   just 1s later throughout. */
 .brand-signature-fade__line--2 {
-  animation-delay: 1.6s;
+  animation-delay: 1.3s, 15.9s; /* 1.3 + 7.3*2 = 15.9 */
 }
-@keyframes brand-signature-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+/* Cycles 1 and 2: fade in, hold together, fade out, a quiet pause,
+   then repeat. Percentages below correspond to the timing comment
+   above, scaled to this keyframe's own 7.3s duration. */
+@keyframes brand-signature-fade-loop {
+  0%     { opacity: 0; }
+  21.9%  { opacity: 1; }  /* fade-in complete, 1.6s in */
+  68.5%  { opacity: 1; }  /* hold ends, fade-out begins, 5.0s in */
+  90.4%  { opacity: 0; }  /* fade-out complete, 6.6s in */
+  100%   { opacity: 0; }  /* quiet pause until the cycle repeats */
+}
+
+/* Cycle 3: identical fade-in shape, but no fade-out step at all --
+   `forwards` holds the final opacity: 1 permanently once this
+   animation completes, per her "leave the complete tagline visible
+   and still." */
+@keyframes brand-signature-fade-settle {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   /* Per Susan's explicit accessibility instruction: a reduced-motion
-     visitor sees the complete tagline immediately, statically. */
+     visitor sees the complete tagline immediately, statically -- no
+     cycling, no delayed settle. */
   .brand-signature-fade__line {
     animation: none;
     opacity: 1;
-    transform: none;
   }
 }
 
