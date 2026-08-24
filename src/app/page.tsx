@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
+import BrandSignature from '@/components/BrandSignature'
 import HomeCollectionPremise from '@/components/HomeCollectionPremise'
 import HomeSection2 from '@/components/HomeSection2'
 import HomeChristianSymbols from '@/components/HomeChristianSymbols'
@@ -551,14 +552,18 @@ export default function HomePage() {
           inside it, typographically distinct from both the logo image
           and the Hero's mission paragraph. No eyebrow, no supporting
           sentence around it, per her explicit "give it sufficient
-          visual space... not surrounded by explanatory copy." */}
-      <section className="brand-signature" aria-label="AwakenArts">
-        <p className="brand-signature__text">
-          When Images Become Words
-          <br />
-          and Language Shapes a Path
-        </p>
-      </section>
+          visual space... not surrounded by explanatory copy."
+
+          2026-08-24, later the same day, per Susan's "CLAUDE DIRECTIVE
+          — HOMEPAGE TAGLINE MOTION PROTOTYPE": this section is now
+          rendered by BrandSignature.tsx, a client component carrying
+          an A/B review toggle between this original static treatment
+          and a restrained slow-marquee alternative she asked to
+          compare in localhost. See that file's own header comment for
+          the full rationale — this is a prototype for her review, not
+          an approved change; the plain static <section> that used to
+          live here can be restored verbatim if that's her decision. */}
+      <BrandSignature />
 
       {/* ── THE WORK: THE AWAKENARTS COLLECTION ──────────────────
           2026-08-20, per Susan's "revise the architecture" directive:

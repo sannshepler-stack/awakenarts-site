@@ -5585,6 +5585,146 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .brand-signature__text { font-size: clamp(1.25rem, 5vw, 1.6rem); }
 }
 
+/* ── Tagline Motion Prototype (Treatment B) ───────────────────────
+   2026-08-24, per Susan's "CLAUDE DIRECTIVE — HOMEPAGE TAGLINE MOTION
+   PROTOTYPE." For review only — see BrandSignature.tsx's own header
+   comment. Not part of the approved design; safe to delete along with
+   that component if she chooses Treatment A (static) instead. */
+
+/* Standard visually-hidden utility — used here so a screen reader
+   announces the locked tagline exactly once in Motion mode, while the
+   marquee's repeated on-screen copies stay aria-hidden/decorative. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Review-only toggle — deliberately quiet (small, muted, tucked at
+   the top of the section) so it reads as a review instrument, not a
+   homepage element. Remove along with BrandSignature.tsx once a
+   treatment is chosen. */
+.brand-signature-proto-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(28, 43, 58, 0.45);
+}
+.brand-signature-proto-toggle__label {
+  opacity: 0.8;
+}
+.brand-signature-proto-toggle button {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid rgba(28, 43, 58, 0.25);
+  color: rgba(28, 43, 58, 0.6);
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: color 0.2s ease-out, border-color 0.2s ease-out, background 0.2s ease-out;
+}
+.brand-signature-proto-toggle button:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.brand-signature-proto-toggle button.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--cream);
+}
+
+/* The marquee viewport — full-width, clips the track so only one pass
+   of text is ever visible at a time; the track itself is what moves. */
+.brand-signature-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Static fallback for prefers-reduced-motion, below. Hidden by
+   default (Motion mode normally shows the moving track instead). */
+.brand-signature-marquee__reduced-fallback {
+  display: none;
+}
+
+.brand-signature-marquee__track {
+  display: flex;
+  width: max-content;
+  /* Very slow, linear, continuous -- "quiet, deliberate, and
+     literary," not a news ticker. 70s per full loop; each
+     .brand-signature-marquee__copy is an exact duplicate of the
+     other, so translating by exactly -50% of the track's total width
+     lands precisely at the start of the second copy -- no visible
+     seam or reset jump. */
+  animation: brand-signature-marquee-scroll 70s linear infinite;
+}
+@keyframes brand-signature-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.brand-signature-marquee__copy {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.brand-signature-marquee__item {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  /* Same apparent size as the static treatment's own clamp() --
+     motion is the only new variable, per her "do not increase the
+     current apparent type size." */
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  color: var(--gold);
+  /* Generous spacing between repetitions, per her explicit note --
+     most of the gap lives in this padding, not in the middot glyph. */
+  padding: 0 3rem;
+}
+.brand-signature-marquee__sep {
+  margin-left: 3rem;
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Per Susan's explicit accessibility instruction: a reduced-motion
+     visitor sees the static treatment even while Motion is the
+     selected comparison mode. */
+  .brand-signature-marquee__track {
+    display: none;
+  }
+  .brand-signature-marquee__reduced-fallback {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-signature-marquee__item {
+    font-size: clamp(1.25rem, 5vw, 1.6rem);
+    padding: 0 2rem;
+  }
+  .brand-signature-marquee__sep {
+    margin-left: 2rem;
+  }
+}
+
 /* ── Further Understanding — accessibility/depth statement ───────
    2026-08-24, per Susan's "Homepage Revision Directive," Section 4.
    A quiet hinge between the Collection section (cream) and Workshops
