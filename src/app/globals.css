@@ -5689,79 +5689,65 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    timed to begin the instant the loop's 2 iterations finish for both
    lines (which finish simultaneously, since both share one C).
 
-   TIMING (absolute, from page load):
-     0.3s  -- line 1 begins fading in
-     1.7s  -- line 1 fully visible
-     2.5s  -- line 2 begins fading in (0.8s gap after line 1 completed)
-     3.9s  -- line 2 fully visible -- complete statement now on screen
-     5.9s  -- hold ends (2.0s reading the complete statement), BOTH
-               lines begin fading out together
-     7.3s  -- both lines fully invisible (synchronized fade-out complete)
-     7.6s  -- cycle 1 ends (0.3s empty pause), cycle 2 begins identically
-     14.9s -- both lines' 2 loop iterations complete (0.3 + 7.3*2);
-               line 1's settle begins immediately
-     16.3s -- line 1 fully, permanently visible (settle fade-in)
-     17.1s -- line 2 begins its settle fade-in (0.8s gap after 16.3s)
-     18.5s -- line 2 fully, permanently visible -- tagline complete
-               and still, no further motion. */
+   TIMING, as it stood through the three-cycle version (absolute, from
+   page load): 0.3s line 1 begins fading in, 1.7s line 1 fully visible,
+   2.5s line 2 begins fading in, 3.9s line 2 fully visible, 5.9s hold
+   ends and both fade out together, 7.3s both invisible, 7.6s cycle 2
+   begins identically, 14.9s loop's 2 iterations complete and the
+   settle pass begins, 16.3s line 1 permanently visible, 17.1s line 2's
+   settle fade-in begins, 18.5s line 2 permanently visible -- tagline
+   complete and still.
+
+   2026-08-24, later still, per her "FADE SEQUENCE UPDATE" directive:
+   the repeat is removed outright -- "Change the tagline animation from
+   three cycles to one entrance sequence only... Remove all fade-out,
+   restart, looping, and three-cycle logic." What remains is just the
+   first 3.9s of the sequence above -- line 1 fades in at the same
+   initialDelay (0.3s) over the same fadeDuration (1.4s), line 2 begins
+   its own fade-in after the same gap (0.8s), over the same
+   fadeDuration -- then both simply stay at opacity: 1 for the rest of
+   the page session. No hold/fadeOut/pause/iteration-count are needed
+   any more since there's nothing after the entrance to time against;
+   those parameters, and the two-keyframe-per-line loop/settle
+   structure they drove, are removed rather than left unused, since
+   this was same-day prototype timing math, not approved content. Her
+   explicit instruction: "Do not otherwise change the approved timing,
+   typography, positioning, wording, or background" -- so initialDelay,
+   fadeDuration, and gap keep their last-approved values (0.3s, 1.4s,
+   0.8s) untouched; only the fade-out/repeat machinery is gone.
+
+   TIMING (absolute, from page load), current:
+     0.3s -- line 1 begins fading in
+     1.7s -- line 1 fully, permanently visible
+     2.5s -- line 2 begins fading in (0.8s gap after line 1 completed)
+     3.9s -- line 2 fully, permanently visible -- tagline complete and
+              static for the rest of the page session, no further
+              motion, ever. */
 
 .brand-signature-fade__line {
   display: inline-block;
   opacity: 0;
+  animation-name: brand-signature-fade-in;
+  animation-duration: 1.4s; /* fadeDuration, unchanged */
   animation-timing-function: ease-in-out;
-  animation-iteration-count: 2, 1;
-  animation-delay: 0.3s, 14.9s;
-  animation-fill-mode: none, forwards;
-  animation-duration: 7.3s, 1.4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
-/* "When Images Become Words" -- fades in immediately at the start of
-   each cycle and holds until the synchronized fade-out. */
+/* "When Images Become Words" -- fades in first, at the original
+   initialDelay, and simply stays visible. */
 .brand-signature-fade__line--1 {
-  animation-name: brand-signature-fade-loop-1, brand-signature-fade-settle;
+  animation-delay: 0.3s; /* initialDelay, unchanged */
 }
-/* ...then "And Language Shapes a Path" stays invisible until line 1
-   has been fully visible for the full `gap`, per her explicit
-   sequencing -- "do not begin fading line 1 while line 2 is still
-   arriving." Same cycle duration/delay/iteration-count as line 1 so
-   the two stay in lockstep; only the shape of the opacity curve
-   differs. */
+/* ...then "And Language Shapes a Path" begins its own fade-in once
+   line 1 has been fully visible for the full `gap` (0.8s, unchanged),
+   per her original sequencing -- "do not begin fading line 1 while
+   line 2 is still arriving." delay = initialDelay + fadeDuration + gap
+   = 0.3 + 1.4 + 0.8 = 2.5s. */
 .brand-signature-fade__line--2 {
-  animation-name: brand-signature-fade-loop-2, brand-signature-fade-settle;
-  animation-delay: 0.3s, 17.1s; /* settle: line 1's settle-visible (16.3s) + gap (0.8s) */
+  animation-delay: 2.5s;
 }
 
-/* Cycles 1 and 2, line 1's shape: fade in right away, hold through
-   line 2's arrival and the shared reading beat, then fade out in sync
-   with line 2, then the empty pause. Percentages scaled to this
-   keyframe's 7.3s duration -- see the absolute TIMING list above. */
-@keyframes brand-signature-fade-loop-1 {
-  0%     { opacity: 0; }
-  19.2%  { opacity: 1; }  /* line 1 fully visible, 1.4s in */
-  76.7%  { opacity: 1; }  /* synchronized fade-out begins, 5.6s in */
-  95.9%  { opacity: 0; }  /* synchronized fade-out complete, 7.0s in */
-  100%   { opacity: 0; }  /* empty pause until the cycle repeats */
-}
-
-/* Cycles 1 and 2, line 2's shape: stays invisible through line 1's
-   solo fade-in and the gap, then fades in, then holds and fades out
-   at the SAME percentages as line 1 -- the synchronized exit. */
-@keyframes brand-signature-fade-loop-2 {
-  0%     { opacity: 0; }
-  30.1%  { opacity: 0; }  /* still invisible -- line 1's fade-in + the gap */
-  49.3%  { opacity: 1; }  /* line 2 fully visible, complete statement on screen */
-  76.7%  { opacity: 1; }  /* synchronized fade-out begins, matches line 1 */
-  95.9%  { opacity: 0; }  /* synchronized fade-out complete, matches line 1 */
-  100%   { opacity: 0; }  /* empty pause until the cycle repeats */
-}
-
-/* Cycle 3 (both lines): identical fade-in shape to their loop's own
-   entrance, but no fade-out step -- `forwards` holds the final
-   opacity: 1 permanently once each line's own settle animation
-   completes, per her "allow the complete tagline to return and remain
-   visible as the settled state." Line 1 and line 2 use this same
-   keyframe, just at their own different animation-delay (see above),
-   preserving the same staggered-entrance shape one final time. */
-@keyframes brand-signature-fade-settle {
+@keyframes brand-signature-fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
 }

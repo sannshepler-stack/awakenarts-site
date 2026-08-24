@@ -122,12 +122,26 @@
  * family, still the Complete composite, still copied as-is.
  *
  * It remains a plain <img>, entirely outside the fade animation --
- * per her explicit "the divider should be visible throughout all
- * three fade cycles. It never fades" -- so it renders at full opacity
- * from first paint and stays that way regardless of what
- * .brand-signature-fade__line is doing above it. Verified numerically
- * via computed opacity at the mid-cycle pause (both text lines at
- * opacity 0): divider opacity 1, display: block, visibility: visible.
+ * per her explicit instruction that it stays visible throughout,
+ * never fading -- so it renders at full opacity from first paint and
+ * stays that way regardless of what .brand-signature-fade__line is
+ * doing above it. (Her "Section Divider Asset Recovery" directive
+ * afterward flagged that this Complete-composite file is NOT the
+ * canonical #2 Section Divider she's after -- a full repo search
+ * found no other divider asset anywhere in the project, reported to
+ * her directly; this file stays in place only until the correct one
+ * is recovered or created.)
+ *
+ * 2026-08-24, later still, per her "FADE SEQUENCE UPDATE" directive:
+ * the three-cycle repeat/settle behavior above is removed. The tagline
+ * now runs ONE entrance only -- line 1 fades in, line 2 follows after
+ * the same gap, both simply stay visible for the rest of the page
+ * session. No fade-out, no restart, no looping. Same initialDelay/
+ * fadeDuration/gap values as before (0.3s/1.4s/0.8s) -- "do not
+ * otherwise change the approved timing" -- only the repeat/fade-out
+ * machinery is gone. See globals.css's own timing comment for the
+ * simplified four-checkpoint sequence. The divider is unaffected --
+ * it was never part of the animation to begin with.
  *
  * THIS REMAINS A PROTOTYPE FOR REVIEW, NOT AN APPROVED DESIGN.
  */
