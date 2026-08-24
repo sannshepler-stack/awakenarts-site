@@ -132,9 +132,23 @@ export default function HomeSection2() {
               orphan-control technique) so those two words always wrap
               together as a pair rather than "say." ever standing alone.
               No visible character is added; this only changes where the
-              browser is allowed to break the line. */}
+              browser is allowed to break the line.
+
+              2026-08-24, later still, per Susan's follow-up: wording
+              swapped again -- "Image and language can reveal what
+              experience has been trying to&nbsp;say." -> "Images can
+              reveal what experience has been trying to tell us." This
+              reintroduces "tell us." at the end, the exact phrase whose
+              orphaning motivated the FIRST rewrite. Checked at 1440
+              (desktop), 1024/768 (tablet), and 390 (mobile): tablet
+              fits on one line at both widths and mobile wraps 5/6 words
+              with no orphan, but desktop (1440) wrapped with "us." alone
+              on its own second line -- the same problem, relocated to a
+              new width. Fixed the same way as before: a non-breaking
+              space between "tell" and "us." so those two words always
+              wrap together. */}
           <p className="section2-dark__sub">
-            Image and language can reveal what experience has been trying to&nbsp;say.
+            Images can reveal what experience has been trying to tell&nbsp;us.
           </p>
           <p className="section2-dark__worlds">
             Each workshop brings the work into conversation with our own experience.
