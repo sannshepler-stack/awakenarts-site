@@ -50,13 +50,18 @@
  * 2026-08-24, later still, per her "FINAL TIMING REFINEMENT" directive
  * ("The fade choreography is correct... refining lag time only, not
  * redesigning the animation"): two of the six parameters tightened --
- * the entrance gap (1.9s -> 1.1s, "the second thought should arrive
- * sooner so the two phrases feel more connected") and the empty pause
- * before the next cycle (0.6s -> 0.3s, "only a brief quiet beat").
- * fadeDuration, hold, fadeOut, and initialDelay are unchanged. Cycle
- * length is now 7.6s (was 8.7s); the full sequence settles at ~19.4s
- * (was ~22.4s). Same choreography, same three cycles, same
- * synchronized fade-out -- only the two lag intervals moved.
+ * the entrance gap (1.9s -> 1.1s) and the empty pause before the next
+ * cycle (0.6s -> 0.3s). fadeDuration, hold, fadeOut, and initialDelay
+ * unchanged.
+ *
+ * 2026-08-24, later still, per her one-line follow-up ("just a little
+ * sooner second line arrives -- timing of the repeat is good"): gap
+ * tightened once more, 1.1s -> 0.8s. Nothing else moved -- the 0.3s
+ * restart pause she confirmed as "good" is untouched, as are
+ * fadeDuration, hold, and fadeOut. Cycle length is now 7.3s (was
+ * 7.6s); the full sequence settles at ~18.5s. Same choreography, same
+ * three cycles, same synchronized fade-out -- only the entrance gap
+ * moved.
  *
  * No JS/interactivity is needed for this treatment — it's pure CSS
  * (see .brand-signature-fade__line and its keyframes in globals.css),
