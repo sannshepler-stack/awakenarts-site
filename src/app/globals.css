@@ -5716,11 +5716,18 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    fadeDuration, and gap keep their last-approved values (0.3s, 1.4s,
    0.8s) untouched; only the fade-out/repeat machinery is gone.
 
+   2026-08-24, later still, per her follow-up ("now need less time
+   between line one enter and line two enter"): gap tightened again,
+   0.8s -> 0.4s -- half the previous value, a clearly shorter beat
+   between line 1 landing and line 2 starting, still enough of a pause
+   to read as sequential rather than simultaneous. initialDelay and
+   fadeDuration untouched.
+
    TIMING (absolute, from page load), current:
      0.3s -- line 1 begins fading in
      1.7s -- line 1 fully, permanently visible
-     2.5s -- line 2 begins fading in (0.8s gap after line 1 completed)
-     3.9s -- line 2 fully, permanently visible -- tagline complete and
+     2.1s -- line 2 begins fading in (0.4s gap after line 1 completed)
+     3.5s -- line 2 fully, permanently visible -- tagline complete and
               static for the rest of the page session, no further
               motion, ever. */
 
@@ -5739,12 +5746,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   animation-delay: 0.3s; /* initialDelay, unchanged */
 }
 /* ...then "And Language Shapes a Path" begins its own fade-in once
-   line 1 has been fully visible for the full `gap` (0.8s, unchanged),
-   per her original sequencing -- "do not begin fading line 1 while
-   line 2 is still arriving." delay = initialDelay + fadeDuration + gap
-   = 0.3 + 1.4 + 0.8 = 2.5s. */
+   line 1 has been fully visible for the `gap` (0.4s, tightened from
+   0.8s per her "less time between line one enter and line two enter"
+   follow-up), per her original sequencing -- "do not begin fading
+   line 1 while line 2 is still arriving." delay = initialDelay +
+   fadeDuration + gap = 0.3 + 1.4 + 0.4 = 2.1s. */
 .brand-signature-fade__line--2 {
-  animation-delay: 2.5s;
+  animation-delay: 2.1s;
 }
 
 @keyframes brand-signature-fade-in {
