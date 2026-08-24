@@ -32,6 +32,21 @@
  * separate effects. See the two keyframes and their timing comment in
  * globals.css for the exact numbers.
  *
+ * 2026-08-24, later still, per her "REVISE TAGLINE FADE TIMING"
+ * directive: the exit was staggered too (line 2 fading out ~1s after
+ * line 1), which meant line 1 started disappearing before the
+ * complete two-line statement had finished arriving/being read. Fixed
+ * by giving line 1 and line 2 DIFFERENT keyframe shapes sharing one
+ * cycle duration: line 1 fades in immediately and holds; line 2 stays
+ * invisible through line 1's entrance and a noticeably longer gap
+ * (~1.9s, her requested 1.8-2.0s range), then fades in -- and now both
+ * lines hold together and fade out AT THE SAME PERCENTAGES, so the
+ * disappearance is synchronized rather than staggered. Same three-
+ * cycle structure as before (2 full loop iterations, then a settle
+ * pass that fades in and holds forever). See globals.css's own timing
+ * comment for the full six-parameter derivation (fadeDuration, gap,
+ * hold, fadeOut, pause, initialDelay).
+ *
  * No JS/interactivity is needed for this treatment — it's pure CSS
  * (see .brand-signature-fade__line and its keyframes in globals.css),
  * so this file is a plain server component, not 'use client'.
