@@ -555,14 +555,19 @@ export default function HomePage() {
           visual space... not surrounded by explanatory copy."
 
           2026-08-24, later the same day, per Susan's "CLAUDE DIRECTIVE
-          — HOMEPAGE TAGLINE MOTION PROTOTYPE": this section is now
+          — HOMEPAGE TAGLINE MOTION PROTOTYPE": this section became
           rendered by BrandSignature.tsx, a client component carrying
           an A/B review toggle between this original static treatment
-          and a restrained slow-marquee alternative she asked to
-          compare in localhost. See that file's own header comment for
-          the full rationale — this is a prototype for her review, not
-          an approved change; the plain static <section> that used to
-          live here can be restored verbatim if that's her decision. */}
+          and a slow-marquee alternative.
+
+          2026-08-24, later still, per Susan's "CLAUDE DIRECTIVE —
+          REPLACE TICKER WITH SOFT PHRASE FADE": the marquee and its
+          toggle are discontinued outright ("we will not use the
+          ticker treatment") and removed. BrandSignature.tsx is a
+          plain server component again, rendering a soft two-phrase
+          fade-in prototype — see that file's own header comment for
+          the full rationale. Still a prototype for her review, not an
+          approved change. */}
       <BrandSignature />
 
       {/* ── THE WORK: THE AWAKENARTS COLLECTION ──────────────────
