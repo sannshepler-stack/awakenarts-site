@@ -82,6 +82,12 @@ import Link from 'next/link'
  * experience." Class name/styling kept as-is (plain serif, quiet
  * cream, mild letter-spacing) since it already suits a short sentence
  * as well as it suited a list -- only the copy changed.
+ *
+ * 2026-08-24, per Susan's direct instruction ("Workshop section
+ * creates orphan wording"): .section2-dark__sub's text replaced again
+ * -- "Image and language can reveal what experience has been trying
+ * to tell us." -> "...trying to say." Fixes an orphan line the prior
+ * wording was producing at some widths. Styling untouched.
  */
 export default function HomeSection2() {
   return (
@@ -110,8 +116,25 @@ export default function HomeSection2() {
           </div>
 
           <h3 className="section2-dark__title">Workshops</h3>
+          {/* 2026-08-24, per Susan's direct instruction: the prior wording
+              ("...trying to tell us.") was producing an orphan line at
+              some widths. Replaced with a slightly shorter sentence,
+              written on one line here so it isn't broken by a manual
+              line break -- responsive wrapping still governs actual
+              on-screen line breaks; only the source formatting and the
+              copy itself changed.
+
+              Checked against tablet (1024px) and mobile (390px) after
+              the swap: the new wording still wrapped with "say." alone
+              on its own line at both -- the exact orphan problem
+              persisting, just with different final words. Added a
+              non-breaking space between "to" and "say." (standard
+              orphan-control technique) so those two words always wrap
+              together as a pair rather than "say." ever standing alone.
+              No visible character is added; this only changes where the
+              browser is allowed to break the line. */}
           <p className="section2-dark__sub">
-            Image and language can reveal what experience has been trying to tell us.
+            Image and language can reveal what experience has been trying to&nbsp;say.
           </p>
           <p className="section2-dark__worlds">
             Each workshop brings the work into conversation with our own experience.
