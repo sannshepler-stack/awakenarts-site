@@ -143,6 +143,67 @@
  * simplified four-checkpoint sequence. The divider is unaffected --
  * it was never part of the animation to begin with.
  *
+ * 2026-08-24, later still, per her "SECTION DIVIDER ASSET RECOVERY"
+ * directive: she supplied the canonical #2 Section Divider directly
+ * (AArts-Divider-Image-1.png, 1962x802) -- the symmetrical three-leaf
+ * central flourish with extended horizontal rules, confirmed a
+ * genuinely different design from the LeafPair/Complete asset used
+ * above, which is retired from this placement (left defined, unused,
+ * in globals.css, per no-silent-deletion; still referenced by its own
+ * name where it may be needed elsewhere).
+ *
+ * The file as supplied was not actually a transparent PNG -- mode
+ * RGB, with the transparency-checkerboard baked into the pixels
+ * (uniform ~245/254 gray squares) rather than a real alpha channel,
+ * most likely an exported "transparency preview" rather than a true
+ * alpha export. Recovered real transparency via a color-key
+ * extraction (checkerboard squares are neutral gray -- R=G=B --
+ * while the gold ornament is saturated, so alpha derives from pixel
+ * chroma) -- no redraw, no recolor, no added elements, just restoring
+ * the alpha channel the file should have shipped with.
+ *
+ * First extraction pass judged "clean" from composited previews alone
+ * turned out not to be, per her direct instruction not to trust the
+ * visual preview: a scaled-chroma alpha with no floor left background
+ * pixels at alpha 3-7 instead of exactly 0, because the checkerboard
+ * itself carries ~1-3 levels of compression noise (R,G,B not perfectly
+ * equal). Invisible on screen, but not actually zero. Fixed with a
+ * hard threshold verified against the real noise ceiling (measured
+ * max chroma 3 in pure-background strips) before choosing 6 as the
+ * cutoff: alpha = 0 for chroma <= 6, else scaled. Re-verified
+ * pixel-by-pixel, not visually: outermost border strip is alpha == 0
+ * exactly (checked, not assumed), no fully-opaque near-black pixels
+ * anywhere (ruling out a stray "black rectangle"), and composited over
+ * white, cream, AND navy (--deep, #1C2B3A) -- all three checked, not
+ * just the two from the first pass.
+ *
+ * Cropped to content bounds with a small pad -- 1894x271, ~6.99:1
+ * aspect ratio, matching the source. Saved under the canonical name
+ * she specified: brand-assets/png-exports/dividers/
+ * AwakenArts-Section-Divider-Gold.png (documented in
+ * brand-assets/README.md), copied as-is to
+ * public/images/brand/ornaments/AwakenArts-Section-Divider-Gold.png
+ * for live use. The raw upload is archived separately, for provenance,
+ * at .../dividers/AwakenArts-Divider-2-RawUpload.png.
+ *
+ * Sizing note: her production spec gives two targets -- "18-26px
+ * intended display height" AND "approximately 35-45% of text-block
+ * width." This asset's actual proportions (6.98:1, much flatter/wider
+ * than the previous leaf-pair file) can't satisfy both at once: 35%
+ * of the ~605px text column would stand ~30px tall, already past the
+ * height ceiling, and 45% would stand ~39px tall. Held to the exact
+ * height range instead (the more specific, pixel-exact instruction,
+ * and consistent with "restrained... quiet mark" from her original
+ * framing) via height: clamp(18px, 1.6vw, 26px); width: auto --
+ * which keeps proportions locked and produces a width of roughly
+ * 24-27% of the text column on the desktop widths checked, short of
+ * the 35-45% guideline. Flagged to her directly rather than silently
+ * picking one target over the other.
+ *
+ * Same placement as before -- centered beneath both completed tagline
+ * lines, never between them, outside the fade animation, always
+ * opaque, never fades.
+ *
  * THIS REMAINS A PROTOTYPE FOR REVIEW, NOT AN APPROVED DESIGN.
  */
 
@@ -160,7 +221,7 @@ export default function BrandSignature() {
       </p>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/brand/ornaments/AwakenArts-Divider-Complete-2000.png"
+        src="/images/brand/ornaments/AwakenArts-Section-Divider-Gold.png"
         alt=""
         aria-hidden="true"
         className="brand-signature__divider"

@@ -337,6 +337,33 @@ Non-approved, historical assets kept for reference only — never referenced by 
   no new image assets. This is now the definitive AwakenArts pause
   mark for all print materials — leaf-only component pieces for
   CSS/code contexts, complete flattened composite for everything else.
+
+- **Homepage Section Divider (#2) — 2026-08-24, per Susan's "SECTION
+  DIVIDER ASSET RECOVERY" directive.** A separate mark from the print
+  pause mark above — the symmetrical three-leaf central flourish with
+  extended horizontal rules, used beneath the homepage tagline
+  (`BrandSignature.tsx`), not in print journals. No matching asset
+  existed anywhere in the project when searched (every PNG in the repo
+  checked by content and aspect ratio, not just filename); Susan
+  supplied the source directly. As uploaded it was not a true
+  transparent PNG — flattened RGB with the transparency-checkerboard
+  baked into the pixels rather than a real alpha channel. Real alpha
+  was recovered via a color-key extraction (background is neutral
+  gray, the gold ornament is saturated) with a hard zero-floor
+  threshold set above the measured background noise ceiling, so every
+  background pixel is alpha == 0 exactly, not just visually close —
+  verified pixel-by-pixel (border strip, no stray opaque near-black
+  pixels) and composited over white, cream, and navy before saving.
+  Canonical file: `png-exports/dividers/AwakenArts-Section-Divider-
+  Gold.png` (1894×271, ~6.99:1) — the raw upload is kept alongside it,
+  unaltered, as `AwakenArts-Divider-2-RawUpload.png`, for provenance.
+  Copied as-is to `public/images/brand/ornaments/AwakenArts-Section-
+  Divider-Gold.png` for live use. THIS PLACEMENT REMAINS A PROTOTYPE
+  FOR REVIEW, NOT AN APPROVED DESIGN — see `BrandSignature.tsx` for
+  the full history and the sizing note (her 18–26px height and
+  35–45%-of-text-width targets can't both hold for this asset's actual
+  proportions; held to the height range, width follows from it).
+
 - **Dark-background PNG export family — 2026-07-14, per "DARK FOOTER LOGO
   — REQUIRED CORRECTION" directive.** Susan required the footer to stop
   using a live SVG and instead use a dedicated transparent PNG rendered
