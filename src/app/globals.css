@@ -969,6 +969,19 @@ a   { color: inherit; text-decoration: none; }
    under the mission paragraph. .hero-invitations' own margin-top
    (3rem, separating the whole CTA+support block from the mission
    paragraph) is untouched. */
+/* 2026-08-31, per Susan's "Hero / Section 2 swap" directive: this
+   class now lives exclusively in BrandSignature.tsx's centered
+   .brand-signature section, trailing the "Explore Workshops" CTA --
+   no longer in the Hero's left-aligned .hero__text column (see
+   page.tsx/BrandSignature.tsx history comments). .brand-signature's
+   own text-align: center only centers this paragraph's inline text
+   within its own box -- it does NOT center the box itself, since a
+   block element's max-width without margin: auto still sits flush to
+   the container's start edge. Added margin: auto left/right so the
+   box is actually centered under the button above it, not merely
+   left-aligned inside a centered section. Font, size, weight, color,
+   and top spacing (0.5rem, "attached to the CTA above it") are
+   otherwise unchanged from their original Hero-era values. */
 .hero-method {
   font-family: var(--serif);
   font-style: normal;
@@ -977,7 +990,7 @@ a   { color: inherit; text-decoration: none; }
   line-height: var(--subtitle-line);
   color: var(--deep);
   max-width: 46ch;
-  margin: 0.5rem 0 0;
+  margin: 0.5rem auto 0;
 }
 
 .hero-sub {
@@ -5539,9 +5552,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    no eyebrow, no supporting sentence, generous padding on all sides,
    centered. Sized between the Hero's mission line and its h1 — larger
    than a supporting statement, not competing with the logo itself. */
+/* 2026-08-31, per Susan's "Hero / Section 2 swap" directive: top
+   padding increased (1rem -> 2.5rem) now that this section opens with
+   a compact button rather than a two-line tagline that needed less
+   room above it -- the button was sitting too close to the Hero
+   above. Bottom padding (3.5rem, framing the divider) is unchanged. */
 .brand-signature {
   background: #f5f0e8;
-  padding: 1rem 2rem 3.5rem;
+  padding: 2.5rem 2rem 3.5rem;
   text-align: center;
 }
 /* .brand-signature__text -- 2026-08-31, per Susan's "Hero / Section 2
@@ -5574,15 +5592,23 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    it now lives in the Hero's left-aligned text stack, not a
    full-width centered band. */
 .hero-tagline-fade {
+  /* 2026-08-31, per Susan's follow-up after seeing this live: sized
+     UP from the first pass (which matched the CTA's own 0.9rem text)
+     -- this wording is important enough that it should read larger
+     than .hero-mission's --editorial-italic-size (clamp(1.05rem,
+     1.5vw, 1.2rem)), not smaller than or equal to it. Also given a
+     bottom margin so it sits with breathing room as the last element
+     in the Hero's text column, rather than crowding the column's
+     bottom edge. */
   display: block;
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
   line-height: 1.6;
   color: var(--gold);
   max-width: 46ch;
-  margin: 0;
+  margin: 0 0 0.5rem;
 }
 /* 2026-08-24, per Susan's "SECTION DIVIDER" directive: the AwakenArts
    Section Divider ornament, placed beneath both completed tagline
