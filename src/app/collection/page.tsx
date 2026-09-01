@@ -148,7 +148,7 @@ export default function CollectionPage() {
                   <span className="col-edition-card__kicker">{edition.kicker}</span>
                   <span className="col-edition-card__title">{edition.title}</span>
                   <span className="col-edition-card__action">
-                    View Edition Preview <span aria-hidden="true">→</span>
+                    View Edition Preview
                   </span>
                 </Link>
               ))}
@@ -245,13 +245,13 @@ export default function CollectionPage() {
         <section className="col-archive-cta">
           <div className="col-archive-cta__paths" aria-label="Continue exploring AwakenArts">
             <Link href="/symbols" className="col-archive-cta__link">
-              Encounter the Symbols <span aria-hidden="true">→</span>
+              Encounter the Symbols
             </Link>
             <Link href="/workshops" className="col-archive-cta__link">
-              Explore Workshops <span aria-hidden="true">→</span>
+              Explore Workshops
             </Link>
             <Link href="/encounters" className="col-archive-cta__link">
-              Enter Encounters <span aria-hidden="true">→</span>
+              Enter Encounters
             </Link>
           </div>
         </section>

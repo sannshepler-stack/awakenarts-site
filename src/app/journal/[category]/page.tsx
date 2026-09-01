@@ -78,9 +78,6 @@ export default function JournalCategoryPage({ params }: CategoryPageProps) {
       {/* 1. Site nav — upper-left, standalone */}
       <div className={styles.topBar}>
         <Link href="/" className={styles.homeLink}>
-          <span className={styles.homeArrow} aria-hidden="true">
-            ←
-          </span>
           Home
         </Link>
       </div>
@@ -89,9 +86,6 @@ export default function JournalCategoryPage({ params }: CategoryPageProps) {
         {/* 2. Section return + lateral territory navigation */}
         <div className={styles.masthead}>
           <Link href="/journal" className={styles.backToJournal}>
-            <span className={styles.backArrow} aria-hidden="true">
-              ←
-            </span>
             Back to Journal
           </Link>
           <TerritoryNav

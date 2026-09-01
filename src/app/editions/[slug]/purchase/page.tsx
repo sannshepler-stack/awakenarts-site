@@ -146,7 +146,7 @@ export default function PurchasePage({ params }: { params: { slug: string } }) {
 
         <section className="edition-actions">
           <Link href={`/editions/${edition.slug}`} className="edition-actions__back">
-            ← Return to Edition Preview
+            Return to Edition Preview
           </Link>
         </section>
       </main>

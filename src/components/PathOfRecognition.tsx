@@ -148,7 +148,7 @@ export default function PathOfRecognition() {
 
         <div className="home-recognition__cta">
           <Link href="/encounters" className="home-coll-cta home-coll-cta--light-surface">
-            Experience the Encounters <span aria-hidden="true">→</span>
+            Experience the Encounters
           </Link>
         </div>
 
@@ -163,7 +163,7 @@ export default function PathOfRecognition() {
 
         <div className="home-recognition__cta home-recognition__cta--after-image">
           <Link href="/symbols" className="home-coll-cta home-coll-cta--light-surface">
-            Explore Christian Symbols <span aria-hidden="true">→</span>
+            Explore Christian Symbols
           </Link>
         </div>
 

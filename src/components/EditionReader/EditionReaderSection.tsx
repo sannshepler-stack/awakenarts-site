@@ -59,7 +59,7 @@ export default function EditionReaderSection({
             fileName={`${edition.title.replace(/\s+/g, '_')}_Figure_Edition.pdf`}
             source={`edition-${edition.slug}`}
             itemLabel={`the ${edition.title} Figure Edition`}
-            submitLabel="Send Me the Edition →"
+            submitLabel="Send Me the Edition"
             thanksText="You're on the list — your copy is on its way."
           />
         </div>

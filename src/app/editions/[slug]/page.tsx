@@ -99,10 +99,10 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
             removed entirely. Back to Current Workshops is unchanged. */}
         <section className="edition-actions">
           <a href={workshopInquiry} className="edition-actions__link">
-            Inquire About a Workshop <span aria-hidden="true">→</span>
+            Inquire About a Workshop
           </a>
           <Link href="/workshops#current-workshops" className="edition-actions__back">
-            ← Back to Current Workshops
+            Back to Current Workshops
           </Link>
         </section>
       </main>

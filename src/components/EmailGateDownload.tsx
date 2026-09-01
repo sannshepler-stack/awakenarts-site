@@ -45,7 +45,7 @@ export default function EmailGateDownload({
   fileName,
   source,
   itemLabel = 'your file',
-  submitLabel = 'Send Me the Download →',
+  submitLabel = 'Send Me the Download',
   thanksText = "You're on the list — your download is on its way.",
   note = 'No selling. No noise. Only what the work requires.',
 }: Props) {
@@ -119,7 +119,7 @@ export default function EmailGateDownload({
               textDecoration: 'underline',
             }}
           >
-            If your download doesn&rsquo;t begin automatically, download {itemLabel} here →
+            If your download doesn&rsquo;t begin automatically, download {itemLabel} here
           </a>
         </p>
       </div>

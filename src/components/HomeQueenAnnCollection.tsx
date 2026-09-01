@@ -99,8 +99,9 @@ export default function HomeQueenAnnCollection() {
               href="/files/poems/Queen_Ann_Poem.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              className="home-coll-cta home-coll-cta--light-surface"
             >
-              Download the Poem (PDF) <span aria-hidden="true">→</span>
+              Download the Poem (PDF)
             </a>
           </p>
         </div>

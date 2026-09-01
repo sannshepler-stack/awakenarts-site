@@ -89,7 +89,7 @@ export default function FacilitatorOrientationPage() {
             A working companion to Appendix A of the Guide.
           </p>
           <Link href="/workshops" className={styles.backLink}>
-            ← Back to Workshops
+            Back to Workshops
           </Link>
         </div>
       </main>

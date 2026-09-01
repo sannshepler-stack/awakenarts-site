@@ -167,16 +167,16 @@ export default function AboutPage() {
                 untouched — only this inline invitation is removed. */}
             <div className="about-links">
               <p className="about-links__item">
-                <Link href="/workshops" className="text-link">
-                  Explore AwakenArts Workshops <span aria-hidden="true">→</span>
+                <Link href="/workshops" className="home-coll-cta home-coll-cta--light-surface">
+                  Explore AwakenArts Workshops
                 </Link>
                 <span className="about-links__desc">
                   See how Susan conducts the workshop experience.
                 </span>
               </p>
               <p className="about-links__item">
-                <Link href="/foundation" className="text-link">
-                  Read the Foundation of AwakenArts <span aria-hidden="true">→</span>
+                <Link href="/foundation" className="home-coll-cta home-coll-cta--light-surface">
+                  Read the Foundation of AwakenArts
                 </Link>
                 <span className="about-links__desc">
                   The literary and biblical foundations of the work.

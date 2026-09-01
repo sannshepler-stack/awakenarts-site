@@ -70,7 +70,7 @@ export default function SignupForm() {
       )}
 
       <button type="submit" className="btn-submit">
-        Join the List →
+        Join the List
       </button>
 
       <p className="form-note">No selling. No noise. Only what the work requires.</p>

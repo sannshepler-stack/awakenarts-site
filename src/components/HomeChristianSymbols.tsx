@@ -73,7 +73,7 @@ export default function HomeChristianSymbols() {
 
         <div className="home-recognition__cta home-recognition__cta--after-image">
           <Link href="/symbols" className="home-coll-cta home-coll-cta--light-surface">
-            Explore Christian Symbols <span aria-hidden="true">→</span>
+            Explore Christian Symbols
           </Link>
         </div>
 

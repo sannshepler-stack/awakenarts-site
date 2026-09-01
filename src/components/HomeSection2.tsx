@@ -166,7 +166,7 @@ export default function HomeSection2() {
           </p>
 
           <Link href="/workshops#current-workshops" className="home-coll-cta">
-            View Current Workshops <span aria-hidden="true">→</span>
+            View Current Workshops
           </Link>
         </div>
       </div>

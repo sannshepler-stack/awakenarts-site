@@ -48,18 +48,6 @@
   outline: none;
 }
 
-.homeArrow {
-  display: inline-block;
-  font-size: 0.85rem;
-  letter-spacing: 0;
-  transition: transform 220ms ease;
-}
-
-.homeLink:hover .homeArrow,
-.homeLink:focus-visible .homeArrow {
-  transform: translateX(-3px);
-}
-
 /* ─── Container ─────────────────────────────────────────────────────────── */
 .container {
   max-width: 720px;
@@ -91,23 +79,9 @@
   outline: none;
 }
 
-.backArrow {
-  display: inline-block;
-  font-size: 0.85rem;
-  letter-spacing: 0;
-  transition: transform 220ms ease;
-}
-
-.backToJournal:hover .backArrow,
-.backToJournal:focus-visible .backArrow {
-  transform: translateX(-3px);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .homeLink,
-  .homeArrow,
-  .backToJournal,
-  .backArrow {
+  .backToJournal {
     transition: none;
   }
 }

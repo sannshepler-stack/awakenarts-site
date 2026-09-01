@@ -32,9 +32,6 @@ export default function FormsPrototypePage() {
     <main className={styles.page}>
       <div className={styles.topBar}>
         <Link href="/" className={styles.homeLink}>
-          <span className={styles.homeArrow} aria-hidden="true">
-            ←
-          </span>
           Home
         </Link>
       </div>

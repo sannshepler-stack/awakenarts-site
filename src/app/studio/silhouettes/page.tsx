@@ -100,7 +100,7 @@ export default function SilhouettesPage() {
             Enter the Encounters
           </Link>
           <Link href="/studio" className="path-cta__link path-cta__link--quiet">
-            ← Studio
+            Studio
           </Link>
         </section>
 

@@ -446,9 +446,17 @@ export default function HomePage() {
                 back to a single line, "The AwakenArts Path →,"
                 .hero-invitation__label alone. .hero-invitation__eyebrow
                 itself is retired in globals.css (nothing else used
-                it). */}
-            <Link href="/workshops" className="hero-invitation">
-              <span className="hero-invitation__label">Explore Workshops <span className="hero-invitation__arrow" aria-hidden="true">→</span></span>
+                it).
+
+                2026-08-27, per Susan's "gold buttons clear within"
+                directive: the editorial navy-to-gold text treatment is
+                retired. This CTA now uses .home-coll-cta /
+                --light-surface directly -- the same boxed gold-outline
+                button used for "Experience the Encounters," "Explore
+                Christian Symbols," etc. elsewhere on the homepage --
+                rather than its own one-off typographic component. */}
+            <Link href="/workshops" className="home-coll-cta home-coll-cta--light-surface">
+              Explore Workshops
             </Link>
 
             {/* Methodology line — added 2026-08-07, per Susan's

@@ -151,7 +151,7 @@ export default function EncountersIndexPage() {
           fileName="AwakenArts_Encounter_Journal.pdf"
           source="encounters-journal"
           itemLabel="the Journal"
-          submitLabel="Send Me the Journal →"
+          submitLabel="Send Me the Journal"
           thanksText="Welcome to AwakenArts. Your Encounter Journal is downloading now."
         />
       </div>

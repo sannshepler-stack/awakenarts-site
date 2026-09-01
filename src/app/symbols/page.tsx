@@ -59,7 +59,7 @@ export default function SymbolsPage() {
 
         <section className="symbols-continuation" aria-label="Continue to Workshops">
           <Link href="/workshops" className="home-coll-cta home-coll-cta--light-surface">
-            Continue to Workshops <span aria-hidden="true">→</span>
+            Continue to Workshops
           </Link>
         </section>
       </main>

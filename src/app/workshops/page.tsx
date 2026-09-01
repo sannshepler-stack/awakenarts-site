@@ -90,8 +90,10 @@ const INQUIRY_MAILTO =
 // single opening sentence ("An AwakenArts workshop begins with
 // original images and poetry and follows what the work reveals.") ->
 // Current Workshops (the Figure Edition visual grid, moved
-// substantially higher) -> the rest of "What These Workshops Are"
-// (heading, lede, remaining two paragraphs) -> What to Expect ->
+// substantially higher) -> the rest of "About the Workshops" (renamed
+// from "What These Workshops Are" 2026-08-31 -- orphaned "Are" on
+// iPhone widths; heading, lede, remaining two paragraphs) -> What to
+// Expect ->
 // Your Facilitator -> Attend a Workshop, unchanged from before. See
 // inline comments at each relocated block.
 
@@ -140,8 +142,9 @@ export default function WorkshopsPage() {
               Imagery Higher" directive: information-hierarchy change
               only, no text deleted or rewritten. Immediately beneath
               the title, only this one sentence remains — the rest of
-              "What These Workshops Are" (heading, lede, and its other
-              two paragraphs) and the entire "What to Expect" section
+              "About the Workshops" (renamed from "What These Workshops
+              Are" 2026-08-31; heading, lede, and its other two
+              paragraphs) and the entire "What to Expect" section
               move down below Current Workshops, in the same order and
               wording they had before. See those blocks further down
               for the full relocated content. */}
@@ -172,7 +175,7 @@ export default function WorkshopsPage() {
                 </span>
                 <span className={styles.worldKicker}>Figure Edition</span>
                 <span className={styles.worldTitle}>{edition.title}</span>
-                <span className={styles.worldAction}>View Preview <span aria-hidden="true">→</span></span>
+                <span className={styles.worldAction}>View Preview</span>
               </Link>
             ))}
           </div>
@@ -197,7 +200,7 @@ export default function WorkshopsPage() {
               paragraph redundant with it. The second paragraph
               ("AwakenArts workshops are artistic and educational...")
               is kept exactly as it was -- not touched by this pass. */}
-          <h2 className={styles.h2}>What These Workshops Are</h2>
+          <h2 className={styles.h2}>About the Workshops</h2>
           <p className={styles.lede}>
             A Path of Discovery Through Image, Language, and Symbol
           </p>
@@ -230,7 +233,8 @@ export default function WorkshopsPage() {
 
           {/* 2026-08-20, per Susan's directive: a brief facilitator
               identification, moved out of the page's opening and placed
-              here instead -- after What These Workshops Are, What to
+              here instead -- after About the Workshops (renamed from
+              "What These Workshops Are" 2026-08-31), What to
               Expect, and Current Workshops have already answered "what
               would I be attending." Name, credentials, and one sentence
               of context. "That's sufficient," per her explicit note --
