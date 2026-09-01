@@ -1089,8 +1089,13 @@ a   { color: inherit; text-decoration: none; }
      separate sections rather than one married unit. Tightened ~15px
      (3rem/48px -> 2rem/32px), her explicit "don't overdo it" amount,
      so the tagline sits close enough to the mission lines above it to
-     read as continuing them, not as its own detached section. */
-  margin: 2rem 0 0;
+     read as continuing them, not as its own detached section.
+
+     2026-08-31, later the same day, per her "a little lower, not
+     much" follow-up: the tightened gap read as slightly too close.
+     Eased back up 8px (2rem/32px -> 2.5rem/40px) -- a small correction
+     in the other direction, not a return to the original 3rem. */
+  margin: 2.5rem 0 0;
 }
 
 /* .hero-invitation / .hero-invitation__label / .hero-invitation:hover —
