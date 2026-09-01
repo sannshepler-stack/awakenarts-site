@@ -1079,8 +1079,18 @@ a   { color: inherit; text-decoration: none; }
   /* 2026-07-26: margin increased (1.85rem -> 3rem) per Susan's
      "generous whitespace around the link so it stands on its own" --
      now framing a single quiet invitation rather than a stacked pair,
-     it can afford more air above it than the old two-doorway gap did. */
-  margin: 3rem 0 0;
+     it can afford more air above it than the old two-doorway gap did.
+
+     2026-08-31, per Susan's follow-up after the Hero/Section 2 swap:
+     that generous gap was tuned for a boxed button that needed to
+     "stand on its own." Now that this div holds the .hero-tagline-fade
+     text instead, the same 3rem gap read as the two same-color blocks
+     (.hero-mission above, the tagline below) floating apart as
+     separate sections rather than one married unit. Tightened ~15px
+     (3rem/48px -> 2rem/32px), her explicit "don't overdo it" amount,
+     so the tagline sits close enough to the mission lines above it to
+     read as continuing them, not as its own detached section. */
+  margin: 2rem 0 0;
 }
 
 /* .hero-invitation / .hero-invitation__label / .hero-invitation:hover —
