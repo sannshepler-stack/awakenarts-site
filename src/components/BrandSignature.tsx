@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 /*
  * BrandSignature — the expanded tagline section beneath the Hero
  * ("When Images Become Words / and Language Shapes a Path").
@@ -205,19 +207,36 @@
  * opaque, never fades.
  *
  * THIS REMAINS A PROTOTYPE FOR REVIEW, NOT AN APPROVED DESIGN.
+ *
+ * 2026-08-31, per Susan's "Hero / Section 2 swap" directive: this
+ * section and the Hero's CTA traded places, because the animated
+ * tagline directly beneath the Hero (same cream background, same
+ * general color palette) was reading as a continuation of the Hero
+ * rather than its own section. The "When Images Become Words / And
+ * Language Shapes a Path" fade -- unchanged wording, unchanged
+ * animation -- moved UP into the Hero itself, resized to match the
+ * CTA's own text size (see .hero-tagline-fade in globals.css, and
+ * page.tsx's own history comment at the new location). In its place,
+ * this section now holds the "Explore Workshops" CTA and its
+ * methodology line ("Story, poetry, image, and shared experience."),
+ * moved down from the Hero as a pair -- her explicit instruction was
+ * that the methodology line stays attached to the CTA, not the
+ * tagline. Both reuse their existing classes (.home-coll-cta /
+ * --light-surface, .hero-method) unchanged; only their parent section
+ * changed, so their own typography/spacing rules still apply as-is.
+ * The divider below is untouched -- it was never part of the
+ * animation and stays exactly where it was, now closing this CTA
+ * section instead of the tagline section.
  */
 
 export default function BrandSignature() {
   return (
     <section className="brand-signature" aria-label="AwakenArts">
-      <p className="brand-signature__text brand-signature-fade">
-        <span className="brand-signature-fade__line brand-signature-fade__line--1">
-          When Images Become Words
-        </span>
-        <br />
-        <span className="brand-signature-fade__line brand-signature-fade__line--2">
-          And Language Shapes a Path
-        </span>
+      <Link href="/workshops" className="home-coll-cta home-coll-cta--light-surface">
+        Explore Workshops
+      </Link>
+      <p className="hero-method">
+        Story, poetry, image, and shared experience.
       </p>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img

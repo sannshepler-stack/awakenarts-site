@@ -454,55 +454,32 @@ export default function HomePage() {
                 --light-surface directly -- the same boxed gold-outline
                 button used for "Experience the Encounters," "Explore
                 Christian Symbols," etc. elsewhere on the homepage --
-                rather than its own one-off typographic component. */}
-            <Link href="/workshops" className="home-coll-cta home-coll-cta--light-surface">
-              Explore Workshops
-            </Link>
+                rather than its own one-off typographic component.
 
-            {/* Methodology line — added 2026-08-07, per Susan's
-                "Figurative Language Methodology Line" directive.
-                Originally placed between the mission paragraph and
-                this CTA (per her first follow-up, "the line of text
-                will work better on the hero section"); moved again
-                same day, directly beneath "The AwakenArts Path →," per
-                her "one small change" directive: "supporting language
-                for that link," not a fourth peer statement in the
-                mission stack above. Deliberately minimal change from
-                its prior version -- font-family, style, weight, and
-                color are untouched (see .hero-method in globals.css);
-                only its position (now inside .hero-invitations,
-                trailing the Link) and its margin (tightened to read as
-                directly attached to the CTA above it, not a spaced
-                sibling of the mission paragraph) changed. Names the
-                underlying method explicitly (figurative language:
-                metaphor, poetry, symbolic imagery, parable) so the
-                Hero states plainly, in one line, that AwakenArts is
-                not simply poems, images, journals, or workshops but a
-                consistent methodology toward recognition and
-                learning.
-
-                2026-08-07, later the same day, per Susan's follow-up:
-                wording swapped from "Discover how figurative language
-                promotes recognition and learning." to "Explore the
-                World of Figurative Language" -- a shorter, more direct
-                supporting line under the CTA. Position, styling, and
-                the surrounding rationale above are unchanged; only the
-                copy itself changed. */}
-            {/* 2026-08-19, per Everyday-Language Standard: "literary-
-                symbolic" is internal AwakenArts vocabulary a first-time
-                visitor hasn't been given yet. Same claim, plainer
-                wording.
-                2026-08-19, later the same day, per Susan's "HERO COPY"
-                passes: "image, poetry, and reflection" -> "story,
-                poetry, image, and shared experience" -> "story, poetry,
-                image, and connection" -> back to "story, poetry, image,
-                and shared experience," this time dropping the
-                "Workshops built around" lead-in entirely -- now a
-                four-term fragment read as a quiet label beneath the
-                CTA rather than a sentence describing workshops
-                specifically. */}
-            <p className="hero-method">
-              Story, poetry, image, and shared experience.
+                2026-08-31, per Susan's "Hero / Section 2 swap"
+                directive: this CTA (and the methodology line that used
+                to trail it, "Story, poetry, image, and shared
+                experience.") moves down into the former Section 2 slot
+                -- see BrandSignature.tsx -- because the two sections
+                were reading as one undifferentiated block of same-
+                color text. In its place, the "When Images Become Words
+                / And Language Shapes a Path" animated tagline moves up
+                from Section 2 into this spot, still animated, still
+                italic, but sized down to roughly match this CTA's own
+                text (.home-coll-cta is 0.9rem) rather than its previous
+                large Section-2 display size -- see .hero-tagline-fade
+                in globals.css. Reuses the existing
+                .brand-signature-fade__line animation/keyframes
+                unchanged; only size and location moved. Still a
+                prototype swap for her review, not a final layout. */}
+            <p className="hero-tagline-fade brand-signature-fade">
+              <span className="brand-signature-fade__line brand-signature-fade__line--1">
+                When Images Become Words
+              </span>
+              <br />
+              <span className="brand-signature-fade__line brand-signature-fade__line--2">
+                And Language Shapes a Path
+              </span>
             </p>
           </div>
         </div>

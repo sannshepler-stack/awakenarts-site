@@ -5544,6 +5544,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   padding: 1rem 2rem 3.5rem;
   text-align: center;
 }
+/* .brand-signature__text -- 2026-08-31, per Susan's "Hero / Section 2
+   swap" directive: the fade tagline this styled moved up into the
+   Hero (see .hero-tagline-fade below, and BrandSignature.tsx's own
+   history comment). Left defined, unused, per no-silent-deletion --
+   nothing else references it. */
 .brand-signature__text {
   font-family: var(--serif);
   font-style: italic;
@@ -5553,6 +5558,31 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   color: var(--gold);
   max-width: 32ch;
   margin: 0 auto;
+}
+/* .hero-tagline-fade -- 2026-08-31, per Susan's "Hero / Section 2
+   swap" directive: the "When Images Become Words / And Language
+   Shapes a Path" fade tagline, relocated from its own Section 2 (see
+   .brand-signature__text above) into the Hero, replacing the "Explore
+   Workshops" CTA's old position there. Kept italic and kept animated
+   -- reuses .brand-signature-fade__line and its keyframes below,
+   completely unchanged -- but sized down from Section 2's large
+   display size to roughly match the CTA text it displaced
+   (.home-coll-cta is 0.9rem), per her explicit "about the size of the
+   explore workshops text." Left-aligned and given .hero__text's own
+   paragraph rhythm (max-width 46ch, matching .hero-mission/
+   .hero-method) rather than Section 2's centered 32ch column, since
+   it now lives in the Hero's left-aligned text stack, not a
+   full-width centered band. */
+.hero-tagline-fade {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+  line-height: 1.6;
+  color: var(--gold);
+  max-width: 46ch;
+  margin: 0;
 }
 /* 2026-08-24, per Susan's "SECTION DIVIDER" directive: the AwakenArts
    Section Divider ornament, placed beneath both completed tagline
