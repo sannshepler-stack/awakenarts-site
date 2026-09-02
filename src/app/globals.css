@@ -5912,8 +5912,18 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      "space after a threshold image," reused here as the shared,
      already-precedented gap rather than an invented new number.
      .qac-inner's own top padding is reduced to match this same value
-     -- see that rule's own comment. */
-  padding: 56px 2rem 0;
+     -- see that rule's own comment.
+
+     2026-09-02, later still, per Susan's "see that the ann copy/images
+     start about the same distance below the header as the matthew
+     header" follow-up: .qac-inner has since been tightened twice more
+     (56px -> 28px -> 16px, see that rule's own comment), reopening the
+     gap between the two sections. Brought down to match exactly here
+     -- 16px -- rather than loosening the Ann section back up, since
+     her last several notes were all in the tightening direction. 1024/
+     640px tiers below updated to match .qac-inner's own values at
+     those widths too. */
+  padding: 16px 2rem 0;
   text-align: center;
 }
 
@@ -6004,8 +6014,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      1080px override), sums to 80px, exactly --band-gap-md. */
   .poems-showcase-foundation { padding: 48px 0 var(--band-gap-md); }
   /* 2026-09-02, same "equal spacing" fix as the desktop rule above --
-     48px matches AtmosphericHeader's own 768px-tier margin-bottom. */
-  .poems-showcase-foundation__inner { padding: 48px 1.75rem 0; }
+     48px matched AtmosphericHeader's own 768px-tier margin-bottom.
+     2026-09-02, later still, "same distance below the header as the
+     matthew header" follow-up: matched to .qac-inner's own value
+     instead, 16px (that rule has no distinct 1024px tier of its own,
+     so its desktop value carries through to 640px -- mirrored here). */
+  .poems-showcase-foundation__inner { padding: 16px 1.75rem 0; }
   /* margin-top is the fade-to-quotation gap (new, added 2026-07-14
      actual-size correction); margin-bottom is the unrelated
      quotation-to-citation gap and is untouched by that correction. */
@@ -6022,8 +6036,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      640px override), sums to 64px, exactly --band-gap-sm. */
   .poems-showcase-foundation { padding: 36px 0 var(--band-gap-sm); }
   /* 2026-09-02, same "equal spacing" fix as the desktop rule above --
-     40px matches AtmosphericHeader's own 640px-tier margin-bottom. */
-  .poems-showcase-foundation__inner { padding: 40px 1.25rem 0; }
+     40px matched AtmosphericHeader's own 640px-tier margin-bottom.
+     2026-09-02, later still, "same distance below the header as the
+     matthew header" follow-up: matched to .qac-inner's own 640px-tier
+     value instead, 12px. */
+  .poems-showcase-foundation__inner { padding: 12px 1.25rem 0; }
   /* 2026-09-02, same ship-header pass: matches the 2.25rem mobile
      value .home-recognition__encounters-image (now retired) used to
      carry at this same breakpoint, so the mobile gap above the image
