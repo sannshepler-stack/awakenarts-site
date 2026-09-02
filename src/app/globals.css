@@ -1911,8 +1911,9 @@ a   { color: inherit; text-decoration: none; }
      fix already applied earlier this session to .section2-question
      for the identical complaint. The 2026-07-25 sizing history below
      is now superseded by this token-driven value; left in place as a
-     record, not deleted. */
-  font-family: var(--font-body);
+     record, not deleted. (font-family declaration itself moved below,
+     to var(--serif) -- see the "No that is bigger than" comment
+     further down for why Lora was superseded here too.) */
   /* 2026-07-25, per Susan: reduced ~15% (1.3/2.4vw/1.85rem ->
      1.1/2vw/1.57rem) -- the Matthew quote read as forcibly large for
      its role on the page; still needs authority as the homepage's
@@ -1933,9 +1934,21 @@ a   { color: inherit; text-decoration: none; }
      so this doesn't reopen her earlier "Ouch -- way dark and large"
      complaint -- that was about size AND navy-dark color together;
      this is the same larger size but gold, the color she's now
-     pointing at directly. font-family (Lora/var(--font-body)) and
-     font-weight/style are left as her typography spec already set
-     them -- she named size and color, not family. */
+     pointing at directly.
+
+     2026-09-02, minutes later, per Susan's "No that is bigger than"
+     follow-up (a zoomed screenshot of .section2-examples for
+     comparison): matching the numeric clamp() value wasn't enough --
+     .section2-examples is set in var(--serif) (Cormorant Garamond),
+     while this rule was left in var(--font-body) (Lora) per the
+     initial "she named size and color, not family" reasoning just
+     above. Lora and Cormorant Garamond render at visibly different
+     apparent sizes at the same declared font-size (different x-height/
+     metrics), so the two read as mismatched even with an identical
+     clamp() -- that reasoning was wrong. font-family switched to
+     var(--serif) to actually match, not just numerically reference,
+     .section2-examples. */
+  font-family: var(--serif);
   font-size: clamp(1.15rem, 2vw, 1.35rem);
   font-weight: 300;
   font-style: italic;
