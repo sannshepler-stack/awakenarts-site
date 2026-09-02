@@ -7107,10 +7107,16 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   margin: 0 0 0.65rem;
   line-height: 1.1;
 }
+/* 2026-09-02, per Susan's "match the italic wording to the wording --
+   Each workshop brings" / clarified "Make both NOT Italics" directive:
+   font-style: italic removed so this line matches .section2-dark
+   __worlds (the "Each workshop brings..." line right below it) in
+   style, not just wording -- both now plain, no longer one italic/
+   gold-emphasized line beside one plain one. Color (gold-lt) and size
+   are unchanged; only the italic was the mismatch she flagged. */
 .section2-dark__sub {
   font-family: var(--serif);
   font-size: var(--subtitle-size);
-  font-style: italic;
   color: var(--gold-lt);
   margin: 0 0 1rem;
   letter-spacing: 0.02em;
