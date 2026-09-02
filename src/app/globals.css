@@ -690,8 +690,20 @@ a   { color: inherit; text-decoration: none; }
      same near-symmetric top/bottom relationship .qac-section itself
      uses (107px / 99px) -- one change now does double duty: the hero
      reads centered within its own frame, AND still meets
-     .qac-section's top padding at the seam below. */
+     .qac-section's top padding at the seam below.
+
+     2026-09-01, later the same day, per Susan's "there is no space
+     under the hero image and/or the button" bug report: found the
+     cause -- the edit above that added this padding-top declaration
+     mistakenly REPLACED the padding-bottom declaration that used to
+     sit here instead of adding padding-top as a new line alongside
+     it. Every comment above still describes padding-bottom's own
+     history accurately; the actual declaration was just gone,
+     silently falling back to 0. Restored below, same value as
+     padding-top (both calc(4.5rem + 35px)), matching the symmetric
+     framing this whole pass intended. */
   padding-top: calc(4.5rem + 35px);
+  padding-bottom: calc(4.5rem + 35px);
   padding-left: 2rem;
   padding-right: 1rem; /* reduced so the image can reach nearer the right edge */
   display: grid;
@@ -1301,10 +1313,21 @@ a   { color: inherit; text-decoration: none; }
      .hero__text/.hero-logo/.hero-mission's own reversion. The tagline
      is the one exception she named: it keeps its own centered posture
      via align-self on .hero-tagline-fade directly (see that rule),
-     overriding this container's flex-start for that child alone. */
+     overriding this container's flex-start for that child alone.
+
+     2026-09-01, later the same day, per Susan's "space these evenly"
+     follow-up: the gap above this div (margin-top, 2.25rem/36px,
+     collapsed against .hero-mission's own 0.85rem/13.6px bottom
+     margin per normal block-sibling collapsing) and the gap below the
+     tagline (this div's own gap: 1.5rem/24px, a literal flex gap that
+     doesn't collapse) were two different values doing two visually
+     equivalent jobs -- the mission-to-tagline gap and the tagline-to-
+     button gap should read as one consistent rhythm, not two
+     independently-tuned ones. margin-top set to match gap exactly
+     (1.5rem), so both gaps are identically 24px. */
   align-items: flex-start;
   gap: 1.5rem;
-  margin: 2.25rem 0 0;
+  margin: 1.5rem 0 0;
 }
 
 /* .hero-invitation / .hero-invitation__label / .hero-invitation:hover —
@@ -5890,11 +5913,18 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      accent didn't read well against an otherwise left-aligned column
      -- reverted. align-self/text-align: center removed; this element
      now inherits plain left alignment from .hero__text like everything
-     else in the column. margin stays 0 auto -- harmless/inert once
-     align-self no longer overrides the column's own flex-start, since
-     a left-aligned flex item's box just sits at its own natural
-     width regardless. */
-  margin: 0 auto;
+     else in the column. margin was left at 0 auto on the assumption
+     that it had gone inert -- wrong. A flex item's auto cross-axis
+     margins absorb available space independent of align-items/
+     align-self except when the item is stretched; under this
+     container's align-items: flex-start the item is NOT stretched,
+     so the auto margins were still actively centering the tagline's
+     box in the ~580px-wide column the whole time, out of step with
+     the mission line and button flush at the left edge above and
+     below it -- see her "much lower than the actual text it is
+     following" follow-up. Set to plain 0 -- no horizontal centering,
+     truly left-aligned like its siblings. */
+  margin: 0;
 }
 /* 2026-08-24, per Susan's "SECTION DIVIDER" directive: the AwakenArts
    Section Divider ornament, placed beneath both completed tagline
