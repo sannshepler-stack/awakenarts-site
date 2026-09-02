@@ -5900,7 +5900,20 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      the room it needs to read as one line at normal desktop widths. */
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 2rem;
+  /* 2026-09-02, per Susan's "a little more space after the image on
+     Scriptures before starting Christian Symbols... an equal spacing
+     before starting AwakenArts, the Stories" directive, comparing this
+     section against HomeCollectionPremise's own (much larger) gap:
+     this section's header/fade was followed by ~0px before the
+     eyebrow (no top padding here at all); the Ann section's own gap
+     (.qac-inner) was ~116px -- visibly inconsistent side by side.
+     padding-top: 56px added -- the same value AtmosphericHeader's own
+     standard (non-fadeTo) margin-bottom already uses site-wide for
+     "space after a threshold image," reused here as the shared,
+     already-precedented gap rather than an invented new number.
+     .qac-inner's own top padding is reduced to match this same value
+     -- see that rule's own comment. */
+  padding: 56px 2rem 0;
   text-align: center;
 }
 
@@ -5990,7 +6003,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      trimmed padding-bottom at this breakpoint (32px, see .hero's
      1080px override), sums to 80px, exactly --band-gap-md. */
   .poems-showcase-foundation { padding: 48px 0 var(--band-gap-md); }
-  .poems-showcase-foundation__inner { padding: 0 1.75rem; }
+  /* 2026-09-02, same "equal spacing" fix as the desktop rule above --
+     48px matches AtmosphericHeader's own 768px-tier margin-bottom. */
+  .poems-showcase-foundation__inner { padding: 48px 1.75rem 0; }
   /* margin-top is the fade-to-quotation gap (new, added 2026-07-14
      actual-size correction); margin-bottom is the unrelated
      quotation-to-citation gap and is untouched by that correction. */
@@ -6006,7 +6021,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      own trimmed padding-bottom at this breakpoint (28px, see .hero's
      640px override), sums to 64px, exactly --band-gap-sm. */
   .poems-showcase-foundation { padding: 36px 0 var(--band-gap-sm); }
-  .poems-showcase-foundation__inner { padding: 0 1.25rem; }
+  /* 2026-09-02, same "equal spacing" fix as the desktop rule above --
+     40px matches AtmosphericHeader's own 640px-tier margin-bottom. */
+  .poems-showcase-foundation__inner { padding: 40px 1.25rem 0; }
   /* 2026-09-02, same ship-header pass: matches the 2.25rem mobile
      value .home-recognition__encounters-image (now retired) used to
      carry at this same breakpoint, so the mobile gap above the image
@@ -6665,12 +6682,23 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .qac-inner {
   max-width: 1100px;
   margin: 0 auto;
-  /* Carries the top gap and horizontal inset .qac-section used to
-     supply itself (see that rule's own comment) -- now sitting between
-     the header/fade and this section's actual content (Ann pairing,
-     premise text) rather than before the header. Same numeric values,
-     just relocated. */
-  padding: calc(4.5rem + 35px) 2rem 0;
+  /* Carries the horizontal inset .qac-section used to supply itself
+     (see that rule's own comment) -- now sitting between the header/
+     fade and this section's actual content rather than before the
+     header.
+
+     2026-09-02, per Susan's "an equal spacing before starting
+     AwakenArts, the Stories" directive, comparing this section's gap
+     side by side against HomeChristianSymbols' own (much smaller) gap:
+     the original relocated value here, calc(4.5rem + 35px) (~116px),
+     read as excessive next to that section's near-0px gap. Reduced to
+     56px -- matching, not just referencing, .poems-showcase-
+     foundation__inner's own new padding-top (see that rule's comment)
+     so both sections now open with the identical "space after a
+     threshold image" gap before their eyebrow -- the same value
+     AtmosphericHeader's own standard margin-bottom already uses
+     site-wide, rather than either section's own one-off number. */
+  padding: 56px 2rem 0;
 }
 /* The Path of Stones premise, now living inside HomeCollectionPremise.tsx
    directly beneath the Compilation image, in the same cream field —
@@ -6969,7 +6997,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      .qac-inner's own mobile override just below, so the header stays
      flush-top and full-bleed at this breakpoint too. */
   .qac-section { padding: 0 0 3rem; }
-  .qac-inner { padding: 3rem 1.5rem 0; }
+  /* 2026-09-02, "equal spacing" fix: 40px matches
+     .poems-showcase-foundation__inner's own 640px-tier value (see that
+     rule's comment) and AtmosphericHeader's own 640px-tier
+     margin-bottom -- was 3rem (48px). */
+  .qac-inner { padding: 40px 1.5rem 0; }
   .qac-ann { margin-top: 3rem; }
   .qac-premise { margin-top: 0; }
   .qac-spread { max-width: 280px; gap: 1rem; }
