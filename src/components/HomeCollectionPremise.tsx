@@ -173,13 +173,19 @@ export default function HomeCollectionPremise() {
               her three lines everywhere, rather than relying on
               text-align: center's inherited wrap -- text-align: center
               also made explicit on .section2-question in globals.css
-              rather than left as inherited-from-parent behavior. */}
+              rather than left as inherited-from-parent behavior.
+
+              2026-09-02, later the same day, per Susan's follow-up
+              ("'exploring familiar images' now becomes -- 'exploring
+              familiar images leading to further understanding.'"):
+              third line's closing clause tightened, "to open the way
+              to" -> "leading to." */}
           <h2 id="collection-premise-heading" className="section2-question">
             You already speak in images. We all do.
             <br />
             AwakenArts brings image and language into conversation,
             <br />
-            exploring familiar images to open the way to further understanding.
+            exploring familiar images leading to further understanding.
           </h2>
 
           <p className="section2-examples">
