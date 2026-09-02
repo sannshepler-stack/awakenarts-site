@@ -6890,7 +6890,15 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    max-width, and margin are all untouched. */
 .section2-question {
   font-family: var(--serif);
-  font-style: italic;
+  /* 2026-09-02, per Susan's "Might be the italics that make this hard
+     to read -- if it follows typography rules -- then make it NOT
+     italic" directive: font-style: italic removed. It does follow her
+     typography spec -- H3/Subheading is defined as "Cormorant Garamond
+     REGULAR," not italic; this statement was set in italic before that
+     spec existed. This isn't the "poetic or reflective language" her
+     spec asks to preserve in italics (that carve-out covers quotations
+     and poem lines elsewhere on the site) -- it's a USP/mission
+     statement, so removing italic doesn't touch that exception. */
   /* 2026-09-01, per Susan's "that section text is too large -- yelling
      large... don't let the text on section 2 be bigger and black, see
      the symbols section" directive: this statement plays the exact
