@@ -1869,23 +1869,28 @@ a   { color: inherit; text-decoration: none; }
 .hero-quote-text {
   /* 2026-09-02, per Susan's typography-normalization style sheet:
      font-family switched Cormorant Garamond -> Lora, matching her
-     "Body italic / quotations" role (this is exactly that -- a
-     quotation, italic). font-SIZE is intentionally NOT reduced to her
-     16px body-italic spec here -- this line carries the homepage's
-     closing scriptural authority (see the 2026-07-25 comment below,
-     "still needs authority... not at the previous scale," already a
-     deliberate, Susan-reviewed exception once). Flagged in this pass's
-     report as a retained exception rather than silently resized. */
+     "Body italic / quotations" role. This pass first tried KEEPING the
+     existing large clamp()/dark navy as a deliberate exception (see
+     git history for that reasoning) -- reviewed live and overruled the
+     same day: "Ouch -- way dark and large." Reverted to match her
+     spec exactly instead: font-size -> var(--body-size) (16px, her
+     literal "Body italic / quotations" size) and color -> var(--mid)
+     (deep slate) instead of var(--deep) (navy) -- same "too dark"
+     fix already applied earlier this session to .section2-question
+     for the identical complaint. The 2026-07-25 sizing history below
+     is now superseded by this token-driven value; left in place as a
+     record, not deleted. */
   font-family: var(--font-body);
   /* 2026-07-25, per Susan: reduced ~15% (1.3/2.4vw/1.85rem ->
      1.1/2vw/1.57rem) -- the Matthew quote read as forcibly large for
      its role on the page; still needs authority as the homepage's
      closing scriptural moment, just not at the previous scale.
-     font-weight/style/color and the surrounding spacing are untouched. */
-  font-size: clamp(1.1rem, 2vw, 1.57rem);
+     font-weight/style/color and the surrounding spacing are untouched.
+     SUPERSEDED 2026-09-02 -- see this rule's own comment above. */
+  font-size: var(--body-size);
   font-weight: 300;
   font-style: italic;
-  color: var(--deep);
+  color: var(--mid);
   /* 2026-06-29: widened from 880px so the full line ("He did not say
      anything to them without using a parable.") sits on one line at
      normal desktop widths instead of wrapping — the surrounding
