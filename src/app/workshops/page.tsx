@@ -135,11 +135,21 @@ export default function WorkshopsPage() {
           this shorter height, same as it does at every other standard-
           height placement sitewide. collection-cover-clean.png is not
           deleted -- just swapped out here, per the same "flagged for
-          review, not solved unprompted" caution as the pass above. */}
+          review, not solved unprompted" caution as the pass above.
+
+          2026-09-02, same day, per Susan's "cut off on top because of
+          the nav band on top" report: clearsNav added -- this header
+          is the very first element after <Nav/>, and .nav is `position:
+          fixed`, so without this the nav was permanently covering the
+          image's own top ~72px on page load. See AtmosphericHeader
+          .tsx's own comment on the new `clearsNav` prop for the full
+          reasoning; same fix applied to /about, /foundation, /method,
+          which share this exact pattern. */}
       <AtmosphericHeader
         src="/images/headers/queen-ann-threshold.jpg"
         alt="Queen Ann beneath a clouded sunset sky, crowned and windswept, with a distant castle silhouette -- an image-poem work, the kind of encounter these workshops draw from."
         fadeTo="#f5f0e8"
+        clearsNav
       />
 
       <div className={styles.page}>

@@ -33,6 +33,22 @@
   margin-bottom: 0;
 }
 
+/* 2026-09-02, per Susan's "cut off on top because of the nav band"
+   report -- see the `clearsNav` prop's own comment in
+   AtmosphericHeader.tsx for the full reasoning. Values match .hero's
+   own established fixed-nav clearance exactly (72px desktop / 56px at
+   <=1080px, "matches the mobile nav height"), reused here rather than
+   re-measured, since .hero already solved this same problem for the
+   homepage. */
+.clearsNav {
+  margin-top: 72px;
+}
+@media (max-width: 1080px) {
+  .clearsNav {
+    margin-top: 56px;
+  }
+}
+
 .img {
   display: block;
   width: 100%;

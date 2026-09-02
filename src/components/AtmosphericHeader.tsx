@@ -64,6 +64,23 @@ import styles from './AtmosphericHeader.module.css'
  * shoreline stay grounded — pass a smaller number (e.g. 25) to start
  * the fade lower and reveal more of the image above it, without
  * changing the transition itself. Only meaningful alongside `fadeTo`.
+ *
+ * `clearsNav` (added 2026-09-02, per Susan's "it is cut off on top
+ * because of the nav band on top" report on /workshops, "as did the
+ * other one" on the homepage Matthew section): .nav is `position:
+ * fixed`, so a header placed as the very first element after <Nav/>
+ * on page load sits at the top of the viewport with nothing pushing
+ * it down -- the nav then draws on top of it, covering roughly its
+ * top 72px permanently (not a transient scroll overlap, since there's
+ * nothing above the header to scroll past). Pass this prop on any
+ * page-opening instance (immediately after <Nav/>, nothing else
+ * before it) to push the header down by the same margin-top values
+ * .hero already uses for exactly this purpose (72px desktop / 56px
+ * "matches the mobile nav height" at <=1080px) -- reusing those
+ * already-tuned numbers rather than inventing new ones. Leave unset
+ * for mid-page instances (e.g. HomeChristianSymbols' threshold, which
+ * sits well below the Hero and only meets the nav transiently while
+ * scrolling, same as any other content passing under a fixed nav).
  */
 
 interface AtmosphericHeaderProps {
@@ -73,12 +90,14 @@ interface AtmosphericHeaderProps {
   tall?: boolean
   fadeTo?: string
   fadeHeight?: number
+  clearsNav?: boolean
 }
 
-export default function AtmosphericHeader({ src, alt, flush, tall, fadeTo, fadeHeight }: AtmosphericHeaderProps) {
+export default function AtmosphericHeader({ src, alt, flush, tall, fadeTo, fadeHeight, clearsNav }: AtmosphericHeaderProps) {
   const classNames = [
     styles.header,
     flush || fadeTo ? styles.flush : '',
+    clearsNav ? styles.clearsNav : '',
   ].filter(Boolean).join(' ')
 
   return (

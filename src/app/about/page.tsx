@@ -24,10 +24,20 @@ export default function AboutPage() {
     <>
       <Nav />
 
+      {/* 2026-09-02, per Susan's "cut off on top because of the nav
+          band on top" report (raised on /workshops, "as did the other
+          one"): clearsNav added -- this header is the very first
+          element after <Nav/>, and .nav is `position: fixed`, so
+          without this the nav was permanently covering the image's
+          own top ~72px on page load. See AtmosphericHeader.tsx's own
+          comment on the new `clearsNav` prop for the full reasoning;
+          same fix applied to /workshops, /foundation, /method, which
+          share this exact pattern. */}
       <AtmosphericHeader
         src="/images/headers/about.jpg"
         alt="An open book, dried flowers, and a stack of well-worn books on a sunlit table overlooking a hillside at sunset — a quiet place to write and reflect."
         fadeTo="#f5f0e8"
+        clearsNav
       />
 
       <div className="about-page">
