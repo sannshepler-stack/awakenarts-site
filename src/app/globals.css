@@ -5942,8 +5942,23 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      -- 16px -- rather than loosening the Ann section back up, since
      her last several notes were all in the tightening direction. 1024/
      640px tiers below updated to match .qac-inner's own values at
-     those widths too. */
-  padding: 16px 2rem 0;
+     those widths too.
+
+     2026-09-02, later still, per Susan's "the eyebrow begins too close
+     to the end of the ship transition... move the opening content block
+     somewhat downward" directive: the chase to match .qac-inner's exact
+     pixel value (twice now) was itself the problem -- this header uses
+     `tall` (~25% more height than the Ann section's sky header) and
+     AtmosphericHeader's fade zone is a percentage of each image's own
+     height (34% default on both, unchanged), so the SAME 16px landed as
+     two different optical gaps: too little here, too much there. Opened
+     back up to 28px -- the section's own prior intermediate value from
+     the first tightening round above, reused rather than inventing a
+     new number, and deliberately no longer matched to .qac-inner's own
+     (now smaller) value; see that rule's comment for the mirror-image
+     reasoning. 1024/640px tiers below updated proportionally. Proposed,
+     pending her visual review. */
+  padding: 28px 2rem 0;
   text-align: center;
 }
 
@@ -6038,8 +6053,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      2026-09-02, later still, "same distance below the header as the
      matthew header" follow-up: matched to .qac-inner's own value
      instead, 16px (that rule has no distinct 1024px tier of its own,
-     so its desktop value carries through to 640px -- mirrored here). */
-  .poems-showcase-foundation__inner { padding: 16px 1.75rem 0; }
+     so its desktop value carries through to 640px -- mirrored here).
+     2026-09-02, later still, per Susan's "refine the spacing" directive:
+     matches the desktop rule's own new value, 28px -- see that rule's
+     comment. Proposed, pending her visual review. */
+  .poems-showcase-foundation__inner { padding: 28px 1.75rem 0; }
   /* margin-top is the fade-to-quotation gap (new, added 2026-07-14
      actual-size correction); margin-bottom is the unrelated
      quotation-to-citation gap and is untouched by that correction. */
@@ -6059,8 +6077,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      40px matched AtmosphericHeader's own 640px-tier margin-bottom.
      2026-09-02, later still, "same distance below the header as the
      matthew header" follow-up: matched to .qac-inner's own 640px-tier
-     value instead, 12px. */
-  .poems-showcase-foundation__inner { padding: 12px 1.25rem 0; }
+     value instead, 12px.
+     2026-09-02, later still, per Susan's "refine the spacing" directive:
+     opened back up, 12px -> 20px, proportional to the desktop change
+     (16->28). Proposed, pending her visual review. */
+  .poems-showcase-foundation__inner { padding: 20px 1.25rem 0; }
   /* 2026-09-02, same ship-header pass: matches the 2.25rem mobile
      value .home-recognition__encounters-image (now retired) used to
      carry at this same breakpoint, so the mobile gap above the image
@@ -6760,8 +6781,26 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      two sections, in case she wants it matched again later.
 
      2026-09-02, later still, per Susan's "tighten the space somewhat
-     more for ann" follow-up: reduced again, 28px -> 16px. */
-  padding: 16px 2rem 0;
+     more for ann" follow-up: reduced again, 28px -> 16px.
+
+     2026-09-02, later still, per Susan's "refine the spacing
+     immediately below the two atmospheric headers" directive: the
+     numeric equalization chased two rounds ago (both sections landing
+     on the identical 16px) never accounted for the fact that these two
+     headers are NOT the same shape -- HomeChristianSymbols' ship image
+     carries `tall` (~25% more height) while this section's sky image
+     doesn't, and AtmosphericHeader's fade zone is a PERCENTAGE of each
+     image's own height (34% default, same on both, no fadeHeight
+     override on either). A taller source image means a taller fade
+     zone in absolute pixels, so identical 16px padding after the fade
+     was landing as two different OPTICAL gaps, not one consistent
+     rhythm -- exactly what she flagged: too much cream here, too
+     little on Christian Symbols. Reduced further, 16px -> 8px, a
+     moderate additional tightening (not to 0 -- some breathing room
+     stays). Explicitly NOT matched to Christian Symbols' new value; see
+     that rule's own comment for why they diverge on purpose now. This
+     is a proposed value pending her visual review, not yet locked. */
+  padding: 8px 2rem 0;
 }
 /* The Path of Stones premise, now living inside HomeCollectionPremise.tsx
    directly beneath the Compilation image, in the same cream field —
@@ -7074,8 +7113,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      rule.
      2026-09-02, later still, per "tighten the space somewhat more for
      ann": tightened again to 12px, matching the desktop rule's own
-     further reduction. */
-  .qac-inner { padding: 12px 1.5rem 0; }
+     further reduction.
+     2026-09-02, later still, per Susan's "refine the spacing" directive
+     (see the desktop rule's own comment on the fade-height reasoning):
+     reduced again, 12px -> 6px, proportional to the desktop change.
+     Proposed, pending her visual review. */
+  .qac-inner { padding: 6px 1.5rem 0; }
   .qac-ann { margin-top: 3rem; }
   .qac-premise { margin-top: 0; }
   .qac-spread { max-width: 280px; gap: 1rem; }
