@@ -159,9 +159,15 @@ export default function HomeSection2() {
             loading="lazy"
           />
         </div>
+        {/* 2026-09-02, per Susan's "eliminate the orphan by say[ing] the
+            works are the foundation for the workshops" follow-up: the
+            prior wording ("...the foundation each workshop draws
+            from.") wrapped "from." alone onto its own third line at
+            this width. Shortened to "...the foundation for the
+            workshops." -- same meaning, no orphan. */}
         <p className="section2-dark__collection-caption">
           Poetic encounters in shape, symbol, and story — the works
-          are the foundation each workshop draws from.
+          are the foundation for the workshops.
         </p>
 
         <div className="section2-dark__inner">
