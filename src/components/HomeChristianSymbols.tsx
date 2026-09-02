@@ -82,6 +82,41 @@ export default function HomeChristianSymbols() {
         </p>
         <p className="hero-quote-cite">Matthew 13:34</p>
 
+        {/* 2026-09-02, per Susan's directive to expand the Matthew
+            passage: five short paragraphs added below the verse and
+            citation, closing the section as one continuous meditation
+            rather than ending on the citation alone. See
+            .hero-quote-reflection in globals.css for the full
+            reasoning, including the restored "Christ is the center.
+            Scripture is the authority." credo line (originally
+            retired from /foundation on 2026-07-14, brought back here
+            per her explicit request). */}
+        <div className="hero-quote-reflection">
+          <p>
+            Jesus taught through the familiar language of image,
+            story, metaphor, and the ordinary things of human life. He
+            entered the world as he found it without surrendering the
+            truth he carried.
+          </p>
+          <p className="hero-quote-reflection__bridge">
+            AwakenArts works within that tradition.
+          </p>
+          <p>
+            Its study of symbol and archetypal pattern may lead into
+            literature, psychology, mythology, folklore, and the long
+            history of human imagination. Entering those territories
+            does not require surrendering the ground from which we
+            enter them.
+          </p>
+          <p className="hero-quote-reflection__credo">
+            Christ is the center. Scripture is the authority.
+          </p>
+          <p className="hero-quote-reflection__invitation">
+            The artistic work is an invitation to look, recognize, and
+            reflect.
+          </p>
+        </div>
+
       </div>
     </section>
   )
