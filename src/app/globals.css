@@ -1851,7 +1851,16 @@ a   { color: inherit; text-decoration: none; }
    (70px) unchanged — still the deliberate separation from the
    AtmosphericHeader above; that gap isn't part of this refinement. */
 .hero-quote-text {
-  font-family: var(--serif);
+  /* 2026-09-02, per Susan's typography-normalization style sheet:
+     font-family switched Cormorant Garamond -> Lora, matching her
+     "Body italic / quotations" role (this is exactly that -- a
+     quotation, italic). font-SIZE is intentionally NOT reduced to her
+     16px body-italic spec here -- this line carries the homepage's
+     closing scriptural authority (see the 2026-07-25 comment below,
+     "still needs authority... not at the previous scale," already a
+     deliberate, Susan-reviewed exception once). Flagged in this pass's
+     report as a retained exception rather than silently resized. */
+  font-family: var(--font-body);
   /* 2026-07-25, per Susan: reduced ~15% (1.3/2.4vw/1.85rem ->
      1.1/2vw/1.57rem) -- the Matthew quote read as forcibly large for
      its role on the page; still needs authority as the homepage's
@@ -2013,10 +2022,17 @@ a   { color: inherit; text-decoration: none; }
    the shared standard, not the other way around. line-height and
    color are unchanged. */
 .hero-quote-reflection p {
-  font-family: var(--serif);
+  /* 2026-09-02, per Susan's typography-normalization style sheet:
+     font-family switched Cormorant Garamond -> Lora (this is plain
+     editorial body prose, her "Body text" role exactly) and color
+     switched var(--ink) [navy] -> var(--charcoal), per her "Primary
+     text: #2B2B2B" spec -- this is body copy, not a heading or the
+     logo, so it's not covered by her "existing navy may remain"
+     carve-out. */
+  font-family: var(--font-body);
   font-size: var(--body-size);
   line-height: 1.75;
-  color: var(--ink);
+  color: var(--charcoal);
   margin: 0 0 1.1rem;
 }
 .hero-quote-reflection p:last-child {
@@ -7279,11 +7295,22 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    normal line of body copy rather than stretching edge-to-edge under
    the banner. Wording is a first draft -- flagged to Susan for her
    own adjustment, not presented as her exact words. */
+/* 2026-09-02, per Susan's typography-normalization style sheet: this
+   is genuinely a Caption/Note ("auxiliary identification text beneath
+   an image" -- her spec's own definition, and this literally sits
+   beneath the Collection banner image) rather than body prose.
+   font-family switched Cormorant -> Lora; font-size/line-height/
+   letter-spacing switched from a local 1rem/1.6/none to the shared
+   --caption-size/-line/-tracking tokens (12px/1.4/0.2px) instead of a
+   one-off value -- a real, visible reduction from its prior ~16-18px,
+   flagged here since it's a meaningful size change, not a rounding
+   difference. */
 .section2-dark__collection-caption {
-  font-family: var(--serif);
-  font-size: 1rem;
+  font-family: var(--font-body);
+  font-size: var(--caption-size);
   font-style: italic;
-  line-height: 1.6;
+  line-height: var(--caption-line);
+  letter-spacing: var(--caption-tracking);
   color: rgba(250, 247, 242, 0.75);
   max-width: 640px;
   margin: 0 auto 3.5rem;
@@ -7312,12 +7339,16 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   letter-spacing: 0.02em;
 }
 .section2-dark__worlds {
-  font-family: var(--serif);
-  /* 2026-09-02, same typography-consistency pass: literal 1rem swapped
-     for var(--body-size) -- numerically identical (--body-size: 1rem),
-     no visual change, just referencing the shared token by name like
-     every other paragraph-tier rule now does, rather than a value that
-     happens to match it. */
+  /* 2026-09-02, per Susan's typography-normalization style sheet:
+     font-family switched Cormorant Garamond -> Lora -- plain body
+     prose ("Each workshop brings..."), her "Body text" role. */
+  font-family: var(--font-body);
+  /* 2026-09-02, earlier the same day, same typography-consistency
+     pass: literal 1rem swapped for var(--body-size) -- at the time
+     numerically identical (--body-size was still 1rem); --body-size
+     has since been redefined to a literal 16px (see its own token
+     comment), so this rule now automatically inherits that resize too,
+     with no further edit needed here. */
   font-size: var(--body-size);
   letter-spacing: 0.02em;
   color: rgba(250, 247, 242, 0.78);
