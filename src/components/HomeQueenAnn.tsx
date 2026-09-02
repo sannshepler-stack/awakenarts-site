@@ -14,6 +14,25 @@
  * .qac-excerpt, .qac-pdf-link classes from the prior pass; no new
  * styling needed.
  *
+ * 2026-09-02, per Susan's "not sure the dark ann sequence works" /
+ * "the two images are juxtaposed" flag, and her approval of Option 1
+ * (ink text on cream/parchment, recoloring rather than restructuring):
+ * swapped ann-text-dark-crop.png -> ann-text-ink-crop.png. The poem
+ * artwork's RGB was solid black with a fully-formed alpha channel
+ * (normal font antialiasing, nothing shape/silhouette about it --
+ * that was a false lead); it simply hadn't been checked against a
+ * proper alpha-composited render, only viewed in a tool that showed
+ * raw un-composited pixels, which is why it read as a near-illegible
+ * solid black block. Recolored programmatically (black -> var(--ink)
+ * #1C2B3A), alpha channel untouched, so every letter's original
+ * antialiasing is preserved exactly -- now clean navy ink text,
+ * legible against the section's own cream background, sitting
+ * comfortably beside queen-ann-still.png's warm sunset palette
+ * instead of reading as a flat black rectangle next to it. Old file
+ * left on disk, unreferenced, per no-silent-deletion. No CSS changes
+ * needed -- .qac-spread__text's existing thin border was already
+ * designed to frame this image, and now has real content to frame.
+ *
  * Full readable access to the poem is preserved via the PDF link. No
  * CTA in this section by design — Workshops (practice) follows next.
  */
@@ -29,7 +48,7 @@ export default function HomeQueenAnn() {
           <div className="qac-spread__text">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/forms/ann-text-dark-crop.png"
+              src="/images/forms/ann-text-ink-crop.png"
               alt="Queen Ann — the poem, rendered in concrete poetry form"
               className="qac-spread__poem-img"
               loading="lazy"
