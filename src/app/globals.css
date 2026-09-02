@@ -656,8 +656,24 @@ a   { color: inherit; text-decoration: none; }
      transition on the page uses). Trimmed to 2.5rem (40px) so that,
      combined with Foundation's own reduced padding-top (56px), the
      two sections now meet at exactly 96px -- a deliberate, visible
-     gap, just no longer double the site's own standard. */
-  padding-bottom: 2.5rem;
+     gap, just no longer double the site's own standard.
+
+     2026-08-31, per Susan's "large space above section two, section
+     one seems crunched" follow-up: this rationale had gone stale
+     again, the same way it did in 2026-08-07 -- HomeCollectionPremise
+     (.qac-section, top padding calc(4.5rem + 35px) = 107px) has
+     followed the Hero directly since the Section 2 merge above, and
+     this value was never revisited against ITS padding either. The
+     96px-combined math only worked against Foundation's 56px top;
+     against .qac-section's considerably larger 107px, Hero's 40px
+     bottom read as lopsided -- generous above the next section,
+     crunched below this one. Set to match .qac-section's own top
+     padding exactly, rather than searched for a new combined-total
+     target, since her request was to balance the two sides against
+     each other, not hit a specific sum. .qac-section itself is
+     untouched -- it's shared with HomeQueenAnnCollection and
+     HomeQueenAnn, so it's not this value's to change. */
+  padding-bottom: calc(4.5rem + 35px);
   padding-left: 2rem;
   padding-right: 1rem; /* reduced so the image can reach nearer the right edge */
   display: grid;
