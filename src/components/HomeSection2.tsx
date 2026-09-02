@@ -88,6 +88,23 @@ import Link from 'next/link'
  * -- "Image and language can reveal what experience has been trying
  * to tell us." -> "...trying to say." Fixes an orphan line the prior
  * wording was producing at some widths. Styling untouched.
+ *
+ * 2026-09-02, per Susan's "not sure the dark ann sequence works" /
+ * "the two images are juxtaposed" concern, approval of Option 1
+ * (recolor rather than restructure), and her follow-up "not seeing
+ * this in localhost": the recolor had first been applied to
+ * HomeQueenAnn.tsx, which this component's own header comment already
+ * documents as unused dead code (superseded here since the "Reunite
+ * Queen Ann's image and poem" pass) -- so the change was never live.
+ * This is the actual rendered pairing. ann-text-dark-crop.png ->
+ * ann-text-ink-crop.png: same recolor (black -> var(--ink) #1C2B3A,
+ * original alpha/antialiasing untouched, see that file's own header
+ * comment for the full technical account), now applied where it's
+ * actually seen. .section2-dark__pair-text's page background is pure
+ * white (#fff, confirmed by this component's own earlier pixel-
+ * sampling comment above) rather than cream, but ink navy text reads
+ * just as cleanly on white as on cream, so no color changes were
+ * needed beyond the swap itself.
  */
 export default function HomeSection2() {
   return (
@@ -99,7 +116,7 @@ export default function HomeSection2() {
             <div className="section2-dark__pair-text">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/forms/ann-text-dark-crop.png"
+                src="/images/forms/ann-text-ink-crop.png"
                 alt="Queen Ann — the poem, rendered in concrete poetry form"
                 className="section2-dark__pair-poem-img"
                 loading="lazy"
