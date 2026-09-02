@@ -112,16 +112,16 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
  * file's own comment. scripture-threshold.jpg is left in place,
  * unused, per no-silent-deletion.
  *
- * 2026-09-02, later the same day, per Susan's "it is an abutment from
- * the preceding section, just like the boat image on the matthew
- * section" report (raised while fixing this same defect on the new Ann-
- * section header -- see HomeCollectionPremise.tsx's own comment): this
- * sailboat header's top edge butts flush against HomeCollectionPremise
- * (the Ann section, cream) directly above it, the same unaddressed-top-
- * seam problem. `fadeFrom="var(--cream)"` added -- var(--cream) is
- * .qac-section's own background, the exact color immediately above
- * this header -- so the image now dissolves out of that cream field at
- * its top the same way it already dissolved into cream at its bottom. */
+ * 2026-09-02, later the same day, briefly given a `fadeFrom="var(--
+ * cream)"` top fade to match a similar fix on the new Ann-section
+ * header -- superseded within the hour by Susan's direct correction:
+ * "The boat image was fine as a hard edge... just as the boat image
+ * has a hard edge as a transition from the same color section above
+ * it." `fadeFrom` removed -- reverted to its original hard top edge,
+ * unchanged. See HomeCollectionPremise.tsx's own comment: the Ann
+ * header's real problem wasn't a missing fade, it was that section's
+ * own padding holding it away from the section above and inset from
+ * the page's edges -- a structural fix, not a gradient. */
 export default function HomeChristianSymbols() {
   return (
     <section className="poems-showcase-foundation" aria-label="Christian Symbols">
@@ -130,7 +130,6 @@ export default function HomeChristianSymbols() {
         src="/images/homepage/encounters-symbols-ship-v3.png"
         alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon -- the threshold into this section's Scripture and symbols"
         tall
-        fadeFrom="var(--cream)"
         fadeTo="var(--cream)"
       />
 

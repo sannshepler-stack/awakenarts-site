@@ -104,17 +104,27 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
  * section doesn't open the page, it follows HomeSection2's navy
  * Workshops band, so there's no fixed-nav overlap to clear.
  *
- * 2026-09-02, later the same day, per Susan's "it is an abutment from
- * the preceding section, just like the boat image on the matthew
- * section" report: this header's top edge butted flush against
- * HomeSection2's navy Workshops band directly above it -- a hard
- * photographic cut, the same seam problem `fadeTo` already solves at
- * the bottom, just unaddressed at the top. `fadeFrom="var(--deep)"`
- * added (var(--deep) is .section2-dark's own background, the exact
- * color immediately above this header) so the image now dissolves out
- * of the navy band the same way it dissolves into cream below. See
- * AtmosphericHeader.tsx's own comment for the new prop's full
- * reasoning.
+ * 2026-09-02, later the same day, briefly given a `fadeFrom="var(--
+ * deep)"` top fade for the same "abutment" report -- superseded within
+ * the hour by Susan's direct correction: the fade was the wrong fix
+ * entirely. Her actual complaint: (1) the header needed to move UP to
+ * sit directly against HomeSection2's navy band with a HARD edge --
+ * "just as the boat image has a hard edge" -- not dissolve into it; and
+ * (2) the header needed to extend the FULL WIDTH of the section, not
+ * sit inset within it. Both were real structural problems: .qac-section
+ * carried its own top padding (calc(4.5rem + 35px), ~116px) AND
+ * horizontal padding (2rem) directly on the section element, so the
+ * header -- placed as this section's first child -- was pushed down
+ * from the navy band above by that top padding and inset from the
+ * page edges by the horizontal padding. `fadeFrom` removed. Fixed
+ * structurally instead: .qac-section's padding is now 0 on top and
+ * both sides (bottom padding unchanged), matching the same full-bleed,
+ * flush-top pattern .poems-showcase-foundation already uses for the
+ * sailboat header. The horizontal inset and the original top gap both
+ * move to .qac-inner instead, now applying AFTER the header (between
+ * the header/fade and the Ann pairing content) rather than before it
+ * -- same numeric values, just relocated. See globals.css's own
+ * comments on both rules for the exact change.
  */
 
 export default function HomeCollectionPremise() {
@@ -124,7 +134,6 @@ export default function HomeCollectionPremise() {
       <AtmosphericHeader
         src="/images/headers/collection-threshold.jpg"
         alt="A dark sky heavy with clouds breaking open to warm gold light along the horizon -- the threshold into the Queen Ann encounter"
-        fadeFrom="var(--deep)"
         fadeTo="var(--cream)"
       />
 

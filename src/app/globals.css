@@ -6610,14 +6610,37 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .further-understanding { padding: 0 1.5rem 3rem; }
 }
 
+/* 2026-09-02, per Susan's "moved up to meet section two by sitting up
+   against it... extend the ann header across the width of the
+   section" directive: this rule's own top padding (calc(4.5rem + 35px),
+   ~116px) and horizontal padding (2rem) used to sit ABOVE and AROUND
+   this section's first child -- fine when that child was plain text,
+   but once HomeCollectionPremise.tsx's own AtmosphericHeader became the
+   first child, that padding held the image away from HomeSection2's
+   navy band above it (no hard edge) and inset it from the page's edges
+   (not full-bleed) -- exactly the two problems she flagged. Top and
+   horizontal padding both removed here so the header sits flush
+   against the section above and spans the full section width, matching
+   the same pattern .poems-showcase-foundation already uses for the
+   sailboat header (padding: Xpx 0 Y -- zero horizontal, minimal top).
+   Bottom padding is unchanged -- that's this section's own closing gap
+   before Christian Symbols, unrelated to the header. The removed top/
+   horizontal values move to .qac-inner below, applying AFTER the
+   header instead of before it. */
 .qac-section {
   background: var(--cream);
-  padding: calc(4.5rem + 35px) 2rem calc(var(--band-gap-sm) + 35px);
+  padding: 0 0 calc(var(--band-gap-sm) + 35px);
   text-align: center;
 }
 .qac-inner {
   max-width: 1100px;
   margin: 0 auto;
+  /* Carries the top gap and horizontal inset .qac-section used to
+     supply itself (see that rule's own comment) -- now sitting between
+     the header/fade and this section's actual content (Ann pairing,
+     premise text) rather than before the header. Same numeric values,
+     just relocated. */
+  padding: calc(4.5rem + 35px) 2rem 0;
 }
 /* The Path of Stones premise, now living inside HomeCollectionPremise.tsx
    directly beneath the Compilation image, in the same cream field —
@@ -6894,7 +6917,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
 @media (max-width: 640px) {
   .qac-ann-spread { max-width: 340px; gap: 1.5rem; }
-  .qac-section { padding: 3rem 1.5rem 3rem; }
+  /* 2026-09-02, same "sitting up against it" / full-width structural
+     fix as the desktop rule above: horizontal + top padding moved to
+     .qac-inner's own mobile override just below, so the header stays
+     flush-top and full-bleed at this breakpoint too. */
+  .qac-section { padding: 0 0 3rem; }
+  .qac-inner { padding: 3rem 1.5rem 0; }
   .qac-ann { margin-top: 3rem; }
   .qac-premise { margin-top: 2.75rem; }
   .qac-spread { max-width: 280px; gap: 1rem; }
