@@ -164,6 +164,14 @@ export default function HomeChristianSymbols() {
                 section now closes on the quote itself, per her "end
                 with the quote" instruction, rather than opening with
                 it. */}
+        {/* 2026-09-02, per Susan's "watch for orphans" note, spotted
+            after the typography pass's font-family/size change to this
+            paragraph left "Scripture." alone on its own final line at
+            the width she was viewing: standard orphan-control fix
+            (non-breaking space between the last two words, same
+            technique used elsewhere on the homepage) so "of" and
+            "Scripture." always wrap together. No visible character
+            added. */}
         <div className="hero-quote-reflection">
           <p>
             Jesus taught through image, story, and metaphor, entering
@@ -171,7 +179,7 @@ export default function HomeChristianSymbols() {
             carried. AwakenArts works within that tradition—engaging
             literature, psychology, mythology, folklore, and the long
             history of human imagination while remaining grounded in
-            Christ and the authority of Scripture.
+            Christ and the authority of&nbsp;Scripture.
           </p>
         </div>
 
