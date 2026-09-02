@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import AtmosphericHeader from '@/components/AtmosphericHeader'
 
 /*
  * HomeChristianSymbols — Christian Symbols + Matthew, one integrated
@@ -37,16 +38,46 @@ import Link from 'next/link'
  * -gold/-encounters-image/-cta/-cta--after-image directly inside it,
  * rather than the old .home-recognition/.home-recognition__inner
  * wrapper (superseded, left defined per no-silent-deletion).
- * AtmosphericHeader is no longer imported/used by this component —
- * see .poems-showcase-foundation in globals.css, whose padding-top was
- * originally tuned as "gap before the threshold image begins" and now
- * simply serves as the gap before the eyebrow instead, unchanged
- * value, still reads correctly as ordinary section-opening breathing
- * room.
- */
+ * AtmosphericHeader was not imported/used by this component from
+ * 2026-08-20 until the pass below.
+ *
+ * 2026-09-02, per Susan's "we now have a section division issue
+ * between Ann and Matthew" directive: with Workshops (HomeSection2.tsx)
+ * reordered ahead of the Ann/Collection-premise section (see page.tsx's
+ * own 2026-09-02 comment), that section's cream field now sits
+ * directly against this one's cream field, with nothing marking the
+ * seam between them -- the navy Workshops band used to do that job.
+ * Her fix: "creating a header from the image that is present" --
+ * reusing queen-ann-still.png (already on the page, in the Ann
+ * pairing immediately above) as an AtmosphericHeader threshold image
+ * here, rather than introducing new imagery. This also revives the
+ * `tall` variant's original purpose exactly -- see AtmosphericHeader
+ * .tsx's own comment: "the single instance where the landscape is the
+ * pivot between the Queen Ann encounter and Scripture."
+ *
+ * Per her "preserve the best parts of the image" instruction: rather
+ * than crop live via object-fit (which would center-crop the source's
+ * full 1536x1024 canvas and risk losing her face/crown at wide
+ * viewports), a dedicated crop was pre-made -- public/images/headers/
+ * queen-ann-threshold.jpg, source rows 5%-57% (crown down through
+ * upper dress, full sky, and the castle silhouette + first warmth of
+ * the sunset), 2.89:1 -- following the site's established convention
+ * of pre-cropping header images to their focal point rather than
+ * relying on object-position overrides (see AtmosphericHeader.tsx's
+ * own "focal point stays centered" note). fadeTo matches this
+ * section's own cream background so the image dissolves into the
+ * eyebrow below rather than ending on a hard seam. */
 export default function HomeChristianSymbols() {
   return (
     <section className="poems-showcase-foundation" aria-label="Christian Symbols">
+
+      <AtmosphericHeader
+        src="/images/headers/queen-ann-threshold.jpg"
+        alt="Queen Ann beneath a clouded sunset sky, crowned and windswept, with a distant castle silhouette -- the same portrait from the encounter above, now a quiet threshold into Scripture"
+        tall
+        fadeTo="var(--cream)"
+      />
+
       <div className="poems-showcase-foundation__inner">
 
         <p className="eyebrow">Christian Symbols</p>
