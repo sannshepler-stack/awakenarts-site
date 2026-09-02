@@ -469,6 +469,38 @@
   --measure-narrow: 640px;
   --measure-medium: 760px;
   --measure-wide: 1100px;
+
+  /* AwakenArts TEXT WIDTH SYSTEM (locked 2026-09-02, per Susan's
+     "Standardize editorial text widths across AwakenArts" directive --
+     a companion standard to the Typography System above, same
+     reusable-token approach). Three named roles for EDITORIAL PARAGRAPH
+     TEXT specifically (not layout containers, grids, or the Hero,
+     which stay on --measure-wide/other values above as before):
+
+       --measure-poetic (640px) -- poetic / quotation blocks. Same
+       value as --measure-narrow (aliased to it, not a new number) --
+       her "poetic/quotation" role and this file's existing "quotes...
+       centered statements" role are the same thing named twice.
+
+       --measure-intro (680px) -- introductory / reflective copy. NEW
+       -- no existing token covered this middle tier between narrow/
+       poetic and medium/body.
+
+       --measure-body (760px) -- main centered body paragraphs. Same
+       value as --measure-medium (aliased to it) -- ordinary paragraph
+       text should NOT span the full content container; 760px is the
+       ceiling.
+
+     Always center with margin-left/right: auto (margin: 0 auto, the
+     site's existing convention). Mobile: 20px side padding/gutter
+     (calc(100% - 40px) or equivalent container padding) rather than
+     letting a paragraph's max-width alone govern narrow viewports --
+     applied per-rule as each is touched, not retrofitted everywhere in
+     one pass. Do not invent a fourth width for ordinary paragraph
+     text -- these three cover every editorial role. */
+  --measure-poetic: var(--measure-narrow);
+  --measure-intro: 680px;
+  --measure-body: var(--measure-medium);
 }
 
 /* 2026-09-02, per Susan's typography-normalization style sheet's
@@ -2030,9 +2062,18 @@ a   { color: inherit; text-decoration: none; }
    smaller 16px size -- every line was breaking short, leaving "of
    Scripture." isolated on its own last line regardless of where the
    nbsp sat. max-width widened 620px -> 700px so more words fit per
-   line at this font size. */
+   line at this font size.
+
+   2026-09-02, later the same day, per Susan's "Standardize editorial
+   text widths across AwakenArts" directive: superseded again -- this
+   is her "main centered body paragraph" role by definition (this is
+   literally the Christian Symbols section's own explanatory
+   paragraph, her own example), so 700px is replaced with the Text
+   Width System's --measure-body token (760px) rather than the interim
+   value from the orphan fix above. Should now read as roughly four
+   balanced lines, per her own note. */
 .hero-quote-reflection {
-  max-width: 700px;
+  max-width: var(--measure-body);
   margin: 39px auto 0;
   text-align: center;
 }
@@ -6942,7 +6983,15 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      elsewhere -- instead of var(--ink). Size, italic, and everything
      else are unchanged; only the weight this color reads at. */
   color: var(--mid);
-  max-width: 840px;
+  /* 2026-09-02, per Susan's "Standardize editorial text widths across
+     AwakenArts" directive, her own example: "The top 'You already
+     speak in images...' paragraph could use 680-720px, since it is
+     more of a statement than standard body copy." Switched from 840px
+     to --measure-intro (680px), the Text Width System's "introductory
+     / reflective copy" tier -- the low end of her stated range, and
+     the tier whose own definition matches this element's role
+     exactly. */
+  max-width: var(--measure-intro);
   margin: 0 auto 1.75rem;
 }
 
