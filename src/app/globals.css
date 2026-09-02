@@ -4730,6 +4730,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   margin-bottom: 4.5rem;
 }
 
+/* .home-recognition__encounters-image / its img rule -- RETIRED
+   2026-09-02, per Susan's "the boat image in the matthew section can
+   become a header -- like the great work on the ann header"
+   directive: the boxed, contained <figure> treatment (900px max-
+   width, rounded corners, inset in the text column) is superseded by
+   a full-bleed AtmosphericHeader instance -- see .poems-showcase-
+   foundation__ship-header, further below, and HomeChristianSymbols
+   .tsx's own comment. Left defined, unused, per no-silent-deletion. */
 .home-recognition__encounters-image {
   max-width: 900px;
   margin: 3rem auto 0;
@@ -5633,6 +5641,21 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   margin-top: 2.75rem;
 }
 
+/* 2026-09-02, per Susan's "the boat image in the matthew section can
+   become a header -- like the great work on the ann header"
+   directive: wraps the sailboat AtmosphericHeader instance (see
+   HomeChristianSymbols.tsx) where it breaks out of .poems-showcase-
+   foundation__inner to run full-bleed. AtmosphericHeader supplies its
+   own margin-bottom (zeroed here since fadeTo is passed, replaced by
+   the fade itself) but no margin-top -- this wrapper supplies the gap
+   above, matching the same 3rem the boxed figure it replaces used to
+   carry as its own margin-top (.home-recognition__encounters-image,
+   now retired), so the space above the image reads the same as it
+   did before, just the image itself is no longer boxed. */
+.poems-showcase-foundation__ship-header {
+  margin-top: 3rem;
+}
+
 @media (max-width: 1024px) {
   /* 2026-07-29: both sections below reverted to the standard
      var(--band-gap-md) token for their bottom padding, now that
@@ -5667,6 +5690,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      640px override), sums to 64px, exactly --band-gap-sm. */
   .poems-showcase-foundation { padding: 36px 0 var(--band-gap-sm); }
   .poems-showcase-foundation__inner { padding: 0 1.25rem; }
+  /* 2026-09-02, same ship-header pass: matches the 2.25rem mobile
+     value .home-recognition__encounters-image (now retired) used to
+     carry at this same breakpoint, so the mobile gap above the image
+     is unchanged from before. */
+  .poems-showcase-foundation__ship-header { margin-top: 2.25rem; }
   .poems-showcase-intro { padding: 3.5rem 1.25rem; }
   .hero-quote-text { margin-top: 36px; margin-bottom: 25px; }
   .hero-quote-cite { margin-bottom: 28px; }

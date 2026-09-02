@@ -66,7 +66,34 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
  * relying on object-position overrides (see AtmosphericHeader.tsx's
  * own "focal point stays centered" note). fadeTo matches this
  * section's own cream background so the image dissolves into the
- * eyebrow below rather than ending on a hard seam. */
+ * eyebrow below rather than ending on a hard seam.
+ *
+ * 2026-09-02, later the same day, per Susan's "The Ann heading is
+ * spectacular... but the ann header belongs with the ann section
+ * while the boat image in the matthew section can become a header --
+ * like the great work on the ann header" follow-up: the sailboat
+ * image (encounters-symbols-ship-v3.png), formerly a boxed, contained
+ * <figure> mid-section (.home-recognition__encounters-image, rounded
+ * corners, max-width 900px, inset in the text column), is now a
+ * second AtmosphericHeader -- full-bleed, edge-to-edge, breaking out
+ * of .poems-showcase-foundation__inner's 1000px/2rem-padded column
+ * the same way the Ann threshold header above already does, rather
+ * than sitting boxed inside it. .poems-showcase-foundation__inner is
+ * split into two instances (statement content, then CTA/verse/
+ * reflection content) with this header breaking out between them.
+ * Unlike the Ann header, this one does NOT use `tall` -- that variant
+ * is reserved for the section-boundary threshold per its own comment
+ * ("the single instance where the landscape is the pivot"); this is a
+ * supporting image within one section, not a transition between two,
+ * so the standard height keeps it a visual pause rather than a second
+ * threshold. Same center object-position the boxed figure already
+ * used (this component's own prior comment confirmed the boat/horizon
+ * reads fine center-cropped at both desktop and mobile), so no new
+ * pre-crop file was needed the way Ann's was. fadeTo="var(--cream)"
+ * matches, so it dissolves into the CTA below exactly as the Ann
+ * header dissolves into the eyebrow above.
+ * .home-recognition__encounters-image and its img rule are left
+ * defined, unused, per no-silent-deletion. */
 export default function HomeChristianSymbols() {
   return (
     <section className="poems-showcase-foundation" aria-label="Christian Symbols">
@@ -93,14 +120,17 @@ export default function HomeChristianSymbols() {
           </span>
         </p>
 
-        <figure className="home-recognition__encounters-image">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/homepage/encounters-symbols-ship-v3.png"
-            alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon"
-            loading="lazy"
-          />
-        </figure>
+      </div>
+
+      <div className="poems-showcase-foundation__ship-header">
+        <AtmosphericHeader
+          src="/images/homepage/encounters-symbols-ship-v3.png"
+          alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon"
+          fadeTo="var(--cream)"
+        />
+      </div>
+
+      <div className="poems-showcase-foundation__inner">
 
         <div className="home-recognition__cta home-recognition__cta--after-image">
           <Link href="/symbols" className="home-coll-cta home-coll-cta--light-surface">
