@@ -6433,11 +6433,22 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   max-width: 900px;
   margin: 0 auto 2rem;
 }
+/* 2026-09-01, per Susan's "note the bottom quotes are inconsistently
+   colored -- all gold okay" directive: the three examples previously
+   carried a deliberate three-step color progression (muted navy ->
+   full navy -> gold, per this block's own header comment, "a subtle
+   increase in weight toward the third phrase") -- on review, that
+   read as inconsistent rather than a deliberate progression. All
+   three now share one color, gold, set on the base .section2-
+   examples__item rule; .section2-examples__item--mid's own color
+   override is retired (empty, left defined per no-silent-deletion)
+   since the base rule now already gives it the same gold.
+   .section2-examples__item--last keeps its font-weight: 500 --
+   only the color inconsistency was flagged, not the weight. */
 .section2-examples__item {
-  color: rgba(28, 43, 58, 0.62);
+  color: var(--gold);
 }
 .section2-examples__item--mid {
-  color: var(--ink);
 }
 .section2-examples__item--last {
   color: var(--gold);
