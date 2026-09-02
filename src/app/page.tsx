@@ -593,9 +593,9 @@ export default function HomePage() {
 
       {/* ── THE WORK: THE AWAKENARTS COLLECTION ──────────────────
           2026-08-20, per Susan's "revise the architecture" directive:
-          movement #1 of three after the Hero. The Collection
-          Compilation leads (its own baked-in title announces the
-          section — "this is a body of original work"), directly
+          originally movement #1 of three after the Hero, leading with
+          the Collection Compilation (its own baked-in title announces
+          the section — "this is a body of original work"), directly
           followed by the Path of Stones premise (eyebrow, question,
           three metaphor examples, recognition statement). Together:
           "here are these unusual poetic works; here is the familiar
@@ -603,8 +603,44 @@ export default function HomePage() {
           appears within Workshops, below (see that section's own
           comment). See HomeCollectionPremise.tsx for the full
           rationale. Unchanged from the prior "Section Two / Section
-          Three" pass. */}
-      <HomeCollectionPremise />
+          Three" pass.
+
+          2026-09-02, per Susan's "we simply exchange places with
+          section 2 and section 3" directive: this section now renders
+          SECOND, after Workshops (HomeSection2.tsx), rather than
+          first. Reasoning was the same image-swap conversation that
+          moved the Collection banner into Workshops' navy band and the
+          Ann poem+portrait into this section's cream field (see both
+          files' own 2026-09-02 comments) — while the Collection
+          banner's crop/size is still being tuned (Susan may prepare
+          her own sized/cropped export), reordering which section
+          appears first sidesteps continuing to iterate on that image
+          in place. Interim per her "in the meantime while styles are
+          settled" framing -- may be reordered again. Content of both
+          sections is unchanged by this pass, only their sequence. */}
+
+      {/* ── THE EXPERIENCE: WORKSHOPS + QUEEN ANN ────────────────
+          2026-08-20, per Susan's "revise the architecture" directive:
+          originally movement #2. Queen Ann moves out of her former
+          independent section (HomeQueenAnn.tsx, now unused, left in
+          the codebase per no-silent-deletion) and into Workshops
+          directly — "Ann is a Figure Edition/workshop world, so she
+          can demonstrate what the workshop material actually looks
+          like instead of interrupting the Collection -> Path of Stones
+          progression with a floating third homepage chapter." Navy
+          Workshops band (book cover, "Each workshop opens a different
+          world...," Figure Edition names, CTA) directly followed by
+          Ann in cream, in the same section — see HomeSection2.tsx for
+          the full rationale, including the navy-vs-cream judgment call
+          flagged there.
+
+          2026-09-02, per Susan's "we simply exchange places with
+          section 2 and section 3" directive (see "THE WORK" comment
+          just above for the full reasoning): this section now renders
+          FIRST, ahead of the Collection premise. Its own internal
+          content (now the Collection gallery banner at top, per that
+          same day's image swap) is unchanged by this reorder. */}
+      <HomeSection2 />
 
       {/* ── FURTHER UNDERSTANDING — RETIRED ───────────────────────
           2026-08-24, added per Susan's "Homepage Revision Directive,"
@@ -622,22 +658,7 @@ export default function HomePage() {
           immediately afterward is no longer needed. Not rendered here;
           .further-understanding / .further-understanding__text remain
           defined, unused, in globals.css per no-silent-deletion. */}
-
-      {/* ── THE EXPERIENCE: WORKSHOPS + QUEEN ANN ────────────────
-          2026-08-20, per Susan's "revise the architecture" directive:
-          movement #2. Queen Ann moves out of her former independent
-          section (HomeQueenAnn.tsx, now unused, left in the codebase
-          per no-silent-deletion) and into Workshops directly — "Ann is
-          a Figure Edition/workshop world, so she can demonstrate what
-          the workshop material actually looks like instead of
-          interrupting the Collection -> Path of Stones progression
-          with a floating third homepage chapter." Navy Workshops band
-          (book cover, "Each workshop opens a different world...,"
-          Figure Edition names, CTA) directly followed by Ann in cream,
-          in the same section — see HomeSection2.tsx for the full
-          rationale, including the navy-vs-cream judgment call flagged
-          there. */}
-      <HomeSection2 />
+      <HomeCollectionPremise />
 
       {/* ── THE SCRIPTURAL FIELD: CHRISTIAN SYMBOLS + MATTHEW ────
           2026-08-20, per Susan's "revise the architecture" directive:
