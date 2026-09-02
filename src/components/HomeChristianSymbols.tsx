@@ -104,7 +104,7 @@ export default function HomeChristianSymbols() {
         <div className="hero-quote-reflection">
           <p>
             Jesus taught through image, story, and metaphor, entering
-            the world as he found it without surrendering the truth he
+            the world as He found it without surrendering the truth He
             carried. AwakenArts works within that tradition—engaging
             literature, psychology, mythology, folklore, and the long
             history of human imagination while remaining grounded in
