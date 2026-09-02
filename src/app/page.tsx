@@ -487,15 +487,30 @@ export default function HomePage() {
                 methodology line ("Story, poetry, image, and shared
                 experience.") is dropped rather than force-fit in --
                 per her explicit "maybe not text below." Still a
-                prototype for her review, not a final layout. */}
-            <p className="hero-tagline-fade brand-signature-fade">
-              <span className="brand-signature-fade__line brand-signature-fade__line--1">
-                When Images Become Words
-              </span>
+                prototype for her review, not a final layout.
+
+                2026-09-01, per Susan's "animated one word at a time"
+                follow-up: the two-line fade above (whole lines fading
+                in as blocks, see .brand-signature-fade__line's own
+                retired history in globals.css) is superseded by a
+                per-word fade -- each of the nine words gets its own
+                span and its own staggered animation-delay, so they
+                arrive left to right in sequence rather than two
+                blocks arriving one after the other. The <br /> stays
+                in the same place (after "Words," before "And") so the
+                two-line layout is unchanged -- only the entrance
+                granularity changed, from 2 pieces to 9. */}
+            <p className="hero-tagline-fade">
+              <span className="hero-tagline-word hero-tagline-word--1">When</span>{' '}
+              <span className="hero-tagline-word hero-tagline-word--2">Images</span>{' '}
+              <span className="hero-tagline-word hero-tagline-word--3">Become</span>{' '}
+              <span className="hero-tagline-word hero-tagline-word--4">Words</span>
               <br />
-              <span className="brand-signature-fade__line brand-signature-fade__line--2">
-                And Language Shapes a Path
-              </span>
+              <span className="hero-tagline-word hero-tagline-word--5">And</span>{' '}
+              <span className="hero-tagline-word hero-tagline-word--6">Language</span>{' '}
+              <span className="hero-tagline-word hero-tagline-word--7">Shapes</span>{' '}
+              <span className="hero-tagline-word hero-tagline-word--8">a</span>{' '}
+              <span className="hero-tagline-word hero-tagline-word--9">Path</span>
             </p>
             <Link href="/workshops" className="home-coll-cta home-coll-cta--light-surface">
               Explore Workshops
