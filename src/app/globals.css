@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@400;500;600&display=swap');
+/* 2026-09-02, per Susan's "Pass through the entire AwakenArts website
+   and normalize typography and spacing" directive + attached style
+   sheet: Lora added (400/500/600 roman, 400 italic) -- the spec's
+   designated body typeface. Cormorant Garamond and Inter are
+   unchanged, still loaded for headings and uppercase labels/nav
+   respectively. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
 
 /* ─────────────────────────────────────────────
    DESIGN TOKENS
@@ -16,12 +22,64 @@
   --gold:     #7E5F12;
   --gold-lt:  #C9A84C;
   --gold-bg:  #F5EDD6;
-  --cream:    #FAF7F2;
+  /* 2026-09-02, per Susan's typography-normalization style sheet
+     ("Main cream background: #FAF6EC"): updated from #FAF7F2 -- a
+     one-unit-per-channel shift, visually negligible, but now matches
+     her spec's exact value rather than an approximation of it.
+     Cascades to every existing var(--cream) reference automatically. */
+  --cream:    #FAF6EC;
   --warm:     #F0EAE0;
   --mist:     #DDD8CF;
-  --mid:      #5A5550;
+  /* 2026-09-02, same pass, per her spec's "Secondary/deep slate text:
+     #55606B": --mid (aliased below as --ink-soft) is already this
+     file's own documented "secondary body text on light backgrounds"
+     role (see the Atmosphere System comment further down) -- exactly
+     her Deep Slate role by another name. Updated from the old warm
+     gray #5A5550 to her cooler slate value, cascading automatically
+     to every existing var(--mid)/var(--ink-soft) reference rather than
+     introducing a second, parallel "secondary text" token. */
+  --mid:      #55606B;
   --ink:      #1C2B3A;  /* alias for --deep; used as general text ink */
+  /* 2026-09-02, same pass, per her spec's "Primary text: #2B2B2B" /
+     "Existing AwakenArts navy may remain for established headings/
+     logo elements where already part of the brand": --ink/--deep
+     (navy) is NOT redefined here -- it's the site's established brand
+     color for headings and the logo, which her own instruction
+     explicitly grandfathers in. --charcoal is added as a new,
+     separate token for body-copy text that currently sits in navy
+     without a heading/brand role -- applied rule-by-rule (not via a
+     blanket token swap) since distinguishing "heading, keep navy"
+     from "body text, move to charcoal" requires judgment per rule,
+     not a single global substitution. See the homepage components for
+     this pass's first applications. */
+  --charcoal: #2B2B2B;
+  /* 2026-09-02, same pass, per her spec's "Warm gold accent: #B08A3E":
+     added as a NEW, separate token rather than redefining --gold
+     itself. WCAG contrast check against the new --cream above: #B08A3E
+     on #FAF6EC measures 2.97:1 -- fails AA-normal (4.5:1) AND
+     AA-large/UI (3:1), actually worse than the original #8B6914 gold
+     this file's own Atmosphere System audit (2026-07-14) already
+     rejected for the same reason (see that section's contrast table
+     further down). --gold (#7E5F12, 5.51:1 against the new cream) and
+     --gold-lt remain the text-safe golds for labels/links/eyebrows on
+     light and dark backgrounds respectively, per that existing, tested
+     rule. --gold-accent is reserved for non-text or large-format use
+     (borders, icon fills, decorative rules, bold display text at 24px+
+     where the 3:1 AA-large floor applies) -- flagged in this pass's
+     report for Susan's awareness rather than silently applied where it
+     would fail contrast. */
+  --gold-accent: #B08A3E;
   --serif:    'Cormorant Garamond', Georgia, serif;
+  /* 2026-09-02, same pass, per her spec's "Body text: Lora": new
+     token for the typeface role Cormorant Garamond was never meant to
+     carry at paragraph length (see the Cormorant Roman vs Italic
+     standard below -- "set across a full paragraph... reads as
+     texture instead of hierarchy"). Cormorant remains --serif, for
+     real headings; --font-body is Lora, for body copy, statements,
+     and captions. Applied rule-by-rule on the homepage this pass --
+     see HomeChristianSymbols.tsx / HomeSection2.tsx / HomeCollection
+     Premise.tsx's own body-text rules for the first conversions. */
+  --font-body: 'Lora', Georgia, serif;
   --sans:     'Inter', system-ui, sans-serif;
 
   /* AwakenArts Atmosphere System (locked 2026-07-14, roles approved by
@@ -220,57 +278,117 @@
      any of these five roles going forward — reference the token. */
 
   /* H1 — primary page titles (one page per major section: homepage,
-     Collection, Encounters, Poems, Journal, About). 60-64px desktop. */
-  --h1-size: clamp(2.4rem, 5vw, 3.5rem);
-  --h1-weight: 400;
+     Collection, Encounters, Poems, Journal, About).
+     2026-09-02, per Susan's typography-normalization style sheet:
+     resized from the prior fluid clamp() to her exact stepped spec --
+     44px desktop, 38px tablet, 32px mobile (breakpoint overrides in
+     the responsive rules below, redefining this same custom property
+     so every existing var(--h1-size) consumer inherits the new scale
+     automatically). Weight raised 400 -> 600 (Semibold) per her spec;
+     Cormorant Garamond Semibold is already loaded (see the @import
+     above). Expressed in px, not rem -- this site's html font-size is
+     18px (see --body-size's own note below), so a rem value here
+     would NOT land on her literal px targets; px sidesteps that
+     entirely without touching the site's underlying rem base (which
+     governs unrelated spacing/layout values and is out of scope for a
+     typography-only pass). letter-spacing is new -- 0.5px, added
+     directly on this pass's touched heading rules rather than as a
+     property of this token, since letter-spacing was never wired
+     through --h1-size before. */
+  --h1-size: 44px;
+  --h1-weight: 600;
+  --h1-tracking: 0.5px;
 
-  /* H2 — section titles. One size smaller than H1, always identical. */
-  --h2-size: clamp(1.9rem, 3.2vw, 2.5rem);
-  --h2-weight: 300;
+  /* H2 — section titles. 2026-09-02, same pass: resized 28px desktop /
+     26px tablet / 24px mobile (responsive overrides below). Weight
+     raised 300 -> 600 (Semibold), matching H1 per her spec (both
+     Cormorant Garamond Semibold -- "do not invent new heading sizes,"
+     and this reads as one consistent heading weight rather than H1
+     and H2 pulling from two different weights). */
+  --h2-size: 28px;
+  --h2-weight: 600;
+  --h2-tracking: 0.5px;
 
   /* Gold category label (eyebrow) — uppercase, sans, identical
-     tracking everywhere: COLLECTION / POEMS / ENCOUNTERS / etc. */
+     tracking everywhere: COLLECTION / POEMS / ENCOUNTERS / etc. Not
+     part of Susan's 2026-09-02 H1-H4/body/caption scale -- this is a
+     distinct, established brand element (small-caps navigational
+     label), not a "Caption/Note" per her spec's own definition of
+     that role ("auxiliary identification text... image captions,
+     notes" in sentence case, serif) -- left untouched this pass. */
   --label-size: 0.85rem;
   --label-weight: 600;
   --label-tracking: 0.18em;
 
-  /* Gold/italic subtitle — serif italic support line beneath a
-     title or label, identical size and line-height everywhere.
-     2026-06-28 "Reading Before Decoration" revision, per Susan: this
-     token was consistently too small everywhere it's used (.hero-mission
-     on Home, .home-coll-sub, .lib-hero__sub/.col-hero__sub and
-     .col-uses-intro on Collection, .about-credentials on About) -- a
-     site-wide token problem, not a one-page problem, so the fix is
-     here at the token rather than patched instance-by-instance.
-     ~14% larger top-to-bottom. */
-  --subtitle-size: clamp(1.25rem, 1.8vw, 1.45rem);
-  --subtitle-line: 1.7;
+  /* H3 / Subheading — Cormorant Garamond Regular support line beneath
+     a title or label. 2026-09-02, per Susan's typography-normalization
+     style sheet: resized from clamp(1.25rem, 1.8vw, 1.45rem) (~22.5-
+     26.1px at this site's 18px rem base) to her flat 20px spec (19-20px
+     tablet/mobile per her table -- held flat at 20px throughout, the
+     range's own top end, rather than adding a barely-perceptible 1px
+     breakpoint step). line-height tightened 1.7 -> 1.35, letter-
+     spacing 0.5px added (new, see H1's own note on why this isn't
+     wired through the token). Weight/italic-or-not are NOT touched
+     here -- those are per-rule content decisions (see the Cormorant
+     Roman vs Italic standard above), unaffected by this resize. */
+  --subtitle-size: 20px;
+  --subtitle-line: 1.35;
+  --h3-tracking: 0.5px;
 
   /* Body copy — the single editorial paragraph specification.
-     1rem = 18px at this site's html font-size.
+     2026-09-02, per Susan's typography-normalization style sheet:
+     resized from 1rem (=18px at this site's 18px html font-size) to a
+     literal 16px, matching her spec exactly and her explicit "remain
+     16px across breakpoints... never reduce below 16px" instruction.
+     Expressed in px rather than rem for the same reason as H1/H2
+     above -- this deliberately supersedes the prior 2026-06-28
+     Editorial Typography Standard's "never reduce this value" lock on
+     1rem/18px; flagged here as an intentional reversal of that
+     directive, not an oversight, since her new instruction is the
+     more recent and more specific of the two. line-height 1.8 -> 1.75
+     per her spec. letter-spacing: normal (0px), per her spec -- no
+     token needed, 0 is the default. */
+  --body-size: 16px;
+  --body-line: 1.75;
 
-     Editorial Typography Standard (locked 2026-06-28, see AwakenArts_
-     Site_Architecture.md): AwakenArts is a reading experience, not a
-     design portfolio. Never reduce this value to make a section
-     look lighter or less dense — edit the copy, adjust spacing, or
-     refine the layout first. Readability outranks minimalism. */
-  --body-size: 1rem;
-  --body-line: 1.8;
+  /* H4 / Small heading — Lora Semibold, new tier added 2026-09-02 per
+     Susan's typography-normalization style sheet. No prior token
+     occupied this exact role (minor headings smaller than H3 but
+     still a heading, not body copy); --link-size (0.95rem, small
+     links/CTAs) is a different role and is left as its own token. */
+  --h4-size: 16px;
+  --h4-weight: 600;
+  --h4-line: 1.35;
+  --h4-tracking: 0.3px;
 
-  /* Small links / CTAs — one size, one tracking, one underline. */
+  /* Small links / CTAs — one size, one tracking, one underline. Left
+     as its own token this pass, per Susan's "keep button typography
+     consistent site-wide" instruction reviewed against this specific
+     role -- not part of the H1-H4/body/caption/small scale (buttons
+     are a distinct, established sans-serif UI element, not editorial
+     type), see the shared CTA components under Task 171 for that
+     review instead. */
   --link-size: 0.95rem;
   --link-weight: 500;
   --link-tracking: 0.08em;
 
   /* Captions — auxiliary identification text beneath an image or
-     figure (attribution lines, plate names). Distinct from body copy
-     by long editorial convention — a caption is metadata about the
-     work, not the reading content itself — but still held to its own
-     floor so it never becomes squint-text. Added under the Editorial
-     Typography Standard (locked 2026-06-28) when the per-component
-     caption sizes (0.8rem–1.1rem) were audited for consistency. */
-  --caption-size: 0.85rem;
-  --caption-line: 1.6;
+     figure (attribution lines, plate names). 2026-09-02, per Susan's
+     typography-normalization style sheet: resized from 0.85rem
+     (~15.3px) to her flat 12px spec, line-height 1.6 -> 1.4, letter-
+     spacing 0.2px added (new, same reasoning as H1/H2/H3 above). */
+  --caption-size: 12px;
+  --caption-line: 1.4;
+  --caption-tracking: 0.2px;
+
+  /* Small/footer text — new tier added 2026-09-02 per Susan's
+     typography-normalization style sheet, distinct from Captions
+     (11px vs 12px, same line-height/tracking pattern otherwise).
+     Not yet wired into any rule this pass -- see Task 170/171 for
+     footer/legal-text review. */
+  --small-size: 11px;
+  --small-line: 1.4;
+  --small-tracking: 0.2px;
 
   /* Editorial Invitations — large heading-style entry points, first
      used on the homepage hero ("Enter the Encounters" / "Explore the
@@ -335,6 +453,29 @@
   --measure-narrow: 640px;
   --measure-medium: 760px;
   --measure-wide: 1100px;
+}
+
+/* 2026-09-02, per Susan's typography-normalization style sheet's
+   responsive guidance table (H1: 44/38/32, H2: 28/26/24, desktop/
+   tablet/mobile): redefining --h1-size/--h2-size on :root inside these
+   breakpoints, rather than adding tablet/mobile overrides to every
+   individual rule that consumes them -- every existing var(--h1-size)/
+   var(--h2-size) usage across the whole site inherits the responsive
+   step automatically. --subtitle-size (H3) and --body-size stay flat
+   at every width, per her own table ("H3: desktop/tablet/mobile 19-
+   20px" -- close enough to hold at one value; "Body: remain 16px
+   across breakpoints"). */
+@media (max-width: 1024px) {
+  :root {
+    --h1-size: 38px;
+    --h2-size: 26px;
+  }
+}
+@media (max-width: 640px) {
+  :root {
+    --h1-size: 32px;
+    --h2-size: 24px;
+  }
 }
 
 /* ─────────────────────────────────────────────
