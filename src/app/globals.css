@@ -724,8 +724,26 @@ a   { color: inherit; text-decoration: none; }
      uniformly rather than one item overriding a stretch default.
      .hero__media is unaffected either way: as the taller item, its own
      natural height already equals the row's height, so stretch and
-     center produce an identical box for it. */
-  align-items: center;
+     center produce an identical box for it.
+
+     2026-09-01, per Susan's "you bottom aligned everything on the
+     first section" follow-up: superseded. This was a reasonable read
+     when the text column's height was close to the image's, but
+     today's own centering/resizing pass (see .hero__text, .hero-logo,
+     .hero-mission, .hero-tagline-fade above) shrank the text column
+     notably -- smaller logo, tighter centered blocks, and the
+     .hero__text p:first-of-type retirement removing margin the
+     tagline never should have had -- while .hero__media grew (594px
+     -> 640px, see that rule). Centering a shorter box inside a taller
+     one pushes its visible start down by half the height difference;
+     with that gap now much wider than before, the effect read as the
+     whole text column sinking toward the bottom of the section rather
+     than sitting near its top. Switched to start: .hero__media is
+     unaffected (per this comment's own note, the taller item renders
+     identically either way) -- only .hero__text moves, now beginning
+     flush at the top of the row, right after padding-top, instead of
+     floating in the middle of a much taller image. */
+  align-items: start;
   max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
