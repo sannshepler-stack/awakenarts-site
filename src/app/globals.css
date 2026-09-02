@@ -5877,10 +5877,25 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    value; color/margin already matched by inheritance (both are
    var(--deep) navy, and margin is reset to 0 the way every other
    scoped h2 on the page does it, so no leftover UA default spacing). */
+/* 2026-09-02, found while checking "Is this consistent?" against the
+   new Typography System: this is the section's H2 ("Scripture Speaks
+   in Symbols" -- the real section title, same structural role as
+   .section2-dark__title, "Workshops," which already correctly
+   references var(--h2-size)/var(--h2-weight)). It had been sized off
+   --invitation-title-size/-weight instead -- a different token built
+   for the Hero's own doorway-style invitation labels ("Explore
+   Workshops"), not general section titles -- so it never inherited
+   H2 changes and carried the wrong weight (500, not her spec's 600
+   Semibold). Switched to the real H2 tokens; letter-spacing kept at
+   its existing 0.01em (not the new --h2-tracking, 0.5px, which reads
+   heavier than this heading's own established, more restrained
+   tracking -- flagged rather than silently overridden). Color stays
+   navy, per her "existing navy may remain for established headings"
+   carve-out. */
 #home-recognition-heading {
   font-family: var(--serif);
-  font-size: var(--invitation-title-size);
-  font-weight: var(--invitation-title-weight);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
   letter-spacing: 0.01em;
   color: var(--deep);
   margin: 0 0 1.25rem;
