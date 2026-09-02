@@ -1918,11 +1918,28 @@ a   { color: inherit; text-decoration: none; }
      its role on the page; still needs authority as the homepage's
      closing scriptural moment, just not at the previous scale.
      font-weight/style/color and the surrounding spacing are untouched.
-     SUPERSEDED 2026-09-02 -- see this rule's own comment above. */
-  font-size: var(--body-size);
+     SUPERSEDED 2026-09-02 -- see this rule's own comment above.
+
+     2026-09-02, later the same day, per Susan's "Treat the Matthew
+     quote the same -- size, color, quote" directive, alongside a
+     screenshot of .section2-examples (the three gold curly-quoted
+     phrases, "We've put up walls." etc.): explicit and literal this
+     time, naming all three properties. font-size switched from
+     var(--body-size) (16px) to .section2-examples' own
+     clamp(1.15rem, 2vw, 1.35rem), and color from var(--mid) to
+     var(--gold) -- matching, not just referencing, that rule. Quote
+     marks were already added around the verse text earlier the same
+     day (HomeChristianSymbols.tsx). Gold reads warm rather than dark,
+     so this doesn't reopen her earlier "Ouch -- way dark and large"
+     complaint -- that was about size AND navy-dark color together;
+     this is the same larger size but gold, the color she's now
+     pointing at directly. font-family (Lora/var(--font-body)) and
+     font-weight/style are left as her typography spec already set
+     them -- she named size and color, not family. */
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
   font-weight: 300;
   font-style: italic;
-  color: var(--mid);
+  color: var(--gold);
   /* 2026-06-29: widened from 880px so the full line ("He did not say
      anything to them without using a parable.") sits on one line at
      normal desktop widths instead of wrapping — the surrounding
