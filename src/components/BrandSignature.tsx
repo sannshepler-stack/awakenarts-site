@@ -227,6 +227,25 @@ import Link from 'next/link'
  * The divider below is untouched -- it was never part of the
  * animation and stays exactly where it was, now closing this CTA
  * section instead of the tagline section.
+ *
+ * RETIRED 2026-08-31, per Susan's "patchwork doesn't work" directive.
+ * The trade above didn't fix the actual problem: .brand-signature and
+ * .hero shared the exact same background color (#f5f0e8) with no seam
+ * between them, so the two sections read as one undifferentiated
+ * field no matter which content sat on which side of the boundary.
+ * Rather than continue patching around that seam, it's removed
+ * outright -- the tagline, the CTA, and the methodology line (dropped
+ * per her "maybe not text below") all now live inside the Hero
+ * itself, with no second section following it. See page.tsx's Hero
+ * for the current markup.
+ *
+ * This component is no longer imported/rendered anywhere (see
+ * page.tsx's own retirement comment at its old call site). Left in
+ * place, unused, per no-silent-deletion -- not because it's likely to
+ * come back in this exact form, but so the design history above isn't
+ * lost. The divider asset and .brand-signature/.brand-signature__text/
+ * .brand-signature__divider/.hero-method CSS rules are likewise left
+ * defined, unused, in globals.css.
  */
 
 export default function BrandSignature() {

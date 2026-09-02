@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
-import BrandSignature from '@/components/BrandSignature'
+// BrandSignature is no longer rendered here -- retired 2026-08-31, see
+// its section comment below and its own file header.
 import HomeCollectionPremise from '@/components/HomeCollectionPremise'
 import HomeSection2 from '@/components/HomeSection2'
 import HomeChristianSymbols from '@/components/HomeChristianSymbols'
@@ -459,19 +460,30 @@ export default function HomePage() {
                 2026-08-31, per Susan's "Hero / Section 2 swap"
                 directive: this CTA (and the methodology line that used
                 to trail it, "Story, poetry, image, and shared
-                experience.") moves down into the former Section 2 slot
-                -- see BrandSignature.tsx -- because the two sections
-                were reading as one undifferentiated block of same-
-                color text. In its place, the "When Images Become Words
-                / And Language Shapes a Path" animated tagline moves up
-                from Section 2 into this spot, still animated, still
-                italic, but sized down to roughly match this CTA's own
-                text (.home-coll-cta is 0.9rem) rather than its previous
-                large Section-2 display size -- see .hero-tagline-fade
-                in globals.css. Reuses the existing
-                .brand-signature-fade__line animation/keyframes
-                unchanged; only size and location moved. Still a
-                prototype swap for her review, not a final layout. */}
+                experience.") moved down into the former Section 2 slot
+                -- see BrandSignature.tsx's own history comment --
+                because the two sections were reading as one
+                undifferentiated block of same-color text. The "When
+                Images Become Words / And Language Shapes a Path"
+                animated tagline moved up into this spot in its place.
+
+                2026-08-31, later the same day, per her "patchwork
+                doesn't work" directive: that swap didn't actually fix
+                the underlying problem -- .hero and .brand-signature
+                shared the exact same background color (#f5f0e8) with
+                no seam between them at all, so the two sections read
+                as one continuous field regardless of what text sat on
+                which side of the boundary. Rather than keep patching
+                around that seam, it's removed: BrandSignature.tsx is
+                no longer rendered (see the retired call, below, and
+                that file's own updated header comment), the divider is
+                gone, and the CTA moves back here, directly after the
+                tagline, so copy, animation, and button are all one
+                Hero section with no internal boundary to fight. The
+                methodology line ("Story, poetry, image, and shared
+                experience.") is dropped rather than force-fit in --
+                per her explicit "maybe not text below." Still a
+                prototype for her review, not a final layout. */}
             <p className="hero-tagline-fade brand-signature-fade">
               <span className="brand-signature-fade__line brand-signature-fade__line--1">
                 When Images Become Words
@@ -481,6 +493,9 @@ export default function HomePage() {
                 And Language Shapes a Path
               </span>
             </p>
+            <Link href="/workshops" className="home-coll-cta home-coll-cta--light-surface">
+              Explore Workshops
+            </Link>
           </div>
         </div>
 
@@ -523,37 +538,16 @@ export default function HomePage() {
 
       </section>
 
-      {/* ── BRAND SIGNATURE ────────────────────────────────────────
-          2026-08-24, per Susan's "Homepage Revision Directive":
-          Section 2 — an expanded expression of the logo's own tagline
-          ("When Language Shapes a Path"), not a replacement for it.
-          The logo lockup in the Hero above already carries its tagline
-          baked into the image and stays exactly as it is, per Section
-          1's explicit "do not alter." The site's own standing rule
-          (see .hero-tagline's retirement note, below in globals.css)
-          is never to show the tagline twice in the same visible
-          section — so this expanded line is deliberately placed in
-          its own section, immediately after the Hero rather than
-          inside it, typographically distinct from both the logo image
-          and the Hero's mission paragraph. No eyebrow, no supporting
-          sentence around it, per her explicit "give it sufficient
-          visual space... not surrounded by explanatory copy."
-
-          2026-08-24, later the same day, per Susan's "CLAUDE DIRECTIVE
-          — HOMEPAGE TAGLINE MOTION PROTOTYPE": this section became
-          rendered by BrandSignature.tsx, a client component carrying
-          an A/B review toggle between this original static treatment
-          and a slow-marquee alternative.
-
-          2026-08-24, later still, per Susan's "CLAUDE DIRECTIVE —
-          REPLACE TICKER WITH SOFT PHRASE FADE": the marquee and its
-          toggle are discontinued outright ("we will not use the
-          ticker treatment") and removed. BrandSignature.tsx is a
-          plain server component again, rendering a soft two-phrase
-          fade-in prototype — see that file's own header comment for
-          the full rationale. Still a prototype for her review, not an
-          approved change. */}
-      <BrandSignature />
+      {/* ── BRAND SIGNATURE — retired 2026-08-31 ─────────────────
+          Formerly its own Section 2 (tagline + divider), rendered by
+          BrandSignature.tsx immediately after the Hero. Per Susan's
+          "patchwork doesn't work" directive, folded into the Hero
+          itself instead -- see that section's own history comment
+          above for the full rationale (the two sections shared an
+          identical background with no seam, so no amount of text-
+          level patching fixed the "one undifferentiated block"
+          problem). BrandSignature.tsx is left in place, unrendered,
+          per no-silent-deletion -- see its own updated header comment. */}
 
       {/* ── THE WORK: THE AWAKENARTS COLLECTION ──────────────────
           2026-08-20, per Susan's "revise the architecture" directive:

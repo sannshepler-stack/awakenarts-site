@@ -981,7 +981,14 @@ a   { color: inherit; text-decoration: none; }
    box is actually centered under the button above it, not merely
    left-aligned inside a centered section. Font, size, weight, color,
    and top spacing (0.5rem, "attached to the CTA above it") are
-   otherwise unchanged from their original Hero-era values. */
+   otherwise unchanged from their original Hero-era values.
+
+   RETIRED 2026-08-31, per Susan's "patchwork doesn't work" directive
+   and her "maybe not text below" call on this specific line: the CTA
+   moved back into the Hero without it (see .hero-invitations/
+   .hero-tagline-fade above, and page.tsx's Hero comment). Nothing
+   references this class now. Left defined, unused, per
+   no-silent-deletion. */
 .hero-method {
   font-family: var(--serif);
   font-style: normal;
@@ -1108,7 +1115,20 @@ a   { color: inherit; text-decoration: none; }
      .hero-mission's) is addressed directly. With that size gap
      narrowed, this margin is set once more, to a middle value (2.25rem
      /36px) between the two ends already tried, rather than continuing
-     to search blindly along one axis. */
+     to search blindly along one axis.
+
+     2026-08-31, later still, per her "patchwork doesn't work"
+     directive: the real fix was structural, not another margin pass
+     -- see page.tsx's Hero history comment. .brand-signature (the
+     "Explore Workshops" CTA's separate section, with its own top
+     padding providing its lead-in room) is retired and no longer
+     rendered; the CTA now lives in this div as a second child,
+     directly after the tagline. gap: 1.5rem added so the two have
+     breathing room between them without relying on either child's own
+     margin -- flexbox gap keeps that spacing independent of whichever
+     child ends up last, unlike a margin that would need to move if a
+     third element is ever added or removed. */
+  gap: 1.5rem;
   margin: 2.25rem 0 0;
 }
 
@@ -5585,7 +5605,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    padding increased (1rem -> 2.5rem) now that this section opens with
    a compact button rather than a two-line tagline that needed less
    room above it -- the button was sitting too close to the Hero
-   above. Bottom padding (3.5rem, framing the divider) is unchanged. */
+   above. Bottom padding (3.5rem, framing the divider) is unchanged.
+
+   RETIRED 2026-08-31, later the same day, per Susan's "patchwork
+   doesn't work" directive: this section shared its exact background
+   color with .hero, with no seam between them -- the actual cause of
+   everything this file's own history above was patching around. No
+   longer rendered (BrandSignature.tsx is unused; see its own header
+   comment). Left defined, unused, per no-silent-deletion. */
 .brand-signature {
   background: #f5f0e8;
   padding: 2.5rem 2rem 3.5rem;
@@ -5641,7 +5668,16 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      (1.75rem -> 1.5rem) that's still reliably bigger than
      .hero-mission at every width (min 1.3rem clears its 1.2rem
      ceiling outright) but no longer such a stark jump that it reads
-     as a separate section. */
+     as a separate section.
+
+     2026-08-31, later still, per her "patchwork doesn't work"
+     directive: the "Explore Workshops" CTA moves back into this same
+     .hero-invitations div, directly after this paragraph -- see that
+     rule's own history and page.tsx's Hero comment. Own bottom margin
+     removed (was 0.5rem, set when this was the column's last element)
+     since .hero-invitations' new gap: 1.5rem now owns the spacing to
+     whatever follows -- keeping that in one place rather than split
+     between a child's margin and a parent's gap. */
   display: block;
   font-family: var(--serif);
   font-style: italic;
@@ -5650,7 +5686,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   line-height: 1.6;
   color: var(--gold);
   max-width: 46ch;
-  margin: 0 0 0.5rem;
+  margin: 0;
 }
 /* 2026-08-24, per Susan's "SECTION DIVIDER" directive: the AwakenArts
    Section Divider ornament, placed beneath both completed tagline
@@ -5686,7 +5722,11 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    whatever the intrinsic aspect ratio produces at that height
    (`width: auto`), landing around 24-27% of the text column on the
    desktop widths checked -- short of the 35-45% guideline, flagged to
-   her rather than picked silently. */
+   her rather than picked silently.
+
+   RETIRED 2026-08-31, per Susan's explicit "no divider" instruction
+   when the Hero and old Section 2 were merged. Left defined, unused,
+   per no-silent-deletion. */
 .brand-signature__divider {
   display: block;
   height: clamp(18px, 1.6vw, 26px);
