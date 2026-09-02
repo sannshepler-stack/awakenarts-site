@@ -81,6 +81,22 @@ import styles from './AtmosphericHeader.module.css'
  * for mid-page instances (e.g. HomeChristianSymbols' threshold, which
  * sits well below the Hero and only meets the nav transiently while
  * scrolling, same as any other content passing under a fixed nav).
+ *
+ * `topAlign` (added 2026-09-02, per Susan's "the heads are cut off"
+ * report on /workshops' queen-ann-threshold.jpg header, then "take any
+ * crop off the bottom since we are decapitating the image" follow-up):
+ * object-fit: cover with the default object-position: center trims
+ * overflow evenly from BOTH edges. That's fine for a true landscape
+ * with nothing critical near either edge, but queen-ann-threshold.jpg
+ * was pre-cropped tight around Ann's crown (source rows 5%-57% of the
+ * original -- see HomeChristianSymbols.tsx's history for that crop's
+ * own math), so at this page's wide, short standard-height box the
+ * even top/bottom trim was eating into her crown. Pass `topAlign` to
+ * switch that instance's object-position to `top` -- the image's own
+ * top edge stays pinned to the container's top edge, so cover can only
+ * ever trim from the bottom (castle silhouette / lower dress), never
+ * the top. Leave unset for images with no edge-sensitive subject
+ * (every other current AtmosphericHeader instance).
  */
 
 interface AtmosphericHeaderProps {
@@ -91,13 +107,20 @@ interface AtmosphericHeaderProps {
   fadeTo?: string
   fadeHeight?: number
   clearsNav?: boolean
+  topAlign?: boolean
 }
 
-export default function AtmosphericHeader({ src, alt, flush, tall, fadeTo, fadeHeight, clearsNav }: AtmosphericHeaderProps) {
+export default function AtmosphericHeader({ src, alt, flush, tall, fadeTo, fadeHeight, clearsNav, topAlign }: AtmosphericHeaderProps) {
   const classNames = [
     styles.header,
     flush || fadeTo ? styles.flush : '',
     clearsNav ? styles.clearsNav : '',
+  ].filter(Boolean).join(' ')
+
+  const imgClassNames = [
+    styles.img,
+    tall ? styles.imgTall : '',
+    topAlign ? styles.imgTopAlign : '',
   ].filter(Boolean).join(' ')
 
   return (
@@ -106,7 +129,7 @@ export default function AtmosphericHeader({ src, alt, flush, tall, fadeTo, fadeH
       <img
         src={src}
         alt={alt}
-        className={tall ? `${styles.img} ${styles.imgTall}` : styles.img}
+        className={imgClassNames}
         loading="lazy"
       />
       {fadeTo ? (

@@ -144,12 +144,25 @@ export default function WorkshopsPage() {
           image's own top ~72px on page load. See AtmosphericHeader
           .tsx's own comment on the new `clearsNav` prop for the full
           reasoning; same fix applied to /about, /foundation, /method,
-          which share this exact pattern. */}
+          which share this exact pattern.
+
+          2026-09-02, later still, per Susan's clarification that
+          "disappear" meant "the heads are cut off" -- clearsNav fixed
+          the nav overlap, but a separate issue remained underneath it:
+          at this page's wide/short standard-height box, object-fit:
+          cover's default center crop was trimming enough off BOTH
+          edges to cut into Ann's crown, tightly pre-cropped near this
+          image's own top edge. Per her "take any crop off the bottom
+          since we are decapitating the image" follow-up: topAlign
+          added, pinning the crop to the top edge so all trimming comes
+          off the bottom (castle silhouette / lower dress) instead. See
+          AtmosphericHeader.tsx's own comment on `topAlign`. */}
       <AtmosphericHeader
         src="/images/headers/queen-ann-threshold.jpg"
         alt="Queen Ann beneath a clouded sunset sky, crowned and windswept, with a distant castle silhouette -- an image-poem work, the kind of encounter these workshops draw from."
         fadeTo="#f5f0e8"
         clearsNav
+        topAlign
       />
 
       <div className={styles.page}>

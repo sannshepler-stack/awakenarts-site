@@ -57,6 +57,15 @@
   object-position: center;
 }
 
+/* 2026-09-02, per Susan's "the heads are cut off" / "take any crop off
+   the bottom since we are decapitating the image" directive -- see the
+   `topAlign` prop's own comment in AtmosphericHeader.tsx. Overrides
+   object-position from center to top so object-fit: cover's crop only
+   ever trims from the bottom of the image, never the top. */
+.imgTopAlign {
+  object-position: top;
+}
+
 /* `fadeTo` (added 2026-06-29, "Banner Height + Seam" directive):
    Susan: "Eliminate the feeling of two stacked blocks separated by a
    hard seam... The image and the title area should read as one
