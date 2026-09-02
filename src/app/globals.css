@@ -6514,13 +6514,32 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    before the "make it look like a book" pass moved it to navy and
    boxed both halves together. Portrait mirrored via scaleX(-1) so she
    still faces toward the poem, same convention used everywhere this
-   pairing has appeared. */
+   pairing has appeared.
+
+   2026-09-02, later the same day, per Susan's "they are juxtaposed as
+   a set so one mirrors the other in size -- the sizes need to be
+   apparent -- but not overwhelmingly large" follow-up: two fixes.
+   (1) MATCHING SIZE -- .qac-ann-spread__poem-img carried its own
+   260px cap while the portrait column rendered at ~304px (half of
+   640px minus the gap), so the two halves were visibly mismatched in
+   size despite sharing near-identical 2:3-ish source proportions
+   (poem 1399x2099, portrait cropped to true 2:3) -- exactly the
+   "mirrors the other" reading falling short. Cap removed; the poem
+   image now fills its column at 100%, same as the portrait fills
+   its own, so both halves render as matching rectangles.
+   (2) SCALE -- max-width 640px -> 760px and gap 2rem -> 2.5rem. This
+   pairing now opens the section (a role the 1000px-wide Collection
+   banner used to hold here), so it earns a size that reads as a
+   deliberate visual moment rather than a small supporting pair --
+   760px is a real step up from 640px without approaching the former
+   banner's 1000px ceiling, keeping it "apparent, not overwhelming"
+   per her explicit range. */
 .qac-ann-spread {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 2rem;
-  max-width: 640px;
+  gap: 2.5rem;
+  max-width: 760px;
   margin: 0 auto;
 }
 .qac-ann-spread__poem {
@@ -6530,7 +6549,6 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 .qac-ann-spread__poem-img {
   width: 100%;
-  max-width: 260px;
   height: auto;
   display: block;
 }
@@ -6550,8 +6568,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 @media (max-width: 640px) {
-  .qac-ann-spread { max-width: 320px; gap: 1.25rem; }
-  .qac-ann-spread__poem-img { max-width: 150px; }
+  .qac-ann-spread { max-width: 340px; gap: 1.5rem; }
   .qac-section { padding: 3rem 1.5rem 3rem; }
   .qac-ann { margin-top: 3rem; }
   .qac-premise { margin-top: 2.75rem; }
@@ -6940,23 +6957,38 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    2026-09-02, per the same image-swap directive: this is the same
    collection-banner-02.png HomeCollectionPremise.tsx opened with
    (that section's own .qac-compilation is now retired, see its
-   comment) -- same crop technique (aspect-ratio 1717/580 + object-fit
-   cover, object-position top, dropping the source file's own baked-in
-   lower caption band), but resized and reframed for this narrower,
-   dark context rather than reusing .qac-compilation directly:
-   max-width capped at 600px to stay well inside .section2-dark__inner
-   's own 640px column (that rule's cream-tuned 1000px cap and shadow
-   would both be wrong here), and border/shadow borrowed from this
-   band's own .section2-dark__img convention (gold-tinted border,
-   deep black ambient shadow) instead of .qac-compilation's cream-
-   tuned rgba(28,43,58,...) shadow, which would barely register
-   against navy. margin-bottom carries over the same calc(2.75rem -
-   18px) value .section2-dark__pair used, so the gap down to
-   "Workshops" is unchanged by the swap. */
+   comment) -- same crop technique (aspect-ratio + object-fit cover,
+   object-position top, dropping the source file's own baked-in lower
+   caption band), but resized and reframed for this narrower, dark
+   context rather than reusing .qac-compilation directly: max-width
+   capped at 640px to match .section2-dark__inner's own column width
+   exactly (that rule's cream-tuned 1000px cap and shadow would both
+   be wrong here), and border/shadow borrowed from this band's own
+   .section2-dark__img convention (gold-tinted border, deep black
+   ambient shadow) instead of .qac-compilation's cream-tuned
+   rgba(28,43,58,...) shadow, which would barely register against
+   navy. margin-bottom carries over the same calc(2.75rem - 18px)
+   value .section2-dark__pair used, so the gap down to "Workshops" is
+   unchanged by the swap.
+
+   2026-09-02, later the same day, per Susan's "cropped too short on
+   the bottom -- some text appears... it can be bigger" follow-up:
+   two fixes. (1) SIZE -- max-width 600px -> 640px, filling the full
+   .section2-dark__inner column instead of leaving a sliver of navy on
+   either side. (2) CROP -- aspect-ratio 1717/580 -> 1717/556. PIL
+   row-by-row pixel sampling of the source found the frames' own
+   bottom trim ends at y~558 and the baked-in caption band's actual
+   TEXT doesn't start until y~590-596, but the 580px crop this pass
+   started with landed 20px into the solid-navy caption band itself --
+   between the frame bottoms and any real glyphs, but still a stray
+   sliver of the "wrong" navy reading as an unintended, careless-
+   looking cutoff rather than a clean stop. 556px lands right at the
+   frame trim's own bottom edge, zero caption-band bleed, verified by
+   direct crop-and-view before adopting the value. */
 .section2-dark__collection {
   width: 100%;
-  max-width: 600px;
-  aspect-ratio: 1717 / 580;
+  max-width: 640px;
+  aspect-ratio: 1717 / 556;
   overflow: hidden;
   margin: 0 auto calc(2.75rem - 18px);
   border: 1px solid rgba(201, 168, 76, 0.25);
