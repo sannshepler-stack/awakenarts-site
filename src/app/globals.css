@@ -1099,8 +1099,17 @@ a   { color: inherit; text-decoration: none; }
      2026-08-31, later still, per her "the nudge wasn't enough" follow-
      up: another 8px (2.5rem/40px -> 3rem/48px). Lands back at the
      original value -- not by intent, just where two small corrections
-     in the same direction happened to land. */
-  margin: 3rem 0 0;
+     in the same direction happened to land.
+
+     2026-08-31, later still, per her "can you tell how the lines look
+     unrelated" follow-up: three rounds of tuning this margin never
+     actually fixed the disconnect -- see .hero-tagline-fade's own
+     history, where the real cause (its font-size jumping too far past
+     .hero-mission's) is addressed directly. With that size gap
+     narrowed, this margin is set once more, to a middle value (2.25rem
+     /36px) between the two ends already tried, rather than continuing
+     to search blindly along one axis. */
+  margin: 2.25rem 0 0;
 }
 
 /* .hero-invitation / .hero-invitation__label / .hero-invitation:hover —
@@ -5619,12 +5628,25 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      1.5vw, 1.2rem)), not smaller than or equal to it. Also given a
      bottom margin so it sits with breathing room as the last element
      in the Hero's text column, rather than crowding the column's
-     bottom edge. */
+     bottom edge.
+
+     2026-08-31, later the same day, per her "can you tell how the
+     lines look unrelated" follow-up: several rounds of adjusting
+     .hero-invitations' gap (see that rule's own history) never fixed
+     this, because the gap was never the real cause. A jump from
+     .hero-mission's ~1.2rem ceiling up to 1.75rem is large enough on
+     its own to read as a new headline announcing itself, not a
+     continuation of the passage above -- no amount of spacing changes
+     fixes a size-driven break. Pulled back to a more modest ceiling
+     (1.75rem -> 1.5rem) that's still reliably bigger than
+     .hero-mission at every width (min 1.3rem clears its 1.2rem
+     ceiling outright) but no longer such a stark jump that it reads
+     as a separate section. */
   display: block;
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  font-size: clamp(1.3rem, 1.8vw, 1.5rem);
   line-height: 1.6;
   color: var(--gold);
   max-width: 46ch;
