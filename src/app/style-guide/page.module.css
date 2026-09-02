@@ -1,0 +1,483 @@
+/* ─── /style-guide — AwakenArts Typography & Design System Reference ───────
+   AwakenArts · created 2026-09-02, per Susan's "Build the standalone
+   style-guide/reference page first" directive, following her "Looking
+   pretty good now -- a prototype for typography" note on the homepage.
+
+   PURPOSE: a living reference for the typography/color/spacing system
+   approved during the 2026-09-02 typography-normalization pass (see
+   globals.css's DESIGN TOKENS block and its dated comments for the
+   full history of every value here). Every live specimen on this page
+   (headings, body text, quotations, buttons, captions, color swatches)
+   pulls directly from the same CSS custom properties and shared
+   classes the rest of the site uses -- font-family: var(--serif),
+   font-size: var(--h1-size), color: var(--gold), .home-coll-cta,
+   .eyebrow, etc. -- rather than hardcoded copies of their values. If a
+   token changes in globals.css, this page updates with it
+   automatically; nothing here can silently drift out of sync with the
+   real site the way a static mockup could.
+
+   SCOPE: this page is internal-only (not linked from <Nav/>, noindex
+   in its metadata, per the standalone-reference-doc pattern) -- a tool
+   for Susan and Claude to check future work against, not a public
+   marketing page. Layout scaffolding in this module (cards, swatches,
+   grids, the guide's own section rhythm) is genuinely new for this
+   page and has no site-wide equivalent to reuse; only the typographic
+   SPECIMENS inside that scaffolding reuse real tokens/classes.
+
+   NOT YET COVERED (flagged per her "do not continue the remaining
+   sitewide pass until I review and approve the guide" instruction):
+   Nav/Footer link typography and the responsive breakpoint audit are
+   Tasks #171/#172 in the paused sitewide pass -- this guide documents
+   the TOKENS those tasks will apply, not the result of applying them
+   yet. See the page's own closing note.
+   ──────────────────────────────────────────────────────────────────── */
+
+.page {
+  background: var(--cream);
+  padding-top: 72px; /* clears fixed nav, same convention as .studio-page */
+  min-height: 100vh;
+}
+
+@media (max-width: 1080px) {
+  .page { padding-top: 56px; }
+}
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2.5rem;
+  text-align: center;
+}
+
+.introEyebrow {
+  margin: 0 auto 1.5rem;
+  justify-content: center;
+}
+
+.introTitle {
+  font-family: var(--serif);
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  letter-spacing: var(--h1-tracking);
+  color: var(--deep);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.introNote {
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--mid);
+  max-width: var(--measure-intro);
+  margin: 0 auto;
+}
+
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem var(--band-gap);
+}
+
+.section {
+  padding: 3rem 0;
+  border-top: 1px solid var(--mist);
+}
+.section:first-child {
+  border-top: none;
+}
+
+.sectionEyebrow {
+  margin: 0 0 1.25rem;
+}
+
+.sectionTitle {
+  font-family: var(--serif);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  letter-spacing: var(--h2-tracking);
+  color: var(--deep);
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+.sectionIntro {
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--charcoal);
+  max-width: var(--measure-body);
+  margin: 0 0 2rem;
+}
+
+/* ── Type specimen cards ────────────────────────────────────────── */
+.specimenGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.specimen {
+  background: #fff;
+  border: 1px solid var(--mist);
+  border-radius: 3px;
+  padding: 1.75rem 2rem;
+}
+
+.specimenLabel {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.85rem;
+}
+
+.specimenExample {
+  margin: 0 0 1rem;
+}
+
+.specimenMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--mid);
+  border-top: 1px dashed var(--mist);
+  padding-top: 0.85rem;
+}
+.specimenMeta code {
+  font-family: 'Courier New', Courier, monospace;
+  background: var(--gold-bg);
+  color: var(--deep);
+  padding: 0.1em 0.4em;
+  border-radius: 2px;
+}
+
+/* Live type examples — these reuse the actual tokens directly */
+.exH1 {
+  font-family: var(--serif);
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  letter-spacing: var(--h1-tracking);
+  color: var(--deep);
+  line-height: 1.15;
+}
+.exH2 {
+  font-family: var(--serif);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  letter-spacing: var(--h2-tracking);
+  color: var(--deep);
+  line-height: 1.25;
+}
+.exH3 {
+  font-family: var(--serif);
+  font-size: var(--subtitle-size);
+  line-height: var(--subtitle-line);
+  letter-spacing: var(--h3-tracking);
+  color: var(--deep);
+}
+.exH4 {
+  font-family: var(--font-body);
+  font-size: var(--h4-size);
+  font-weight: var(--h4-weight);
+  line-height: var(--h4-line);
+  letter-spacing: var(--h4-tracking);
+  color: var(--deep);
+}
+.exBody {
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--charcoal);
+  max-width: var(--measure-body);
+}
+.exBodyItalic {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--charcoal);
+  max-width: var(--measure-body);
+}
+.exCaption {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--caption-size);
+  line-height: var(--caption-line);
+  letter-spacing: var(--caption-tracking);
+  color: var(--mid);
+}
+.exSmall {
+  font-family: var(--font-body);
+  font-size: var(--small-size);
+  line-height: var(--small-line);
+  letter-spacing: var(--small-tracking);
+  color: var(--mid);
+}
+
+/* ── Color swatches ──────────────────────────────────────────────── */
+.swatchGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.swatch {
+  border: 1px solid var(--mist);
+  border-radius: 3px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.swatchFill {
+  height: 72px;
+}
+
+.swatchMeta {
+  padding: 0.85rem 1rem;
+}
+
+.swatchName {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--deep);
+  margin: 0 0 0.2rem;
+}
+
+.swatchHex {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.78rem;
+  color: var(--mid);
+  margin: 0 0 0.4rem;
+}
+
+.swatchUse {
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--mid);
+}
+
+.goldRule {
+  background: var(--gold-bg);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 3px;
+  padding: 1.5rem 1.75rem;
+  margin: 1.5rem 0 0;
+}
+.goldRuleTitle {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--deep);
+  margin: 0 0 0.85rem;
+}
+.goldRuleList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.goldRuleItem {
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: 1.5;
+  color: var(--charcoal);
+}
+.goldRuleItem strong {
+  color: var(--deep);
+}
+.goldSwatchInline {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 2px;
+  vertical-align: -0.1em;
+  margin-right: 0.4em;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* ── Text width demo bars ────────────────────────────────────────── */
+.widthDemo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.widthRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.widthLabel {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.widthBar {
+  background: #fff;
+  border: 1px dashed rgba(201, 168, 76, 0.5);
+  border-radius: 3px;
+  padding: 1.1rem 1.25rem;
+  text-align: center;
+}
+.widthBarText {
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--charcoal);
+}
+.widthPoetic { max-width: var(--measure-poetic); }
+.widthIntro { max-width: var(--measure-intro); }
+.widthBody { max-width: var(--measure-body); }
+
+/* ── Buttons ─────────────────────────────────────────────────────── */
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.buttonSwatchDark {
+  background: var(--deep);
+  border-radius: 3px;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 240px;
+}
+.buttonSwatchLight {
+  background: var(--cream);
+  border: 1px solid var(--mist);
+  border-radius: 3px;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 240px;
+}
+
+/* ── Labels / quotations demo blocks ────────────────────────────── */
+.demoBlock {
+  background: #fff;
+  border: 1px solid var(--mist);
+  border-radius: 3px;
+  padding: 2rem;
+  text-align: center;
+}
+.demoBlockDark {
+  background: var(--deep);
+  border-radius: 3px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.quoteExample {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  color: var(--gold);
+  margin: 0;
+}
+
+.examplesRow {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  color: var(--gold);
+}
+.examplesSep {
+  color: rgba(28, 43, 58, 0.3);
+  margin: 0 0.6em;
+  font-style: normal;
+}
+
+/* ── Spacing tables ──────────────────────────────────────────────── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--mist);
+}
+.table th {
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+.table td {
+  color: var(--charcoal);
+}
+.table code {
+  font-family: 'Courier New', Courier, monospace;
+  background: var(--gold-bg);
+  padding: 0.1em 0.4em;
+  border-radius: 2px;
+}
+
+/* ── Editorial Section Pattern list ─────────────────────────────── */
+.patternList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  counter-reset: pattern;
+}
+.patternStep {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+.patternNumber {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
+  min-width: 1.5rem;
+}
+.patternText {
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: 1.6;
+  color: var(--charcoal);
+}
+.patternText strong {
+  color: var(--deep);
+}
+
+.closingNote {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--mid);
+  max-width: var(--measure-body);
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .intro { padding: 3rem 1.5rem 2rem; }
+  .main { padding: 0 1.25rem var(--band-gap-sm); }
+  .specimen { padding: 1.25rem 1.5rem; }
+  .buttonRow { flex-direction: column; }
+}
