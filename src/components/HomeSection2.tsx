@@ -144,6 +144,18 @@ import Link from 'next/link'
  *     comment for why), now given back as real, readable copy instead
  *     of staying invisible pixels. Wording is a first draft, flagged
  *     to Susan for adjustment rather than presented as locked.
+ *
+ * 2026-09-02, later still, per Susan's "The line poetic encounters is
+ * unnecessary and blurs the space -- leave some comfortable space
+ * below the image for the Workshops to get notice (increase image
+ * size by 15%)" directive: the caption paragraph added in the prior
+ * pass above is removed from render entirely (not just reworded --
+ * she called it unnecessary, not wrong). .section2-dark__collection-
+ * caption is left defined in globals.css, unused, per no-silent-
+ * deletion. The image itself grows 15% (max-width 800px -> 920px) and
+ * now carries its own generous bottom margin directly, replacing the
+ * spacing job the caption's margin used to do -- see that rule's own
+ * comment in globals.css.
  */
 export default function HomeSection2() {
   return (
@@ -159,16 +171,6 @@ export default function HomeSection2() {
             loading="lazy"
           />
         </div>
-        {/* 2026-09-02, per Susan's "eliminate the orphan by say[ing] the
-            works are the foundation for the workshops" follow-up: the
-            prior wording ("...the foundation each workshop draws
-            from.") wrapped "from." alone onto its own third line at
-            this width. Shortened to "...the foundation for the
-            workshops." -- same meaning, no orphan. */}
-        <p className="section2-dark__collection-caption">
-          Poetic encounters in shape, symbol, and story — the works
-          are the foundation for the workshops.
-        </p>
 
         <div className="section2-dark__inner">
 

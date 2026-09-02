@@ -7448,13 +7448,25 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    the frames never having been part of the visible picture here. Its
    text is restored below as real copy instead, in .section2-dark__
    collection-caption, rather than staying flattened, illegible pixels
-   inside the image. */
+   inside the image.
+
+   2026-09-02, later still, per Susan's "The line poetic encounters is
+   unnecessary and blurs the space -- leave some comfortable space
+   below the image for the Workshops to get notice (increase image
+   size by 15%)" directive: the caption paragraph below is removed from
+   HomeSection2.tsx's render (its own rule left defined, unused, per
+   no-silent-deletion), so its margin-bottom: 3.5rem no longer carries
+   any of the gap down to "Workshops." max-width raised 800px -> 920px
+   (15%, her exact figure). margin-bottom raised from 1.5rem to 4rem,
+   directly on this rule now, so the image supplies its own comfortable
+   pause before the heading rather than relying on caption spacing that
+   no longer exists. */
 .section2-dark__collection {
   width: 100%;
-  max-width: 800px;
+  max-width: 920px;
   aspect-ratio: 1717 / 556;
   overflow: hidden;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 4rem;
   border: 1px solid rgba(201, 168, 76, 0.25);
   border-radius: 3px;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
@@ -7488,7 +7500,15 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    --caption-size/-line/-tracking tokens (12px/1.4/0.2px) instead of a
    one-off value -- a real, visible reduction from its prior ~16-18px,
    flagged here since it's a meaningful size change, not a rounding
-   difference. */
+   difference.
+
+   RETIRED 2026-09-02, per Susan's "The line poetic encounters is
+   unnecessary and blurs the space" directive: removed from
+   HomeSection2.tsx's render entirely, not reworded -- she called the
+   line itself unnecessary, not its wording. Left defined here, unused,
+   per no-silent-deletion. .section2-dark__collection's own bottom
+   margin now carries the "comfortable space below the image" job this
+   caption's margin used to do -- see that rule's own comment. */
 .section2-dark__collection-caption {
   font-family: var(--font-body);
   font-size: var(--caption-size);
