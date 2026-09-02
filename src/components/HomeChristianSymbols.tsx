@@ -99,14 +99,29 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
  * .home-recognition__encounters-image and its img rule, and
  * .poems-showcase-foundation__ship-header, are all left defined,
  * unused, per no-silent-deletion -- see their own comments in
- * globals.css for the fuller history. */
+ * globals.css for the fuller history.
+ *
+ * 2026-09-02, per Susan's "we can choose one of these headers to start
+ * section 3 against section 2" directive: presented with two candidate
+ * sky-threshold images (both 1536x1024, same source pipeline as
+ * queen-ann-threshold.jpg) to mark the seam where Workshops (section 2,
+ * dark navy) hands off to Christian Symbols (section 3, cream) -- the
+ * same seam-marking role the Ann threshold now plays for Workshops
+ * itself. Chose the more centered, symmetric golden break in the
+ * clouds over the off-center alternative: a centered composition reads
+ * more intentional at full-bleed width, where the eye meets it
+ * straight-on above the centered copy column below. Saved as
+ * public/images/headers/scripture-threshold.jpg. This REPLACES the
+ * sailboat image (encounters-symbols-ship-v3.png) in the section's
+ * single opening `tall` threshold slot -- the sailboat is left in
+ * place in public/images/homepage/, unused, per no-silent-deletion. */
 export default function HomeChristianSymbols() {
   return (
     <section className="poems-showcase-foundation" aria-label="Christian Symbols">
 
       <AtmosphericHeader
-        src="/images/homepage/encounters-symbols-ship-v3.png"
-        alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon -- the threshold into this section's Scripture and symbols"
+        src="/images/headers/scripture-threshold.jpg"
+        alt="A dark sky heavy with clouds breaking open to warm gold light along the horizon -- the threshold into this section's Scripture and symbols"
         tall
         fadeTo="var(--cream)"
       />
