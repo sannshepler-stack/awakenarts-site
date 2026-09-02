@@ -83,33 +83,32 @@ export default function HomeChristianSymbols() {
         <p className="hero-quote-cite">Matthew 13:34</p>
 
         {/* 2026-09-02, per Susan's directive to expand the Matthew
-            passage: five short paragraphs added below the verse and
-            citation, closing the section as one continuous meditation
-            rather than ending on the citation alone. See
-            .hero-quote-reflection in globals.css for the full
-            reasoning, including the restored "Christ is the center.
-            Scripture is the authority." credo line (originally
-            retired from /foundation on 2026-07-14, brought back here
-            per her explicit request). */}
+            passage: paragraphs added below the verse and citation,
+            closing the section as one continuous meditation rather
+            than ending on the citation alone. See .hero-quote-
+            reflection in globals.css for the full reasoning, including
+            the "Christ is the center. Scripture is the authority."
+            credo material (originally retired from /foundation on
+            2026-07-14, folded back in here per her explicit request).
+
+            2026-09-02, later the same day, per Susan's "revise the
+            added text" follow-up: the four separate paragraphs this
+            first pass used (opening statement, bridge line, second
+            statement, credo line) are condensed into ONE paragraph,
+            her own tightened wording, replacing all four. The closing
+            italic invitation line is kept separate, exactly as she
+            specified ("retain your final italic line separately").
+            .hero-quote-reflection__bridge and __credo (the modifier
+            classes those two retired lines used) are now unused --
+            left defined in globals.css, per no-silent-deletion. */}
         <div className="hero-quote-reflection">
           <p>
-            Jesus taught through the familiar language of image,
-            story, metaphor, and the ordinary things of human life. He
-            entered the world as he found it without surrendering the
-            truth he carried.
-          </p>
-          <p className="hero-quote-reflection__bridge">
-            AwakenArts works within that tradition.
-          </p>
-          <p>
-            Its study of symbol and archetypal pattern may lead into
+            Jesus taught through image, story, and metaphor, entering
+            the world as he found it without surrendering the truth he
+            carried. AwakenArts works within that tradition—engaging
             literature, psychology, mythology, folklore, and the long
-            history of human imagination. Entering those territories
-            does not require surrendering the ground from which we
-            enter them.
-          </p>
-          <p className="hero-quote-reflection__credo">
-            Christ is the center. Scripture is the authority.
+            history of human imagination while remaining grounded in
+            Christ and the authority of Scripture.
           </p>
           <p className="hero-quote-reflection__invitation">
             The artistic work is an invitation to look, recognize, and

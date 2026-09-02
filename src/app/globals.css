@@ -1857,18 +1857,19 @@ a   { color: inherit; text-decoration: none; }
 .hero-quote-reflection p:last-child {
   margin-bottom: 0;
 }
-/* "AwakenArts works within that tradition." -- the same bridge
-   thought .hero-quote-body once carried alone (see its own comment
-   just below), now one beat among several rather than the section's
-   only one. */
+/* .hero-quote-reflection__bridge / __credo -- RETIRED 2026-09-02, per
+   Susan's "revise the added text" follow-up: the four-paragraph first
+   draft of this passage (opening statement / bridge line / second
+   statement / credo line) was condensed into one combined paragraph,
+   her own tightened wording -- see HomeChristianSymbols.tsx's own
+   comment. These two modifier classes styled the now-removed bridge
+   ("AwakenArts works within that tradition.") and credo ("Christ is
+   the center. Scripture is the authority.") lines respectively. Left
+   defined, unused, per no-silent-deletion. */
 .hero-quote-reflection__bridge {
   font-style: italic;
   color: var(--deep);
 }
-/* "Christ is the center. Scripture is the authority." -- the same
-   credo line retired from /foundation on 2026-07-14 (see that page's
-   own "Retired" comment near .foundation-body), restored here per
-   Susan's explicit request to add it into this section. */
 .hero-quote-reflection__credo {
   font-style: italic;
   font-weight: 600;
@@ -6533,13 +6534,22 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    deliberate visual moment rather than a small supporting pair --
    760px is a real step up from 640px without approaching the former
    banner's 1000px ceiling, keeping it "apparent, not overwhelming"
-   per her explicit range. */
+   per her explicit range.
+
+   2026-09-02, later still, per Susan's "Section 3 so far outweighs
+   Section 2 -- the images of Ann can both be smaller -- maybe by 20%"
+   follow-up: max-width 760px -> 608px (760 x 0.8, a straight 20%
+   reduction) and gap 2.5rem -> 2rem (proportionally scaled down the
+   same 20%, which lands back on the original pre-enlargement gap
+   value). Poem and portrait still fill their columns edge-to-edge as
+   matching rectangles -- only the pair's overall scale changes, not
+   the size-matching fix above. */
 .qac-ann-spread {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 2.5rem;
-  max-width: 760px;
+  gap: 2rem;
+  max-width: 608px;
   margin: 0 auto;
 }
 .qac-ann-spread__poem {
@@ -6984,13 +6994,23 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    sliver of the "wrong" navy reading as an unintended, careless-
    looking cutoff rather than a clean stop. 556px lands right at the
    frame trim's own bottom edge, zero caption-band bleed, verified by
-   direct crop-and-view before adopting the value. */
+   direct crop-and-view before adopting the value.
+
+   2026-09-02, later still, per Susan's "the collection image is still
+   not doing the job of carrying the section -- Workshops can start
+   after a brief space or pause" follow-up: margin-bottom widened from
+   calc(2.75rem - 18px) (26px) to 3.5rem (56px), more than doubling the
+   gap down to the "Workshops" title. Rather than lean harder on the
+   image itself (still pending Susan's own sized/cropped export, per
+   her offer), this gives the banner room to stand as its own
+   deliberate visual beat before the section's text begins, instead of
+   the heading crowding in immediately beneath it. */
 .section2-dark__collection {
   width: 100%;
   max-width: 640px;
   aspect-ratio: 1717 / 556;
   overflow: hidden;
-  margin: 0 auto calc(2.75rem - 18px);
+  margin: 0 auto 3.5rem;
   border: 1px solid rgba(201, 168, 76, 0.25);
   border-radius: 3px;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
