@@ -398,16 +398,26 @@ export default function StyleGuidePage() {
               changes for the surface it sits on. Never invent a third
               button treatment.
             </p>
+            {/* 2026-09-02, per Susan's build-failure report ("Event handlers
+                cannot be passed to Client Component props" on Vercel,
+                commit 2d24b29): these were `<a href="#" onClick={(e) =>
+                e.preventDefault()}>` -- a Server Component (this page has
+                no "use client") cannot pass a function prop like onClick
+                to a DOM element; Next.js allows it in local dev but fails
+                static generation in production. These are inert style
+                specimens, not real navigation, so the fix is a
+                non-interactive <span> with the same classes -- identical
+                visual result, no client/server boundary violation. */}
             <div className={styles.buttonRow}>
               <div className={styles.buttonSwatchDark}>
-                <a href="#" className="home-coll-cta" onClick={(e) => e.preventDefault()}>
+                <span className="home-coll-cta">
                   View Current Workshops
-                </a>
+                </span>
               </div>
               <div className={styles.buttonSwatchLight}>
-                <a href="#" className="home-coll-cta home-coll-cta--light-surface" onClick={(e) => e.preventDefault()}>
+                <span className="home-coll-cta home-coll-cta--light-surface">
                   Explore Christian Symbols
-                </a>
+                </span>
               </div>
             </div>
             <div className={styles.specimenMeta} style={{ marginTop: '1.5rem' }}>
