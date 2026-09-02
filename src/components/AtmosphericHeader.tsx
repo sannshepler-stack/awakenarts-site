@@ -97,7 +97,23 @@ import styles from './AtmosphericHeader.module.css'
  * ever trim from the bottom (castle silhouette / lower dress), never
  * the top. Leave unset for images with no edge-sensitive subject
  * (every other current AtmosphericHeader instance).
- */
+ *
+ * `fadeFrom` / `fadeFromHeight` (added 2026-09-02, per Susan's "it is
+ * an abutment from the preceding section, just like the boat image on
+ * the matthew section" report): `fadeTo` only ever solved HALF the
+ * seam problem -- the image's BOTTOM dissolving into the section that
+ * follows. Its TOP had no equivalent treatment, so on any
+ * AtmosphericHeader placed mid-page (not page-opening, where
+ * `clearsNav` already pushes it below the nav) the image's top edge
+ * still butts flush against whatever precedes it -- a hard photographic
+ * cut against a flat-colored section, exactly the seam `fadeTo` was
+ * built to eliminate at the bottom. `fadeFrom` mirrors `fadeTo` exactly
+ * but at the top: pass the exact background color of the section
+ * immediately ABOVE this header, and the image's top dissolves out of
+ * it the same way the bottom dissolves into `fadeTo`'s color.
+ * `fadeFromHeight` mirrors `fadeHeight` (percentage of image height,
+ * default 34%) for the same "reveal more of the image before the fade
+ * starts" tuning, independently of the bottom fade's own height. */
 
 interface AtmosphericHeaderProps {
   src: string
@@ -106,11 +122,13 @@ interface AtmosphericHeaderProps {
   tall?: boolean
   fadeTo?: string
   fadeHeight?: number
+  fadeFrom?: string
+  fadeFromHeight?: number
   clearsNav?: boolean
   topAlign?: boolean
 }
 
-export default function AtmosphericHeader({ src, alt, flush, tall, fadeTo, fadeHeight, clearsNav, topAlign }: AtmosphericHeaderProps) {
+export default function AtmosphericHeader({ src, alt, flush, tall, fadeTo, fadeHeight, fadeFrom, fadeFromHeight, clearsNav, topAlign }: AtmosphericHeaderProps) {
   const classNames = [
     styles.header,
     flush || fadeTo ? styles.flush : '',
@@ -132,6 +150,16 @@ export default function AtmosphericHeader({ src, alt, flush, tall, fadeTo, fadeH
         className={imgClassNames}
         loading="lazy"
       />
+      {fadeFrom ? (
+        <div
+          className={styles.fadeTop}
+          style={{
+            background: `linear-gradient(to top, transparent, ${fadeFrom})`,
+            ...(fadeFromHeight ? { height: `${fadeFromHeight}%` } : {}),
+          }}
+          aria-hidden="true"
+        />
+      ) : null}
       {fadeTo ? (
         <div
           className={styles.fade}

@@ -110,7 +110,18 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
  * unchanged from before that pass. The sky image now opens
  * HomeCollectionPremise.tsx (the Ann section) instead -- see that
  * file's own comment. scripture-threshold.jpg is left in place,
- * unused, per no-silent-deletion. */
+ * unused, per no-silent-deletion.
+ *
+ * 2026-09-02, later the same day, per Susan's "it is an abutment from
+ * the preceding section, just like the boat image on the matthew
+ * section" report (raised while fixing this same defect on the new Ann-
+ * section header -- see HomeCollectionPremise.tsx's own comment): this
+ * sailboat header's top edge butts flush against HomeCollectionPremise
+ * (the Ann section, cream) directly above it, the same unaddressed-top-
+ * seam problem. `fadeFrom="var(--cream)"` added -- var(--cream) is
+ * .qac-section's own background, the exact color immediately above
+ * this header -- so the image now dissolves out of that cream field at
+ * its top the same way it already dissolved into cream at its bottom. */
 export default function HomeChristianSymbols() {
   return (
     <section className="poems-showcase-foundation" aria-label="Christian Symbols">
@@ -119,6 +130,7 @@ export default function HomeChristianSymbols() {
         src="/images/homepage/encounters-symbols-ship-v3.png"
         alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon -- the threshold into this section's Scripture and symbols"
         tall
+        fadeFrom="var(--cream)"
         fadeTo="var(--cream)"
       />
 
@@ -216,8 +228,22 @@ export default function HomeChristianSymbols() {
           </Link>
         </div>
 
+        {/* 2026-09-02, per Susan's "can you do this with the matthew
+            quote" directive, alongside a screenshot of .section2-
+            examples' three quotes ("We've put up walls." etc.), each
+            wrapped in curly quotation marks: the Matthew verse gets the
+            same treatment -- &ldquo;/&rdquo; added around the sentence.
+            Only the quotation marks are matched here, not the rest of
+            .section2-examples' styling (gold color, italic Cormorant,
+            single-line width) -- .hero-quote-text's own established
+            size/color/weight (var(--body-size), var(--mid), 300) are
+            left untouched, since she pointed at the quotes specifically
+            and this verse already has its own settled typography from
+            the 2026-09-02 "Ouch -- way dark and large" correction
+            earlier the same day. Flagging in case she meant the fuller
+            gold/single-line treatment instead. */}
         <p className="hero-quote-text">
-          He did not say anything to them without using a parable.
+          &ldquo;He did not say anything to them without using a parable.&rdquo;
         </p>
         <p className="hero-quote-cite">Matthew 13:34</p>
 

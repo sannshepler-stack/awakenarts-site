@@ -103,6 +103,18 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
  * cream matching this section's own background, no `clearsNav` -- this
  * section doesn't open the page, it follows HomeSection2's navy
  * Workshops band, so there's no fixed-nav overlap to clear.
+ *
+ * 2026-09-02, later the same day, per Susan's "it is an abutment from
+ * the preceding section, just like the boat image on the matthew
+ * section" report: this header's top edge butted flush against
+ * HomeSection2's navy Workshops band directly above it -- a hard
+ * photographic cut, the same seam problem `fadeTo` already solves at
+ * the bottom, just unaddressed at the top. `fadeFrom="var(--deep)"`
+ * added (var(--deep) is .section2-dark's own background, the exact
+ * color immediately above this header) so the image now dissolves out
+ * of the navy band the same way it dissolves into cream below. See
+ * AtmosphericHeader.tsx's own comment for the new prop's full
+ * reasoning.
  */
 
 export default function HomeCollectionPremise() {
@@ -112,6 +124,7 @@ export default function HomeCollectionPremise() {
       <AtmosphericHeader
         src="/images/headers/collection-threshold.jpg"
         alt="A dark sky heavy with clouds breaking open to warm gold light along the horizon -- the threshold into the Queen Ann encounter"
+        fadeFrom="var(--deep)"
         fadeTo="var(--cream)"
       />
 

@@ -86,6 +86,19 @@
   pointer-events: none;
 }
 
+/* 2026-09-02, per Susan's "abutment from the preceding section" report
+   -- mirrors .fade exactly, but pinned to the image's top edge instead
+   of its bottom, for the `fadeFrom` prop. See AtmosphericHeader.tsx's
+   own comment for the full reasoning. */
+.fadeTop {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 34%;
+  pointer-events: none;
+}
+
 @media (max-width: 768px) {
   .header { margin-bottom: 48px; }
   .flush { margin-bottom: 0; }
