@@ -6674,9 +6674,15 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    before Christian Symbols, unrelated to the header. The removed top/
    horizontal values move to .qac-inner below, applying AFTER the
    header instead of before it. */
+/* 2026-09-02, per Susan's "slightly reduce space below ann to
+   accommodate for move upward" directive: padding-bottom (the gap down
+   to Christian Symbols) trimmed from calc(var(--band-gap-sm) + 35px)
+   (107px) to calc(var(--band-gap-sm) + 15px) (87px) -- a slight, ~20px
+   trim, not a return to the plain 72px token. Mobile tier trimmed
+   proportionally below. */
 .qac-section {
   background: var(--cream);
-  padding: 0 0 calc(var(--band-gap-sm) + 35px);
+  padding: 0 0 calc(var(--band-gap-sm) + 15px);
   text-align: center;
 }
 .qac-inner {
@@ -7007,7 +7013,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      fix as the desktop rule above: horizontal + top padding moved to
      .qac-inner's own mobile override just below, so the header stays
      flush-top and full-bleed at this breakpoint too. */
-  .qac-section { padding: 0 0 3rem; }
+  /* 2026-09-02, "slightly reduce space below ann" fix, same as the
+     desktop rule above: trimmed to 2.5rem (40px), was 3rem (48px). */
+  .qac-section { padding: 0 0 2.5rem; }
   /* 2026-09-02, "equal spacing" fix: 40px matches
      .poems-showcase-foundation__inner's own 640px-tier value (see that
      rule's comment) and AtmosphericHeader's own 640px-tier
