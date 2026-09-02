@@ -53,21 +53,37 @@
      not a single global substitution. See the homepage components for
      this pass's first applications. */
   --charcoal: #2B2B2B;
-  /* 2026-09-02, same pass, per her spec's "Warm gold accent: #B08A3E":
-     added as a NEW, separate token rather than redefining --gold
-     itself. WCAG contrast check against the new --cream above: #B08A3E
-     on #FAF6EC measures 2.97:1 -- fails AA-normal (4.5:1) AND
+  /* GOLD USAGE STANDARD, TWO-TIER (locked 2026-09-02, per Susan's
+     confirmation after the WCAG contrast check below -- recorded here
+     as a standing rule so future work doesn't have to re-derive or
+     re-ask this site-wide):
+
+       --gold (#7E5F12) -- small gold HEADINGS, LABELS, LINKS, BUTTONS,
+       and other FUNCTIONAL TEXT. This is the only gold proven >=4.5:1
+       (WCAG AA-normal) across the site's light backgrounds (5.51:1
+       against the new --cream) -- use it anywhere gold carries
+       readable text at body/label scale.
+
+       --gold-accent (#B08A3E) -- ORNAMENTS, BORDERS, RULES, ICONS,
+       DECORATIVE FLOURISHES, and sufficiently LARGE DISPLAY elements
+       (≥24px bold, where the 3:1 AA-large/UI floor applies rather than
+       4.5:1). Never use for body- or label-sized text -- see the
+       contrast math below.
+
+       Navy (--deep/--ink) / --charcoal -- PRIMARY HEADINGS AND BODY
+       COPY. Gold is an accent color site-wide, never the primary
+       reading-text color, per Susan's own "Gold is an accent, not a
+       body-text color" instruction.
+
+     Originally added as a new, separate token (rather than redefining
+     --gold itself) after this WCAG contrast check against the new
+     --cream: #B08A3E measures 2.97:1 -- fails AA-normal (4.5:1) AND
      AA-large/UI (3:1), actually worse than the original #8B6914 gold
      this file's own Atmosphere System audit (2026-07-14) already
      rejected for the same reason (see that section's contrast table
-     further down). --gold (#7E5F12, 5.51:1 against the new cream) and
-     --gold-lt remain the text-safe golds for labels/links/eyebrows on
-     light and dark backgrounds respectively, per that existing, tested
-     rule. --gold-accent is reserved for non-text or large-format use
-     (borders, icon fills, decorative rules, bold display text at 24px+
-     where the 3:1 AA-large floor applies) -- flagged in this pass's
-     report for Susan's awareness rather than silently applied where it
-     would fail contrast. */
+     further down). --gold-lt (#C9A84C) remains the dark-background
+     counterpart to --gold, per that same existing, tested rule --
+     unaffected by this addition. */
   --gold-accent: #B08A3E;
   --serif:    'Cormorant Garamond', Georgia, serif;
   /* 2026-09-02, same pass, per her spec's "Body text: Lora": new
