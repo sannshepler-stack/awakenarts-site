@@ -7177,7 +7177,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      the tier whose own definition matches this element's role
      exactly. */
   max-width: var(--measure-intro);
-  margin: 0 auto 1.75rem;
+  /* 2026-09-02, per Susan's "Christian symbols space under heading was
+     good... use as example for ann" directive: the gap below this
+     heading/statement (before the examples row that follows) was
+     1.75rem -- wider than #home-recognition-heading's own margin-
+     bottom (1.25rem, the "space under heading" she pointed to as the
+     good example). Matched to 1.25rem exactly. */
+  margin: 0 auto 1.25rem;
 }
 
 /* The three examples — a single compact line rather than a stacked
