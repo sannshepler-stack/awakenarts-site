@@ -71,6 +71,24 @@
  * confirmed to stay -- explicitly not replaced with the crossroad or
  * Recognition_Path imagery considered earlier. See the heading's own
  * inline comment for the full wording rationale.
+ *
+ * 2026-09-02, per Susan's "we can switch the images... Ann images go
+ * on section 2 and the collection image goes on section [3]" proposal,
+ * confirmed with "Yes... to get the ann images on a creme background":
+ * the Collection gallery banner that opened this section moves OUT to
+ * HomeSection2.tsx (Section 3, navy) -- see that file's own comment.
+ * In its place, this section now opens with the Queen Ann poem +
+ * portrait pairing, formerly boxed as a white "book" on the navy band.
+ * Per her separate direction ("the ann image (poem) is not in a box at
+ * all but juxtaposes the queen image by being on the page"), the poem
+ * is NOT reboxed here -- ann-text-ink-crop.png's own transparent
+ * background sits directly on this section's cream field (.qac-ann-
+ * spread__poem, no border/background of its own), genuinely on the
+ * page rather than packaged in a card; the portrait keeps a quiet thin
+ * frame (.qac-ann-spread__portrait), echoing the original pre-"book"
+ * .qac-spread__frame treatment this pairing used before it moved to
+ * navy. .qac-compilation/.qac-compilation__img are left defined,
+ * unused, per no-silent-deletion.
  */
 
 export default function HomeCollectionPremise() {
@@ -78,14 +96,24 @@ export default function HomeCollectionPremise() {
     <section className="qac-section" aria-label="The AwakenArts Collection">
       <div className="qac-inner">
 
-        <div className="qac-compilation">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/collection/collection-banner-02.png"
-            alt="The AwakenArts Collection — poetic encounters in shape, symbol, and story — six framed visual-literary works displayed as a gallery wall"
-            className="qac-compilation__img"
-            loading="lazy"
-          />
+        <div className="qac-ann-spread">
+          <div className="qac-ann-spread__poem">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/forms/ann-text-ink-crop.png"
+              alt="Queen Ann — the poem, rendered in concrete poetry form"
+              className="qac-ann-spread__poem-img"
+              loading="lazy"
+            />
+          </div>
+          <div className="qac-ann-spread__portrait">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/forms/queen-ann-still.png"
+              alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
+              loading="lazy"
+            />
+          </div>
         </div>
 
         <div className="qac-premise">

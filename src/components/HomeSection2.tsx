@@ -105,6 +105,22 @@ import Link from 'next/link'
  * sampling comment above) rather than cream, but ink navy text reads
  * just as cleanly on white as on cream, so no color changes were
  * needed beyond the swap itself.
+ *
+ * 2026-09-02, later the same day, per Susan's follow-up proposal ("we
+ * can switch the images... Ann images go on section 2 and the
+ * collection image goes on section [3]"), confirmed ("Yes... to get
+ * the ann images on a creme background"): the Ann poem+portrait
+ * pairing (.section2-dark__pair, the white "book") moves OUT of this
+ * section entirely -- to HomeCollectionPremise.tsx (Section 2, cream),
+ * unboxed, per her separate "not in a box at all... juxtaposes the
+ * queen image by being on the page" direction; see that file's own
+ * comment for the full reasoning. In its place, this section now shows
+ * the Collection gallery banner (collection-banner-02.png, the same
+ * image HomeCollectionPremise.tsx used to open with), reframed for
+ * navy with a gold-tinted border/shadow matching this band's own
+ * .section2-dark__img convention rather than .qac-compilation's cream-
+ * tuned shadow. .section2-dark__pair and its children are left
+ * defined, unused, per no-silent-deletion.
  */
 export default function HomeSection2() {
   return (
@@ -112,24 +128,14 @@ export default function HomeSection2() {
       <div className="section2-dark">
         <div className="section2-dark__inner">
 
-          <div className="section2-dark__pair">
-            <div className="section2-dark__pair-text">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/forms/ann-text-ink-crop.png"
-                alt="Queen Ann — the poem, rendered in concrete poetry form"
-                className="section2-dark__pair-poem-img"
-                loading="lazy"
-              />
-            </div>
-            <div className="section2-dark__pair-frame">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/forms/queen-ann-still.png"
-                alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
-                loading="lazy"
-              />
-            </div>
+          <div className="section2-dark__collection">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/collection/collection-banner-02.png"
+              alt="The AwakenArts Collection — poetic encounters in shape, symbol, and story — six framed visual-literary works displayed as a gallery wall"
+              className="section2-dark__collection-img"
+              loading="lazy"
+            />
           </div>
 
           <h3 className="section2-dark__title">Workshops</h3>

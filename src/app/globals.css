@@ -6468,6 +6468,14 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    alone, well before qac-section's own outer padding/cream field is
    even counted) -- "generous cream margins... not full-width or
    dominant" is satisfied by construction, not by a separate check. */
+/* .qac-compilation / __img -- RETIRED 2026-09-02, per Susan's image-
+   swap directive ("Ann images go on section 2 and the collection
+   image goes on section 3"): the Collection gallery banner these
+   rules sized/cropped moved to HomeSection2.tsx's navy band instead
+   (see .section2-dark__collection, further below) -- this cream
+   section now opens with the Ann poem+portrait pairing (.qac-ann-
+   spread, below) instead. Left defined, unused, per no-silent-
+   deletion. */
 .qac-compilation {
   max-width: 1000px;
   aspect-ratio: 1717 / 580;
@@ -6484,7 +6492,66 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   object-position: top;
 }
 
+/* ── Ann poem + portrait, unboxed on cream ──────────────────────────
+   2026-09-02, per Susan's image-swap directive: this pairing moves in
+   from HomeSection2.tsx's navy band, where it had grown into a boxed
+   white "book" (.section2-dark__pair, now retired -- see that rule's
+   own comment). Two things change here, both per her explicit
+   direction: (1) it now opens this cream section instead of the
+   Collection banner, and (2) the poem is NOT reboxed -- no card
+   background, no border, no shadow -- per her "not in a box at all...
+   juxtaposes the queen image by being on the page" instruction.
+   ann-text-ink-crop.png's own transparent background does the work:
+   sitting directly on .qac-section's cream field, the ink-colored
+   letters (see that file's own header comment for the recolor
+   history) read as text printed on the page itself, not packaged
+   separately from the portrait beside it.
+
+   The portrait keeps a quiet thin frame -- unlike the poem, a
+   photographic image benefits from a defining edge, and this is the
+   same border treatment (.qac-spread__frame's own rgba(28,43,58,0.12)
+   value) this exact pairing used the last time it lived on cream,
+   before the "make it look like a book" pass moved it to navy and
+   boxed both halves together. Portrait mirrored via scaleX(-1) so she
+   still faces toward the poem, same convention used everywhere this
+   pairing has appeared. */
+.qac-ann-spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.qac-ann-spread__poem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qac-ann-spread__poem-img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+}
+.qac-ann-spread__portrait {
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(28, 43, 58, 0.12);
+  border-radius: 2px;
+}
+.qac-ann-spread__portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scaleX(-1);
+}
+
 @media (max-width: 640px) {
+  .qac-ann-spread { max-width: 320px; gap: 1.25rem; }
+  .qac-ann-spread__poem-img { max-width: 150px; }
   .qac-section { padding: 3rem 1.5rem 3rem; }
   .qac-ann { margin-top: 3rem; }
   .qac-premise { margin-top: 2.75rem; }
@@ -6853,6 +6920,55 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   max-width: 280px;
   height: auto;
   display: block;
+}
+/* .section2-dark__pair and children -- RETIRED 2026-09-02, per
+   Susan's image-swap directive ("Ann images go on section 2 and the
+   collection image goes on section 3", confirmed "to get the ann
+   images on a creme background"): the Ann poem+portrait "book" this
+   whole block built up over several passes (see the dated comments
+   above -- reunite, 40% larger, open-book presentation) moves OUT of
+   this navy section to HomeCollectionPremise.tsx (Section 2, cream),
+   where the poem is deliberately un-boxed per her separate "not in a
+   box at all" direction -- see .qac-ann-spread there. This section
+   now opens with the Collection gallery banner instead (.section2-
+   dark__collection, below). All of .section2-dark__pair/::after/
+   -frame/-text/-poem-img left defined, unused, per no-silent-
+   deletion -- the "open book" treatment is fully intact here should
+   this pairing ever return to a boxed presentation. */
+
+/* ── Collection gallery banner, on navy ─────────────────────────────
+   2026-09-02, per the same image-swap directive: this is the same
+   collection-banner-02.png HomeCollectionPremise.tsx opened with
+   (that section's own .qac-compilation is now retired, see its
+   comment) -- same crop technique (aspect-ratio 1717/580 + object-fit
+   cover, object-position top, dropping the source file's own baked-in
+   lower caption band), but resized and reframed for this narrower,
+   dark context rather than reusing .qac-compilation directly:
+   max-width capped at 600px to stay well inside .section2-dark__inner
+   's own 640px column (that rule's cream-tuned 1000px cap and shadow
+   would both be wrong here), and border/shadow borrowed from this
+   band's own .section2-dark__img convention (gold-tinted border,
+   deep black ambient shadow) instead of .qac-compilation's cream-
+   tuned rgba(28,43,58,...) shadow, which would barely register
+   against navy. margin-bottom carries over the same calc(2.75rem -
+   18px) value .section2-dark__pair used, so the gap down to
+   "Workshops" is unchanged by the swap. */
+.section2-dark__collection {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1717 / 580;
+  overflow: hidden;
+  margin: 0 auto calc(2.75rem - 18px);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 3px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+}
+.section2-dark__collection-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 .section2-dark__title {
   font-family: var(--serif);
