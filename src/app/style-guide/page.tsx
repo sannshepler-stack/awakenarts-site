@@ -212,7 +212,17 @@ export default function StyleGuidePage() {
                   <span>Line-height: <code>1.4</code></span>
                   <span>Tracking: <code>0.2px</code></span>
                   <span>Token: <code>--small-size</code></span>
-                  <span>Not yet wired into a rule — reserved for footer/legal text review (Task #171)</span>
+                  {/* 2026-09-02, per Susan's explicit call during Task #170's
+                      sitewide pass: the footer copyright/legal line stays at
+                      its current 13.12px (.82rem) rather than being wired
+                      down to this 11px token -- "shrinking a live footer
+                      across the entire site just to obey the token would be
+                      a visible design downgrade. The guide should govern
+                      future consistency, not force unnecessary regressions."
+                      This tier remains reserved for any NEW small/footer
+                      text going forward; existing footer copy is an
+                      intentional, noted exception, not an oversight. */}
+                  <span>Reserved for new small/footer text going forward — the live footer&rsquo;s existing copyright line is a noted exception (kept at its current size; see Task #170)</span>
                 </div>
               </div>
 

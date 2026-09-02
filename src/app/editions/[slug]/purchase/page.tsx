@@ -136,7 +136,24 @@ export default function PurchasePage({ params }: { params: { slug: string } }) {
         </section>
 
         <section className="purchase-cta">
-          <button type="button" className="purchase-cta__button" disabled aria-disabled="true">
+          {/* 2026-09-02, per Susan's sitewide typography-normalization pass
+              (Task #170): this button previously had its own near-but-not-
+              quite copy of the standard button metrics (0.85rem vs 0.9rem
+              font, 0.06em vs 0.08em tracking, no border) -- her explicit
+              call was "the fact that it is disabled should be communicated
+              through opacity/cursor/state treatment, not by inventing a
+              slightly different button system." Now reuses the actual
+              site-wide button classes (.home-coll-cta / --light-surface,
+              same outline-gold-on-cream treatment as every other button on
+              a light surface); .purchase-cta__button is kept only as a
+              disabled-state modifier (opacity + not-allowed cursor) layered
+              on top -- see its own rule in globals.css. */}
+          <button
+            type="button"
+            className="home-coll-cta home-coll-cta--light-surface purchase-cta__button"
+            disabled
+            aria-disabled="true"
+          >
             Acquire the Figure Edition
           </button>
           <p className="purchase-cta__note">

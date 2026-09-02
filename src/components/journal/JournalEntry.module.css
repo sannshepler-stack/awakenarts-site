@@ -112,9 +112,13 @@
 }
 
 .sectionText {
+  /* 2026-09-02, Task #170: was 1.05rem/16.8px, a one-off a hair above
+     the approved body tier -- standardized to var(--body-size)/-line
+     (16px/1.75) since this is ordinary editorial prose, just under 1px
+     smaller than before. */
   font-family: var(--serif);
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   color: var(--deep);
 }
 

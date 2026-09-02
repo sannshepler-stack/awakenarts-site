@@ -92,19 +92,30 @@
 
 /* Archetype title */
 .title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  /* 2026-09-02, per Susan's sitewide typography-normalization pass
+     (Task #170), against the approved /style-guide reference: literal
+     font-family/color values replaced with the site's own tokens
+     (var(--serif), var(--deep)) -- same resolved values, now wired to
+     the tokens so this dormant component can't drift from future
+     token updates the way it already had (see .line's own note below). */
+  font-family: var(--serif), Georgia, serif;
   font-size: 1.3rem;
   font-weight: 300;
   font-style: italic;
-  color: #1C2B3A; /* --deep */
+  color: var(--deep);
   line-height: 1.3;
 }
 
 /* Per-card line — renders only when real copy is present */
 .line {
-  font-family: 'Inter', system-ui, sans-serif;
+  /* 2026-09-02, per Task #170: was a hardcoded #5A5550 labeled "--mid"
+     in its own comment, but --mid was recolored to #55606B (cooler
+     slate) at some point after this component was written -- the
+     hardcoded copy never picked up that update. Now wired to var(--mid)
+     directly so it can't drift again. */
+  font-family: var(--sans), system-ui, sans-serif;
   font-size: .8rem;
-  color: #5A5550; /* --mid */
+  color: var(--mid);
   letter-spacing: .04em;
   line-height: 1.6;
 }
@@ -117,7 +128,7 @@
   border: none;
   border-bottom: 1px solid rgba(139, 105, 20, .3);
   padding: 0 0 2px;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--sans), system-ui, sans-serif;
   font-size: .65rem;
   font-weight: 500;
   letter-spacing: .2em;
@@ -133,7 +144,7 @@
 }
 
 .action:hover {
-  color: #C9A84C; /* --gold-lt */
+  color: var(--gold-lt); /* 2026-09-02, Task #170: was hardcoded #C9A84C, matches var(--gold-lt) exactly -- wired to the token */
   border-bottom-color: rgba(201, 168, 76, .5);
 }
 

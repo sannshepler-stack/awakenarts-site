@@ -170,9 +170,12 @@
 }
 
 .sectionText {
+  /* 2026-09-02, Task #170: was 1.05rem/16.8px, matching JournalEntry's
+     own .sectionText -- standardized to var(--body-size)/-line (16px/
+     1.75) for the same reason; see that file's comment. */
   font-family: var(--serif);
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   color: var(--deep);
 }
 

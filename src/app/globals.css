@@ -503,6 +503,26 @@
   --measure-body: var(--measure-medium);
 }
 
+/* 2026-09-02, per Susan's "Resume the sitewide typography pass... apply
+   the guide to... text widths" directive (Task #170, the retrofit this
+   file's own comment above deferred to "as each is touched"): ~22
+   hardcoded `max-width: 640px/680px/760px` text-container rules across
+   the site (library, scholar, deck, path, experience, studio, poems-
+   showcase-intro, section2-dark__inner, wtc, col-hero, path-intro,
+   reader-section, gal-hero) rewired to var(--measure-poetic/-intro/
+   -body) — the exact values these tokens already hold, so every
+   affected rule renders pixel-identical; only the source now points at
+   the shared scale instead of restating it. Left untouched, deliberately:
+   any max-width at these same numbers governing an IMAGE, video, or
+   gallery/pairing composition rather than a body of text -- e.g.
+   .path-video, .coll-overview__img, .reader-section__banner (image
+   sizing), .studio-poem-shelf/.studio-poem-previews/.studio-forms-
+   gallery (art-frame gallery layout), .poems-showcase-ann (the Ann
+   poem-image pairing) -- since the guide's width system governs
+   editorial text measure, not compositional image/gallery sizing, and
+   these are the "designed visual pieces" she asked me to preserve
+   as-is. */
+
 /* 2026-09-02, per Susan's typography-normalization style sheet's
    responsive guidance table (H1: 44/38/32, H2: 28/26/24, desktop/
    tablet/mobile): redefining --h1-size/--h2-size on :root inside these
@@ -1609,7 +1629,7 @@ a   { color: inherit; text-decoration: none; }
     linear-gradient(to bottom, rgba(250, 247, 242, 0.96), rgba(240, 234, 224, 0.96));
 }
 .library-header {
-  max-width: 760px;
+  max-width: var(--measure-body);
   margin: 0 auto 3rem;
   text-align: center;
 }
@@ -1689,7 +1709,7 @@ a   { color: inherit; text-decoration: none; }
 @media (max-width: 1024px) {
   .library-grid {
     grid-template-columns: 1fr;
-    max-width: 760px;
+    max-width: var(--measure-body);
   }
 }
 
@@ -2821,7 +2841,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 @media (max-width: 1024px) {
   .scholar-grid {
     grid-template-columns: 1fr;
-    max-width: 640px;
+    max-width: var(--measure-poetic);
   }
 }
 
@@ -3246,7 +3266,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   text-align: center;
 }
 .deck-page-hero__inner {
-  max-width: 680px;
+  max-width: var(--measure-intro);
   margin: 0 auto;
 }
 .deck-page-hero .eyebrow {
@@ -3770,7 +3790,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 .path-figure__reading {
   padding: 1.5rem 0;
   margin-bottom: 3.5rem;
-  max-width: 680px;
+  max-width: var(--measure-intro);
 }
 
 .path-figure__reading .eyebrow {
@@ -4366,7 +4386,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .experience-home__inner {
-  max-width: 760px;
+  max-width: var(--measure-body);
   margin: 0 auto;
   padding: 100px 24px 120px;
   text-align: center;
@@ -4994,7 +5014,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .studio-opening__inner {
-  max-width: 640px;
+  max-width: var(--measure-poetic);
   margin: 0 auto;
   text-align: center; /* align with all other Studio section headings */
 }
@@ -5553,7 +5573,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   padding: 5rem 2rem;
 }
 .poems-showcase-intro__inner {
-  max-width: 760px;
+  max-width: var(--measure-body);
   margin: 0 auto;
   text-align: center;
 }
@@ -7276,7 +7296,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   text-align: center;
 }
 .section2-dark__inner {
-  max-width: 640px;
+  max-width: var(--measure-poetic);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -7617,7 +7637,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   line-height: var(--caption-line);
   letter-spacing: var(--caption-tracking);
   color: rgba(250, 247, 242, 0.75);
-  max-width: 640px;
+  max-width: var(--measure-poetic);
   margin: 0 auto 3.5rem;
 }
 .section2-dark__title {
@@ -8441,7 +8461,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 
 .wtc-header {
-  max-width: 680px;
+  max-width: var(--measure-intro);
   margin: 0 auto 4.5rem;
   text-align: center;
 }
@@ -8757,7 +8777,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    Targets both h1 (Studio landing, where Silhouettes is the page opener)
    and h2 (if used in sub-contexts). Same visual weight as all Studio sections. */
 .studio-entry-section__header {
-  max-width: 640px;
+  max-width: var(--measure-poetic);
   margin: 0 auto 3.5rem;
   text-align: center;
 }
@@ -8915,7 +8935,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .studio-symbolic-header {
-  max-width: 640px;
+  max-width: var(--measure-poetic);
   margin: 0 auto 4rem;
   text-align: center;
 }
@@ -8970,7 +8990,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .studio-painterly-header {
-  max-width: 640px;
+  max-width: var(--measure-poetic);
   margin: 0 auto 3.5rem;
   text-align: center;
 }
@@ -9057,7 +9077,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .studio-poems-header {
-  max-width: 640px;
+  max-width: var(--measure-poetic);
   margin: 0 auto 4rem;
   text-align: center;
 }
@@ -9657,7 +9677,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .col-hero__inner {
-  max-width: 640px;
+  max-width: var(--measure-poetic);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -11061,7 +11081,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .path-intro-hero {
-  max-width: 760px;
+  max-width: var(--measure-body);
   margin: 0 auto;
   padding: 7rem 2rem 2rem;
   text-align: center;
@@ -11108,7 +11128,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .path-intro-about {
-  max-width: 640px;
+  max-width: var(--measure-poetic);
   margin: 0 auto;
   padding: 0 2rem;
   text-align: center;
@@ -11500,19 +11520,27 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   border-top: 1px solid rgba(28, 43, 58, 0.08);
 }
 
+/* 2026-09-02, Task #170: was a near-duplicate of .home-coll-cta with its
+   own slightly-off metrics (0.85rem/0.06em/no border) and a filled navy
+   background -- a "third button treatment" the approved style guide
+   explicitly warns against. The button (see purchase/page.tsx) now
+   carries .home-coll-cta.home-coll-cta--light-surface directly, so every
+   structural/typographic property (font, size, tracking, padding, border,
+   radius, hover) comes from the one shared system. This rule is now only
+   the disabled-state layer on top of it -- opacity dims it and the cursor
+   signals it's inactive, exactly as Susan asked ("communicated through
+   opacity/cursor/state treatment, not... a slightly different button
+   system"). Also suppresses the shared class's hover lift/color-shift,
+   since a disabled control shouldn't appear interactive on hover. */
 .purchase-cta__button {
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--cream);
-  background: var(--deep);
-  border: none;
-  border-radius: 2px;
-  padding: 0.95rem 2.25rem;
   cursor: not-allowed;
   opacity: 0.55;
+}
+
+.purchase-cta__button:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+  transform: none;
 }
 
 .purchase-cta__note {
@@ -11706,7 +11734,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   border-radius: 4px;
   box-shadow: 0 18px 60px rgba(28, 43, 58, 0.14);
   padding: 3rem 2.5rem 2.5rem;
-  max-width: 640px;
+  max-width: var(--measure-poetic);
   margin: 0 auto;
 }
 
@@ -11877,7 +11905,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   background: #0F2340;
   border-radius: 4px;
   box-shadow: 0 18px 60px rgba(15, 35, 64, 0.35);
-  max-width: 640px;
+  max-width: var(--measure-poetic);
   margin: 0 auto;
   padding: 3rem 2.5rem 2.75rem;
   text-align: center;
@@ -11916,7 +11944,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   position: relative;
   overflow: hidden;
   border-radius: 4px;
-  max-width: 640px;
+  max-width: var(--measure-poetic);
   margin: 0 auto;
   padding: 3rem 2.5rem 2.5rem;
 }
@@ -12062,7 +12090,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 
 .gal-hero__inner {
-  max-width: 760px;
+  max-width: var(--measure-body);
   margin: 0 auto;
 }
 

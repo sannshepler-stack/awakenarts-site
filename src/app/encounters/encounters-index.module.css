@@ -92,7 +92,7 @@
   font-weight: var(--label-weight);
   letter-spacing: var(--label-tracking);
   text-transform: uppercase;
-  color: #d9b568;
+  color: var(--enc-gold-lt); /* 2026-09-02, Task #170: was hardcoded #d9b568, matches this territory's own --enc-gold-lt token exactly -- wired to it for consistency. Encounters' locked dark atmosphere/color system (--enc-*, distinct from the main site's --gold/--cream) is preserved as-is per the "designed visual pieces" exemption -- only this drifted reference to the territory's own token was fixed. */
   margin: 0 0 0.75rem;
 }
 
