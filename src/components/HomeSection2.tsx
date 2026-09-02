@@ -121,22 +121,50 @@ import Link from 'next/link'
  * .section2-dark__img convention rather than .qac-compilation's cream-
  * tuned shadow. .section2-dark__pair and its children are left
  * defined, unused, per no-silent-deletion.
+ *
+ * 2026-09-02, later still, per Susan's "The AwakenArts Collection is
+ * far more of a statement than you portray by keeping it non
+ * consequentially small... dwarfed by the section 1 hero image --
+ * give it some relevance... Add some of the copy beneath it" follow-
+ * up: three changes.
+ * (1) STRUCTURE -- .section2-dark__collection moves OUT of
+ *     .section2-dark__inner (which caps at 640px, shared with the
+ *     title/sub/worlds/CTA text column below) to become a direct
+ *     child of .section2-dark itself, so it can be sized independently
+ *     of that text column instead of being trapped under its cap.
+ * (2) SIZE -- max-width 640px -> 800px (a 25% increase, inside her
+ *     requested 20-30% range), now that it's free of the 640px
+ *     constraint.
+ * (3) COPY -- a caption line added beneath the image
+ *     (.section2-dark__collection-caption), drawn from the source
+ *     file's own baked-in text: its tagline ("Poetic encounters in
+ *     shape, symbol & story") and its caption band's opening line
+ *     ("The works are the foundation...") -- both cropped out of the
+ *     visible image itself (see .section2-dark__collection's own
+ *     comment for why), now given back as real, readable copy instead
+ *     of staying invisible pixels. Wording is a first draft, flagged
+ *     to Susan for adjustment rather than presented as locked.
  */
 export default function HomeSection2() {
   return (
     <section className="section2" aria-label="Workshops">
       <div className="section2-dark">
-        <div className="section2-dark__inner">
 
-          <div className="section2-dark__collection">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/collection/collection-banner-02.png"
-              alt="The AwakenArts Collection — poetic encounters in shape, symbol, and story — six framed visual-literary works displayed as a gallery wall"
-              className="section2-dark__collection-img"
-              loading="lazy"
-            />
-          </div>
+        <div className="section2-dark__collection">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/collection/collection-banner-02.png"
+            alt="The AwakenArts Collection — poetic encounters in shape, symbol, and story — six framed visual-literary works displayed as a gallery wall"
+            className="section2-dark__collection-img"
+            loading="lazy"
+          />
+        </div>
+        <p className="section2-dark__collection-caption">
+          Poetic encounters in shape, symbol, and story — the works
+          are the foundation each workshop draws from.
+        </p>
+
+        <div className="section2-dark__inner">
 
           <h3 className="section2-dark__title">Workshops</h3>
           {/* 2026-08-24, per Susan's direct instruction: the prior wording

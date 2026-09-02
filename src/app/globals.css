@@ -7004,13 +7004,37 @@ form { display: flex; flex-direction: column; gap: 1rem; }
    image itself (still pending Susan's own sized/cropped export, per
    her offer), this gives the banner room to stand as its own
    deliberate visual beat before the section's text begins, instead of
-   the heading crowding in immediately beneath it. */
+   the heading crowding in immediately beneath it.
+
+   2026-09-02, later still, per Susan's "far more of a statement than
+   you portray... dwarfed by the section 1 hero image -- give it some
+   relevance... why is it cropped so short?" follow-up: the 640px cap
+   was never a deliberate size choice for the image itself -- it was
+   inherited from matching .section2-dark__inner's text-column width,
+   which is why it read as small next to a full-bleed hero. Fixed at
+   the structural level (see HomeSection2.tsx's own comment): the
+   banner + its new caption (below) both moved OUT of .section2-dark
+   __inner to sit as direct children of .section2-dark, free of that
+   640px cap. max-width raised 640px -> 800px (25% larger, inside her
+   20-30% request) now that it's independent. margin-bottom trimmed
+   from 3.5rem to 1.5rem since the new caption paragraph, not blank
+   space, now carries the "brief pause" down to Workshops -- see
+   .section2-dark__collection-caption's own margin below.
+
+   On "why is it cropped so short?": the crop excludes the source
+   file's own baked-in caption band (frame art ends ~y=558 of 916px;
+   see the crop-history comments above) -- not a matter of the visible
+   artwork being cut off, but of that separate typeset caption below
+   the frames never having been part of the visible picture here. Its
+   text is restored below as real copy instead, in .section2-dark__
+   collection-caption, rather than staying flattened, illegible pixels
+   inside the image. */
 .section2-dark__collection {
   width: 100%;
-  max-width: 640px;
+  max-width: 800px;
   aspect-ratio: 1717 / 556;
   overflow: hidden;
-  margin: 0 auto 3.5rem;
+  margin: 0 auto 1.5rem;
   border: 1px solid rgba(201, 168, 76, 0.25);
   border-radius: 3px;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
@@ -7021,6 +7045,28 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   height: 100%;
   object-fit: cover;
   object-position: top;
+}
+/* 2026-09-02, added alongside the size increase above, per Susan's
+   "Add some of the copy beneath it" instruction: a caption line drawn
+   from the source file's own baked-in text (its tagline, "Poetic
+   encounters in shape, symbol & story," and its caption band's
+   opening line, "The works are the foundation...") -- both were
+   cropped out of the visible image (see .section2-dark__collection's
+   own comment), so this gives that wording back as real, readable
+   copy rather than leaving it invisible. Held to the narrower 640px
+   text measure (matching .section2-dark__inner's column below) even
+   though the image above it is 800px wide, so the caption reads as a
+   normal line of body copy rather than stretching edge-to-edge under
+   the banner. Wording is a first draft -- flagged to Susan for her
+   own adjustment, not presented as her exact words. */
+.section2-dark__collection-caption {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: rgba(250, 247, 242, 0.75);
+  max-width: 640px;
+  margin: 0 auto 3.5rem;
 }
 .section2-dark__title {
   font-family: var(--serif);
