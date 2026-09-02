@@ -75,8 +75,12 @@ export default function AboutPage() {
               className="about-merri-img"
               loading="lazy"
             />
+            {/* 2026-09-02, per Susan's "use made instead of constructed
+                to eliminate the orphan FORM" directive: "constructed"
+                -> "made" -- one word shorter, pulls "form." back onto
+                the line above it instead of wrapping alone. */}
             <figcaption className="about-caption">
-              Merriweather — figure, poem, and image constructed as one symbolic form.
+              Merriweather — figure, poem, and image made as one symbolic form.
             </figcaption>
           </figure>
 
