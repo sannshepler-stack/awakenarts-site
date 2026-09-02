@@ -139,26 +139,6 @@ export default function HomeCollectionPremise() {
 
       <div className="qac-inner">
 
-        <div className="qac-ann-spread">
-          <div className="qac-ann-spread__poem">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/forms/ann-text-ink-crop.png"
-              alt="Queen Ann — the poem, rendered in concrete poetry form"
-              className="qac-ann-spread__poem-img"
-              loading="lazy"
-            />
-          </div>
-          <div className="qac-ann-spread__portrait">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/forms/queen-ann-still.png"
-              alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
-              loading="lazy"
-            />
-          </div>
-        </div>
-
         <div className="qac-premise">
           <p className="eyebrow section2-light__eyebrow">AwakenArts, The Stories that Shape Us</p>
 
@@ -231,6 +211,43 @@ export default function HomeCollectionPremise() {
               was repeating itself top and bottom. The three examples are a
               sufficient closing beat on their own. Flagged to Susan as a
               Remove, not assumed silently. */}
+        </div>
+
+        {/* 2026-09-02, per Susan's "you got the headers right -- now
+            notice how you followed with the content -- need
+            consistency" directive: this pairing used to sit here, as
+            this section's SECOND element (header image, then
+            immediately the Ann poem+portrait pairing, then the eyebrow/
+            heading/statement text last). HomeChristianSymbols.tsx's
+            own section does it the other way -- header image, then
+            straight into eyebrow/heading/statement/paragraph text, no
+            secondary image in between. Moved the Ann pairing to AFTER
+            .qac-premise so both sections now follow their header with
+            text first, matching the site's own locked "AwakenArts
+            Editorial Section Pattern" (title -> statement -> paragraph
+            -> CTA -> visual content, visual content LAST, not second).
+            .qac-premise's own margin-top: 4rem (spacing it below this
+            pairing, when this pairing came first) moves to
+            .qac-ann-spread instead -- see globals.css for both
+            changes. */}
+        <div className="qac-ann-spread">
+          <div className="qac-ann-spread__poem">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/forms/ann-text-ink-crop.png"
+              alt="Queen Ann — the poem, rendered in concrete poetry form"
+              className="qac-ann-spread__poem-img"
+              loading="lazy"
+            />
+          </div>
+          <div className="qac-ann-spread__portrait">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/forms/queen-ann-still.png"
+              alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
+              loading="lazy"
+            />
+          </div>
         </div>
 
       </div>
