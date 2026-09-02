@@ -5956,8 +5956,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      the first tightening round above, reused rather than inventing a
      new number, and deliberately no longer matched to .qac-inner's own
      (now smaller) value; see that rule's comment for the mirror-image
-     reasoning. 1024/640px tiers below updated proportionally. Proposed,
-     pending her visual review. */
+     reasoning. 1024/640px tiers below updated proportionally.
+
+     2026-09-02, LOCKED per Susan's explicit approval of commit b7241d6
+     following visual QA review ("Lock the revised homepage transition
+     spacing from commit b7241d6 as approved: Ann at 8px/6px and
+     Christian Symbols at 28px/20px"): this value is final, not a
+     proposal. */
   padding: 28px 2rem 0;
   text-align: center;
 }
@@ -6056,7 +6061,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      so its desktop value carries through to 640px -- mirrored here).
      2026-09-02, later still, per Susan's "refine the spacing" directive:
      matches the desktop rule's own new value, 28px -- see that rule's
-     comment. Proposed, pending her visual review. */
+     comment.
+
+     2026-09-02, LOCKED per Susan's approval of commit b7241d6 -- see
+     the desktop rule's own comment. */
   .poems-showcase-foundation__inner { padding: 28px 1.75rem 0; }
   /* margin-top is the fade-to-quotation gap (new, added 2026-07-14
      actual-size correction); margin-bottom is the unrelated
@@ -6080,7 +6088,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      value instead, 12px.
      2026-09-02, later still, per Susan's "refine the spacing" directive:
      opened back up, 12px -> 20px, proportional to the desktop change
-     (16->28). Proposed, pending her visual review. */
+     (16->28).
+
+     2026-09-02, LOCKED per Susan's approval of commit b7241d6 -- see
+     the desktop rule's own comment. */
   .poems-showcase-foundation__inner { padding: 20px 1.25rem 0; }
   /* 2026-09-02, same ship-header pass: matches the 2.25rem mobile
      value .home-recognition__encounters-image (now retired) used to
@@ -6798,8 +6809,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      little on Christian Symbols. Reduced further, 16px -> 8px, a
      moderate additional tightening (not to 0 -- some breathing room
      stays). Explicitly NOT matched to Christian Symbols' new value; see
-     that rule's own comment for why they diverge on purpose now. This
-     is a proposed value pending her visual review, not yet locked. */
+     that rule's own comment for why they diverge on purpose now.
+
+     2026-09-02, LOCKED per Susan's explicit approval of commit b7241d6
+     following visual QA review ("Lock the revised homepage transition
+     spacing from commit b7241d6 as approved: Ann at 8px/6px and
+     Christian Symbols at 28px/20px"): this value is final, not a
+     proposal. */
   padding: 8px 2rem 0;
 }
 /* The Path of Stones premise, now living inside HomeCollectionPremise.tsx
@@ -7117,7 +7133,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      2026-09-02, later still, per Susan's "refine the spacing" directive
      (see the desktop rule's own comment on the fade-height reasoning):
      reduced again, 12px -> 6px, proportional to the desktop change.
-     Proposed, pending her visual review. */
+
+     2026-09-02, LOCKED per Susan's approval of commit b7241d6 -- see
+     the desktop rule's own comment. */
   .qac-inner { padding: 6px 1.5rem 0; }
   .qac-ann { margin-top: 3rem; }
   .qac-premise { margin-top: 0; }
