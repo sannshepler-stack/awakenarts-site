@@ -101,27 +101,23 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
  * unused, per no-silent-deletion -- see their own comments in
  * globals.css for the fuller history.
  *
- * 2026-09-02, per Susan's "we can choose one of these headers to start
- * section 3 against section 2" directive: presented with two candidate
- * sky-threshold images (both 1536x1024, same source pipeline as
- * queen-ann-threshold.jpg) to mark the seam where Workshops (section 2,
- * dark navy) hands off to Christian Symbols (section 3, cream) -- the
- * same seam-marking role the Ann threshold now plays for Workshops
- * itself. Chose the more centered, symmetric golden break in the
- * clouds over the off-center alternative: a centered composition reads
- * more intentional at full-bleed width, where the eye meets it
- * straight-on above the centered copy column below. Saved as
- * public/images/headers/scripture-threshold.jpg. This REPLACES the
- * sailboat image (encounters-symbols-ship-v3.png) in the section's
- * single opening `tall` threshold slot -- the sailboat is left in
- * place in public/images/homepage/, unused, per no-silent-deletion. */
+ * 2026-09-02, per Susan's "we can choose one of these headers" directive
+ * briefly swapped this section's opening threshold to a new sky image
+ * (public/images/headers/scripture-threshold.jpg) -- superseded the
+ * same day by her direct correction: "the sky image is for the ann
+ * section and the header as it was stays for the christian symbols or
+ * matthew section." Reverted back to the sailboat image below,
+ * unchanged from before that pass. The sky image now opens
+ * HomeCollectionPremise.tsx (the Ann section) instead -- see that
+ * file's own comment. scripture-threshold.jpg is left in place,
+ * unused, per no-silent-deletion. */
 export default function HomeChristianSymbols() {
   return (
     <section className="poems-showcase-foundation" aria-label="Christian Symbols">
 
       <AtmosphericHeader
-        src="/images/headers/scripture-threshold.jpg"
-        alt="A dark sky heavy with clouds breaking open to warm gold light along the horizon -- the threshold into this section's Scripture and symbols"
+        src="/images/homepage/encounters-symbols-ship-v3.png"
+        alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon -- the threshold into this section's Scripture and symbols"
         tall
         fadeTo="var(--cream)"
       />
@@ -187,14 +183,30 @@ export default function HomeChristianSymbols() {
             technique used elsewhere on the homepage) so "of" and
             "Scripture." always wrap together. No visible character
             added. */}
+        {/* 2026-09-02, per Susan's "Compact this -- width is out of
+            proportion -- Center and use just this" directive: the
+            prior five-line paragraph (above, kept in git history) is
+            replaced outright with her own shorter wording -- two short
+            statement sentences, then one sentence naming the fields
+            AwakenArts engages. "surrendering the truth He carried"
+            condenses to "did not surrender the Truth He carried" (her
+            capitalization of Truth kept as given); "entering the world
+            as He found it" and the closing "grounded in Christ and the
+            authority of Scripture" clause are both dropped, not
+            relocated, per her "use just this" instruction. Comma added
+            after "psychology" (missing in her message, plainly a typo
+            against her own comma-separated list). Paired with
+            .hero-quote-reflection's max-width narrowing to
+            var(--measure-poetic) in globals.css, so the shorter text
+            reads as a compact, proportionate block rather than
+            stretching a wide column. */}
         <div className="hero-quote-reflection">
           <p>
-            Jesus taught through image, story, and metaphor, entering
-            the world as He found it without surrendering the truth He
-            carried. AwakenArts works within that tradition—engaging
-            literature, psychology, mythology, folklore, and the long
-            history of human imagination while remaining grounded in
-            Christ and the authority of&nbsp;Scripture.
+            Jesus taught through image, story, and metaphor. He did not
+            surrender the Truth He carried. AwakenArts works within
+            that tradition while engaging literature, psychology,
+            mythology, folklore, and a long history of&nbsp;human
+            imagination.
           </p>
         </div>
 

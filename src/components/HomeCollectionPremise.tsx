@@ -1,3 +1,5 @@
+import AtmosphericHeader from '@/components/AtmosphericHeader'
+
 /*
  * HomeCollectionPremise — Homepage Section 2, "The AwakenArts
  * Collection / A Path of Stones," cream.
@@ -89,11 +91,30 @@
  * .qac-spread__frame treatment this pairing used before it moved to
  * navy. .qac-compilation/.qac-compilation__img are left defined,
  * unused, per no-silent-deletion.
+ *
+ * 2026-09-02, per Susan's "the sky image is for the ann section" directive:
+ * this section (the Ann poem + portrait pairing) now opens with an
+ * AtmosphericHeader threshold image -- a dark sky breaking open to
+ * warm gold light along the horizon, the same source pipeline as
+ * queen-ann-threshold.jpg, saved separately as public/images/headers/
+ * collection-threshold.jpg since this section is the Collection/Ann
+ * section, not Christian Symbols (see HomeChristianSymbols.tsx's own
+ * comment for that reversion). Standard (non-`tall`) height, fadeTo
+ * cream matching this section's own background, no `clearsNav` -- this
+ * section doesn't open the page, it follows HomeSection2's navy
+ * Workshops band, so there's no fixed-nav overlap to clear.
  */
 
 export default function HomeCollectionPremise() {
   return (
     <section className="qac-section" aria-label="The AwakenArts Collection">
+
+      <AtmosphericHeader
+        src="/images/headers/collection-threshold.jpg"
+        alt="A dark sky heavy with clouds breaking open to warm gold light along the horizon -- the threshold into the Queen Ann encounter"
+        fadeTo="var(--cream)"
+      />
+
       <div className="qac-inner">
 
         <div className="qac-ann-spread">
@@ -144,10 +165,21 @@ export default function HomeCollectionPremise() {
               a way") toward further understanding. This is now the single
               statement doing that job on the homepage -- see page.tsx for
               the standalone Further Understanding section's retirement. */}
+          {/* 2026-09-02, per Susan's "Center the lines -- breaking --"
+              directive, with her own exact three-line break points:
+              this locked sentence previously wrapped wherever the
+              browser's natural line-break fell at each viewport width
+              (uneven, unbalanced lines). Explicit <br /> tags now force
+              her three lines everywhere, rather than relying on
+              text-align: center's inherited wrap -- text-align: center
+              also made explicit on .section2-question in globals.css
+              rather than left as inherited-from-parent behavior. */}
           <h2 id="collection-premise-heading" className="section2-question">
-            You already speak in images. We all do. AwakenArts brings
-            image and language into conversation, exploring familiar
-            images to open the way to further understanding.
+            You already speak in images. We all do.
+            <br />
+            AwakenArts brings image and language into conversation,
+            <br />
+            exploring familiar images to open the way to further understanding.
           </h2>
 
           <p className="section2-examples">
