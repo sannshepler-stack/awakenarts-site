@@ -526,14 +526,37 @@ export default function HomePage() {
                 site's --deep navy (#1C2B3A) in her own edit
                 (Chess-Ann.jpg.png, full-res 3934x3269). Desktop cropped
                 to match .hero__media's actual rendered aspect (~1.3:1)
-                so object-fit: cover doesn't re-crop further. */}
+                so object-fit: cover doesn't re-crop further.
+
+                2026-09-01, per Susan's "I can fix that in the hero
+                image" directive (background darkness -- see globals.css'
+                own og-hero.jpg/og-logo.png history for the related OG-
+                image fix): superseded. Susan supplied a revised master
+                (ANN-COVER-REV.png, brown/terracotta background in place
+                of the original's deep navy, same black chess-piece +
+                text-figure-queen illustration) and said "use this one."
+                All three exported files (chess-ann-hero-desktop.jpg,
+                -mobile.jpg, -tablet.jpg) are re-cropped from that master,
+                same technique as before -- desktop/tablet keep the full
+                width (both figures intact) with a symmetric top/bottom
+                trim to match each box's aspect ratio; mobile crops to
+                just the queen figure (the master has zero margin on any
+                edge, so a true portrait crop of both figures side by
+                side isn't possible without cutting one in half -- this
+                matches the existing object-position: 70% center
+                convention below, which already favored the queen over
+                the chess piece at narrow widths). Same filenames, so no
+                other reference changes. Height attribute updated to
+                match the new desktop export's actual 1600x1231 (was
+                1600x1100, sized for the old photo's own crop). Alt text
+                updated -- this is no longer a photograph. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/brand/chess-ann-hero-desktop.jpg"
-              alt="Queen Ann — a painted figure standing within a symbolic narrative, central to the AwakenArts identity"
+              alt="A black chess-piece silhouette beside a queen figure formed from the words of her own story -- the AwakenArts word-figure illustration"
               className="hero__img"
               width={1600}
-              height={1100}
+              height={1231}
               loading="eager"
               decoding="async"
             />
