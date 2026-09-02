@@ -115,10 +115,30 @@ export default function WorkshopsPage() {
           (~21:6-21:7, object-fit: cover) and collection-cover-clean.png is
           portrait (1122x1402), so object-fit: cover will crop it to a
           vertical center slice at this height — flagged for review rather
-          than solved unprompted. */}
+          than solved unprompted.
+
+          2026-09-02, superseded, per Susan's "the header on the workshops
+          page could be improved by the ann header on the homepage...
+          The Ann header goes to the workshop page instead of what is
+          there" directive: collection-cover-clean.png is replaced with
+          queen-ann-threshold.jpg -- the same pre-cropped landscape
+          (crown through castle silhouette + first sunset warmth,
+          source rows 5%-57%, 2.89:1) built for the homepage's Ann ->
+          Matthew threshold, which she called "spectacular" there but
+          flagged as "out of place" on that section specifically -- not
+          as a description of the image itself. Kept at this page's own
+          standard (non-tall) height and existing fadeTo value -- she
+          didn't ask for the taller variant here, and `tall` stays
+          reserved for the one homepage threshold it was built for (see
+          AtmosphericHeader.tsx's own comment); the source crop's focal
+          point (crown/face, kept center) should still read cleanly at
+          this shorter height, same as it does at every other standard-
+          height placement sitewide. collection-cover-clean.png is not
+          deleted -- just swapped out here, per the same "flagged for
+          review, not solved unprompted" caution as the pass above. */}
       <AtmosphericHeader
-        src="/images/collection/collection-cover-clean.png"
-        alt="The AwakenArts Collection — the gathered body of image-poem work each workshop draws from."
+        src="/images/headers/queen-ann-threshold.jpg"
+        alt="Queen Ann beneath a clouded sunset sky, crowned and windswept, with a distant castle silhouette -- an image-poem work, the kind of encounter these workshops draw from."
         fadeTo="#f5f0e8"
       />
 

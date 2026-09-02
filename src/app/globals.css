@@ -5641,17 +5641,19 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   margin-top: 2.75rem;
 }
 
-/* 2026-09-02, per Susan's "the boat image in the matthew section can
-   become a header -- like the great work on the ann header"
-   directive: wraps the sailboat AtmosphericHeader instance (see
-   HomeChristianSymbols.tsx) where it breaks out of .poems-showcase-
-   foundation__inner to run full-bleed. AtmosphericHeader supplies its
-   own margin-bottom (zeroed here since fadeTo is passed, replaced by
-   the fade itself) but no margin-top -- this wrapper supplies the gap
-   above, matching the same 3rem the boxed figure it replaces used to
-   carry as its own margin-top (.home-recognition__encounters-image,
-   now retired), so the space above the image reads the same as it
-   did before, just the image itself is no longer boxed. */
+/* .poems-showcase-foundation__ship-header -- RETIRED 2026-09-02, same
+   day it was added. Originally wrapped the sailboat AtmosphericHeader
+   where it broke out mid-section (see the 2026-09-02 comment above,
+   and HomeChristianSymbols.tsx's own history). Superseded hours later
+   per Susan's "the matthew section starts with the header... The Ann
+   header goes to the workshop page instead" follow-up: the sailboat
+   image moved to the section's OPENING position (replacing the Ann
+   header there, which moved to /workshops), so it no longer breaks
+   out mid-section and no longer needs this wrapper's margin-top --
+   AtmosphericHeader's own `tall` + no-margin-top-needed positioning
+   (it's the section's first child again) handles it directly, the
+   same way the Ann header did before it. Left defined, unused, per
+   no-silent-deletion. */
 .poems-showcase-foundation__ship-header {
   margin-top: 3rem;
 }

@@ -38,6 +38,16 @@ import styles from './AtmosphericHeader.module.css'
  * hero image. Scoped to this prop so every other AtmosphericHeader
  * instance site-wide keeps its standard height.
  *
+ * 2026-09-02, per Susan's "the matthew section starts with the header
+ * giving the section its own starting place... All matthew copy
+ * follows the header" directive: this remains that same single
+ * instance (HomeChristianSymbols.tsx's opening threshold) -- only the
+ * image filling it changed, from the Queen Ann portrait to the
+ * sailboat landscape (queen-ann-threshold.jpg moved to /workshops
+ * instead, standard height, per that page's own comment). The role --
+ * one tall threshold marking where this section begins -- and its
+ * scope to this one homepage placement are both unchanged.
+ *
  * `fadeTo` (added 2026-06-29, "Banner Height + Seam" directive): a CSS
  * color the bottom of the image dissolves into, so it reads as one
  * continuous composition with whatever section follows rather than a

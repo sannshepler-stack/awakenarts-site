@@ -74,33 +74,39 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
  * like the great work on the ann header" follow-up: the sailboat
  * image (encounters-symbols-ship-v3.png), formerly a boxed, contained
  * <figure> mid-section (.home-recognition__encounters-image, rounded
- * corners, max-width 900px, inset in the text column), is now a
- * second AtmosphericHeader -- full-bleed, edge-to-edge, breaking out
- * of .poems-showcase-foundation__inner's 1000px/2rem-padded column
- * the same way the Ann threshold header above already does, rather
- * than sitting boxed inside it. .poems-showcase-foundation__inner is
- * split into two instances (statement content, then CTA/verse/
- * reflection content) with this header breaking out between them.
- * Unlike the Ann header, this one does NOT use `tall` -- that variant
- * is reserved for the section-boundary threshold per its own comment
- * ("the single instance where the landscape is the pivot"); this is a
- * supporting image within one section, not a transition between two,
- * so the standard height keeps it a visual pause rather than a second
- * threshold. Same center object-position the boxed figure already
- * used (this component's own prior comment confirmed the boat/horizon
- * reads fine center-cropped at both desktop and mobile), so no new
- * pre-crop file was needed the way Ann's was. fadeTo="var(--cream)"
- * matches, so it dissolves into the CTA below exactly as the Ann
- * header dissolves into the eyebrow above.
- * .home-recognition__encounters-image and its img rule are left
- * defined, unused, per no-silent-deletion. */
+ * corners, max-width 900px, inset in the text column), briefly became
+ * a SECOND AtmosphericHeader breaking out mid-section (see git history
+ * for that pass -- superseded the same day, below).
+ *
+ * 2026-09-02, later still, per Susan's direct follow-up on that same-
+ * day pass ("the ann header belongs with the ann section... the
+ * matthew section starts with the header giving the section its own
+ * starting place... All matthew copy follows the header. The Ann
+ * header goes to the workshop page instead of what is there."): two
+ * changes, superseding both prior 2026-09-02 passes above.
+ * (1) The Queen Ann threshold header (queen-ann-threshold.jpg) is
+ *     REMOVED from this section entirely -- it now opens /workshops
+ *     instead (see that page's own comment). Its role here (marking
+ *     this section's own starting place against the Ann/Collection-
+ *     premise section's matching cream field) is not removed, just
+ *     recast with different art.
+ * (2) The sailboat image takes over that exact role and position --
+ *     the section's single opening threshold, `tall`, fadeTo cream --
+ *     rather than staying a second, mid-section break. All of this
+ *     section's own copy (eyebrow through the closing reflection) now
+ *     follows it as one continuous .poems-showcase-foundation__inner
+ *     block, undoing the split the prior pass introduced.
+ * .home-recognition__encounters-image and its img rule, and
+ * .poems-showcase-foundation__ship-header, are all left defined,
+ * unused, per no-silent-deletion -- see their own comments in
+ * globals.css for the fuller history. */
 export default function HomeChristianSymbols() {
   return (
     <section className="poems-showcase-foundation" aria-label="Christian Symbols">
 
       <AtmosphericHeader
-        src="/images/headers/queen-ann-threshold.jpg"
-        alt="Queen Ann beneath a clouded sunset sky, crowned and windswept, with a distant castle silhouette -- the same portrait from the encounter above, now a quiet threshold into Scripture"
+        src="/images/homepage/encounters-symbols-ship-v3.png"
+        alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon -- the threshold into this section's Scripture and symbols"
         tall
         fadeTo="var(--cream)"
       />
@@ -119,18 +125,6 @@ export default function HomeChristianSymbols() {
             Ordinary things become carriers of meaning.
           </span>
         </p>
-
-      </div>
-
-      <div className="poems-showcase-foundation__ship-header">
-        <AtmosphericHeader
-          src="/images/homepage/encounters-symbols-ship-v3.png"
-          alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon"
-          fadeTo="var(--cream)"
-        />
-      </div>
-
-      <div className="poems-showcase-foundation__inner">
 
         <div className="home-recognition__cta home-recognition__cta--after-image">
           <Link href="/symbols" className="home-coll-cta home-coll-cta--light-surface">
