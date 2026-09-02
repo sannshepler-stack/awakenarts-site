@@ -126,17 +126,6 @@ export default function HomeChristianSymbols() {
           </span>
         </p>
 
-        <div className="home-recognition__cta home-recognition__cta--after-image">
-          <Link href="/symbols" className="home-coll-cta home-coll-cta--light-surface">
-            Explore Christian Symbols
-          </Link>
-        </div>
-
-        <p className="hero-quote-text">
-          He did not say anything to them without using a parable.
-        </p>
-        <p className="hero-quote-cite">Matthew 13:34</p>
-
         {/* 2026-09-02, per Susan's directive to expand the Matthew
             passage: paragraphs added below the verse and citation,
             closing the section as one continuous meditation rather
@@ -151,11 +140,30 @@ export default function HomeChristianSymbols() {
             first pass used (opening statement, bridge line, second
             statement, credo line) are condensed into ONE paragraph,
             her own tightened wording, replacing all four. The closing
-            italic invitation line is kept separate, exactly as she
-            specified ("retain your final italic line separately").
+            italic invitation line was kept separate at that point, per
+            her "retain your final italic line separately" instruction.
             .hero-quote-reflection__bridge and __credo (the modifier
-            classes those two retired lines used) are now unused --
-            left defined in globals.css, per no-silent-deletion. */}
+            classes those two retired lines used) are unused -- left
+            defined in globals.css, per no-silent-deletion.
+
+            2026-09-02, later still, per Susan's "better flow" follow-up
+            ("Put the Matthew quote below the explanatory text 'Jesus
+            taught...' -- (remove 'The artistic work...') then the
+            button -- then end with the quote"): three changes.
+            (1) This paragraph moves UP, from after the verse/citation
+                to right after the statement -- explanatory text now
+                leads into the CTA rather than following the quote.
+            (2) The closing italic invitation line ("The artistic work
+                is an invitation...") is removed outright, not just
+                relocated -- her explicit "remove" instruction, not a
+                Keep/Relocate judgment call. .hero-quote-reflection
+                __invitation is left defined in globals.css, unused,
+                per no-silent-deletion.
+            (3) The CTA button and the Matthew verse/citation both move
+                DOWN, below this paragraph, in that order -- the
+                section now closes on the quote itself, per her "end
+                with the quote" instruction, rather than opening with
+                it. */}
         <div className="hero-quote-reflection">
           <p>
             Jesus taught through image, story, and metaphor, entering
@@ -165,11 +173,18 @@ export default function HomeChristianSymbols() {
             history of human imagination while remaining grounded in
             Christ and the authority of Scripture.
           </p>
-          <p className="hero-quote-reflection__invitation">
-            The artistic work is an invitation to look, recognize, and
-            reflect.
-          </p>
         </div>
+
+        <div className="home-recognition__cta home-recognition__cta--after-image">
+          <Link href="/symbols" className="home-coll-cta home-coll-cta--light-surface">
+            Explore Christian Symbols
+          </Link>
+        </div>
+
+        <p className="hero-quote-text">
+          He did not say anything to them without using a parable.
+        </p>
+        <p className="hero-quote-cite">Matthew 13:34</p>
 
       </div>
     </section>

@@ -1841,7 +1841,18 @@ a   { color: inherit; text-decoration: none; }
    still unused, per no-silent-deletion; repurposing their text for
    this longer passage would erase that history rather than build on
    it. Rendered inside HomeChristianSymbols.tsx, directly below
-   .hero-quote-cite. */
+   .hero-quote-cite.
+
+   2026-09-02, later still, per Susan's "better flow" directive: this
+   block moves to directly below .home-recognition__statement instead
+   (the verse/citation/CTA all move below IT now -- see
+   HomeChristianSymbols.tsx's own comment for the full new order).
+   margin-top (39px/34px/28px across breakpoints) is left as-is --
+   stacked against .home-recognition__statement's own 1rem margin-
+   bottom, it reads as a reasonable statement-to-paragraph gap, in the
+   same range as this pattern's other section-internal gaps; flagged
+   here rather than re-tuned blind, since this is a new adjacency that
+   was never visually reviewed at this specific pairing before. */
 .hero-quote-reflection {
   max-width: 620px;
   margin: 39px auto 0;
@@ -1891,7 +1902,12 @@ a   { color: inherit; text-decoration: none; }
 /* Closing line -- "The artistic work is an invitation to look,
    recognize, and reflect." Same gold-italic closing register as
    .hero-quote-closing below, sized up slightly with extra top space
-   so it reads as the meditation's final beat. */
+   so it reads as the meditation's final beat.
+   RETIRED 2026-09-02, per Susan's "better flow" directive ("remove
+   'The artistic work...'"): removed outright from HomeChristianSymbols
+   .tsx, not relocated -- the section now closes on the Matthew verse/
+   citation instead (moved below this paragraph, per her "end with the
+   quote" instruction). Left defined, unused, per no-silent-deletion. */
 .hero-quote-reflection__invitation {
   margin-top: 1.5rem;
   font-style: italic;
