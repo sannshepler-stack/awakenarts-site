@@ -1847,9 +1847,22 @@ a   { color: inherit; text-decoration: none; }
   margin: 39px auto 0;
   text-align: center;
 }
+/* 2026-09-02, per Susan's "find a consistent typography for all
+   AwakenArts... the matthew large" directive: font-size switched from
+   this one-off clamp(1.05rem, 1.6vw, 1.2rem) -- larger than 1rem at
+   every viewport width -- to var(--body-size), the token the site's
+   own documented Editorial Section Pattern specifies for this exact
+   "3. Editorial paragraph" tier (see the AWAKENARTS EDITORIAL SECTION
+   PATTERN comment further up this file). This also brings it in line
+   with .section2-dark__worlds (the Workshops section's own paragraph-
+   tier line, "Each workshop brings..."), which she flagged as reading
+   small by comparison -- .section2-dark__worlds was already correctly
+   at --body-size; this paragraph was the one that had drifted from
+   the shared standard, not the other way around. line-height and
+   color are unchanged. */
 .hero-quote-reflection p {
   font-family: var(--serif);
-  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-size: var(--body-size);
   line-height: 1.75;
   color: var(--ink);
   margin: 0 0 1.1rem;
@@ -1890,7 +1903,13 @@ a   { color: inherit; text-decoration: none; }
 }
 @media (max-width: 640px) {
   .hero-quote-reflection { margin-top: 28px; }
-  .hero-quote-reflection p { font-size: 1.02rem; }
+  /* 2026-09-02, same typography-consistency pass: the 1.02rem mobile
+     override retired -- now that the base rule is the flat
+     var(--body-size) token (1rem, non-responsive) rather than a
+     clamp(), a mobile-only bump above that shared floor would
+     reintroduce the exact one-off-size drift this pass removed, and
+     would invert to read LARGER on mobile than desktop. Left as a
+     comment rather than silently dropped, per no-silent-deletion. */
 }
 
 /* The bridge line — "AwakenArts works within that same tradition."
@@ -6699,7 +6718,21 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      still reads too heavy on its own. */
   font-size: var(--subtitle-size);
   line-height: 1.35;
-  color: var(--ink);
+  /* 2026-09-02, per Susan's "find a consistent typography for all
+     AwakenArts... the You already speak in images darker than same
+     on matthew section -- don't use that very dark type" directive:
+     this is exactly the concern the 2026-09-01 comment above flagged
+     for her review ("in case the color still reads too heavy on its
+     own") -- confirmed. The Matthew section's own equivalent statement
+     (.home-recognition__statement) reads lighter mainly because it
+     splits across two colors, navy + gold, across its two clauses;
+     this statement is one continuous locked sentence that doesn't
+     split as cleanly the same way, so rather than force an uneven
+     two-tone split, color is switched to var(--mid) -- the site's
+     already-established "not very dark" body-text gray, used widely
+     elsewhere -- instead of var(--ink). Size, italic, and everything
+     else are unchanged; only the weight this color reads at. */
+  color: var(--mid);
   max-width: 840px;
   margin: 0 auto 1.75rem;
 }
@@ -7123,7 +7156,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 }
 .section2-dark__worlds {
   font-family: var(--serif);
-  font-size: 1rem;
+  /* 2026-09-02, same typography-consistency pass: literal 1rem swapped
+     for var(--body-size) -- numerically identical (--body-size: 1rem),
+     no visual change, just referencing the shared token by name like
+     every other paragraph-tier rule now does, rather than a value that
+     happens to match it. */
+  font-size: var(--body-size);
   letter-spacing: 0.02em;
   color: rgba(250, 247, 242, 0.78);
   margin: 0 0 2.25rem;
