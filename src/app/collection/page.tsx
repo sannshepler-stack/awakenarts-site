@@ -17,7 +17,9 @@ export const metadata: Metadata = {
     title: 'The Collection — AwakenArts Figure Editions',
     description:
       'Each Figure Edition brings image, poem, story, and reflection into a distinct AwakenArts workshop world.',
-    images: ['/images/brand/og-hero.jpg'],
+    // 2026-09-01, per Susan's "background is too dark" directive --
+    // see layout.tsx's own comment for the full reasoning.
+    images: ['/images/brand/og-logo.png'],
   },
 }
 

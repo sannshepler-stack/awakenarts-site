@@ -16,7 +16,11 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
   openGraph: {
     url: '/',
-    images: ['/images/brand/og-hero.jpg'],
+    // 2026-09-01, per Susan's "background is too dark -- it doesn't
+    // show as a website preview when sent" directive: matches the
+    // root layout's own switch from og-hero.jpg to og-logo.png -- see
+    // layout.tsx's own comment for the full reasoning.
+    images: ['/images/brand/og-logo.png'],
   },
 }
 

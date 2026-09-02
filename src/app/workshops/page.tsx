@@ -49,7 +49,9 @@ export const metadata: Metadata = {
     title: 'Workshops | AwakenArts',
     description:
       'Come curious. Explore an image, follow a story, write, reflect, and discover what you notice in an AwakenArts workshop with Susan Ann Shepler.',
-    images: ['/images/brand/og-hero.jpg'],
+    // 2026-09-01, per Susan's "background is too dark" directive --
+    // see layout.tsx's own comment for the full reasoning.
+    images: ['/images/brand/og-logo.png'],
   },
 }
 

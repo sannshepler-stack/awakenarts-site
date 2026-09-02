@@ -52,12 +52,24 @@ export const metadata: Metadata = {
     description:
       'AwakenArts is a literary-symbolic workshop practice conducted by Susan Ann Shepler. Each Figure Edition opens a different symbolic world within a consistent experience of recognition and reflection.',
     locale: 'en_US',
+    /* 2026-09-01, per Susan's "the background is too dark -- it doesn't
+       show as a website preview when sent" directive: og-hero.jpg (the
+       Chess Ann word-figure illustration) sits on the site's deep navy
+       (#1C2B3A) with a solid black chess-piece silhouette across
+       roughly half the frame -- at the small thumbnail size link
+       previews actually render at (iMessage, Slack, etc.), that reads
+       as a mostly-black rectangle, not a recognizable site preview.
+       Switched to og-logo.png, an asset that already exists at the
+       same 1200x630 OG dimensions -- the AwakenArts monogram/wordmark/
+       tagline lockup on the site's cream background, legible at
+       thumbnail size and unambiguously "AwakenArts" on sight. Alt text
+       updated to match. */
     images: [
       {
-        url: '/images/brand/og-hero.jpg',
+        url: '/images/brand/og-logo.png',
         width: 1200,
         height: 630,
-        alt: 'Chess Ann — a symbolic word-figure central to the AwakenArts collection',
+        alt: 'AwakenArts — When Language Shapes a Path',
       },
     ],
   },
@@ -66,7 +78,7 @@ export const metadata: Metadata = {
     title: 'AwakenArts — When Language Shapes a Path',
     description:
       'Explore literary-symbolic workshops conducted by Susan Ann Shepler, with changing Figure Editions and a consistent practice of recognition and reflection.',
-    images: ['/images/brand/og-hero.jpg'],
+    images: ['/images/brand/og-logo.png'],
   },
   robots: {
     index: true,
