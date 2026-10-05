@@ -37,12 +37,18 @@ export const books: Book[] = [
     title: 'Shape, Symbol & Story',
     tagline: 'The images came first. Understanding came after.',
     status: 'coming',
+    // Source: AARTS PROJECTS/SHAPE-SYMBOL-STORY/My_SSS_Files/Shape_Symbol_Story_COVER_v03.jpg (2026-09-23)
+    cover: '/images/books/shape-symbol-story-cover.jpg',
+    coverAlt: 'Cover of Shape, Symbol & Story by Susan Ann Shepler',
   },
   {
     slug: 'where-you-stand',
     title: 'Where You Stand',
     subtitle: 'A Seek & Find Journal',
     status: 'coming',
+    // Source: KINGS & QUEENS/REVISION_2026-09-26/Where_You_Stand_FRONT_COVER_for_ISBN_2026-09-28.jpg
+    cover: '/images/books/where-you-stand-cover.jpg',
+    coverAlt: 'Cover of Where You Stand: A Seek & Find Journal',
     details: [
       { label: 'Format', value: 'Paperback, 8.5 × 11 in' },
       { label: 'Edition', value: 'Second edition' },
@@ -53,6 +59,9 @@ export const books: Book[] = [
     slug: 'whispers-of-awareness',
     title: 'Whispers of Awareness',
     status: 'coming',
+    // Source: AARTS PROJECTS/WHISPERS 2ND EDITION KDP/WhispersCover.jpg (2026-10-02)
+    cover: '/images/books/whispers-of-awareness-cover.jpg',
+    coverAlt: 'Cover of Whispers of Awareness by Susan Ann Shepler',
     details: [
       { label: 'Format', value: 'Paperback, 6 × 9 in, full color' },
       { label: 'Edition', value: 'Second edition' },
