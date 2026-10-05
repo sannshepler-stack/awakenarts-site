@@ -44,6 +44,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 29 | **Presentation page is the registration page, independent of the Edition** (Susan): "drawn from the Grismere Edition" line and Edition link removed; subtitle now "A Guided Encounter"; heading image kept. The Grismere Edition page keeps its link to the Grismere workshop | Committed — awaiting review on localhost |
 | 30 | **Presentation page as the participant action page** (Susan): overview → Register (name, email, attending/hosting/question, dates, message) → in-page confirmation "You’re registered" + "With your registration, you’ll receive the Grismere Symbol Card as a digital PDF you can save or print." → ACCOMPANYING THE PRESENTATION: Grismere Workbook (revealed during the presentation) · Going Further. Registration posts to new `/api/register` (Kit: subscriber + details as custom fields + presentation tag). Reusable for every future presentation | Committed — localhost review only |
 | 31 | Homepage: card subline "A Guided Encounter"; intro "Each Guided Encounter brings an AwakenArts figure into conversation…" (Edition → figure). Editions page: Encounter Journal signup removed | Committed — awaiting review on localhost |
+| 32 | Hero statement 12% smaller (~33 → ~29 px desktop) | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 
