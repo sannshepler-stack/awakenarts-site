@@ -7,6 +7,8 @@
 // supplied (cover, blurb, sample spreads) is left undefined and does not
 // render.
 
+// 'available' shows AVAILABLE NOW; 'coming' shows no label (2026-10-05,
+// per Susan: never one blanket status; hide it until it's accurate).
 export type BookStatus = 'available' | 'coming'
 
 export interface Book {
@@ -98,5 +100,8 @@ export const FREE_RESOURCES = [
     title: 'The AwakenArts Encounter Journal',
     line: 'A self-guided companion to the Encounters.',
     href: '/stay-connected',
+    // Page 1 of /files/free/AwakenArts_Encounter_Journal.pdf, rendered for web.
+    image: '/images/books/encounter-journal-cover.jpg',
+    imageAlt: 'Cover of The Encounter Journal',
   },
 ]

@@ -59,7 +59,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
               <BookCover book={b} size="lg" />
             </div>
             <div>
-              <p style={label}>{statusText(b)}</p>
+              {statusText(b) && <p style={label}>{statusText(b)}</p>}
               <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'clamp(2.4rem, 5vw, 3.4rem)', color: 'var(--deep)', margin: '0.6rem 0 0.4rem', lineHeight: 1.05 }}>
                 {b.title}
               </h1>

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import BookTile from '@/components/books/BookTile'
-import { books, FREE_RESOURCES } from '@/data/books'
+import { books } from '@/data/books'
+import FreeResources from '@/components/books/FreeResources'
 
 // HomeBooks — homepage section 6, Books & Resources (Rebuild Plan §3).
 
@@ -20,29 +21,12 @@ export default function HomeBooks() {
             <BookTile key={b.slug} book={b} source="home" />
           ))}
         </div>
-        <p
-          style={{
-            margin: '3rem 0 0',
-            fontFamily: 'var(--sans)',
-            fontSize: '0.8rem',
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '0.75rem 2rem',
-            justifyContent: 'center',
-          }}
-        >
-          <span style={{ color: 'var(--mid)' }}>Free:</span>
-          {FREE_RESOURCES.map((r) => (
-            <Link key={r.href} href={r.href} style={{ color: 'var(--gold)' }} data-cta={`home-free-${r.href.replace('/', '')}`}>
-              {r.title}
-            </Link>
-          ))}
-        </p>
+        <div style={{ marginTop: '3.5rem' }}>
+          <FreeResources source="home" />
+        </div>
         <p style={{ marginTop: '2.5rem' }}>
           <Link href="/books" className="home-coll-cta home-coll-cta--light-surface" data-cta="home-books">
-            All Books &amp; Journals
+            Explore Books &amp; Journals
           </Link>
         </p>
       </div>
