@@ -13351,3 +13351,15 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .symbols-lightbox__frame { max-height: calc(85vh - 3rem); }
   .symbols-lightbox__flip-toggle { margin-top: 0.85rem; font-size: 0.68rem; padding: 0.5rem 1rem; }
 }
+
+/* 2026-10-05 rebuild: "Guided Encounters" is a longer nav label. Between
+   the hamburger breakpoint (1200px) and 1440px, tighten the link spacing
+   so the links never touch the logo. Above 1440px nothing changes. */
+@media (min-width: 1201px) and (max-width: 1440px) {
+  .nav-links { gap: 1.35rem; }
+  .nav-links a { font-size: .78rem; letter-spacing: .07em; }
+}
+@media (min-width: 1201px) and (max-width: 1279px) {
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: .74rem; letter-spacing: .06em; }
+}

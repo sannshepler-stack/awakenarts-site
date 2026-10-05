@@ -1515,3 +1515,32 @@ Two approved changes closed out same day as the QA pass above, plus the standing
 **Technical closeout.** `npx tsc --noEmit` clean. Asset-reference sweep confirmed both new files (`collection-cover-clean.png`, `awakenarts-leaf-pair-trimmed.png`) exist and resolve correctly; the small number of pre-existing broken gallery-image references in `src/app/studio/page.tsx` (`ann-painting.jpg`, `candace-painting.jpg`, and four others) predate this session (last touched by an unrelated April Gallery commit) and are unrelated to today's work — flagged, not fixed, per scope.
 
 **Implementation status.** Both changes committed and locked. Repository clean apart from the three pre-existing untracked stray brand-library PNGs (`awakenarts-a-watermark.png`, `awakenarts-botanical-sprig.png`, and the untrimmed `awakenarts-leaf-pair.png` copy in `public/images/brand/`, now superseded by the trimmed derivative but left in place, unreferenced) — all already logged as open items, none new. No deployment performed. Dragon Companion Edition prototype work explicitly deferred to tomorrow; see handoff note.
+
+---
+
+## 2026-10-05 — Website Rebuild, pass 1: homepage and reusable templates
+
+Governed by Susan's **AwakenArts Website Rebuild — Master Implementation Brief** (2026-10-05) and the approved **First-Pass Structure Plan** (Claude Doc "AwakenArts Rebuild — First-Pass Structure Plan"). Approved defaults: D1, D2, D3, D4, D6, D8, D9, D10. Provisional: D5 (book links), D7 (analytics).
+
+**Governance note.** The brief sets a symbol-first visitor path (Symbol Card → Symbol Portal → AwakenArts World) and explicitly says workshops are not the first action for a new visitor. This supersedes, for the public site, the 2026-08-18 "New Paradigm activation" that made Workshops the first navigation item. Workshop content itself is unchanged; it is now presented as Guided Encounters.
+
+| Item | Where | Status |
+|---|---|---|
+| Symbol Card data model (front: broad meanings; back: Christian meanings + Scripture; Portal fields) — separate from Christian Symbols and Journal | `src/data/symbolCards.ts` | Built, **empty — awaiting Susan's card copy** |
+| Two-sided card component (tap to turn) | `src/components/symbols/SymbolCardView.tsx` | Built |
+| Symbol Portal template | `src/components/symbols/SymbolPortal.tsx`, `src/app/symbols/[slug]` | Built; renders per card once data exists |
+| Symbols index = card collection (D10) | `src/app/symbols/page.tsx` | Built |
+| Christian Symbols moved to `/christian-symbols` (+ `/[slug]`); old `/symbols/[slug]` links 308 → new address unless a Portal exists | `src/app/christian-symbols`, `src/middleware.ts` | Built |
+| QR addresses `/s/[slug]` → Portal, temporary 302 with `src=card` (D1) | `src/app/s/[slug]/route.ts` | Built |
+| Guided Encounters index + template (from Edition data, verbatim), Grismere open / five "available to host" (D3) | `src/data/guidedEncounters.ts`, `src/app/guided-encounters` | Built |
+| Inquiry / registration form — opens a prefilled email to Susan; optional Kit opt-in (D4) | `src/components/guided/InquiryForm.tsx` | Built; upgrade when an email-sending service is chosen |
+| Redirects: `/workshops`, `/collection` → `/guided-encounters`; `/editions/[slug]` and `/purchase` → `/guided-encounters/[slug]`; `/editions/dragon/read` kept (D8) | `next.config.js` | Built |
+| Books index + Book template; buy button gated on `linkConfirmed` (D5 provisional); typographic cover until cover files arrive | `src/data/books.ts`, `src/app/books`, `src/components/books` | Built |
+| Reusable signup (Encounter Journal, tagged by source) + `/stay-connected` page (D6) | `src/components/StayConnected.tsx`, `src/app/stay-connected` | Built |
+| Homepage rebuilt in the brief's 8-section order; hero uses the approved core line exactly | `src/app/page.tsx`, `src/components/Home*.tsx` | Built. Previous homepage preserved at commit `9d3746a`; `HomeSection2.tsx` left in place, unused |
+| Homepage Symbol section: 3-card vs 4-card tested at 1280 / 820 / 390 px — **3 chosen** (larger art, prompts on one line, no tablet orphan, shorter phone stack) | `HOME_SYMBOL_COLUMNS` in `src/components/HomeBeginWithSymbol.tsx` | Section hidden until featured cards exist |
+| Kit diagnostic GET removed; production no longer shows false success when Kit settings are missing | `src/app/api/subscribe/route.ts` | Built |
+| Nav/footer/wayfinding: "Workshops" → "Guided Encounters"; footer adds Books & Journals; nav spacing tightened 1201–1440 px | `Nav.tsx`, `Footer.tsx`, `WayfindingBand.tsx`, `globals.css` | Built. Full five-item nav (EXPLORE…) waits for the Explore page |
+| Sitemap: adds Symbols, Guided Encounters, Books, Christian Symbols, Gallery, Stay Connected; drops /workshops, /editions/*, /poems | `src/app/sitemap.ts` | Built |
+
+**Wording changes for Susan's review** ("workshop" read as "Guided Encounter" where it names the public offering): Guided Encounters intro sentence; "AwakenArts Guided Encounters are artistic and educational…"; "Each Guided Encounter travels…"; homepage "Each Guided Encounter brings the work into conversation…"; "Attend a Guided Encounter"; "Every AwakenArts Guided Encounter is anchored in one Figure Edition." Edition descriptions ("…within the AwakenArts workshop experience") and the facilitator line ("…at the center of its workshops") are left verbatim. New short UI lines: "Now offering", "Available to host", "Bring a Guided Encounter to your church, club, retreat, or group.", "Hear When It's Ready", "Continue into AwakenArts".

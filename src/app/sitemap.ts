@@ -15,17 +15,22 @@ type Entry = {
 
 const ENTRIES: Entry[] = [
   { path: '/',                                                   changeFrequency: 'weekly',  priority: 1.0 },
-  { path: '/workshops',                                         changeFrequency: 'monthly', priority: 0.95 },
+  // 2026-10-05 rebuild: Symbols (card collection) + Guided Encounters + Books.
+  { path: '/symbols',                                           changeFrequency: 'weekly',  priority: 0.95 },
+  { path: '/guided-encounters',                                 changeFrequency: 'weekly',  priority: 0.95 },
+  ...['grismere', 'dragon', 'queen-ann', 'bowls', 'ballerina', 'poppy'].map((s) => ({
+    path: `/guided-encounters/${s}`, changeFrequency: 'monthly' as const, priority: 0.8,
+  })),
+  { path: '/books',                                             changeFrequency: 'monthly', priority: 0.85 },
+  ...['shape-symbol-and-story', 'where-you-stand', 'whispers-of-awareness'].map((s) => ({
+    path: `/books/${s}`, changeFrequency: 'monthly' as const, priority: 0.75,
+  })),
+  { path: '/stay-connected',                                    changeFrequency: 'yearly',  priority: 0.5 },
+  { path: '/christian-symbols',                                 changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/gallery',                                           changeFrequency: 'monthly', priority: 0.7 },
   { path: '/about',                                              changeFrequency: 'monthly', priority: 0.9 },
   { path: '/awakenarts-path',                                   changeFrequency: 'monthly', priority: 0.9 },
-  { path: '/symbols',                                           changeFrequency: 'monthly', priority: 0.8 },
   { path: '/foundation',                                        changeFrequency: 'monthly', priority: 0.7 },
-  { path: '/editions/dragon',                                   changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/editions/bowls',                                    changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/editions/ballerina',                                changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/editions/grismere',                                 changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/editions/poppy',                                    changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/editions/queen-ann',                                changeFrequency: 'monthly', priority: 0.8 },
   // Encounters architecture (2026-06-25) — /encounters is now the
   // primary entrance in its own right, not a transitional doorway, plus
   // each of the five locked encounters.
@@ -40,7 +45,6 @@ const ENTRIES: Entry[] = [
   // /path, /path/ann, /path/grismere, /path/ballerina, /begin, /journey
   // all permanently redirect to /studio or / — omitted from sitemap.
   // /library route renamed /poems (June 2026); theme sub-pages retired.
-  { path: '/poems',                                              changeFrequency: 'monthly', priority: 0.8 },
   // Journal restored to primary navigation (2026-06-25, "Retire Gallery
   // and Reinstate Journal" directive) — Gallery is retired and was never
   // listed here, so no entry needs to be removed for it.
