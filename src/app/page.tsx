@@ -64,11 +64,25 @@ export default function HomePage() {
               lineHeight: 1.3,
               color: 'var(--deep)',
               maxWidth: 560,
-              margin: '1.1rem 0 2.5rem',
+              margin: '1.1rem 0 1.1rem',
             }}
           >
             Every life holds a pattern, a memory, a direction, a truth, or a story waiting to be revealed.
           </h1>
+          {/* Supporting line — Susan, 2026-10-05. */}
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '1rem',
+              lineHeight: 1.7,
+              color: 'var(--mid)',
+              maxWidth: 610,
+              margin: '0 0 1.75rem',
+            }}
+          >
+            AwakenArts brings image, poetry, and symbolic language into conversation, creating space to notice what may
+            already be taking shape.
+          </p>
           {/* 2026-10-05, per Susan: two identical text links — same size,
               weight, tracking and thin gold underline; only the colour differs. */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem 2.75rem', alignItems: 'baseline' }}>

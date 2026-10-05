@@ -23,7 +23,8 @@ local project files in the branch.
 | 10 | 10-05 | Guided Encounters shown by Figure artwork | On preview |
 | 11 | 10-05 | Presentations & Workshops stream; Guided Encounters Edition-only; Explore hub; six-item nav | On preview |
 | 12 | 10-05 | Books: accurate status labels; two free resources; Explore Books & Journals | On preview |
-| 13 | 10-05 | Hero refinement: smaller headline, two matching underlined text CTAs | Awaiting push |
+| 13 | 10-05 | Hero refinement: smaller headline, two matching underlined text CTAs | On preview |
+| 14 | 10-05 | Hero: supporting line (Susan's copy), Queen Ann reduced, text group centred against image | Awaiting push |
 
 ## Cleanup pass before merge (checklist)
 

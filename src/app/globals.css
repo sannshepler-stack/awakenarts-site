@@ -13371,3 +13371,12 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .nav-links { justify-self: end; }
   .nav-right { display: none; }
 }
+
+/* 2026-10-05, per Susan: hero balance — Queen Ann slightly smaller so she
+   no longer fills the whole right half; the text group stays vertically
+   centred against the image. Desktop only; tablet/phone unchanged. */
+@media (min-width: 1081px) {
+  .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 4rem; align-items: center; }
+  .hero__text { align-self: center; }
+  .hero__media { max-width: 560px; justify-self: center; }
+}
