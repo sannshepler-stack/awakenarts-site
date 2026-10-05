@@ -1,9 +1,10 @@
-// Presentations & Workshops (2026-10-05, per Susan): a separate offering
-// from Guided Encounters. Guided Encounters are Edition-based reflective
-// experiences; Presentations & Workshops are talks and workshops for
-// churches, clubs, libraries, retreats, and community groups.
-// Never describe these with "Guided Encounter" language. A distinct
-// marketing stream: index at /presentations, one page per presentation.
+// Presentations & Workshops — what Susan delivers (2026-10-05, Susan):
+//   Edition = the work · Presentation = what Susan delivers ·
+//   Guided Encounter = the kind of facilitated experience a presentation
+//   can create. Grismere: the Grismere Edition supplies the material for
+//   the Grismere presentation (a Guided Encounter), which someone can
+//   attend or bring to a group. Index at /presentations, one page per
+//   presentation (/presentations/[slug]).
 //
 // Copy marked VERBATIM comes from the former /workshops page (commit
 // 9d3746a). Topics and format are Susan's to supply; an empty field does
@@ -13,6 +14,8 @@ export interface Presentation {
   /** URL name — printed on flyers as awakenarts.com/presentations/[slug]. */
   slug: string
   title: string
+  /** e.g. 'A Guided Encounter with the Grismere Edition'. */
+  subtitle?: string
   /** One or two sentences, Susan's wording. */
   summary?: string
   /** What the presentation covers — short points. */
@@ -32,8 +35,22 @@ export interface Presentation {
   edition?: string
 }
 
-/** Current presentations & workshops — awaiting Susan's list. */
-export const PRESENTATIONS: Presentation[] = []
+/** Current presentations & workshops. */
+export const PRESENTATIONS: Presentation[] = [
+  {
+    slug: 'grismere',
+    title: 'Grismere',
+    subtitle: 'A Guided Encounter with the Grismere Edition',
+    // DRAFT for Susan's approval — drawn from the Grismere Edition's own copy.
+    summary:
+      'Participants practice attention at the threshold between what is visible and what remains beneath the surface.',
+    format: 'Guided Encounter',
+    length: '75 minutes',
+    image: '/images/editions/grismere-figure.jpg',
+    imageAlt: 'Grismere — the figure artwork',
+    edition: 'grismere',
+  },
+]
 
 export function getPresentation(slug: string) {
   return PRESENTATIONS.find((p) => p.slug === slug)

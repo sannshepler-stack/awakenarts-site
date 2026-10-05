@@ -4,8 +4,7 @@ import type { Presentation } from '@/data/presentations'
 import { PRESENTATIONS } from '@/data/presentations'
 import { bodyStyle, labelStyle } from '@/components/guided/GuidedParts'
 
-// Shared pieces for the Presentations & Workshops stream (2026-10-05).
-// Deliberately separate from Guided Encounters: no shared copy or labels.
+// Shared pieces for Presentations & Workshops (2026-10-05).
 
 export function presentationInquiry(): InquiryConfig {
   return {
@@ -15,6 +14,7 @@ export function presentationInquiry(): InquiryConfig {
         ? { label: 'Presentation', options: PRESENTATIONS.map((p) => ({ value: p.slug, title: p.title })) }
         : undefined,
     kinds: [
+      'Attending a presentation',
       'Hosting for a church',
       'Hosting for a club',
       'Hosting for a library',
@@ -47,6 +47,11 @@ export function PresentationTile({ p }: { p: Presentation }) {
       <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', lineHeight: 1.2, color: 'var(--deep)', marginTop: '0.35rem' }}>
         {p.title} <span aria-hidden="true" style={{ opacity: 0.5 }}>→</span>
       </span>
+      {p.subtitle && (
+        <span style={{ display: 'block', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', color: 'var(--gold)', marginTop: '0.2rem' }}>
+          {p.subtitle}
+        </span>
+      )}
       {p.summary && <span style={{ ...bodyStyle, display: 'block', fontSize: '0.95rem', color: 'var(--mid)', margin: '0.6rem 0 0' }}>{p.summary}</span>}
     </Link>
   )

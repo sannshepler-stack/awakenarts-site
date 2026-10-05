@@ -66,7 +66,7 @@ export default function PresentationsPage() {
           <section aria-labelledby="current-heading" style={{ ...section, background: '#fff' }}>
             <div style={{ maxWidth: 1080, margin: '0 auto' }}>
               <h2 id="current-heading" style={{ ...h2Style, textAlign: 'center', marginBottom: '2.5rem' }}>Current Presentations &amp; Workshops</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 360px))', justifyContent: 'center', gap: '1.5rem' }}>
                 {PRESENTATIONS.map((p) => (
                   <PresentationTile key={p.slug} p={p} />
                 ))}
