@@ -25,6 +25,7 @@ local project files in the branch.
 | 12 | 10-05 | Books: accurate status labels; two free resources; Explore Books & Journals | On preview |
 | 13 | 10-05 | Hero refinement: smaller headline, two matching underlined text CTAs | On preview |
 | 14 | 10-05 | Hero: supporting line (Susan's copy), Queen Ann reduced, text group centred against image | Awaiting push |
+| 15 | 10-05 | Collection image restored: Explore page (under heading) and homepage Guided Encounters band (opening image, as originally placed) | Awaiting push |
 
 ## Cleanup pass before merge (checklist)
 
