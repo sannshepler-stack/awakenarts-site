@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import fs from 'node:fs'
+import path from 'node:path'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ProtectedImage from '@/components/ProtectedImage'
@@ -32,6 +34,21 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
 const section: React.CSSProperties = { padding: 'var(--band-gap) 1.5rem' }
 
+/** The Edition's pages, rendered for web from its PDF
+ *  (public/images/editions/pages/[slug]/page-NN.jpg). Read at build time. */
+function editionPages(slug: string): string[] {
+  const dir = path.join(process.cwd(), 'public', 'images', 'editions', 'pages', slug)
+  try {
+    return fs
+      .readdirSync(dir)
+      .filter((f) => /\.jpe?g$/i.test(f))
+      .sort()
+      .map((f) => `/images/editions/pages/${slug}/${f}`)
+  } catch {
+    return []
+  }
+}
+
 /** Editions with a complete online reader (D8). */
 const READERS: Record<string, string> = { dragon: '/editions/dragon/read' }
 
@@ -40,6 +57,7 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
   if (!e) return notFound()
   const presentation = PRESENTATIONS.find((p) => p.editions?.includes(e.slug))
   const reader = READERS[e.slug]
+  const pages = editionPages(e.slug)
   const shortTitle = e.title.replace(/^The\s+/i, '')
   const editionName = `the ${shortTitle} Edition`
 
@@ -78,9 +96,22 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
         <section aria-labelledby="explore-heading" style={{ ...section, paddingTop: 0, textAlign: 'center' }}>
           <div style={{ maxWidth: 1080, margin: '0 auto' }}>
             <h2 id="explore-heading" style={{ ...h2Style, marginBottom: '1.75rem' }}>Explore {editionName}</h2>
-            <div style={{ background: '#fff', border: '1px solid var(--mist)', padding: 14, boxShadow: '0 8px 24px rgba(28, 43, 58, 0.1)' }}>
-              <ProtectedImage src={e.contactSheet} alt={e.contactSheetAlt} loading="lazy" className="edition-preview-img" />
-            </div>
+            {/* 2026-10-05, Susan: the Edition shown as it was created, page by
+                page, larger — for review on localhost before anything goes
+                live. Falls back to the overview sheet if no pages exist. */}
+            {pages.length > 0 ? (
+              <div style={{ display: 'grid', gap: '2.5rem', maxWidth: 860, margin: '0 auto' }}>
+                {pages.map((src, i) => (
+                  <div key={src} style={{ background: '#fff', border: '1px solid var(--mist)', padding: 10, boxShadow: '0 8px 24px rgba(28, 43, 58, 0.1)' }}>
+                    <ProtectedImage src={src} alt={`${e.title} Edition, page ${i + 1}`} loading={i < 2 ? 'eager' : 'lazy'} className="edition-preview-img" />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div style={{ background: '#fff', border: '1px solid var(--mist)', padding: 14, boxShadow: '0 8px 24px rgba(28, 43, 58, 0.1)' }}>
+                <ProtectedImage src={e.contactSheet} alt={e.contactSheetAlt} loading="lazy" className="edition-preview-img" />
+              </div>
+            )}
             {reader && (
               <div style={{ marginTop: '2rem' }}>
                 <TextLinkRow center>
