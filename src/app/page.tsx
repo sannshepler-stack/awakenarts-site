@@ -32,6 +32,18 @@ export const metadata: Metadata = {
   },
 }
 
+const heroLink: React.CSSProperties = {
+  fontFamily: 'var(--sans)',
+  fontSize: '0.88rem',
+  fontWeight: 600,
+  letterSpacing: '0.12em',
+  textTransform: 'uppercase',
+  textDecoration: 'none',
+  borderBottom: '1px solid var(--gold-lt)',
+  paddingBottom: 4,
+  lineHeight: 1.4,
+}
+
 export default function HomePage() {
   return (
     <>
@@ -48,34 +60,22 @@ export default function HomePage() {
             style={{
               fontFamily: 'var(--serif)',
               fontWeight: 400,
-              fontSize: 'clamp(2rem, 3.1vw, 2.6rem)',
-              lineHeight: 1.18,
+              fontSize: 'clamp(1.6rem, 2.7vw, 2.1rem)',
+              lineHeight: 1.3,
               color: 'var(--deep)',
-              maxWidth: '24ch',
+              maxWidth: 560,
               margin: '1.1rem 0 2.5rem',
             }}
           >
             Every life holds a pattern, a memory, a direction, a truth, or a story waiting to be revealed.
           </h1>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem 2rem', alignItems: 'center' }}>
-            <Link href="/symbols" className="home-coll-cta home-coll-cta--light-surface" data-cta="hero-explore-symbol">
+          {/* 2026-10-05, per Susan: two identical text links — same size,
+              weight, tracking and thin gold underline; only the colour differs. */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem 2.75rem', alignItems: 'baseline' }}>
+            <Link href="/symbols" data-cta="hero-explore-symbol" style={{ ...heroLink, color: 'var(--gold)' }}>
               Explore a Symbol
             </Link>
-            <Link
-              href="/explore"
-              data-cta="hero-discover"
-              style={{
-                fontFamily: 'var(--sans)',
-                fontSize: '0.9rem',
-                fontWeight: 600,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: 'var(--deep)',
-                textDecoration: 'none',
-                borderBottom: '1px solid var(--gold-lt)',
-                paddingBottom: 2,
-              }}
-            >
+            <Link href="/explore" data-cta="hero-discover" style={{ ...heroLink, color: 'var(--deep)' }}>
               Discover AwakenArts
             </Link>
           </div>
