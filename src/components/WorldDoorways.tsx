@@ -7,9 +7,9 @@ import Link from 'next/link'
 
 const DOORS: { href: string; title: string; line?: string }[] = [
   {
-    href: '/guided-encounters',
-    title: 'Guided Encounters',
-    line: 'Each Guided Encounter brings one AwakenArts Edition into conversation with lived experience through image, poetry, reflection, and discussion.',
+    href: '/editions',
+    title: 'The Editions',
+    line: 'Each Edition is a distinct world to explore.',
   },
   {
     href: '/awakenarts-path',

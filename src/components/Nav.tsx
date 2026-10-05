@@ -24,13 +24,14 @@ import Link from 'next/link'
 // renamed Gallery — quiet browsing and appreciation, not part of the
 // marketing sequence. See AwakenArts_Publishing_Platform_Architecture.md.
 const links = [
-  // 2026-10-05 rebuild, per Susan: EXPLORE · SYMBOLS · GUIDED ENCOUNTERS ·
-  // PRESENTATIONS · BOOKS · ABOUT. The Path, Journal and the other
+  // 2026-10-05 rebuild, per Susan: EXPLORE · EDITIONS · PRESENTATIONS ·
+  // SYMBOLS · BOOKS · ABOUT (Editions = the works; Guided Encounters
+  // are presentations, under Presentations). The Path, Journal and the other
   // reflective pages are gathered under Explore. Earlier history: git 9d3746a.
   { label: 'Explore', href: '/explore', cta: false },
-  { label: 'Symbols', href: '/symbols', cta: false },
-  { label: 'Guided Encounters', href: '/guided-encounters', cta: false },
+  { label: 'Editions', href: '/editions', cta: false },
   { label: 'Presentations', href: '/presentations', cta: false },
+  { label: 'Symbols', href: '/symbols', cta: false },
   { label: 'Books', href: '/books', cta: false },
   { label: 'About', href: '/about', cta: false },
 ]

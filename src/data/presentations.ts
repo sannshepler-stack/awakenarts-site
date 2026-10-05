@@ -18,6 +18,10 @@ export interface Presentation {
   subtitle?: string
   /** One or two sentences, Susan's wording. */
   summary?: string
+  /** What happens in the presentation — Susan's wording. */
+  happens?: string[]
+  /** What participants will see or do — short points, Susan's wording. */
+  participants?: string[]
   /** What the presentation covers — short points. */
   covers?: string[]
   /** Audience / venue, e.g. 'Churches', 'Libraries'. Falls back to PRESENTATION_AUDIENCES. */
@@ -26,13 +30,14 @@ export interface Presentation {
   format?: string
   /** e.g. '60 minutes'. */
   length?: string
-  /** Optional image under /public. */
+  /** Presentation-specific image under /public (not the Edition's own
+   *  artwork, once Susan supplies one). */
   image?: string
   imageAlt?: string
   /** Related book or free resource. */
   related?: { label: string; href: string }
-  /** Slug of the AwakenArts Edition this presentation is built from. */
-  edition?: string
+  /** Editions this presentation is drawn from (none for a thematic one). */
+  editions?: string[]
 }
 
 /** Current presentations & workshops. */
@@ -42,13 +47,15 @@ export const PRESENTATIONS: Presentation[] = [
     title: 'Grismere',
     subtitle: 'A Guided Encounter with the Grismere Edition',
     // DRAFT for Susan's approval — drawn from the Grismere Edition's own copy.
+    // What happens / what participants see or do / a presentation image:
+    // awaiting Susan (the figure artwork stands in until then).
     summary:
       'Participants practice attention at the threshold between what is visible and what remains beneath the surface.',
     format: 'Guided Encounter',
     length: '75 minutes',
     image: '/images/editions/grismere-figure.jpg',
     imageAlt: 'Grismere — the figure artwork',
-    edition: 'grismere',
+    editions: ['grismere'],
   },
 ]
 

@@ -38,7 +38,7 @@ const READERS: Record<string, string> = { dragon: '/editions/dragon/read' }
 export default function EditionPage({ params }: { params: { slug: string } }) {
   const e = editions.find((x) => x.slug === params.slug)
   if (!e) return notFound()
-  const presentation = PRESENTATIONS.find((p) => p.edition === e.slug)
+  const presentation = PRESENTATIONS.find((p) => p.editions?.includes(e.slug))
   const reader = READERS[e.slug]
 
   return (
@@ -84,7 +84,7 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
         <section style={{ ...section, paddingTop: 0, textAlign: 'center' }}>
           {presentation && (
             <p style={{ ...bodyStyle, margin: '0 auto 1.5rem', maxWidth: 560 }}>
-              {presentation.title} is also offered as a presentation built from this Edition.
+              There is a presentation drawn from this Edition: {presentation.title}.
             </p>
           )}
           <TextLinkRow center>

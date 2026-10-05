@@ -57,9 +57,9 @@ export default function SymbolsPage() {
             per no-silent-deletion. */}
         <SymbolsEncounters />
 
-        <section className="symbols-continuation" aria-label="Continue to Guided Encounters">
-          <Link href="/guided-encounters" className="home-coll-cta home-coll-cta--light-surface">
-            Continue to Guided Encounters
+        <section className="symbols-continuation" aria-label="Continue to the Editions">
+          <Link href="/editions" className="home-coll-cta home-coll-cta--light-surface">
+            Continue to the Editions
           </Link>
         </section>
       </main>

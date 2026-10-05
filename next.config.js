@@ -35,6 +35,12 @@ const nextConfig = {
       // 2026-10-05: workshops are part of Presentations & Workshops, not Guided Encounters.
       { source: '/workshops', destination: '/presentations', permanent: true },
       { source: '/presentations-workshops', destination: '/presentations', permanent: true },
+      // 2026-10-05 (Susan): Guided Encounters are presentations. The old
+      // /guided-encounters pages stay in the codebase (retire in cleanup)
+      // but are reached through these temporary redirects.
+      { source: '/guided-encounters', destination: '/presentations', permanent: false },
+      { source: '/guided-encounters/grismere', destination: '/presentations/grismere', permanent: false },
+      { source: '/guided-encounters/:slug', destination: '/editions/:slug', permanent: false },
       // 2026-10-05 (Susan): Edition = the work. /editions/:slug is the
       // Edition's own page again (the earlier redirect to Guided Encounters
       // is removed).

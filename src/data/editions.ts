@@ -112,7 +112,7 @@ export const editions: Edition[] = [
     contactSheetAlt: 'Contact sheet preview of all eleven pages of The Dragon Figure Edition',
     pdf: '/files/editions/Dragon_Figure_Edition.pdf',
     about:
-      'The Dragon brings image, poem, story, and reflection into a symbolic world used within the AwakenArts workshop experience. It invites participants to notice how an interpretation changes when the apparent enemy is also trying to protect what its own fire endangers.',
+      'The Dragon brings image, poem, story, and reflection into a symbolic world. It invites the reader to notice how an interpretation changes when the apparent enemy is also trying to protect what its own fire endangers.',
     themes: ['Reconciliation', 'Wholeness', 'Strength and Tenderness', 'Recognition, Not Conquest'],
     // Hand-built per Implementation Specification v1.0, Phase 1. Text is
     // transcribed faithfully from the approved PDF's own participant-facing
@@ -593,7 +593,7 @@ export const editions: Edition[] = [
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Bowls Figure Edition',
     pdf: '/files/editions/Bowls_Figure_Edition.pdf',
     about:
-      'Bowls brings image, poem, story, and reflection into a symbolic world used within the AwakenArts workshop experience. Its distinct territory allows participants to practice the same underlying attention through questions of duality, voice, and wholeness.',
+      'Bowls brings image, poem, story, and reflection into a symbolic world. Its distinct territory invites attention through questions of duality, voice, and wholeness.',
     themes: ['Duality of the Feminine', 'Wholeness, Not Repair', "Finding One's Voice", 'The Ordinary as Sacred'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
@@ -605,7 +605,7 @@ export const editions: Edition[] = [
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Ballerina Figure Edition',
     pdf: '/files/editions/Ballerina_Figure_Edition.pdf',
     about:
-      'Ballerina brings image, poem, story, and reflection into a symbolic world used within the AwakenArts workshop experience. Its distinct territory allows participants to practice the same underlying attention through movement, stillness, multiplicity, and trust.',
+      'Ballerina brings image, poem, story, and reflection into a symbolic world. Its distinct territory invites attention through movement, stillness, multiplicity, and trust.',
     themes: ['Movement and Stillness', 'Embodied Wisdom', 'Multiplicity Held as One', 'Trust'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
@@ -617,7 +617,7 @@ export const editions: Edition[] = [
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Grismere Figure Edition',
     pdf: '/files/editions/Grismere_Figure_Edition.pdf',
     about:
-      'Grismere brings image, poem, story, and reflection into a symbolic world used within the AwakenArts workshop experience. Its distinct territory allows participants to practice the same underlying attention at the threshold between what is visible and what remains beneath the surface.',
+      'Grismere brings image, poem, story, and reflection into a symbolic world. Its distinct territory invites attention at the threshold between what is visible and what remains beneath the surface.',
     themes: ['Conscious Awareness', 'The Hidden Self', 'Mystery Beneath the Surface', 'Psalm 18:16'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
@@ -629,7 +629,7 @@ export const editions: Edition[] = [
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Poppy Figure Edition',
     pdf: '/files/editions/Poppy_Figure_Edition.pdf',
     about:
-      'Poppy brings image, poem, story, and reflection into a symbolic world used within the AwakenArts workshop experience. Its distinct territory allows participants to practice the same underlying attention through inheritance, recognition, love, and continuity across generations.',
+      'Poppy brings image, poem, story, and reflection into a symbolic world. Its distinct territory invites attention through inheritance, recognition, love, and continuity across generations.',
     themes: ['Inheritance', 'Love Carried Forward', 'Recognition', 'Continuity Across Generations'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
@@ -641,7 +641,7 @@ export const editions: Edition[] = [
     contactSheetAlt: 'Contact sheet preview of all eleven pages of the Queen Ann Figure Edition',
     pdf: '/files/editions/Queen_Ann_Figure_Edition.pdf',
     about:
-      'Queen Ann brings image, poem, story, and reflection into a symbolic world used within the AwakenArts workshop experience. Its distinct territory allows participants to practice the same underlying attention through transition, relinquishment, pilgrimage, and trust beyond possession.',
+      'Queen Ann brings image, poem, story, and reflection into a symbolic world. Its distinct territory invites attention through transition, relinquishment, pilgrimage, and trust beyond possession.',
     themes: ['Transition and Relinquishment', 'Pilgrimage', 'Trust Beyond Possession', 'The Kingdom Beyond the One That Ends'],
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },

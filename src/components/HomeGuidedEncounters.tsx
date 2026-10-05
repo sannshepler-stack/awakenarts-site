@@ -26,7 +26,7 @@ export default function HomeGuidedEncounters() {
 
           {current && (
             <Link
-              href={`/guided-encounters/${current.slug}`}
+              href={`/presentations/${current.slug}`}
               data-cta="home-current-encounter"
               style={{
                 display: 'grid',
@@ -70,11 +70,11 @@ export default function HomeGuidedEncounters() {
           )}
           <TextLinkRow center>
             {current && (
-              <TextLink href={`/guided-encounters/${current.slug}`} tone="light" cta="home-guided-explore-current">
+              <TextLink href={`/presentations/${current.slug}`} tone="light" cta="home-guided-explore-current">
                 Explore {current.title}
               </TextLink>
             )}
-            <TextLink href="/guided-encounters#inquire" tone="light" cta="home-guided-inquire">
+            <TextLink href={current ? `/presentations/${current.slug}#inquire` : '/presentations#inquire'} tone="light" cta="home-guided-inquire">
               Register or Inquire
             </TextLink>
           </TextLinkRow>
