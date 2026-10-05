@@ -1,10 +1,10 @@
 // Presentations & Workshops — what Susan delivers (2026-10-05, Susan):
-//   Edition = the work · Presentation = what Susan delivers ·
-//   Guided Encounter = the kind of facilitated experience a presentation
-//   can create. Grismere: the Grismere Edition supplies the material for
-//   the Grismere presentation (a Guided Encounter), which someone can
-//   attend or bring to a group. Index at /presentations, one page per
-//   presentation (/presentations/[slug]).
+//   Editions = the product line, for exploration (/editions).
+//   Presentation / workshop / Guided Encounter = a separate offering where
+//   people register (/presentations/[slug]). It is NOT founded on an
+//   Edition, and its page carries no Edition material. An Edition page may
+//   link to a related presentation (e.g. the Grismere Edition → the
+//   Grismere workshop).
 //
 // Copy marked VERBATIM comes from the former /workshops page (commit
 // 9d3746a). Topics and format are Susan's to supply; an empty field does
@@ -36,9 +36,10 @@ export interface Presentation {
   imageAlt?: string
   /** Related book or free resource. */
   related?: { label: string; href: string }
-  /** Short pitch shown on the source Edition's page — Susan's wording. */
+  /** Short pitch shown on a related Edition's page — Susan's wording. */
   editionPitch?: string
-  /** Editions this presentation is drawn from (none for a thematic one). */
+  /** Edition pages that link to this presentation. Shown only there —
+   *  never on the presentation page itself. */
   editions?: string[]
 }
 
@@ -47,7 +48,7 @@ export const PRESENTATIONS: Presentation[] = [
   {
     slug: 'grismere',
     title: 'Grismere',
-    subtitle: 'A Guided Encounter with the Grismere Edition',
+    subtitle: 'A Guided Encounter',
     // DRAFT for Susan's approval — drawn from the Grismere Edition's own copy.
     // What happens / what participants see or do / a presentation image:
     // awaiting Susan (the figure artwork stands in until then).

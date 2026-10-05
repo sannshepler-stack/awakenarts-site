@@ -7,11 +7,12 @@ import Footer from '@/components/Footer'
 import { Facilitator, InquirySection, bodyStyle, h2Style, labelStyle } from '@/components/guided/GuidedParts'
 import { PresentationTile, presentationInquiry } from '@/components/presentations/PresentationParts'
 import { PRESENTATIONS, PRESENTATION_AUDIENCES, getPresentation } from '@/data/presentations'
-import { editions } from '@/data/editions'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
 
 // /presentations/[slug] — reusable single presentation/workshop page, built
-// to be the landing page a flyer or brochure points to. Every block renders
+// to be the landing page a flyer or brochure points to, and where people
+// register. A presentation is its own offering, not founded on an Edition
+// (2026-10-05, Susan): no Edition material or Edition links here. Every block renders
 // only when Susan has supplied it.
 
 export function generateStaticParams() {
@@ -37,8 +38,6 @@ export default function PresentationPage({ params }: { params: { slug: string } 
   if (!p) notFound()
   const audiences = p.audiences && p.audiences.length > 0 ? p.audiences : PRESENTATION_AUDIENCES
   const others = PRESENTATIONS.filter((x) => x.slug !== p.slug).slice(0, 3)
-  const sources = (p.editions ?? []).map((slug) => editions.find((e) => e.slug === slug)).filter((e): e is (typeof editions)[number] => !!e)
-  const editionName = (t: string) => `the ${t.replace(/^The\s+/i, '')} Edition`
   const facts: [string, string][] = []
   if (p.format) facts.push(['Format', p.format])
   if (p.length) facts.push(['Length', p.length])
@@ -69,20 +68,6 @@ export default function PresentationPage({ params }: { params: { slug: string } 
                   </div>
                 ))}
               </dl>
-              {sources.length > 0 && (
-                <p style={{ ...bodyStyle, margin: '0 0 1.5rem' }}>
-                  This presentation is drawn from{' '}
-                  {sources.map((e, i) => (
-                    <span key={e.slug}>
-                      {i > 0 && (i === sources.length - 1 ? ' and ' : ', ')}
-                      <Link href={`/editions/${e.slug}`} style={{ color: 'var(--deep)', textDecoration: 'underline', textDecorationColor: 'var(--gold)', textUnderlineOffset: 3 }}>
-                        {editionName(e.title)}
-                      </Link>
-                    </span>
-                  ))}
-                  .
-                </p>
-              )}
               <TextLinkRow>
                 <TextLink href="#inquire" cta={`presentation-${p.slug}-inquire`}>Register or Inquire</TextLink>
               </TextLinkRow>
