@@ -80,6 +80,16 @@ export async function POST(req: NextRequest) {
   // does, that itself is the bug (the env vars aren't reaching the
   // running function; see the log line below).
   if (!apiKey || !formId) {
+    // 2026-10-05: in production, missing settings must not look like a
+    // successful signup (the visitor would get the PDF but never reach Kit).
+    if (process.env.NODE_ENV === 'production') {
+      console.error('[subscribe] KIT_API_KEY/KIT_FORM_ID missing in production', { source })
+      return NextResponse.json({
+        ok: false,
+        subscribed: false,
+        message: "We couldn't add you to the list just now. Please try again later.",
+      })
+    }
     console.log(
       `[subscribe:placeholder] ${email} (source: ${source}) — KIT_API_KEY/KIT_FORM_ID not set in this environment (apiKey present: ${!!apiKey}, formId present: ${!!formId}).`
     )
@@ -192,31 +202,5 @@ export async function POST(req: NextRequest) {
   return NextResponse.json({ ok: true, subscribed: true })
 }
 
-// TEMPORARY DIAGNOSTIC — 2026-06-27. Production was returning 404 "form
-// not found" for KIT_FORM_ID=9618788. This GET handler calls Kit's own
-// "List forms" endpoint with the same KIT_API_KEY so we can see the real
-// form id(s) Kit has on file for this account, instead of guessing.
-// Returns only form id/name/type/archived — no API key, no subscriber
-// data. Remove this handler once the correct KIT_FORM_ID is confirmed
-// and set in Vercel.
-export async function GET() {
-  const apiKey = process.env.KIT_API_KEY
-  if (!apiKey) {
-    return NextResponse.json({ ok: false, message: 'KIT_API_KEY not set in this environment.' })
-  }
-  try {
-    const res = await fetch('https://api.kit.com/v4/forms?status=all', {
-      headers: { 'X-Kit-Api-Key': apiKey },
-    })
-    const text = await res.text()
-    let parsed: unknown = null
-    try {
-      parsed = text ? JSON.parse(text) : null
-    } catch {
-      // leave parsed as null, fall back to raw text below
-    }
-    return NextResponse.json({ status: res.status, body: parsed ?? text })
-  } catch (err) {
-    return NextResponse.json({ ok: false, error: String(err) })
-  }
-}
+// 2026-10-05: the temporary GET diagnostic (2026-06-27) that listed Kit
+// form names/IDs to anyone has been removed. Only POST remains.
