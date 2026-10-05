@@ -49,7 +49,7 @@ export default function PresentationsPage() {
         <section style={{ ...section, paddingTop: '2rem' }}>
           <div style={narrow}>
             <p className="eyebrow">Presentations &amp; Workshops</p>
-            <h1 style={{ ...h2Style, fontSize: 'clamp(2.3rem, 5vw, 3.2rem)' }}>{ABOUT_WORKSHOPS.lede}</h1>
+            <h1 style={{ ...h2Style, fontSize: 'var(--t-page)' }}>{ABOUT_WORKSHOPS.lede}</h1>
             {ABOUT_WORKSHOPS.body.map((p) => (
               <p key={p} style={bodyStyle}>{p}</p>
             ))}
@@ -84,7 +84,7 @@ export default function PresentationsPage() {
             </p>
             {PRESENTATION_FORMAT.length > 0 && (
               <>
-                <h3 style={{ ...h2Style, fontSize: '1.6rem', marginTop: '2.5rem' }}>Format &amp; Length</h3>
+                <h3 style={{ ...h2Style, fontSize: 'var(--t-card)', marginTop: '2.5rem' }}>Format &amp; Length</h3>
                 {PRESENTATION_FORMAT.map((p) => (
                   <p key={p} style={bodyStyle}>{p}</p>
                 ))}

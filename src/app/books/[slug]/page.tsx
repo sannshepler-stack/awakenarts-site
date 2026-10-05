@@ -60,7 +60,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
             </div>
             <div>
               {statusText(b) && <p style={label}>{statusText(b)}</p>}
-              <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'clamp(2.4rem, 5vw, 3.4rem)', color: 'var(--deep)', margin: '0.6rem 0 0.4rem', lineHeight: 1.05 }}>
+              <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-page)', color: 'var(--deep)', margin: '0.6rem 0 0.4rem', lineHeight: 1.05 }}>
                 {b.title}
               </h1>
               {b.subtitle && <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.45rem', color: 'var(--gold)', margin: '0 0 1.25rem' }}>{b.subtitle}</p>}

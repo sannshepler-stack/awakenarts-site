@@ -37,7 +37,7 @@ export default function SymbolTile({ card, source }: { card: SymbolCard; source:
           </span>
         )}
       </span>
-      <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: '1.55rem', color: 'var(--deep)', marginTop: '1.1rem' }}>
+      <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', color: 'var(--deep)', marginTop: '1.1rem' }}>
         {card.name}
       </span>
       {card.prompt && (

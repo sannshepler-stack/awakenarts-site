@@ -49,7 +49,7 @@ export default function HomeGuidedEncounters() {
                 <span style={{ display: 'block', fontFamily: 'var(--sans)', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold-lt)' }}>
                   Now offering{current.length ? ` · ${current.length}` : ''}
                 </span>
-                <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: '2.1rem', color: 'var(--cream)', margin: '0.3rem 0 0.15rem' }}>
+                <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', color: 'var(--cream)', margin: '0.3rem 0 0.15rem' }}>
                   {current.title}
                 </span>
                 <span style={{ display: 'block', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.15rem', lineHeight: 1.35, color: 'var(--gold-lt)', margin: '0 0 0.75rem' }}>

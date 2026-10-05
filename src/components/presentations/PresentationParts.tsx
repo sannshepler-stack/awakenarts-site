@@ -44,7 +44,7 @@ export function PresentationTile({ p }: { p: Presentation }) {
           {[p.format, p.length].filter(Boolean).join(' · ')}
         </span>
       )}
-      <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: '1.6rem', lineHeight: 1.2, color: 'var(--deep)', marginTop: '0.35rem' }}>
+      <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', lineHeight: 1.2, color: 'var(--deep)', marginTop: '0.35rem' }}>
         {p.title} <span aria-hidden="true" style={{ opacity: 0.5 }}>→</span>
       </span>
       {p.summary && <span style={{ ...bodyStyle, display: 'block', fontSize: '0.95rem', color: 'var(--mid)', margin: '0.6rem 0 0' }}>{p.summary}</span>}

@@ -30,7 +30,7 @@ export default function SymbolsIndexPage() {
             style={{
               fontFamily: 'var(--serif)',
               fontWeight: 400,
-              fontSize: 'clamp(2.3rem, 5vw, 3.4rem)',
+              fontSize: 'var(--t-page)',
               color: 'var(--deep)',
               margin: '1rem auto 1rem',
               maxWidth: 760,
@@ -67,7 +67,7 @@ export default function SymbolsIndexPage() {
           style={{ background: 'var(--warm)', padding: 'var(--band-gap) 1.5rem', textAlign: 'center' }}
         >
           <p className="eyebrow" style={{ justifyContent: 'center' }}>Christian Symbols</p>
-          <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'clamp(1.8rem, 3.4vw, 2.4rem)', color: 'var(--deep)', margin: '1rem 0 0.5rem' }}>
+          <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '1rem 0 0.5rem' }}>
             Symbols for the Christian Soul
           </h2>
           <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', color: 'var(--mid)', margin: '0 0 1.75rem' }}>

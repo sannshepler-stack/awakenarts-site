@@ -34,7 +34,7 @@ export default function ExplorePage() {
       <main style={{ background: 'var(--cream)' }}>
         <section style={{ padding: 'calc(var(--band-gap) + 2rem) 1.5rem 3rem', textAlign: 'center' }}>
           <p className="eyebrow" style={{ justifyContent: 'center' }}>Explore</p>
-          <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'clamp(2.3rem, 5vw, 3.2rem)', lineHeight: 1.15, color: 'var(--deep)', margin: '1rem 0 0' }}>
+          <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-page)', lineHeight: 1.15, color: 'var(--deep)', margin: '1rem 0 0' }}>
             When Language Shapes a Path
           </h1>
         </section>
@@ -50,7 +50,7 @@ export default function ExplorePage() {
                 data-cta={`explore-${d.href.slice(1)}`}
                 style={{ display: 'block', textDecoration: 'none', border: '1px solid var(--mist)', background: '#fff', padding: '1.75rem 1.5rem' }}
               >
-                <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: '1.5rem', color: 'var(--deep)' }}>
+                <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', color: 'var(--deep)' }}>
                   {d.title} <span aria-hidden="true" style={{ opacity: 0.55 }}>→</span>
                 </span>
                 {d.line && (

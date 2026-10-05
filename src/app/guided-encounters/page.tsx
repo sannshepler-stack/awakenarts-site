@@ -41,7 +41,7 @@ export default function GuidedEncountersPage() {
         <section style={{ ...section, paddingTop: '2rem', textAlign: 'center' }}>
           <div style={narrow}>
             <p className="eyebrow" style={{ justifyContent: 'center' }}>Guided Encounters</p>
-            <h1 style={{ ...h2Style, fontSize: 'clamp(2.3rem, 5vw, 3.2rem)' }}>AwakenArts Guided Encounters</h1>
+            <h1 style={{ ...h2Style, fontSize: 'var(--t-page)' }}>AwakenArts Guided Encounters</h1>
             {/* Orientation, per Susan 2026-10-05: the Edition is the work; the
                 Guided Encounter is the experience of that work. */}
             <p style={bodyStyle}>A Guided Encounter is a facilitated experience built from an AwakenArts Edition.</p>
@@ -66,7 +66,7 @@ export default function GuidedEncountersPage() {
           <section key={g.slug} id="current" aria-labelledby="current-heading" style={{ ...section, paddingTop: 0 }}>
             <div style={{ maxWidth: 760, margin: '0 auto', textAlign: 'center' }}>
               <p style={labelStyle}>Current Guided Encounter{g.length ? ` · ${g.length}` : ''}</p>
-              <h2 id="current-heading" style={{ ...h2Style, fontSize: 'clamp(2rem, 4vw, 2.8rem)', margin: '0.6rem 0 0.2rem' }}>{g.title}</h2>
+              <h2 id="current-heading" style={{ ...h2Style, fontSize: 'var(--t-section)', margin: '0.6rem 0 0.2rem' }}>{g.title}</h2>
               <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.3rem', color: 'var(--gold)', margin: '0 0 2rem' }}>
                 A Guided Encounter with {editionPhrase(g.title)}
               </p>

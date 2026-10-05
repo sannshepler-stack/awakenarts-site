@@ -18,7 +18,7 @@ export default function BookTile({ book, source }: { book: Book; source: string 
           {statusText(book)}
         </span>
       )}
-      <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: '1.5rem', color: 'var(--deep)', marginTop: statusText(book) ? '0.25rem' : '1.1rem' }}>
+      <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', color: 'var(--deep)', marginTop: statusText(book) ? '0.25rem' : '1.1rem' }}>
         {book.title}
       </span>
       {(book.subtitle || book.tagline) && (

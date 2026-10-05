@@ -138,7 +138,7 @@ export default function HomeChristianSymbols() {
         <p className="eyebrow" style={{ justifyContent: 'center' }}>Christian Symbols</p>
         <h2
           id="home-recognition-heading"
-          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'clamp(1.55rem, 2.9vw, 2.08rem)', lineHeight: 1.2, color: 'var(--deep)', margin: '1rem 0 1.25rem' }}
+          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', lineHeight: 1.2, color: 'var(--deep)', margin: '1rem 0 1.25rem' }}
         >
           Scripture Speaks in Symbols
         </h2>

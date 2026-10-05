@@ -16,7 +16,7 @@ export default function HomeAbout() {
         />
         <div style={{ flex: '1 1 380px' }}>
           <p className="eyebrow">About</p>
-          <h2 id="home-about-heading" style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'clamp(1.45rem, 2.55vw, 1.84rem)', color: 'var(--deep)', margin: '0.8rem 0 1rem' }}>
+          <h2 id="home-about-heading" style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '0.8rem 0 1rem' }}>
             About AwakenArts
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 'var(--body-line)', color: 'var(--deep)', margin: '0 0 1.25rem' }}>

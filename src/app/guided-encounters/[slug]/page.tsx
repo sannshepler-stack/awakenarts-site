@@ -68,7 +68,7 @@ export default function GuidedEncounterPage({ params }: { params: { slug: string
             </div>
             <div>
               <p style={labelStyle}>Guided Encounter · {statusLine(g)}</p>
-              <h1 style={{ ...h2Style, fontSize: 'clamp(2.5rem, 5.5vw, 3.6rem)', marginBottom: '0.3rem' }}>{g.title}</h1>
+              <h1 style={{ ...h2Style, fontSize: 'var(--t-page)', marginBottom: '0.3rem' }}>{g.title}</h1>
               <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.3rem', color: 'var(--gold)', margin: '0 0 1.25rem' }}>
                 A Guided Encounter with {editionPhrase(g.title)}
               </p>

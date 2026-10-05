@@ -32,7 +32,7 @@ export default function BooksPage() {
       <main style={{ background: 'var(--cream)' }}>
         <section style={{ padding: 'calc(var(--band-gap) + 2rem) 1.5rem 3rem', textAlign: 'center' }}>
           <p className="eyebrow" style={{ justifyContent: 'center' }}>Books</p>
-          <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'clamp(2.3rem, 5vw, 3.2rem)', color: 'var(--deep)', margin: '1rem 0 0' }}>
+          <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-page)', color: 'var(--deep)', margin: '1rem 0 0' }}>
             Books &amp; Journals
           </h1>
         </section>

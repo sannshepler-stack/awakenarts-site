@@ -17,7 +17,7 @@ export const labelStyle: React.CSSProperties = {
 export const h2Style: React.CSSProperties = {
   fontFamily: 'var(--serif)',
   fontWeight: 400,
-  fontSize: 'clamp(1.8rem, 3.4vw, 2.4rem)',
+  fontSize: 'var(--t-section)',
   color: ink,
   margin: '0.75rem 0 1rem',
   lineHeight: 1.15,
@@ -54,7 +54,7 @@ export function EncounterTile({ g, emphasis = false }: { g: GuidedEncounter; emp
         <img src={g.image} alt={g.imageAlt} loading="lazy" style={{ width: '100%', aspectRatio: '4 / 5', objectFit: 'cover', display: 'block' }} />
       </span>
       <span style={{ ...labelStyle, display: 'block', fontSize: '0.72rem', marginTop: '1rem' }}>{statusLine(g)}</span>
-      <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: emphasis ? '2rem' : '1.5rem', color: ink, marginTop: '0.3rem' }}>
+      <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', color: ink, marginTop: '0.3rem' }}>
         {g.title} <span aria-hidden="true" style={{ opacity: 0.5 }}>→</span>
       </span>
       {g.length && (

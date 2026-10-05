@@ -27,7 +27,7 @@ export default function WorldDoorways({ heading = 'Continue into AwakenArts' }: 
           style={{
             fontFamily: 'var(--serif)',
             fontWeight: 400,
-            fontSize: 'clamp(1.6rem, 3vw, 2.1rem)',
+            fontSize: 'var(--t-section)',
             color: 'var(--deep)',
             textAlign: 'center',
             margin: '0 0 2.5rem',
@@ -50,7 +50,7 @@ export default function WorldDoorways({ heading = 'Continue into AwakenArts' }: 
                 background: '#fff',
               }}
             >
-              <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: '1.5rem', color: 'var(--deep)', margin: 0 }}>
+              <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', color: 'var(--deep)', margin: 0 }}>
                 {d.title} <span aria-hidden="true" style={{ opacity: 0.55 }}>→</span>
               </span>
               {d.line && (

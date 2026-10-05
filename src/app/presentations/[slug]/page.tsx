@@ -52,7 +52,7 @@ export default function PresentationPage({ params }: { params: { slug: string } 
             )}
             <div style={p.image ? undefined : narrow}>
               <p style={labelStyle}>Presentation &amp; Workshop</p>
-              <h1 style={{ ...h2Style, fontSize: 'clamp(2.4rem, 5vw, 3.4rem)' }}>{p.title}</h1>
+              <h1 style={{ ...h2Style, fontSize: 'var(--t-page)' }}>{p.title}</h1>
               {p.summary && <p style={bodyStyle}>{p.summary}</p>}
               <dl style={{ display: 'grid', gridTemplateColumns: 'max-content 1fr', gap: '0.5rem 1.25rem', margin: '1.5rem 0', borderTop: '1px solid var(--mist)', paddingTop: '1.25rem' }}>
                 {facts.map(([k, v]) => (

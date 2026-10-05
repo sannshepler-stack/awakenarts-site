@@ -8,7 +8,7 @@ import EmailGateDownload from '@/components/EmailGateDownload'
 export default function StayConnected({
   source,
   tone = 'light',
-  headingSize = 'clamp(1.7rem, 3.2vw, 2.2rem)',
+  headingSize = 'var(--t-section)',
 }: {
   source: string
   tone?: 'light' | 'dark'

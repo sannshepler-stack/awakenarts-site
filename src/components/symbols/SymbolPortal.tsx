@@ -63,7 +63,7 @@ export default function SymbolPortal({ card }: { card: SymbolCard }) {
                 style={{
                   fontFamily: 'var(--serif)',
                   fontWeight: 400,
-                  fontSize: 'clamp(2.6rem, 6vw, 4rem)',
+                  fontSize: 'var(--t-page)',
                   color: 'var(--deep)',
                   margin: '0.6rem 0 1.25rem',
                   lineHeight: 1,
@@ -102,7 +102,7 @@ export default function SymbolPortal({ card }: { card: SymbolCard }) {
                   style={{
                     fontFamily: 'var(--serif)',
                     fontStyle: 'italic',
-                    fontSize: 'clamp(1.4rem, 3vw, 1.9rem)',
+                    fontSize: 'var(--t-section)',
                     lineHeight: 1.4,
                     color: 'var(--cream)',
                     margin: '1.25rem 0 0.75rem',
@@ -133,7 +133,7 @@ export default function SymbolPortal({ card }: { card: SymbolCard }) {
               <p
                 style={{
                   fontFamily: 'var(--serif)',
-                  fontSize: 'clamp(1.5rem, 3.2vw, 2.1rem)',
+                  fontSize: 'var(--t-section)',
                   lineHeight: 1.35,
                   color: 'var(--deep)',
                   margin: 0,

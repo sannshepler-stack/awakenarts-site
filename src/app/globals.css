@@ -13434,3 +13434,19 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 @media (prefers-reduced-motion: reduce) {
   .text-link { transition: color 0.15s ease; }
 }
+
+
+/* ── Type scale (2026-10-05, Susan: one standard across the site) ──────────
+   Desktop: page titles 49 px · section headings 37 px · card titles 26 px.
+   The homepage hero statement is NOT part of this scale: it is its own
+   hero text style (--hero-statement), sized by the hero composition.
+   Eyebrows, body copy and links keep their own tokens. */
+:root {
+  --t-page: clamp(2.2rem, 4vw, 2.72rem);
+  --t-section: clamp(1.65rem, 3vw, 2.06rem);
+  --t-card: clamp(1.25rem, 1.8vw, 1.45rem);
+  --hero-statement: clamp(1.5rem, 2.6vw, 1.83rem);
+}
+.about-h1 { font-size: var(--t-page); }
+.about-h2 { font-size: var(--t-section); }
+.section2-dark__title { font-size: var(--t-section); }
