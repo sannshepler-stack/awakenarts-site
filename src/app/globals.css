@@ -13363,3 +13363,11 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .nav-links { gap: 1rem; }
   .nav-links a { font-size: .74rem; letter-spacing: .06em; }
 }
+
+/* 2026-10-05: six-item nav. On desktop the links sit right of the logo
+   (logo left, links right) so the longer menu never runs into the logo. */
+@media (min-width: 1201px) {
+  .nav-inner { grid-template-columns: auto 1fr; column-gap: 2rem; }
+  .nav-links { justify-self: end; }
+  .nav-right { display: none; }
+}

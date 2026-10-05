@@ -26,12 +26,12 @@ import FooterSocial from './FooterSocial'
  */
 
 const EXPLORE_LINKS = [
-  { label: 'Guided Encounters', href: '/guided-encounters' },
+  { label: 'Explore', href: '/explore' },
   { label: 'Symbols', href: '/symbols' },
+  { label: 'Guided Encounters', href: '/guided-encounters' },
+  { label: 'Presentations & Workshops', href: '/presentations' },
   { label: 'Books & Journals', href: '/books' },
-  { label: 'Encounters', href: '/encounters' },
-  { label: 'Journal', href: '/journal' },
-  { label: 'Gallery', href: '/gallery' },
+  { label: 'Stay Connected', href: '/stay-connected' },
 ]
 
 const ABOUT_LINKS = [

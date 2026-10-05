@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import type { GuidedEncounter } from '@/data/guidedEncounters'
-import { WHAT_TO_EXPECT } from '@/data/guidedEncounters'
-import InquiryForm from '@/components/guided/InquiryForm'
+import InquiryForm, { type InquiryConfig } from '@/components/guided/InquiryForm'
 
 // Shared building blocks for the Guided Encounter template (2026-10-05).
 
@@ -67,10 +66,11 @@ export function EncounterTile({ g, emphasis = false }: { g: GuidedEncounter; emp
   )
 }
 
-export function WhatToExpect() {
+/** A lead + text list (used by Presentations & Workshops). */
+export function LeadList({ items }: { items: { lead: string; text: string }[] }) {
   return (
     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.9rem' }}>
-      {WHAT_TO_EXPECT.map((item) => (
+      {items.map((item) => (
         <li key={item.lead} style={{ ...bodyStyle, margin: 0, paddingLeft: '1.25rem', borderLeft: '2px solid var(--gold-lt)' }}>
           <strong style={{ fontWeight: 600 }}>{item.lead}</strong> — {item.text}
         </li>
@@ -79,7 +79,7 @@ export function WhatToExpect() {
   )
 }
 
-export function Facilitator() {
+export function Facilitator({ note }: { note?: string }) {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center' }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -94,9 +94,7 @@ export function Facilitator() {
         <p style={{ ...bodyStyle, color: 'var(--mid)', margin: '0.2rem 0 0.6rem', fontSize: '0.95rem' }}>
           M.A. Counseling · Certified Journal Instructor · Certified Transformative Language Artist
         </p>
-        <p style={{ ...bodyStyle, margin: 0 }}>
-          Creator of AwakenArts and the original image-poem works at the center of its workshops.
-        </p>
+        {note && <p style={{ ...bodyStyle, margin: 0 }}>{note}</p>}
         <Link href="/about" style={{ display: 'inline-block', marginTop: '0.6rem', fontFamily: 'var(--sans)', fontSize: '0.78rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold)' }}>
           About Susan →
         </Link>
@@ -105,18 +103,30 @@ export function Facilitator() {
   )
 }
 
-export function InquirySection({ preselect, id = 'inquire' }: { preselect?: string; id?: string }) {
+export function InquirySection({
+  preselect,
+  id = 'inquire',
+  eyebrow = 'Register or Inquire',
+  heading = 'Attend a Guided Encounter',
+  line,
+  config,
+}: {
+  preselect?: string
+  id?: string
+  eyebrow?: string
+  heading?: string
+  line?: string
+  config?: InquiryConfig
+}) {
   return (
-    <section id={id} aria-label="Register or inquire" style={{ background: 'var(--warm)', padding: 'var(--band-gap) 1.5rem' }}>
+    <section id={id} aria-label={eyebrow} style={{ background: 'var(--warm)', padding: 'var(--band-gap) 1.5rem' }}>
       <div style={{ maxWidth: 680, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <p style={labelStyle}>Register or Inquire</p>
-          <h2 style={h2Style}>Attend a Guided Encounter</h2>
-          <p style={{ ...bodyStyle, color: 'var(--mid)' }}>
-            Recognition is rarely a solitary experience. It deepens as we learn to see alongside others.
-          </p>
+          <p style={labelStyle}>{eyebrow}</p>
+          <h2 style={h2Style}>{heading}</h2>
+          {line && <p style={{ ...bodyStyle, color: 'var(--mid)' }}>{line}</p>}
         </div>
-        <InquiryForm preselect={preselect} />
+        <InquiryForm preselect={preselect} config={config} />
       </div>
     </section>
   )

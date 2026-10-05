@@ -62,7 +62,7 @@ export default function HomePage() {
               Explore a Symbol
             </Link>
             <Link
-              href="/awakenarts-path"
+              href="/explore"
               data-cta="hero-discover"
               style={{
                 fontFamily: 'var(--sans)',

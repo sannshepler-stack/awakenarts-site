@@ -41,6 +41,10 @@ export interface GuidedEncounter extends GuidedEncounterDetails {
   title: string
   image: string
   imageAlt: string
+  /** The Edition itself (its page contact sheet) — shown where the page
+   *  explains which Edition an Encounter is built from. */
+  editionImage: string
+  editionImageAlt: string
   description: string
   themes: string[]
 }
@@ -56,6 +60,8 @@ export const guidedEncounters: GuidedEncounter[] = DETAILS.map((d) => {
     // never the Edition contact sheet.
     image: `/images/editions/${d.slug}-figure.jpg`,
     imageAlt: `${e.title} — the figure artwork`,
+    editionImage: e.contactSheet,
+    editionImageAlt: e.contactSheetAlt,
     description: e.about,
     themes: e.themes,
   }
@@ -64,27 +70,6 @@ export const guidedEncounters: GuidedEncounter[] = DETAILS.map((d) => {
 export function getGuidedEncounter(slug: string) {
   return guidedEncounters.find((g) => g.slug === slug)
 }
-
-/** Shared "what participants experience" list — existing Workshops copy, verbatim. */
-export const WHAT_TO_EXPECT = [
-  { lead: 'Images and poetry', text: 'encounter an original work and the symbolic territory it opens.' },
-  {
-    lead: 'Language we already know',
-    text: 'discover familiar metaphors and expressions whose images may have become almost invisible through everyday use.',
-  },
-  {
-    lead: 'Close reading and seeing',
-    text: 'look at particular words, lines, images, relationships, rhythms, and details that give the work its substance.',
-  },
-  {
-    lead: 'Connections and amplification',
-    text: 'explore relevant literature, psychology, archetypal understanding, story, and Christian sources where they genuinely illuminate the work.',
-  },
-  {
-    lead: 'Personal reflection',
-    text: 'use conversation and an Edition journal to consider where what has been discovered intersects with lived experience.',
-  },
-]
 
 export const INQUIRY_EMAIL = 'susan@shepler.us'
 

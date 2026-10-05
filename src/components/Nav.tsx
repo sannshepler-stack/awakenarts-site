@@ -24,31 +24,15 @@ import Link from 'next/link'
 // renamed Gallery — quiet browsing and appreciation, not part of the
 // marketing sequence. See AwakenArts_Publishing_Platform_Architecture.md.
 const links = [
-  // 2026-08-18, New Paradigm activation: Workshops is the central
-  // conducted AwakenArts practice and therefore the first substantive
-  // destination. Gallery remains available through the footer and page
-  // pathways rather than competing with Workshops in primary navigation.
-  { label: 'Guided Encounters', href: '/guided-encounters', cta: false },
-  // 2026-07-25, per Susan's "AwakenArts Primer Housing Page" revision
-  // directive: "Explore the Path" now leads to the Path document first
-  // (orientation), not directly into Encounters (experience) -- the
-  // Primer's own closing section ("Begin the Encounter Sequence") carries
-  // the visitor onward from there. Encounters itself is untouched and
-  // reachable on its own; this only changes where the site's primary
-  // "Explore the Path" doorway leads.
-  // 2026-07-26, per Susan's terminology-alignment pass: label shortened
-  // from "Explore the Path" to "The Path" -- same destination, just the
-  // settled short name for this section going forward.
-  // 2026-07-27, per Susan's "no Primer anywhere" directive: destination
-  // route renamed from /primer to /awakenarts-path (permanent redirect
-  // from the old route lives in next.config.js).
-  { label: 'The Path', href: '/awakenarts-path', cta: false },
-  // 2026-08-11, per Susan's "Publish the Symbols page" directive: Symbols
-  // enters primary nav directly after The Path. Per her clarification,
-  // Journal keeps its existing position — only Symbols is newly inserted.
+  // 2026-10-05 rebuild, per Susan: EXPLORE · SYMBOLS · GUIDED ENCOUNTERS ·
+  // PRESENTATIONS · BOOKS · ABOUT. The Path, Journal and the other
+  // reflective pages are gathered under Explore. Earlier history: git 9d3746a.
+  { label: 'Explore', href: '/explore', cta: false },
   { label: 'Symbols', href: '/symbols', cta: false },
-  { label: 'Journal',    href: '/journal',    cta: false },
-  { label: 'About',      href: '/about',      cta: false },
+  { label: 'Guided Encounters', href: '/guided-encounters', cta: false },
+  { label: 'Presentations', href: '/presentations', cta: false },
+  { label: 'Books', href: '/books', cta: false },
+  { label: 'About', href: '/about', cta: false },
 ]
 
 // Unlisted Page System (locked 2026-06-27): some pages are built and live

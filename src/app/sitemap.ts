@@ -21,6 +21,8 @@ const ENTRIES: Entry[] = [
   ...['grismere', 'dragon', 'queen-ann', 'bowls', 'ballerina', 'poppy'].map((s) => ({
     path: `/guided-encounters/${s}`, changeFrequency: 'monthly' as const, priority: 0.8,
   })),
+  { path: '/explore',                                           changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/presentations',                                     changeFrequency: 'monthly', priority: 0.9 },
   { path: '/books',                                             changeFrequency: 'monthly', priority: 0.85 },
   ...['shape-symbol-and-story', 'where-you-stand', 'whispers-of-awareness'].map((s) => ({
     path: `/books/${s}`, changeFrequency: 'monthly' as const, priority: 0.75,

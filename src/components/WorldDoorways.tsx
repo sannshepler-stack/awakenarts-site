@@ -9,7 +9,7 @@ const DOORS: { href: string; title: string; line?: string }[] = [
   {
     href: '/guided-encounters',
     title: 'Guided Encounters',
-    line: 'Recognition is rarely a solitary experience. It deepens as we learn to see alongside others.',
+    line: 'Each Guided Encounter brings one AwakenArts Edition into conversation with lived experience through image, poetry, reflection, and discussion.',
   },
   {
     href: '/awakenarts-path',

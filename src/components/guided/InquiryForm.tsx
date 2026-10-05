@@ -41,11 +41,31 @@ const KINDS = [
   'Something else',
 ]
 
-export default function InquiryForm({ preselect }: { preselect?: string }) {
+export interface InquiryConfig {
+  /** Shown in the email subject, e.g. 'Guided Encounter inquiry'. */
+  subjectPrefix: string
+  /** Label + options for the "which one" select; omitted when there are none. */
+  offerings?: { label: string; options: { value: string; title: string }[] }
+  kinds: string[]
+  keepLabel: string
+  kitSource: string
+  cta: string
+}
+
+export const GUIDED_INQUIRY: InquiryConfig = {
+  subjectPrefix: 'Guided Encounter inquiry',
+  offerings: { label: 'Guided Encounter', options: guidedEncounters.map((g) => ({ value: g.slug, title: g.title })) },
+  kinds: KINDS,
+  keepLabel: 'Keep me informed about future Guided Encounters.',
+  kitSource: 'guided-encounter-inquiry',
+  cta: 'guided-encounter-inquiry',
+}
+
+export default function InquiryForm({ preselect, config = GUIDED_INQUIRY }: { preselect?: string; config?: InquiryConfig }) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [encounter, setEncounter] = useState(preselect || '')
-  const [kind, setKind] = useState(KINDS[0])
+  const [kind, setKind] = useState(config.kinds[0])
   const [dates, setDates] = useState('')
   const [message, setMessage] = useState('')
   const [keep, setKeep] = useState(false)
@@ -59,12 +79,12 @@ export default function InquiryForm({ preselect }: { preselect?: string }) {
       setError('Please add your name and a valid email address.')
       return
     }
-    const title = guidedEncounters.find((g) => g.slug === encounter)?.title || 'Not sure yet'
-    const subject = `Guided Encounter inquiry — ${title}`
+    const title = config.offerings?.options.find((o) => o.value === encounter)?.title || 'Not sure yet'
+    const subject = config.offerings ? `${config.subjectPrefix} — ${title}` : config.subjectPrefix
     const lines = [
       `Name: ${name.trim()}`,
       `Email: ${email.trim()}`,
-      `Guided Encounter: ${title}`,
+      ...(config.offerings ? [`${config.offerings.label}: ${title}`] : []),
       `I'm asking about: ${kind}`,
     ]
     if (dates.trim()) lines.push(`Preferred dates: ${dates.trim()}`)
@@ -76,7 +96,7 @@ export default function InquiryForm({ preselect }: { preselect?: string }) {
         await fetch('/api/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: email.trim(), source: 'guided-encounter-inquiry' }),
+          body: JSON.stringify({ email: email.trim(), source: config.kitSource }),
         })
       } catch {
         // The inquiry itself still goes out by email below.
@@ -114,19 +134,21 @@ export default function InquiryForm({ preselect }: { preselect?: string }) {
         </label>
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.1rem' }}>
-        <label>
-          <span style={lab}>Guided Encounter</span>
-          <select style={field} value={encounter} onChange={(e) => setEncounter(e.target.value)}>
-            <option value="">Not sure yet</option>
-            {guidedEncounters.map((g) => (
-              <option key={g.slug} value={g.slug}>{g.title}</option>
-            ))}
-          </select>
-        </label>
+        {config.offerings && (
+          <label>
+            <span style={lab}>{config.offerings.label}</span>
+            <select style={field} value={encounter} onChange={(e) => setEncounter(e.target.value)}>
+              <option value="">Not sure yet</option>
+              {config.offerings.options.map((o) => (
+                <option key={o.value} value={o.value}>{o.title}</option>
+              ))}
+            </select>
+          </label>
+        )}
         <label>
           <span style={lab}>I'm asking about</span>
           <select style={field} value={kind} onChange={(e) => setKind(e.target.value)}>
-            {KINDS.map((k) => (
+            {config.kinds.map((k) => (
               <option key={k}>{k}</option>
             ))}
           </select>
@@ -142,7 +164,7 @@ export default function InquiryForm({ preselect }: { preselect?: string }) {
       </label>
       <label style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start', fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'var(--mid)' }}>
         <input type="checkbox" checked={keep} onChange={(e) => setKeep(e.target.checked)} style={{ marginTop: '0.3rem' }} />
-        Keep me informed about future Guided Encounters.
+        {config.keepLabel}
       </label>
       {error && (
         <p role="alert" style={{ fontFamily: 'var(--font-body)', color: '#8a2d1d', margin: 0 }}>
@@ -150,7 +172,7 @@ export default function InquiryForm({ preselect }: { preselect?: string }) {
         </p>
       )}
       <div style={{ textAlign: 'center', marginTop: '0.5rem' }}>
-        <button type="submit" className="home-coll-cta home-coll-cta--light-surface" data-cta="guided-encounter-inquiry" style={{ background: 'none', cursor: 'pointer' }}>
+        <button type="submit" className="home-coll-cta home-coll-cta--light-surface" data-cta={config.cta} style={{ background: 'none', cursor: 'pointer' }}>
           Send Inquiry
         </button>
         <p style={{ fontFamily: 'var(--sans)', fontSize: '0.75rem', color: 'var(--mid)', margin: '0.8rem 0 0' }}>

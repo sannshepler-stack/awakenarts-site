@@ -10,7 +10,6 @@ import {
   EncounterTile,
   Facilitator,
   InquirySection,
-  WhatToExpect,
   bodyStyle,
   h2Style,
   labelStyle,
@@ -106,19 +105,13 @@ export default function GuidedEncounterPage({ params }: { params: { slug: string
           </section>
         )}
 
-        <section aria-labelledby="expect-heading" style={{ ...section, background: '#fff' }}>
-          <div style={narrow}>
-            <h2 id="expect-heading" style={h2Style}>What to Expect</h2>
-            <WhatToExpect />
-            {g.companionReader && (
-              <p style={{ ...bodyStyle, marginTop: '2rem' }}>
-                <Link href={g.companionReader} style={{ color: 'var(--gold)' }}>
-                  Read {g.title} online →
-                </Link>
-              </p>
-            )}
-          </div>
-        </section>
+        {g.companionReader && (
+          <section style={{ ...section, paddingTop: 0, textAlign: 'center' }}>
+            <Link href={g.companionReader} className="home-coll-cta home-coll-cta--light-surface" data-cta={`guided-${g.slug}-reader`}>
+              Read {g.title} Online
+            </Link>
+          </section>
+        )}
 
         <section aria-labelledby="facilitator-heading" style={section}>
           <div style={narrow}>

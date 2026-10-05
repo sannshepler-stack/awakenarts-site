@@ -35,7 +35,9 @@ const nextConfig = {
         destination: '/guided-encounters',
         permanent: true,
       },
-      { source: '/workshops', destination: '/guided-encounters', permanent: true },
+      // 2026-10-05: workshops are part of Presentations & Workshops, not Guided Encounters.
+      { source: '/workshops', destination: '/presentations', permanent: true },
+      { source: '/presentations-workshops', destination: '/presentations', permanent: true },
       // Edition pages -> their Guided Encounter page (single segment only;
       // /editions/dragon/read is a separate, deeper path and is unaffected).
       { source: '/editions/:slug', destination: '/guided-encounters/:slug', permanent: true },
