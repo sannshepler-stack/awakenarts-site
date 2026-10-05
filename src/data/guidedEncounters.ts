@@ -51,8 +51,11 @@ export const guidedEncounters: GuidedEncounter[] = DETAILS.map((d) => {
   return {
     ...d,
     title: e.title,
-    image: e.contactSheet,
-    imageAlt: e.contactSheetAlt,
+    // 2026-10-05, per Susan: a Guided Encounter is its own thing, not the
+    // Edition's presentation pages — so it is shown by the Figure's artwork,
+    // never the Edition contact sheet.
+    image: `/images/editions/${d.slug}-figure.jpg`,
+    imageAlt: `${e.title} — the figure artwork`,
     description: e.about,
     themes: e.themes,
   }

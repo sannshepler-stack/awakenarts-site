@@ -52,7 +52,7 @@ export function EncounterTile({ g, emphasis = false }: { g: GuidedEncounter; emp
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={g.image} alt={g.imageAlt} loading="lazy" style={{ width: '100%', display: 'block' }} />
+        <img src={g.image} alt={g.imageAlt} loading="lazy" style={{ width: '100%', aspectRatio: '4 / 5', objectFit: 'cover', display: 'block' }} />
       </span>
       <span style={{ ...labelStyle, display: 'block', fontSize: '0.72rem', marginTop: '1rem' }}>{statusLine(g)}</span>
       <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: emphasis ? '2rem' : '1.5rem', color: ink, marginTop: '0.3rem' }}>

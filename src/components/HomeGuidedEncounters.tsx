@@ -37,7 +37,7 @@ export default function HomeGuidedEncounters() {
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={current.image} alt={current.imageAlt} loading="lazy" style={{ width: '100%', display: 'block', background: '#fff', padding: 8 }} />
+              <img src={current.image} alt={current.imageAlt} loading="lazy" style={{ width: '100%', aspectRatio: '4 / 5', objectFit: 'cover', display: 'block' }} />
               <span>
                 <span style={{ display: 'block', fontFamily: 'var(--sans)', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold-lt)' }}>
                   Now offering{current.length ? ` · ${current.length}` : ''}
