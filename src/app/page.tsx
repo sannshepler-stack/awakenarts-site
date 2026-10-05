@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import Nav from '@/components/Nav'
 import HomeBeginWithSymbol from '@/components/HomeBeginWithSymbol'
-import HomeCollectionPremise from '@/components/HomeCollectionPremise'
+import HomeSpeakInImages from '@/components/HomeSpeakInImages'
+import TextLink, { TextLinkRow } from '@/components/TextLink'
 import HomeChristianSymbols from '@/components/HomeChristianSymbols'
 import HomeGuidedEncounters from '@/components/HomeGuidedEncounters'
 import HomeBooks from '@/components/HomeBooks'
 import HomeAbout from '@/components/HomeAbout'
 import StayConnected from '@/components/StayConnected'
-import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import { featuredSymbolCards } from '@/data/symbolCards'
 
@@ -32,18 +31,6 @@ export const metadata: Metadata = {
   },
 }
 
-const heroLink: React.CSSProperties = {
-  fontFamily: 'var(--sans)',
-  fontSize: '0.88rem',
-  fontWeight: 600,
-  letterSpacing: '0.12em',
-  textTransform: 'uppercase',
-  textDecoration: 'none',
-  borderBottom: '1px solid var(--gold-lt)',
-  paddingBottom: 4,
-  lineHeight: 1.4,
-}
-
 export default function HomePage() {
   return (
     <>
@@ -60,8 +47,8 @@ export default function HomePage() {
             style={{
               fontFamily: 'var(--serif)',
               fontWeight: 400,
-              fontSize: 'clamp(1.6rem, 2.7vw, 2.1rem)',
-              lineHeight: 1.3,
+              fontSize: 'clamp(1.6rem, 2.75vw, 1.95rem)',
+              lineHeight: 1.22,
               color: 'var(--deep)',
               maxWidth: 560,
               margin: '1.1rem 0 1.1rem',
@@ -73,8 +60,8 @@ export default function HomePage() {
           <p
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize: '1rem',
-              lineHeight: 1.7,
+              fontSize: '1.05rem',
+              lineHeight: 1.65,
               color: 'var(--mid)',
               maxWidth: 610,
               margin: '0 0 1.75rem',
@@ -85,14 +72,10 @@ export default function HomePage() {
           </p>
           {/* 2026-10-05, per Susan: two identical text links — same size,
               weight, tracking and thin gold underline; only the colour differs. */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem 2.75rem', alignItems: 'baseline' }}>
-            <Link href="/symbols" data-cta="hero-explore-symbol" style={{ ...heroLink, color: 'var(--gold)' }}>
-              Explore a Symbol
-            </Link>
-            <Link href="/explore" data-cta="hero-discover" style={{ ...heroLink, color: 'var(--deep)' }}>
-              Discover AwakenArts
-            </Link>
-          </div>
+          <TextLinkRow>
+            <TextLink href="/symbols" tone="gold" cta="hero-explore-symbol">Explore a Symbol</TextLink>
+            <TextLink href="/explore" tone="navy" cta="hero-discover">Discover AwakenArts</TextLink>
+          </TextLinkRow>
         </div>
 
         <div className="hero__media">
@@ -115,8 +98,8 @@ export default function HomePage() {
       {/* 2 — Begin with a Symbol (renders once featured Symbol Cards exist) */}
       <HomeBeginWithSymbol cards={featuredSymbolCards()} />
 
-      {/* 3 — You Already Speak in Images (existing section, unchanged) */}
-      <HomeCollectionPremise />
+      {/* 3 — You Already Speak in Images (Queen Ann poem/portrait removed — she is the hero image) */}
+      <HomeSpeakInImages />
 
       {/* 4 — Scripture Speaks in Symbols (existing section) */}
       <HomeChristianSymbols />
@@ -133,7 +116,7 @@ export default function HomePage() {
       {/* 8 — About AwakenArts */}
       <HomeAbout />
 
-      <WayfindingBand />
+      {/* WayfindingBand omitted here: it repeated the top menu directly above the footer. */}
       <Footer />
     </>
   )

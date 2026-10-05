@@ -13368,7 +13368,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
    (logo left, links right) so the longer menu never runs into the logo. */
 @media (min-width: 1201px) {
   .nav-inner { grid-template-columns: auto 1fr; column-gap: 2rem; }
-  .nav-links { justify-self: end; }
+  .nav-links { justify-self: end; gap: clamp(1rem, 1.6vw, 2.25rem); }
   .nav-right { display: none; }
 }
 
@@ -13379,4 +13379,18 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 4rem; align-items: center; }
   .hero__text { align-self: center; }
   .hero__media { max-width: 560px; justify-self: center; }
+}
+
+/* 2026-10-05: one-time, phrase-by-phrase reveal (homepage "You already
+   speak in images"). Phrases are visible by default (no JS = no hiding);
+   once mounted they wait, then fade in once as the row scrolls into view.
+   With reduced motion nothing is hidden or animated. */
+.phrase-reveal .phrase-reveal__item { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .phrase-reveal.is-armed:not(.is-shown) .phrase-reveal__item { opacity: 0; transform: translateY(6px); }
+  .phrase-reveal.is-shown .phrase-reveal__item { animation: phraseIn 0.9s ease both; }
+}
+@keyframes phraseIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
 }

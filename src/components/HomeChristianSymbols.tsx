@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import TextLink from '@/components/TextLink'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
 
 /*
@@ -135,8 +135,13 @@ export default function HomeChristianSymbols() {
 
       <div className="poems-showcase-foundation__inner">
 
-        <p className="eyebrow">Christian Symbols</p>
-        <h2 id="home-recognition-heading">Scripture Speaks in Symbols</h2>
+        <p className="eyebrow" style={{ justifyContent: 'center' }}>Christian Symbols</p>
+        <h2
+          id="home-recognition-heading"
+          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'clamp(1.9rem, 3.6vw, 2.6rem)', lineHeight: 1.2, color: 'var(--deep)', margin: '1rem 0 1.25rem' }}
+        >
+          Scripture Speaks in Symbols
+        </h2>
 
         <p className="home-recognition__statement">
           <span className="home-recognition__statement-navy">
@@ -222,9 +227,7 @@ export default function HomeChristianSymbols() {
         </div>
 
         <div className="home-recognition__cta home-recognition__cta--after-image">
-          <Link href="/christian-symbols" className="home-coll-cta home-coll-cta--light-surface">
-            Explore Christian Symbols
-          </Link>
+          <TextLink href="/christian-symbols" cta="home-christian-symbols">Explore Christian Symbols</TextLink>
         </div>
 
         {/* 2026-09-02, per Susan's "can you do this with the matthew

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import TextLink from '@/components/TextLink'
 import SymbolTile from '@/components/symbols/SymbolTile'
 import type { SymbolCard } from '@/data/symbolCards'
 
@@ -42,9 +42,7 @@ export default function HomeBeginWithSymbol({
           ))}
         </div>
         <p style={{ marginTop: '3rem' }}>
-          <Link href="/symbols" className="home-coll-cta home-coll-cta--light-surface" data-cta="home-all-symbols">
-            Explore the Symbols
-          </Link>
+          <TextLink href="/symbols" cta="home-all-symbols">Explore the Symbols</TextLink>
         </p>
       </div>
     </section>

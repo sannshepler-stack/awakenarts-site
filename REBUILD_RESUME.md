@@ -40,8 +40,13 @@ git push origin rebuild/home-and-templates
 4. Pre-merge cleanup pass (checklist in `REBUILD_CHANGELOG.md`).
 5. Susan approves preview → merge to `main` → Vercel deploys live.
 
+## Page-by-page review (started 10-05)
+
+- Homepage — fixes committed (changelog #17); awaiting Susan's review on the preview
+- Next: Explore, Symbols, Guided Encounters, Presentations, Books, About
+
 ## Exact next task
 
-Apply and push the checkpoint patch (`checkpoint-2026-10-05.patch`), confirm the
+Apply and push `homepage-review.patch`, confirm the
 new Vercel preview, then enter the first Symbol Cards in `src/data/symbolCards.ts`
 as soon as Susan supplies their copy and art.

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import CollectionBanner from '@/components/CollectionBanner'
+import TextLink, { TextLinkRow } from '@/components/TextLink'
 import { guidedEncounters, editionPhrase } from '@/data/guidedEncounters'
 
 // HomeGuidedEncounters — homepage section 5 (Rebuild Plan §3, D3).
@@ -29,7 +30,9 @@ export default function HomeGuidedEncounters() {
               data-cta="home-current-encounter"
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                width: '100%',
+                boxSizing: 'border-box',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
                 gap: '1.75rem',
                 alignItems: 'center',
                 textAlign: 'left',
@@ -65,25 +68,19 @@ export default function HomeGuidedEncounters() {
               Encounter, or bring this experience to your church, club, retreat, or group.
             </p>
           )}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
+          <TextLinkRow center>
             {current && (
-              <Link href={`/guided-encounters/${current.slug}`} className="home-coll-cta" data-cta="home-guided-explore-current">
+              <TextLink href={`/guided-encounters/${current.slug}`} tone="light" cta="home-guided-explore-current">
                 Explore {current.title}
-              </Link>
+              </TextLink>
             )}
-            <Link href="/guided-encounters#inquire" className="home-coll-cta" data-cta="home-guided-inquire">
+            <TextLink href="/guided-encounters#inquire" tone="light" cta="home-guided-inquire">
               Register or Inquire
-            </Link>
-          </div>
-          <p style={{ marginTop: '1.75rem' }}>
-            <Link
-              href="/guided-encounters"
-              data-cta="home-guided-explore-all"
-              style={{ fontFamily: 'var(--sans)', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold-lt)' }}
-            >
-              Explore Guided Encounters →
-            </Link>
-          </p>
+            </TextLink>
+            <TextLink href="/guided-encounters" tone="light" cta="home-guided-explore-all">
+              Explore Guided Encounters
+            </TextLink>
+          </TextLinkRow>
         </div>
       </div>
     </section>

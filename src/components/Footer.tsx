@@ -35,7 +35,7 @@ const EXPLORE_LINKS = [
 ]
 
 const ABOUT_LINKS = [
-  { label: 'Formation & Provenance', href: '/about' },
+  { label: 'About AwakenArts', href: '/about' },
   // Added 2026-06-28 per Susan's directive: findable from the footer,
   // but deliberately not in main nav — see /foundation/page.tsx.
   { label: 'Foundation', href: '/foundation' },
@@ -70,9 +70,9 @@ export default function Footer() {
               the footer"): description copy replaced verbatim. */}
           <p>
             AwakenArts explores what images, poetry, and symbolic
-            language can reveal about our experience. Workshops bring
-            the work into conversation, with journals and other works
-            offering ways to continue.
+            language can reveal about our experience. Guided Encounters
+            and presentations bring the work into conversation, with books
+            and journals offering ways to continue.
           </p>
           <FooterSocial />
         </div>

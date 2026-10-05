@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import TextLink from '@/components/TextLink'
 
 // HomeAbout — homepage section 8 (Rebuild Plan §3). Opening paragraph of
 // the About page, verbatim, with a link to the full page.
@@ -24,9 +24,7 @@ export default function HomeAbout() {
             offering fixed interpretations, the work invites readers into a process of recognition through image,
             language, and reflection.
           </p>
-          <Link href="/about" className="home-coll-cta home-coll-cta--light-surface" data-cta="home-about">
-            Read More
-          </Link>
+          <TextLink href="/about" cta="home-about">Read More</TextLink>
         </div>
       </div>
     </section>

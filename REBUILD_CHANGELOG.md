@@ -26,9 +26,10 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 11 | **Guided Encounters separated from Presentations & Workshops**; **Presentations & Workshops index (`/presentations`) and reusable presentation template (`/presentations/[slug]`)**; Explore hub (`/explore`); **six-item navigation: EXPLORE · SYMBOLS · GUIDED ENCOUNTERS · PRESENTATIONS · BOOKS · ABOUT** | On preview |
 | 12 | **Books & Resources revisions**: status shown only when accurate (no blanket "Coming Soon"); two free resources as distinct items; EXPLORE BOOKS & JOURNALS | On preview |
 | 13 | Hero refinement: headline at section-heading scale; **CTA treatment** — EXPLORE A SYMBOL (gold) and DISCOVER AWAKENARTS (navy) as identical text links with thin gold underline, same baseline | On preview |
-| 14 | **Hero, current treatment and approved copy**: eyebrow AWAKENARTS · "Every life holds a pattern, a memory, a direction, a truth, or a story waiting to be revealed." · supporting line "AwakenArts brings image, poetry, and symbolic language into conversation, creating space to notice what may already be taking shape." · Queen Ann reduced; text group centred against the image | Committed — awaiting push |
-| 15 | AwakenArts Collection image restored: Explore page and homepage Guided Encounters band (not the hero) | Committed — awaiting push |
-| 16 | Checkpoint: this change log + `REBUILD_RESUME.md` | Committed — awaiting push |
+| 14 | **Hero, current treatment and approved copy**: eyebrow AWAKENARTS · "Every life holds a pattern, a memory, a direction, a truth, or a story waiting to be revealed." · supporting line "AwakenArts brings image, poetry, and symbolic language into conversation, creating space to notice what may already be taking shape." · Queen Ann reduced; text group centred against the image | On preview |
+| 15 | AwakenArts Collection image restored: Explore page and homepage Guided Encounters band (not the hero) | On preview |
+| 16 | Checkpoint: this change log + `REBUILD_RESUME.md` | On preview (`2908d1c`) |
+| 17 | **Homepage review pass**: hero headline ~35 px / supporting line ~19 px; repeated Queen Ann poem + portrait removed from "You already speak in images" (concept + three phrases kept, phrase-by-phrase one-time reveal, reduced-motion safe); section headings and centred eyebrows made consistent; all homepage CTAs unified as gold-underlined text links (`TextLink`); phone clipping of the Grismere card fixed; footer: stale workshop wording replaced, "Formation & Provenance" → "About AwakenArts"; repeated menu band removed above the homepage footer; desktop nav spacing made fluid | Committed — awaiting push |
 
 ## Still pending
 
@@ -45,7 +46,8 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 - [ ] Redirects (no chains, no retired destinations)
 - [ ] Hidden placeholders (nothing bracketed or empty shows)
 - [ ] Mobile layout, all core routes
-- [ ] Footer consistency (incl. legal pages, /experience)
+- [ ] Footer consistency (incl. legal pages, /experience) — homepage footer wording done 10-05
+- [ ] Repeated menu band (WayfindingBand) above the footer on other pages — removed on homepage 10-05
 - [ ] Stale workshop language outside Presentations & Workshops
 - [ ] Book status labels
 - [ ] Unused components / routes (documented, then retired)

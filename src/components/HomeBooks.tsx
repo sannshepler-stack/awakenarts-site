@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import TextLink from '@/components/TextLink'
 import BookTile from '@/components/books/BookTile'
 import { books } from '@/data/books'
 import FreeResources from '@/components/books/FreeResources'
@@ -25,9 +25,7 @@ export default function HomeBooks() {
           <FreeResources source="home" />
         </div>
         <p style={{ marginTop: '2.5rem' }}>
-          <Link href="/books" className="home-coll-cta home-coll-cta--light-surface" data-cta="home-books">
-            Explore Books &amp; Journals
-          </Link>
+          <TextLink href="/books" cta="home-books">Explore Books &amp; Journals</TextLink>
         </p>
       </div>
     </section>
