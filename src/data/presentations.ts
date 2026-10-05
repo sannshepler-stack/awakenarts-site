@@ -36,6 +36,8 @@ export interface Presentation {
   imageAlt?: string
   /** Related book or free resource. */
   related?: { label: string; href: string }
+  /** Short pitch shown on the source Edition's page — Susan's wording. */
+  editionPitch?: string
   /** Editions this presentation is drawn from (none for a thematic one). */
   editions?: string[]
 }
@@ -56,6 +58,8 @@ export const PRESENTATIONS: Presentation[] = [
     image: '/images/editions/grismere-figure.jpg',
     imageAlt: 'Grismere — the figure artwork',
     editions: ['grismere'],
+    editionPitch:
+      'The Grismere presentation brings selected images, poetry, reflection, and conversation into a facilitated experience.',
   },
 ]
 

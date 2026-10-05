@@ -40,6 +40,8 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
   if (!e) return notFound()
   const presentation = PRESENTATIONS.find((p) => p.editions?.includes(e.slug))
   const reader = READERS[e.slug]
+  const shortTitle = e.title.replace(/^The\s+/i, '')
+  const editionName = `the ${shortTitle} Edition`
 
   return (
     <>
@@ -72,35 +74,45 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
-        <section aria-label="Edition preview" style={{ ...section, paddingTop: 0, textAlign: 'center' }}>
-          <div style={{ maxWidth: 860, margin: '0 auto' }}>
-            <p style={{ ...labelStyle, fontSize: '0.72rem', color: 'var(--mid)', marginBottom: '0.9rem' }}>Edition preview</p>
+        {/* The work itself — the primary experience of this page. */}
+        <section aria-labelledby="explore-heading" style={{ ...section, paddingTop: 0, textAlign: 'center' }}>
+          <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+            <h2 id="explore-heading" style={{ ...h2Style, marginBottom: '1.75rem' }}>Explore {editionName}</h2>
             <div style={{ background: '#fff', border: '1px solid var(--mist)', padding: 14, boxShadow: '0 8px 24px rgba(28, 43, 58, 0.1)' }}>
               <ProtectedImage src={e.contactSheet} alt={e.contactSheetAlt} loading="lazy" className="edition-preview-img" />
             </div>
+            {reader && (
+              <div style={{ marginTop: '2rem' }}>
+                <TextLinkRow center>
+                  <TextLink href={reader} cta={`edition-${e.slug}-reader`}>Read {editionName} Online</TextLink>
+                </TextLinkRow>
+              </div>
+            )}
           </div>
         </section>
 
-        <section style={{ ...section, paddingTop: 0, textAlign: 'center' }}>
-          {presentation && (
-            <p style={{ ...bodyStyle, margin: '0 auto 1.5rem', maxWidth: 560 }}>
-              There is a presentation drawn from this Edition: {presentation.title}.
-            </p>
-          )}
+        {/* Only when a presentation has actually been built from this
+            Edition (2026-10-05, Susan) — secondary to the work, farther
+            down. No block at all otherwise. */}
+        {presentation && (
+          <section aria-labelledby="presentation-heading" style={{ ...section, background: '#fff', textAlign: 'center' }}>
+            <div style={{ maxWidth: 640, margin: '0 auto' }}>
+              <h2 id="presentation-heading" style={h2Style}>Experience {shortTitle} as a Presentation</h2>
+              {presentation.editionPitch && <p style={bodyStyle}>{presentation.editionPitch}</p>}
+              <div style={{ marginTop: '1.5rem' }}>
+                <TextLinkRow center>
+                  <TextLink href={`/presentations/${presentation.slug}`} cta={`edition-${e.slug}-presentation`}>
+                    Explore the {presentation.title} Presentation
+                  </TextLink>
+                </TextLinkRow>
+              </div>
+            </div>
+          </section>
+        )}
+
+        <section style={{ padding: '3rem 1.5rem 4rem', textAlign: 'center' }}>
           <TextLinkRow center>
-            {presentation && (
-              <TextLink href={`/presentations/${presentation.slug}`} cta={`edition-${e.slug}-presentation`}>
-                See the Presentation
-              </TextLink>
-            )}
-            {reader && (
-              <TextLink href={reader} cta={`edition-${e.slug}-reader`}>
-                Read {e.title} Online
-              </TextLink>
-            )}
-            <TextLink href="/editions" cta={`edition-${e.slug}-all`}>
-              All Editions
-            </TextLink>
+            <TextLink href="/editions" cta={`edition-${e.slug}-all`}>All Editions</TextLink>
           </TextLinkRow>
         </section>
       </main>
