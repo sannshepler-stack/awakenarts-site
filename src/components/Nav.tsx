@@ -28,7 +28,7 @@ const links = [
   // conducted AwakenArts practice and therefore the first substantive
   // destination. Gallery remains available through the footer and page
   // pathways rather than competing with Workshops in primary navigation.
-  { label: 'Workshops', href: '/workshops', cta: false },
+  { label: 'Guided Encounters', href: '/guided-encounters', cta: false },
   // 2026-07-25, per Susan's "AwakenArts Primer Housing Page" revision
   // directive: "Explore the Path" now leads to the Path document first
   // (orientation), not directly into Encounters (experience) -- the
