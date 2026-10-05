@@ -9,7 +9,7 @@ export function statusText(b: Book) {
 export default function BookTile({ book, source }: { book: Book; source: string }) {
   return (
     <Link href={`/books/${book.slug}`} data-cta={`${source}-book-${book.slug}`} style={{ display: 'block', textDecoration: 'none', textAlign: 'center' }}>
-      <span style={{ display: 'block', maxWidth: 230, margin: '0 auto' }}>
+      <span style={{ display: 'block', maxWidth: 280, margin: '0 auto' }}>
         <BookCover book={book} />
       </span>
       <span style={{ display: 'block', fontFamily: 'var(--sans)', fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--gold)', marginTop: '1.1rem' }}>

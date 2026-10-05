@@ -7,19 +7,18 @@ import type { Book } from '@/data/books'
 export default function BookCover({ book, size = 'md' }: { book: Book; size?: 'md' | 'lg' }) {
   const lg = size === 'lg'
   if (book.cover) {
-    // 2026-10-05: covers keep their true proportions (8.5 × 11 and 6 × 9
-    // books differ), never cropped. They sit on a shared 2:3 frame, aligned
-    // to its bottom edge, so a row of books shares one baseline.
+    // 2026-10-05, per Susan: every cover shares one height and keeps its
+    // true proportions (never cropped), so the wider 8.5 × 11 journal reads
+    // as fully as the 6 × 9 books beside it.
+    const h = lg ? 'min(510px, 120vw)' : 'min(345px, 92vw)'
     return (
-      <span style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'center', width: '100%', aspectRatio: '2 / 3' }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={book.cover}
-          alt={book.coverAlt || `Cover of ${book.title}`}
-          loading="lazy"
-          style={{ display: 'block', maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto', boxShadow: '0 10px 26px rgba(28, 43, 58, 0.18)' }}
-        />
-      </span>
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={book.cover}
+        alt={book.coverAlt || `Cover of ${book.title}`}
+        loading="lazy"
+        style={{ display: 'block', height: h, width: 'auto', maxWidth: '100%', objectFit: 'contain', margin: '0 auto', boxShadow: '0 10px 26px rgba(28, 43, 58, 0.18)' }}
+      />
     )
   }
   return (

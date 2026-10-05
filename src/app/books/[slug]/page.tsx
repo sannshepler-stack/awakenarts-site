@@ -55,7 +55,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
       <main style={{ background: 'var(--cream)' }}>
         <section style={{ padding: 'calc(var(--band-gap) + 2rem) 1.5rem var(--band-gap)' }}>
           <div style={{ maxWidth: 980, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '3.5rem', alignItems: 'center' }}>
-            <div style={{ maxWidth: 340, width: '100%', margin: '0 auto' }}>
+            <div style={{ maxWidth: 420, width: '100%', margin: '0 auto' }}>
               <BookCover book={b} size="lg" />
             </div>
             <div>

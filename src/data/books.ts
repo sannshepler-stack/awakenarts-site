@@ -35,9 +35,10 @@ export const books: Book[] = [
   {
     slug: 'shape-symbol-and-story',
     title: 'Shape, Symbol & Story',
+    subtitle: 'Journeys to Awareness',
     tagline: 'The images came first. Understanding came after.',
     status: 'coming',
-    // Source: AARTS PROJECTS/SHAPE-SYMBOL-STORY/My_SSS_Files/Shape_Symbol_Story_COVER_v03.jpg (2026-09-23)
+    // Source: SHAPE_SYMBOL_STORY/output/Shape_Symbol_Story_COVER_FRONT_PRINT_v02.png (6 × 9 print front)
     cover: '/images/books/shape-symbol-story-cover.jpg',
     coverAlt: 'Cover of Shape, Symbol & Story by Susan Ann Shepler',
   },
@@ -58,6 +59,7 @@ export const books: Book[] = [
   {
     slug: 'whispers-of-awareness',
     title: 'Whispers of Awareness',
+    subtitle: 'Awakening Through Art, Stories, and Symbols',
     status: 'coming',
     // Source: AARTS PROJECTS/WHISPERS 2ND EDITION KDP/WhispersCover.jpg (2026-10-02)
     cover: '/images/books/whispers-of-awareness-cover.jpg',
