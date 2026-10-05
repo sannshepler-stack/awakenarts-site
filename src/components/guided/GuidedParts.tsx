@@ -53,8 +53,12 @@ export function EncounterTile({ g, emphasis = false }: { g: GuidedEncounter; emp
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={g.image} alt={g.imageAlt} loading="lazy" style={{ width: '100%', aspectRatio: '4 / 5', objectFit: 'cover', display: 'block' }} />
       </span>
-      <span style={{ ...labelStyle, display: 'block', fontSize: '0.72rem', marginTop: '1rem' }}>{statusLine(g)}</span>
-      <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', color: ink, marginTop: '0.3rem' }}>
+      {/* 2026-10-05, Susan: no "Available to host" — only an Edition with a
+          facilitated experience in development carries a status label. */}
+      {g.status === 'open' && (
+        <span style={{ ...labelStyle, display: 'block', fontSize: '0.72rem', marginTop: '1rem' }}>{statusLine(g)}</span>
+      )}
+      <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', color: ink, marginTop: g.status === 'open' ? '0.3rem' : '1rem' }}>
         {g.title} <span aria-hidden="true" style={{ opacity: 0.5 }}>→</span>
       </span>
       {/* One line on the experience this Edition can support — its own

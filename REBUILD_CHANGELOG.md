@@ -35,6 +35,13 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 20 | **One type scale across the site** (tokens in globals.css), desktop: page titles 49 px · section headings 37 px · card titles 26 px. The homepage hero statement is a separate hero text style (33 px), sized to the hero composition and outside the scale. Applied to Home, Explore, Symbols + Portal, Guided Encounters, Presentations, Books, About, Stay Connected. Eyebrows, body copy, links unchanged; Christian Symbols' two-line title lockup left as designed | Committed — awaiting review on localhost |
 | 21 | Homepage Guided Encounters copy (Susan): tighter intro line; Psalm 18:16 left out of the card's theme line (kept in the Edition data); simpler closing sentence; CTAs reduced to EXPLORE GRISMERE and REGISTER OR INQUIRE | Committed — awaiting review on localhost |
 | 22 | **Guided Encounters page content** (Susan's KEEP/CHANGE/REMOVE): opening reduced to "The Edition is the work. The Guided Encounter is the experience of that work."; opening buttons removed (same next steps sit under Grismere); Grismere: CURRENT GUIDED ENCOUNTER · title · subline · one sentence on what participants do (**draft, from the Edition's own copy — Susan to approve**); contact sheet labelled EDITION PREVIEW · THE GRISMERE EDITION and no longer a link; host section says the images come from Editions; each host tile gets one line of that Edition's own themes (Scripture citations left out); five tiles in one row; inquiry form: REGISTER OR INQUIRE + "Attend a Guided Encounter or ask about bringing one to your group." | Committed — awaiting review on localhost |
+| 23 | Guided Encounters page, Editions section: "Explore the AwakenArts Editions" + "Each Edition is a distinct body of image, poetry, story, and reflection. Some may become the basis for future presentations, workshops, or guided experiences."; AVAILABLE TO HOST removed from the five Edition cards (only Grismere carries a status) | Committed — awaiting review on localhost |
+
+## Governing distinctions (Susan, 2026-10-05)
+
+- **Edition** = the work. **Presentation** = what Susan delivers. **Guided Encounter** = the kind of facilitated experience a presentation can create. Example: the Grismere Edition supplies the material for a Grismere presentation / Guided Encounter, which someone can attend or bring to a group.
+- The site must not imply Edition = Guided Encounter. Only Grismere currently has a facilitated experience in development.
+- **Christian Symbols = AWARENESS. Marketing Symbol Cards = EXPLORATION.**
 
 ## Still pending
 

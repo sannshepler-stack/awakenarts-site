@@ -85,10 +85,12 @@ export default function GuidedEncountersPage() {
           <div style={wrap}>
             <div style={{ ...narrow, textAlign: 'center', marginBottom: '2.5rem' }}>
               <p style={labelStyle}>The Editions</p>
-              <h2 id="host-heading" style={h2Style}>Bring a Guided Encounter to Your Group</h2>
+              <h2 id="host-heading" style={h2Style}>Explore the AwakenArts Editions</h2>
+              {/* 2026-10-05, Susan: say what these works are, not what may
+                  eventually happen with them. */}
               <p style={bodyStyle}>
-                Each image below comes from an AwakenArts Edition. A Guided Encounter can be built from any of these
-                Editions and brought to your group.
+                Each Edition is a distinct body of image, poetry, story, and reflection. Some may become the basis for
+                future presentations, workshops, or guided experiences.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '2.5rem 2rem' }}>
