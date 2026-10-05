@@ -40,26 +40,19 @@ export default function HomePage() {
       {/* 1 — Hero */}
       <section className="hero" aria-label="Hero">
         <div className="hero__text">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/brand/AwakenArts-Logo-Horizontal.svg"
-            alt=""
-            aria-hidden="true"
-            className="hero-logo"
-            width={1237}
-            height={244}
-            loading="eager"
-          />
+          {/* 2026-10-05, per Susan: no logo lockup inside the hero (the nav
+              already carries it). Gold eyebrow + the approved line in the
+              site's primary serif heading style, matching the other sections. */}
+          <p className="eyebrow">AwakenArts</p>
           <h1
             style={{
               fontFamily: 'var(--serif)',
-              fontStyle: 'italic',
               fontWeight: 400,
-              fontSize: 'clamp(1.55rem, 2.5vw, 2.05rem)',
-              lineHeight: 1.35,
+              fontSize: 'clamp(2rem, 3.1vw, 2.6rem)',
+              lineHeight: 1.18,
               color: 'var(--deep)',
-              maxWidth: '28ch',
-              margin: '2rem 0 2.25rem',
+              maxWidth: '24ch',
+              margin: '1.1rem 0 2.5rem',
             }}
           >
             Every life holds a pattern, a memory, a direction, a truth, or a story waiting to be revealed.
