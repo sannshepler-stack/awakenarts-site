@@ -73,8 +73,8 @@ export default function HomePage() {
           {/* 2026-10-05, per Susan: two identical text links — same size,
               weight, tracking and thin gold underline; only the colour differs. */}
           <TextLinkRow>
-            <TextLink href="/symbols" tone="gold" cta="hero-explore-symbol">Explore a Symbol</TextLink>
-            <TextLink href="/explore" tone="navy" cta="hero-discover">Discover AwakenArts</TextLink>
+            <TextLink href="/symbols" cta="hero-explore-symbol">Explore a Symbol</TextLink>
+            <TextLink href="/explore" cta="hero-discover">Discover AwakenArts</TextLink>
           </TextLinkRow>
         </div>
 

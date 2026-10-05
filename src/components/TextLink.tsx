@@ -1,25 +1,13 @@
 import Link from 'next/link'
 
 // TextLink — the site's single call-to-action style (2026-10-05, per Susan):
-// uppercase sans text with a thin gold underline, no box. Matches the hero.
-//   tone 'gold'  → gold text      (primary action on cream)
-//   tone 'navy'  → navy text      (secondary action on cream)
-//   tone 'light' → light gold text (on navy bands)
-
-export const textLinkStyle: React.CSSProperties = {
-  fontFamily: 'var(--sans)',
-  fontSize: '0.88rem',
-  fontWeight: 600,
-  letterSpacing: '0.12em',
-  textTransform: 'uppercase',
-  textDecoration: 'none',
-  borderBottom: '1px solid var(--gold-lt)',
-  paddingBottom: 4,
-  lineHeight: 1.4,
-  display: 'inline-block',
-}
-
-const COLORS = { gold: 'var(--gold)', navy: 'var(--deep)', light: 'var(--gold-lt)' }
+// uppercase sans text with a thin gold underline, no box. Styling lives in
+// globals.css (.text-link) so hover / focus / active states work:
+//   default  gold text + gold underline
+//   hover/focus  text and underline shift to navy; underline thickens and
+//                settles 2px closer to the text
+//   active   brief darker state
+// tone 'light' is the same link for navy bands (light gold → cream).
 
 export default function TextLink({
   href,
@@ -29,11 +17,11 @@ export default function TextLink({
 }: {
   href: string
   children: React.ReactNode
-  tone?: 'gold' | 'navy' | 'light'
+  tone?: 'gold' | 'light'
   cta?: string
 }) {
   return (
-    <Link href={href} data-cta={cta} style={{ ...textLinkStyle, color: COLORS[tone] }}>
+    <Link href={href} data-cta={cta} className={`text-link${tone === 'light' ? ' text-link--light' : ''}`}>
       {children}
     </Link>
   )

@@ -13394,3 +13394,43 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: none; }
 }
+
+/* 2026-10-05, per Susan: TextLink — one CTA style everywhere.
+   Default gold; hover/focus navy with the underline thickening and moving
+   2px toward the text; active a brief darker state. Underline drawn as a
+   background so it can animate smoothly. */
+.text-link {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--gold);
+  padding-bottom: 5px;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  transition: color 0.25s ease, background-size 0.25s ease, padding-bottom 0.25s ease;
+}
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--deep);
+  background-size: 100% 2px;
+  padding-bottom: 3px;
+  margin-bottom: 2px;
+}
+.text-link:focus-visible { outline: 1px dotted var(--gold); outline-offset: 6px; }
+.text-link:active { color: #0f1a24; transition-duration: 0.05s; }
+
+.text-link--light { color: var(--gold-lt); }
+.text-link--light:hover,
+.text-link--light:focus-visible { color: var(--cream); }
+.text-link--light:active { color: #ffffff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .text-link { transition: color 0.15s ease; }
+}
