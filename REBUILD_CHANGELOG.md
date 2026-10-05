@@ -31,6 +31,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 16 | Checkpoint: this change log + `REBUILD_RESUME.md` | On preview (`2908d1c`) |
 | 17 | **Homepage review pass**: hero headline ~35 px / supporting line ~19 px; repeated Queen Ann poem + portrait removed from "You already speak in images" (concept + three phrases kept, phrase-by-phrase one-time reveal, reduced-motion safe); section headings and centred eyebrows made consistent; all homepage CTAs unified as gold-underlined text links (`TextLink`); phone clipping of the Grismere card fixed; footer: stale workshop wording replaced, "Formation & Provenance" → "About AwakenArts"; repeated menu band removed above the homepage footer; desktop nav spacing made fluid | Committed — awaiting push |
 | 18 | CTA states: both hero links gold by default with identical type and underline; hover/focus → navy with the underline thickening and settling toward the text; brief darker active state; light-gold variant on navy bands (cream on hover); reduced-motion safe. Styles moved to `.text-link` in globals.css | Committed — awaiting push |
+| 19 | Homepage heading scale: hero headline −17% (~35 → ~29 px, line width narrowed to keep its three-line shape); major section headings −20% (~47 → ~37 px; About and Stay Connected reduced in proportion, Stay Connected on the homepage only). Eyebrows, body copy and CTAs unchanged | Committed — awaiting push |
 
 ## Still pending
 

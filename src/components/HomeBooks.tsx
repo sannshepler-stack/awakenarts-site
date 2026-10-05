@@ -12,7 +12,7 @@ export default function HomeBooks() {
         <p className="eyebrow" style={{ justifyContent: 'center' }}>Books</p>
         <h2
           id="home-books-heading"
-          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'clamp(1.9rem, 3.6vw, 2.6rem)', color: 'var(--deep)', margin: '1rem 0 3rem' }}
+          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'clamp(1.55rem, 2.9vw, 2.08rem)', color: 'var(--deep)', margin: '1rem 0 3rem' }}
         >
           Books &amp; Resources
         </h2>

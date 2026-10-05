@@ -46,7 +46,7 @@ export default function HomeSpeakInImages() {
         <p className="eyebrow" style={{ justifyContent: 'center' }}>AwakenArts, The Stories that Shape Us</p>
         <h2
           id="speak-in-images-heading"
-          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'clamp(1.9rem, 3.6vw, 2.6rem)', lineHeight: 1.2, color: 'var(--deep)', margin: '1rem 0 1rem' }}
+          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'clamp(1.55rem, 2.9vw, 2.08rem)', lineHeight: 1.2, color: 'var(--deep)', margin: '1rem 0 1rem' }}
         >
           You already speak in images. We all do.
         </h2>

@@ -8,9 +8,12 @@ import EmailGateDownload from '@/components/EmailGateDownload'
 export default function StayConnected({
   source,
   tone = 'light',
+  headingSize = 'clamp(1.7rem, 3.2vw, 2.2rem)',
 }: {
   source: string
   tone?: 'light' | 'dark'
+  /** Homepage passes a smaller size (2026-10-05 heading scale). */
+  headingSize?: string
 }) {
   const dark = tone === 'dark'
   return (
@@ -40,7 +43,7 @@ export default function StayConnected({
           style={{
             fontFamily: 'var(--serif)',
             fontWeight: 400,
-            fontSize: 'clamp(1.7rem, 3.2vw, 2.2rem)',
+            fontSize: headingSize,
             color: dark ? 'var(--cream)' : 'var(--deep)',
             margin: '0.9rem 0 0.5rem',
           }}

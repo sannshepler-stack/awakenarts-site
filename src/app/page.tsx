@@ -47,10 +47,10 @@ export default function HomePage() {
             style={{
               fontFamily: 'var(--serif)',
               fontWeight: 400,
-              fontSize: 'clamp(1.6rem, 2.75vw, 1.95rem)',
+              fontSize: 'clamp(1.35rem, 2.3vw, 1.62rem)',
               lineHeight: 1.22,
               color: 'var(--deep)',
-              maxWidth: 560,
+              maxWidth: 470,
               margin: '1.1rem 0 1.1rem',
             }}
           >
@@ -111,7 +111,7 @@ export default function HomePage() {
       <HomeBooks />
 
       {/* 7 — Stay Connected */}
-      <StayConnected source="home" />
+      <StayConnected source="home" headingSize="clamp(1.36rem, 2.55vw, 1.76rem)" />
 
       {/* 8 — About AwakenArts */}
       <HomeAbout />
