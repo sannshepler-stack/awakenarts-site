@@ -5,7 +5,7 @@ import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import StayConnected from '@/components/StayConnected'
-import { guidedEncounters, getGuidedEncounter } from '@/data/guidedEncounters'
+import { guidedEncounters, getGuidedEncounter, editionPhrase } from '@/data/guidedEncounters'
 import {
   EncounterTile,
   Facilitator,
@@ -69,7 +69,10 @@ export default function GuidedEncounterPage({ params }: { params: { slug: string
             </div>
             <div>
               <p style={labelStyle}>Guided Encounter · {statusLine(g)}</p>
-              <h1 style={{ ...h2Style, fontSize: 'clamp(2.5rem, 5.5vw, 3.6rem)' }}>{g.title}</h1>
+              <h1 style={{ ...h2Style, fontSize: 'clamp(2.5rem, 5.5vw, 3.6rem)', marginBottom: '0.3rem' }}>{g.title}</h1>
+              <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.3rem', color: 'var(--gold)', margin: '0 0 1.25rem' }}>
+                A Guided Encounter with {editionPhrase(g.title)}
+              </p>
               <p style={bodyStyle}>{g.description}</p>
               <p style={{ ...labelStyle, fontSize: '0.72rem', marginTop: '1.5rem' }}>Themes</p>
               <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', color: 'var(--deep)', margin: '0.4rem 0 1.75rem' }}>

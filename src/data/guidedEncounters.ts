@@ -84,3 +84,8 @@ export const WHAT_TO_EXPECT = [
 ]
 
 export const INQUIRY_EMAIL = 'susan@shepler.us'
+
+/** "Grismere" → "the Grismere Edition"; "The Dragon" → "the Dragon Edition". */
+export function editionPhrase(title: string) {
+  return `the ${title.replace(/^The\s+/i, '')} Edition`
+}
