@@ -7,25 +7,35 @@ cleanup pass → final commit set → merge to `main` → live build.
 
 Working rules (Susan, 2026-10-05): one focused revision per commit; each
 entry below = one commit; review in Vercel before the next; no unrelated
-local project files in the branch.
+local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 
-| # | Date | Revision | Status |
-|---|---|---|---|
-| 1 | 10-05 | Remove public Kit diagnostic; no false signup success | On preview |
-| 2 | 10-05 | Symbol Card system, Portal template, /symbols, /s QR addresses; Christian Symbols → /christian-symbols | On preview |
-| 3 | 10-05 | Guided Encounters index + template, inquiry form, redirects | On preview |
-| 4 | 10-05 | Books & Journals index + template, Stay Connected | On preview |
-| 5 | 10-05 | Homepage rebuilt (symbol-first order, approved hero line) | On preview |
-| 6 | 10-05 | Guided Encounters: Edition / Encounter relationship explicit | On preview |
-| 7 | 10-05 | Books: real covers | On preview |
-| 8 | 10-05 | Books: one shared cover height; subtitles match covers | On preview |
-| 9 | 10-05 | Hero: gold eyebrow + serif heading, logo lockup removed | On preview |
-| 10 | 10-05 | Guided Encounters shown by Figure artwork | On preview |
-| 11 | 10-05 | Presentations & Workshops stream; Guided Encounters Edition-only; Explore hub; six-item nav | On preview |
-| 12 | 10-05 | Books: accurate status labels; two free resources; Explore Books & Journals | On preview |
-| 13 | 10-05 | Hero refinement: smaller headline, two matching underlined text CTAs | On preview |
-| 14 | 10-05 | Hero: supporting line (Susan's copy), Queen Ann reduced, text group centred against image | Awaiting push |
-| 15 | 10-05 | Collection image restored: Explore page (under heading) and homepage Guided Encounters band (opening image, as originally placed) | Awaiting push |
+## Completed revisions — 2026-10-05
+
+| # | Revision | Status |
+|---|---|---|
+| 1 | Remove public Kit diagnostic; no false signup success in production | On preview |
+| 2 | Symbol Card system scaffold: two-sided card, Portal template, `/symbols` card index, `/s/[symbol]` QR addresses; Christian Symbols moved to `/christian-symbols` | On preview (content pending) |
+| 3 | Guided Encounters index + reusable template, inquiry form, redirects from Editions | On preview |
+| 4 | Books & Journals index + reusable Book template; Stay Connected page | On preview |
+| 5 | Homepage rebuilt in symbol-first order | On preview |
+| 6 | **Edition vs Guided Encounter distinction** — "A Guided Encounter with the Grismere Edition"; homepage section copy per Susan | On preview |
+| 7 | **Real book covers** from AARTS PROJECTS (web-sized) | On preview |
+| 8 | Covers share one height at true proportions; 6×9 print front for *Shape, Symbol & Story*; subtitles match the covers | On preview |
+| 9 | Hero: gold AWAKENARTS eyebrow + site serif heading; logo lockup removed | On preview |
+| 10 | Guided Encounters shown by Figure artwork | On preview |
+| 11 | **Guided Encounters separated from Presentations & Workshops**; **Presentations & Workshops index (`/presentations`) and reusable presentation template (`/presentations/[slug]`)**; Explore hub (`/explore`); **six-item navigation: EXPLORE · SYMBOLS · GUIDED ENCOUNTERS · PRESENTATIONS · BOOKS · ABOUT** | On preview |
+| 12 | **Books & Resources revisions**: status shown only when accurate (no blanket "Coming Soon"); two free resources as distinct items; EXPLORE BOOKS & JOURNALS | On preview |
+| 13 | Hero refinement: headline at section-heading scale; **CTA treatment** — EXPLORE A SYMBOL (gold) and DISCOVER AWAKENARTS (navy) as identical text links with thin gold underline, same baseline | On preview |
+| 14 | **Hero, current treatment and approved copy**: eyebrow AWAKENARTS · "Every life holds a pattern, a memory, a direction, a truth, or a story waiting to be revealed." · supporting line "AwakenArts brings image, poetry, and symbolic language into conversation, creating space to notice what may already be taking shape." · Queen Ann reduced; text group centred against the image | Committed — awaiting push |
+| 15 | AwakenArts Collection image restored: Explore page and homepage Guided Encounters band (not the hero) | Committed — awaiting push |
+| 16 | Checkpoint: this change log + `REBUILD_RESUME.md` | Committed — awaiting push |
+
+## Still pending
+
+- **Symbol Card / Portal content** — the system is built but `src/data/symbolCards.ts` is empty; homepage "Begin with a Symbol" and all Portals stay hidden until Susan's card copy and art arrive (front: broad meanings; back: Christian meanings + Scripture).
+- **Presentations & Workshops content** — list of presentations, format and length (`src/data/presentations.ts`).
+- Book availability and buy links (D5); analytics (D7).
+- Name for the existing Encounters sequence (D2).
 
 ## Cleanup pass before merge (checklist)
 
