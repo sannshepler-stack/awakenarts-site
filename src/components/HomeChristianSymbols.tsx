@@ -222,7 +222,7 @@ export default function HomeChristianSymbols() {
         </div>
 
         <div className="home-recognition__cta home-recognition__cta--after-image">
-          <Link href="/symbols" className="home-coll-cta home-coll-cta--light-surface">
+          <Link href="/christian-symbols" className="home-coll-cta home-coll-cta--light-surface">
             Explore Christian Symbols
           </Link>
         </div>

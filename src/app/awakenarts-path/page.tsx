@@ -191,7 +191,7 @@ export default function AwakenArtsPathPage() {
             unchanged -- only the label and href move. */}
         <section className="path-intro-close">
           <div className="path-intro-close-divider" aria-hidden="true" />
-          <Link href="/symbols" className="path-intro-btn path-intro-btn--quiet">
+          <Link href="/christian-symbols" className="path-intro-btn path-intro-btn--quiet">
             Christian Symbols
           </Link>
         </section>
