@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import CollectionBanner from '@/components/CollectionBanner'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
-import { guidedEncounters, editionPhrase, themeLine } from '@/data/guidedEncounters'
+import { guidedEncounters, themeLine } from '@/data/guidedEncounters'
 
 // HomeGuidedEncounters — homepage section 5 (Rebuild Plan §3, D3).
 // Replaces the former Workshops band (HomeSection2), keeping its dark navy
-// treatment. Copy per Susan, 2026-10-05: the Edition is the source work;
-// a Guided Encounter is one way to experience that Edition.
+// treatment. 2026-10-05, Susan: a Guided Encounter is anchored to a figure,
+// not to the Edition created for that figure; links go to the presentation.
 
 export default function HomeGuidedEncounters() {
   const current = guidedEncounters.find((g) => g.status === 'open')
@@ -20,7 +20,7 @@ export default function HomeGuidedEncounters() {
           <p className="eyebrow" style={{ justifyContent: 'center', color: 'var(--gold-lt)' }}>Guided Encounters</p>
           <h2 className="section2-dark__title" style={{ marginTop: '1rem' }}>Images can reveal what experience has been trying to tell&nbsp;us.</h2>
           <p className="section2-dark__worlds">
-            Each Guided Encounter brings an AwakenArts Edition into conversation through image, poetry, reflection, and
+            Each Guided Encounter brings an AwakenArts figure into conversation through image, poetry, reflection, and
             discussion.
           </p>
 
@@ -53,7 +53,7 @@ export default function HomeGuidedEncounters() {
                   {current.title}
                 </span>
                 <span style={{ display: 'block', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.15rem', lineHeight: 1.35, color: 'var(--gold-lt)', margin: '0 0 0.75rem' }}>
-                  A Guided Encounter with {editionPhrase(current.title)}
+                  A Guided Encounter
                 </span>
                 <span style={{ display: 'block', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', lineHeight: 1.5, color: 'rgba(250, 246, 236, 0.8)' }}>
                   {themeLine(current)}

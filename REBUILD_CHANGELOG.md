@@ -43,12 +43,14 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 28 | **Edition pages show the whole Edition, page by page**, rendered for web from each Edition's PDF (`public/images/editions/pages/[slug]/`, ~1.5 MB per Edition), under "Explore the [X] Edition". **For review on localhost — Susan to decide before it goes live** (earlier rule: previews never expose the complete Edition) | Committed — localhost review only |
 | 29 | **Presentation page is the registration page, independent of the Edition** (Susan): "drawn from the Grismere Edition" line and Edition link removed; subtitle now "A Guided Encounter"; heading image kept. The Grismere Edition page keeps its link to the Grismere workshop | Committed — awaiting review on localhost |
 | 30 | **Presentation page as the participant action page** (Susan): overview → Register (name, email, attending/hosting/question, dates, message) → in-page confirmation "You’re registered" + "With your registration, you’ll receive the Grismere Symbol Card as a digital PDF you can save or print." → ACCOMPANYING THE PRESENTATION: Grismere Workbook (revealed during the presentation) · Going Further. Registration posts to new `/api/register` (Kit: subscriber + details as custom fields + presentation tag). Reusable for every future presentation | Committed — localhost review only |
+| 31 | Homepage: card subline "A Guided Encounter"; intro "Each Guided Encounter brings an AwakenArts figure into conversation…" (Edition → figure). Editions page: Encounter Journal signup removed | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 
 - **Edition** = the work; the Editions are the product line, for exploration. `/editions` is the product page; each Edition opens to its readable version, enlarged, not downloadable.
 - **Presentation / workshop / Guided Encounter** = a separate offering, where people register. It is not founded on an Edition and its page carries no Edition material. An Edition page may link to a related presentation (the Grismere Edition → the Grismere workshop).
 - The site must not imply Edition = Guided Encounter. Only Grismere currently has a facilitated experience in development.
+- A presentation is **anchored to a figure, not to the Edition created for that figure**. Nothing (Encounters, Encounter Journal) goes with the Editions; they are good content, for people interested in the images.
 - **Christian Symbols = AWARENESS. Marketing Symbol Cards = EXPLORATION.**
 
 ## Still pending
@@ -57,6 +59,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 - **Presentations & Workshops content** — list of presentations, format and length (`src/data/presentations.ts`).
 - Book availability and buy links (D5); analytics (D7).
 - Name for the existing Encounters sequence (D2).
+- **Where the free Encounter Journal belongs** (Susan unsure, 10-05). It is currently the Stay Connected signup on the homepage, Presentations, Books and Stay Connected pages.
 
 - **Type roles (Susan, 10-05):** eyebrow/section label · page title · section heading · lead sentence · body · card/item title · CTA · quote/poetic line · metadata/status — to become site-wide styles. Exact sizes NOT locked: finish content first, pick 2–3 pages that feel right, derive the scale from them. The Guided Encounters opening is a candidate page-title reference. The size tokens from #20 are provisional until then.
 

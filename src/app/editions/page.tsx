@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
 import Footer from '@/components/Footer'
-import StayConnected from '@/components/StayConnected'
 import EditionTile from '@/components/editions/EditionTile'
 import { editions, EDITION_ORDER } from '@/data/editions'
 import { bodyStyle, h2Style } from '@/components/guided/GuidedParts'
@@ -60,7 +59,8 @@ export default function EditionsPage() {
           </div>
         </section>
 
-        <StayConnected source="editions" />
+        {/* No Encounter Journal signup here (2026-10-05, Susan): the
+            Editions are for exploration; nothing is attached to them. */}
       </main>
       <Footer />
     </>
