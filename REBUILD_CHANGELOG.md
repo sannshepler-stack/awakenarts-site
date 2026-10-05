@@ -33,6 +33,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 18 | CTA states: both hero links gold by default with identical type and underline; hover/focus → navy with the underline thickening and settling toward the text; brief darker active state; light-gold variant on navy bands (cream on hover); reduced-motion safe. Styles moved to `.text-link` in globals.css | Committed — awaiting push |
 | 19 | Homepage heading scale: hero headline −17% (~35 → ~29 px, line width narrowed to keep its three-line shape); major section headings −20% (~47 → ~37 px; About and Stay Connected reduced in proportion, Stay Connected on the homepage only). Eyebrows, body copy and CTAs unchanged | Committed — awaiting push |
 | 20 | **One type scale across the site** (tokens in globals.css), desktop: page titles 49 px · section headings 37 px · card titles 26 px. The homepage hero statement is a separate hero text style (33 px), sized to the hero composition and outside the scale. Applied to Home, Explore, Symbols + Portal, Guided Encounters, Presentations, Books, About, Stay Connected. Eyebrows, body copy, links unchanged; Christian Symbols' two-line title lockup left as designed | Committed — awaiting review on localhost |
+| 21 | Homepage Guided Encounters copy (Susan): tighter intro line; Psalm 18:16 left out of the card's theme line (kept in the Edition data); simpler closing sentence; CTAs reduced to EXPLORE GRISMERE and REGISTER OR INQUIRE | Committed — awaiting review on localhost |
 
 ## Still pending
 

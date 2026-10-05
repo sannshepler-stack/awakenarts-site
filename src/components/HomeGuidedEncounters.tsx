@@ -8,6 +8,11 @@ import { guidedEncounters, editionPhrase } from '@/data/guidedEncounters'
 // treatment. Copy per Susan, 2026-10-05: the Edition is the source work;
 // a Guided Encounter is one way to experience that Edition.
 
+// 2026-10-05, per Susan: no Scripture citation in the card's theme line
+// (unless every Guided Encounter card later carries one). The Edition data
+// keeps the reference; only this card leaves it out.
+const SCRIPTURE_REF = /^(?:[1-3]\s)?[A-Z][a-z]+\s\d+:\d+/
+
 export default function HomeGuidedEncounters() {
   const current = guidedEncounters.find((g) => g.status === 'open')
   return (
@@ -20,8 +25,8 @@ export default function HomeGuidedEncounters() {
           <p className="eyebrow" style={{ justifyContent: 'center', color: 'var(--gold-lt)' }}>Guided Encounters</p>
           <h2 className="section2-dark__title" style={{ marginTop: '1rem' }}>Images can reveal what experience has been trying to tell&nbsp;us.</h2>
           <p className="section2-dark__worlds">
-            Each Guided Encounter brings one AwakenArts Edition into conversation with lived experience through image,
-            poetry, reflection, and discussion.
+            Each Guided Encounter brings an AwakenArts Edition into conversation through image, poetry, reflection, and
+            discussion.
           </p>
 
           {current && (
@@ -56,7 +61,7 @@ export default function HomeGuidedEncounters() {
                   A Guided Encounter with {editionPhrase(current.title)}
                 </span>
                 <span style={{ display: 'block', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', lineHeight: 1.5, color: 'rgba(250, 246, 236, 0.8)' }}>
-                  {current.themes.join(' · ')}
+                  {current.themes.filter((t) => !SCRIPTURE_REF.test(t)).join(' · ')}
                 </span>
               </span>
             </Link>
@@ -64,8 +69,8 @@ export default function HomeGuidedEncounters() {
 
           {current && (
             <p className="section2-dark__worlds" style={{ marginTop: 0 }}>
-              Experience {editionPhrase(current.title)} in a{current.length ? ` ${current.length.replace(' minutes', '-minute')}` : ''} Guided
-              Encounter, or bring this experience to your church, club, retreat, or group.
+              Experience {current.title} in a Guided Encounter, or bring the encounter to your church, club, retreat, or
+              group.
             </p>
           )}
           <TextLinkRow center>
@@ -76,9 +81,6 @@ export default function HomeGuidedEncounters() {
             )}
             <TextLink href="/guided-encounters#inquire" tone="light" cta="home-guided-inquire">
               Register or Inquire
-            </TextLink>
-            <TextLink href="/guided-encounters" tone="light" cta="home-guided-explore-all">
-              Explore Guided Encounters
             </TextLink>
           </TextLinkRow>
         </div>
