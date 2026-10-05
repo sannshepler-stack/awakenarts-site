@@ -69,7 +69,7 @@ export default function PresentationPage({ params }: { params: { slug: string } 
                 ))}
               </dl>
               <TextLinkRow>
-                <TextLink href="#inquire" cta={`presentation-${p.slug}-inquire`}>Register or Inquire</TextLink>
+                <TextLink href="#inquire" cta={`presentation-${p.slug}-inquire`}>{p.registration ? 'Register' : 'Register or Inquire'}</TextLink>
               </TextLinkRow>
             </div>
           </div>
@@ -134,10 +134,27 @@ export default function PresentationPage({ params }: { params: { slug: string } 
 
         <InquirySection
           preselect={p.slug}
-          heading="Register or Inquire"
-          line="Attend this presentation or ask about bringing it to your group."
-          config={presentationInquiry()}
+          heading="Register"
+          line={p.registration?.gift ?? 'Attend this presentation or ask about bringing it to your group.'}
+          config={presentationInquiry(p)}
         />
+
+        {p.materials && p.materials.length > 0 && (
+          <section aria-labelledby="materials-heading" style={section}>
+            <div style={{ maxWidth: 860, margin: '0 auto', textAlign: 'center' }}>
+              <p id="materials-heading" style={labelStyle}>Accompanying the Presentation</p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem', marginTop: '1.75rem', textAlign: 'left' }}>
+                {p.materials.map((m) => (
+                  <div key={m.title} style={{ border: '1px solid var(--mist)', background: '#fff', padding: '1.6rem 1.5rem' }}>
+                    <p style={{ fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', color: 'var(--deep)', margin: 0 }}>{m.title}</p>
+                    <p style={{ ...bodyStyle, margin: '0.5rem 0 0' }}>{m.line}</p>
+                    {m.note && <p style={{ ...labelStyle, fontSize: '0.7rem', margin: '0.9rem 0 0' }}>{m.note}</p>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {others.length > 0 && (
           <section aria-label="Other presentations" style={section}>

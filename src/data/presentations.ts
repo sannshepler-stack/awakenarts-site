@@ -38,6 +38,12 @@ export interface Presentation {
   related?: { label: string; href: string }
   /** Short pitch shown on a related Edition's page — Susan's wording. */
   editionPitch?: string
+  /** Registration (2026-10-05, Susan): what the participant receives on
+   *  registering, and the Kit tag (env var holding its numeric ID) whose
+   *  automation emails it. */
+  registration?: { gift?: string; kitTagEnv?: string }
+  /** Materials that accompany the presentation — Susan's wording. */
+  materials?: { title: string; line: string; note?: string }[]
   /** Edition pages that link to this presentation. Shown only there —
    *  never on the presentation page itself. */
   editions?: string[]
@@ -59,6 +65,22 @@ export const PRESENTATIONS: Presentation[] = [
     image: '/images/editions/grismere-figure.jpg',
     imageAlt: 'Grismere — the figure artwork',
     editions: ['grismere'],
+    // Participant pathway: register → Symbol Card by email → attend →
+    // workbook (revealed during) → Going Further.
+    // NOT FOR LIVE until the Grismere Symbol Card PDF exists and a Kit
+    // automation on KIT_TAG_GRISMERE sends it.
+    registration: {
+      gift: 'With your registration, you’ll receive the Grismere Symbol Card as a digital PDF you can save or print.',
+      kitTagEnv: 'KIT_TAG_GRISMERE',
+    },
+    materials: [
+      {
+        title: 'Grismere Workbook',
+        line: 'A participant workbook designed to accompany the Guided Encounter.',
+        note: 'Revealed during the presentation',
+      },
+      { title: 'Going Further', line: 'Additional material for continued reflection after the presentation.' },
+    ],
     editionPitch:
       'The Grismere presentation brings selected images, poetry, reflection, and conversation into a facilitated experience.',
   },

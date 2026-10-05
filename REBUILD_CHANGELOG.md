@@ -42,6 +42,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 27 | **Edition page order** (Susan): the work first — figure, About, Themes, then "Explore the [X] Edition" with the Edition at full width (Dragon: Read Online). Only where a presentation exists, farther down and secondary: "Experience Grismere as a Presentation" + Susan's pitch + EXPLORE THE GRISMERE PRESENTATION. No block on Editions without a presentation | Committed — awaiting review on localhost |
 | 28 | **Edition pages show the whole Edition, page by page**, rendered for web from each Edition's PDF (`public/images/editions/pages/[slug]/`, ~1.5 MB per Edition), under "Explore the [X] Edition". **For review on localhost — Susan to decide before it goes live** (earlier rule: previews never expose the complete Edition) | Committed — localhost review only |
 | 29 | **Presentation page is the registration page, independent of the Edition** (Susan): "drawn from the Grismere Edition" line and Edition link removed; subtitle now "A Guided Encounter"; heading image kept. The Grismere Edition page keeps its link to the Grismere workshop | Committed — awaiting review on localhost |
+| 30 | **Presentation page as the participant action page** (Susan): overview → Register (name, email, attending/hosting/question, dates, message) → in-page confirmation "You’re registered" + "With your registration, you’ll receive the Grismere Symbol Card as a digital PDF you can save or print." → ACCOMPANYING THE PRESENTATION: Grismere Workbook (revealed during the presentation) · Going Further. Registration posts to new `/api/register` (Kit: subscriber + details as custom fields + presentation tag). Reusable for every future presentation | Committed — localhost review only |
 
 ## Governing distinctions (Susan, 2026-10-05)
 
@@ -58,6 +59,14 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 - Name for the existing Encounters sequence (D2).
 
 - **Type roles (Susan, 10-05):** eyebrow/section label · page title · section heading · lead sentence · body · card/item title · CTA · quote/poetic line · metadata/status — to become site-wide styles. Exact sizes NOT locked: finish content first, pick 2–3 pages that feel right, derive the scale from them. The Guided Encounters opening is a candidate page-title reference. The size tokens from #20 are provisional until then.
+
+## Before the Grismere registration goes live
+
+- [ ] Grismere Symbol Card PDF (not yet in AARTS PROJECTS)
+- [ ] Kit: tag for Grismere registrations; its numeric ID in Vercel as `KIT_TAG_GRISMERE`
+- [ ] Kit: automation on that tag that emails the Symbol Card PDF
+- [ ] Kit: custom fields `registration_presentation`, `registration_kind`, `registration_dates`, `registration_message` (so Susan sees the details)
+- [ ] Workbook and Going Further: final wording (drafts exist: GRIS-PRESENTATION/Going_Deeper_with_Grismere_Further_Interest_Draft.docx, Where_Fishermen_Fear_to_Troll_Going_Further.docx)
 
 ## Cleanup pass before merge (checklist)
 

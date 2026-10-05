@@ -6,8 +6,11 @@ import { bodyStyle, labelStyle } from '@/components/guided/GuidedParts'
 
 // Shared pieces for Presentations & Workshops (2026-10-05).
 
-export function presentationInquiry(): InquiryConfig {
+export function presentationInquiry(p?: Presentation): InquiryConfig {
   return {
+    ...(p?.registration
+      ? { mode: 'register' as const, confirmation: p.registration.gift, submitLabel: 'Register' }
+      : {}),
     subjectPrefix: 'Presentation or workshop inquiry',
     offerings:
       PRESENTATIONS.length > 0

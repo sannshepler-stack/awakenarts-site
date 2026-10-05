@@ -50,6 +50,13 @@ export interface InquiryConfig {
   keepLabel: string
   kitSource: string
   cta: string
+  /** 'register' posts to /api/register (Kit) and shows a confirmation in
+   *  the page; default 'mailto' opens the visitor's email. */
+  mode?: 'mailto' | 'register'
+  /** Confirmation line after registering, e.g. the Symbol Card note. */
+  confirmation?: string
+  /** Button label. */
+  submitLabel?: string
 }
 
 export const GUIDED_INQUIRY: InquiryConfig = {
@@ -71,6 +78,8 @@ export default function InquiryForm({ preselect, config = GUIDED_INQUIRY }: { pr
   const [keep, setKeep] = useState(false)
   const [sent, setSent] = useState(false)
   const [error, setError] = useState('')
+  const [busy, setBusy] = useState(false)
+  const [registered, setRegistered] = useState(false)
 
   async function submit(e: React.FormEvent) {
     e.preventDefault()
@@ -91,6 +100,28 @@ export default function InquiryForm({ preselect, config = GUIDED_INQUIRY }: { pr
     if (message.trim()) lines.push('', message.trim())
     const body = lines.join('\n')
 
+    if (config.mode === 'register') {
+      setBusy(true)
+      try {
+        const res = await fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: name.trim(), email: email.trim(), presentation: encounter, kind, dates, message }),
+        })
+        const data = await res.json().catch(() => ({}))
+        if (!res.ok || !data.ok) {
+          setError(data.message || "We couldn't complete your registration just now. Please try again.")
+          setBusy(false)
+          return
+        }
+        setRegistered(true)
+      } catch {
+        setError("We couldn't complete your registration just now. Please try again.")
+      }
+      setBusy(false)
+      return
+    }
+
     if (keep) {
       try {
         await fetch('/api/subscribe', {
@@ -105,6 +136,24 @@ export default function InquiryForm({ preselect, config = GUIDED_INQUIRY }: { pr
 
     window.location.href = `mailto:${INQUIRY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     setSent(true)
+  }
+
+  if (registered) {
+    return (
+      <div role="status" style={{ textAlign: 'center', padding: '1.5rem 0' }}>
+        <p style={{ fontFamily: 'var(--serif)', fontSize: '1.6rem', color: 'var(--deep)', margin: 0 }}>
+          Thank you{name.trim() ? `, ${name.trim().split(' ')[0]}` : ''}. You’re registered.
+        </p>
+        {config.confirmation && (
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.05rem', lineHeight: 1.6, color: 'var(--deep)', maxWidth: 520, margin: '0.9rem auto 0' }}>
+            {config.confirmation}
+          </p>
+        )}
+        <p style={{ fontFamily: 'var(--font-body)', color: 'var(--mid)', margin: '0.9rem 0 0' }}>
+          Questions? Write to <a href={`mailto:${INQUIRY_EMAIL}`} style={{ color: 'var(--gold)' }}>{INQUIRY_EMAIL}</a>.
+        </p>
+      </div>
+    )
   }
 
   if (sent) {
@@ -162,22 +211,26 @@ export default function InquiryForm({ preselect, config = GUIDED_INQUIRY }: { pr
         <span style={lab}>Message (optional)</span>
         <textarea style={{ ...field, minHeight: 120, resize: 'vertical' }} value={message} onChange={(e) => setMessage(e.target.value)} />
       </label>
-      <label style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start', fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'var(--mid)' }}>
-        <input type="checkbox" checked={keep} onChange={(e) => setKeep(e.target.checked)} style={{ marginTop: '0.3rem' }} />
-        {config.keepLabel}
-      </label>
+      {config.mode !== 'register' && (
+        <label style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start', fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'var(--mid)' }}>
+          <input type="checkbox" checked={keep} onChange={(e) => setKeep(e.target.checked)} style={{ marginTop: '0.3rem' }} />
+          {config.keepLabel}
+        </label>
+      )}
       {error && (
         <p role="alert" style={{ fontFamily: 'var(--font-body)', color: '#8a2d1d', margin: 0 }}>
           {error}
         </p>
       )}
       <div style={{ textAlign: 'center', marginTop: '0.5rem' }}>
-        <button type="submit" className="home-coll-cta home-coll-cta--light-surface" data-cta={config.cta} style={{ background: 'none', cursor: 'pointer' }}>
-          Send Inquiry
+        <button type="submit" disabled={busy} className="home-coll-cta home-coll-cta--light-surface" data-cta={config.cta} style={{ background: 'none', cursor: busy ? 'wait' : 'pointer' }}>
+          {busy ? 'Sending…' : config.submitLabel || 'Send Inquiry'}
         </button>
-        <p style={{ fontFamily: 'var(--sans)', fontSize: '0.75rem', color: 'var(--mid)', margin: '0.8rem 0 0' }}>
-          Opens your email with these details filled in.
-        </p>
+        {config.mode !== 'register' && (
+          <p style={{ fontFamily: 'var(--sans)', fontSize: '0.75rem', color: 'var(--mid)', margin: '0.8rem 0 0' }}>
+            Opens your email with these details filled in.
+          </p>
+        )}
       </div>
     </form>
   )
