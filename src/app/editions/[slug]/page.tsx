@@ -1,115 +1,110 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 import ProtectedImage from '@/components/ProtectedImage'
+import TextLink, { TextLinkRow } from '@/components/TextLink'
 import { editions } from '@/data/editions'
+import { PRESENTATIONS } from '@/data/presentations'
+import { bodyStyle, h2Style, labelStyle } from '@/components/guided/GuidedParts'
+
+// /editions/[slug] — one AwakenArts Edition, presented as the work itself
+// (2026-10-05, Susan: Edition = the work). No hosting, inquiry or event
+// language. If a presentation has been built from this Edition, one quiet
+// link points to it under /presentations.
+//
+// Replaces the 2026-08 Edition preview page (workshop-inquiry mailto +
+// "Back to Current Workshops"); that version is in git history.
 
 export function generateStaticParams() {
   return editions.map((e) => ({ slug: e.slug }))
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const edition = editions.find((e) => e.slug === params.slug)
-  if (!edition) return {}
+  const e = editions.find((x) => x.slug === params.slug)
+  if (!e) return {}
   return {
-    title: `${edition.title} — Figure Edition — AwakenArts`,
-    description: `Explore ${edition.title}, a symbolic content world used within the AwakenArts workshop experience.`,
-    alternates: { canonical: `/editions/${edition.slug}` },
+    title: `${e.title} — AwakenArts Edition`,
+    description: e.about,
+    alternates: { canonical: `/editions/${e.slug}` },
   }
 }
 
-/*
- * Individual edition page — third tier of the Collection's visual hierarchy
- * (Collection Banner → Edition Preview Sheets → Individual Figure Pages).
- * Deliberately minimal: the edition itself does the work. No explanatory
- * copy beyond what's necessary to orient.
- *
- * 2026-06-29 — Edition Preview enrichment, per Susan's relayed brief ("Chat
- * has offered this for you"): "This page is an introduction to the work,
- * not a sales page." Added About This Edition and Themes.
- *
- * Revised same day, after a first draft of About leaned into interpretation
- * ("What does the Dragon mean?") rather than orientation. Susan's
- * correction, now the governing rule for this section across all six
- * Editions:
- *   - About This Edition -> describes the Edition as the changing symbolic
- *     world used within Susan's consistent workshop practice. It orients
- *     visitors without explaining what the figure means.
- *   - Themes -> suggests the territory in a few words, nothing more.
- *   - The Edition itself -> does the actual symbolic work. See `editions.ts`
- *     for the full rule as recorded against the data.
- * The redundant "What This Edition Includes" block (which restated the same
- * information as a second, separate list) was removed in this same pass —
- * About now does that job on its own.
- *
- * The former direct `View the Figure Edition (PDF)` link has also been
- * removed. It had been quietly handing over the complete Edition from the
- * Preview page itself, which contradicts the Preview's own governing
- * constraint, recorded in AwakenArts_Publishing_Platform_Architecture.md:
- * it "must increase desire without ever exposing the complete Edition." The
- * Under the 2026-08-18 workshop-centered paradigm, purchase routes redirect
- * here and the public action is an Edition-specific workshop inquiry.
- */
+const section: React.CSSProperties = { padding: 'var(--band-gap) 1.5rem' }
+
+/** Editions with a complete online reader (D8). */
+const READERS: Record<string, string> = { dragon: '/editions/dragon/read' }
+
 export default function EditionPage({ params }: { params: { slug: string } }) {
-  const edition = editions.find((e) => e.slug === params.slug)
-  if (!edition) return notFound()
-  const workshopInquiry = `mailto:susan@shepler.us?subject=${encodeURIComponent(
-    `${edition.title} AwakenArts Workshop Inquiry`,
-  )}&body=${encodeURIComponent(
-    `Hi Susan,\n\nI'd like to ask about an AwakenArts workshop using ${edition.title}.`,
-  )}`
+  const e = editions.find((x) => x.slug === params.slug)
+  if (!e) return notFound()
+  const presentation = PRESENTATIONS.find((p) => p.edition === e.slug)
+  const reader = READERS[e.slug]
 
   return (
     <>
       <Nav />
-      <main className="edition-page">
-        <section className="edition-hero">
-          <p className="eyebrow edition-hero__eyebrow">{edition.kicker}</p>
-          <h1 className="edition-hero__title">{edition.title}</h1>
+      <main style={{ background: 'var(--cream)' }}>
+        <section style={{ ...section, paddingTop: 'calc(var(--band-gap) + 1rem)' }}>
+          <div
+            style={{
+              maxWidth: 1000,
+              margin: '0 auto',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '3rem',
+              alignItems: 'center',
+            }}
+          >
+            <div style={{ background: '#fff', border: '1px solid var(--mist)', padding: 14, boxShadow: '0 8px 24px rgba(28, 43, 58, 0.1)' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={`/images/editions/${e.slug}-figure.jpg`} alt={`${e.title} — the figure artwork`} style={{ width: '100%', display: 'block' }} />
+            </div>
+            <div>
+              <p style={labelStyle}>AwakenArts Edition</p>
+              <h1 style={{ ...h2Style, fontSize: 'var(--t-page)', marginBottom: '1rem' }}>{e.title}</h1>
+              <p style={bodyStyle}>{e.about}</p>
+              <p style={{ ...labelStyle, fontSize: '0.72rem', marginTop: '1.5rem' }}>Themes</p>
+              <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', lineHeight: 1.5, color: 'var(--deep)', margin: '0.4rem 0 0' }}>
+                {e.themes.join(' · ')}
+              </p>
+            </div>
+          </div>
         </section>
 
-        <section className="edition-sheet-section">
-          <ProtectedImage
-            src={edition.contactSheet}
-            alt={edition.contactSheetAlt}
-            className="edition-sheet-img"
-            loading="lazy"
-          />
+        <section aria-label="Edition preview" style={{ ...section, paddingTop: 0, textAlign: 'center' }}>
+          <div style={{ maxWidth: 860, margin: '0 auto' }}>
+            <p style={{ ...labelStyle, fontSize: '0.72rem', color: 'var(--mid)', marginBottom: '0.9rem' }}>Edition preview</p>
+            <div style={{ background: '#fff', border: '1px solid var(--mist)', padding: 14, boxShadow: '0 8px 24px rgba(28, 43, 58, 0.1)' }}>
+              <ProtectedImage src={e.contactSheet} alt={e.contactSheetAlt} loading="lazy" className="edition-preview-img" />
+            </div>
+          </div>
         </section>
 
-        <section className="edition-about">
-          <p className="eyebrow edition-about__eyebrow">About This Edition</p>
-          <p className="edition-about__body">{edition.about}</p>
-          <p className="eyebrow edition-themes__eyebrow">Themes</p>
-          <p className="edition-themes">
-            {edition.themes.join(' · ')}
-          </p>
-        </section>
-
-        {/* 2026-08-20, per Susan's direct instruction ("Only 1 button
-            needed... don't add using the dragon... Remove the second
-            button Explore the Workshop Experience"): the two action
-            buttons are reduced to one. The Inquire link's visible
-            label no longer names the Edition (was "...Using {edition
-            .title}") -- the mailto href below it still does, in its
-            subject/body, so the email itself remains Edition-specific
-            even though the button reads the same on every page. The
-            "Explore the Workshop Experience" button (-> /workshops) is
-            removed entirely. Back to Current Workshops is unchanged. */}
-        <section className="edition-actions">
-          <a href={workshopInquiry} className="edition-actions__link">
-            Inquire About a Workshop
-          </a>
-          <Link href="/workshops#current-workshops" className="edition-actions__back">
-            Back to Current Workshops
-          </Link>
+        <section style={{ ...section, paddingTop: 0, textAlign: 'center' }}>
+          {presentation && (
+            <p style={{ ...bodyStyle, margin: '0 auto 1.5rem', maxWidth: 560 }}>
+              {presentation.title} is also offered as a presentation built from this Edition.
+            </p>
+          )}
+          <TextLinkRow center>
+            {presentation && (
+              <TextLink href={`/presentations/${presentation.slug}`} cta={`edition-${e.slug}-presentation`}>
+                See the Presentation
+              </TextLink>
+            )}
+            {reader && (
+              <TextLink href={reader} cta={`edition-${e.slug}-reader`}>
+                Read {e.title} Online
+              </TextLink>
+            )}
+            <TextLink href="/editions" cta={`edition-${e.slug}-all`}>
+              All Editions
+            </TextLink>
+          </TextLinkRow>
         </section>
       </main>
-
-      <footer className="edition-footer">
-        <span>© 2026 AwakenArts · awakenarts.com · All Rights Reserved</span>
-      </footer>
+      <Footer />
     </>
   )
 }

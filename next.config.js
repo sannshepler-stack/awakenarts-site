@@ -29,25 +29,22 @@ const nextConfig = {
       { source: '/primer', destination: '/awakenarts-path', permanent: true },
       // Figure Editions are now presented inside the workshop landscape,
       // rather than through a competing public Collection center.
-      // 2026-10-05 rebuild: Workshops are now Guided Encounters.
-      {
-        source: '/collection',
-        destination: '/guided-encounters',
-        permanent: true,
-      },
+      // 2026-10-05 rebuild: the Collection's Editions now live at /editions.
+      // Temporary while the rebuild settles.
+      { source: '/collection', destination: '/editions', permanent: false },
       // 2026-10-05: workshops are part of Presentations & Workshops, not Guided Encounters.
       { source: '/workshops', destination: '/presentations', permanent: true },
       { source: '/presentations-workshops', destination: '/presentations', permanent: true },
-      // Edition pages -> their Guided Encounter page (single segment only;
-      // /editions/dragon/read is a separate, deeper path and is unaffected).
-      { source: '/editions/:slug', destination: '/guided-encounters/:slug', permanent: true },
+      // 2026-10-05 (Susan): Edition = the work. /editions/:slug is the
+      // Edition's own page again (the earlier redirect to Guided Encounters
+      // is removed).
       // New AwakenArts Paradigm (2026-08-18): Edition purchase pages
       // belonged to the former facilitator-product model. Preserve every
       // inbound URL with a one-hop redirect to its Edition's workshop-
       // centered detail page.
       {
         source: '/editions/:slug/purchase',
-        destination: '/guided-encounters/:slug',
+        destination: '/editions/:slug',
         permanent: true,
       },
     ]

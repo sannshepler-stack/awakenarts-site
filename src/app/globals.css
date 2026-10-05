@@ -13450,3 +13450,6 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .about-h1 { font-size: var(--t-page); }
 .about-h2 { font-size: var(--t-section); }
 .section2-dark__title { font-size: var(--t-section); }
+
+/* Edition page preview sheet (2026-10-05). */
+.edition-preview-img { width: 100%; height: auto; display: block; }

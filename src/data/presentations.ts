@@ -28,6 +28,8 @@ export interface Presentation {
   imageAlt?: string
   /** Related book or free resource. */
   related?: { label: string; href: string }
+  /** Slug of the AwakenArts Edition this presentation is built from. */
+  edition?: string
 }
 
 /** Current presentations & workshops — awaiting Susan's list. */

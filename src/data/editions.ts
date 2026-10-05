@@ -646,3 +646,6 @@ export const editions: Edition[] = [
     sections: [], // Not yet built — Phase 5 of the Implementation Specification
   },
 ]
+
+/** Display order on /editions — Susan, 2026-10-05. */
+export const EDITION_ORDER = ['grismere', 'dragon', 'queen-ann', 'bowls', 'ballerina', 'poppy']
