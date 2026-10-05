@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import type { GuidedEncounter } from '@/data/guidedEncounters'
+import { themeLine, type GuidedEncounter } from '@/data/guidedEncounters'
 import InquiryForm, { type InquiryConfig } from '@/components/guided/InquiryForm'
 
 // Shared building blocks for the Guided Encounter template (2026-10-05).
@@ -57,11 +57,11 @@ export function EncounterTile({ g, emphasis = false }: { g: GuidedEncounter; emp
       <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', color: ink, marginTop: '0.3rem' }}>
         {g.title} <span aria-hidden="true" style={{ opacity: 0.5 }}>→</span>
       </span>
-      {g.length && (
-        <span style={{ display: 'block', fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'var(--mid)', marginTop: '0.25rem' }}>
-          {g.length}
-        </span>
-      )}
+      {/* One line on the experience this Edition can support — its own
+          themes (2026-10-05, Susan). */}
+      <span style={{ display: 'block', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.05rem', lineHeight: 1.45, color: 'var(--mid)', marginTop: '0.35rem' }}>
+        {themeLine(g, 3)}
+      </span>
     </Link>
   )
 }
@@ -106,9 +106,9 @@ export function Facilitator({ note }: { note?: string }) {
 export function InquirySection({
   preselect,
   id = 'inquire',
-  eyebrow = 'Register or Inquire',
-  heading = 'Attend a Guided Encounter',
-  line,
+  eyebrow,
+  heading = 'Register or Inquire',
+  line = 'Attend a Guided Encounter or ask about bringing one to your group.',
   config,
 }: {
   preselect?: string
@@ -119,10 +119,10 @@ export function InquirySection({
   config?: InquiryConfig
 }) {
   return (
-    <section id={id} aria-label={eyebrow} style={{ background: 'var(--warm)', padding: 'var(--band-gap) 1.5rem' }}>
+    <section id={id} aria-label={eyebrow ?? heading} style={{ background: 'var(--warm)', padding: 'var(--band-gap) 1.5rem' }}>
       <div style={{ maxWidth: 680, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <p style={labelStyle}>{eyebrow}</p>
+          {eyebrow && <p style={labelStyle}>{eyebrow}</p>}
           <h2 style={h2Style}>{heading}</h2>
           {line && <p style={{ ...bodyStyle, color: 'var(--mid)' }}>{line}</p>}
         </div>

@@ -34,6 +34,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 19 | Homepage heading scale: hero headline −17% (~35 → ~29 px, line width narrowed to keep its three-line shape); major section headings −20% (~47 → ~37 px; About and Stay Connected reduced in proportion, Stay Connected on the homepage only). Eyebrows, body copy and CTAs unchanged | Committed — awaiting push |
 | 20 | **One type scale across the site** (tokens in globals.css), desktop: page titles 49 px · section headings 37 px · card titles 26 px. The homepage hero statement is a separate hero text style (33 px), sized to the hero composition and outside the scale. Applied to Home, Explore, Symbols + Portal, Guided Encounters, Presentations, Books, About, Stay Connected. Eyebrows, body copy, links unchanged; Christian Symbols' two-line title lockup left as designed | Committed — awaiting review on localhost |
 | 21 | Homepage Guided Encounters copy (Susan): tighter intro line; Psalm 18:16 left out of the card's theme line (kept in the Edition data); simpler closing sentence; CTAs reduced to EXPLORE GRISMERE and REGISTER OR INQUIRE | Committed — awaiting review on localhost |
+| 22 | **Guided Encounters page content** (Susan's KEEP/CHANGE/REMOVE): opening reduced to "The Edition is the work. The Guided Encounter is the experience of that work."; opening buttons removed (same next steps sit under Grismere); Grismere: CURRENT GUIDED ENCOUNTER · title · subline · one sentence on what participants do (**draft, from the Edition's own copy — Susan to approve**); contact sheet labelled EDITION PREVIEW · THE GRISMERE EDITION and no longer a link; host section says the images come from Editions; each host tile gets one line of that Edition's own themes (Scripture citations left out); five tiles in one row; inquiry form: REGISTER OR INQUIRE + "Attend a Guided Encounter or ask about bringing one to your group." | Committed — awaiting review on localhost |
 
 ## Still pending
 
@@ -41,6 +42,8 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 - **Presentations & Workshops content** — list of presentations, format and length (`src/data/presentations.ts`).
 - Book availability and buy links (D5); analytics (D7).
 - Name for the existing Encounters sequence (D2).
+
+- **Type roles (Susan, 10-05):** eyebrow/section label · page title · section heading · lead sentence · body · card/item title · CTA · quote/poetic line · metadata/status — to become site-wide styles. Exact sizes NOT locked: finish content first, pick 2–3 pages that feel right, derive the scale from them. The Guided Encounters opening is a candidate page-title reference. The size tokens from #20 are provisional until then.
 
 ## Cleanup pass before merge (checklist)
 

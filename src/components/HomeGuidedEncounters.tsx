@@ -1,17 +1,12 @@
 import Link from 'next/link'
 import CollectionBanner from '@/components/CollectionBanner'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
-import { guidedEncounters, editionPhrase } from '@/data/guidedEncounters'
+import { guidedEncounters, editionPhrase, themeLine } from '@/data/guidedEncounters'
 
 // HomeGuidedEncounters — homepage section 5 (Rebuild Plan §3, D3).
 // Replaces the former Workshops band (HomeSection2), keeping its dark navy
 // treatment. Copy per Susan, 2026-10-05: the Edition is the source work;
 // a Guided Encounter is one way to experience that Edition.
-
-// 2026-10-05, per Susan: no Scripture citation in the card's theme line
-// (unless every Guided Encounter card later carries one). The Edition data
-// keeps the reference; only this card leaves it out.
-const SCRIPTURE_REF = /^(?:[1-3]\s)?[A-Z][a-z]+\s\d+:\d+/
 
 export default function HomeGuidedEncounters() {
   const current = guidedEncounters.find((g) => g.status === 'open')
@@ -61,7 +56,7 @@ export default function HomeGuidedEncounters() {
                   A Guided Encounter with {editionPhrase(current.title)}
                 </span>
                 <span style={{ display: 'block', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', lineHeight: 1.5, color: 'rgba(250, 246, 236, 0.8)' }}>
-                  {current.themes.filter((t) => !SCRIPTURE_REF.test(t)).join(' · ')}
+                  {themeLine(current)}
                 </span>
               </span>
             </Link>

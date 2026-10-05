@@ -77,3 +77,12 @@ export const INQUIRY_EMAIL = 'susan@shepler.us'
 export function editionPhrase(title: string) {
   return `the ${title.replace(/^The\s+/i, '')} Edition`
 }
+
+const SCRIPTURE_REF = /^(?:[1-3]\s)?[A-Z][a-z]+\s\d+:\d+/
+
+/** Theme line for cards: the Edition's own themes, Scripture citations left
+ *  out (2026-10-05, Susan). `max` limits how many are shown. */
+export function themeLine(g: { themes: string[] }, max?: number) {
+  const t = g.themes.filter((x) => !SCRIPTURE_REF.test(x))
+  return (max ? t.slice(0, max) : t).join(' · ')
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import TextLink, { TextLinkRow } from '@/components/TextLink'
 import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
@@ -42,43 +42,41 @@ export default function GuidedEncountersPage() {
           <div style={narrow}>
             <p className="eyebrow" style={{ justifyContent: 'center' }}>Guided Encounters</p>
             <h1 style={{ ...h2Style, fontSize: 'var(--t-page)' }}>AwakenArts Guided Encounters</h1>
-            {/* Orientation, per Susan 2026-10-05: the Edition is the work; the
-                Guided Encounter is the experience of that work. */}
-            <p style={bodyStyle}>A Guided Encounter is a facilitated experience built from an AwakenArts Edition.</p>
-            <p style={bodyStyle}>
-              An Edition is the original work — image, poetry, symbolic reflection, and related material. The Guided
-              Encounter brings that work into conversation through reflection and discussion.
+            {/* Orientation, per Susan 2026-10-05: one simple distinction. */}
+            <p style={{ ...bodyStyle, fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.3rem', lineHeight: 1.5 }}>
+              The Edition is the work. The Guided Encounter is the experience of that work.
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginTop: '1.5rem' }}>
-              {open[0] && (
-                <Link href={`/guided-encounters/${open[0].slug}`} className="home-coll-cta home-coll-cta--light-surface" data-cta="guided-index-explore-current">
-                  Explore {open[0].title}
-                </Link>
-              )}
-              <Link href="#inquire" className="home-coll-cta home-coll-cta--light-surface" data-cta="guided-index-inquire">
-                Register or Inquire
-              </Link>
-            </div>
           </div>
         </section>
 
         {open.map((g) => (
           <section key={g.slug} id="current" aria-labelledby="current-heading" style={{ ...section, paddingTop: 0 }}>
             <div style={{ maxWidth: 760, margin: '0 auto', textAlign: 'center' }}>
-              <p style={labelStyle}>Current Guided Encounter{g.length ? ` · ${g.length}` : ''}</p>
-              <h2 id="current-heading" style={{ ...h2Style, fontSize: 'var(--t-section)', margin: '0.6rem 0 0.2rem' }}>{g.title}</h2>
-              <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.3rem', color: 'var(--gold)', margin: '0 0 2rem' }}>
+              <p style={labelStyle}>Current Guided Encounter</p>
+              <h2 id="current-heading" style={{ ...h2Style, margin: '0.6rem 0 0.2rem' }}>{g.title}</h2>
+              <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.3rem', color: 'var(--gold)', margin: '0 0 1rem' }}>
                 A Guided Encounter with {editionPhrase(g.title)}
               </p>
-              <Link href={`/guided-encounters/${g.slug}`} data-cta={`guided-index-current-${g.slug}`} style={{ display: 'block', textDecoration: 'none' }}>
-                <span style={{ display: 'block', background: '#fff', border: '1px solid var(--mist)', padding: 14, boxShadow: '0 8px 24px rgba(28, 43, 58, 0.1)' }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={g.editionImage} alt={g.editionImageAlt} loading="lazy" style={{ width: '100%', display: 'block' }} />
-                </span>
-                <span style={{ ...labelStyle, display: 'block', fontSize: '0.72rem', marginTop: '1rem', color: 'var(--mid)' }}>
-                  The {g.title.replace(/^The\s+/i, '')} Edition
-                </span>
-              </Link>
+              {/* DRAFT for Susan's approval — drawn from the Grismere Edition's own copy. */}
+              <p style={{ ...bodyStyle, maxWidth: 600, margin: '0 auto 2.5rem' }}>
+                {g.length ? `In ${g.length}, participants` : 'Participants'} practice attention at the threshold between
+                what is visible and what remains beneath the surface.
+              </p>
+              {/* The Edition is shown as a preview of the source work — never as
+                  the encounter itself (2026-10-05, Susan). */}
+              <p style={{ ...labelStyle, fontSize: '0.72rem', color: 'var(--mid)', marginBottom: '0.9rem' }}>
+                Edition preview · {editionPhrase(g.title).replace(/^the /, 'The ')}
+              </p>
+              <span style={{ display: 'block', background: '#fff', border: '1px solid var(--mist)', padding: 14, boxShadow: '0 8px 24px rgba(28, 43, 58, 0.1)' }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={g.editionImage} alt={`Preview of ${editionPhrase(g.title)}: ${g.editionImageAlt}`} loading="lazy" style={{ width: '100%', display: 'block' }} />
+              </span>
+              <div style={{ marginTop: '2.25rem' }}>
+                <TextLinkRow center>
+                  <TextLink href={`/guided-encounters/${g.slug}`} cta={`guided-index-explore-${g.slug}`}>Explore {g.title}</TextLink>
+                  <TextLink href="#inquire" cta="guided-index-inquire">Register or Inquire</TextLink>
+                </TextLinkRow>
+              </div>
             </div>
           </section>
         ))}
@@ -89,12 +87,11 @@ export default function GuidedEncountersPage() {
               <p style={labelStyle}>The Editions</p>
               <h2 id="host-heading" style={h2Style}>Bring a Guided Encounter to Your Group</h2>
               <p style={bodyStyle}>
-                Every Guided Encounter is anchored in one AwakenArts Edition. Each Edition gathers artwork, poetry,
-                story, and reflective questions into a world participants enter together — and can be brought to your
-                church, club, retreat, or group.
+                Each image below comes from an AwakenArts Edition. A Guided Encounter can be built from any of these
+                Editions and brought to your group.
               </p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '2.5rem 2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '2.5rem 2rem' }}>
               {host.map((g) => (
                 <EncounterTile key={g.slug} g={g} />
               ))}
