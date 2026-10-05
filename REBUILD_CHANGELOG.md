@@ -45,6 +45,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 30 | **Presentation page as the participant action page** (Susan): overview → Register (name, email, attending/hosting/question, dates, message) → in-page confirmation "You’re registered" + "With your registration, you’ll receive the Grismere Symbol Card as a digital PDF you can save or print." → ACCOMPANYING THE PRESENTATION: Grismere Workbook (revealed during the presentation) · Going Further. Registration posts to new `/api/register` (Kit: subscriber + details as custom fields + presentation tag). Reusable for every future presentation | Committed — localhost review only |
 | 31 | Homepage: card subline "A Guided Encounter"; intro "Each Guided Encounter brings an AwakenArts figure into conversation…" (Edition → figure). Editions page: Encounter Journal signup removed | Committed — awaiting review on localhost |
 | 32 | Hero statement 12% smaller (~33 → ~29 px desktop) | Committed — awaiting review on localhost |
+| 33 | **Hero line revised by Susan**: "Every life holds a pattern, a memory, a truth, or a story waiting to be revealed." ("a direction" removed); another 10% smaller (~26 px desktop), two lines | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 

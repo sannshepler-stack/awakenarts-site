@@ -13445,7 +13445,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   --t-page: clamp(2.2rem, 4vw, 2.72rem);
   --t-section: clamp(1.65rem, 3vw, 2.06rem);
   --t-card: clamp(1.25rem, 1.8vw, 1.45rem);
-  --hero-statement: clamp(1.32rem, 2.29vw, 1.61rem);
+  --hero-statement: clamp(1.19rem, 2.06vw, 1.45rem);
 }
 .about-h1 { font-size: var(--t-page); }
 .about-h2 { font-size: var(--t-section); }

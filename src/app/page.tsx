@@ -50,11 +50,11 @@ export default function HomePage() {
               fontSize: 'var(--hero-statement)',
               lineHeight: 1.22,
               color: 'var(--deep)',
-              maxWidth: 470,
+              maxWidth: 560,
               margin: '1.1rem 0 1.1rem',
             }}
           >
-            Every life holds a pattern, a memory, a direction, a truth, or a story waiting to be revealed.
+            Every life holds a pattern, a memory, a truth, or a story waiting to be revealed.
           </h1>
           {/* Supporting line — Susan, 2026-10-05. */}
           <p
