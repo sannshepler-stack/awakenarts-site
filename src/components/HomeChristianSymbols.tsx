@@ -252,7 +252,7 @@ export default function HomeChristianSymbols({ prelude }: { prelude?: React.Reac
         <section className="poems-showcase-foundation" aria-labelledby="speak-in-images-heading">
           {header}
           {/* More breathing room above and below (2026-10-05, Susan). */}
-          <div className="poems-showcase-foundation__inner" style={{ paddingTop: '4.5rem', paddingBottom: '2.5rem' }}>
+          <div className="poems-showcase-foundation__inner" style={{ paddingTop: '4.5rem', paddingBottom: 0 }}>
             {prelude}
           </div>
         </section>

@@ -13499,5 +13499,6 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 /* Christian Symbols as its own homepage section on white (2026-10-05). */
 .poems-showcase-foundation--white {
   background: #fff;
-  padding-top: var(--band-gap);
+  /* ~30% tighter gap between the two halves (2026-10-05, Susan). */
+  padding-top: calc(var(--band-gap) * 0.65);
 }

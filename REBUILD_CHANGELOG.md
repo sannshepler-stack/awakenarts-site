@@ -69,6 +69,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 54 | Three-phrase reveal slowed: each phrase fades in over 1.8 s (was 0.9 s), 1.4 s apart (was 0.7 s) | Committed — awaiting review on localhost |
 | 55 | Christian Symbols is its own homepage section again, on white, with the CHRISTIAN SYMBOLS label back and no header image; "You already speak in images" stays under the ship image on cream | Committed — awaiting review on localhost |
 | 56 | "You already speak in images" section: more cream space — text lowered below the ship image, more room beneath the phrases | Committed — awaiting review on localhost |
+| 57 | Gap between "You already speak in images" and Christian Symbols reduced ~28% (about 290 → 210 px desktop) | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 
