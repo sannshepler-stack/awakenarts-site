@@ -63,6 +63,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 48 | Combined section: gold divider and CHRISTIAN SYMBOLS label removed; "Scripture Speaks in Symbols" begins where the divider was | Committed — awaiting review on localhost |
 | 49 | "Jesus taught through image, story, and metaphor…" paragraph removed from the homepage and placed on the Christian Symbols page, under its opening lines | Committed — awaiting review on localhost |
 | 50 | Christian Symbols page: one heading "Symbols for the Christian Soul" at page-title size; "Ordinary things become carriers of meaning." removed there; paragraph follows "A lamp. A path…" | Committed — awaiting review on localhost |
+| 51 | Christian Symbols (main page and every symbol page, now one shared opening): "Ordinary things…" removed everywhere there; paragraph (Susan): "AwakenArts works within the Christian tradition while engaging literature, psychology, mythology, folklore, and a long history of human imagination." | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 

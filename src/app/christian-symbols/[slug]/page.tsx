@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ChristianSymbolsHero from '@/components/symbols/ChristianSymbolsHero'
 import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
@@ -38,16 +39,7 @@ export default function SymbolPage({ params }: { params: { slug: string } }) {
     <>
       <Nav />
       <main className="symbols-page">
-        <section className="symbols-hero">
-          <h1 className="symbols-hero__title">
-            <span className="symbols-hero__title-qualifier">Symbols for the</span>
-            <br />
-            <span className="symbols-hero__title-identity">Christian Soul</span>
-          </h1>
-          <p className="symbols-hero__lead">Scripture speaks in symbols.</p>
-          <p className="symbols-hero__line">A lamp. A path. A flower. A vine. A shepherd.</p>
-          <p className="symbols-hero__line">Ordinary things become carriers of meaning.</p>
-        </section>
+        <ChristianSymbolsHero />
 
         <SymbolsExperience initialSlug={symbol.slug} />
       </main>

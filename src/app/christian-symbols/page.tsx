@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ChristianSymbolsHero from '@/components/symbols/ChristianSymbolsHero'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
@@ -22,7 +23,7 @@ import SymbolsEncounters from '@/components/SymbolsEncounters'
 export const metadata: Metadata = {
   title: 'Symbols for the Christian Soul — AwakenArts',
   description:
-    'Scripture speaks in symbols. A lamp. A path. A flower. A vine. A shepherd. Ordinary things become carriers of meaning.',
+    'Scripture speaks in symbols. A lamp. A path. A flower. A vine. A shepherd.',
   alternates: { canonical: '/christian-symbols' },
 }
 
@@ -31,30 +32,7 @@ export default function SymbolsPage() {
     <>
       <Nav />
       <main className="symbols-page">
-        <section className="symbols-hero">
-          {/* 2026-10-05, Susan: one heading, at the page-title size. */}
-          <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-page)', lineHeight: 1.15, color: 'var(--deep)', margin: '0 0 1.25rem', ...({ textWrap: 'balance' } as React.CSSProperties) }}>
-            Symbols for the Christian Soul
-          </h1>
-          <p className="symbols-hero__lead">Scripture speaks in symbols.</p>
-          <p className="symbols-hero__line">A lamp. A path. A flower. A vine. A shepherd.</p>
-          {/* Moved here from the homepage, 2026-10-05 (Susan). */}
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: 'var(--t-body)',
-              lineHeight: 1.7,
-              color: 'var(--mid)',
-              maxWidth: 620,
-              margin: '1.25rem auto 0',
-              ...({ textWrap: 'pretty' } as React.CSSProperties),
-            }}
-          >
-            Jesus taught through image, story, and metaphor. He did not surrender the Truth He carried. AwakenArts works
-            within that tradition while engaging literature, psychology, mythology, folklore, and a long history of human
-            imagination.
-          </p>
-        </section>
+        <ChristianSymbolsHero />
 
         <SymbolsExperience />
 
