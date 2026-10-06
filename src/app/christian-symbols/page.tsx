@@ -32,14 +32,12 @@ export default function SymbolsPage() {
       <Nav />
       <main className="symbols-page">
         <section className="symbols-hero">
-          <h1 className="symbols-hero__title">
-            <span className="symbols-hero__title-qualifier">Symbols for the</span>
-            <br />
-            <span className="symbols-hero__title-identity">Christian Soul</span>
+          {/* 2026-10-05, Susan: one heading, at the page-title size. */}
+          <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-page)', lineHeight: 1.15, color: 'var(--deep)', margin: '0 0 1.25rem', ...({ textWrap: 'balance' } as React.CSSProperties) }}>
+            Symbols for the Christian Soul
           </h1>
           <p className="symbols-hero__lead">Scripture speaks in symbols.</p>
           <p className="symbols-hero__line">A lamp. A path. A flower. A vine. A shepherd.</p>
-          <p className="symbols-hero__line">Ordinary things become carriers of meaning.</p>
           {/* Moved here from the homepage, 2026-10-05 (Susan). */}
           <p
             style={{
@@ -48,7 +46,7 @@ export default function SymbolsPage() {
               lineHeight: 1.7,
               color: 'var(--mid)',
               maxWidth: 620,
-              margin: '1.75rem auto 0',
+              margin: '1.25rem auto 0',
               ...({ textWrap: 'pretty' } as React.CSSProperties),
             }}
           >

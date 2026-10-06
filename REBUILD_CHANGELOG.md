@@ -62,6 +62,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 47 | **"You already speak in images" and "Scripture Speaks in Symbols" combined** into one homepage section under the ship image: movement 1 (recognition) → short gold rule → movement 2 (Christian Symbols, awareness). Supporting line (Susan): "AwakenArts begins with familiar images found in everyday language and experience." Sky header of the first section removed from the homepage (component keeps it for any standalone use) | Committed — awaiting review on localhost |
 | 48 | Combined section: gold divider and CHRISTIAN SYMBOLS label removed; "Scripture Speaks in Symbols" begins where the divider was | Committed — awaiting review on localhost |
 | 49 | "Jesus taught through image, story, and metaphor…" paragraph removed from the homepage and placed on the Christian Symbols page, under its opening lines | Committed — awaiting review on localhost |
+| 50 | Christian Symbols page: one heading "Symbols for the Christian Soul" at page-title size; "Ordinary things become carriers of meaning." removed there; paragraph follows "A lamp. A path…" | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 
