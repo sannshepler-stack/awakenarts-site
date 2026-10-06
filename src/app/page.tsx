@@ -83,7 +83,7 @@ export default function HomePage() {
               lineHeight: 1.65,
               color: 'var(--mid)',
               maxWidth: 610,
-              margin: '0 0 1.75rem',
+              margin: '0 0 2.85rem',
               ...({ textWrap: 'pretty' } as React.CSSProperties),
             }}
           >

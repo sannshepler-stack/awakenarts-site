@@ -49,6 +49,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 34 | Hero heading added (Susan): "When Language Shapes a Path" (same phrase as the Explore page title) at section-heading size (~37 px); "Every life holds…" becomes the statement beneath it (~26 px) | Committed — awaiting review on localhost |
 | 35 | Hero heading "When Language Shapes a Path" 10% larger (~41 px desktop); nothing else changed | Committed — awaiting review on localhost |
 | 36 | Hero statement in italic, setting it apart from the heading; paragraph no longer leaves "shape." alone on its last line | Committed — awaiting review on localhost |
+| 37 | Hero: about 20 px more space above the two links | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 
