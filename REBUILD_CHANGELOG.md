@@ -58,6 +58,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 43 | Homepage line under the Grismere card (Susan): "Experience Grismere as a Guided Encounter, or inquire about bringing the presentation to a library, club, or community group." Grismere presentation page: no church-specific language — For: Libraries · Clubs · Community groups; form hosting options follow that list (more settings can be added to the presentation's audience list later) | Committed — awaiting review on localhost |
 | 44 | Homepage band line (Susan): "Each Encounter brings an AwakenArts figure into conversation through image, poetry, and reflection." | Committed — awaiting review on localhost |
 | 45 | Homepage Grismere card: themes stacked one per line, no separator dots | Committed — awaiting review on localhost |
+| 46 | Homepage line under the Grismere card (Susan): "Experience Grismere. Inquire about bringing the presentation to a library, club, or community group." | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 

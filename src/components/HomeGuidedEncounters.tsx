@@ -68,8 +68,7 @@ export default function HomeGuidedEncounters() {
 
           {current && (
             <p className="section2-dark__worlds" style={{ marginTop: 0 }}>
-              Experience {current.title} as a Guided Encounter, or inquire about bringing the presentation to a library,
-              club, or community group.
+              Experience {current.title}. Inquire about bringing the presentation to a library, club, or community group.
             </p>
           )}
           <TextLinkRow center>
