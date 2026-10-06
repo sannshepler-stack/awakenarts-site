@@ -12,6 +12,13 @@ export default function ChristianSymbolsHero() {
           lineHeight: 1.15,
           color: 'var(--deep)',
           margin: '0 0 1.25rem',
+          // One line on desktop (2026-10-05, Susan): the heading may run
+          // wider than the narrow text column; it wraps evenly on phones.
+          width: 'max-content',
+          maxWidth: 'calc(100vw - 3rem)',
+          position: 'relative',
+          left: '50%',
+          transform: 'translateX(-50%)',
           ...({ textWrap: 'balance' } as React.CSSProperties),
         }}
       >
