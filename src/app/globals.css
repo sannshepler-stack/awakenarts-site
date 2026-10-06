@@ -13471,3 +13471,18 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .poems-showcase-foundation .hero-quote-text {
   font-size: var(--t-poetic);
 }
+
+/* Homepage Guided Encounters band joins the shared text roles (2026-10-05):
+   heading at the regular section-heading weight with no extra tracking;
+   body lines at the shared body size. Colours stay light for the navy band. */
+.section2 .section2-dark__title {
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.2;
+}
+.section2 .section2-dark__worlds {
+  font-size: var(--t-body);
+  line-height: 1.7;
+  letter-spacing: normal;
+  text-wrap: pretty;
+}

@@ -39,7 +39,7 @@ export default function ExplorePage() {
           </h1>
         </section>
         <section aria-label="The AwakenArts Collection" style={{ padding: '0 1.5rem 3.5rem' }}>
-          <CollectionBanner marginBottom="0" />
+          <CollectionBanner marginBottom="0" tone="light" />
         </section>
         <section aria-label="Explore AwakenArts" style={{ padding: '0 1.5rem var(--band-gap)' }}>
           <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>
