@@ -6,6 +6,14 @@ import { bodyStyle, labelStyle } from '@/components/guided/GuidedParts'
 
 // Shared pieces for Presentations & Workshops (2026-10-05).
 
+/** 'Libraries' → 'library', 'Community groups' → 'community group'. */
+function singular(a: string) {
+  const w = a.toLowerCase()
+  if (w.endsWith('ies')) return w.slice(0, -3) + 'y'
+  if (w.endsWith('s')) return w.slice(0, -1)
+  return w
+}
+
 export function presentationInquiry(p?: Presentation): InquiryConfig {
   return {
     ...(p?.registration
@@ -16,15 +24,23 @@ export function presentationInquiry(p?: Presentation): InquiryConfig {
       PRESENTATIONS.length > 0
         ? { label: 'Presentation', options: PRESENTATIONS.map((p) => ({ value: p.slug, title: p.title })) }
         : undefined,
-    kinds: [
-      'Attending a presentation',
-      'Hosting for a church',
-      'Hosting for a club',
-      'Hosting for a library',
-      'Hosting for a retreat',
-      'Hosting for a community group',
-      'Something else',
-    ],
+    // A presentation with its own audience list offers only those settings
+    // (2026-10-05: no church-specific options on Grismere).
+    kinds: p?.audiences?.length
+      ? [
+          'Attending a presentation',
+          ...p.audiences.map((a) => `Hosting for a ${singular(a)}`),
+          'Something else',
+        ]
+      : [
+          'Attending a presentation',
+          'Hosting for a church',
+          'Hosting for a club',
+          'Hosting for a library',
+          'Hosting for a retreat',
+          'Hosting for a community group',
+          'Something else',
+        ],
     keepLabel: 'Keep me informed about AwakenArts presentations and workshops.',
     kitSource: 'presentation-inquiry',
     cta: 'presentation-inquiry',

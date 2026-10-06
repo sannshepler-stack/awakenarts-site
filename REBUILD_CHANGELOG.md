@@ -55,6 +55,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 40 | **Text roles made consistent on the homepage** (tokens `--t-body`, `--t-poetic`): body copy Lora ~19 px soft grey in both sections; poetic/quoted lines gold italic ~24 px (three phrases, "Ordinary things…", Matthew 13:34); "A lamp. A path…" stays the smaller dark italic lead-in | Committed — awaiting review on localhost |
 | 41 | Caption under the AwakenArts Collection image (homepage and Explore): "The AwakenArts Collection is a series of images. These are a select few." | Committed — awaiting review on localhost |
 | 42 | Homepage Guided Encounters band matched to the shared text roles: heading at regular weight without extra tracking (was semi-bold, spaced); body lines at the shared body size (~19 px, was 16 px) | Committed — awaiting review on localhost |
+| 43 | Homepage line under the Grismere card (Susan): "Experience Grismere as a Guided Encounter, or inquire about bringing the presentation to a library, club, or community group." Grismere presentation page: no church-specific language — For: Libraries · Clubs · Community groups; form hosting options follow that list (more settings can be added to the presentation's audience list later) | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 
@@ -70,6 +71,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 - **Presentations & Workshops content** — list of presentations, format and length (`src/data/presentations.ts`).
 - Book availability and buy links (D5); analytics (D7).
 - Name for the existing Encounters sequence (D2).
+- Church-specific audience language: not used on Grismere unless Susan approves it later. The Presentations index still lists Churches under "Who They Are For" and in its description.
 - **Where the free Encounter Journal belongs** (Susan unsure, 10-05). It is currently the Stay Connected signup on the homepage, Presentations, Books and Stay Connected pages.
 
 - **Type roles (Susan, 10-05):** eyebrow/section label · page title · section heading · lead sentence · body · card/item title · CTA · quote/poetic line · metadata/status — to become site-wide styles. Exact sizes NOT locked: finish content first, pick 2–3 pages that feel right, derive the scale from them. The Guided Encounters opening is a candidate page-title reference. The size tokens from #20 are provisional until then.

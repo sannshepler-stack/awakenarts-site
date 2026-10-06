@@ -62,6 +62,9 @@ export const PRESENTATIONS: Presentation[] = [
       'Participants practice attention at the threshold between what is visible and what remains beneath the surface.',
     format: 'Guided Encounter',
     length: '75 minutes',
+    // 2026-10-05, Susan: no church-specific audience unless approved later.
+    // Add further settings here as they are approved.
+    audiences: ['Libraries', 'Clubs', 'Community groups'],
     image: '/images/editions/grismere-figure.jpg',
     imageAlt: 'Grismere — the figure artwork',
     editions: ['grismere'],
