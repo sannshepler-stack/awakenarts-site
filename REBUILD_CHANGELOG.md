@@ -65,6 +65,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 50 | Christian Symbols page: one heading "Symbols for the Christian Soul" at page-title size; "Ordinary things become carriers of meaning." removed there; paragraph follows "A lamp. A path…" | Committed — awaiting review on localhost |
 | 51 | Christian Symbols (main page and every symbol page, now one shared opening): "Ordinary things…" removed everywhere there; paragraph (Susan): "AwakenArts works within the Christian tradition while engaging literature, psychology, mythology, folklore, and a long history of human imagination." | Committed — awaiting review on localhost |
 | 52 | "Symbols for the Christian Soul" on one line on desktop (wraps evenly on phones) | Committed — awaiting review on localhost |
+| 53 | Christian Symbols heading: "Symbols for the" in a smaller soft italic, "Christian Soul" in roman, one line | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 

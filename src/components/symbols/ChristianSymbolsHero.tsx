@@ -22,7 +22,8 @@ export default function ChristianSymbolsHero() {
           ...({ textWrap: 'balance' } as React.CSSProperties),
         }}
       >
-        Symbols for the Christian Soul
+        {/* Qualifier in a smaller italic, the identity in roman (2026-10-05). */}
+        <span style={{ fontStyle: 'italic', fontSize: '0.72em', color: 'var(--mid)' }}>Symbols for the</span> Christian Soul
       </h1>
       <p className="symbols-hero__lead">Scripture speaks in symbols.</p>
       <p className="symbols-hero__line">A lamp. A path. A flower. A vine. A shepherd.</p>
