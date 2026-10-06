@@ -56,6 +56,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 41 | Caption under the AwakenArts Collection image (homepage and Explore): "The AwakenArts Collection is a series of images. These are a select few." | Committed — awaiting review on localhost |
 | 42 | Homepage Guided Encounters band matched to the shared text roles: heading at regular weight without extra tracking (was semi-bold, spaced); body lines at the shared body size (~19 px, was 16 px) | Committed — awaiting review on localhost |
 | 43 | Homepage line under the Grismere card (Susan): "Experience Grismere as a Guided Encounter, or inquire about bringing the presentation to a library, club, or community group." Grismere presentation page: no church-specific language — For: Libraries · Clubs · Community groups; form hosting options follow that list (more settings can be added to the presentation's audience list later) | Committed — awaiting review on localhost |
+| 44 | Homepage band line (Susan): "Each Encounter brings an AwakenArts figure into conversation through image, poetry, and reflection." | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 

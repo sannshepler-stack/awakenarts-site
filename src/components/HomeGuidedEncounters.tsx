@@ -20,8 +20,7 @@ export default function HomeGuidedEncounters() {
           <p className="eyebrow" style={{ justifyContent: 'center', color: 'var(--gold-lt)' }}>Guided Encounters</p>
           <h2 className="section2-dark__title" style={{ marginTop: '1rem' }}>Images can reveal what experience has been trying to tell&nbsp;us.</h2>
           <p className="section2-dark__worlds">
-            Each Guided Encounter brings an AwakenArts figure into conversation through image, poetry, reflection, and
-            discussion.
+            Each Encounter brings an AwakenArts figure into conversation through image, poetry, and reflection.
           </p>
 
           {current && (
