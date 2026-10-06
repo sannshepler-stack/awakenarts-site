@@ -50,8 +50,9 @@ export default function HomeSpeakInImages() {
         >
           You already speak in images. We all do.
         </h2>
-        <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--mid)', maxWidth: 560, margin: '0 auto 2.25rem' }}>
-          AwakenArts brings image and language into conversation, exploring familiar images leading to further understanding.
+        <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--mid)', maxWidth: 600, margin: '0 auto 2.25rem', ...({ textWrap: 'pretty' } as React.CSSProperties) }}>
+          AwakenArts begins with the images already present in everyday language and experience, then follows them
+          toward deeper meaning, reflection, and understanding.
         </p>
         <p
           ref={ref}

@@ -51,6 +51,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 36 | Hero statement in italic, setting it apart from the heading; paragraph no longer leaves "shape." alone on its last line | Committed — awaiting review on localhost |
 | 37 | Hero: about 20 px more space above the two links | Committed — awaiting review on localhost |
 | 38 | Hero paragraph (Susan): "…creating space to notice what is wanting to take shape." | Committed — awaiting review on localhost |
+| 39 | Homepage section 2 (Susan): "AwakenArts begins with the images already present in everyday language and experience, then follows them toward deeper meaning, reflection, and understanding." Eyebrow, heading and three phrases unchanged | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 
