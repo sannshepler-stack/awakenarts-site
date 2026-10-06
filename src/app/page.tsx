@@ -118,11 +118,10 @@ export default function HomePage() {
       {/* 2 — Begin with a Symbol (renders once featured Symbol Cards exist) */}
       <HomeBeginWithSymbol cards={featuredSymbolCards()} />
 
-      {/* 3 — You Already Speak in Images (Queen Ann poem/portrait removed — she is the hero image) */}
-      <HomeSpeakInImages />
-
-      {/* 4 — Scripture Speaks in Symbols (existing section) */}
-      <HomeChristianSymbols />
+      {/* 3 — The language of images: You Already Speak in Images → Scripture Speaks in Symbols.
+          2026-10-05, Susan: "You already speak in images" and "Scripture Speaks in Symbols"
+          are one section in two movements, under the ship image. */}
+      <HomeChristianSymbols prelude={<HomeSpeakInImages bare />} />
 
       {/* 5 — Guided Encounters */}
       <HomeGuidedEncounters />

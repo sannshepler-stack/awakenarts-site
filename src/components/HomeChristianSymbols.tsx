@@ -122,9 +122,9 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
  * header's real problem wasn't a missing fade, it was that section's
  * own padding holding it away from the section above and inset from
  * the page's edges -- a structural fix, not a gradient. */
-export default function HomeChristianSymbols() {
+export default function HomeChristianSymbols({ prelude }: { prelude?: React.ReactNode } = {}) {
   return (
-    <section className="poems-showcase-foundation" aria-label="Christian Symbols">
+    <section className="poems-showcase-foundation" aria-label={prelude ? 'The language of images' : 'Christian Symbols'}>
 
       <AtmosphericHeader
         src="/images/homepage/encounters-symbols-ship-v3.png"
@@ -134,6 +134,16 @@ export default function HomeChristianSymbols() {
       />
 
       <div className="poems-showcase-foundation__inner">
+
+        {/* 2026-10-05, Susan: one section, two movements — everyday images
+            (recognition) → biblical symbols (awareness), divided by a
+            short gold rule rather than a new full-screen section. */}
+        {prelude && (
+          <>
+            {prelude}
+            <div aria-hidden="true" className="movement-divider" />
+          </>
+        )}
 
         <p className="eyebrow" style={{ justifyContent: 'center' }}>Christian Symbols</p>
         <h2

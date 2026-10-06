@@ -59,6 +59,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 44 | Homepage band line (Susan): "Each Encounter brings an AwakenArts figure into conversation through image, poetry, and reflection." | Committed — awaiting review on localhost |
 | 45 | Homepage Grismere card: themes stacked one per line, no separator dots | Committed — awaiting review on localhost |
 | 46 | Homepage line under the Grismere card (Susan): "Experience Grismere. Inquire about bringing the presentation to a library, club, or community group." | Committed — awaiting review on localhost |
+| 47 | **"You already speak in images" and "Scripture Speaks in Symbols" combined** into one homepage section under the ship image: movement 1 (recognition) → short gold rule → movement 2 (Christian Symbols, awareness). Supporting line (Susan): "AwakenArts begins with familiar images found in everyday language and experience." Sky header of the first section removed from the homepage (component keeps it for any standalone use) | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 

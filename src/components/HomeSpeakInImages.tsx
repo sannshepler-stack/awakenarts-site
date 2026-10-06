@@ -12,7 +12,7 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
 
 const PHRASES = ['“We’ve put up walls.”', '“I’m at a crossroads.”', '“It became a stepping stone.”']
 
-export default function HomeSpeakInImages() {
+export default function HomeSpeakInImages({ bare = false }: { bare?: boolean }) {
   const ref = useRef<HTMLParagraphElement>(null)
   const [armed, setArmed] = useState(false)
   const [shown, setShown] = useState(false)
@@ -35,14 +35,8 @@ export default function HomeSpeakInImages() {
     return () => io.disconnect()
   }, [])
 
-  return (
-    <section aria-labelledby="speak-in-images-heading" style={{ background: 'var(--cream)' }}>
-      <AtmosphericHeader
-        src="/images/headers/collection-threshold.jpg"
-        alt="A dark sky heavy with clouds breaking open to warm gold light along the horizon"
-        fadeTo="var(--cream)"
-      />
-      <div style={{ maxWidth: 820, margin: '0 auto', padding: '1rem 1.5rem var(--band-gap)', textAlign: 'center' }}>
+  const content = (
+      <div style={{ maxWidth: 820, margin: '0 auto', padding: bare ? '0 0 0' : '1rem 1.5rem var(--band-gap)', textAlign: 'center' }}>
         <p className="eyebrow" style={{ justifyContent: 'center' }}>AwakenArts, The Stories that Shape Us</p>
         <h2
           id="speak-in-images-heading"
@@ -50,9 +44,8 @@ export default function HomeSpeakInImages() {
         >
           You already speak in images. We all do.
         </h2>
-        <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--t-body)', lineHeight: 1.7, color: 'var(--mid)', maxWidth: 600, margin: '0 auto 2.25rem', ...({ textWrap: 'pretty' } as React.CSSProperties) }}>
-          AwakenArts begins with the images already present in everyday language and experience, then follows them
-          toward deeper meaning, reflection, and understanding.
+        <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--t-body)', lineHeight: 1.7, color: 'var(--mid)', maxWidth: 760, margin: '0 auto 2.25rem', ...({ textWrap: 'pretty' } as React.CSSProperties) }}>
+          AwakenArts begins with familiar images found in everyday language and experience.
         </p>
         <p
           ref={ref}
@@ -70,6 +63,20 @@ export default function HomeSpeakInImages() {
           ))}
         </p>
       </div>
+  )
+
+  // 2026-10-05, Susan: on the homepage this is the first movement of one
+  // combined section with Christian Symbols (see HomeChristianSymbols'
+  // `prelude`), so it renders bare there.
+  if (bare) return content
+  return (
+    <section aria-labelledby="speak-in-images-heading" style={{ background: 'var(--cream)' }}>
+      <AtmosphericHeader
+        src="/images/headers/collection-threshold.jpg"
+        alt="A dark sky heavy with clouds breaking open to warm gold light along the horizon"
+        fadeTo="var(--cream)"
+      />
+      {content}
     </section>
   )
 }

@@ -13486,3 +13486,12 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   letter-spacing: normal;
   text-wrap: pretty;
 }
+
+/* Divider between the two movements of one homepage section (2026-10-05). */
+.movement-divider {
+  width: 72px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.55;
+  margin: 4.5rem auto 4rem;
+}
