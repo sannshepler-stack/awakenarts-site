@@ -54,9 +54,14 @@ export default function HomeGuidedEncounters() {
                 <span style={{ display: 'block', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.15rem', lineHeight: 1.35, color: 'var(--gold-lt)', margin: '0 0 0.75rem' }}>
                   A Guided Encounter
                 </span>
-                <span style={{ display: 'block', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', lineHeight: 1.5, color: 'rgba(250, 246, 236, 0.8)' }}>
-                  {themeLine(current)}
-                </span>
+                {/* Themes stacked, one per line — no separator dots (2026-10-05, Susan). */}
+                {themeLine(current)
+                  .split(' · ')
+                  .map((t) => (
+                    <span key={t} style={{ display: 'block', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', lineHeight: 1.5, color: 'rgba(250, 246, 236, 0.8)' }}>
+                      {t}
+                    </span>
+                  ))}
               </span>
             </Link>
           )}
