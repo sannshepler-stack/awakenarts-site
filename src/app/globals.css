@@ -13388,7 +13388,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .phrase-reveal .phrase-reveal__item { opacity: 1; }
 @media (prefers-reduced-motion: no-preference) {
   .phrase-reveal.is-armed:not(.is-shown) .phrase-reveal__item { opacity: 0; transform: translateY(6px); }
-  .phrase-reveal.is-shown .phrase-reveal__item { animation: phraseIn 0.9s ease both; }
+  .phrase-reveal.is-shown .phrase-reveal__item { animation: phraseIn 1.8s ease-out both; }
 }
 @keyframes phraseIn {
   from { opacity: 0; transform: translateY(6px); }

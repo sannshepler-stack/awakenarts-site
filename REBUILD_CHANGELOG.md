@@ -66,6 +66,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 51 | Christian Symbols (main page and every symbol page, now one shared opening): "Ordinary things…" removed everywhere there; paragraph (Susan): "AwakenArts works within the Christian tradition while engaging literature, psychology, mythology, folklore, and a long history of human imagination." | Committed — awaiting review on localhost |
 | 52 | "Symbols for the Christian Soul" on one line on desktop (wraps evenly on phones) | Committed — awaiting review on localhost |
 | 53 | Christian Symbols heading: "Symbols for the" in a smaller soft italic, "Christian Soul" in roman, one line | Committed — awaiting review on localhost |
+| 54 | Three-phrase reveal slowed: each phrase fades in over 1.8 s (was 0.9 s), 1.4 s apart (was 0.7 s) | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 

@@ -56,7 +56,7 @@ export default function HomeSpeakInImages({ bare = false }: { bare?: boolean }) 
             <span
               key={p}
               className="phrase-reveal__item"
-              style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 'var(--t-poetic)', color: 'var(--gold)', whiteSpace: 'nowrap', animationDelay: `${i * 0.7}s` }}
+              style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 'var(--t-poetic)', color: 'var(--gold)', whiteSpace: 'nowrap', animationDelay: `${0.3 + i * 1.4}s` }}
             >
               {p}
             </span>
