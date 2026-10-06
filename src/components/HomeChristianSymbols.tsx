@@ -251,7 +251,10 @@ export default function HomeChristianSymbols({ prelude }: { prelude?: React.Reac
       <>
         <section className="poems-showcase-foundation" aria-labelledby="speak-in-images-heading">
           {header}
-          <div className="poems-showcase-foundation__inner">{prelude}</div>
+          {/* More breathing room above and below (2026-10-05, Susan). */}
+          <div className="poems-showcase-foundation__inner" style={{ paddingTop: '4.5rem', paddingBottom: '2.5rem' }}>
+            {prelude}
+          </div>
         </section>
         <section className="poems-showcase-foundation poems-showcase-foundation--white" aria-label="Christian Symbols">
           <div className="poems-showcase-foundation__inner">
