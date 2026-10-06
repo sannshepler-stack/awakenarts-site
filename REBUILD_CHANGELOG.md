@@ -48,6 +48,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 33 | **Hero line revised by Susan**: "Every life holds a pattern, a memory, a truth, or a story waiting to be revealed." ("a direction" removed); another 10% smaller (~26 px desktop), two lines | Committed — awaiting review on localhost |
 | 34 | Hero heading added (Susan): "When Language Shapes a Path" (same phrase as the Explore page title) at section-heading size (~37 px); "Every life holds…" becomes the statement beneath it (~26 px) | Committed — awaiting review on localhost |
 | 35 | Hero heading "When Language Shapes a Path" 10% larger (~41 px desktop); nothing else changed | Committed — awaiting review on localhost |
+| 36 | Hero statement in italic, setting it apart from the heading; paragraph no longer leaves "shape." alone on its last line | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 

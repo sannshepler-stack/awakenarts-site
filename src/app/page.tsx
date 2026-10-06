@@ -64,6 +64,8 @@ export default function HomePage() {
             style={{
               fontFamily: 'var(--serif)',
               fontWeight: 400,
+              // Italic sets the statement apart from the heading above it.
+              fontStyle: 'italic',
               fontSize: 'var(--hero-statement)',
               lineHeight: 1.3,
               color: 'var(--deep)',
@@ -82,6 +84,7 @@ export default function HomePage() {
               color: 'var(--mid)',
               maxWidth: 610,
               margin: '0 0 1.75rem',
+              ...({ textWrap: 'pretty' } as React.CSSProperties),
             }}
           >
             AwakenArts brings image, poetry, and symbolic language into conversation, creating space to notice what may
