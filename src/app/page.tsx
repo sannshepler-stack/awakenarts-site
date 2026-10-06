@@ -87,8 +87,8 @@ export default function HomePage() {
               ...({ textWrap: 'pretty' } as React.CSSProperties),
             }}
           >
-            AwakenArts brings image, poetry, and symbolic language into conversation, creating space to notice what may
-            already be taking shape.
+            AwakenArts brings image, poetry, and symbolic language into conversation, creating space to notice what is
+            wanting to take shape.
           </p>
           {/* 2026-10-05, per Susan: two identical text links — same size,
               weight, tracking and thin gold underline; only the colour differs. */}
