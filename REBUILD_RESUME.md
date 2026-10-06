@@ -3,22 +3,23 @@
 **Checkpoint:** 2026-10-05
 **Branch:** `rebuild/home-and-templates` (never merge to `main` without Susan's approval)
 **Live site:** `main` at `9d3746a` — unchanged
-**Last commit on GitHub:** `86f6890` (Hero refinement)
+**Last commit on GitHub:** `3b33b9c` (end of 2026-10-05 session)
 **Latest commit (this checkpoint):** see `git log -1` — it sits on top of `1968798` (Collection image) and `d896752` (hero supporting line)
 **Preview:** Vercel builds a preview for every push to this branch (see the branch's latest deployment).
 **Change log:** `REBUILD_CHANGELOG.md`
 
 ## How changes reach GitHub
 
-Pushes from Claude's cloud session are refused by GitHub. Claude commits on the
-branch and places a patch file in `~/Desktop/AARTS PROJECTS/_site_patches/`;
-Susan applies and pushes from a Terminal tab that is NOT running `npm run dev`:
+Claude is connected to Susan's site folder (~/Projects/AwakenArts/awakenarts-site)
+and applies every change there directly, so localhost (npm run dev) shows it at
+once — no patches. Susan pushes when she approves what she sees:
 
 ```
 cd ~/Projects/AwakenArts/awakenarts-site
-git am ~/Desktop/"AARTS PROJECTS"/_site_patches/<file>.patch
 git push origin rebuild/home-and-templates
 ```
+
+Claude then confirms GitHub matches and returns the Vercel preview link.
 
 ## Complete
 
@@ -42,11 +43,13 @@ git push origin rebuild/home-and-templates
 
 ## Page-by-page review (started 10-05)
 
-- Homepage — fixes committed (changelog #17); awaiting Susan's review on the preview
-- Next: Explore, Symbols, Guided Encounters, Presentations, Books, About
+- Homepage — reviewed and pushed (changelog #17–#59)
+- Architecture settled: Editions (product line, /editions) · Presentations (registration, /presentations/[slug]) · Guided Encounter = a presentation format; nav EXPLORE · EDITIONS · PRESENTATIONS · SYMBOLS · BOOKS · ABOUT
+- Christian Symbols page opening revised (#50–#53)
+- Next: **Explore**, then Editions, Presentations, Symbols, Books, About
 
 ## Exact next task
 
-Apply and push `homepage-review.patch`, confirm the
-new Vercel preview, then enter the first Symbol Cards in `src/data/symbolCards.ts`
-as soon as Susan supplies their copy and art.
+Page-by-page review of **Explore** (KEEP / CHANGE / LATER), applied directly to
+Susan's site folder for localhost review. Open items are listed in
+`REBUILD_CHANGELOG.md` (Still pending; Before the Grismere registration goes live).
