@@ -43,19 +43,35 @@ export default function HomePage() {
               already carries it). Gold eyebrow + the approved line in the
               site's primary serif heading style, matching the other sections. */}
           <p className="eyebrow">AwakenArts</p>
+          {/* 2026-10-05, Susan: a short heading at section-heading scale,
+              then the reflective statement beneath it. */}
           <h1
             style={{
               fontFamily: 'var(--serif)',
               fontWeight: 400,
+              fontSize: 'var(--t-section)',
+              lineHeight: 1.15,
+              color: 'var(--deep)',
+              maxWidth: 640,
+              margin: '1.1rem 0 0.8rem',
+              ...({ textWrap: 'balance' } as React.CSSProperties),
+            }}
+          >
+            When Language Shapes a Path
+          </h1>
+          <p
+            style={{
+              fontFamily: 'var(--serif)',
+              fontWeight: 400,
               fontSize: 'var(--hero-statement)',
-              lineHeight: 1.22,
+              lineHeight: 1.3,
               color: 'var(--deep)',
               maxWidth: 560,
-              margin: '1.1rem 0 1.1rem',
+              margin: '0 0 1.1rem',
             }}
           >
             Every life holds a pattern, a memory, a truth, or a story waiting to be revealed.
-          </h1>
+          </p>
           {/* Supporting line — Susan, 2026-10-05. */}
           <p
             style={{

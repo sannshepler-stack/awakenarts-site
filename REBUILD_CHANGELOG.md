@@ -46,6 +46,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 31 | Homepage: card subline "A Guided Encounter"; intro "Each Guided Encounter brings an AwakenArts figure into conversation…" (Edition → figure). Editions page: Encounter Journal signup removed | Committed — awaiting review on localhost |
 | 32 | Hero statement 12% smaller (~33 → ~29 px desktop) | Committed — awaiting review on localhost |
 | 33 | **Hero line revised by Susan**: "Every life holds a pattern, a memory, a truth, or a story waiting to be revealed." ("a direction" removed); another 10% smaller (~26 px desktop), two lines | Committed — awaiting review on localhost |
+| 34 | Hero heading added (Susan): "When Language Shapes a Path" (same phrase as the Explore page title) at section-heading size (~37 px); "Every life holds…" becomes the statement beneath it (~26 px) | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 
