@@ -13495,3 +13495,9 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   opacity: 0.55;
   margin: 4.5rem auto 4rem;
 }
+
+/* Christian Symbols as its own homepage section on white (2026-10-05). */
+.poems-showcase-foundation--white {
+  background: #fff;
+  padding-top: var(--band-gap);
+}

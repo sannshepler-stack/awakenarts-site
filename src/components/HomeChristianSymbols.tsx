@@ -123,133 +123,150 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
  * own padding holding it away from the section above and inset from
  * the page's edges -- a structural fix, not a gradient. */
 export default function HomeChristianSymbols({ prelude }: { prelude?: React.ReactNode } = {}) {
+  const header = (
+    <AtmosphericHeader
+      src="/images/homepage/encounters-symbols-ship-v3.png"
+      alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon -- the threshold into this section's Scripture and symbols"
+      tall
+      fadeTo="var(--cream)"
+    />
+  )
+  const symbols = (
+    <>
+          <p className="eyebrow" style={{ justifyContent: 'center' }}>Christian Symbols</p>
+          <h2
+            id="home-recognition-heading"
+            style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', lineHeight: 1.2, color: 'var(--deep)', margin: '1rem 0 1.25rem' }}
+          >
+            Scripture Speaks in Symbols
+          </h2>
+
+          <p className="home-recognition__statement">
+            <span className="home-recognition__statement-navy">
+              A lamp. A path. A flower. A vine. A shepherd.
+            </span>
+            <br />
+            <span className="home-recognition__statement-gold">
+              Ordinary things become carriers of meaning.
+            </span>
+          </p>
+
+          {/* 2026-09-02, per Susan's directive to expand the Matthew
+              passage: paragraphs added below the verse and citation,
+              closing the section as one continuous meditation rather
+              than ending on the citation alone. See .hero-quote-
+              reflection in globals.css for the full reasoning, including
+              the "Christ is the center. Scripture is the authority."
+              credo material (originally retired from /foundation on
+              2026-07-14, folded back in here per her explicit request).
+
+              2026-09-02, later the same day, per Susan's "revise the
+              added text" follow-up: the four separate paragraphs this
+              first pass used (opening statement, bridge line, second
+              statement, credo line) are condensed into ONE paragraph,
+              her own tightened wording, replacing all four. The closing
+              italic invitation line was kept separate at that point, per
+              her "retain your final italic line separately" instruction.
+              .hero-quote-reflection__bridge and __credo (the modifier
+              classes those two retired lines used) are unused -- left
+              defined in globals.css, per no-silent-deletion.
+
+              2026-09-02, later still, per Susan's "better flow" follow-up
+              ("Put the Matthew quote below the explanatory text 'Jesus
+              taught...' -- (remove 'The artistic work...') then the
+              button -- then end with the quote"): three changes.
+              (1) This paragraph moves UP, from after the verse/citation
+                  to right after the statement -- explanatory text now
+                  leads into the CTA rather than following the quote.
+              (2) The closing italic invitation line ("The artistic work
+                  is an invitation...") is removed outright, not just
+                  relocated -- her explicit "remove" instruction, not a
+                  Keep/Relocate judgment call. .hero-quote-reflection
+                  __invitation is left defined in globals.css, unused,
+                  per no-silent-deletion.
+              (3) The CTA button and the Matthew verse/citation both move
+                  DOWN, below this paragraph, in that order -- the
+                  section now closes on the quote itself, per her "end
+                  with the quote" instruction, rather than opening with
+                  it. */}
+          {/* 2026-09-02, per Susan's "watch for orphans" note, spotted
+              after the typography pass's font-family/size change to this
+              paragraph left "Scripture." alone on its own final line at
+              the width she was viewing: standard orphan-control fix
+              (non-breaking space between the last two words, same
+              technique used elsewhere on the homepage) so "of" and
+              "Scripture." always wrap together. No visible character
+              added. */}
+          {/* 2026-09-02, per Susan's "Compact this -- width is out of
+              proportion -- Center and use just this" directive: the
+              prior five-line paragraph (above, kept in git history) is
+              replaced outright with her own shorter wording -- two short
+              statement sentences, then one sentence naming the fields
+              AwakenArts engages. "surrendering the truth He carried"
+              condenses to "did not surrender the Truth He carried" (her
+              capitalization of Truth kept as given); "entering the world
+              as He found it" and the closing "grounded in Christ and the
+              authority of Scripture" clause are both dropped, not
+              relocated, per her "use just this" instruction. Comma added
+              after "psychology" (missing in her message, plainly a typo
+              against her own comma-separated list). Paired with
+              .hero-quote-reflection's max-width narrowing to
+              var(--measure-poetic) in globals.css, so the shorter text
+              reads as a compact, proportionate block rather than
+              stretching a wide column. */}
+          {/* 2026-10-05, Susan: the "Jesus taught through image…" paragraph
+              moved to the Christian Symbols page; not needed here. */}
+
+          <div className="home-recognition__cta home-recognition__cta--after-image">
+            <TextLink href="/christian-symbols" cta="home-christian-symbols">Explore Christian Symbols</TextLink>
+          </div>
+
+          {/* 2026-09-02, per Susan's "can you do this with the matthew
+              quote" directive, alongside a screenshot of .section2-
+              examples' three quotes ("We've put up walls." etc.), each
+              wrapped in curly quotation marks: the Matthew verse gets the
+              same treatment -- &ldquo;/&rdquo; added around the sentence.
+              Only the quotation marks are matched here, not the rest of
+              .section2-examples' styling (gold color, italic Cormorant,
+              single-line width) -- .hero-quote-text's own established
+              size/color/weight (var(--body-size), var(--mid), 300) are
+              left untouched, since she pointed at the quotes specifically
+              and this verse already has its own settled typography from
+              the 2026-09-02 "Ouch -- way dark and large" correction
+              earlier the same day. Flagging in case she meant the fuller
+              gold/single-line treatment instead. */}
+          <p className="hero-quote-text">
+            &ldquo;He did not say anything to them without using a parable.&rdquo;
+          </p>
+          <p className="hero-quote-cite">Matthew 13:34</p>
+    </>
+  )
+
+  // 2026-10-05, later, Susan: with a prelude ("You already speak in
+  // images"), the prelude stays under the ship image on cream, and
+  // Christian Symbols becomes its own section on white, with its label
+  // back and no header image of its own.
+  if (prelude) {
+    return (
+      <>
+        <section className="poems-showcase-foundation" aria-labelledby="speak-in-images-heading">
+          {header}
+          <div className="poems-showcase-foundation__inner">{prelude}</div>
+        </section>
+        <section className="poems-showcase-foundation poems-showcase-foundation--white" aria-label="Christian Symbols">
+          <div className="poems-showcase-foundation__inner">
+            {symbols}
+          </div>
+        </section>
+      </>
+    )
+  }
+
   return (
-    <section className="poems-showcase-foundation" aria-label={prelude ? 'The language of images' : 'Christian Symbols'}>
-
-      <AtmosphericHeader
-        src="/images/homepage/encounters-symbols-ship-v3.png"
-        alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon -- the threshold into this section's Scripture and symbols"
-        tall
-        fadeTo="var(--cream)"
-      />
-
+    <section className="poems-showcase-foundation" aria-label="Christian Symbols">
+      {header}
       <div className="poems-showcase-foundation__inner">
-
-        {/* 2026-10-05, Susan: one section, two movements — everyday images
-            (recognition) → biblical symbols (awareness), divided by a
-            short gold rule rather than a new full-screen section. */}
-        {/* 2026-10-05, later, Susan: no divider and no CHRISTIAN SYMBOLS
-            label in the combined section — "Scripture Speaks in Symbols"
-            begins where the divider was. */}
-        {prelude}
-
-        {!prelude && <p className="eyebrow" style={{ justifyContent: 'center' }}>Christian Symbols</p>}
-        <h2
-          id="home-recognition-heading"
-          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', lineHeight: 1.2, color: 'var(--deep)', margin: prelude ? '5.5rem 0 1.25rem' : '1rem 0 1.25rem' }}
-        >
-          Scripture Speaks in Symbols
-        </h2>
-
-        <p className="home-recognition__statement">
-          <span className="home-recognition__statement-navy">
-            A lamp. A path. A flower. A vine. A shepherd.
-          </span>
-          <br />
-          <span className="home-recognition__statement-gold">
-            Ordinary things become carriers of meaning.
-          </span>
-        </p>
-
-        {/* 2026-09-02, per Susan's directive to expand the Matthew
-            passage: paragraphs added below the verse and citation,
-            closing the section as one continuous meditation rather
-            than ending on the citation alone. See .hero-quote-
-            reflection in globals.css for the full reasoning, including
-            the "Christ is the center. Scripture is the authority."
-            credo material (originally retired from /foundation on
-            2026-07-14, folded back in here per her explicit request).
-
-            2026-09-02, later the same day, per Susan's "revise the
-            added text" follow-up: the four separate paragraphs this
-            first pass used (opening statement, bridge line, second
-            statement, credo line) are condensed into ONE paragraph,
-            her own tightened wording, replacing all four. The closing
-            italic invitation line was kept separate at that point, per
-            her "retain your final italic line separately" instruction.
-            .hero-quote-reflection__bridge and __credo (the modifier
-            classes those two retired lines used) are unused -- left
-            defined in globals.css, per no-silent-deletion.
-
-            2026-09-02, later still, per Susan's "better flow" follow-up
-            ("Put the Matthew quote below the explanatory text 'Jesus
-            taught...' -- (remove 'The artistic work...') then the
-            button -- then end with the quote"): three changes.
-            (1) This paragraph moves UP, from after the verse/citation
-                to right after the statement -- explanatory text now
-                leads into the CTA rather than following the quote.
-            (2) The closing italic invitation line ("The artistic work
-                is an invitation...") is removed outright, not just
-                relocated -- her explicit "remove" instruction, not a
-                Keep/Relocate judgment call. .hero-quote-reflection
-                __invitation is left defined in globals.css, unused,
-                per no-silent-deletion.
-            (3) The CTA button and the Matthew verse/citation both move
-                DOWN, below this paragraph, in that order -- the
-                section now closes on the quote itself, per her "end
-                with the quote" instruction, rather than opening with
-                it. */}
-        {/* 2026-09-02, per Susan's "watch for orphans" note, spotted
-            after the typography pass's font-family/size change to this
-            paragraph left "Scripture." alone on its own final line at
-            the width she was viewing: standard orphan-control fix
-            (non-breaking space between the last two words, same
-            technique used elsewhere on the homepage) so "of" and
-            "Scripture." always wrap together. No visible character
-            added. */}
-        {/* 2026-09-02, per Susan's "Compact this -- width is out of
-            proportion -- Center and use just this" directive: the
-            prior five-line paragraph (above, kept in git history) is
-            replaced outright with her own shorter wording -- two short
-            statement sentences, then one sentence naming the fields
-            AwakenArts engages. "surrendering the truth He carried"
-            condenses to "did not surrender the Truth He carried" (her
-            capitalization of Truth kept as given); "entering the world
-            as He found it" and the closing "grounded in Christ and the
-            authority of Scripture" clause are both dropped, not
-            relocated, per her "use just this" instruction. Comma added
-            after "psychology" (missing in her message, plainly a typo
-            against her own comma-separated list). Paired with
-            .hero-quote-reflection's max-width narrowing to
-            var(--measure-poetic) in globals.css, so the shorter text
-            reads as a compact, proportionate block rather than
-            stretching a wide column. */}
-        {/* 2026-10-05, Susan: the "Jesus taught through image…" paragraph
-            moved to the Christian Symbols page; not needed here. */}
-
-        <div className="home-recognition__cta home-recognition__cta--after-image">
-          <TextLink href="/christian-symbols" cta="home-christian-symbols">Explore Christian Symbols</TextLink>
-        </div>
-
-        {/* 2026-09-02, per Susan's "can you do this with the matthew
-            quote" directive, alongside a screenshot of .section2-
-            examples' three quotes ("We've put up walls." etc.), each
-            wrapped in curly quotation marks: the Matthew verse gets the
-            same treatment -- &ldquo;/&rdquo; added around the sentence.
-            Only the quotation marks are matched here, not the rest of
-            .section2-examples' styling (gold color, italic Cormorant,
-            single-line width) -- .hero-quote-text's own established
-            size/color/weight (var(--body-size), var(--mid), 300) are
-            left untouched, since she pointed at the quotes specifically
-            and this verse already has its own settled typography from
-            the 2026-09-02 "Ouch -- way dark and large" correction
-            earlier the same day. Flagging in case she meant the fuller
-            gold/single-line treatment instead. */}
-        <p className="hero-quote-text">
-          &ldquo;He did not say anything to them without using a parable.&rdquo;
-        </p>
-        <p className="hero-quote-cite">Matthew 13:34</p>
-
+        {symbols}
       </div>
     </section>
   )
