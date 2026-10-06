@@ -49,7 +49,8 @@ export default function HomePage() {
             style={{
               fontFamily: 'var(--serif)',
               fontWeight: 400,
-              fontSize: 'var(--t-section)',
+              // 10% above the section-heading size (2026-10-05).
+              fontSize: 'clamp(1.8rem, 3.3vw, 2.27rem)',
               lineHeight: 1.15,
               color: 'var(--deep)',
               maxWidth: 640,
