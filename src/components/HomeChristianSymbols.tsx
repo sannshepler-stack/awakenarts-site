@@ -138,17 +138,15 @@ export default function HomeChristianSymbols({ prelude }: { prelude?: React.Reac
         {/* 2026-10-05, Susan: one section, two movements — everyday images
             (recognition) → biblical symbols (awareness), divided by a
             short gold rule rather than a new full-screen section. */}
-        {prelude && (
-          <>
-            {prelude}
-            <div aria-hidden="true" className="movement-divider" />
-          </>
-        )}
+        {/* 2026-10-05, later, Susan: no divider and no CHRISTIAN SYMBOLS
+            label in the combined section — "Scripture Speaks in Symbols"
+            begins where the divider was. */}
+        {prelude}
 
-        <p className="eyebrow" style={{ justifyContent: 'center' }}>Christian Symbols</p>
+        {!prelude && <p className="eyebrow" style={{ justifyContent: 'center' }}>Christian Symbols</p>}
         <h2
           id="home-recognition-heading"
-          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', lineHeight: 1.2, color: 'var(--deep)', margin: '1rem 0 1.25rem' }}
+          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', lineHeight: 1.2, color: 'var(--deep)', margin: prelude ? '5.5rem 0 1.25rem' : '1rem 0 1.25rem' }}
         >
           Scripture Speaks in Symbols
         </h2>
