@@ -50,7 +50,7 @@ export default function HomeSpeakInImages() {
         >
           You already speak in images. We all do.
         </h2>
-        <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--mid)', maxWidth: 600, margin: '0 auto 2.25rem', ...({ textWrap: 'pretty' } as React.CSSProperties) }}>
+        <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--t-body)', lineHeight: 1.7, color: 'var(--mid)', maxWidth: 600, margin: '0 auto 2.25rem', ...({ textWrap: 'pretty' } as React.CSSProperties) }}>
           AwakenArts begins with the images already present in everyday language and experience, then follows them
           toward deeper meaning, reflection, and understanding.
         </p>
@@ -63,7 +63,7 @@ export default function HomeSpeakInImages() {
             <span
               key={p}
               className="phrase-reveal__item"
-              style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 'clamp(1.2rem, 2vw, 1.45rem)', color: 'var(--gold)', whiteSpace: 'nowrap', animationDelay: `${i * 0.7}s` }}
+              style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 'var(--t-poetic)', color: 'var(--gold)', whiteSpace: 'nowrap', animationDelay: `${i * 0.7}s` }}
             >
               {p}
             </span>

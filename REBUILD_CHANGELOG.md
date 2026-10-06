@@ -52,6 +52,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 37 | Hero: about 20 px more space above the two links | Committed — awaiting review on localhost |
 | 38 | Hero paragraph (Susan): "…creating space to notice what is wanting to take shape." | Committed — awaiting review on localhost |
 | 39 | Homepage section 2 (Susan): "AwakenArts begins with the images already present in everyday language and experience, then follows them toward deeper meaning, reflection, and understanding." Eyebrow, heading and three phrases unchanged | Committed — awaiting review on localhost |
+| 40 | **Text roles made consistent on the homepage** (tokens `--t-body`, `--t-poetic`): body copy Lora ~19 px soft grey in both sections; poetic/quoted lines gold italic ~24 px (three phrases, "Ordinary things…", Matthew 13:34); "A lamp. A path…" stays the smaller dark italic lead-in | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 
