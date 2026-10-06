@@ -15,6 +15,8 @@ export interface Book {
   slug: string
   title: string
   subtitle?: string
+  /** Where the subtitle breaks on the book cards, e.g. ['Awakening Through', 'Art, Stories, and Symbols']. */
+  subtitleLines?: string[]
   tagline?: string
   status: BookStatus
   /** Cover image under /public. Without one, a typographic cover is drawn. */
@@ -62,6 +64,7 @@ export const books: Book[] = [
     slug: 'whispers-of-awareness',
     title: 'Whispers of Awareness',
     subtitle: 'Awakening Through Art, Stories, and Symbols',
+    subtitleLines: ['Awakening Through', 'Art, Stories, and Symbols'],
     status: 'coming',
     // Source: AARTS PROJECTS/WHISPERS 2ND EDITION KDP/WhispersCover.jpg (2026-10-02)
     cover: '/images/books/whispers-of-awareness-cover.jpg',

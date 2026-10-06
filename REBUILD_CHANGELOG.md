@@ -71,6 +71,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 56 | "You already speak in images" section: more cream space — text lowered below the ship image, more room beneath the phrases | Committed — awaiting review on localhost |
 | 57 | Gap between "You already speak in images" and Christian Symbols reduced ~28% (about 290 → 210 px desktop) | Committed — awaiting review on localhost |
 | 58 | Three-phrase animation removed (Susan); the phrases simply appear | Committed — awaiting review on localhost |
+| 59 | Whispers of Awareness card: subtitle on two lines — "Awakening Through" / "Art, Stories, and Symbols" | Committed — awaiting review on localhost |
 
 ## Governing distinctions (Susan, 2026-10-05)
 

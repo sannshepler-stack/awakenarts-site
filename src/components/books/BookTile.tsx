@@ -23,7 +23,13 @@ export default function BookTile({ book, source }: { book: Book; source: string 
       </span>
       {(book.subtitle || book.tagline) && (
         <span style={{ display: 'block', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.05rem', color: 'var(--mid)', marginTop: '0.2rem' }}>
-          {book.subtitle || book.tagline}
+          {book.subtitleLines
+            ? book.subtitleLines.map((l) => (
+                <span key={l} style={{ display: 'block' }}>
+                  {l}
+                </span>
+              ))
+            : book.subtitle || book.tagline}
         </span>
       )}
     </Link>
