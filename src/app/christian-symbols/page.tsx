@@ -40,6 +40,22 @@ export default function SymbolsPage() {
           <p className="symbols-hero__lead">Scripture speaks in symbols.</p>
           <p className="symbols-hero__line">A lamp. A path. A flower. A vine. A shepherd.</p>
           <p className="symbols-hero__line">Ordinary things become carriers of meaning.</p>
+          {/* Moved here from the homepage, 2026-10-05 (Susan). */}
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: 'var(--t-body)',
+              lineHeight: 1.7,
+              color: 'var(--mid)',
+              maxWidth: 620,
+              margin: '1.75rem auto 0',
+              ...({ textWrap: 'pretty' } as React.CSSProperties),
+            }}
+          >
+            Jesus taught through image, story, and metaphor. He did not surrender the Truth He carried. AwakenArts works
+            within that tradition while engaging literature, psychology, mythology, folklore, and a long history of human
+            imagination.
+          </p>
         </section>
 
         <SymbolsExperience />

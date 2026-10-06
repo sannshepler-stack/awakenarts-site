@@ -224,15 +224,8 @@ export default function HomeChristianSymbols({ prelude }: { prelude?: React.Reac
             var(--measure-poetic) in globals.css, so the shorter text
             reads as a compact, proportionate block rather than
             stretching a wide column. */}
-        <div className="hero-quote-reflection">
-          <p>
-            Jesus taught through image, story, and metaphor. He did not
-            surrender the Truth He carried. AwakenArts works within
-            that tradition while engaging literature, psychology,
-            mythology, folklore, and a long history of&nbsp;human
-            imagination.
-          </p>
-        </div>
+        {/* 2026-10-05, Susan: the "Jesus taught through image…" paragraph
+            moved to the Christian Symbols page; not needed here. */}
 
         <div className="home-recognition__cta home-recognition__cta--after-image">
           <TextLink href="/christian-symbols" cta="home-christian-symbols">Explore Christian Symbols</TextLink>
