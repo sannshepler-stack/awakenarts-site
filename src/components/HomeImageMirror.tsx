@@ -22,7 +22,7 @@ const body: React.CSSProperties = {
 
 export default function HomeImageMirror() {
   return (
-    <section className="poems-showcase-foundation" aria-labelledby="image-mirror-heading" style={{ paddingBottom: '4rem' }}>
+    <section className="poems-showcase-foundation" aria-labelledby="image-mirror-heading" style={{ paddingTop: 0, paddingBottom: '4rem' }}>
       {/* 2026-10-07, Susan: the boat image stays with Christian Symbols, so
           this section uses the sky threshold from the former Section 2. */}
       <AtmosphericHeader

@@ -118,13 +118,13 @@ export default function HomePage() {
       {/* 2 — Begin with a Symbol (renders once featured Symbol Cards exist) */}
       <HomeBeginWithSymbol cards={featuredSymbolCards()} />
 
-      {/* 3 — Combined Sections 2 & 3 (2026-10-07, Susan): what recognition can feel like.
-          Replaces "You already speak in images" + "Scripture Speaks in Symbols" here;
-          both components stay in the codebase. */}
-      <HomeImageMirror />
-
-      {/* 4 — The AwakenArts Collection (dark), then the workshop band (2026-10-07). */}
+      {/* Section 2 — The AwakenArts Collection, dark, with its caption only (2026-10-07, Susan). */}
       <HomeCollection />
+
+      {/* Section 3 — what recognition can feel like: the mirror section with Queen Ann
+          (2026-10-07, Susan). Replaces "You already speak in images" + "Scripture Speaks
+          in Symbols" here; both components stay in the codebase. */}
+      <HomeImageMirror />
 
       {/* 5 — Guided Encounters */}
       <HomeGuidedEncounters />

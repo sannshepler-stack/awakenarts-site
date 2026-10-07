@@ -5,7 +5,7 @@
 // Caption beneath it — Susan, 2026-10-05.
 
 export const COLLECTION_CAPTION =
-  'These figures are a selected group from the larger AwakenArts series, a continuing body of figurative work created through image, poetry, and story.'
+  'These figures are a selected group from the larger AwakenArts series, a body of figurative work created through image and poetry.'
 
 export default function CollectionBanner({
   marginBottom,
