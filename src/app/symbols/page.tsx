@@ -94,9 +94,15 @@ export default function SymbolsIndexPage() {
             />
           </Link>
           <div style={{ height: '2.25rem' }} />
-          <Link href="/christian-symbols" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-all-christian">
-            See More Symbols
-          </Link>
+          {/* Two ways on (Susan, 2026-10-07): the symbols, and the Encounters. */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
+            <Link href="/christian-symbols" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-all-christian">
+              See More Symbols
+            </Link>
+            <Link href="/encounters" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-encounters">
+              Experience the Encounters
+            </Link>
+          </div>
         </section>
 
         <WorldDoorways />
