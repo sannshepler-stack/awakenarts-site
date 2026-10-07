@@ -61,7 +61,7 @@ export default function HomeQueenAnnCollection() {
         <div className="qac-compilation">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/collection/collection-banner-02.png"
+            src="/images/collection/collection-banner-02-opt.jpg"
             alt="The AwakenArts Collection — poetic encounters in shape, symbol, and story — six framed visual-literary works displayed as a gallery wall"
             className="qac-compilation__img"
             loading="lazy"
@@ -84,7 +84,7 @@ export default function HomeQueenAnnCollection() {
             <div className="qac-spread__frame">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/forms/queen-ann-still.png"
+                src="/images/forms/queen-ann-still-opt.jpg"
                 alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
                 loading="lazy"
               />

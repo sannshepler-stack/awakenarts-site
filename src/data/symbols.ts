@@ -42,8 +42,8 @@ export const SYMBOLS: Symbol[] = [
     meanings: ['Illumination', 'Discernment', 'The next step'],
     scriptureReference: 'Psalm 119:105',
     hasCard: true,
-    frontImage: '/images/symbols/Lamp_Card_Front.png',
-    backImage: '/images/symbols/Lamp_Card_Back_Text.png',
+    frontImage: '/images/symbols/Lamp_Card_Front-opt.jpg',
+    backImage: '/images/symbols/Lamp_Card_Back_Text-opt.jpg',
     aspectRatio: '1054 / 1492',
   },
   {
@@ -52,8 +52,8 @@ export const SYMBOLS: Symbol[] = [
     meanings: ['Direction', 'Passage', 'What lies ahead'],
     scriptureReference: 'Proverbs 3:6',
     hasCard: true,
-    frontImage: '/images/symbols/Path_Card_Front.png',
-    backImage: '/images/symbols/Path_Card_Back_Text.png',
+    frontImage: '/images/symbols/Path_Card_Front-opt.jpg',
+    backImage: '/images/symbols/Path_Card_Back_Text-opt.jpg',
     aspectRatio: '1054 / 1492',
   },
   {
@@ -67,8 +67,8 @@ export const SYMBOLS: Symbol[] = [
     meanings: ['Seasons', 'Transience', 'What endures'],
     scriptureReference: 'Isaiah 40:8',
     hasCard: false,
-    frontImage: '/images/symbols/Flower_Card_Front.png',
-    backImage: '/images/symbols/Flower_Card_Back.png',
+    frontImage: '/images/symbols/Flower_Card_Front-opt.jpg',
+    backImage: '/images/symbols/Flower_Card_Back-opt.jpg',
     aspectRatio: '1024 / 1536',
   },
   {
@@ -83,8 +83,8 @@ export const SYMBOLS: Symbol[] = [
     // New files verified on disk under new names — the old
     // Vine-Card_Front.png / Vine_Card_Back_text.png (1086x1448) no longer
     // exist / are superseded and are not referenced here.
-    frontImage: '/images/symbols/Vine_Card_Front.png',
-    backImage: '/images/symbols/Vine_Card_Back.png',
+    frontImage: '/images/symbols/Vine_Card_Front-opt.jpg',
+    backImage: '/images/symbols/Vine_Card_Back-opt.jpg',
     aspectRatio: '1024 / 1536',
   },
   {
@@ -93,8 +93,8 @@ export const SYMBOLS: Symbol[] = [
     meanings: ['Guidance', 'Protection', 'Being known'],
     scriptureReference: 'Psalm 23:1 / John 10:11',
     hasCard: true,
-    frontImage: '/images/symbols/Shepherd_Card_Front.png',
-    backImage: '/images/symbols/Shepherd_Card_Back.png',
+    frontImage: '/images/symbols/Shepherd_Card_Front-opt.jpg',
+    backImage: '/images/symbols/Shepherd_Card_Back-opt.jpg',
     aspectRatio: '1025 / 1535',
   },
   {
@@ -149,8 +149,8 @@ export const SYMBOLS: Symbol[] = [
     meanings: ['Value', 'Recognition', 'Choosing'],
     scriptureReference: 'Matthew 13:45–46',
     hasCard: true,
-    frontImage: '/images/symbols/Pearl_Card_Front.png',
-    backImage: '/images/symbols/Pearl_Card_Back.png',
+    frontImage: '/images/symbols/Pearl_Card_Front-opt.jpg',
+    backImage: '/images/symbols/Pearl_Card_Back-opt.jpg',
     aspectRatio: '1024 / 1536',
   },
   {
@@ -186,12 +186,12 @@ export const SYMBOLS: Symbol[] = [
     meanings: ['Blessing', 'Abundance', 'Stewardship'],
     scriptureReference: 'Proverbs 21:20',
     hasCard: true,
-    frontImage: '/images/symbols/Oil_Card_Front.png',
+    frontImage: '/images/symbols/Oil_Card_Front-opt.jpg',
     // Filename verified on disk exactly as-is — hyphenated
     // "Oil-Card_Back.png", inconsistent with every other back's
     // underscore naming (e.g. Oil_Card_Front.png). Not renamed per
     // instruction not to rename files unless necessary.
-    backImage: '/images/symbols/Oil-Card_Back.png',
+    backImage: '/images/symbols/Oil-Card_Back-opt.jpg',
     aspectRatio: '1054 / 1492',
   },
   {
@@ -215,8 +215,8 @@ export const SYMBOLS: Symbol[] = [
     meanings: ['Discipleship', 'Difficulty', 'The way in'],
     scriptureReference: 'Matthew 7:13',
     hasCard: true,
-    frontImage: '/images/symbols/Gate_Card_Front.png',
-    backImage: '/images/symbols/Gate_Card_Back.png',
+    frontImage: '/images/symbols/Gate_Card_Front-opt.jpg',
+    backImage: '/images/symbols/Gate_Card_Back-opt.jpg',
     aspectRatio: '1024 / 1536',
   },
   {
@@ -226,8 +226,8 @@ export const SYMBOLS: Symbol[] = [
     meanings: ['Gathering', 'Wide reach', 'The harvest'],
     scriptureReference: 'Matthew 13:47',
     hasCard: true,
-    frontImage: '/images/symbols/Net_Card_Front.png',
-    backImage: '/images/symbols/Net_Card_Back.png',
+    frontImage: '/images/symbols/Net_Card_Front-opt.jpg',
+    backImage: '/images/symbols/Net_Card_Back-opt.jpg',
     aspectRatio: '1059 / 1486',
   },
 ]

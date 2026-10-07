@@ -243,7 +243,7 @@ export default function HomeCollectionPremise() {
           <div className="qac-ann-spread__portrait">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/forms/queen-ann-still.png"
+              src="/images/forms/queen-ann-still-opt.jpg"
               alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
               loading="lazy"
             />

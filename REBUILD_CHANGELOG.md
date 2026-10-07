@@ -137,6 +137,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 122 | For going live (Susan): Grismere registration hidden (`registration.open: false`) — the page shows Inquire only, with no Symbol Card promise, until the Card PDF and Kit tag/automation are ready. Next task: get registration working. |
 | 123 | About page body text matches the site's body text (Presentations, homepage About): .about-body uses the body face instead of the display serif, which read smaller (Susan). |
 | 124 | From the Books images now run in rows, left to right (no masonry columns), so each row of three is uniform — e.g. The Throne Room sits at the right of the first row; a short row (Whispers' two, Shape's fourth) is centered (Susan). |
+| 125 | Phone-weight images: web copies ("-opt", JPG or WebP for transparent art) of the 31 heaviest images, originals kept untouched. Page weight on a phone: Christian Symbols 22→1.6 MB, Encounters 13→1.2 MB, homepage 10→2.6 MB, Explore 6→2.2 MB, Symbols 2.7→0.2 MB. |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

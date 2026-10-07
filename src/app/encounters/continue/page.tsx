@@ -21,7 +21,7 @@ export default function ContinueEncounterPage() {
         <div
           className={styles.heroBg}
           style={{
-            backgroundImage: "url('/images/encounters/continue/continue-01-web.png')",
+            backgroundImage: "url('/images/encounters/continue/continue-01-web-opt.jpg')",
             backgroundPosition: 'center 45%',
           }}
         />

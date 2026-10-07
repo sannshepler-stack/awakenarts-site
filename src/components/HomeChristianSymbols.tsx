@@ -125,7 +125,7 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
 export default function HomeChristianSymbols({ prelude }: { prelude?: React.ReactNode } = {}) {
   const header = (
     <AtmosphericHeader
-      src="/images/homepage/encounters-symbols-ship-v3.png"
+      src="/images/homepage/encounters-symbols-ship-v3-opt.jpg"
       alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon -- the threshold into this section's Scripture and symbols"
       tall
       fadeTo="var(--cream)"

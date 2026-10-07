@@ -79,7 +79,7 @@ export default function JournalIndexPage() {
             <div className={styles.wordFormItem}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/experiences/butterfly-wordart.png"
+                src="/images/experiences/butterfly-wordart-opt.webp"
                 alt="Butterfly Word-Art — words arranged in the shape of a butterfly"
                 className={styles.wordFormImg}
                 loading="lazy"
@@ -88,7 +88,7 @@ export default function JournalIndexPage() {
             <div className={styles.wordFormItem}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/experiences/word-form-spiral.png"
+                src="/images/experiences/word-form-spiral-opt.webp"
                 alt="Word-Form Spiral — words arranged in a spiral form"
                 className={styles.wordFormImg}
                 loading="lazy"

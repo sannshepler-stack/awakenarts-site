@@ -22,13 +22,13 @@ type Door = { href: string; title: string; line?: string; img: string; pos?: str
 
 const DOORS: Door[] = [
   { href: '/awakenarts-path', title: 'The AwakenArts Path', line: 'Poetry, Image, and Seeing Your Life', img: '/images/path/when-language-shapes-a-path-cover.jpg', pos: 'center 100%' },
-  { href: '/encounters', title: 'Encounters', line: 'Every journey begins with a single encounter.', img: '/images/encounters/journey/journey-02-web.png' },
+  { href: '/encounters', title: 'Encounters', line: 'Every journey begins with a single encounter.', img: '/images/encounters/journey/journey-02-web-opt.jpg' },
   { href: '/journal', title: 'The Journal', line: 'A place to read, notice, and write — alongside the works that prompted it.', img: '/images/explore/journal-notebook.jpg' }, // notebook from the table header (Susan, 2026-10-07)
-  { href: '/christian-symbols', title: 'Symbols for the Christian Soul', line: 'Scripture speaks in symbols.', img: '/images/homepage/encounters-symbols-ship-v3.png' },
+  { href: '/christian-symbols', title: 'Symbols for the Christian Soul', line: 'Scripture speaks in symbols.', img: '/images/homepage/encounters-symbols-ship-v3-opt.jpg' },
   // The Gallery returns as From the Books (2026-10-07, Susan): story images
   // from the books, so it no longer repeats the Collection.
   { href: '/gallery', title: 'From the Books', line: 'Images from the AwakenArts books.', img: '/images/gallery/where-you-stand/03-queen-ann-on-the-balcony.jpg', pos: 'center 35%' },
-  { href: '/experience', title: 'Make Your Own Word Art', line: 'Bring your own words and watch them take shape.', img: '/images/experiences/butterfly-wordart.png', dark: true },
+  { href: '/experience', title: 'Make Your Own Word Art', line: 'Bring your own words and watch them take shape.', img: '/images/experiences/butterfly-wordart-opt.webp', dark: true },
   // My Foundation now lives within the Path page (2026-10-07, Susan).
 ]
 

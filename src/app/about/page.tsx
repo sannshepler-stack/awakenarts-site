@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'About — AwakenArts',
     description:
       'Susan Ann Shepler — artist, writer, and creator of AwakenArts.',
-    images: [{ url: '/images/about/susan-ann-shepler.jpg', alt: 'Susan Ann Shepler' }],
+    images: [{ url: '/images/about/susan-ann-shepler-opt.jpg', alt: 'Susan Ann Shepler' }],
   },
 }
 
@@ -52,7 +52,7 @@ export default function AboutPage() {
           <div className="about-opening">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/about/susan-ann-shepler.jpg"
+              src="/images/about/susan-ann-shepler-opt.jpg"
               alt="Susan Ann Shepler"
               className="about-portrait"
               loading="eager"
@@ -80,7 +80,7 @@ export default function AboutPage() {
           <figure className="about-merri">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/about/merri-art.png"
+              src="/images/about/merri-art-opt.webp"
               alt="Merriweather — a symbolic poetic form: figure, poem, and image as one constructed work"
               className="about-merri-img"
               loading="lazy"

@@ -32,7 +32,7 @@ const ENCOUNTERS = [
     slug: 'journey',
     title: 'Journey',
     mantra: 'I begin.',
-    image: '/images/encounters/journey/journey-02-web.png',
+    image: '/images/encounters/journey/journey-02-web-opt.jpg',
     position: 'center 55%',
   },
   {
@@ -43,7 +43,7 @@ const ENCOUNTERS = [
     slug: 'deep',
     title: 'The Deep',
     mantra: 'I encounter.',
-    image: '/images/encounters/deep/deep-02-web.png',
+    image: '/images/encounters/deep/deep-02-web-opt.jpg',
     position: 'center 55%',
   },
   {
@@ -53,21 +53,21 @@ const ENCOUNTERS = [
     slug: 'table',
     title: 'The Table',
     mantra: 'I receive.',
-    image: '/images/encounters/table/table-01-web.png',
+    image: '/images/encounters/table/table-01-web-opt.jpg',
     position: 'center 62%',
   },
   {
     slug: 'word',
     title: 'The Word',
     mantra: 'I listen.',
-    image: '/images/encounters/word/word-01-web.png',
+    image: '/images/encounters/word/word-01-web-opt.jpg',
     position: 'center 55%',
   },
   {
     slug: 'continue',
     title: 'Continue',
     mantra: 'I walk on.',
-    image: '/images/encounters/continue/continue-01-web.png',
+    image: '/images/encounters/continue/continue-01-web-opt.jpg',
     position: 'center 45%',
   },
 ] as const

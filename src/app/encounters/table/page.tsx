@@ -21,7 +21,7 @@ export default function TableEncounterPage() {
         <div
           className={styles.heroBg}
           style={{
-            backgroundImage: "url('/images/encounters/table/table-01-web.png')",
+            backgroundImage: "url('/images/encounters/table/table-01-web-opt.jpg')",
             backgroundPosition: 'center 62%',
           }}
         />

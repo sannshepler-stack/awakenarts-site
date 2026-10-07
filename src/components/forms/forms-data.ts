@@ -27,7 +27,7 @@
 //   No edge-touching crowns, hair, tails, or shoulders.
 //
 // ── CURRENT ASSETS ───────────────────────────────────────────────────────────
-//   • Queen Ann      — /images/forms/queen-ann-still.png  (1600×2400 ✓ canonical)
+//   • Queen Ann      — /images/forms/queen-ann-still-opt.jpg  (1600×2400 ✓ canonical)
 //   • Mermaid Grismere — /images/forms/mermaid-grismere-still.png (1600×2400 ✓ canonical)
 //   • The Dragon     — /images/forms/dragon-still.png (512×768 ✓ 2:3, frame extract;
 //                       replace with a full 1600×2400 authored still when available)
@@ -43,7 +43,7 @@
 
 import type { SymbolicForm } from './types'
 
-const ANN_FORMS_STILL = '/images/forms/queen-ann-still.png'
+const ANN_FORMS_STILL = '/images/forms/queen-ann-still-opt.jpg'
 const ANN_FORMS_PLACEHOLDER_ALT =
   'Placeholder atmospheric still — authored artwork forthcoming.'
 

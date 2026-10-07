@@ -9,7 +9,7 @@ export default function HomeAbout() {
       <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '2.5rem', alignItems: 'center', justifyContent: 'center' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/about/susan-ann-shepler.jpg"
+          src="/images/about/susan-ann-shepler-opt.jpg"
           alt="Susan Ann Shepler"
           loading="lazy"
           style={{ width: 200, height: 200, objectFit: 'cover', objectPosition: '50% 35%', borderRadius: '50%', border: '1px solid var(--gold-lt)', flex: '0 0 auto' }}

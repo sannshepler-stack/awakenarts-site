@@ -155,7 +155,7 @@ export default function PathOfRecognition() {
         <figure className="home-recognition__encounters-image">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/homepage/encounters-symbols-ship-v3.png"
+            src="/images/homepage/encounters-symbols-ship-v3-opt.jpg"
             alt="A quiet path opening onto calm water, where a sailing ship waits beneath a soft horizon"
             loading="lazy"
           />

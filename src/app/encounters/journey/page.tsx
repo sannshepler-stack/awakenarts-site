@@ -21,7 +21,7 @@ export default function JourneyEncounterPage() {
         <div
           className={styles.heroBg}
           style={{
-            backgroundImage: "url('/images/encounters/journey/journey-02-web.png')",
+            backgroundImage: "url('/images/encounters/journey/journey-02-web-opt.jpg')",
             backgroundPosition: 'center 55%',
           }}
         />

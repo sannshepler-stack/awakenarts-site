@@ -21,7 +21,7 @@ export default function WordEncounterPage() {
         <div
           className={styles.heroBg}
           style={{
-            backgroundImage: "url('/images/encounters/word/word-01-web.png')",
+            backgroundImage: "url('/images/encounters/word/word-01-web-opt.jpg')",
             backgroundPosition: 'center 55%',
           }}
         />

@@ -88,7 +88,7 @@ export default function SymbolsIndexPage() {
           <Link href="/christian-symbols" className="symbols-invite" data-cta="symbols-christian-invite">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/homepage/encounters-symbols-ship-v3.png"
+              src="/images/homepage/encounters-symbols-ship-v3-opt.jpg"
               alt="A sailboat on still water at sunset, framed by trees on the shore"
               loading="lazy"
             />

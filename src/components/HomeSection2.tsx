@@ -165,7 +165,7 @@ export default function HomeSection2() {
         <div className="section2-dark__collection">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/collection/collection-banner-02.png"
+            src="/images/collection/collection-banner-02-opt.jpg"
             alt="The AwakenArts Collection — poetic encounters in shape, symbol, and story — six framed visual-literary works displayed as a gallery wall"
             className="section2-dark__collection-img"
             loading="lazy"

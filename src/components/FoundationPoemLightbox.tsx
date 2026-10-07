@@ -41,7 +41,7 @@ export default function FoundationPoemLightbox() {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/mandala/watery_cross-thumb.png"
+          src="/images/mandala/watery_cross-thumb-opt.webp"
           alt="A Watery Cross — a shaped poem about a ship anchored near shore, guided by moonlight, its lines tapering into the form of a cross."
           className="foundation-poem-thumb"
         />

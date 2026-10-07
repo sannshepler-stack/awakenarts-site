@@ -106,7 +106,7 @@ export default function ExperiencePage() {
         </p>
 
         <img
-          src="/images/experiences/butterfly-wordart.png"
+          src="/images/experiences/butterfly-wordart-opt.webp"
           alt="Butterfly formed from words"
           style={{
             maxWidth: '520px',
