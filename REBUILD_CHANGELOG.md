@@ -78,6 +78,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 63 | Homepage correction (Susan): Queen Ann poem and figure restored at the end of the mirror section (existing images, unchanged); less empty space above and below that section. Collection with its caption kept; later sections untouched | Committed — awaiting review on localhost |
 | 64 | Homepage order (Susan): The AwakenArts Collection is Section 2, right after the hero (image and caption only); the mirror section with Queen Ann follows as Section 3. Caption: "These figures are a selected group from the larger AwakenArts series, a body of figurative work created through image and poetry." ("continuing" and "story" removed — the poems are a finite body of work) | Committed — awaiting review on localhost |
 | 65 | Collection caption (Susan): "These figures are a selection from the larger AwakenArts series, created through image and poetry." | Committed — awaiting review on localhost |
+| 66 | Collection caption on one line on desktop: "…created through image & poetry." | Committed — awaiting review on localhost |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

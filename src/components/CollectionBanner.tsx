@@ -5,7 +5,7 @@
 // Caption beneath it — Susan, 2026-10-05.
 
 export const COLLECTION_CAPTION =
-  'These figures are a selection from the larger AwakenArts series, created through image and poetry.'
+  'These figures are a selection from the larger AwakenArts series, created through image & poetry.'
 
 export default function CollectionBanner({
   marginBottom,
@@ -36,7 +36,7 @@ export default function CollectionBanner({
           lineHeight: 1.5,
           color: tone === 'dark' ? 'rgba(250, 247, 242, 0.8)' : 'var(--mid)',
           textAlign: 'center',
-          maxWidth: 640,
+          maxWidth: 920,
           margin: '1.1rem auto 0',
           textWrap: 'pretty',
         } as React.CSSProperties}
