@@ -57,7 +57,7 @@ export default function HomePage() {
               ...({ textWrap: 'balance' } as React.CSSProperties),
             }}
           >
-            Images and words. Your own way in.
+            When Language Shapes a Path
           </h1>
           <p
             style={{
@@ -69,15 +69,31 @@ export default function HomePage() {
               lineHeight: 1.3,
               color: 'var(--deep)',
               maxWidth: 560,
-              margin: '0 0 2.5rem',
+              margin: '0 0 1.1rem',
             }}
           >
-            Explore art and poetry. See what speaks to you.
+            Every life holds patterns, memories, images, and stories waiting to be recognized.
+          </p>
+          {/* Supporting line — Susan, 2026-10-05. */}
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '1.05rem',
+              lineHeight: 1.65,
+              color: 'var(--mid)',
+              maxWidth: 610,
+              margin: '0 0 2.85rem',
+              ...({ textWrap: 'pretty' } as React.CSSProperties),
+            }}
+          >
+            You already live with symbols. AwakenArts helps you recognize them, explore what they carry, and use image,
+            poem, and reflection to understand your own story more deeply.
           </p>
           {/* 2026-10-05, per Susan: two identical text links — same size,
               weight, tracking and thin gold underline; only the colour differs. */}
           <TextLinkRow>
             <TextLink href="/symbols" cta="hero-explore-symbol">Explore a Symbol</TextLink>
+            <TextLink href="/explore" cta="hero-discover">Discover AwakenArts</TextLink>
           </TextLinkRow>
         </div>
 
