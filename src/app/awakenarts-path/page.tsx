@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import ProtectedImage from '@/components/ProtectedImage'
+import TextLink, { TextLinkRow } from '@/components/TextLink'
 
 export const metadata: Metadata = {
   title: 'The AwakenArts Path — An Introduction to AwakenArts',
@@ -153,6 +154,23 @@ export default function AwakenArtsPathPage() {
           >
             Download the Path
           </a>
+        </section>
+
+        {/* 2026-10-07, Susan: tie the Path and My Foundation together. Lines
+            are verbatim from /foundation; the Foundation card leaves Explore. */}
+        <section className="path-foundation" aria-labelledby="path-foundation-heading">
+          <div className="path-intro-close-divider" aria-hidden="true" />
+          <p className="eyebrow" style={{ justifyContent: 'center' }}>My Foundation</p>
+          <h2 id="path-foundation-heading" className="path-foundation__line">
+            Every life tells its story in ways that are often quieter than words.
+          </h2>
+          <p className="path-intro-about__body">
+            Over time I came to understand that recognition is only the beginning. Awareness invites acceptance.
+            Acceptance makes honest action possible.
+          </p>
+          <TextLinkRow center>
+            <TextLink href="/foundation" cta="path-foundation">Read My Foundation</TextLink>
+          </TextLinkRow>
         </section>
 
         {/* ── Closing ───────────────────────────────────────────────

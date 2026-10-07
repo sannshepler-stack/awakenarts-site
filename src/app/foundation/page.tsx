@@ -4,6 +4,7 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import FoundationPoemLightbox from '@/components/FoundationPoemLightbox'
+import TextLink, { TextLinkRow } from '@/components/TextLink'
 
 // /foundation — "The Foundation of AwakenArts" (2026-06-28).
 //
@@ -179,6 +180,13 @@ export default function FoundationPage() {
           <div className="foundation-closing">
             <p>This is the only journey I can faithfully share.</p>
             <p>Throughout my own, I have found Christ to be my true north.</p>
+          </div>
+
+          {/* 2026-10-07, Susan: the Foundation and the Path belong together. */}
+          <div style={{ marginTop: '2.5rem' }}>
+            <TextLinkRow center>
+              <TextLink href="/awakenarts-path" cta="foundation-path">The AwakenArts Path</TextLink>
+            </TextLinkRow>
           </div>
         </main>
       </div>

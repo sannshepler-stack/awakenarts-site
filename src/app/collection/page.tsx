@@ -41,12 +41,16 @@ export default function CollectionPage() {
           {/* 2026-10-07, Susan: larger, and saying what the figures are —
               amplifications and further study of the original image-shaped poems. */}
           <div style={{ maxWidth: 760, margin: '0 auto' }}>
-            <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem, 2.2vw, 1.55rem)', lineHeight: 1.5, color: 'var(--deep)', margin: '0 0 1rem' }}>
-              Each figure begins with an original image-shaped poem, its words set in the form of what it speaks.
+            {/* Leads, in gold (Susan, 2026-10-07). */}
+            <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 'clamp(1.55rem, 2.8vw, 1.95rem)', lineHeight: 1.35, color: 'var(--gold)', margin: '0 0 1.1rem' }}>
+              Each figure is a distinct world to explore.
+            </p>
+            <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem, 2.2vw, 1.55rem)', lineHeight: 1.5, color: 'var(--deep)', margin: '0 0 0.6rem' }}>
+              Each figure begins with an original image-shaped poem.
             </p>
             <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem, 2.2vw, 1.55rem)', lineHeight: 1.5, color: 'var(--deep)', margin: 0 }}>
               The Collection carries those poems further, amplifying and studying them through image, story, and
-              symbolic reflection. Each figure is a distinct world to explore.
+              symbolic reflection.
             </p>
           </div>
         </section>

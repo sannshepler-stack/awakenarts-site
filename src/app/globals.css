@@ -13655,3 +13655,20 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 @media (max-width: 600px) {
   .fb-book { grid-template-columns: 110px 1fr; gap: 1.25rem; }
 }
+
+/* Path page: My Foundation (2026-10-07) */
+.path-foundation {
+  max-width: var(--measure-poetic);
+  margin: 0 auto;
+  padding: 0.5rem 2rem 1rem;
+  text-align: center;
+}
+.path-foundation__line {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--t-card);
+  line-height: 1.35;
+  color: var(--deep);
+  margin: 1rem 0 1.25rem;
+}

@@ -26,7 +26,7 @@ const DOORS: { href: string; title: string; line?: string }[] = [
   // from the books, so it no longer repeats the Collection.
   { href: '/gallery', title: 'From the Books', line: 'Images from the AwakenArts books.' },
   { href: '/experience', title: 'Make Your Own Word Art', line: 'Bring your own words and watch them take shape.' },
-  { href: '/foundation', title: 'My Foundation', line: 'Every life tells its story in ways that are often quieter than words.' },
+  // My Foundation now lives within the Path page (2026-10-07, Susan).
 ]
 
 export default function ExplorePage() {
@@ -56,8 +56,11 @@ export default function ExplorePage() {
                 data-cta={`explore-${d.href.slice(1)}`}
                 style={{ display: 'block', textDecoration: 'none', border: '1px solid var(--mist)', background: '#fff', padding: '1.75rem 1.5rem' }}
               >
-                <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', color: 'var(--deep)' }}>
-                  {d.title} <span aria-hidden="true" style={{ opacity: 0.55 }}>→</span>
+                <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', lineHeight: 1.25, color: 'var(--deep)' }}>
+                  {d.title.split(' ').slice(0, -1).join(' ')}{' '}
+                  <span style={{ whiteSpace: 'nowrap' }}>
+                    {d.title.split(' ').slice(-1)[0]} <span aria-hidden="true" style={{ opacity: 0.55 }}>→</span>
+                  </span>
                 </span>
                 {d.line && (
                   <span style={{ display: 'block', fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--mid)', marginTop: '0.6rem' }}>
