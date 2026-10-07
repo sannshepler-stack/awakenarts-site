@@ -52,7 +52,10 @@ export function HomeQueenAnnMirror() {
 
       <div className="mirror-ann" style={{ marginTop: '2.25rem' }}>
         <div className="mirror-ann__poem">
-          <PoemEnlarge src="/images/forms/ann-text-ink-crop.png" alt="Queen Ann — the poem, rendered in concrete poetry form" />
+          {/* The poem sits alone so poem and portrait share one vertical
+              center; "Enlarge the poem" is centered beneath both (Susan, 2026-10-07). */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/forms/ann-text-ink-crop.png" alt="Queen Ann — the poem, rendered in concrete poetry form" loading="lazy" style={{ display: 'block', width: '100%', height: 'auto' }} />
         </div>
         <div className="mirror-ann__portrait">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -62,6 +65,9 @@ export function HomeQueenAnnMirror() {
             loading="lazy"
           />
         </div>
+      </div>
+      <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+        <PoemEnlarge buttonOnly src="/images/forms/ann-text-ink-crop.png" alt="Queen Ann — the poem, rendered in concrete poetry form" />
       </div>
     </section>
   )

@@ -13587,6 +13587,8 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   transition: background 0.2s ease, color 0.2s ease;
 }
 .poem-enlarge__hint::before { content: '⌕'; font-size: 1.1rem; line-height: 1; letter-spacing: 0; }
+.poem-enlarge__trigger--button { display: inline-block; width: auto; cursor: pointer; }
+.poem-enlarge__trigger--button .poem-enlarge__hint { margin-top: 0; }
 .poem-enlarge__trigger:hover .poem-enlarge__hint { background: var(--gold); color: #fff; }
 .poem-enlarge__overlay {
   position: fixed; inset: 0; z-index: 3000; background: var(--cream);
