@@ -11,7 +11,7 @@ import PoemEnlarge from '@/components/PoemEnlarge'
 export default function HomeImageMirror() {
   return (
     <>
-      <section aria-labelledby="image-mirror-heading" style={{ background: 'var(--warm)', padding: '3.5rem 1.5rem 4rem', textAlign: 'center' }}>
+      <section aria-labelledby="image-mirror-heading" style={{ background: '#fff', padding: '3.5rem 1.5rem 4rem', textAlign: 'center' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
           <p className="eyebrow section2-light__eyebrow" style={{ justifyContent: 'center' }}>AwakenArts, The Stories that Shape Us</p>
           <h2

@@ -90,6 +90,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 75 | Section 2 on the warmer, darker cream (`--warm`); "Sometimes an image stays with you." as an italic serif line under the headline | Committed — awaiting review on localhost |
 | 76 | Christian Symbols back on the homepage as its own section, with its boat image, after Collection + Workshops and before Books | Committed — awaiting review on localhost |
 | 77 | Books & Resources on white, so it separates from the cream Christian Symbols section above (sections now alternate cream / white / warm) | Committed — awaiting review on localhost |
+| 78 | Section 2 ("You already speak in images") on white | Committed — awaiting review on localhost |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
