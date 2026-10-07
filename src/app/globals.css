@@ -13731,3 +13731,12 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   transition: transform 0.3s ease;
 }
 .symbols-invite:hover img { transform: translateY(-4px); }
+
+/* Stay Connected label as a link (2026-10-07) */
+.stay-connected-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  text-decoration-color: rgba(138, 106, 31, 0.45);
+}
+.stay-connected-link:hover { text-decoration-color: currentColor; }

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import EmailGateDownload from '@/components/EmailGateDownload'
 
 // StayConnected — the one reusable, restrained email signup (Rebuild Plan
@@ -37,7 +38,15 @@ export default function StayConnected({
             margin: 0,
           }}
         >
-          Stay Connected
+          {/* The label links to its own page wherever it appears (Susan,
+              2026-10-07) — except on that page itself. */}
+          {source === 'stay-connected-page' ? (
+            'Stay Connected'
+          ) : (
+            <Link href="/stay-connected" className="stay-connected-link" data-cta={`${source}-stay-connected-label`} style={{ color: 'inherit' }}>
+              Stay Connected
+            </Link>
+          )}
         </p>
         <h2
           style={{
