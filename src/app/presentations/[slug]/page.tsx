@@ -6,7 +6,7 @@ import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import { Facilitator, InquirySection, bodyStyle, h2Style, labelStyle } from '@/components/guided/GuidedParts'
 import { PresentationTile, presentationInquiry } from '@/components/presentations/PresentationParts'
-import { PRESENTATIONS, PRESENTATION_AUDIENCES, getPresentation } from '@/data/presentations'
+import { PRESENTATIONS, PRESENTATION_AUDIENCES, getPresentation, registrationOpen } from '@/data/presentations'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
 
 // /presentations/[slug] — reusable single presentation/workshop page, built
@@ -69,7 +69,7 @@ export default function PresentationPage({ params }: { params: { slug: string } 
                 ))}
               </dl>
               <TextLinkRow>
-                <TextLink href="#inquire" cta={`presentation-${p.slug}-inquire`}>{p.registration ? 'Register' : 'Register or Inquire'}</TextLink>
+                <TextLink href="#inquire" cta={`presentation-${p.slug}-inquire`}>{registrationOpen(p) ? 'Register' : 'Inquire'}</TextLink>
               </TextLinkRow>
             </div>
           </div>
@@ -134,8 +134,8 @@ export default function PresentationPage({ params }: { params: { slug: string } 
 
         <InquirySection
           preselect={p.slug}
-          heading="Register"
-          line={p.registration?.gift ?? 'Attend this presentation or ask about bringing it to your group.'}
+          heading={registrationOpen(p) ? 'Register' : 'Inquire'}
+          line={registrationOpen(p) ? p.registration?.gift : 'Ask about attending this presentation or bringing it to your group.'}
           config={presentationInquiry(p)}
         />
 

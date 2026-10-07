@@ -41,7 +41,8 @@ export interface Presentation {
   /** Registration (2026-10-05, Susan): what the participant receives on
    *  registering, and the Kit tag (env var holding its numeric ID) whose
    *  automation emails it. */
-  registration?: { gift?: string; kitTagEnv?: string }
+  /** `open: false` keeps registration hidden (inquiry only) until Kit is ready. */
+  registration?: { gift?: string; kitTagEnv?: string; open?: boolean }
   /** Materials that accompany the presentation — Susan's wording. */
   materials?: { title: string; line: string; note?: string }[]
   /** Edition pages that link to this presentation. Shown only there —
@@ -73,6 +74,9 @@ export const PRESENTATIONS: Presentation[] = [
     // NOT FOR LIVE until the Grismere Symbol Card PDF exists and a Kit
     // automation on KIT_TAG_GRISMERE sends it.
     registration: {
+      // Hidden for going live (Susan, 2026-10-07): set open: true once the
+      // Symbol Card PDF and Kit tag/automation are in place.
+      open: false,
       gift: 'With your registration, you’ll receive the Grismere Symbol Card as a digital PDF you can save or print.',
       kitTagEnv: 'KIT_TAG_GRISMERE',
     },
@@ -134,3 +138,8 @@ export const WORKSHOP_WHAT_TO_EXPECT = [
 /** VERBATIM — closing line of "What to Expect". */
 export const WORKSHOP_DIRECTION =
   'Each workshop travels a different symbolic landscape, but the direction remains the same: toward greater recognition, awareness, wholeness, and connection.'
+
+/** Registration is shown only when explicitly opened. */
+export function registrationOpen(p?: Presentation): boolean {
+  return Boolean(p?.registration && p.registration.open !== false)
+}

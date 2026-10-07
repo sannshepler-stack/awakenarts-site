@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { InquiryConfig } from '@/components/guided/InquiryForm'
 import type { Presentation } from '@/data/presentations'
-import { PRESENTATIONS } from '@/data/presentations'
+import { PRESENTATIONS, registrationOpen } from '@/data/presentations'
 import { bodyStyle, labelStyle } from '@/components/guided/GuidedParts'
 
 // Shared pieces for Presentations & Workshops (2026-10-05).
@@ -16,8 +16,8 @@ function singular(a: string) {
 
 export function presentationInquiry(p?: Presentation): InquiryConfig {
   return {
-    ...(p?.registration
-      ? { mode: 'register' as const, confirmation: p.registration.gift, submitLabel: 'Register' }
+    ...(registrationOpen(p)
+      ? { mode: 'register' as const, confirmation: p!.registration!.gift, submitLabel: 'Register' }
       : {}),
     subjectPrefix: 'Presentation or workshop inquiry',
     offerings:
