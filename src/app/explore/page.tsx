@@ -70,7 +70,8 @@ export default function ExplorePage() {
                     aspectRatio: '16 / 10',
                     objectFit: d.dark ? 'contain' : 'cover',
                     objectPosition: d.pos || 'center',
-                    background: d.dark ? '#0b0b0b' : 'var(--warm)',
+                    // Word-art PNGs are transparent: shown on cream, not black (Susan).
+                    background: d.dark ? 'var(--cream)' : 'var(--warm)',
                     padding: d.dark ? '0.75rem' : 0,
                     boxSizing: 'border-box',
                   }}

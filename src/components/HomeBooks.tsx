@@ -22,7 +22,7 @@ export default function HomeBooks() {
           ))}
         </div>
         <div style={{ marginTop: '3.5rem' }}>
-          <FreeResources source="home" />
+          <FreeResources source="home" only={['/awakenarts-path']} />
         </div>
         <p style={{ marginTop: '2.5rem' }}>
           <TextLink href="/books" cta="home-books">Explore Books &amp; Journals</TextLink>

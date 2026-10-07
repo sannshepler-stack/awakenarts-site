@@ -4,10 +4,13 @@ import { FREE_RESOURCES } from '@/data/books'
 // FreeResources — the two free resources as two distinct items (cover +
 // title + line), used on the homepage Books section and /books.
 
-export default function FreeResources({ source }: { source: string }) {
+// `only` (2026-10-07, Susan): the homepage shows the Path alone; the
+// Encounter Journal has its own Stay Connected signup just below.
+export default function FreeResources({ source, only }: { source: string; only?: string[] }) {
+  const list = only ? FREE_RESOURCES.filter((r) => only.includes(r.href)) : FREE_RESOURCES
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', maxWidth: 820, margin: '0 auto', textAlign: 'left' }}>
-      {FREE_RESOURCES.map((r) => (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', maxWidth: list.length === 1 ? 420 : 820, margin: '0 auto', textAlign: 'left' }}>
+      {list.map((r) => (
         <Link
           key={r.href}
           href={r.href}

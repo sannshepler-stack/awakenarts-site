@@ -112,6 +112,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 97 | Whispers book page shortened (Susan: too long): the back cover's second-edition paragraph is left off; "Second edition" still shows in the details. |
 | 98 | Shape, Symbol & Story book page: a two-paragraph description (draft, from Susan's preface), about the length of Where You Stand's. |
 | 99 | Explore cards each carry an image from their own page: the Path cover's path, the Encounters journey path, the Journal's word spiral, the Christian Symbols boat, Queen Ann on the balcony (From the Books), and the butterfly word art. |
+| 100 | Homepage Books section shows only the free AwakenArts Path card (the Encounter Journal keeps its Stay Connected signup below). Explore: the Journal and Word Art images are transparent PNGs, now shown on cream instead of black (Susan). |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
