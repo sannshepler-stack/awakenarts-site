@@ -13522,9 +13522,14 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   line-height: 1.2;
   color: var(--gold);
   margin: 0.1rem 0 0;
-  transform: scaleY(-1);
-  /* A little stronger so it reads as a deliberate reflection (2026-10-07). */
-  opacity: 0.32;
+  /* Flattened and softened so it reads as a reflection on water, not as
+     a second line of upside-down type (2026-10-07). */
+  transform: scaleY(-0.62);
+  transform-origin: center top;
+  position: relative;
+  top: 0.75em;
+  filter: blur(1.2px);
+  opacity: 0.3;
   -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 85%);
   mask-image: linear-gradient(to top, #000 0%, transparent 85%);
   user-select: none;
