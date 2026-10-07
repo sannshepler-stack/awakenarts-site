@@ -105,6 +105,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 - **Presentation / workshop / Guided Encounter** = a separate offering, where people register. It is not founded on an Edition and its page carries no Edition material. An Edition page may link to a related presentation (the Grismere Edition → the Grismere workshop).
 - The site must not imply Edition = Guided Encounter. Only Grismere currently has a facilitated experience in development.
 - A presentation is **anchored to a figure, not to the Edition created for that figure**. Nothing (Encounters, Encounter Journal) goes with the Editions; they are good content, for people interested in the images.
+- **Homepage principle (Susan, 10-07):** less said on the homepage; it leads into the interior pages, which carry the fuller information.
 - **Christian Symbols = AWARENESS. Marketing Symbol Cards = EXPLORATION.**
 
 ## Still pending
