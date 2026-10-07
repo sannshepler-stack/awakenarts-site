@@ -92,20 +92,16 @@ export default function PresentationsPage() {
                 ))}
               </>
             )}
-          </div>
-        </section>
 
-        {/* What participants can expect */}
-        <section aria-labelledby="expect-heading" style={{ ...section, background: '#fff' }}>
-          <div style={narrow}>
-            <h2 id="expect-heading" style={h2Style}>What to Expect</h2>
+            {/* What to Expect joins this cream section (Susan, 2026-10-07). */}
+            <h2 id="expect-heading" style={{ ...h2Style, marginTop: '3rem' }}>What to Expect</h2>
             <LeadList items={WORKSHOP_WHAT_TO_EXPECT} />
             <p style={{ ...bodyStyle, marginTop: '1.5rem' }}>{WORKSHOP_DIRECTION}</p>
           </div>
         </section>
 
-        {/* Facilitator credentials */}
-        <section aria-labelledby="facilitator-heading" style={section}>
+        {/* Facilitator credentials (now on white, to keep the alternation) */}
+        <section aria-labelledby="facilitator-heading" style={{ ...section, background: '#fff' }}>
           <div style={narrow}>
             <h2 id="facilitator-heading" style={labelStyle}>Your Presenter</h2>
             <div style={{ marginTop: '1.25rem' }}>
