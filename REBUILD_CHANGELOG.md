@@ -136,6 +136,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 121 | The STAY CONNECTED label links to /stay-connected wherever the signup appears (homepage, Explore, and any other page using it), with a quiet underline; plain text on the Stay Connected page itself (Susan). |
 | 122 | For going live (Susan): Grismere registration hidden (`registration.open: false`) — the page shows Inquire only, with no Symbol Card promise, until the Card PDF and Kit tag/automation are ready. Next task: get registration working. |
 | 123 | About page body text matches the site's body text (Presentations, homepage About): .about-body uses the body face instead of the display serif, which read smaller (Susan). |
+| 124 | From the Books images now run in rows, left to right (no masonry columns), so each row of three is uniform — e.g. The Throne Room sits at the right of the first row; a short row (Whispers' two, Shape's fourth) is centered (Susan). |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

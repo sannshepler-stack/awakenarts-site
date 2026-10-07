@@ -13631,12 +13631,19 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   box-shadow: 0 8px 24px rgba(28, 43, 58, 0.16);
 }
 .fb-grid {
-  columns: 3 300px;
-  column-gap: 1.5rem;
+  /* Rows, left to right (2026-10-07, Susan: uniformity); a short row is
+     centered (Susan: "these may be centered"). */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: flex-start;
 }
 .fb-grid__item {
-  break-inside: avoid;
-  margin: 0 0 1.5rem;
+  flex: 0 1 calc((100% - 3rem) / 3);
+  min-width: 260px;
+  box-sizing: border-box;
+  margin: 0;
   background: #fff;
   border: 1px solid var(--mist);
   padding: 10px 10px 0;
