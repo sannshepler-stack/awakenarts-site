@@ -104,7 +104,8 @@ export const PRESENTATION_AUDIENCES = ['Clubs', 'Libraries', 'Retreats', 'Commun
 export const ABOUT_WORKSHOPS = {
   lede: 'A Path of Discovery Through Image, Language, and Symbol',
   body: [
-    'You already speak in images. We all do. AwakenArts takes that familiar relationship between image and language and explores what it can reveal.',
+    // First two sentences left off (Susan, 2026-10-07): they repeat the homepage and Symbols page.
+    'AwakenArts takes the familiar relationship between image and language and explores what it can reveal.',
     'AwakenArts workshops are artistic and educational, offering a path of discovery through images, poetry, symbolic language, conversation, and reflection. We look more closely at what images and words carry, follow their connections, and consider what they may bring into greater awareness.',
   ],
 }
