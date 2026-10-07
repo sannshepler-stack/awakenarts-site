@@ -13546,12 +13546,12 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 .mirror-ann {
   display: grid;
-  /* The poem is part of the experience, not a caption (Susan, 2026-10-07):
-     it gets the wider column, and the pair a little more room. */
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 2.5rem;
+  /* Back to the original, smaller size (Susan, 2026-10-07); poem and
+     portrait share one vertical midpoint, button centered beneath. */
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
   align-items: center;
-  max-width: 900px;
+  max-width: 690px;
   margin: 0 auto;
 }
 /* Mirror language beside the Queen Ann pair (2026-10-07) — no longer used. */

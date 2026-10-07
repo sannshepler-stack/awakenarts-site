@@ -140,6 +140,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 125 | Phone-weight images: web copies ("-opt", JPG or WebP for transparent art) of the 31 heaviest images, originals kept untouched. Page weight on a phone: Christian Symbols 22→1.6 MB, Encounters 13→1.2 MB, homepage 10→2.6 MB, Explore 6→2.2 MB, Symbols 2.7→0.2 MB. |
 | 126 | Homepage Queen Ann: the poem is larger (wider column, pair widened to 900px) and "Enlarge the poem" is now an outlined button that fills gold on hover (Susan: the poem is part of the experience). |
 | 127 | Queen Ann: poem and portrait now share one vertical center; "Enlarge the poem" moves out of the poem column, centered beneath both (Susan). |
+| 128 | Queen Ann returned to the original smaller size (two equal columns, 690px), keeping one shared midpoint and "Enlarge the poem" centered beneath (Susan). Supersedes the enlargement in #126. |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
