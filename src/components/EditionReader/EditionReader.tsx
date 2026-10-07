@@ -87,7 +87,7 @@ export default function EditionReader({ edition }: { edition: Edition }) {
     return (
       <div className="reader-shell reader-shell--empty">
         <p>This Edition&rsquo;s Reader isn&rsquo;t built yet.</p>
-        <Link href={`/editions/${edition.slug}`} className="reader-topbar__back">
+        <Link href={`/collection/${edition.slug}`} className="reader-topbar__back">
           {edition.title}
         </Link>
       </div>
@@ -99,7 +99,7 @@ export default function EditionReader({ edition }: { edition: Edition }) {
   return (
     <div className="reader-shell" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       <header className="reader-topbar">
-        <Link href={`/editions/${edition.slug}`} className="reader-topbar__back">
+        <Link href={`/collection/${edition.slug}`} className="reader-topbar__back">
           {edition.title}
         </Link>
         <ProgressMarker index={index} total={total} />

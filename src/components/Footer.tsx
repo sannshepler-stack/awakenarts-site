@@ -27,7 +27,7 @@ import FooterSocial from './FooterSocial'
 
 const EXPLORE_LINKS = [
   { label: 'Explore', href: '/explore' },
-  { label: 'Editions', href: '/editions' },
+  { label: 'Collection', href: '/collection' },
   { label: 'Presentations & Workshops', href: '/presentations' },
   { label: 'Symbols', href: '/symbols' },
   { label: 'Books & Journals', href: '/books' },

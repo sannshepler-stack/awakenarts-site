@@ -17,9 +17,9 @@ const ENTRIES: Entry[] = [
   { path: '/',                                                   changeFrequency: 'weekly',  priority: 1.0 },
   // 2026-10-05 rebuild: Symbols (card collection) + Guided Encounters + Books.
   { path: '/symbols',                                           changeFrequency: 'weekly',  priority: 0.95 },
-  { path: '/editions',                                          changeFrequency: 'monthly', priority: 0.95 },
+  { path: '/collection',                                          changeFrequency: 'monthly', priority: 0.95 },
   ...['grismere', 'dragon', 'queen-ann', 'bowls', 'ballerina', 'poppy'].map((s) => ({
-    path: `/editions/${s}`, changeFrequency: 'monthly' as const, priority: 0.8,
+    path: `/collection/${s}`, changeFrequency: 'monthly' as const, priority: 0.8,
   })),
   { path: '/presentations/grismere',                            changeFrequency: 'monthly', priority: 0.9 },
   { path: '/explore',                                           changeFrequency: 'monthly', priority: 0.9 },

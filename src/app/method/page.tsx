@@ -95,7 +95,7 @@ export default function MethodPage() {
           {/* Introduction — opens on Susan's addendum sentence, added
               2026-07-10 the same day as the rest of the page: "the heart
               of the AwakenArts Method," in her words, and the conceptual
-              center the Encounters, Figure Editions, workshops, and
+              center the Encounters, Figures, workshops, and
               conversation all grow from. */}
           <p className="method-opening">
             We often begin by explaining our lives. AwakenArts begins by
@@ -144,7 +144,7 @@ export default function MethodPage() {
 
           <h2 className="method-h2">Image &middot; Poem &middot; Reflection</h2>
           <p className="method-body">
-            This is why every Figure Edition brings these forms together,
+            This is why every Figure brings these forms together,
             each doing its own part of the work:
           </p>
           <ul className="method-forms" aria-label="Image, Poem, Reflection, Conversation">

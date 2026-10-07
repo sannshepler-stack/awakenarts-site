@@ -49,9 +49,9 @@ export default function SymbolsPage() {
             per no-silent-deletion. */}
         <SymbolsEncounters />
 
-        <section className="symbols-continuation" aria-label="Continue to the Editions">
-          <Link href="/editions" className="home-coll-cta home-coll-cta--light-surface">
-            Continue to the Editions
+        <section className="symbols-continuation" aria-label="More About the Figures">
+          <Link href="/collection" className="home-coll-cta home-coll-cta--light-surface">
+            More About the Figures
           </Link>
         </section>
       </main>

@@ -15,7 +15,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: `Acquire ${edition.title} — Figure Edition — AwakenArts`,
     description: `Acquisition details for the ${edition.title} Figure Edition.`,
-    alternates: { canonical: `/editions/${edition.slug}/purchase` },
+    alternates: { canonical: `/collection/${edition.slug}/purchase` },
     robots: { index: false, follow: true }, // not a separate Store entry point — see note below
   }
 }
@@ -162,7 +162,7 @@ export default function PurchasePage({ params }: { params: { slug: string } }) {
         </section>
 
         <section className="edition-actions">
-          <Link href={`/editions/${edition.slug}`} className="edition-actions__back">
+          <Link href={`/collection/${edition.slug}`} className="edition-actions__back">
             Return to Edition Preview
           </Link>
         </section>

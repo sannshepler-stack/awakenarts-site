@@ -29,7 +29,7 @@ const links = [
   // are presentations, under Presentations). The Path, Journal and the other
   // reflective pages are gathered under Explore. Earlier history: git 9d3746a.
   { label: 'Explore', href: '/explore', cta: false },
-  { label: 'Editions', href: '/editions', cta: false },
+  { label: 'Collection', href: '/collection', cta: false },
   { label: 'Presentations', href: '/presentations', cta: false },
   { label: 'Symbols', href: '/symbols', cta: false },
   { label: 'Books', href: '/books', cta: false },

@@ -203,13 +203,13 @@ export default function WorkshopsPage() {
           <section id="current-workshops" className={styles.worlds} aria-labelledby="current-workshops-heading">
           <h2 id="current-workshops-heading" className={styles.h2}>Current Workshops</h2>
           <p className={styles.body}>
-            Every AwakenArts workshop is anchored in one Figure Edition. Each
+            Every AwakenArts workshop is anchored in one Figure. Each
             gathers artwork, poetry, story, and reflective questions into a
             world participants enter together.
           </p>
           <div className={styles.worldGrid}>
             {editions.map((edition) => (
-              <Link key={edition.slug} href={`/editions/${edition.slug}`} className={styles.worldCard}>
+              <Link key={edition.slug} href={`/collection/${edition.slug}`} className={styles.worldCard}>
                 <span className={styles.worldFrame}>
                   <ProtectedImage
                     src={edition.contactSheet}
@@ -218,7 +218,7 @@ export default function WorkshopsPage() {
                     loading="lazy"
                   />
                 </span>
-                <span className={styles.worldKicker}>Figure Edition</span>
+                <span className={styles.worldKicker}>Figure</span>
                 <span className={styles.worldTitle}>{edition.title}</span>
                 <span className={styles.worldAction}>View Preview</span>
               </Link>

@@ -13,7 +13,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: `Read ${edition.title} — AwakenArts`,
     description: `Read the ${edition.title} Figure Edition — image and word, paced one screen at a time.`,
-    alternates: { canonical: `/editions/${edition.slug}/read` },
+    alternates: { canonical: `/collection/${edition.slug}/read` },
   }
 }
 

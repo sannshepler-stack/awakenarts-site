@@ -141,7 +141,7 @@ export default function AboutPage() {
             <p className="about-body">
               The poems themselves have remained remarkably unchanged. What
               matured over time was not the symbolic work, but the language
-              surrounding it. The Figure Editions represent that continuing
+              surrounding it. The Figures represent that continuing
               effort: changing symbolic worlds in which image, poem, and reflection
               can be encountered together while remaining faithful to what the
               poems expressed from the beginning.
@@ -152,7 +152,7 @@ export default function AboutPage() {
               Today, Susan conducts AwakenArts workshops as a
               literary-symbolic practice. She holds a consistent sequence of
               encounter, reflection, writing, and conversation while each Figure
-              Edition brings participants into a different symbolic world. The
+              brings participants into a different symbolic world. The
               work invites recognition and conscious language; it does not offer
               therapy, diagnosis, or a fixed interpretation of an image.
             </p>

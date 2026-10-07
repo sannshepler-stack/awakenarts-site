@@ -14,7 +14,7 @@ export function editionThemeLine(e: Pick<Edition, 'themes'>, max?: number) {
 
 export default function EditionTile({ e }: { e: Edition }) {
   return (
-    <Link href={`/editions/${e.slug}`} data-cta={`edition-tile-${e.slug}`} style={{ display: 'block', textDecoration: 'none', textAlign: 'left' }}>
+    <Link href={`/collection/${e.slug}`} data-cta={`edition-tile-${e.slug}`} style={{ display: 'block', textDecoration: 'none', textAlign: 'left' }}>
       <span style={{ display: 'block', background: '#fff', border: '1px solid var(--mist)', padding: 10, boxShadow: '0 6px 18px rgba(28, 43, 58, 0.08)' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

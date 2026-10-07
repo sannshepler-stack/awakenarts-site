@@ -35,7 +35,7 @@ export default function CopyrightPage() {
         <h2 className="legal-page__subheading">Ownership and Authorship</h2>
         <p className="legal-page__body">
           Copyrightable poems, written material, original artwork, branding, editorial selection,
-          arrangement, editing, compilations, Figure Editions, Companions, slides, and other
+          arrangement, editing, compilations, Figures, Companions, slides, and other
           human-authored elements on this website are owned by Susan Ann Shepler and/or AwakenArts
           or used with permission, unless otherwise identified.
         </p>

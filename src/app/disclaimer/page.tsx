@@ -32,7 +32,7 @@ export default function DisclaimerPage() {
         <p className="legal-page__body">
           AwakenArts is operated by Susan Ann Shepler, a Texas sole proprietor. AwakenArts provides
           artistic, literary, educational, and reflective materials and experiences. Its website,
-          Figure Editions, Companions, presentation slides, workshops, and related resources invite
+          Figures, Companions, presentation slides, workshops, and related resources invite
           attention, conversation, and personal reflection through image and language.
         </p>
 

@@ -107,9 +107,9 @@ export const editions: Edition[] = [
     // Was 'Figure Edition No. 01' -- matches the other five Editions' own
     // kicker ('Figure Edition', no number) now that Dragon's numbering is
     // removed too.
-    kicker: 'Figure Edition',
+    kicker: 'Figure',
     contactSheet: '/images/editions/dragon-contact-sheet-web.jpg',
-    contactSheetAlt: 'Contact sheet preview of all eleven pages of The Dragon Figure Edition',
+    contactSheetAlt: 'Contact sheet preview of all eleven pages of The Dragon figure',
     pdf: '/files/editions/Dragon_Figure_Edition.pdf',
     about:
       'The Dragon brings image, poem, story, and reflection into a symbolic world. It invites the reader to notice how an interpretation changes when the apparent enemy is also trying to protect what its own fire endangers.',
@@ -588,9 +588,9 @@ export const editions: Edition[] = [
   {
     slug: 'bowls',
     title: 'Bowls',
-    kicker: 'Figure Edition',
+    kicker: 'Figure',
     contactSheet: '/images/editions/bowls-contact-sheet-web.jpg',
-    contactSheetAlt: 'Contact sheet preview of all eleven pages of the Bowls Figure Edition',
+    contactSheetAlt: 'Contact sheet preview of all eleven pages of the Bowls figure',
     pdf: '/files/editions/Bowls_Figure_Edition.pdf',
     about:
       'Bowls brings image, poem, story, and reflection into a symbolic world. Its distinct territory invites attention through questions of duality, voice, and wholeness.',
@@ -600,9 +600,9 @@ export const editions: Edition[] = [
   {
     slug: 'ballerina',
     title: 'Ballerina',
-    kicker: 'Figure Edition',
+    kicker: 'Figure',
     contactSheet: '/images/editions/ballerina-contact-sheet-web.jpg',
-    contactSheetAlt: 'Contact sheet preview of all eleven pages of the Ballerina Figure Edition',
+    contactSheetAlt: 'Contact sheet preview of all eleven pages of the Ballerina figure',
     pdf: '/files/editions/Ballerina_Figure_Edition.pdf',
     about:
       'Ballerina brings image, poem, story, and reflection into a symbolic world. Its distinct territory invites attention through movement, stillness, multiplicity, and trust.',
@@ -612,9 +612,9 @@ export const editions: Edition[] = [
   {
     slug: 'grismere',
     title: 'Grismere',
-    kicker: 'Figure Edition',
+    kicker: 'Figure',
     contactSheet: '/images/editions/grismere-contact-sheet-web.jpg',
-    contactSheetAlt: 'Contact sheet preview of all eleven pages of the Grismere Figure Edition',
+    contactSheetAlt: 'Contact sheet preview of all eleven pages of the Grismere figure',
     pdf: '/files/editions/Grismere_Figure_Edition.pdf',
     about:
       'Grismere brings image, poem, story, and reflection into a symbolic world. Its distinct territory invites attention at the threshold between what is visible and what remains beneath the surface.',
@@ -624,9 +624,9 @@ export const editions: Edition[] = [
   {
     slug: 'poppy',
     title: 'Poppy',
-    kicker: 'Figure Edition',
+    kicker: 'Figure',
     contactSheet: '/images/editions/poppy-contact-sheet-web.jpg',
-    contactSheetAlt: 'Contact sheet preview of all eleven pages of the Poppy Figure Edition',
+    contactSheetAlt: 'Contact sheet preview of all eleven pages of the Poppy figure',
     pdf: '/files/editions/Poppy_Figure_Edition.pdf',
     about:
       'Poppy brings image, poem, story, and reflection into a symbolic world. Its distinct territory invites attention through inheritance, recognition, love, and continuity across generations.',
@@ -636,9 +636,9 @@ export const editions: Edition[] = [
   {
     slug: 'queen-ann',
     title: 'Queen Ann',
-    kicker: 'Figure Edition',
+    kicker: 'Figure',
     contactSheet: '/images/editions/queen-ann-contact-sheet-web.jpg',
-    contactSheetAlt: 'Contact sheet preview of all eleven pages of the Queen Ann Figure Edition',
+    contactSheetAlt: 'Contact sheet preview of all eleven pages of the Queen Ann figure',
     pdf: '/files/editions/Queen_Ann_Figure_Edition.pdf',
     about:
       'Queen Ann brings image, poem, story, and reflection into a symbolic world. Its distinct territory invites attention through transition, relinquishment, pilgrimage, and trust beyond possession.',

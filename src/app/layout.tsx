@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: '%s | AwakenArts',
   },
   description:
-    'AwakenArts is a literary-symbolic workshop practice conducted by Susan Ann Shepler. Figure Editions, Encounters, Symbols, poetry, imagery, and journals support recognition, reflection, and conscious language.',
+    'AwakenArts is a literary-symbolic workshop practice conducted by Susan Ann Shepler. Figures, Encounters, Symbols, poetry, imagery, and journals support recognition, reflection, and conscious language.',
   applicationName: 'AwakenArts',
   authors: [{ name: 'Susan Ann Shepler', url: SITE_URL + '/about' }],
   creator: 'Susan Ann Shepler',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   keywords: [
     'AwakenArts',
     'Susan Ann Shepler',
-    'Figure Editions',
+    'Figures',
     'Encounters',
     'symbolic language',
     'figurative language',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'AwakenArts is a literary-symbolic workshop practice conducted by Susan Ann Shepler. Each Figure Edition opens a different symbolic world within a consistent experience of recognition and reflection.',
+      'AwakenArts is a literary-symbolic workshop practice conducted by Susan Ann Shepler. Each Figure opens a different symbolic world within a consistent experience of recognition and reflection.',
     locale: 'en_US',
     /* 2026-09-01, per Susan's "the background is too dark -- it doesn't
        show as a website preview when sent" directive: og-hero.jpg (the
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AwakenArts — When Language Shapes a Path',
     description:
-      'Explore literary-symbolic workshops conducted by Susan Ann Shepler, with changing Figure Editions and a consistent practice of recognition and reflection.',
+      'Explore literary-symbolic workshops conducted by Susan Ann Shepler, with changing Figures and a consistent practice of recognition and reflection.',
     images: ['/images/brand/og-logo.png'],
   },
   robots: {
@@ -180,7 +180,7 @@ const jsonLd = {
       logo: `${SITE_URL}/android-chrome-512x512.png`,
       founder: { '@id': `${SITE_URL}/#person` },
       description:
-        'A literary-symbolic workshop practice conducted by Susan Ann Shepler. Figure Editions, Encounters, Symbols, poetry, imagery, and journals support and extend the experience.',
+        'A literary-symbolic workshop practice conducted by Susan Ann Shepler. Figures, Encounters, Symbols, poetry, imagery, and journals support and extend the experience.',
     },
     {
       '@type': 'WebSite',

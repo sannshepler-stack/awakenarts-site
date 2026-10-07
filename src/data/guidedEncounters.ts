@@ -30,7 +30,7 @@ export interface GuidedEncounterDetails {
 
 const DETAILS: GuidedEncounterDetails[] = [
   { slug: 'grismere', status: 'open', length: '75 minutes' },
-  { slug: 'dragon', status: 'host', companionReader: '/editions/dragon/read' },
+  { slug: 'dragon', status: 'host', companionReader: '/collection/dragon/read' },
   { slug: 'queen-ann', status: 'host' },
   { slug: 'bowls', status: 'host' },
   { slug: 'ballerina', status: 'host' },

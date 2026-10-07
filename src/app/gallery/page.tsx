@@ -6,13 +6,13 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Gallery — AwakenArts',
   description:
-    'A quiet gallery of the published AwakenArts Editions — artwork, titles, and excerpts presented for appreciation, not decision.',
+    'A quiet gallery of the figures of the AwakenArts Collection — artwork, titles, and excerpts presented for appreciation, not decision.',
   alternates: { canonical: '/gallery' },
   openGraph: {
     url: '/gallery',
     title: 'Gallery — AwakenArts',
     description:
-      'A quiet gallery of the published AwakenArts Editions — artwork, titles, and excerpts presented for appreciation, not decision.',
+      'A quiet gallery of the figures of the AwakenArts Collection — artwork, titles, and excerpts presented for appreciation, not decision.',
   },
 }
 
@@ -77,7 +77,7 @@ const tiles: GalleryTile[] = [
     title: "Her Mother's Hands",
     image: {
       src: '/images/editions/poppy-atmospheric-02.jpg',
-      alt: 'Poppy — a golden-hour painting of California poppies on a hillside above a mission bell tower, the Edition’s own atmospheric artwork.',
+      alt: 'Poppy — a golden-hour painting of California poppies on a hillside above a mission bell tower, its own atmospheric artwork.',
     },
   },
   {
@@ -86,7 +86,7 @@ const tiles: GalleryTile[] = [
     title: 'The Dragon',
     image: {
       src: '/images/editions/dragon-figure.jpg',
-      alt: 'The Dragon — a watercolor study of a winged dragon coiled and rising, the Edition’s own figure artwork.',
+      alt: 'The Dragon — a watercolor study of a winged dragon coiled and rising, its own figure artwork.',
     },
   },
   {
@@ -95,7 +95,7 @@ const tiles: GalleryTile[] = [
     title: 'Mermaid Grismere',
     image: {
       src: '/images/editions/grismere-figure.jpg',
-      alt: 'Grismere — a watercolor mermaid with flowing hair, seated on a rock above the waves, the Edition’s own figure artwork.',
+      alt: 'Grismere — a watercolor mermaid with flowing hair, seated on a rock above the waves, its own figure artwork.',
     },
   },
   {
@@ -104,7 +104,7 @@ const tiles: GalleryTile[] = [
     title: 'Both Sides Now',
     image: {
       src: '/images/editions/bowls-figure.jpg',
-      alt: 'Bowls — a still-life of two blue-and-white patterned bowls of berries on a lace-covered table before an open window overlooking the sea at sunset, the Edition’s own figure photograph.',
+      alt: 'Bowls — a still-life of two blue-and-white patterned bowls of berries on a lace-covered table before an open window overlooking the sea at sunset, its own figure photograph.',
     },
   },
   {
@@ -113,7 +113,7 @@ const tiles: GalleryTile[] = [
     title: 'Love Ballet',
     image: {
       src: '/images/editions/ballerina-figure.jpg',
-      alt: 'Ballerina — a watercolor study of a young dancer in pink tutu and pointe shoes, mid-pose, the Edition’s own figure artwork.',
+      alt: 'Ballerina — a watercolor study of a young dancer in pink tutu and pointe shoes, mid-pose, its own figure artwork.',
     },
   },
   {
@@ -122,7 +122,7 @@ const tiles: GalleryTile[] = [
     title: 'Queen Ann',
     image: {
       src: '/images/editions/queen-ann-figure.jpg',
-      alt: 'Queen Ann — a crowned figure in a gilded gown looking out over a mountain vista at sunset, the Edition’s own figure artwork.',
+      alt: 'Queen Ann — a crowned figure in a gilded gown looking out over a mountain vista at sunset, its own figure artwork.',
     },
   },
 ]

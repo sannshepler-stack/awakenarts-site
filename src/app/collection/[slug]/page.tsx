@@ -24,16 +24,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const e = editions.find((x) => x.slug === params.slug)
   if (!e) return {}
   return {
-    title: `${e.title} — AwakenArts Edition`,
+    title: `${e.title} — The AwakenArts Collection`,
     description: e.about,
-    alternates: { canonical: `/editions/${e.slug}` },
+    alternates: { canonical: `/collection/${e.slug}` },
   }
 }
 
 const section: React.CSSProperties = { padding: 'var(--band-gap) 1.5rem' }
 
 /** Editions with a complete online reader (D8). */
-const READERS: Record<string, string> = { dragon: '/editions/dragon/read' }
+const READERS: Record<string, string> = { dragon: '/collection/dragon/read' }
 
 export default function EditionPage({ params }: { params: { slug: string } }) {
   const e = editions.find((x) => x.slug === params.slug)
@@ -41,7 +41,6 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
   const presentation = PRESENTATIONS.find((p) => p.editions?.includes(e.slug))
   const reader = READERS[e.slug]
   const shortTitle = e.title.replace(/^The\s+/i, '')
-  const editionName = `the ${shortTitle} Edition`
 
   return (
     <>
@@ -63,7 +62,7 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
               <img src={`/images/editions/${e.slug}-figure.jpg`} alt={`${e.title} — the figure artwork`} style={{ width: '100%', display: 'block' }} />
             </div>
             <div>
-              <p style={labelStyle}>AwakenArts Edition</p>
+              <p style={labelStyle}>A Figure from the AwakenArts Collection</p>
               <h1 style={{ ...h2Style, fontSize: 'var(--t-page)', marginBottom: '1rem' }}>{e.title}</h1>
               <p style={bodyStyle}>{e.about}</p>
               <p style={{ ...labelStyle, fontSize: '0.72rem', marginTop: '1.5rem' }}>Themes</p>
@@ -77,7 +76,7 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
         {/* The work itself — the primary experience of this page. */}
         <section aria-labelledby="explore-heading" style={{ ...section, paddingTop: 0, textAlign: 'center' }}>
           <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-            <h2 id="explore-heading" style={{ ...h2Style, marginBottom: '1.75rem' }}>Explore {editionName}</h2>
+            <h2 id="explore-heading" style={{ ...h2Style, marginBottom: '1.75rem' }}>Explore {shortTitle}</h2>
             {/* 2026-10-07, Susan: a look, not the complete Edition — the
                 contact sheet only, sized to fit one screen. */}
             <div style={{ display: 'inline-block', background: '#fff', border: '1px solid var(--mist)', padding: 12, boxShadow: '0 8px 24px rgba(28, 43, 58, 0.1)' }}>
@@ -86,7 +85,7 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
             {reader && (
               <div style={{ marginTop: '2rem' }}>
                 <TextLinkRow center>
-                  <TextLink href={reader} cta={`edition-${e.slug}-reader`}>Read {editionName} Online</TextLink>
+                  <TextLink href={reader} cta={`edition-${e.slug}-reader`}>Read {shortTitle} Online</TextLink>
                 </TextLinkRow>
               </div>
             )}
@@ -104,7 +103,7 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
               <div style={{ marginTop: '1.5rem' }}>
                 <TextLinkRow center>
                   <TextLink href={`/presentations/${presentation.slug}`} cta={`edition-${e.slug}-presentation`}>
-                    Explore the {presentation.title} Presentation
+                    View the {presentation.title} Presentation
                   </TextLink>
                 </TextLinkRow>
               </div>
@@ -114,7 +113,7 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
 
         <section style={{ padding: '3rem 1.5rem 4rem', textAlign: 'center' }}>
           <TextLinkRow center>
-            <TextLink href="/editions" cta={`edition-${e.slug}-all`}>All Editions</TextLink>
+            <TextLink href="/collection" cta={`edition-${e.slug}-all`}>All the Figures</TextLink>
           </TextLinkRow>
         </section>
       </main>

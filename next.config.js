@@ -31,7 +31,12 @@ const nextConfig = {
       // rather than through a competing public Collection center.
       // 2026-10-05 rebuild: the Collection's Editions now live at /editions.
       // Temporary while the rebuild settles.
-      { source: '/collection', destination: '/editions', permanent: false },
+      // 2026-10-07 (Susan): "Editions" retired — the works are the
+      // AwakenArts Collection, each a Figure, at /collection. The /editions
+      // URLs (2026-10-05 to 10-07, never on main) forward here.
+      { source: '/editions', destination: '/collection', permanent: false },
+      { source: '/editions/:slug/purchase', destination: '/collection/:slug', permanent: false },
+      { source: '/editions/:path*', destination: '/collection/:path*', permanent: false },
       // 2026-10-05: workshops are part of Presentations & Workshops, not Guided Encounters.
       { source: '/workshops', destination: '/presentations', permanent: true },
       { source: '/presentations-workshops', destination: '/presentations', permanent: true },
@@ -40,7 +45,7 @@ const nextConfig = {
       // but are reached through these temporary redirects.
       { source: '/guided-encounters', destination: '/presentations', permanent: false },
       { source: '/guided-encounters/grismere', destination: '/presentations/grismere', permanent: false },
-      { source: '/guided-encounters/:slug', destination: '/editions/:slug', permanent: false },
+      { source: '/guided-encounters/:slug', destination: '/collection/:slug', permanent: false },
       // 2026-10-05 (Susan): Edition = the work. /editions/:slug is the
       // Edition's own page again (the earlier redirect to Guided Encounters
       // is removed).
@@ -49,8 +54,8 @@ const nextConfig = {
       // inbound URL with a one-hop redirect to its Edition's workshop-
       // centered detail page.
       {
-        source: '/editions/:slug/purchase',
-        destination: '/editions/:slug',
+        source: '/collection/:slug/purchase',
+        destination: '/collection/:slug',
         permanent: true,
       },
     ]
