@@ -92,9 +92,9 @@ export default function SymbolsIndexPage() {
               </Link>
             ))}
           </div>
-          <Link href="/christian-symbols" className="home-coll-cta home-coll-cta--light-surface">
-            Explore Christian Symbols
-          </Link>
+          {/* "Explore Christian Symbols" button removed (Susan, 2026-10-07):
+              the cards themselves lead in. /christian-symbols stays reachable
+              from Explore. */}
         </section>
 
         <WorldDoorways />

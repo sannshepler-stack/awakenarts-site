@@ -13679,7 +13679,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   justify-content: center;
   gap: 1.1rem;
   max-width: 1000px;
-  margin: 0 auto 2.75rem;
+  margin: 0 auto 0.5rem;
   flex-wrap: wrap;
 }
 .symbol-fan__card {

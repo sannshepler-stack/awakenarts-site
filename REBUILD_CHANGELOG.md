@@ -120,6 +120,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 105 | The Jung epigraph moves from From the Books to Explore, under "When Language Shapes a Path", with more room before the cards (Susan). |
 | 106 | Symbols page less "vanilla" (Susan): the Christian Symbols band now shows a gentle fan of five card fronts (Lamp, Path, Shepherd, Vine, Pearl), each opening its symbol page. |
 | 107 | Headers swapped (Susan): Explore opens with the poetry manuscript (language); Presentations opens with the figures on the table. The Explore Journal card keeps its notebook crop. |
+| 108 | Symbols page: "Explore Christian Symbols" button removed; the card fan leads in on its own (Susan). Header image for the page coming from Susan. |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
