@@ -129,6 +129,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 114 | Symbols page: "Experience the Encounters" (→ /encounters) beside "See More Symbols" (Susan). |
 | 115 | Encounters page: the bulky Encounter Journal signup card becomes one quiet line linking to Stay Connected (Susan). The signup remains on the homepage, Explore, Books, book pages, and Stay Connected. |
 | 116 | Presentations: "Who They Are For" and "What to Expect" combined in one cream section; "Your Presenter" moves to white to keep the alternation (Susan). |
+| 117 | Presentations: Encounter Journal signup removed (Susan: why is this here?); the inquiry form already has "Keep me informed". |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

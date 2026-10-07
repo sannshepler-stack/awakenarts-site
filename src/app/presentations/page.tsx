@@ -4,7 +4,6 @@ import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
-import StayConnected from '@/components/StayConnected'
 import { Facilitator, InquirySection, LeadList, bodyStyle, h2Style, labelStyle } from '@/components/guided/GuidedParts'
 import { PresentationTile, presentationInquiry } from '@/components/presentations/PresentationParts'
 import {
@@ -117,7 +116,8 @@ export default function PresentationsPage() {
           line="Recognition is rarely a solitary experience. It deepens as we learn to see alongside others."
           config={presentationInquiry()}
         />
-        <StayConnected source="presentations" />
+        {/* Encounter Journal signup removed (Susan, 2026-10-07): it doesn't
+            belong here; the inquiry form carries its own keep-me-informed box. */}
       </main>
       <WayfindingBand />
       <Footer />
