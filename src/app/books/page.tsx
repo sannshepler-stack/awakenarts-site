@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
-import StayConnected from '@/components/StayConnected'
 import BookTile from '@/components/books/BookTile'
 import { books } from '@/data/books'
 
@@ -47,7 +46,8 @@ export default function BooksPage() {
         {/* Free Resource section removed (Susan, 2026-10-07): the Path is not a
             book; it lives in Explore. FreeResources component kept. */}
 
-        <StayConnected source="books" />
+        {/* Encounter Journal signup removed (Susan, 2026-10-07): it is a
+            companion to the Encounters, not a book. Homepage and Explore keep it. */}
       </main>
       <WayfindingBand />
       <Footer />

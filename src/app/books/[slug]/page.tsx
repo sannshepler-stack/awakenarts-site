@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
-import StayConnected from '@/components/StayConnected'
 import WorldDoorways from '@/components/WorldDoorways'
 import BookCover from '@/components/books/BookCover'
 import BookTile, { statusText } from '@/components/books/BookTile'
@@ -83,9 +82,11 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                   {b.buyLabel || 'Buy the Book'}
                 </a>
               ) : (
-                <Link href="#stay-connected" className="home-coll-cta home-coll-cta--light-surface" data-cta={`notify-${b.slug}`}>
-                  Hear When It&rsquo;s Ready
-                </Link>
+                // Until the buy link is confirmed: a quiet note, no signup
+                // (2026-10-07 — "Hear When It's Ready" pointed at the Journal signup).
+                <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', color: 'var(--gold)', margin: '0.5rem 0 0' }}>
+                  Coming soon.
+                </p>
               )}
             </div>
           </div>
@@ -114,9 +115,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
           </section>
         )}
 
-        <div id="stay-connected">
-          <StayConnected source={`book-${b.slug}`} />
-        </div>
+        {/* Encounter Journal signup removed from book pages (Susan, 2026-10-07). */}
 
         <section aria-label="More books" style={{ padding: 'var(--band-gap) 1.5rem' }}>
           <h2 style={{ ...label, textAlign: 'center', marginBottom: '2rem' }}>More Books &amp; Journals</h2>
