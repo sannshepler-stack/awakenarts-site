@@ -46,7 +46,7 @@ export default function CollectionPage() {
               Each figure is a distinct world to explore.
             </p>
             <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem, 2.2vw, 1.55rem)', lineHeight: 1.5, color: 'var(--deep)', margin: '0 0 0.6rem' }}>
-              Each figure begins with an original image-shaped poem.
+              The figures begin with original image-shaped poems.
             </p>
             <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem, 2.2vw, 1.55rem)', lineHeight: 1.5, color: 'var(--deep)', margin: 0 }}>
               The Collection carries those poems further, amplifying and studying them through image, story, and
