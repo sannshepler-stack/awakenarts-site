@@ -22,7 +22,7 @@ const body: React.CSSProperties = {
 
 export default function HomeImageMirror() {
   return (
-    <section className="poems-showcase-foundation" aria-labelledby="image-mirror-heading">
+    <section className="poems-showcase-foundation" aria-labelledby="image-mirror-heading" style={{ paddingBottom: '4rem' }}>
       {/* 2026-10-07, Susan: the boat image stays with Christian Symbols, so
           this section uses the sky threshold from the former Section 2. */}
       <AtmosphericHeader
@@ -31,7 +31,7 @@ export default function HomeImageMirror() {
         fadeTo="var(--cream)"
       />
 
-      <div className="poems-showcase-foundation__inner" style={{ paddingTop: '4.5rem', paddingBottom: 0, textAlign: 'center' }}>
+      <div className="poems-showcase-foundation__inner" style={{ paddingTop: '1.5rem', paddingBottom: 0, textAlign: 'center' }}>
         <h2
           id="image-mirror-heading"
           style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', lineHeight: 1.2, color: 'var(--deep)', margin: '0 0 1.1rem', ...({ textWrap: 'balance' } as React.CSSProperties) }}
@@ -58,6 +58,29 @@ export default function HomeImageMirror() {
           Through image, poetry, and symbolic language, AwakenArts invites you to pause, reflect, and follow what draws
           your attention into your own story.
         </p>
+
+        {/* 2026-10-07, Susan: the Queen Ann poem and figure restored here —
+            a concrete example of symbolic language and image in action.
+            Same images and styling as HomeCollectionPremise (kept). */}
+        <div className="qac-ann-spread" style={{ marginTop: '3.5rem' }}>
+          <div className="qac-ann-spread__poem">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/forms/ann-text-ink-crop.png"
+              alt="Queen Ann — the poem, rendered in concrete poetry form"
+              className="qac-ann-spread__poem-img"
+              loading="lazy"
+            />
+          </div>
+          <div className="qac-ann-spread__portrait">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/forms/queen-ann-still.png"
+              alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
+              loading="lazy"
+            />
+          </div>
+        </div>
       </div>
     </section>
   )
