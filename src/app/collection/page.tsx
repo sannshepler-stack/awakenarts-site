@@ -49,7 +49,7 @@ export default function CollectionPage() {
               The figures collection begins with original image-shaped poems.
             </p>
             <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem, 2.2vw, 1.55rem)', lineHeight: 1.5, color: 'var(--deep)', margin: 0 }}>
-              It carries those poems further, amplifying and studying them through image, story, and
+              The process carries those poems further, amplifying and studying them through image, story, and
               symbolic reflection.
             </p>
           </div>

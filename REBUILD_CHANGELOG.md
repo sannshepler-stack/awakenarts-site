@@ -107,7 +107,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 92 | From the Books opens with Susan's Jung epigraph: "The symbolic process is an experience in images and of images" (Jung, 1969, p. 38), credited C. G. Jung, *The Archetypes and the Collective Unconscious*. |
 | 93 | Collection page intro: larger serif, and now says what the figures are (Susan): each begins with an original image-shaped poem; the Collection amplifies and studies those poems further through image, story, and symbolic reflection. |
 | 94 | The Path and My Foundation tied together (Susan): the Path page gains a My Foundation section (verbatim lines from /foundation, "Read My Foundation"); the Foundation page closes with a link back to The AwakenArts Path; the Foundation card leaves Explore. |
-| 95 | Collection intro first line shortened to "Each figure begins with an original image-shaped poem." (Susan). Explore cards keep the arrow with the last word (no lone arrow on its own line). Collection intro now leads with "Each figure is a distinct world to explore." in gold italic; then "The figures collection begins with original image-shaped poems. It carries those poems further…" (Susan). |
+| 95 | Collection intro first line shortened to "Each figure begins with an original image-shaped poem." (Susan). Explore cards keep the arrow with the last word (no lone arrow on its own line). Collection intro now leads with "Each figure is a distinct world to explore." in gold italic; then "The figures collection begins with original image-shaped poems. The process carries those poems further…" (Susan). |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
