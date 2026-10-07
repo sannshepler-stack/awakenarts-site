@@ -27,9 +27,11 @@ export default function CollectionPage() {
     <>
       <Nav />
       <main style={{ background: 'var(--cream)' }}>
+        {/* 2026-10-07, Susan: Queen Ann was cropped here and she already
+            opens the homepage, so the Collection uses the figures themselves. */}
         <AtmosphericHeader
-          src="/images/headers/queen-ann-threshold.jpg"
-          alt="A crowned figure with windswept hair facing a wide evening sky"
+          src="/images/headers/gallery-desk.jpg"
+          alt="The AwakenArts figures laid out on a table: Dragon, Queen Ann, Bowls, Ballerina, and Grismere open beside a journal"
           fadeTo="var(--cream)"
         />
 

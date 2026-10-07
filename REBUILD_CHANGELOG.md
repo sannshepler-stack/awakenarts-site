@@ -99,6 +99,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 84 | Homepage colour and order (Susan): Section 2 "You already speak in images" on navy · Queen Ann raised next, on white · Christian Symbols on cream · Collection & Workshops navy · Books white | Committed — awaiting review on localhost |
 | 85 | Edition pages show the contact sheet only (Susan: a look, not the complete Edition or a presentation), sized to fit one screen. The full page-by-page images (#28) are removed from the site files (they remain in git history) | Committed — awaiting review on localhost |
 | 86 | "Editions" retired (Susan). The works are **The AwakenArts Collection**, each a **Figure**, at /collection (nav, footer and menu band read COLLECTION). Figure pages: "A Figure from the AwakenArts Collection" · "Explore Grismere" · "View the Grismere Presentation" · "All the Figures". Christian Symbols closes with "More About the Figures". "Figure Edition(s)" → "Figure(s)" in About, Method, site metadata, legal pages and alt text. /editions/* forwards to /collection/*. The June Collection page is kept unrouted in src/app/_archive/collection-2026-06. |
+| 87 | Collection page header: Queen Ann (cropped, and she already opens the homepage) replaced by the figures laid out on a table (gallery-desk.jpg). |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
