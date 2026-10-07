@@ -16,7 +16,6 @@
 import Link from 'next/link'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
-import EmailGateDownload from '@/components/EmailGateDownload'
 import styles from './encounters-index.module.css'
 
 // Card kickers ("Encounter I", "Encounter II"...) were removed 2026-06-25
@@ -140,21 +139,15 @@ export default function EncountersIndexPage() {
           — the download now only fires once Kit confirms the subscriber
           was actually created, per Susan's directive. See
           EmailGateDownload component. */}
-      <div className={styles.journalCard}>
-        <p className={styles.journalEyebrow}>Free Companion</p>
-        <h2 className={styles.journalTitle}>The AwakenArts Encounter Journal</h2>
-        <p className={styles.journalCopy}>
-          A self-guided companion to the Encounters.
-        </p>
-        <EmailGateDownload
-          pdfHref="/files/free/AwakenArts_Encounter_Journal.pdf"
-          fileName="AwakenArts_Encounter_Journal.pdf"
-          source="encounters-journal"
-          itemLabel="the Journal"
-          submitLabel="Send Me the Journal"
-          thanksText="Welcome to AwakenArts. Your Encounter Journal is downloading now."
-        />
-      </div>
+      {/* 2026-10-07, Susan ("bulky"): the full signup card is replaced by
+          one quiet line. The Journal signup itself lives on Stay Connected
+          (and the homepage, Explore, and Books). */}
+      <p style={{ textAlign: 'center', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', lineHeight: 1.6, color: 'rgba(250, 246, 236, 0.85)', margin: '3.25rem auto 1rem', padding: '0 1.5rem', maxWidth: 640 }}>
+        A free companion: the AwakenArts Encounter Journal.{' '}
+        <Link href="/stay-connected" data-cta="encounters-journal-line" style={{ color: 'var(--gold-lt)', textDecoration: 'underline', textUnderlineOffset: 4, whiteSpace: 'nowrap' }}>
+          Receive the Journal
+        </Link>
+      </p>
 
       {/* Per Susan's "Global Page Architecture Standard" directive
           (2026-06-25): the text navigation that used to sit below the

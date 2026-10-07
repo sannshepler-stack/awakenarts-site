@@ -127,6 +127,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 112 | Symbols page band changed (Susan): the card fan gave the full page away, so it is now an invitation — the boat at sunset, "Twenty symbols, and four Encounters.", and "See More Symbols" (Susan's label). The .symbol-fan styles stay in globals.css, unused. |
 | 113 | Symbols page: "Twenty symbols, and four Encounters." removed (Susan: unnecessary and confusing). |
 | 114 | Symbols page: "Experience the Encounters" (→ /encounters) beside "See More Symbols" (Susan). |
+| 115 | Encounters page: the bulky Encounter Journal signup card becomes one quiet line linking to Stay Connected (Susan). The signup remains on the homepage, Explore, Books, book pages, and Stay Connected. |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
