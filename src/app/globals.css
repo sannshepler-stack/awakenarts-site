@@ -13522,12 +13522,14 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   line-height: 1.2;
   color: var(--gold);
   margin: 0.1rem 0 0;
-  /* A true mirror image of the line — same size and letterforms, flipped,
-     fading away from the line (2026-10-07). */
-  transform: scaleY(-1);
-  opacity: 0.26;
-  -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 80%);
-  mask-image: linear-gradient(to top, #000 0%, transparent 80%);
+  /* Mirror image of the line (2026-10-07). Flipping italic type reverses
+     its slant, which made the lettering look wrong; skewX puts the slant
+     back so the reflected letters lean like the line above. The fade is
+     gentle enough that whole letters stay visible. */
+  transform: scaleY(-1) skewX(24deg);
+  opacity: 0.28;
+  -webkit-mask-image: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.4) 100%);
+  mask-image: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.4) 100%);
   user-select: none;
   pointer-events: none;
 }
