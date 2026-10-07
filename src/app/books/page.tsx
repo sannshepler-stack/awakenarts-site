@@ -47,8 +47,8 @@ export default function BooksPage() {
 
         <section aria-labelledby="free-heading" style={{ background: '#fff', padding: 'var(--band-gap) 1.5rem' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 id="free-heading" style={{ ...label, textAlign: 'center', margin: '0 0 2rem' }}>Free Resources</h2>
-            <FreeResources source="books-index" />
+            <h2 id="free-heading" style={{ ...label, textAlign: 'center', margin: '0 0 2rem' }}>Free Resource</h2>
+            <FreeResources source="books-index" only={['/awakenarts-path']} />
           </div>
         </section>
 
