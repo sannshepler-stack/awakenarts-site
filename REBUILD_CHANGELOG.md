@@ -74,11 +74,13 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 59 | Whispers of Awareness card: subtitle on two lines — "Awakening Through" / "Art, Stories, and Symbols" | Committed — awaiting review on localhost |
 | 60 | Hero copy (Susan, section-by-section revision): statement "Every life holds patterns, memories, images, and stories waiting to be recognized."; paragraph "You already live with symbols. AwakenArts helps you recognize them, explore what they carry, and use image, poem, and reflection to understand your own story more deeply." Design, heading and CTAs unchanged | Committed — awaiting review on localhost |
 | 61 | **Homepage combined Sections 2 & 3** (Susan): one section under the ship image — "Sometimes an image stays with you." · "A memory returns…" · "An image can become a mirror." (gold italic with a faint reflection) · "Not by telling you what it means…" · "Through image, poetry, and symbolic language…". Replaces "You already speak in images" and "Scripture Speaks in Symbols" on the homepage (components kept) | Committed — awaiting review on localhost |
+| 62 | Homepage after Section 1 (Susan's instructions file): mirror section kept, now under the sky image (boat stays with Christian Symbols); **The AwakenArts Collection as its own dark section** after it, with the caption "These figures are a selected group from the larger AwakenArts series, a continuing body of figurative work created through image, poetry, and story." (also on Explore); workshop band follows unchanged except the banner moved out of it. Christian Symbols + boat preserved for its own section, position TBD | Committed — awaiting review on localhost |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
 - Why image and poetry are central to the work: **"Poetry is a biblical language of faith. Image gives that language a shape."**
-- Christian Symbols no longer appears on the homepage after the combined Sections 2 & 3 (10-07); decide where it returns.
+- **Christian Symbols + the boat image**: keep together as their own intentional homepage section (HomeChristianSymbols, kept); exact position decided in the page review.
+- Working rule (Susan, 10-07): the existing site is source material; localhost is the workbench; keep strong material even when temporarily out of the homepage flow.
 
 ## Governing distinctions (Susan, 2026-10-05)
 

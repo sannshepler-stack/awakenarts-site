@@ -3,6 +3,7 @@ import Nav from '@/components/Nav'
 import HomeBeginWithSymbol from '@/components/HomeBeginWithSymbol'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
 import HomeImageMirror from '@/components/HomeImageMirror'
+import HomeCollection from '@/components/HomeCollection'
 import HomeGuidedEncounters from '@/components/HomeGuidedEncounters'
 import HomeBooks from '@/components/HomeBooks'
 import HomeAbout from '@/components/HomeAbout'
@@ -121,6 +122,9 @@ export default function HomePage() {
           Replaces "You already speak in images" + "Scripture Speaks in Symbols" here;
           both components stay in the codebase. */}
       <HomeImageMirror />
+
+      {/* 4 — The AwakenArts Collection (dark), then the workshop band (2026-10-07). */}
+      <HomeCollection />
 
       {/* 5 — Guided Encounters */}
       <HomeGuidedEncounters />

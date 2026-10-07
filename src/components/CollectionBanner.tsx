@@ -4,7 +4,18 @@
 // homepage placement (HomeSection2, kept in git). Not used as the hero.
 // Caption beneath it — Susan, 2026-10-05.
 
-export default function CollectionBanner({ marginBottom, tone = 'dark' }: { marginBottom?: string; tone?: 'dark' | 'light' }) {
+export const COLLECTION_CAPTION =
+  'These figures are a selected group from the larger AwakenArts series, a continuing body of figurative work created through image, poetry, and story.'
+
+export default function CollectionBanner({
+  marginBottom,
+  tone = 'dark',
+  caption = COLLECTION_CAPTION,
+}: {
+  marginBottom?: string
+  tone?: 'dark' | 'light'
+  caption?: string
+}) {
   return (
     <figure style={{ margin: `0 auto ${marginBottom ?? '4rem'}`, maxWidth: 920 }}>
       <div className="section2-dark__collection" style={{ marginBottom: 0 }}>
@@ -18,16 +29,19 @@ export default function CollectionBanner({ marginBottom, tone = 'dark' }: { marg
       </div>
       <figcaption
         style={{
+          // Caption (Susan, 2026-10-07): makes clear these are a selection.
           fontFamily: 'var(--serif)',
           fontStyle: 'italic',
           fontSize: '1.15rem',
           lineHeight: 1.5,
           color: tone === 'dark' ? 'rgba(250, 247, 242, 0.8)' : 'var(--mid)',
           textAlign: 'center',
+          maxWidth: 640,
           margin: '1.1rem auto 0',
-        }}
+          textWrap: 'pretty',
+        } as React.CSSProperties}
       >
-        The AwakenArts Collection is a series of images. These are a select few.
+        {caption}
       </figcaption>
     </figure>
   )

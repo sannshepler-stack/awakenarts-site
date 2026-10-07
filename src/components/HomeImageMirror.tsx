@@ -3,10 +3,9 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
 // HomeImageMirror — homepage combined Sections 2 & 3 (2026-10-07, Susan).
 // Section 1 establishes that symbols are already part of the visitor's
 // life; this section shows what recognition can feel like. Copy is
-// Susan's, verbatim. The ship image stays as the threshold — calm water
-// holding the ship's reflection — and the line "An image can become a
-// mirror." carries a faint reflection of itself, so the visual suggests
-// mirroring rather than explaining it.
+// Susan's, verbatim. The line "An image can become a mirror." carries a
+// faint reflection of itself, so the visual suggests mirroring rather
+// than explaining it.
 //
 // Replaces, on the homepage only, HomeSpeakInImages + HomeChristianSymbols
 // (both kept in the codebase, unused here).
@@ -24,10 +23,11 @@ const body: React.CSSProperties = {
 export default function HomeImageMirror() {
   return (
     <section className="poems-showcase-foundation" aria-labelledby="image-mirror-heading">
+      {/* 2026-10-07, Susan: the boat image stays with Christian Symbols, so
+          this section uses the sky threshold from the former Section 2. */}
       <AtmosphericHeader
-        src="/images/homepage/encounters-symbols-ship-v3.png"
-        alt="A sailing ship on calm water at dusk, its reflection held in the surface"
-        tall
+        src="/images/headers/collection-threshold.jpg"
+        alt="A dark sky heavy with clouds breaking open to warm gold light along the horizon"
         fadeTo="var(--cream)"
       />
 

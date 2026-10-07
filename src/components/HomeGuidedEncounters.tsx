@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import CollectionBanner from '@/components/CollectionBanner'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
 import { guidedEncounters, themeLine } from '@/data/guidedEncounters'
 
@@ -13,9 +12,8 @@ export default function HomeGuidedEncounters() {
   return (
     <section className="section2" aria-label="Guided Encounters">
       <div className="section2-dark">
-        {/* The Collection image opens the section, as it did originally:
-            the body of work first, then the Editions experienced through it. */}
-        <CollectionBanner />
+        {/* 2026-10-07: the Collection image now has its own section just
+            above (HomeCollection); this band continues from it. */}
         <div className="section2-dark__inner" style={{ maxWidth: 980 }}>
           <p className="eyebrow" style={{ justifyContent: 'center', color: 'var(--gold-lt)' }}>Guided Encounters</p>
           <h2 className="section2-dark__title" style={{ marginTop: '1rem' }}>Images can reveal what experience has been trying to tell&nbsp;us.</h2>
