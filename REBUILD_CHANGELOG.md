@@ -113,6 +113,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 98 | Shape, Symbol & Story book page: a two-paragraph description (draft, from Susan's preface), about the length of Where You Stand's. |
 | 99 | Explore cards each carry an image from their own page: the Path cover's path, the Encounters journey path, the Journal's word spiral, the Christian Symbols boat, Queen Ann on the balcony (From the Books), and the butterfly word art. |
 | 100 | Homepage Books section shows only the free AwakenArts Path card (the Encounter Journal keeps its Stay Connected signup below). Explore: the Journal and Word Art images are transparent PNGs, now shown on cream instead of black (Susan). |
+| 101 | More ways into the Journal (Susan: only one entry point): footer Explore column; the "Continue into AwakenArts" doorways (Symbols, Symbol Portals, Books pages, Stay Connected); and a quiet close on the Collection page ("Prompts and reflections connected to the works in the Collection." · Go to the Journal). |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

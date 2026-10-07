@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import CollectionBanner from '@/components/CollectionBanner'
+import TextLink, { TextLinkRow } from '@/components/TextLink'
 import Footer from '@/components/Footer'
 import EditionTile from '@/components/editions/EditionTile'
 import { editions, EDITION_ORDER } from '@/data/editions'
@@ -69,6 +70,18 @@ export default function CollectionPage() {
               <EditionTile key={e.slug} e={e} />
             ))}
           </div>
+        </section>
+
+        {/* 2026-10-07, Susan: the Journal's entries grow from the Collection's
+            works — a quiet way in from here. */}
+        <section style={{ padding: '0 1.5rem var(--band-gap)', textAlign: 'center' }}>
+          <div className="path-intro-close-divider" aria-hidden="true" />
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.3rem', color: 'var(--deep)', margin: '0 0 1.25rem' }}>
+            Prompts and reflections connected to the works in the Collection.
+          </p>
+          <TextLinkRow center>
+            <TextLink href="/journal" cta="collection-journal">Go to the Journal</TextLink>
+          </TextLinkRow>
         </section>
 
         {/* No Encounter Journal signup here (2026-10-05, Susan): the

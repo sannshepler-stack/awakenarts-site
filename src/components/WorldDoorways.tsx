@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-// WorldDoorways — "into the AwakenArts world": the three doorways a visitor
+// WorldDoorways — "into the AwakenArts world": the doorways a visitor
 // can take after a Symbol Portal (Symbol Card → Symbol Portal → AwakenArts
 // World). Lines are existing approved site copy; Books has none yet, so it
 // shows its title only.
@@ -15,6 +15,12 @@ const DOORS: { href: string; title: string; line?: string }[] = [
     href: '/awakenarts-path',
     title: 'The AwakenArts Path',
     line: 'Poetry, Image, and Seeing Your Life',
+  },
+  // 2026-10-07, Susan: the Journal needs more than one way in.
+  {
+    href: '/journal',
+    title: 'The Journal',
+    line: 'A place to read, notice, and write — alongside the works that prompted it.',
   },
   { href: '/books', title: 'Books & Journals' },
 ]
@@ -50,8 +56,11 @@ export default function WorldDoorways({ heading = 'Continue into AwakenArts' }: 
                 background: '#fff',
               }}
             >
-              <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', color: 'var(--deep)', margin: 0 }}>
-                {d.title} <span aria-hidden="true" style={{ opacity: 0.55 }}>→</span>
+              <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', lineHeight: 1.25, color: 'var(--deep)', margin: 0 }}>
+                {d.title.split(' ').slice(0, -1).join(' ')}{' '}
+                <span style={{ whiteSpace: 'nowrap' }}>
+                  {d.title.split(' ').slice(-1)[0]} <span aria-hidden="true" style={{ opacity: 0.55 }}>→</span>
+                </span>
               </span>
               {d.line && (
                 <span style={{ display: 'block', fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--mid)', marginTop: '0.6rem' }}>

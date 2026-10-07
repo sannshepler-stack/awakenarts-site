@@ -28,6 +28,8 @@ import FooterSocial from './FooterSocial'
 const EXPLORE_LINKS = [
   { label: 'Explore', href: '/explore' },
   { label: 'Collection', href: '/collection' },
+  // 2026-10-07, Susan: the Journal needs more than one way in.
+  { label: 'The Journal', href: '/journal' },
   { label: 'Presentations & Workshops', href: '/presentations' },
   { label: 'Symbols', href: '/symbols' },
   { label: 'Books & Journals', href: '/books' },
