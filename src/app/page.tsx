@@ -124,12 +124,12 @@ export default function HomePage() {
           in Symbols" here; both components stay in the codebase. */}
       <HomeImageMirror />
 
-      {/* Christian Symbols with its boat image, right after Section 2 (2026-10-07,
-          Susan): it continues the conversation and ties Scripture to the work. */}
-      <HomeChristianSymbols />
-
-      {/* Queen Ann — An image can become a mirror. */}
+      {/* Queen Ann — An image can become a mirror. White, raised to follow
+          Section 2 (2026-10-07, Susan). */}
       <HomeQueenAnnMirror />
+
+      {/* Christian Symbols with its boat image, on cream (2026-10-07, Susan). */}
+      <HomeChristianSymbols />
 
       {/* Section 3 — The AwakenArts Collection + Workshops (2026-10-07, Susan). */}
       <HomeCollection />

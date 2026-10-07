@@ -13594,3 +13594,12 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 @media (max-width: 640px) {
   .mirror-ann { grid-template-columns: 1fr; gap: 2rem; max-width: 420px; }
 }
+
+/* 2026-10-07: Section 2 on navy; Queen Ann on white. */
+.section2-examples--on-dark .section2-examples__item { color: var(--gold-lt); }
+.section2-examples--on-dark .section2-examples__sep { color: rgba(250, 246, 236, 0.45); }
+.mirror-sky--to-white {
+  background:
+    linear-gradient(to bottom, transparent 35%, #fff 100%),
+    url('/images/headers/collection-threshold.jpg') center 40% / cover no-repeat;
+}

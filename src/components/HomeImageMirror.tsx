@@ -11,19 +11,19 @@ import PoemEnlarge from '@/components/PoemEnlarge'
 /** Section 2 — "You already speak in images." */
 export default function HomeImageMirror() {
   return (
-    <section aria-labelledby="image-mirror-heading" style={{ background: '#fff', padding: '3.5rem 1.5rem 4rem', textAlign: 'center' }}>
+    <section aria-labelledby="image-mirror-heading" style={{ background: 'var(--deep)', padding: '4rem 1.5rem 4.25rem', textAlign: 'center' }}>
       <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-        <p className="eyebrow section2-light__eyebrow" style={{ justifyContent: 'center' }}>AwakenArts, The Stories that Shape Us</p>
+        <p className="eyebrow" style={{ justifyContent: 'center', color: 'var(--gold-lt)' }}>AwakenArts, The Stories that Shape Us</p>
         <h2
           id="image-mirror-heading"
-          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', lineHeight: 1.2, color: 'var(--deep)', margin: '1rem 0 1.1rem', ...({ textWrap: 'balance' } as React.CSSProperties) }}
+          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', lineHeight: 1.2, color: 'var(--cream)', margin: '1rem 0 1.1rem', ...({ textWrap: 'balance' } as React.CSSProperties) }}
         >
           You already speak in images. We all do.
         </h2>
-        <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 'var(--hero-statement)', lineHeight: 1.3, color: 'var(--deep)', margin: '0 0 1.6rem' }}>
+        <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 'var(--hero-statement)', lineHeight: 1.3, color: 'rgba(250, 246, 236, 0.85)', margin: '0 0 1.6rem' }}>
           Sometimes an image stays with you.
         </p>
-        <p className="section2-examples">
+        <p className="section2-examples section2-examples--on-dark">
           <span className="section2-examples__item">&ldquo;We&rsquo;ve put up walls.&rdquo;</span>
           <span className="section2-examples__sep" aria-hidden="true">·</span>
           <span className="section2-examples__item section2-examples__item--mid">&ldquo;I&rsquo;m at a crossroads.&rdquo;</span>
@@ -39,9 +39,9 @@ export default function HomeImageMirror() {
  *  component so Christian Symbols can sit between the two.) */
 export function HomeQueenAnnMirror() {
   return (
-    <section aria-labelledby="queen-ann-mirror-heading" style={{ background: 'var(--cream)', padding: '0 1.5rem var(--band-gap)', textAlign: 'center' }}>
+    <section aria-labelledby="queen-ann-mirror-heading" style={{ background: '#fff', padding: '0 1.5rem var(--band-gap)', textAlign: 'center' }}>
       {/* The sky header now opens the Queen Ann section (2026-10-07, Susan). */}
-      <div className="mirror-sky" aria-hidden="true" style={{ margin: '0 -1.5rem 1.75rem' }} />
+      <div className="mirror-sky mirror-sky--to-white" aria-hidden="true" style={{ margin: '0 -1.5rem 1.75rem' }} />
       <p className="eyebrow" style={{ justifyContent: 'center' }}>Queen Ann</p>
       <div className="mirror-line" style={{ margin: '1rem auto 0' }}>
         <h2 id="queen-ann-mirror-heading" className="mirror-line__text">An image can become a mirror.</h2>

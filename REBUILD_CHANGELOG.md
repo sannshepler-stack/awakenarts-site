@@ -96,6 +96,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 81 | Christian Symbols moved up to follow Section 2 (Susan): it continues the conversation and ties Scripture to the work. Order: Hero · You already speak in images · Christian Symbols · Queen Ann · Collection & Workshops · Books · Stay Connected · About | Committed — awaiting review on localhost |
 | 82 | Mirror reflection back to a true mirror image (same size and letterforms, flipped, fading) — the flattened/blurred version no longer matched the line | Committed — awaiting review on localhost |
 | 83 | Mirror reflection: italic slant corrected so the reflected letters lean like the line; gentler fade keeps whole letters visible | Committed — awaiting review on localhost |
+| 84 | Homepage colour and order (Susan): Section 2 "You already speak in images" on navy · Queen Ann raised next, on white · Christian Symbols on cream · Collection & Workshops navy · Books white | Committed — awaiting review on localhost |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
