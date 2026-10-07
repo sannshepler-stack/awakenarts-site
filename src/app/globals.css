@@ -13540,10 +13540,10 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .mirror-ann {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  gap: 1.9rem;
   align-items: center;
-  max-width: 920px;
-  margin: 2.25rem auto 0;
+  max-width: 690px; /* 25% smaller than 920px (2026-10-07) */
+  margin: 2rem auto 0;
 }
 .mirror-ann__portrait {
   aspect-ratio: 2 / 3;
