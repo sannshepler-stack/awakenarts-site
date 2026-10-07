@@ -13603,3 +13603,13 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
     linear-gradient(to bottom, transparent 35%, #fff 100%),
     url('/images/headers/collection-threshold.jpg') center 40% / cover no-repeat;
 }
+
+/* Edition contact sheet, one-screen view (2026-10-07). */
+.edition-sheet-view {
+  display: block;
+  width: auto;
+  max-width: min(100%, 1000px);
+  max-height: calc(100vh - 11rem);
+  height: auto;
+  margin: 0 auto;
+}

@@ -97,6 +97,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 82 | Mirror reflection back to a true mirror image (same size and letterforms, flipped, fading) — the flattened/blurred version no longer matched the line | Committed — awaiting review on localhost |
 | 83 | Mirror reflection: italic slant corrected so the reflected letters lean like the line; gentler fade keeps whole letters visible | Committed — awaiting review on localhost |
 | 84 | Homepage colour and order (Susan): Section 2 "You already speak in images" on navy · Queen Ann raised next, on white · Christian Symbols on cream · Collection & Workshops navy · Books white | Committed — awaiting review on localhost |
+| 85 | Edition pages show the contact sheet only (Susan: a look, not the complete Edition or a presentation), sized to fit one screen. The full page-by-page images (#28) are removed from the site files (they remain in git history) | Committed — awaiting review on localhost |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
