@@ -67,19 +67,7 @@ export default function GalleryPage() {
         <section style={{ padding: 'calc(var(--band-gap) + 1rem) 1.5rem 2.5rem', textAlign: 'center' }}>
           <p className="eyebrow" style={{ justifyContent: 'center' }}>Gallery</p>
           <h1 style={{ ...h2Style, fontSize: 'var(--t-page)' }}>From the Books</h1>
-          {/* Epigraph (Susan, 2026-10-07): Jung, 1969, p. 38,
-              The Archetypes and the Collective Unconscious. */}
-          <blockquote style={{ maxWidth: 620, margin: '0.5rem auto 1.75rem' }}>
-            <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 'var(--t-poetic, 1.45rem)', lineHeight: 1.4, color: 'var(--deep)', margin: 0 }}>
-              &ldquo;The symbolic process is an experience in images and of images.&rdquo;
-            </p>
-            <footer style={{ fontFamily: 'var(--sans)', fontSize: '0.78rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--gold)', marginTop: '0.75rem' }}>
-              C. G. Jung
-              <cite style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: '1rem', letterSpacing: 0, textTransform: 'none', fontStyle: 'italic', color: 'var(--mid)', marginTop: '0.3rem' }}>
-                The Archetypes and the Collective Unconscious
-              </cite>
-            </footer>
-          </blockquote>
+          {/* The Jung epigraph moved to /explore (Susan, 2026-10-07). */}
           <p style={{ ...bodyStyle, maxWidth: 620, margin: '0 auto' }}>A selection of images from the AwakenArts books, gathered by book.</p>
         </section>
 

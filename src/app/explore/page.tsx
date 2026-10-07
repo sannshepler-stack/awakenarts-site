@@ -44,11 +44,24 @@ export default function ExplorePage() {
           alt="The AwakenArts figures laid out on a table: Dragon, Queen Ann, Bowls, Ballerina, and Grismere open beside a journal"
           fadeTo="var(--cream)"
         />
-        <section style={{ padding: '2rem 1.5rem 3rem', textAlign: 'center' }}>
+        <section style={{ padding: '2rem 1.5rem 3.75rem', textAlign: 'center' }}>
           <p className="eyebrow" style={{ justifyContent: 'center' }}>Explore</p>
           <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-page)', lineHeight: 1.15, color: 'var(--deep)', margin: '1rem 0 0' }}>
             When Language Shapes a Path
           </h1>
+          {/* Epigraph (Susan, 2026-10-07; moved here from /gallery): Jung, 1969, p. 38,
+              The Archetypes and the Collective Unconscious. */}
+          <blockquote style={{ maxWidth: 620, margin: '1.75rem auto 0' }}>
+            <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 'var(--t-poetic, 1.45rem)', lineHeight: 1.4, color: 'var(--deep)', margin: 0 }}>
+              &ldquo;The symbolic process is an experience in images and of images.&rdquo;
+            </p>
+            <footer style={{ fontFamily: 'var(--sans)', fontSize: '0.78rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--gold)', marginTop: '0.75rem' }}>
+              C. G. Jung
+              <cite style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: '1rem', letterSpacing: 0, textTransform: 'none', fontStyle: 'italic', color: 'var(--mid)', marginTop: '0.3rem' }}>
+                The Archetypes and the Collective Unconscious
+              </cite>
+            </footer>
+          </blockquote>
         </section>
         <section aria-label="Explore AwakenArts" style={{ padding: '0 1.5rem var(--band-gap)' }}>
           <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>

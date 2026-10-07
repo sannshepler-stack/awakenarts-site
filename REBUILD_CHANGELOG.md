@@ -117,6 +117,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 102 | Books page treated like the homepage (Susan): "Free Resource" shows the Path alone; the Encounter Journal keeps its own Stay Connected offer below. |
 | 103 | Presentations "Who They Are For": Churches removed (they fall under Community Groups); "Community Groups" capitalized (Susan). |
 | 104 | Explore: the Journal card now shows the "Recognition" notebook, cropped from the table header (gallery-desk.jpg), instead of the word spiral (Susan). |
+| 105 | The Jung epigraph moves from From the Books to Explore, under "When Language Shapes a Path", with more room before the cards (Susan). |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
