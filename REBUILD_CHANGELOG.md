@@ -142,7 +142,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 127 | Queen Ann: poem and portrait now share one vertical center; "Enlarge the poem" moves out of the poem column, centered beneath both (Susan). |
 | 128 | Queen Ann returned to the original smaller size (two equal columns, 690px), keeping one shared midpoint and "Enlarge the poem" centered beneath (Susan). Supersedes the enlargement in #126. |
 | 129 | Queen Ann mirroring (Susan): the poem-figure stands about 15% shorter than the portrait and is centered on the woman's own midpoint, on the same plane. Poem trimmed to its ink (ann-text-ink-trim.png; original kept). |
-| 130 | Queen Ann poem-figure 5% larger and lowered on the page (Susan). |
+| 130 | Queen Ann poem-figure 5% larger and centered on the portrait (Susan). |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
