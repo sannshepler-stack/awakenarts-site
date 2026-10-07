@@ -47,7 +47,12 @@ export const books: Book[] = [
     coverAlt: 'Cover of Shape, Symbol & Story by Susan Ann Shepler',
     // A Look Inside (2026-10-07, Susan: hold back; three pages only).
     // Source: SHAPE_SYMBOL_STORY/output/Shape_Symbol_Story_BUILD_v25_BLEED.pdf pp. 9, 11, 52.
-    // No back-cover description exists yet; the tagline stands alone.
+    // Description: DRAFT written 2026-10-07 from Susan's own preface
+    // (Susan asked for one about the length of Where You Stand's).
+    description: [
+      'Shape, Symbol & Story follows five Figures—the Dragon, Grismere, Ladybug, Merriweather, and Poppy—from ordinary poems to the images their words became.',
+      'Through story, myth, Scripture, and Jungian thought, the book explores what those images later revealed. The correspondences it traces are discoveries, not sources—an invitation to encounter each image and see what it opens for you.',
+    ],
     samples: [
       { src: '/images/books/samples/sss-p9.jpg', alt: 'Shape, Symbol & Story — the opening page of The Dragon' },
       { src: '/images/books/samples/sss-p11.jpg', alt: 'Shape, Symbol & Story — The Story of the Dragon' },
