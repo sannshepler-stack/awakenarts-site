@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
+import CollectionBanner from '@/components/CollectionBanner'
 import Footer from '@/components/Footer'
 import EditionTile from '@/components/editions/EditionTile'
 import { editions, EDITION_ORDER } from '@/data/editions'
-import { bodyStyle, h2Style } from '@/components/guided/GuidedParts'
+import { bodyStyle } from '@/components/guided/GuidedParts'
 
 // /collection — the AwakenArts Collection (2026-10-07, Susan: no longer
 // called "Editions"; each work is a Figure). Formerly /editions, 2026-10-05.
@@ -18,6 +19,10 @@ export const metadata: Metadata = {
   description:
     'Each figure in the Collection is an original AwakenArts work, built from image, poetry, story, and symbolic reflection. Each is a distinct world to explore.',
   alternates: { canonical: '/collection' },
+}
+
+const SR_ONLY: React.CSSProperties = {
+  position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0,
 }
 
 export default function CollectionPage() {
@@ -35,10 +40,12 @@ export default function CollectionPage() {
           fadeTo="var(--cream)"
         />
 
-        <section style={{ padding: 'var(--band-gap) 1.5rem', paddingTop: '2rem', textAlign: 'center' }}>
+        <section style={{ padding: '2.5rem 1.5rem 3.5rem', textAlign: 'center' }}>
+          {/* 2026-10-07, Susan: the Collection banner (also on Explore) is
+              this page's title; the h1 stays for screen readers and search. */}
+          <h1 style={SR_ONLY}>The AwakenArts Collection</h1>
+          <CollectionBanner marginBottom="2.5rem" tone="light" />
           <div style={{ maxWidth: 680, margin: '0 auto' }}>
-            <p className="eyebrow" style={{ justifyContent: 'center' }}>AwakenArts</p>
-            <h1 style={{ ...h2Style, fontSize: 'var(--t-page)' }}>The AwakenArts Collection</h1>
             <p style={bodyStyle}>
               Each figure in the Collection is an original AwakenArts work, built from image, poetry, story, and
               symbolic reflection. Each is a distinct world to explore.

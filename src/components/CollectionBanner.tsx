@@ -3,6 +3,9 @@
 // broader body of work. Same markup, crop and alt text as its original
 // homepage placement (HomeSection2, kept in git). Not used as the hero.
 // Caption beneath it — Susan, 2026-10-05.
+// `href` (2026-10-07): the homepage banner links to /collection.
+
+import Link from 'next/link'
 
 export const COLLECTION_CAPTION =
   'These figures are a selection from the larger AwakenArts series, created through image & poetry.'
@@ -11,21 +14,23 @@ export default function CollectionBanner({
   marginBottom,
   tone = 'dark',
   caption = COLLECTION_CAPTION,
+  href,
 }: {
   marginBottom?: string
   tone?: 'dark' | 'light'
   caption?: string
+  href?: string
 }) {
   return (
     <figure style={{ margin: `0 auto ${marginBottom ?? '4rem'}`, maxWidth: 920 }}>
       <div className="section2-dark__collection" style={{ marginBottom: 0 }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/collection/collection-banner-02.png"
-          alt="The AwakenArts Collection — poetic encounters in shape, symbol, and story — six framed visual-literary works displayed as a gallery wall"
-          className="section2-dark__collection-img"
-          loading="lazy"
-        />
+        {href ? (
+          <Link href={href} data-cta="collection-banner" style={{ display: 'block' }}>
+            <BannerImg />
+          </Link>
+        ) : (
+          <BannerImg />
+        )}
       </div>
       {caption && (
         <figcaption
@@ -46,5 +51,17 @@ export default function CollectionBanner({
         </figcaption>
       )}
     </figure>
+  )
+}
+
+function BannerImg() {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/images/collection/collection-banner-02.png"
+      alt="The AwakenArts Collection — poetic encounters in shape, symbol, and story — six framed visual-literary works displayed as a gallery wall"
+      className="section2-dark__collection-img"
+      loading="lazy"
+    />
   )
 }
