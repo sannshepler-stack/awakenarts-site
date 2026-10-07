@@ -7,7 +7,7 @@ import FreeResources from '@/components/books/FreeResources'
 
 export default function HomeBooks() {
   return (
-    <section aria-labelledby="home-books-heading" style={{ background: 'var(--cream)', padding: 'var(--band-gap) 1.5rem' }}>
+    <section aria-labelledby="home-books-heading" style={{ background: '#fff', padding: 'var(--band-gap) 1.5rem' }}>
       <div style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
         <p className="eyebrow" style={{ justifyContent: 'center' }}>Books</p>
         <h2

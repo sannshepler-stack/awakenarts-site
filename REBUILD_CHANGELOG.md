@@ -89,6 +89,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 74 | Section 2 (Susan): headline "You already speak in images. We all do." · "Sometimes an image stays with you." · three phrases; "AwakenArts explores familiar images…" removed. The sky header moves to open the Queen Ann section | Committed — awaiting review on localhost |
 | 75 | Section 2 on the warmer, darker cream (`--warm`); "Sometimes an image stays with you." as an italic serif line under the headline | Committed — awaiting review on localhost |
 | 76 | Christian Symbols back on the homepage as its own section, with its boat image, after Collection + Workshops and before Books | Committed — awaiting review on localhost |
+| 77 | Books & Resources on white, so it separates from the cream Christian Symbols section above (sections now alternate cream / white / warm) | Committed — awaiting review on localhost |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
