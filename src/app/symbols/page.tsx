@@ -19,14 +19,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/symbols' },
 }
 
-const FAN = [
-  { slug: 'lamp', name: 'Lamp', src: '/images/symbols/Lamp_Card_Front.png' },
-  { slug: 'path', name: 'Path', src: '/images/symbols/Path_Card_Front.png' },
-  { slug: 'shepherd', name: 'Shepherd', src: '/images/symbols/Shepherd_Card_Front.png' },
-  { slug: 'vine', name: 'Vine', src: '/images/symbols/Vine_Card_Front.png' },
-  { slug: 'pearl', name: 'Pearl', src: '/images/symbols/Pearl_Card_Front.png' },
-]
-
 export default function SymbolsIndexPage() {
   return (
     <>
@@ -90,24 +82,23 @@ export default function SymbolsIndexPage() {
           <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', color: 'var(--mid)', margin: '0 0 2.25rem' }}>
             Scripture speaks in symbols.
           </p>
-          {/* 2026-10-07, Susan ("vanilla"): a few of the card fronts, each
-              opening its own symbol page. Five only — a glimpse. */}
-          <div className="symbol-fan">
-            {FAN.map((c) => (
-              <Link key={c.slug} href={`/symbols/${c.slug}`} className="symbol-fan__card" data-cta={`symbols-fan-${c.slug}`}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={c.src} alt={`${c.name} — Symbol Card`} loading="lazy" />
-                <span>{c.name}</span>
-              </Link>
-            ))}
-          </div>
-          {/* The band is a preview, not the page (Susan, 2026-10-07): the full
-              Christian Symbols page, with every linked symbol word, is here. */}
-          <div style={{ marginTop: '2.5rem' }}>
-            <Link href="/christian-symbols" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-all-christian">
-              See All the Symbols
-            </Link>
-          </div>
+          {/* 2026-10-07, Susan: the card fan gave the full page away (it opens
+              with the same cards). Now an invitation: one image, and a line
+              naming what waits there — the vocabulary and the Encounters. */}
+          <Link href="/christian-symbols" className="symbols-invite" data-cta="symbols-christian-invite">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/homepage/encounters-symbols-ship-v3.png"
+              alt="A sailboat on still water at sunset, framed by trees on the shore"
+              loading="lazy"
+            />
+          </Link>
+          <p style={{ fontFamily: 'var(--serif)', fontSize: '1.3rem', lineHeight: 1.5, color: 'var(--deep)', margin: '2rem auto 1.75rem', maxWidth: 560 }}>
+            Twenty symbols, and four Encounters.
+          </p>
+          <Link href="/christian-symbols" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-all-christian">
+            Enter Symbols for the Christian Soul
+          </Link>
         </section>
 
         <WorldDoorways />
