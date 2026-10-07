@@ -64,7 +64,7 @@ export const PRESENTATIONS: Presentation[] = [
     length: '75 minutes',
     // 2026-10-05, Susan: no church-specific audience unless approved later.
     // Add further settings here as they are approved.
-    audiences: ['Libraries', 'Clubs', 'Community groups'],
+    audiences: ['Libraries', 'Clubs', 'Community Groups'],
     image: '/images/editions/grismere-figure.jpg',
     imageAlt: 'Grismere — the figure artwork',
     editions: ['grismere'],
@@ -97,7 +97,8 @@ export function getPresentation(slug: string) {
 export const PRESENTATION_FORMAT: string[] = []
 
 /** Who they are for — Susan, 2026-10-05. */
-export const PRESENTATION_AUDIENCES = ['Churches', 'Clubs', 'Libraries', 'Retreats', 'Community groups']
+// 2026-10-07, Susan: Churches fall under Community Groups.
+export const PRESENTATION_AUDIENCES = ['Clubs', 'Libraries', 'Retreats', 'Community Groups']
 
 /** VERBATIM — former Workshops page, "About the Workshops". */
 export const ABOUT_WORKSHOPS = {
