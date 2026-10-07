@@ -13613,3 +13613,45 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   height: auto;
   margin: 0 auto;
 }
+
+/* From the Books gallery (2026-10-07) */
+.fb-book {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 760px;
+  margin: 0 auto 3rem;
+}
+.fb-book__cover img {
+  width: 100%;
+  display: block;
+  box-shadow: 0 8px 24px rgba(28, 43, 58, 0.16);
+}
+.fb-grid {
+  columns: 3 300px;
+  column-gap: 1.5rem;
+}
+.fb-grid__item {
+  break-inside: avoid;
+  margin: 0 0 1.5rem;
+  background: #fff;
+  border: 1px solid var(--mist);
+  padding: 10px 10px 0;
+  box-shadow: 0 6px 18px rgba(28, 43, 58, 0.08);
+}
+.fb-grid__item img {
+  width: 100%;
+  display: block;
+}
+.fb-grid__item figcaption {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--mid);
+  text-align: center;
+  padding: 0.6rem 0.5rem 0.75rem;
+}
+@media (max-width: 600px) {
+  .fb-book { grid-template-columns: 110px 1fr; gap: 1.25rem; }
+}

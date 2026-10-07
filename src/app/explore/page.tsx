@@ -22,8 +22,9 @@ const DOORS: { href: string; title: string; line?: string }[] = [
   { href: '/encounters', title: 'Encounters', line: 'Every journey begins with a single encounter.' },
   { href: '/journal', title: 'The Journal', line: 'A place to read, notice, and write — alongside the works that prompted it.' },
   { href: '/christian-symbols', title: 'Symbols for the Christian Soul', line: 'Scripture speaks in symbols.' },
-  // The Gallery is left off (2026-10-07, Susan): it repeats the Collection.
-  // The /gallery page stays; it may return with more works or book images.
+  // The Gallery returns as From the Books (2026-10-07, Susan): story images
+  // from the books, so it no longer repeats the Collection.
+  { href: '/gallery', title: 'From the Books', line: 'Images from the AwakenArts books.' },
   { href: '/experience', title: 'Make Your Own Word Art', line: 'Bring your own words and watch them take shape.' },
   { href: '/foundation', title: 'My Foundation', line: 'Every life tells its story in ways that are often quieter than words.' },
 ]

@@ -82,6 +82,10 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
             <div style={{ display: 'inline-block', background: '#fff', border: '1px solid var(--mist)', padding: 12, boxShadow: '0 8px 24px rgba(28, 43, 58, 0.1)' }}>
               <ProtectedImage src={e.contactSheet} alt={e.contactSheetAlt} loading="lazy" className="edition-sheet-view" />
             </div>
+            {/* 2026-10-07, Susan: suggest these are not the complete works. */}
+            <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.15rem', color: 'var(--mid)', margin: '1rem 0 0' }}>
+              A glimpse of the pages of {shortTitle}, not the complete work.
+            </p>
             {reader && (
               <div style={{ marginTop: '2rem' }}>
                 <TextLinkRow center>

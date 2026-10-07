@@ -1,168 +1,108 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
+import TextLink, { TextLinkRow } from '@/components/TextLink'
+import { bodyStyle, h2Style } from '@/components/guided/GuidedParts'
+
+// /gallery — From the Books (2026-10-07, Susan). The former Gallery repeated
+// the Collection's figures; it now gathers the story images from the
+// AwakenArts books, one group per book, starting with Where You Stand.
+// The June 2026 Gallery is kept unrouted in src/app/_archive/gallery-2026-06.
+// Images: KINGS & QUEENS/REVISION_2026-09-26/.../02_ASSETS, resized for web.
+// DRAFT: Susan is choosing which images stay.
 
 export const metadata: Metadata = {
-  title: 'Gallery — AwakenArts',
-  description:
-    'A quiet gallery of the figures of the AwakenArts Collection — artwork, titles, and excerpts presented for appreciation, not decision.',
+  title: 'From the Books — AwakenArts',
+  description: 'Story images from the AwakenArts books, beginning with Where You Stand: A Seek & Find Journal.',
   alternates: { canonical: '/gallery' },
-  openGraph: {
-    url: '/gallery',
-    title: 'Gallery — AwakenArts',
-    description:
-      'A quiet gallery of the figures of the AwakenArts Collection — artwork, titles, and excerpts presented for appreciation, not decision.',
-  },
 }
 
-/* ── Gallery (formerly Poems) ──────────────────────────────────────────
- * Directive (2026-06-29): "The current Poems page should be renamed
- * Gallery. The Gallery is not part of the marketing sequence. Its
- * purpose is quiet browsing and appreciation. It presents the published
- * Edition works through representative artwork, the Edition titles, and
- * the existing descriptive text. The Gallery allows visitors to become
- * familiar with the published works without asking them to make
- * decisions." Follow-up directive: "Remove links."
- *
- * This page is the former /poems page (see AwakenArts_Implementation_Log.md
- * and AwakenArts_Publishing_Platform_Architecture.md, 2026-06-29 entries),
- * carried over content-and-image-sourcing intact, with every per-card link
- * to its Edition removed. The Gallery is the one room in the Architectural
- * Sequence (Homepage → Encounters → Gallery → Collection → Edition Preview
- * → ...) that asks nothing of the visitor — no link, button, or path
- * forward. Familiarity with the work happens here; the decision to go
- * further happens at Collection and Edition Preview, not here.
- *
- * Image/excerpt sourcing standard carried over unchanged from the former
- * Poems page: every image and excerpt comes directly from that Edition's
- * own approved files (public/files/editions/*.pdf), never from Workbook
- * drafts or placeholder text. Scope: a work appears here only if it has a
- * completed Figure Edition (src/data/editions.ts) — currently Dragon,
- * Bowls, Ballerina, Grismere, Poppy, and Queen Ann.
- *
- * Exception, 2026-07-14: the Poppy tile now uses
- * poppy-atmospheric-02.jpg — pulled by Susan's explicit direction from
- * the Poppy Workbook's own atmosphere folder
- * (AwakenArts_Workbook/06_Poppy/images/atmosphere/poppy-atmospheric-02.png),
- * replacing the former poppy-figure.jpg (a landscape crop, the one
- * aspect-ratio outlier in this grid — see the 4:5 vertical-frame note
- * below). The new painting is portrait and lands almost exactly on the
- * frame's own 4:5 ratio, so it now sits flush with the rest of the row
- * instead of needing extra cream matting top and bottom.
- *
- * AtmosphericHeader removed again, 2026-06-29: per Susan, "I love the
- * header style on the gallery page but it doesn't work with the page."
- * The gallery-banner-3.jpg header (added under the "Banner Height + Seam"
- * rollout) is gone; the page now opens directly on `.lib-hero`, which
- * already carries its own dark (#0e1418) field and enough top padding to
- * clear the fixed nav on every breakpoint, so no other section needed to
- * change. This is the second time a threshold header has been tried and
- * removed from this specific page — see the `.lib-hero` comment in
- * globals.css for the first (2026-06-25) removal, of the prior Poems
- * page's Threshold Header.
- */
+type Img = { file: string; title: string; alt: string }
 
-interface GalleryTile {
+const BOOKS: {
   slug: string
-  kicker: string
   title: string
-  image: { src: string; alt: string }
-}
-
-const tiles: GalleryTile[] = [
+  subtitle: string
+  cover: string
+  line: string
+  dir: string
+  images: Img[]
+}[] = [
   {
-    slug: 'poppy',
-    kicker: 'Poppy',
-    title: "Her Mother's Hands",
-    image: {
-      src: '/images/editions/poppy-atmospheric-02.jpg',
-      alt: 'Poppy — a golden-hour painting of California poppies on a hillside above a mission bell tower, its own atmospheric artwork.',
-    },
-  },
-  {
-    slug: 'dragon',
-    kicker: 'Dragon',
-    title: 'The Dragon',
-    image: {
-      src: '/images/editions/dragon-figure.jpg',
-      alt: 'The Dragon — a watercolor study of a winged dragon coiled and rising, its own figure artwork.',
-    },
-  },
-  {
-    slug: 'grismere',
-    kicker: 'Grismere',
-    title: 'Mermaid Grismere',
-    image: {
-      src: '/images/editions/grismere-figure.jpg',
-      alt: 'Grismere — a watercolor mermaid with flowing hair, seated on a rock above the waves, its own figure artwork.',
-    },
-  },
-  {
-    slug: 'bowls',
-    kicker: 'Bowls',
-    title: 'Both Sides Now',
-    image: {
-      src: '/images/editions/bowls-figure.jpg',
-      alt: 'Bowls — a still-life of two blue-and-white patterned bowls of berries on a lace-covered table before an open window overlooking the sea at sunset, its own figure photograph.',
-    },
-  },
-  {
-    slug: 'ballerina',
-    kicker: 'Ballerina',
-    title: 'Love Ballet',
-    image: {
-      src: '/images/editions/ballerina-figure.jpg',
-      alt: 'Ballerina — a watercolor study of a young dancer in pink tutu and pointe shoes, mid-pose, its own figure artwork.',
-    },
-  },
-  {
-    slug: 'queen-ann',
-    kicker: 'Queen',
-    title: 'Queen Ann',
-    image: {
-      src: '/images/editions/queen-ann-figure.jpg',
-      alt: 'Queen Ann — a crowned figure in a gilded gown looking out over a mountain vista at sunset, its own figure artwork.',
-    },
+    slug: 'where-you-stand',
+    title: 'Where You Stand',
+    subtitle: 'A Seek & Find Journal',
+    cover: '/images/books/where-you-stand-cover.jpg',
+    line: 'A story of a queen, a king, and a path, told in image and poem.',
+    dir: '/images/gallery/where-you-stand',
+    images: [
+      { file: '01-enter-the-story', title: 'Enter the Story', alt: 'A stone archway marked “Enter the Story,” a satchel at its foot and a path beyond' },
+      { file: '02-ann-at-the-viewpoint', title: 'Ann at the Viewpoint', alt: 'Ann in a blue cloak looking out over a river valley toward a distant castle' },
+      { file: '03-queen-ann-on-the-balcony', title: 'Queen Ann on the Balcony', alt: 'Queen Ann at a stone balcony, a castle on the hill beyond' },
+      { file: '04-the-burning-castle', title: 'The Burning Castle', alt: 'Ann hurrying down a hillside path, the castle burning behind her' },
+      { file: '05-the-queen-on-the-terrace', title: 'The Queen on the Terrace', alt: 'A carved chess queen on a flowered terrace above the hills' },
+      { file: '06-king-and-queen-on-the-terrace', title: 'King and Queen on the Terrace', alt: 'Carved chess king and queen side by side on a sunlit terrace' },
+      { file: '07-the-archway', title: 'The Archway', alt: 'A vine-covered stone archway opening onto a winding path' },
+      { file: '08-the-path-forward', title: 'The Path Forward', alt: 'A path winding through open country toward a distant town' },
+      { file: '09-the-courtyard', title: 'The Courtyard', alt: 'An empty checkered courtyard with low stone walls, the hills beyond' },
+      { file: '10-the-king', title: 'The King', alt: 'A crowned king with a sceptre and blue cloak standing on a hillside' },
+      { file: '11-the-kings-castle', title: 'The King’s Castle', alt: 'A many-towered castle among trees' },
+      { file: '12-crown-and-sword-at-the-gate', title: 'Crown and Sword at the Gate', alt: 'A crown and sword resting on a wall beside an open gate and a path' },
+      { file: '13-the-throne-room', title: 'The Throne Room', alt: 'A sunlit throne room, a crown and rose at the foot of the throne' },
+      { file: '14-king-and-queen-on-the-board', title: 'King and Queen on the Board', alt: 'Chess king and queen facing each other on a board set in the hills' },
+      { file: '15-the-valley-path', title: 'The Valley Path', alt: 'A path crossing a wide valley toward a castle on the horizon' },
+      { file: '16-the-road-ahead-olive-hillside', title: 'The Road Ahead', alt: 'A stone path through an olive hillside at sunset' },
+      { file: '17-the-road-ahead', title: 'The Road Ahead, Valley', alt: 'A path winding down through wildflowers into a sunlit valley' },
+    ],
   },
 ]
-
-/* ── Page ──────────────────────────────────────────────── */
 
 export default function GalleryPage() {
   return (
     <>
       <Nav />
+      <main style={{ background: 'var(--cream)' }}>
+        <section style={{ padding: 'calc(var(--band-gap) + 1rem) 1.5rem 2.5rem', textAlign: 'center' }}>
+          <p className="eyebrow" style={{ justifyContent: 'center' }}>Gallery</p>
+          <h1 style={{ ...h2Style, fontSize: 'var(--t-page)' }}>From the Books</h1>
+          <p style={{ ...bodyStyle, maxWidth: 620, margin: '0 auto' }}>A selection of images from the AwakenArts books, gathered by book.</p>
+        </section>
 
-      <section className="lib-hero" aria-label="Gallery">
-        <div className="lib-hero__inner">
-          <p className="eyebrow">AwakenArts</p>
-          <h1>The Gallery</h1>
-        </div>
-      </section>
-
-      <section className="poems-gallery-section" aria-label="Gallery tiles">
-        <div className="poems-gallery">
-          {tiles.map(({ slug, kicker, title, image }) => (
-            <article key={slug} className="poem-card">
-              <div className="poem-card__imageFrame">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="poem-card__image"
-                  loading="lazy"
-                />
+        {BOOKS.map((b) => (
+          <section key={b.slug} aria-labelledby={`book-${b.slug}`} style={{ padding: '1rem 1.5rem var(--band-gap)' }}>
+            <div style={{ maxWidth: 1120, margin: '0 auto' }}>
+              <div className="fb-book">
+                <Link href={`/books/${b.slug}`} className="fb-book__cover" data-cta={`gallery-book-${b.slug}`}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={b.cover} alt={`Cover of ${b.title}: ${b.subtitle}`} loading="lazy" />
+                </Link>
+                <div>
+                  <h2 id={`book-${b.slug}`} style={{ ...h2Style, margin: 0 }}>{b.title}</h2>
+                  <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', color: 'var(--mid)', margin: '0.2rem 0 0.75rem' }}>
+                    {b.subtitle}
+                  </p>
+                  <p style={{ ...bodyStyle, margin: '0 0 1rem' }}>{b.line}</p>
+                  <TextLinkRow>
+                    <TextLink href={`/books/${b.slug}`} cta={`gallery-about-${b.slug}`}>About the Book</TextLink>
+                  </TextLinkRow>
+                </div>
               </div>
-              <div className="poem-card__body">
-                <p className="poem-card__kicker">{kicker}</p>
-                <h2 className="poem-card__title">{title}</h2>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
 
+              <div className="fb-grid">
+                {b.images.map((im) => (
+                  <figure key={im.file} className="fb-grid__item">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`${b.dir}/${im.file}.jpg`} alt={im.alt} loading="lazy" />
+                    <figcaption>{im.title}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
+      </main>
       <WayfindingBand />
       <Footer />
     </>
