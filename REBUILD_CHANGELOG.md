@@ -123,6 +123,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 108 | Symbols page: "Explore Christian Symbols" button removed; the card fan leads in on its own (Susan). Header image for the page coming from Susan. |
 | 109 | Symbols page header: Susan's watercolor of walls, a crossroads, and stepping stones (symbols-figurative-landscape.jpg), blended into the cream above the heading. |
 | 110 | Presentations intro begins "AwakenArts takes the familiar relationship between image and language…" — "You already speak in images. We all do." left off (repeated on the homepage and Symbols) (Susan). |
+| 111 | Symbols page: the card fan is a preview, not a replacement — "See All the Symbols" restored beneath it, leading to the full Christian Symbols page with every linked symbol word (Susan). Corrects #108. |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

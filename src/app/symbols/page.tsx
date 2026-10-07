@@ -101,9 +101,13 @@ export default function SymbolsIndexPage() {
               </Link>
             ))}
           </div>
-          {/* "Explore Christian Symbols" button removed (Susan, 2026-10-07):
-              the cards themselves lead in. /christian-symbols stays reachable
-              from Explore. */}
+          {/* The band is a preview, not the page (Susan, 2026-10-07): the full
+              Christian Symbols page, with every linked symbol word, is here. */}
+          <div style={{ marginTop: '2.5rem' }}>
+            <Link href="/christian-symbols" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-all-christian">
+              See All the Symbols
+            </Link>
+          </div>
         </section>
 
         <WorldDoorways />
