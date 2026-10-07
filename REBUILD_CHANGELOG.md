@@ -105,6 +105,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 90 | Explore: the Gallery doorway is left off; it repeats the Collection. The /gallery page itself stays, and could return with more works or the book images. |
 | 91 | Gallery becomes **From the Books** (draft): 17 Where You Stand story images, in story order, under the book's cover and an About the Book link; back on Explore as "From the Books". June Gallery kept unrouted in src/app/_archive/gallery-2026-06. Not-the-whole-work wording (Susan): Gallery intro reads "A selection of images…"; each Figure page's contact sheet carries "A glimpse of the pages of X, not the complete work." |
 | 92 | From the Books opens with Susan's Jung epigraph: "The symbolic process is an experience in images and of images" (Jung, 1969, p. 38), credited C. G. Jung, *The Archetypes and the Collective Unconscious*. |
+| 93 | Collection page intro: larger serif, and now says what the figures are (Susan): each begins with an original image-shaped poem; the Collection amplifies and studies those poems further through image, story, and symbolic reflection. |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

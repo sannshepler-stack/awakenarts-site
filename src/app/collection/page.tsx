@@ -4,7 +4,6 @@ import CollectionBanner from '@/components/CollectionBanner'
 import Footer from '@/components/Footer'
 import EditionTile from '@/components/editions/EditionTile'
 import { editions, EDITION_ORDER } from '@/data/editions'
-import { bodyStyle } from '@/components/guided/GuidedParts'
 
 // /collection — the AwakenArts Collection (2026-10-07, Susan: no longer
 // called "Editions"; each work is a Figure). Formerly /editions, 2026-10-05.
@@ -16,7 +15,7 @@ import { bodyStyle } from '@/components/guided/GuidedParts'
 export const metadata: Metadata = {
   title: 'The AwakenArts Collection',
   description:
-    'Each figure in the Collection is an original AwakenArts work, built from image, poetry, story, and symbolic reflection. Each is a distinct world to explore.',
+    'Each figure begins with an original image-shaped poem. The Collection amplifies and studies those poems further through image, story, and symbolic reflection.',
   alternates: { canonical: '/collection' },
 }
 
@@ -39,10 +38,15 @@ export default function CollectionPage() {
               this page's title; the h1 stays for screen readers and search. */}
           <h1 style={SR_ONLY}>The AwakenArts Collection</h1>
           <CollectionBanner marginBottom="2.5rem" tone="light" />
-          <div style={{ maxWidth: 680, margin: '0 auto' }}>
-            <p style={bodyStyle}>
-              Each figure in the Collection is an original AwakenArts work, built from image, poetry, story, and
-              symbolic reflection. Each is a distinct world to explore.
+          {/* 2026-10-07, Susan: larger, and saying what the figures are —
+              amplifications and further study of the original image-shaped poems. */}
+          <div style={{ maxWidth: 760, margin: '0 auto' }}>
+            <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem, 2.2vw, 1.55rem)', lineHeight: 1.5, color: 'var(--deep)', margin: '0 0 1rem' }}>
+              Each figure begins with an original image-shaped poem, its words set in the form of what it speaks.
+            </p>
+            <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem, 2.2vw, 1.55rem)', lineHeight: 1.5, color: 'var(--deep)', margin: 0 }}>
+              The Collection carries those poems further, amplifying and studying them through image, story, and
+              symbolic reflection. Each figure is a distinct world to explore.
             </p>
           </div>
         </section>
