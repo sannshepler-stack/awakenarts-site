@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import HomeBeginWithSymbol from '@/components/HomeBeginWithSymbol'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
-import HomeImageMirror from '@/components/HomeImageMirror'
+import HomeImageMirror, { HomeQueenAnnMirror } from '@/components/HomeImageMirror'
 import HomeCollection from '@/components/HomeCollection'
 import HomeChristianSymbols from '@/components/HomeChristianSymbols'
 import HomeBooks from '@/components/HomeBooks'
@@ -124,12 +124,16 @@ export default function HomePage() {
           in Symbols" here; both components stay in the codebase. */}
       <HomeImageMirror />
 
+      {/* Christian Symbols with its boat image, right after Section 2 (2026-10-07,
+          Susan): it continues the conversation and ties Scripture to the work. */}
+      <HomeChristianSymbols />
+
+      {/* Queen Ann — An image can become a mirror. */}
+      <HomeQueenAnnMirror />
+
       {/* Section 3 — The AwakenArts Collection + Workshops (2026-10-07, Susan). */}
       <HomeCollection />
 
-      {/* Section 5 — Christian Symbols with its boat image (2026-10-07, Susan):
-          its own intentional section, after the work and how to experience it. */}
-      <HomeChristianSymbols />
 
       {/* Guided Encounters band: replaced on the homepage by the Workshops
           block inside HomeCollection (2026-10-07, Susan). Component kept. */}

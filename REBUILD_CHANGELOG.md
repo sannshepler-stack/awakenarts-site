@@ -93,6 +93,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 78 | Section 2 ("You already speak in images") on white | Committed — awaiting review on localhost |
 | 79 | Mirror reflection flattened and softly blurred so it reads as a reflection rather than upside-down lettering | Committed — awaiting review on localhost |
 | 80 | Free resource cards (The AwakenArts Path, Encounter Journal) on cream so they stand out on the white Books sections (homepage and Books page) | Committed — awaiting review on localhost |
+| 81 | Christian Symbols moved up to follow Section 2 (Susan): it continues the conversation and ties Scripture to the work. Order: Hero · You already speak in images · Christian Symbols · Queen Ann · Collection & Workshops · Books · Stay Connected · About | Committed — awaiting review on localhost |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
