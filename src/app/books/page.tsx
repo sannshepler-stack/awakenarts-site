@@ -5,7 +5,6 @@ import Footer from '@/components/Footer'
 import StayConnected from '@/components/StayConnected'
 import BookTile from '@/components/books/BookTile'
 import { books } from '@/data/books'
-import FreeResources from '@/components/books/FreeResources'
 
 // /books — Books & Journals (Rebuild Plan §6). Books first, as paid work;
 // free resources in their own, quieter section below.
@@ -45,12 +44,8 @@ export default function BooksPage() {
           </div>
         </section>
 
-        <section aria-labelledby="free-heading" style={{ background: '#fff', padding: 'var(--band-gap) 1.5rem' }}>
-          <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 id="free-heading" style={{ ...label, textAlign: 'center', margin: '0 0 2rem' }}>Free Resource</h2>
-            <FreeResources source="books-index" only={['/awakenarts-path']} />
-          </div>
-        </section>
+        {/* Free Resource section removed (Susan, 2026-10-07): the Path is not a
+            book; it lives in Explore. FreeResources component kept. */}
 
         <StayConnected source="books" />
       </main>

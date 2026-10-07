@@ -1,7 +1,6 @@
 import TextLink from '@/components/TextLink'
 import BookTile from '@/components/books/BookTile'
 import { books } from '@/data/books'
-import FreeResources from '@/components/books/FreeResources'
 
 // HomeBooks — homepage section 6, Books & Resources (Rebuild Plan §3).
 
@@ -21,9 +20,7 @@ export default function HomeBooks() {
             <BookTile key={b.slug} book={b} source="home" />
           ))}
         </div>
-        <div style={{ marginTop: '3.5rem' }}>
-          <FreeResources source="home" only={['/awakenarts-path']} />
-        </div>
+        {/* Free Path card removed (Susan, 2026-10-07): the Path lives in Explore. */}
         <p style={{ marginTop: '2.5rem' }}>
           <TextLink href="/books" cta="home-books">Explore Books &amp; Journals</TextLink>
         </p>

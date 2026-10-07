@@ -131,6 +131,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 116 | Presentations: "Who They Are For" and "What to Expect" combined in one cream section; "Your Presenter" moves to white to keep the alternation (Susan). |
 | 117 | Presentations: Encounter Journal signup removed (Susan: why is this here?); the inquiry form already has "Keep me informed". |
 | 118 | From the Books holds back (Susan): Where You Stand limited to six images (none repeating its book page's Look Inside); adds Shape, Symbol & Story (four: the mermaid at rest, ladybug on the page, poppy hills, Merriweather) and Whispers of Awareness (two: the poppy and the ballerina). |
+| 119 | The AwakenArts Path is no longer offered as a book (Susan): its free card is removed from the homepage Books section and the Books page; it lives in Explore. FreeResources component kept. |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
