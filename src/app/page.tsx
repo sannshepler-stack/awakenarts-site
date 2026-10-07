@@ -4,6 +4,7 @@ import HomeBeginWithSymbol from '@/components/HomeBeginWithSymbol'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
 import HomeImageMirror from '@/components/HomeImageMirror'
 import HomeCollection from '@/components/HomeCollection'
+import HomeChristianSymbols from '@/components/HomeChristianSymbols'
 import HomeBooks from '@/components/HomeBooks'
 import HomeAbout from '@/components/HomeAbout'
 import StayConnected from '@/components/StayConnected'
@@ -125,6 +126,10 @@ export default function HomePage() {
 
       {/* Section 3 — The AwakenArts Collection + Workshops (2026-10-07, Susan). */}
       <HomeCollection />
+
+      {/* Section 5 — Christian Symbols with its boat image (2026-10-07, Susan):
+          its own intentional section, after the work and how to experience it. */}
+      <HomeChristianSymbols />
 
       {/* Guided Encounters band: replaced on the homepage by the Workshops
           block inside HomeCollection (2026-10-07, Susan). Component kept. */}

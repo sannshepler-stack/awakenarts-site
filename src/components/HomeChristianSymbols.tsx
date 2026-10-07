@@ -266,7 +266,7 @@ export default function HomeChristianSymbols({ prelude }: { prelude?: React.Reac
   }
 
   return (
-    <section className="poems-showcase-foundation" aria-label="Christian Symbols">
+    <section className="poems-showcase-foundation" aria-label="Christian Symbols" style={{ paddingTop: 0 }}>
       {header}
       <div className="poems-showcase-foundation__inner">
         {symbols}
