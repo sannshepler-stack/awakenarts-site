@@ -116,6 +116,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 101 | More ways into the Journal (Susan: only one entry point): footer Explore column; the "Continue into AwakenArts" doorways (Symbols, Symbol Portals, Books pages, Stay Connected); and a quiet close on the Collection page ("Prompts and reflections connected to the works in the Collection." · Go to the Journal). |
 | 102 | Books page treated like the homepage (Susan): "Free Resource" shows the Path alone; the Encounter Journal keeps its own Stay Connected offer below. |
 | 103 | Presentations "Who They Are For": Churches removed (they fall under Community Groups); "Community Groups" capitalized (Susan). |
+| 104 | Explore: the Journal card now shows the "Recognition" notebook, cropped from the table header (gallery-desk.jpg), instead of the word spiral (Susan). |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
