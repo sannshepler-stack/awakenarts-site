@@ -86,6 +86,8 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 71 | Section 2 shortened by layout: sky band → introduction (unchanged) → two columns: "Sometimes an image stays with you." / mirror line / supporting sentence beside the Queen Ann poem + figure (stacked on phones). No copy removed | Committed — awaiting review on localhost |
 | 72 | Two sections instead of columns (Susan). Section 2: sky band · AWAKENARTS, THE STORIES THAT SHAPE US · headline "Sometimes an image stays with you." · "You already speak in images. We all do. / AwakenArts brings image and language into conversation, / exploring familiar images." ("leading to further understanding" removed) · three phrases. Section 3 (white): QUEEN ANN · "An image can become a mirror." with reflection · Queen Ann poem + figure with Enlarge. "Not by telling you what it means…" removed | Committed — awaiting review on localhost |
 | 73 | Section 2 paragraph (Susan): "You already speak in images. We all do. / AwakenArts explores familiar images to bring image and language into conversation." | Committed — awaiting review on localhost |
+| 74 | Section 2 (Susan): headline "You already speak in images. We all do." · "Sometimes an image stays with you." · three phrases; "AwakenArts explores familiar images…" removed. The sky header moves to open the Queen Ann section | Committed — awaiting review on localhost |
+| 75 | Section 2 on the warmer, darker cream (`--warm`); "Sometimes an image stays with you." as an italic serif line under the headline | Committed — awaiting review on localhost |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
