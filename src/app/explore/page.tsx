@@ -4,7 +4,7 @@ import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import StayConnected from '@/components/StayConnected'
-import CollectionBanner from '@/components/CollectionBanner'
+import AtmosphericHeader from '@/components/AtmosphericHeader'
 
 // /explore — "Discover AwakenArts" hub (Rebuild Plan §1, 2026-10-05).
 // Gathers the reflective pages under one doorway. Every line below is that
@@ -32,14 +32,18 @@ export default function ExplorePage() {
     <>
       <Nav />
       <main style={{ background: 'var(--cream)' }}>
-        <section style={{ padding: 'calc(var(--band-gap) + 2rem) 1.5rem 3rem', textAlign: 'center' }}>
+        {/* 2026-10-07, Susan: the table header (from the Collection page)
+            opens Explore; the Collection banner moved to /collection. */}
+        <AtmosphericHeader
+          src="/images/headers/gallery-desk.jpg"
+          alt="The AwakenArts figures laid out on a table: Dragon, Queen Ann, Bowls, Ballerina, and Grismere open beside a journal"
+          fadeTo="var(--cream)"
+        />
+        <section style={{ padding: '2rem 1.5rem 3rem', textAlign: 'center' }}>
           <p className="eyebrow" style={{ justifyContent: 'center' }}>Explore</p>
           <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-page)', lineHeight: 1.15, color: 'var(--deep)', margin: '1rem 0 0' }}>
             When Language Shapes a Path
           </h1>
-        </section>
-        <section aria-label="The AwakenArts Collection" style={{ padding: '0 1.5rem 3.5rem' }}>
-          <CollectionBanner marginBottom="0" tone="light" />
         </section>
         <section aria-label="Explore AwakenArts" style={{ padding: '0 1.5rem var(--band-gap)' }}>
           <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>

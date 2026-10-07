@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
-import AtmosphericHeader from '@/components/AtmosphericHeader'
 import CollectionBanner from '@/components/CollectionBanner'
 import Footer from '@/components/Footer'
 import EditionTile from '@/components/editions/EditionTile'
@@ -32,15 +31,10 @@ export default function CollectionPage() {
     <>
       <Nav />
       <main style={{ background: 'var(--cream)' }}>
-        {/* 2026-10-07, Susan: Queen Ann was cropped here and she already
-            opens the homepage, so the Collection uses the figures themselves. */}
-        <AtmosphericHeader
-          src="/images/headers/gallery-desk.jpg"
-          alt="The AwakenArts figures laid out on a table: Dragon, Queen Ann, Bowls, Ballerina, and Grismere open beside a journal"
-          fadeTo="var(--cream)"
-        />
+        {/* 2026-10-07, Susan: the table header moved to Explore; the
+            Collection banner now opens this page on its own. */}
 
-        <section style={{ padding: '2.5rem 1.5rem 3.5rem', textAlign: 'center' }}>
+        <section style={{ padding: 'calc(var(--band-gap) + 1rem) 1.5rem 3.5rem', textAlign: 'center' }}>
           {/* 2026-10-07, Susan: the Collection banner (also on Explore) is
               this page's title; the h1 stays for screen readers and search. */}
           <h1 style={SR_ONLY}>The AwakenArts Collection</h1>

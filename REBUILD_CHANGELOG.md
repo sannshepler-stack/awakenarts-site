@@ -101,6 +101,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 86 | "Editions" retired (Susan). The works are **The AwakenArts Collection**, each a **Figure**, at /collection (nav, footer and menu band read COLLECTION). Figure pages: "A Figure from the AwakenArts Collection" · "Explore Grismere" · "View the Grismere Presentation" · "All the Figures". Christian Symbols closes with "More About the Figures". "Figure Edition(s)" → "Figure(s)" in About, Method, site metadata, legal pages and alt text. /editions/* forwards to /collection/*. The June Collection page is kept unrouted in src/app/_archive/collection-2026-06. |
 | 87 | Collection page header: Queen Ann (cropped, and she already opens the homepage) replaced by the figures laid out on a table (gallery-desk.jpg). |
 | 88 | The Collection banner (from Explore, where it also stays) now opens the Collection page under the header, as the page title, with its caption and the intro line. Homepage: the banner links to /collection, with "Explore the Collection" beneath the caption. |
+| 89 | Banner and header swap places: the Collection banner is removed from Explore and opens the Collection page on its own; the table header (gallery-desk.jpg) moves from the Collection page to the top of Explore. |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
