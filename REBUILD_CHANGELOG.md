@@ -130,6 +130,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 115 | Encounters page: the bulky Encounter Journal signup card becomes one quiet line linking to Stay Connected (Susan). The signup remains on the homepage, Explore, Books, book pages, and Stay Connected. |
 | 116 | Presentations: "Who They Are For" and "What to Expect" combined in one cream section; "Your Presenter" moves to white to keep the alternation (Susan). |
 | 117 | Presentations: Encounter Journal signup removed (Susan: why is this here?); the inquiry form already has "Keep me informed". |
+| 118 | From the Books holds back (Susan): Where You Stand limited to six images (none repeating its book page's Look Inside); adds Shape, Symbol & Story (four: the mermaid at rest, ladybug on the page, poppy hills, Merriweather) and Whispers of Awareness (two: the poppy and the ballerina). |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

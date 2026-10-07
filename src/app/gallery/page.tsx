@@ -37,24 +37,44 @@ const BOOKS: {
     cover: '/images/books/where-you-stand-cover.jpg',
     line: 'A story of a queen, a king, and a path, told in image and poem.',
     dir: '/images/gallery/where-you-stand',
+    // Six only (Susan, 2026-10-07: too many giveaway images). All 17 files
+    // stay in public/images/gallery/where-you-stand. The book page's Look
+    // Inside uses three others (02, 10, 14).
     images: [
       { file: '01-enter-the-story', title: 'Enter the Story', alt: 'A stone archway marked “Enter the Story,” a satchel at its foot and a path beyond' },
-      { file: '02-ann-at-the-viewpoint', title: 'Ann at the Viewpoint', alt: 'Ann in a blue cloak looking out over a river valley toward a distant castle' },
       { file: '03-queen-ann-on-the-balcony', title: 'Queen Ann on the Balcony', alt: 'Queen Ann at a stone balcony, a castle on the hill beyond' },
       { file: '04-the-burning-castle', title: 'The Burning Castle', alt: 'Ann hurrying down a hillside path, the castle burning behind her' },
-      { file: '05-the-queen-on-the-terrace', title: 'The Queen on the Terrace', alt: 'A carved chess queen on a flowered terrace above the hills' },
       { file: '06-king-and-queen-on-the-terrace', title: 'King and Queen on the Terrace', alt: 'Carved chess king and queen side by side on a sunlit terrace' },
-      { file: '07-the-archway', title: 'The Archway', alt: 'A vine-covered stone archway opening onto a winding path' },
-      { file: '08-the-path-forward', title: 'The Path Forward', alt: 'A path winding through open country toward a distant town' },
-      { file: '09-the-courtyard', title: 'The Courtyard', alt: 'An empty checkered courtyard with low stone walls, the hills beyond' },
-      { file: '10-the-king', title: 'The King', alt: 'A crowned king with a sceptre and blue cloak standing on a hillside' },
-      { file: '11-the-kings-castle', title: 'The King’s Castle', alt: 'A many-towered castle among trees' },
-      { file: '12-crown-and-sword-at-the-gate', title: 'Crown and Sword at the Gate', alt: 'A crown and sword resting on a wall beside an open gate and a path' },
       { file: '13-the-throne-room', title: 'The Throne Room', alt: 'A sunlit throne room, a crown and rose at the foot of the throne' },
-      { file: '14-king-and-queen-on-the-board', title: 'King and Queen on the Board', alt: 'Chess king and queen facing each other on a board set in the hills' },
-      { file: '15-the-valley-path', title: 'The Valley Path', alt: 'A path crossing a wide valley toward a castle on the horizon' },
-      { file: '16-the-road-ahead-olive-hillside', title: 'The Road Ahead', alt: 'A stone path through an olive hillside at sunset' },
       { file: '17-the-road-ahead', title: 'The Road Ahead, Valley', alt: 'A path winding down through wildflowers into a sunlit valley' },
+    ],
+  },
+  {
+    slug: 'shape-symbol-and-story',
+    title: 'Shape, Symbol & Story',
+    subtitle: 'Journeys to Awareness',
+    cover: '/images/books/shape-symbol-story-cover.jpg',
+    line: 'Five Figures, from ordinary poems to the images their words became.',
+    dir: '/images/gallery/shape-symbol-story',
+    // Source: Shape_Symbol_Story_BUILD_v25_BLEED.pdf, embedded images.
+    images: [
+      { file: '01-the-mermaid-at-rest', title: 'The Mermaid at Rest', alt: 'A mermaid seated on a rock above a quiet sea at sunset, a sailboat on the horizon' },
+      { file: '02-ladybug-on-the-page', title: 'Ladybug on the Page', alt: 'A ladybug resting on the open page of a book in warm light' },
+      { file: '03-poppy-hills', title: 'Poppy Hills', alt: 'Hills covered in orange poppies at sunset, a bell tower on the far rise' },
+      { file: '04-merriweather', title: 'Merriweather', alt: 'A young woman in a blue hat and dress resting on a terrace above the sea' },
+    ],
+  },
+  {
+    slug: 'whispers-of-awareness',
+    title: 'Whispers of Awareness',
+    subtitle: 'Awakening Through Art, Stories, and Symbols',
+    cover: '/images/books/whispers-of-awareness-cover.jpg',
+    line: 'What if an image could show us something before we fully understood it?',
+    dir: '/images/gallery/whispers',
+    // Source: Whispers_of_Awareness_2nd_Edition_KDP_Interior.pdf, embedded images.
+    images: [
+      { file: '01-poppy-tree', title: 'The Poppy', alt: 'An orange poppy shaped from words, in an ornamental frame' },
+      { file: '02-ballerina', title: 'The Ballerina', alt: 'A pink ballerina figure on a pedestal, in an ornamental frame' },
     ],
   },
 ]
