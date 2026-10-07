@@ -32,7 +32,16 @@ export default function SymbolsIndexPage() {
     <>
       <Nav />
       <main style={{ background: 'var(--cream)' }}>
-        <section style={{ padding: 'calc(var(--band-gap) + 2rem) 1.5rem 3rem', textAlign: 'center' }}>
+        <section style={{ padding: 'calc(var(--band-gap) + 1rem) 1.5rem 3rem', textAlign: 'center' }}>
+          {/* Header (Susan, 2026-10-07): a watercolor of walls, a crossroads,
+              and stepping stones — the everyday figures of speech themselves.
+              White ground blends into the cream page (multiply). */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/headers/symbols-figurative-landscape.jpg"
+            alt="A watercolor landscape: an opening in a stone wall, paths that part, and stepping stones across still water toward the sunrise"
+            style={{ display: 'block', width: '100%', maxWidth: 1180, margin: '0 auto 1.5rem', mixBlendMode: 'multiply' }}
+          />
           <p className="eyebrow" style={{ justifyContent: 'center' }}>Symbols</p>
           <h1
             style={{

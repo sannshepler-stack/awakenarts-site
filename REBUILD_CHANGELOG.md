@@ -121,6 +121,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 106 | Symbols page less "vanilla" (Susan): the Christian Symbols band now shows a gentle fan of five card fronts (Lamp, Path, Shepherd, Vine, Pearl), each opening its symbol page. |
 | 107 | Headers swapped (Susan): Explore opens with the poetry manuscript (language); Presentations opens with the figures on the table. The Explore Journal card keeps its notebook crop. |
 | 108 | Symbols page: "Explore Christian Symbols" button removed; the card fan leads in on its own (Susan). Header image for the page coming from Susan. |
+| 109 | Symbols page header: Susan's watercolor of walls, a crossroads, and stepping stones (symbols-figurative-landscape.jpg), blended into the cream above the heading. |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
