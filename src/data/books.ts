@@ -92,7 +92,8 @@ export const books: Book[] = [
     description: [
       'Susan Ann Shepler’s visual poems began as ordinary poems and gradually took shape as Figures—images whose meanings often emerged only after they were created.',
       'Drawing on Jungian thought, biblical imagery, myth, and lived experience, Whispers of Awareness follows that movement from image to recognition. The Dragon, Mermaid Grismere, Queen Anne, and other Figures invite the reader to look beyond the literal surface toward a wider field of awareness.',
-      'This second edition preserves the original work, with selected passages and references clarified. It is offered not as a system of interpretation, but as an invitation to encounter the images, stories, and symbols for yourself.',
+      // Third back-cover paragraph (the second-edition note) left off the
+      // page, 2026-10-07 (Susan: too long); Edition is listed below.
     ],
     // Source: Whispers_of_Awareness_2nd_Edition_KDP_Interior.pdf pp. 3, 16, 27.
     samples: [
