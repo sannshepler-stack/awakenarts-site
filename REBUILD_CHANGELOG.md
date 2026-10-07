@@ -125,6 +125,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 110 | Presentations intro begins "AwakenArts takes the familiar relationship between image and language…" — "You already speak in images. We all do." left off (repeated on the homepage and Symbols) (Susan). |
 | 111 | Symbols page: the card fan is a preview, not a replacement — "See All the Symbols" restored beneath it, leading to the full Christian Symbols page with every linked symbol word (Susan). Corrects #108. |
 | 112 | Symbols page band changed (Susan): the card fan gave the full page away, so it is now an invitation — the boat at sunset, "Twenty symbols, and four Encounters.", and "See More Symbols" (Susan's label). The .symbol-fan styles stay in globals.css, unused. |
+| 113 | Symbols page: "Twenty symbols, and four Encounters." removed (Susan: unnecessary and confusing). |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

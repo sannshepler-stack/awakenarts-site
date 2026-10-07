@@ -93,9 +93,7 @@ export default function SymbolsIndexPage() {
               loading="lazy"
             />
           </Link>
-          <p style={{ fontFamily: 'var(--serif)', fontSize: '1.3rem', lineHeight: 1.5, color: 'var(--deep)', margin: '2rem auto 1.75rem', maxWidth: 560 }}>
-            Twenty symbols, and four Encounters.
-          </p>
+          <div style={{ height: '2.25rem' }} />
           <Link href="/christian-symbols" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-all-christian">
             See More Symbols
           </Link>
