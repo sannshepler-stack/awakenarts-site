@@ -135,6 +135,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 120 | Encounter Journal signup now only on the homepage and Explore (plus Stay Connected): removed from the Books page and each book page (Susan). Book pages' "Hear When It's Ready" (which pointed at that signup) becomes a quiet "Coming soon." until the buy link is confirmed. |
 | 121 | The STAY CONNECTED label links to /stay-connected wherever the signup appears (homepage, Explore, and any other page using it), with a quiet underline; plain text on the Stay Connected page itself (Susan). |
 | 122 | For going live (Susan): Grismere registration hidden (`registration.open: false`) — the page shows Inquire only, with no Symbol Card promise, until the Card PDF and Kit tag/automation are ready. Next task: get registration working. |
+| 123 | About page body text matches the site's body text (Presentations, homepage About): .about-body uses the body face instead of the display serif, which read smaller (Susan). |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

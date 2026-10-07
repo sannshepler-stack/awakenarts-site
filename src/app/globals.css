@@ -10909,7 +10909,9 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 
 /* ── Body copy — Global Design System (locked 2026-06-25) ── */
 .about-body {
-  font-family: var(--serif);
+  /* 2026-10-07, Susan: same body text as the rest of the site (it read
+     smaller in the display serif). */
+  font-family: var(--font-body);
   font-size: var(--body-size);
   line-height: var(--body-line);
   color: var(--ink);
