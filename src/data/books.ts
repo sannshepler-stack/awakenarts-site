@@ -45,6 +45,14 @@ export const books: Book[] = [
     // Source: SHAPE_SYMBOL_STORY/output/Shape_Symbol_Story_COVER_FRONT_PRINT_v02.png (6 × 9 print front)
     cover: '/images/books/shape-symbol-story-cover.jpg',
     coverAlt: 'Cover of Shape, Symbol & Story by Susan Ann Shepler',
+    // A Look Inside (2026-10-07, Susan: hold back; three pages only).
+    // Source: SHAPE_SYMBOL_STORY/output/Shape_Symbol_Story_BUILD_v25_BLEED.pdf pp. 9, 11, 52.
+    // No back-cover description exists yet; the tagline stands alone.
+    samples: [
+      { src: '/images/books/samples/sss-p9.jpg', alt: 'Shape, Symbol & Story — the opening page of The Dragon' },
+      { src: '/images/books/samples/sss-p11.jpg', alt: 'Shape, Symbol & Story — The Story of the Dragon' },
+      { src: '/images/books/samples/sss-p52.jpg', alt: 'Shape, Symbol & Story — poppies: Memory, Sleep, Awakening' },
+    ],
   },
   {
     slug: 'where-you-stand',
@@ -54,6 +62,16 @@ export const books: Book[] = [
     // Source: KINGS & QUEENS/REVISION_2026-09-26/Where_You_Stand_FRONT_COVER_for_ISBN_2026-09-28.jpg
     cover: '/images/books/where-you-stand-cover.jpg',
     coverAlt: 'Cover of Where You Stand: A Seek & Find Journal',
+    // Back-cover description (Where_You_Stand_KDP_Cover_AUTHORITATIVE.html).
+    description: [
+      'Where You Stand is a guided journey told through story, image, poetry, and reflection.',
+      'Queens and kings move through a world shaped by power and position, love and loss, uncertainty and change. As their stories unfold, the images and poems invite a closer look at what can be seen from different positions—and what may become clearer from a higher point of view.',
+    ],
+    samples: [
+      { src: '/images/gallery/where-you-stand/02-ann-at-the-viewpoint.jpg', alt: 'Where You Stand — Ann looking out over a river valley toward a distant castle' },
+      { src: '/images/gallery/where-you-stand/10-the-king.jpg', alt: 'Where You Stand — the King on a hillside' },
+      { src: '/images/gallery/where-you-stand/14-king-and-queen-on-the-board.jpg', alt: 'Where You Stand — chess king and queen facing each other in the hills' },
+    ],
     details: [
       { label: 'Format', value: 'Paperback, 8.5 × 11 in' },
       { label: 'Edition', value: 'Second edition' },
@@ -69,6 +87,19 @@ export const books: Book[] = [
     // Source: AARTS PROJECTS/WHISPERS 2ND EDITION KDP/WhispersCover.jpg (2026-10-02)
     cover: '/images/books/whispers-of-awareness-cover.jpg',
     coverAlt: 'Cover of Whispers of Awareness by Susan Ann Shepler',
+    // Back-cover description, 2nd edition (Whispers_of_Awareness_2nd_Edition_KDP_Cover.pdf).
+    tagline: 'What if an image could show us something before we fully understood it?',
+    description: [
+      'Susan Ann Shepler’s visual poems began as ordinary poems and gradually took shape as Figures—images whose meanings often emerged only after they were created.',
+      'Drawing on Jungian thought, biblical imagery, myth, and lived experience, Whispers of Awareness follows that movement from image to recognition. The Dragon, Mermaid Grismere, Queen Anne, and other Figures invite the reader to look beyond the literal surface toward a wider field of awareness.',
+      'This second edition preserves the original work, with selected passages and references clarified. It is offered not as a system of interpretation, but as an invitation to encounter the images, stories, and symbols for yourself.',
+    ],
+    // Source: Whispers_of_Awareness_2nd_Edition_KDP_Interior.pdf pp. 3, 16, 27.
+    samples: [
+      { src: '/images/books/samples/whispers-p3.jpg', alt: 'Whispers of Awareness — the opening page, with the poppy figure and a Jeremy Taylor quotation' },
+      { src: '/images/books/samples/whispers-p16.jpg', alt: 'Whispers of Awareness — The Dragon Fight' },
+      { src: '/images/books/samples/whispers-p27.jpg', alt: 'Whispers of Awareness — Mermaid Grismere' },
+    ],
     details: [
       { label: 'Format', value: 'Paperback, 6 × 9 in, full color' },
       { label: 'Edition', value: 'Second edition' },

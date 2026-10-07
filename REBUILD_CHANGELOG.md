@@ -108,6 +108,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 93 | Collection page intro: larger serif, and now says what the figures are (Susan): each begins with an original image-shaped poem; the Collection amplifies and studies those poems further through image, story, and symbolic reflection. |
 | 94 | The Path and My Foundation tied together (Susan): the Path page gains a My Foundation section (verbatim lines from /foundation, "Read My Foundation"); the Foundation page closes with a link back to The AwakenArts Path; the Foundation card leaves Explore. |
 | 95 | Collection intro first line shortened to "Each figure begins with an original image-shaped poem." (Susan). Explore cards keep the arrow with the last word (no lone arrow on its own line). Collection intro now leads with "Each figure is a distinct world to explore." in gold italic; then "The figures collection begins with original image-shaped poems. The process carries those poems further…" (Susan). |
+| 96 | Book pages begin selling (Susan: hold back). Each book page (reached by clicking its cover on Books) shows its back-cover description and "A Look Inside": three images only. Where You Stand: cover blurb + three story images. Whispers: 2nd-edition back-cover question as tagline + blurb + pp. 3, 16, 27. Shape, Symbol & Story: tagline only (no back-cover description yet) + pp. 9, 11, 52. |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

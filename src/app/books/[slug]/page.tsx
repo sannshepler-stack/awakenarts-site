@@ -92,11 +92,17 @@ export default function BookPage({ params }: { params: { slug: string } }) {
         </section>
 
         {b.samples && b.samples.length > 0 && (
-          <section aria-label="Sample pages" style={{ background: '#fff', padding: 'var(--band-gap) 1.5rem' }}>
-            <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+          // A Look Inside (2026-10-07, Susan): a few images only — holding
+          // back sells better than showing too much.
+          <section aria-labelledby="look-inside" style={{ background: '#fff', padding: 'var(--band-gap) 1.5rem', textAlign: 'center' }}>
+            <h2 id="look-inside" style={{ ...label, marginBottom: '0.6rem' }}>A Look Inside</h2>
+            <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.15rem', color: 'var(--mid)', margin: '0 0 2rem' }}>
+              A glimpse inside the book.
+            </p>
+            <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.75rem', alignItems: 'start' }}>
               {b.samples.map((s) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img key={s.src} src={s.src} alt={s.alt} loading="lazy" style={{ width: '100%', border: '1px solid var(--mist)' }} />
+                <img key={s.src} src={s.src} alt={s.alt} loading="lazy" style={{ width: '100%', display: 'block', border: '1px solid var(--mist)', boxShadow: '0 8px 22px rgba(28, 43, 58, 0.12)' }} />
               ))}
             </div>
           </section>
