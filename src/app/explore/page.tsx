@@ -37,11 +37,11 @@ export default function ExplorePage() {
     <>
       <Nav />
       <main style={{ background: 'var(--cream)' }}>
-        {/* 2026-10-07, Susan: the table header (from the Collection page)
-            opens Explore; the Collection banner moved to /collection. */}
+        {/* 2026-10-07, Susan: the poetry manuscript (language) opens Explore;
+            the figures table moved to /presentations. */}
         <AtmosphericHeader
-          src="/images/headers/gallery-desk.jpg"
-          alt="The AwakenArts figures laid out on a table: Dragon, Queen Ann, Bowls, Ballerina, and Grismere open beside a journal"
+          src="/images/headers/poetry-manuscript.jpg"
+          alt="An open manuscript of poetry on a writing desk in soft light"
           fadeTo="var(--cream)"
         />
         <section style={{ padding: '2rem 1.5rem 3.75rem', textAlign: 'center' }}>

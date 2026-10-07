@@ -13672,3 +13672,45 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   color: var(--deep);
   margin: 1rem 0 1.25rem;
 }
+
+/* Symbols page: card fan (2026-10-07) */
+.symbol-fan {
+  display: flex;
+  justify-content: center;
+  gap: 1.1rem;
+  max-width: 1000px;
+  margin: 0 auto 2.75rem;
+  flex-wrap: wrap;
+}
+.symbol-fan__card {
+  width: 168px;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+.symbol-fan__card:nth-child(1) { transform: rotate(-4deg) translateY(10px); }
+.symbol-fan__card:nth-child(2) { transform: rotate(-2deg) translateY(3px); }
+.symbol-fan__card:nth-child(4) { transform: rotate(2deg) translateY(3px); }
+.symbol-fan__card:nth-child(5) { transform: rotate(4deg) translateY(10px); }
+.symbol-fan__card:hover { transform: translateY(-6px); }
+.symbol-fan__card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 10px 26px rgba(28, 43, 58, 0.22);
+}
+.symbol-fan__card span {
+  display: block;
+  margin-top: 0.7rem;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+@media (max-width: 600px) {
+  .symbol-fan { gap: 0.6rem; }
+  .symbol-fan__card { width: 30%; }
+  .symbol-fan__card:nth-child(n) { transform: none; }
+}

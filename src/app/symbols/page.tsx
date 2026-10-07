@@ -19,6 +19,14 @@ export const metadata: Metadata = {
   alternates: { canonical: '/symbols' },
 }
 
+const FAN = [
+  { slug: 'lamp', name: 'Lamp', src: '/images/symbols/Lamp_Card_Front.png' },
+  { slug: 'path', name: 'Path', src: '/images/symbols/Path_Card_Front.png' },
+  { slug: 'shepherd', name: 'Shepherd', src: '/images/symbols/Shepherd_Card_Front.png' },
+  { slug: 'vine', name: 'Vine', src: '/images/symbols/Vine_Card_Front.png' },
+  { slug: 'pearl', name: 'Pearl', src: '/images/symbols/Pearl_Card_Front.png' },
+]
+
 export default function SymbolsIndexPage() {
   return (
     <>
@@ -70,9 +78,20 @@ export default function SymbolsIndexPage() {
           <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '1rem 0 0.5rem' }}>
             Symbols for the Christian Soul
           </h2>
-          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', color: 'var(--mid)', margin: '0 0 1.75rem' }}>
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', color: 'var(--mid)', margin: '0 0 2.25rem' }}>
             Scripture speaks in symbols.
           </p>
+          {/* 2026-10-07, Susan ("vanilla"): a few of the card fronts, each
+              opening its own symbol page. Five only — a glimpse. */}
+          <div className="symbol-fan">
+            {FAN.map((c) => (
+              <Link key={c.slug} href={`/symbols/${c.slug}`} className="symbol-fan__card" data-cta={`symbols-fan-${c.slug}`}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={c.src} alt={`${c.name} — Symbol Card`} loading="lazy" />
+                <span>{c.name}</span>
+              </Link>
+            ))}
+          </div>
           <Link href="/christian-symbols" className="home-coll-cta home-coll-cta--light-surface">
             Explore Christian Symbols
           </Link>

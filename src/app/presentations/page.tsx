@@ -39,9 +39,11 @@ export default function PresentationsPage() {
     <>
       <Nav />
       <main style={{ background: 'var(--cream)' }}>
+        {/* Headers swapped with Explore (Susan, 2026-10-07): the figures
+            belong with Presentations; the poetry manuscript with Explore. */}
         <AtmosphericHeader
-          src="/images/headers/poetry-manuscript.jpg"
-          alt="An open manuscript of poetry on a writing desk in soft light"
+          src="/images/headers/gallery-desk.jpg"
+          alt="The AwakenArts figures laid out on a table: Dragon, Queen Ann, Bowls, Ballerina, and Grismere open beside a journal"
           fadeTo="var(--cream)"
         />
 
