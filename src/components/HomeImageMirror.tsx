@@ -24,9 +24,7 @@ export default function HomeImageMirror() {
           <p className="section2-question">
             You already speak in images. We all do.
             <br />
-            AwakenArts brings image and language into conversation,
-            <br />
-            exploring familiar images.
+            AwakenArts explores familiar images to bring image and language into conversation.
           </p>
           <p className="section2-examples">
             <span className="section2-examples__item">&ldquo;We&rsquo;ve put up walls.&rdquo;</span>
