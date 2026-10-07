@@ -51,11 +51,13 @@ export function HomeQueenAnnMirror() {
       </div>
 
       <div className="mirror-ann" style={{ marginTop: '2.25rem' }}>
-        <div className="mirror-ann__poem">
-          {/* The poem sits alone so poem and portrait share one vertical
-              center; "Enlarge the poem" is centered beneath both (Susan, 2026-10-07). */}
+        <div className="mirror-ann__poem mirror-ann__poem--mirror">
+          {/* Mirroring (Susan, 2026-10-07): the poem-figure is sized and placed
+              to match the woman in the portrait — her crown to her hem — on the
+              same plane, not the whole picture frame. The poem image is trimmed
+              to its ink (ann-text-ink-trim.png; the original crop is kept). */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/forms/ann-text-ink-crop.png" alt="Queen Ann — the poem, rendered in concrete poetry form" loading="lazy" style={{ display: 'block', width: '100%', height: 'auto' }} />
+          <img src="/images/forms/ann-text-ink-trim.png" alt="Queen Ann — the poem, rendered in concrete poetry form" loading="lazy" />
         </div>
         <div className="mirror-ann__portrait">
           {/* eslint-disable-next-line @next/next/no-img-element */}

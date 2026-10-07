@@ -141,6 +141,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 126 | Homepage Queen Ann: the poem is larger (wider column, pair widened to 900px) and "Enlarge the poem" is now an outlined button that fills gold on hover (Susan: the poem is part of the experience). |
 | 127 | Queen Ann: poem and portrait now share one vertical center; "Enlarge the poem" moves out of the poem column, centered beneath both (Susan). |
 | 128 | Queen Ann returned to the original smaller size (two equal columns, 690px), keeping one shared midpoint and "Enlarge the poem" centered beneath (Susan). Supersedes the enlargement in #126. |
+| 129 | Queen Ann mirroring (Susan): the poem-figure stands about 15% shorter than the portrait and is centered on the woman's own midpoint, on the same plane. Poem trimmed to its ink (ann-text-ink-trim.png; original kept). |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

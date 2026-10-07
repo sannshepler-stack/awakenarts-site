@@ -13550,7 +13550,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
      portrait share one vertical midpoint, button centered beneath. */
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  align-items: center;
+  align-items: start;
   max-width: 690px;
   margin: 0 auto;
 }
@@ -13565,6 +13565,14 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 @media (max-width: 900px) {
   .mirror-row { grid-template-columns: 1fr; gap: 2rem; margin-top: 2.5rem; }
 }
+/* Mirroring (Susan, 2026-10-07): the poem-figure stands about 15% shorter
+   than the portrait (85% of its height) and is centered on the woman's own
+   midpoint (46% down, between crown and hem), on the same plane.
+   Portrait is 2:3 (height 1.5w); poem ink aspect 1180:1608 (1.363).
+   Poem height 0.85 x 1.5w = 1.275w -> width 1.275 / 1.363 = 93.5%;
+   top = (0.46 - 0.425) x 1.5w = 0.0525w -> padding-top 5.25%. */
+.mirror-ann__poem--mirror { padding-top: 5.25%; }
+.mirror-ann__poem--mirror img { display: block; width: 93.5%; height: auto; margin: 0 auto; }
 .mirror-ann__portrait {
   aspect-ratio: 2 / 3;
   overflow: hidden;
@@ -13603,6 +13611,7 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 }
 @media (max-width: 640px) {
   .mirror-ann { grid-template-columns: 1fr; gap: 2rem; max-width: 420px; }
+  .mirror-ann__poem--mirror { padding-top: 0; }
 }
 
 /* 2026-10-07: Section 2 on navy; Queen Ann on white. */
