@@ -73,7 +73,7 @@ export default function HomePage() {
               margin: '0 0 1.1rem',
             }}
           >
-            Every life holds a pattern, a memory, a truth, or a story waiting to be revealed.
+            Every life holds patterns, memories, images, and stories waiting to be recognized.
           </p>
           {/* Supporting line — Susan, 2026-10-05. */}
           <p
@@ -87,8 +87,8 @@ export default function HomePage() {
               ...({ textWrap: 'pretty' } as React.CSSProperties),
             }}
           >
-            AwakenArts brings image, poetry, and symbolic language into conversation, creating space to notice what is
-            wanting to take shape.
+            You already live with symbols. AwakenArts helps you recognize them, explore what they carry, and use image,
+            poem, and reflection to understand your own story more deeply.
           </p>
           {/* 2026-10-05, per Susan: two identical text links — same size,
               weight, tracking and thin gold underline; only the colour differs. */}
