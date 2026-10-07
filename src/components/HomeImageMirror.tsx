@@ -1,78 +1,37 @@
-import AtmosphericHeader from '@/components/AtmosphericHeader'
+import PoemEnlarge from '@/components/PoemEnlarge'
 
-// HomeImageMirror — homepage combined Sections 2 & 3 (2026-10-07, Susan).
-// Section 1 establishes that symbols are already part of the visitor's
-// life; this section shows what recognition can feel like. Copy is
-// Susan's, verbatim. The line "An image can become a mirror." carries a
-// faint reflection of itself, so the visual suggests mirroring rather
-// than explaining it.
-//
-// Replaces, on the homepage only, HomeSpeakInImages + HomeChristianSymbols
-// (both kept in the codebase, unused here).
-
-const body: React.CSSProperties = {
-  fontFamily: 'var(--font-body)',
-  fontSize: 'var(--t-body)',
-  lineHeight: 1.75,
-  color: 'var(--mid)',
-  margin: '0 auto',
-  maxWidth: 600,
-  textWrap: 'pretty',
-} as React.CSSProperties
+// HomeImageMirror — homepage Section 2 (2026-10-07, Susan): two lines, then
+// the Queen Ann poem and figure directly beneath, so visitors reach the
+// artwork quickly. The explanatory paragraphs are removed; a short sky band
+// replaces the tall threshold. "An image can become a mirror." keeps its
+// faint reflection.
 
 export default function HomeImageMirror() {
   return (
-    <section className="poems-showcase-foundation" aria-labelledby="image-mirror-heading" style={{ paddingTop: 0, paddingBottom: '4rem' }}>
-      {/* 2026-10-07, Susan: the boat image stays with Christian Symbols, so
-          this section uses the sky threshold from the former Section 2. */}
-      <AtmosphericHeader
-        src="/images/headers/collection-threshold.jpg"
-        alt="A dark sky heavy with clouds breaking open to warm gold light along the horizon"
-        fadeTo="var(--cream)"
-      />
+    <section aria-labelledby="image-mirror-heading" style={{ background: 'var(--cream)', paddingBottom: '4.5rem', textAlign: 'center' }}>
+      <div className="mirror-sky" aria-hidden="true" />
 
-      <div className="poems-showcase-foundation__inner" style={{ paddingTop: '1.5rem', paddingBottom: 0, textAlign: 'center' }}>
+      <div style={{ maxWidth: 1000, margin: '0 auto', padding: '0 1.5rem' }}>
         <h2
           id="image-mirror-heading"
-          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', lineHeight: 1.2, color: 'var(--deep)', margin: '0 0 1.1rem', ...({ textWrap: 'balance' } as React.CSSProperties) }}
+          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', lineHeight: 1.2, color: 'var(--deep)', margin: '0 0 1.4rem', ...({ textWrap: 'balance' } as React.CSSProperties) }}
         >
           Sometimes an image stays with you.
         </h2>
-        <p style={body}>
-          A memory returns. A story speaks differently than it once did. Something in the image catches your
-          attention—and you may not yet know why.
-        </p>
 
-        {/* The mirror line, with its own faint reflection beneath it. */}
-        <div className="mirror-line" style={{ margin: '4.5rem auto 1.4rem' }}>
+        <div className="mirror-line" style={{ margin: '0 auto' }}>
           <p className="mirror-line__text">An image can become a mirror.</p>
           <p className="mirror-line__reflection" aria-hidden="true">
             An image can become a mirror.
           </p>
         </div>
-        <p style={body}>
-          Not by telling you what it means, but by giving you a place to notice what you recognize in yourself.
-        </p>
 
-        <p style={{ ...body, color: 'var(--deep)', marginTop: '2.5rem' }}>
-          Through image, poetry, and symbolic language, AwakenArts invites you to pause, reflect, and follow what draws
-          your attention into your own story.
-        </p>
-
-        {/* 2026-10-07, Susan: the Queen Ann poem and figure restored here —
-            a concrete example of symbolic language and image in action.
-            Same images and styling as HomeCollectionPremise (kept). */}
-        <div className="qac-ann-spread" style={{ marginTop: '3.5rem' }}>
-          <div className="qac-ann-spread__poem">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/forms/ann-text-ink-crop.png"
-              alt="Queen Ann — the poem, rendered in concrete poetry form"
-              className="qac-ann-spread__poem-img"
-              loading="lazy"
-            />
+        {/* Queen Ann — poem and figure (existing images). */}
+        <div className="mirror-ann">
+          <div className="mirror-ann__poem">
+            <PoemEnlarge src="/images/forms/ann-text-ink-crop.png" alt="Queen Ann — the poem, rendered in concrete poetry form" />
           </div>
-          <div className="qac-ann-spread__portrait">
+          <div className="mirror-ann__portrait">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/forms/queen-ann-still.png"

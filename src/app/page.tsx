@@ -4,7 +4,6 @@ import HomeBeginWithSymbol from '@/components/HomeBeginWithSymbol'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
 import HomeImageMirror from '@/components/HomeImageMirror'
 import HomeCollection from '@/components/HomeCollection'
-import HomeGuidedEncounters from '@/components/HomeGuidedEncounters'
 import HomeBooks from '@/components/HomeBooks'
 import HomeAbout from '@/components/HomeAbout'
 import StayConnected from '@/components/StayConnected'
@@ -58,7 +57,7 @@ export default function HomePage() {
               ...({ textWrap: 'balance' } as React.CSSProperties),
             }}
           >
-            When Language Shapes a Path
+            Images and words. Your own way in.
           </h1>
           <p
             style={{
@@ -70,31 +69,15 @@ export default function HomePage() {
               lineHeight: 1.3,
               color: 'var(--deep)',
               maxWidth: 560,
-              margin: '0 0 1.1rem',
+              margin: '0 0 2.5rem',
             }}
           >
-            Every life holds patterns, memories, images, and stories waiting to be recognized.
-          </p>
-          {/* Supporting line — Susan, 2026-10-05. */}
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '1.05rem',
-              lineHeight: 1.65,
-              color: 'var(--mid)',
-              maxWidth: 610,
-              margin: '0 0 2.85rem',
-              ...({ textWrap: 'pretty' } as React.CSSProperties),
-            }}
-          >
-            You already live with symbols. AwakenArts helps you recognize them, explore what they carry, and use image,
-            poem, and reflection to understand your own story more deeply.
+            Explore art and poetry. See what speaks to you.
           </p>
           {/* 2026-10-05, per Susan: two identical text links — same size,
               weight, tracking and thin gold underline; only the colour differs. */}
           <TextLinkRow>
             <TextLink href="/symbols" cta="hero-explore-symbol">Explore a Symbol</TextLink>
-            <TextLink href="/explore" cta="hero-discover">Discover AwakenArts</TextLink>
           </TextLinkRow>
         </div>
 
@@ -118,16 +101,17 @@ export default function HomePage() {
       {/* 2 — Begin with a Symbol (renders once featured Symbol Cards exist) */}
       <HomeBeginWithSymbol cards={featuredSymbolCards()} />
 
-      {/* Section 2 — The AwakenArts Collection, dark, with its caption only (2026-10-07, Susan). */}
-      <HomeCollection />
 
       {/* Section 3 — what recognition can feel like: the mirror section with Queen Ann
           (2026-10-07, Susan). Replaces "You already speak in images" + "Scripture Speaks
           in Symbols" here; both components stay in the codebase. */}
       <HomeImageMirror />
 
-      {/* 5 — Guided Encounters */}
-      <HomeGuidedEncounters />
+      {/* Section 3 — The AwakenArts Collection + Workshops (2026-10-07, Susan). */}
+      <HomeCollection />
+
+      {/* Guided Encounters band: replaced on the homepage by the Workshops
+          block inside HomeCollection (2026-10-07, Susan). Component kept. */}
 
       {/* 6 — Books & Resources */}
       <HomeBooks />

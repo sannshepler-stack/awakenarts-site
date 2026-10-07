@@ -27,22 +27,24 @@ export default function CollectionBanner({
           loading="lazy"
         />
       </div>
-      <figcaption
-        style={{
-          // Caption (Susan, 2026-10-07): makes clear these are a selection.
-          fontFamily: 'var(--serif)',
-          fontStyle: 'italic',
-          fontSize: '1.15rem',
-          lineHeight: 1.5,
-          color: tone === 'dark' ? 'rgba(250, 247, 242, 0.8)' : 'var(--mid)',
-          textAlign: 'center',
-          maxWidth: 920,
-          margin: '1.1rem auto 0',
-          textWrap: 'pretty',
-        } as React.CSSProperties}
-      >
-        {caption}
-      </figcaption>
+      {caption && (
+        <figcaption
+          style={{
+            // Caption (Susan, 2026-10-07): makes clear these are a selection.
+            fontFamily: 'var(--serif)',
+            fontStyle: 'italic',
+            fontSize: '1.15rem',
+            lineHeight: 1.5,
+            color: tone === 'dark' ? 'rgba(250, 247, 242, 0.8)' : 'var(--mid)',
+            textAlign: 'center',
+            maxWidth: 920,
+            margin: '1.1rem auto 0',
+            textWrap: 'pretty',
+          } as React.CSSProperties}
+        >
+          {caption}
+        </figcaption>
+      )}
     </figure>
   )
 }
