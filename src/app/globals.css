@@ -13541,10 +13541,21 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
 .mirror-ann {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.9rem;
+  gap: 1.5rem;
   align-items: center;
-  max-width: 690px; /* 25% smaller than 920px (2026-10-07) */
-  margin: 2rem auto 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+/* Mirror language beside the Queen Ann pair (2026-10-07). */
+.mirror-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 3rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+@media (max-width: 900px) {
+  .mirror-row { grid-template-columns: 1fr; gap: 2rem; margin-top: 2.5rem; }
 }
 .mirror-ann__portrait {
   aspect-ratio: 2 / 3;

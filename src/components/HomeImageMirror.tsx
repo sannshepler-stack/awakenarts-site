@@ -8,10 +8,10 @@ import PoemEnlarge from '@/components/PoemEnlarge'
 
 export default function HomeImageMirror() {
   return (
-    <section aria-labelledby="image-mirror-heading" style={{ background: 'var(--cream)', paddingBottom: '4.5rem', textAlign: 'center' }}>
+    <section aria-labelledby="image-mirror-heading" style={{ background: 'var(--cream)', paddingBottom: '4rem', textAlign: 'center' }}>
       <div className="mirror-sky" aria-hidden="true" />
 
-      <div style={{ maxWidth: 1000, margin: '0 auto', padding: '0 1.5rem' }}>
+      <div style={{ maxWidth: 1140, margin: '0 auto', padding: '0 1.5rem' }}>
         {/* Restored introduction (2026-10-07, Susan) — essential context,
             exactly as written, before the mirror language. Same markup and
             classes as HomeCollectionPremise. */}
@@ -31,46 +31,50 @@ export default function HomeImageMirror() {
           <span className="section2-examples__item section2-examples__item--last">&ldquo;It became a stepping stone.&rdquo;</span>
         </p>
 
-        <h2
-          id="image-mirror-heading"
-          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', lineHeight: 1.2, color: 'var(--deep)', margin: '3.25rem 0 1.4rem', ...({ textWrap: 'balance' } as React.CSSProperties) }}
-        >
-          Sometimes an image stays with you.
-        </h2>
-
-        <div className="mirror-line" style={{ margin: '0 auto' }}>
-          <p className="mirror-line__text">An image can become a mirror.</p>
-          <p className="mirror-line__reflection" aria-hidden="true">
-            An image can become a mirror.
-          </p>
-        </div>
-
-        <p
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: 'var(--t-body)',
-            lineHeight: 1.75,
-            color: 'var(--mid)',
-            maxWidth: 600,
-            margin: '0.9rem auto 0',
-            ...({ textWrap: 'pretty' } as React.CSSProperties),
-          }}
-        >
-          Not by telling you what it means, but by giving you a place to notice what you recognize in yourself.
-        </p>
-
-        {/* Queen Ann — poem and figure (existing images), 25% smaller (2026-10-07). */}
-        <div className="mirror-ann">
-          <div className="mirror-ann__poem">
-            <PoemEnlarge src="/images/forms/ann-text-ink-crop.png" alt="Queen Ann — the poem, rendered in concrete poetry form" />
+        {/* 2026-10-07, Susan: section was too tall — mirror language and the
+            Queen Ann pair now sit side by side (stacked on phones). */}
+        <div className="mirror-row">
+          <div className="mirror-row__text">
+            <h2
+              id="image-mirror-heading"
+              style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', lineHeight: 1.2, color: 'var(--deep)', margin: '0 0 1.2rem', ...({ textWrap: 'balance' } as React.CSSProperties) }}
+            >
+              Sometimes an image stays with you.
+            </h2>
+            <div className="mirror-line">
+              <p className="mirror-line__text">An image can become a mirror.</p>
+              <p className="mirror-line__reflection" aria-hidden="true">
+                An image can become a mirror.
+              </p>
+            </div>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: 'var(--t-body)',
+                lineHeight: 1.75,
+                color: 'var(--mid)',
+                maxWidth: 440,
+                margin: '0.9rem auto 0',
+                ...({ textWrap: 'pretty' } as React.CSSProperties),
+              }}
+            >
+              Not by telling you what it means, but by giving you a place to notice what you recognize in yourself.
+            </p>
           </div>
-          <div className="mirror-ann__portrait">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/forms/queen-ann-still.png"
-              alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
-              loading="lazy"
-            />
+
+          {/* Queen Ann — poem and figure (existing images). */}
+          <div className="mirror-ann">
+            <div className="mirror-ann__poem">
+              <PoemEnlarge src="/images/forms/ann-text-ink-crop.png" alt="Queen Ann — the poem, rendered in concrete poetry form" />
+            </div>
+            <div className="mirror-ann__portrait">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/forms/queen-ann-still.png"
+                alt="Queen Ann — a crowned figure in windswept hair and flowing gown, standing before a castle at sunset."
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>

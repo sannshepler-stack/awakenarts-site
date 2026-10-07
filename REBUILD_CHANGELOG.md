@@ -83,6 +83,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 68 | Hero restored as originally written (Susan): "When Language Shapes a Path" · "Every life holds patterns, memories, images, and stories waiting to be recognized." · "You already live with symbols…" · EXPLORE A SYMBOL / DISCOVER AWAKENARTS. Collection caption restored above Workshops | Committed — awaiting review on localhost |
 | 69 | Mirror section (Susan): restored introduction first, exactly as written — AWAKENARTS, THE STORIES THAT SHAPE US · "You already speak in images. We all do. / AwakenArts brings image and language into conversation, / exploring familiar images leading to further understanding." · the three phrases; then "Sometimes an image stays with you.", "An image can become a mirror." (reflection kept) and its supporting sentence restored; Queen Ann poem + figure 25% smaller, centred; Enlarge the poem unchanged | Committed — awaiting review on localhost |
 | 70 | Mirror reflection a little darker so it reads as intentional | Committed — awaiting review on localhost |
+| 71 | Section 2 shortened by layout: sky band → introduction (unchanged) → two columns: "Sometimes an image stays with you." / mirror line / supporting sentence beside the Queen Ann poem + figure (stacked on phones). No copy removed | Committed — awaiting review on localhost |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
