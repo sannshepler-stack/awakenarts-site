@@ -97,7 +97,7 @@ export default function SymbolsIndexPage() {
             Twenty symbols, and four Encounters.
           </p>
           <Link href="/christian-symbols" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-all-christian">
-            Enter Symbols for the Christian Soul
+            See More Symbols
           </Link>
         </section>
 
