@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import HomeBeginWithSymbol from '@/components/HomeBeginWithSymbol'
-import HomeSpeakInImages from '@/components/HomeSpeakInImages'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
-import HomeChristianSymbols from '@/components/HomeChristianSymbols'
+import HomeImageMirror from '@/components/HomeImageMirror'
 import HomeGuidedEncounters from '@/components/HomeGuidedEncounters'
 import HomeBooks from '@/components/HomeBooks'
 import HomeAbout from '@/components/HomeAbout'
@@ -118,10 +117,10 @@ export default function HomePage() {
       {/* 2 — Begin with a Symbol (renders once featured Symbol Cards exist) */}
       <HomeBeginWithSymbol cards={featuredSymbolCards()} />
 
-      {/* 3 — The language of images: You Already Speak in Images → Scripture Speaks in Symbols.
-          2026-10-05, Susan: "You already speak in images" and "Scripture Speaks in Symbols"
-          are one section in two movements, under the ship image. */}
-      <HomeChristianSymbols prelude={<HomeSpeakInImages bare />} />
+      {/* 3 — Combined Sections 2 & 3 (2026-10-07, Susan): what recognition can feel like.
+          Replaces "You already speak in images" + "Scripture Speaks in Symbols" here;
+          both components stay in the codebase. */}
+      <HomeImageMirror />
 
       {/* 5 — Guided Encounters */}
       <HomeGuidedEncounters />

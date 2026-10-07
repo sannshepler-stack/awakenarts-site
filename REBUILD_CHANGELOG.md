@@ -73,6 +73,12 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 58 | Three-phrase animation removed (Susan); the phrases simply appear | Committed — awaiting review on localhost |
 | 59 | Whispers of Awareness card: subtitle on two lines — "Awakening Through" / "Art, Stories, and Symbols" | Committed — awaiting review on localhost |
 | 60 | Hero copy (Susan, section-by-section revision): statement "Every life holds patterns, memories, images, and stories waiting to be recognized."; paragraph "You already live with symbols. AwakenArts helps you recognize them, explore what they carry, and use image, poem, and reflection to understand your own story more deeply." Design, heading and CTAs unchanged | Committed — awaiting review on localhost |
+| 61 | **Homepage combined Sections 2 & 3** (Susan): one section under the ship image — "Sometimes an image stays with you." · "A memory returns…" · "An image can become a mirror." (gold italic with a faint reflection) · "Not by telling you what it means…" · "Through image, poetry, and symbolic language…". Replaces "You already speak in images" and "Scripture Speaks in Symbols" on the homepage (components kept) | Committed — awaiting review on localhost |
+
+## Saved for a later homepage section (Susan, 2026-10-07)
+
+- Why image and poetry are central to the work: **"Poetry is a biblical language of faith. Image gives that language a shape."**
+- Christian Symbols no longer appears on the homepage after the combined Sections 2 & 3 (10-07); decide where it returns.
 
 ## Governing distinctions (Susan, 2026-10-05)
 
