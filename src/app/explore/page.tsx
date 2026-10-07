@@ -17,15 +17,18 @@ export const metadata: Metadata = {
   alternates: { canonical: '/explore' },
 }
 
-const DOORS: { href: string; title: string; line?: string }[] = [
-  { href: '/awakenarts-path', title: 'The AwakenArts Path', line: 'Poetry, Image, and Seeing Your Life' },
-  { href: '/encounters', title: 'Encounters', line: 'Every journey begins with a single encounter.' },
-  { href: '/journal', title: 'The Journal', line: 'A place to read, notice, and write — alongside the works that prompted it.' },
-  { href: '/christian-symbols', title: 'Symbols for the Christian Soul', line: 'Scripture speaks in symbols.' },
+// Images (2026-10-07, Susan): each card shows an image from its own page.
+type Door = { href: string; title: string; line?: string; img: string; pos?: string; dark?: boolean }
+
+const DOORS: Door[] = [
+  { href: '/awakenarts-path', title: 'The AwakenArts Path', line: 'Poetry, Image, and Seeing Your Life', img: '/images/path/when-language-shapes-a-path-cover.jpg', pos: 'center 100%' },
+  { href: '/encounters', title: 'Encounters', line: 'Every journey begins with a single encounter.', img: '/images/encounters/journey/journey-02-web.png' },
+  { href: '/journal', title: 'The Journal', line: 'A place to read, notice, and write — alongside the works that prompted it.', img: '/images/experiences/word-form-spiral.png', dark: true },
+  { href: '/christian-symbols', title: 'Symbols for the Christian Soul', line: 'Scripture speaks in symbols.', img: '/images/homepage/encounters-symbols-ship-v3.png' },
   // The Gallery returns as From the Books (2026-10-07, Susan): story images
   // from the books, so it no longer repeats the Collection.
-  { href: '/gallery', title: 'From the Books', line: 'Images from the AwakenArts books.' },
-  { href: '/experience', title: 'Make Your Own Word Art', line: 'Bring your own words and watch them take shape.' },
+  { href: '/gallery', title: 'From the Books', line: 'Images from the AwakenArts books.', img: '/images/gallery/where-you-stand/03-queen-ann-on-the-balcony.jpg', pos: 'center 35%' },
+  { href: '/experience', title: 'Make Your Own Word Art', line: 'Bring your own words and watch them take shape.', img: '/images/experiences/butterfly-wordart.png', dark: true },
   // My Foundation now lives within the Path page (2026-10-07, Susan).
 ]
 
@@ -54,8 +57,25 @@ export default function ExplorePage() {
                 key={d.href}
                 href={d.href}
                 data-cta={`explore-${d.href.slice(1)}`}
-                style={{ display: 'block', textDecoration: 'none', border: '1px solid var(--mist)', background: '#fff', padding: '1.75rem 1.5rem' }}
+                style={{ display: 'block', textDecoration: 'none', border: '1px solid var(--mist)', background: '#fff' }}
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={d.img}
+                  alt=""
+                  loading="lazy"
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    aspectRatio: '16 / 10',
+                    objectFit: d.dark ? 'contain' : 'cover',
+                    objectPosition: d.pos || 'center',
+                    background: d.dark ? '#0b0b0b' : 'var(--warm)',
+                    padding: d.dark ? '0.75rem' : 0,
+                    boxSizing: 'border-box',
+                  }}
+                />
+                <span style={{ display: 'block', padding: '1.4rem 1.5rem 1.6rem' }}>
                 <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: 'var(--t-card)', lineHeight: 1.25, color: 'var(--deep)' }}>
                   {d.title.split(' ').slice(0, -1).join(' ')}{' '}
                   <span style={{ whiteSpace: 'nowrap' }}>
@@ -67,6 +87,7 @@ export default function ExplorePage() {
                     {d.line}
                   </span>
                 )}
+                </span>
               </Link>
             ))}
           </div>

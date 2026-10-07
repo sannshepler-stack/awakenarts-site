@@ -111,6 +111,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 96 | Book pages begin selling (Susan: hold back). Each book page (reached by clicking its cover on Books) shows its back-cover description and "A Look Inside": three images only. Where You Stand: cover blurb + three story images. Whispers: 2nd-edition back-cover question as tagline + blurb + pp. 3, 16, 27. Shape, Symbol & Story: tagline only (no back-cover description yet) + pp. 9, 11, 52. |
 | 97 | Whispers book page shortened (Susan: too long): the back cover's second-edition paragraph is left off; "Second edition" still shows in the details. |
 | 98 | Shape, Symbol & Story book page: a two-paragraph description (draft, from Susan's preface), about the length of Where You Stand's. |
+| 99 | Explore cards each carry an image from their own page: the Path cover's path, the Encounters journey path, the Journal's word spiral, the Christian Symbols boat, Queen Ann on the balcony (From the Books), and the butterfly word art. |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 
