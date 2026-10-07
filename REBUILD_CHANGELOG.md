@@ -92,6 +92,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 77 | Books & Resources on white, so it separates from the cream Christian Symbols section above (sections now alternate cream / white / warm) | Committed — awaiting review on localhost |
 | 78 | Section 2 ("You already speak in images") on white | Committed — awaiting review on localhost |
 | 79 | Mirror reflection flattened and softly blurred so it reads as a reflection rather than upside-down lettering | Committed — awaiting review on localhost |
+| 80 | Free resource cards (The AwakenArts Path, Encounter Journal) on cream so they stand out on the white Books sections (homepage and Books page) | Committed — awaiting review on localhost |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

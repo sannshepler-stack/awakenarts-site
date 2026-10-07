@@ -12,7 +12,7 @@ export default function FreeResources({ source }: { source: string }) {
           key={r.href}
           href={r.href}
           data-cta={`${source}-free-${r.href.replace('/', '')}`}
-          style={{ display: 'flex', gap: '1.1rem', alignItems: 'center', textDecoration: 'none', border: '1px solid var(--mist)', padding: '1rem 1.1rem', background: '#fff' }}
+          style={{ display: 'flex', gap: '1.1rem', alignItems: 'center', textDecoration: 'none', border: '1px solid var(--mist)', padding: '1rem 1.1rem', background: 'var(--cream)' }}
         >
           {r.image && (
             // eslint-disable-next-line @next/next/no-img-element
