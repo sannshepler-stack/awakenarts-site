@@ -102,6 +102,7 @@ local project files in the branch. Resume notes: `REBUILD_RESUME.md`.
 | 87 | Collection page header: Queen Ann (cropped, and she already opens the homepage) replaced by the figures laid out on a table (gallery-desk.jpg). |
 | 88 | The Collection banner (from Explore, where it also stays) now opens the Collection page under the header, as the page title, with its caption and the intro line. Homepage: the banner links to /collection, with "Explore the Collection" beneath the caption. |
 | 89 | Banner and header swap places: the Collection banner is removed from Explore and opens the Collection page on its own; the table header (gallery-desk.jpg) moves from the Collection page to the top of Explore. |
+| 90 | Explore: the Gallery doorway is left off; it repeats the Collection. The /gallery page itself stays, and could return with more works or the book images. |
 
 ## Saved for a later homepage section (Susan, 2026-10-07)
 

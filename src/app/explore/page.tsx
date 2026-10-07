@@ -13,7 +13,7 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
 
 export const metadata: Metadata = {
   title: 'Explore',
-  description: 'Explore AwakenArts: the Path, the Encounters, the Journal, Christian Symbols, the Gallery, and more.',
+  description: 'Explore AwakenArts: the Path, the Encounters, the Journal, Christian Symbols, and more.',
   alternates: { canonical: '/explore' },
 }
 
@@ -22,7 +22,8 @@ const DOORS: { href: string; title: string; line?: string }[] = [
   { href: '/encounters', title: 'Encounters', line: 'Every journey begins with a single encounter.' },
   { href: '/journal', title: 'The Journal', line: 'A place to read, notice, and write — alongside the works that prompted it.' },
   { href: '/christian-symbols', title: 'Symbols for the Christian Soul', line: 'Scripture speaks in symbols.' },
-  { href: '/gallery', title: 'The Gallery' },
+  // The Gallery is left off (2026-10-07, Susan): it repeats the Collection.
+  // The /gallery page stays; it may return with more works or book images.
   { href: '/experience', title: 'Make Your Own Word Art', line: 'Bring your own words and watch them take shape.' },
   { href: '/foundation', title: 'My Foundation', line: 'Every life tells its story in ways that are often quieter than words.' },
 ]
