@@ -23,7 +23,7 @@ type Door = { href: string; title: string; line?: string; img: string; pos?: str
 const DOORS: Door[] = [
   { href: '/awakenarts-path', title: 'The AwakenArts Path', line: 'Poetry, Image, and Seeing Your Life', img: '/images/path/when-language-shapes-a-path-cover.jpg', pos: 'center 100%' },
   { href: '/encounters', title: 'Encounters', line: 'Every journey begins with a single encounter.', img: '/images/encounters/journey/journey-02-web-opt.jpg' },
-  { href: '/journal', title: 'The Journal', line: 'A place to read, notice, and write — alongside the works that prompted it.', img: '/images/explore/journal-notebook.jpg' }, // notebook from the table header (Susan, 2026-10-07)
+  { href: '/journal', title: 'The Journal', line: 'A place to read, notice, and write — alongside works that prompted\u00A0it.', img: '/images/explore/journal-notebook.jpg' }, // notebook from the table header (Susan, 2026-10-07)
   { href: '/christian-symbols', title: 'Symbols for the Christian Soul', line: 'Scripture speaks in symbols.', img: '/images/homepage/encounters-symbols-ship-v3-opt.jpg' },
   // The Gallery returns as From the Books (2026-10-07, Susan): story images
   // from the books, so it no longer repeats the Collection.

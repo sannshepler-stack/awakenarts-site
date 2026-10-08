@@ -20,7 +20,7 @@ const DOORS: { href: string; title: string; line?: string }[] = [
   {
     href: '/journal',
     title: 'The Journal',
-    line: 'A place to read, notice, and write — alongside the works that prompted it.',
+    line: 'A place to read, notice, and write — alongside works that prompted\u00A0it.',
   },
   { href: '/books', title: 'Books & Journals' },
 ]
