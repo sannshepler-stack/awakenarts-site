@@ -53,6 +53,33 @@ export default function JournalIndexPage() {
         </div>
       </main>
 
+      {/* ── Voices — white middle section (2026-10-08, Susan) ─────────
+          Moved from a closing line into its own section: relevance and
+          academic interest. Links to /quotes.
+      ──────────────────────────────────────────────────────────── */}
+      <section aria-labelledby="voices-heading" style={{ background: '#fff', padding: '7rem 2rem', textAlign: 'center', borderTop: '1px solid #ddd8cf' }}>
+        <div className={styles.wordFormInner}>
+          <span className={styles.wordFormEyebrow}>Voices</span>
+          <h2 id="voices-heading" className={styles.wordFormHeading}>
+            The voices that<br />
+            <em>accompany the work</em>
+          </h2>
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.45rem', lineHeight: 1.5, color: 'var(--deep)', maxWidth: 'var(--measure-medium)', margin: '0 auto 0.75rem' }}>
+            &ldquo;Reason is the natural order of truth; but imagination is the organ of meaning.&rdquo;
+          </p>
+          <p style={{ fontFamily: 'var(--sans)', fontSize: '0.8rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)', margin: '0 0 2.5rem' }}>
+            C. S. Lewis
+          </p>
+          <p className={styles.wordFormBody}>
+            Scripture, parable, and the writers who received that tradition
+            deeply — gathered here for anyone who wants to read further.
+          </p>
+          <Link href="/quotes" className={styles.wordFormLink}>
+            Read the Voices
+          </Link>
+        </div>
+      </section>
+
       {/* ── Word · Image · Form — cream section ───────────────────────
           Contemplative invitation into symbolic form-making.
           Links to existing /experience route. No new systems.
@@ -104,13 +131,6 @@ export default function JournalIndexPage() {
               Begin with a word, memory, image, or phrase.
             </p>
           </div>
-
-          {/* 2026-10-08, Susan: a quiet way into Voices (/quotes) — for
-              relevance and academic interest. */}
-          <p style={{ textAlign: 'center', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', color: 'var(--mid)', margin: '3rem 0 0' }}>
-            <Link href="/quotes" style={{ color: 'var(--gold)', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>Voices</Link>
-            {' '}— Scripture, parable, and the writers who have accompanied the making of AwakenArts.
-          </p>
 
         </div>
       </section>
