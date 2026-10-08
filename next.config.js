@@ -45,6 +45,9 @@ const nextConfig = {
       // but are reached through these temporary redirects.
       { source: '/guided-encounters', destination: '/presentations', permanent: false },
       { source: '/guided-encounters/grismere', destination: '/presentations/grismere', permanent: false },
+      // Flyer QR address (2026-10-08, Susan): awakenarts.com/grismere. Temporary
+      // on purpose — the printed address never changes, where it leads can.
+      { source: '/grismere', destination: '/presentations/grismere?src=flyer', permanent: false },
       { source: '/guided-encounters/:slug', destination: '/collection/:slug', permanent: false },
       // 2026-10-05 (Susan): Edition = the work. /editions/:slug is the
       // Edition's own page again (the earlier redirect to Guided Encounters
