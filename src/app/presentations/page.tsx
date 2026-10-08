@@ -4,8 +4,9 @@ import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
-import { Facilitator, InquirySection, LeadList, bodyStyle, h2Style, labelStyle } from '@/components/guided/GuidedParts'
-import { PresentationTile, presentationInquiry } from '@/components/presentations/PresentationParts'
+import { Facilitator, LeadList, bodyStyle, h2Style, labelStyle } from '@/components/guided/GuidedParts'
+import { PresentationTile } from '@/components/presentations/PresentationParts'
+import { INQUIRY_EMAIL } from '@/data/guidedEncounters'
 import {
   ABOUT_WORKSHOPS,
   PRESENTATIONS,
@@ -55,8 +56,9 @@ export default function PresentationsPage() {
               <p key={p} style={bodyStyle}>{p}</p>
             ))}
             <p style={{ marginTop: '1.75rem' }}>
-              <Link href="#inquire" className="home-coll-cta home-coll-cta--light-surface" data-cta="presentations-host-top">
-                Host a Presentation
+              {/* 2026-10-08, Susan: attendees first; hosting is secondary. */}
+              <Link href="#current-heading" className="home-coll-cta home-coll-cta--light-surface" data-cta="presentations-attend-top">
+                Attend a Presentation
               </Link>
             </p>
           </div>
@@ -66,7 +68,7 @@ export default function PresentationsPage() {
         {PRESENTATIONS.length > 0 && (
           <section aria-labelledby="current-heading" style={{ ...section, background: '#fff' }}>
             <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-              <h2 id="current-heading" style={{ ...h2Style, textAlign: 'center', marginBottom: '2.5rem' }}>Current Presentations &amp; Workshops</h2>
+              <h2 id="current-heading" style={{ ...h2Style, textAlign: 'center', marginBottom: '2.5rem', scrollMarginTop: '5rem' }}>Current Presentations &amp; Workshops</h2>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 360px))', justifyContent: 'center', gap: '1.5rem' }}>
                 {PRESENTATIONS.map((p) => (
                   <PresentationTile key={p.slug} p={p} />
@@ -109,15 +111,23 @@ export default function PresentationsPage() {
           </div>
         </section>
 
-        {/* Host / inquiry */}
-        <InquirySection
-          eyebrow="Host or Inquire"
-          heading="Bring a Presentation or Workshop to Your Group"
-          line="Recognition is rarely a solitary experience. It deepens as we learn to see alongside others."
-          config={presentationInquiry()}
-        />
-        {/* Encounter Journal signup removed (Susan, 2026-10-07): it doesn't
-            belong here; the inquiry form carries its own keep-me-informed box. */}
+        {/* Hosting — secondary (2026-10-08, Susan): one quiet line and a
+            direct email address, replacing the mail-app inquiry form. */}
+        <section aria-labelledby="host-heading" style={{ ...section, textAlign: 'center' }}>
+          <div style={narrow}>
+            <p id="host-heading" style={labelStyle}>Host a Presentation</p>
+            <p style={{ ...bodyStyle, marginTop: '1rem' }}>
+              Recognition is rarely a solitary experience. It deepens as we learn to see alongside others.
+            </p>
+            <p style={bodyStyle}>
+              To bring a presentation or workshop to your library, club, retreat, or community group, write to Susan at{' '}
+              <a href={`mailto:${INQUIRY_EMAIL}?subject=${encodeURIComponent('Hosting a presentation')}`} data-cta="presentations-host-email" style={{ color: 'var(--gold)' }}>
+                {INQUIRY_EMAIL}
+              </a>
+              .
+            </p>
+          </div>
+        </section>
       </main>
       <WayfindingBand />
       <Footer />

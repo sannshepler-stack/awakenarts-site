@@ -1,28 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getPresentation } from '@/data/presentations'
+import { getPresentation, signupMode } from '@/data/presentations'
 
-// /api/register — presentation registration (2026-10-05, Susan).
+// /api/register — attendee sign-up for a presentation (2026-10-08, Susan).
 //
-// Participant pathway: register → receive the Symbol Card by email →
-// attend → encounter the workbook → continue with Going Further.
+// Two states, set per presentation in src/data/presentations.ts:
+//   notify   — no date yet; the person asks to hear when one is scheduled.
+//   register — a date and place are set; the person reserves a place.
 //
-// What this route does, through Kit's V4 API (same keys as /api/subscribe):
-//   1. creates/updates the subscriber, with first name and the
-//      registration details as Kit custom fields
-//      (registration_presentation, registration_kind, registration_dates,
-//      registration_message — create these fields in Kit to keep them;
-//      Kit ignores fields that don't exist)
-//   2. adds them to the main form (KIT_FORM_ID)
-//   3. tags them with the presentation's tag, when its env var is set
-//      (e.g. KIT_TAG_GRISMERE = the numeric Kit tag ID). A Kit automation
-//      on that tag sends the Symbol Card PDF — set up in Kit, not here.
-// Missing settings: production reports failure (never a false success);
-// local development reports a placeholder success so the page can be
-// reviewed on localhost.
+// Through Kit's V4 API (KIT_API_KEY, the same key as /api/subscribe):
+//   1. creates/updates the subscriber with first name, plus two Kit custom
+//      fields (create them in Kit to keep them; Kit ignores unknown fields):
+//        registration_presentation — the presentation's title
+//        registration_event        — "when · where" (register only), for
+//                                    use in the Kit confirmation email
+//   2. tags them. notify → the presentation's notify tag. register → the
+//      general registration tag (starts the one confirmation email) and
+//      the tag for that specific date.
+// Sign-ups are NEVER added to the Encounter Journal / newsletter form
+// (KIT_FORM_ID): event registration stays separate (Susan, 2026-10-08).
+//
+// Missing settings: production reports failure before saving anything, so
+// no one is stored untagged or told they're signed up when they aren't.
+// Local development reports a placeholder success for page review.
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-type Body = { name?: string; email?: string; presentation?: string; kind?: string; dates?: string; message?: string }
+type Body = { name?: string; email?: string; presentation?: string }
+
+const FAIL = "We couldn't complete your sign-up just now. Please try again in a moment."
 
 async function kit(path: string, apiKey: string, payload: unknown) {
   const res = await fetch(`https://api.kit.com/v4${path}`, {
@@ -47,49 +52,51 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, message: 'Please add your name and a valid email address.' }, { status: 400 })
   }
   const p = b.presentation ? getPresentation(b.presentation) : undefined
-
-  const apiKey = process.env.KIT_API_KEY
-  const formId = process.env.KIT_FORM_ID
-  if (!apiKey || !formId) {
-    if (process.env.NODE_ENV === 'production') {
-      console.error('[register] KIT_API_KEY/KIT_FORM_ID missing in production')
-      return NextResponse.json({ ok: false, message: "We couldn't complete your registration just now. Please try again later." })
-    }
-    console.log('[register:placeholder]', { name, email, presentation: p?.slug, kind: b.kind })
-    return NextResponse.json({ ok: true, placeholder: true })
+  const mode = signupMode(p)
+  if (!p || !p.signup || !mode) {
+    return NextResponse.json({ ok: false, message: 'This presentation is not taking sign-ups.' }, { status: 400 })
   }
 
-  const fields = {
-    registration_presentation: p?.title || b.presentation || '',
-    registration_kind: (b.kind || '').slice(0, 120),
-    registration_dates: (b.dates || '').slice(0, 300),
-    registration_message: (b.message || '').slice(0, 2000),
+  const tagEnvs =
+    mode === 'register'
+      ? [p.signup.registerTagEnv, p.signup.event?.eventTagEnv].filter((v): v is string => Boolean(v))
+      : [p.signup.notifyTagEnv]
+  const apiKey = process.env.KIT_API_KEY
+  const tagIds = tagEnvs.map((k) => process.env[k])
+  const missing = [...(apiKey ? [] : ['KIT_API_KEY']), ...tagEnvs.filter((_, i) => !tagIds[i])]
+
+  if (missing.length > 0) {
+    if (process.env.NODE_ENV === 'production') {
+      console.error(`[register] not set: ${missing.join(', ')} — sign-up refused, nothing saved`)
+      return NextResponse.json({ ok: false, message: FAIL })
+    }
+    console.log('[register:placeholder]', { name, email, presentation: p.slug, mode, missing })
+    return NextResponse.json({ ok: true, placeholder: true, mode })
+  }
+
+  const fields: Record<string, string> = { registration_presentation: p.title }
+  if (mode === 'register' && p.signup.event) {
+    fields.registration_event = `${p.signup.event.when} · ${p.signup.event.where}`
   }
 
   try {
-    const up = await kit('/subscribers', apiKey, { email_address: email, first_name: name, fields })
+    const up = await kit('/subscribers', apiKey!, { email_address: email, first_name: name, fields })
     if (!up.ok) {
       console.error('[register:kit] subscriber', up.status, up.text)
-      return NextResponse.json({ ok: false, message: "We couldn't complete your registration just now. Please try again in a moment." })
+      return NextResponse.json({ ok: false, message: FAIL })
     }
-    const form = await kit(`/forms/${formId}/subscribers`, apiKey, { email_address: email, referrer: req.headers.get('referer') || undefined })
-    if (!form.ok) console.error('[register:kit] form', form.status, form.text)
-
-    const tagId = p?.registration?.kitTagEnv ? process.env[p.registration.kitTagEnv] : undefined
-    if (tagId) {
-      const tag = await kit(`/tags/${tagId}/subscribers`, apiKey, { email_address: email })
+    for (const tagId of tagIds) {
+      const tag = await kit(`/tags/${tagId}/subscribers`, apiKey!, { email_address: email })
       if (!tag.ok) {
-        console.error('[register:kit] tag', tag.status, tag.text)
-        return NextResponse.json({ ok: false, message: "We couldn't complete your registration just now. Please try again in a moment." })
+        console.error('[register:kit] tag', tagId, tag.status, tag.text)
+        return NextResponse.json({ ok: false, message: FAIL })
       }
-    } else if (p?.registration?.kitTagEnv) {
-      console.error(`[register] ${p.registration.kitTagEnv} not set — no Symbol Card email will be triggered`)
     }
   } catch (err) {
     console.error('[register:kit] network error', err)
-    return NextResponse.json({ ok: false, message: "We couldn't reach our registration service just now. Please try again in a moment." })
+    return NextResponse.json({ ok: false, message: FAIL })
   }
 
-  console.log('[register] registered', { email, presentation: p?.slug })
-  return NextResponse.json({ ok: true })
+  console.log('[register] signed up', { email, presentation: p.slug, mode })
+  return NextResponse.json({ ok: true, mode })
 }

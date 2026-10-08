@@ -10,10 +10,23 @@
 // 9d3746a). Topics and format are Susan's to supply; an empty field does
 // not render.
 
+export interface PresentationSignup {
+  mode: 'notify' | 'register'
+  /** Kit tag for "notify me" sign-ups, e.g. KIT_TAG_GRISMERE_NOTIFY. */
+  notifyTagEnv: string
+  /** Kit tag on every registrant (starts the one confirmation email). */
+  registerTagEnv?: string
+  /** The scheduled event — required for 'register'. eventTagEnv is a tag for
+   *  this one date, so Kit can tell registrations for different dates apart. */
+  event?: { when: string; where: string; eventTagEnv: string }
+}
+
 export interface Presentation {
   /** URL name — printed on flyers as awakenarts.com/presentations/[slug]. */
   slug: string
   title: string
+  /** Short name for running text, e.g. 'Mermaid Grismere'. Falls back to title. */
+  shortTitle?: string
   /** e.g. 'A Guided Encounter with the Grismere Edition'. */
   subtitle?: string
   /** One or two sentences, Susan's wording. */
@@ -38,11 +51,13 @@ export interface Presentation {
   related?: { label: string; href: string }
   /** Short pitch shown on a related Edition's page — Susan's wording. */
   editionPitch?: string
-  /** Registration (2026-10-05, Susan): what the participant receives on
-   *  registering, and the Kit tag (env var holding its numeric ID) whose
-   *  automation emails it. */
-  /** `open: false` keeps registration hidden (inquiry only) until Kit is ready. */
-  registration?: { gift?: string; kitTagEnv?: string; open?: boolean }
+  /** Attendee sign-up (2026-10-08, Susan). Two states:
+   *  'notify'   — no date yet: "Notify Me About Upcoming Presentations".
+   *  'register' — once a date and place are confirmed: "Register for This
+   *               Presentation", with the event shown on the page.
+   *  Sign-ups go to Kit with tags only — never onto the Encounter Journal /
+   *  newsletter list. Each tag is an env var holding Kit's numeric tag ID. */
+  signup?: PresentationSignup
   /** Materials that accompany the presentation — Susan's wording. */
   materials?: { title: string; line: string; note?: string }[]
   /** Edition pages that link to this presentation. Shown only there —
@@ -57,7 +72,8 @@ export const PRESENTATIONS: Presentation[] = [
     // Public-facing title (Susan, 2026-10-08). "Guided Encounter" stays as
     // the format: a description of the experience, not the title.
     title: 'Mermaid Grismere: Beneath the Surface',
-    subtitle: 'A 75-Minute AwakenArts Presentation',
+    shortTitle: 'Mermaid Grismere',
+    subtitle: 'A 75-Minute AwakenArts\u00A0Presentation',
     // DRAFT for Susan's approval — drawn from the Grismere Edition's own copy.
     // What happens / what participants see or do / a presentation image:
     // awaiting Susan (the figure artwork stands in until then).
@@ -71,16 +87,13 @@ export const PRESENTATIONS: Presentation[] = [
     image: '/images/editions/grismere-figure.jpg',
     imageAlt: 'Grismere — the figure artwork',
     editions: ['grismere'],
-    // Participant pathway: register → Symbol Card by email → attend →
-    // workbook (revealed during) → Going Further.
-    // NOT FOR LIVE until the Grismere Symbol Card PDF exists and a Kit
-    // automation on KIT_TAG_GRISMERE sends it.
-    registration: {
-      // Hidden for going live (Susan, 2026-10-07): set open: true once the
-      // Symbol Card PDF and Kit tag/automation are in place.
-      open: false,
-      gift: 'With your registration, you’ll receive the Grismere Symbol Card as a digital PDF you can save or print.',
-      kitTagEnv: 'KIT_TAG_GRISMERE',
+    // 2026-10-08, Susan: attendees first. No date yet, so "Notify Me".
+    // When a date is set: mode 'register' + event { when, where,
+    // eventTagEnv } (a new Kit tag for that date). No Symbol Card promise.
+    signup: {
+      mode: 'notify',
+      notifyTagEnv: 'KIT_TAG_GRISMERE_NOTIFY',
+      registerTagEnv: 'KIT_TAG_GRISMERE',
     },
     materials: [
       {
@@ -141,7 +154,8 @@ export const WORKSHOP_WHAT_TO_EXPECT = [
 export const WORKSHOP_DIRECTION =
   'Each workshop travels a different symbolic landscape, but the direction remains the same: toward greater recognition, awareness, wholeness, and connection.'
 
-/** Registration is shown only when explicitly opened. */
-export function registrationOpen(p?: Presentation): boolean {
-  return Boolean(p?.registration && p.registration.open !== false)
+/** Register only when a date and place are actually set; otherwise Notify Me. */
+export function signupMode(p?: Presentation): 'notify' | 'register' | undefined {
+  if (!p?.signup) return undefined
+  return p.signup.mode === 'register' && p.signup.event ? 'register' : 'notify'
 }

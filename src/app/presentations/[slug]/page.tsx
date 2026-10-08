@@ -4,9 +4,10 @@ import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
-import { Facilitator, InquirySection, bodyStyle, h2Style, labelStyle } from '@/components/guided/GuidedParts'
-import { PresentationTile, presentationInquiry } from '@/components/presentations/PresentationParts'
-import { PRESENTATIONS, PRESENTATION_AUDIENCES, getPresentation, registrationOpen } from '@/data/presentations'
+import { Facilitator, bodyStyle, h2Style, labelStyle } from '@/components/guided/GuidedParts'
+import { PresentationTile } from '@/components/presentations/PresentationParts'
+import PresentationSignup from '@/components/presentations/PresentationSignup'
+import { PRESENTATIONS, PRESENTATION_AUDIENCES, getPresentation, signupMode } from '@/data/presentations'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
 
 // /presentations/[slug] — reusable single presentation/workshop page, built
@@ -38,7 +39,10 @@ export default function PresentationPage({ params }: { params: { slug: string } 
   if (!p) notFound()
   const audiences = p.audiences && p.audiences.length > 0 ? p.audiences : PRESENTATION_AUDIENCES
   const others = PRESENTATIONS.filter((x) => x.slug !== p.slug).slice(0, 3)
+  const mode = signupMode(p)
+  const event = mode === 'register' ? p.signup?.event : undefined
   const facts: [string, string][] = []
+  if (event) facts.push(['When', event.when], ['Where', event.where])
   if (p.format) facts.push(['Format', p.format])
   if (p.length) facts.push(['Length', p.length])
   facts.push(['For', audiences.join(' · ')])
@@ -68,9 +72,11 @@ export default function PresentationPage({ params }: { params: { slug: string } 
                   </div>
                 ))}
               </dl>
-              <TextLinkRow>
-                <TextLink href="#inquire" cta={`presentation-${p.slug}-inquire`}>{registrationOpen(p) ? 'Register' : 'Inquire'}</TextLink>
-              </TextLinkRow>
+              {mode && (
+                <TextLinkRow>
+                  <TextLink href="#signup" cta={`presentation-${p.slug}-${mode}-top`}>{mode === 'register' ? 'Register' : 'Notify Me'}</TextLink>
+                </TextLinkRow>
+              )}
             </div>
           </div>
         </section>
@@ -132,13 +138,6 @@ export default function PresentationPage({ params }: { params: { slug: string } 
           </div>
         </section>
 
-        <InquirySection
-          preselect={p.slug}
-          heading={registrationOpen(p) ? 'Register' : 'Inquire'}
-          line={registrationOpen(p) ? p.registration?.gift : 'Ask about attending this presentation or bringing it to your group.'}
-          config={presentationInquiry(p)}
-        />
-
         {p.materials && p.materials.length > 0 && (
           <section aria-labelledby="materials-heading" style={section}>
             <div style={{ maxWidth: 860, margin: '0 auto', textAlign: 'center' }}>
@@ -152,6 +151,27 @@ export default function PresentationPage({ params }: { params: { slug: string } 
                   </div>
                 ))}
               </div>
+            </div>
+          </section>
+        )}
+
+        {/* Attendee sign-up (2026-10-08, Susan: attendees first). What comes
+            with the presentation is shown above it, so visitors see what
+            they're signing up for before they're asked. */}
+        {mode && (
+          <section id="signup" aria-labelledby="signup-heading" style={{ background: 'var(--warm)', padding: 'var(--band-gap) 1.5rem', scrollMarginTop: '5rem' }}>
+            <div style={{ maxWidth: 680, margin: '0 auto' }}>
+              <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                <h2 id="signup-heading" style={h2Style}>
+                  {mode === 'register' ? 'Register for This Presentation' : 'Notify Me About Upcoming Presentations'}
+                </h2>
+                <p style={{ ...bodyStyle, color: 'var(--mid)' }}>
+                  {mode === 'register' && event
+                    ? `${event.when} · ${event.where}`
+                    : `Leave your name and email, and you\u2019ll hear when the next ${p.shortTitle || p.title} presentation is scheduled.`}
+                </p>
+              </div>
+              <PresentationSignup slug={p.slug} mode={mode} shortTitle={p.shortTitle || p.title} event={event} />
             </div>
           </section>
         )}
