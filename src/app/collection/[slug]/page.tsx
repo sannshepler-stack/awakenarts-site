@@ -107,7 +107,7 @@ export default function EditionPage({ params }: { params: { slug: string } }) {
               <div style={{ marginTop: '1.5rem' }}>
                 <TextLinkRow center>
                   <TextLink href={`/presentations/${presentation.slug}`} cta={`edition-${e.slug}-presentation`}>
-                    View the {presentation.title} Presentation
+                    View the Presentation
                   </TextLink>
                 </TextLinkRow>
               </div>

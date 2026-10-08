@@ -54,13 +54,15 @@ export interface Presentation {
 export const PRESENTATIONS: Presentation[] = [
   {
     slug: 'grismere',
-    title: 'Grismere',
-    subtitle: 'A Guided Encounter',
+    // Public-facing title (Susan, 2026-10-08). "Guided Encounter" stays as
+    // the format: a description of the experience, not the title.
+    title: 'Mermaid Grismere: Beneath the Surface',
+    subtitle: 'A 75-Minute AwakenArts Presentation',
     // DRAFT for Susan's approval — drawn from the Grismere Edition's own copy.
     // What happens / what participants see or do / a presentation image:
     // awaiting Susan (the figure artwork stands in until then).
     summary:
-      'Participants practice attention at the threshold between what is visible and what remains beneath the surface.',
+      'Exploring the hidden and the revealed through image, poetry, story, and symbolic language.',
     format: 'Guided Encounter',
     length: '75 minutes',
     // 2026-10-05, Susan: no church-specific audience unless approved later.
