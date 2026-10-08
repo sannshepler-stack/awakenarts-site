@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
-import WorldDoorways from '@/components/WorldDoorways'
 import BookCover from '@/components/books/BookCover'
 import BookTile, { statusText } from '@/components/books/BookTile'
 import { books, getBook, canBuy } from '@/data/books'
@@ -78,9 +77,13 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                 </dl>
               )}
               {canBuy(b) ? (
-                <a href={b.buyUrl} target="_blank" rel="noopener noreferrer" className="home-coll-cta home-coll-cta--light-surface" data-cta={`buy-${b.slug}`}>
-                  {b.buyLabel || 'Buy the Book'}
-                </a>
+                // 2026-10-08, Susan: once live — "Available now on Amazon." linked
+                // to that edition's Amazon page.
+                <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', color: 'var(--gold)', margin: '0.5rem 0 0' }}>
+                  <a href={b.buyUrl} target="_blank" rel="noopener noreferrer" data-cta={`buy-${b.slug}`} style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>
+                    Available now on Amazon.
+                  </a>
+                </p>
               ) : (
                 // Until the buy link is confirmed: a quiet note, no signup
                 // (2026-10-07 — "Hear When It's Ready" pointed at the Journal signup).
@@ -103,7 +106,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
             <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.75rem', alignItems: 'start' }}>
               {b.samples.map((s) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img key={s.src} src={s.src} alt={s.alt} loading="lazy" style={{ width: '100%', display: 'block', border: '1px solid var(--mist)', boxShadow: '0 8px 22px rgba(28, 43, 58, 0.12)' }} />
+                <img key={s.src} src={s.src} alt={s.alt} loading="lazy" style={{ width: '100%', aspectRatio: '4 / 5', objectFit: 'cover', display: 'block', border: '1px solid var(--mist)', boxShadow: '0 8px 22px rgba(28, 43, 58, 0.12)' }} />
               ))}
             </div>
           </section>
@@ -126,7 +129,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
-        <WorldDoorways />
+        {/* "Continue into AwakenArts" removed (Susan, 2026-10-08): on a book page the visitor stays with the books. */}
       </main>
       <WayfindingBand />
       <Footer />

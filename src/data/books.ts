@@ -75,8 +75,13 @@ export const books: Book[] = [
     samples: [
       { src: '/images/gallery/where-you-stand/02-ann-at-the-viewpoint.jpg', alt: 'Where You Stand — Ann looking out over a river valley toward a distant castle' },
       { src: '/images/gallery/where-you-stand/10-the-king.jpg', alt: 'Where You Stand — the King on a hillside' },
-      { src: '/images/gallery/where-you-stand/14-king-and-queen-on-the-board.jpg', alt: 'Where You Stand — chess king and queen facing each other in the hills' },
+      // 2026-10-08, Susan: chess-pieces image is not in the Second Edition;
+      // replaced with the new p23 road-ahead image from the Second Edition.
+      { src: '/images/gallery/where-you-stand/16-the-road-ahead-olive-hillside.jpg', alt: 'Where You Stand — a stone path winding past an olive tree toward the hills at sunrise' },
     ],
+    // 2026-10-08, Susan: Second Edition is the version on the site. While KDP
+    // processes it the page reads "Coming soon."; once live, set buyUrl to the
+    // Second Edition's Amazon page and linkConfirmed: true.
     details: [
       { label: 'Format', value: 'Paperback, 8.5 × 11 in' },
       { label: 'Edition', value: 'Second edition' },
