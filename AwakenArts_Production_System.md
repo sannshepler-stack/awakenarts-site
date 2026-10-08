@@ -210,35 +210,6 @@ Before any product moves to Phase 3, confirm all required assets are complete.
 
 ---
 
-### 2.7 — KDP Interior PDF Export Procedure (Verified Workflow)
-
-This procedure produces the final, print-ready interior PDF for any KDP-published journal, workbook, or book whose source is a designed HTML document (the current method for Figure Editions, journals, and workbooks). It was established and verified during production of *Where You Stand* (2026-08) and governs every future title built the same way, so the export method is never rediscovered from scratch.
-
-**Governing rule: the final interior PDF is always produced locally on a Mac, never in the Claude/sandbox environment, whenever the design depends on a licensed system font (e.g., Palatino) that the sandbox does not have.** The sandbox substitutes a fallback font (observed: Liberation Serif) that is visually similar but is not the licensed font and must never be treated as final typography. Sandbox rendering remains appropriate for layout proofs, pagination checks, and visual review during revision — never for the file submitted to KDP.
-
-**The verified export path:**
-
-1. **Authoritative HTML source.** Open the current, approved working HTML file directly in Chrome on the Mac. Do not export from a copy, a cached render, or any sandbox-generated proof.
-2. **Confirm Chrome is rendering the real local font, not a fallback.** Before printing, verify in Chrome DevTools (or by visual inspection against a known-good prior export) that the required font — e.g., Palatino — is actually resolving from the Mac's installed fonts, not substituting a system default. If the font does not resolve, stop and resolve the font issue before exporting; do not export and check afterward.
-3. **Open Print, then switch to the macOS system print dialog.** From Chrome's Print dialog (Cmd+P), use the "Use System Dialog…" (or equivalent) link to leave Chrome's own print-preview panel and reach the native macOS print dialog. Do not print directly from Chrome's built-in preview — the system dialog is required for the next steps.
-4. **Select the saved custom KDP paper size, with zero margins.** Use (or create once, then reuse) a custom paper size in macOS matching the title's exact KDP trim + bleed dimensions (verified for *Where You Stand*: 8.625 × 11.25 in). Set all margins to zero.
-5. **Set scale to 100%.** Do not let the print dialog auto-scale to fit — this will resize the page and break the trim size.
-6. **Single-sided.** Do not enable two-sided/duplex printing.
-7. **Use the native macOS PDF menu → "Save as PDF."** In the bottom-left of the macOS print dialog, open the "PDF" dropdown and choose **"Save as PDF."** Do **not** choose "Save as Adobe PDF" or any other Adobe/Acrobat-routed option — that path did not reliably embed the correct fonts and is excluded from this procedure.
-
-**Why this path works:** macOS's native "Save as PDF" invokes Quartz PDFContext directly, which correctly embeds the genuine licensed font (confirmed: `Palatino-Roman` and `Palatino-Italic`, subsetted and embedded) rather than substituting or re-rasterizing it. A genuine export produced this way carries `Producer: macOS Version [x] Quartz PDFContext` and `Creator: Chrome Helper` in its PDF metadata — a reliable fingerprint for confirming a file's provenance later.
-
-**Required verification after every export** (do not treat an export as final until all of these pass — this is the same checklist used to verify *Where You Stand*'s KDP candidate interior):
-- Page count matches the source exactly
-- Page dimensions are uniform across all pages and match the intended trim + bleed size
-- `pdffonts` confirms only the intended licensed font(s) are embedded (e.g., `Palatino-Roman`, `Palatino-Italic`) — no fallback font (e.g., Liberation Serif) present
-- A full page-by-page visual scan shows no clipping, overflow, displaced elements, missing content, or pagination regression
-- Any recent content or image corrections are visually confirmed present on the correct rendered page (note: a page's position in the final PDF can differ from its `<!-- PAGE N -->` label in the HTML source — always confirm against the actual rendered page order, not the HTML comment)
-
-**If a font-embedding anomaly appears on a genuine local export** (as happened once, unexplained, during *Where You Stand* production): verify the file's provenance first — filename, path, size, internal PDF `CreationDate`/`ModDate`, checksum, and `Producer`/`Creator` metadata — before assuming the Mac's font environment has changed. A mismatched file is a far more common cause than a genuine font regression.
-
----
-
 ## Phase 3 — Product Review
 
 Every product undergoes review before release. Review confirms that assets are complete, that the product meets its family's production standards, and that the work is ready for publication.
