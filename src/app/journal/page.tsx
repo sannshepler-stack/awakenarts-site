@@ -105,6 +105,13 @@ export default function JournalIndexPage() {
             </p>
           </div>
 
+          {/* 2026-10-08, Susan: a quiet way into Voices (/quotes) — for
+              relevance and academic interest. */}
+          <p style={{ textAlign: 'center', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', color: 'var(--mid)', margin: '3rem 0 0' }}>
+            <Link href="/quotes" style={{ color: 'var(--gold)', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>Voices</Link>
+            {' '}— Scripture, parable, and the writers who have accompanied the making of AwakenArts.
+          </p>
+
         </div>
       </section>
 

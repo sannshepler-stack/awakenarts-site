@@ -30,6 +30,8 @@ const EXPLORE_LINKS = [
   { label: 'Collection', href: '/collection' },
   // 2026-10-07, Susan: the Journal needs more than one way in.
   { label: 'The Journal', href: '/journal' },
+  // 2026-10-08, Susan: Voices (quotes) — relevance and academic interest.
+  { label: 'Voices', href: '/quotes' },
   { label: 'Presentations & Workshops', href: '/presentations' },
   { label: 'Symbols', href: '/symbols' },
   { label: 'Books & Journals', href: '/books' },
