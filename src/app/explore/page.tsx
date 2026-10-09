@@ -129,18 +129,19 @@ export default function ExplorePage() {
           </p>
           <div
             style={{
-              maxWidth: 880,
+              // 2026-10-09, Susan: smaller, so the examples don't overwhelm Explore.
+              maxWidth: 540,
               margin: '0 auto',
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
-              gap: '1.5rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
+              gap: '1.25rem',
             }}
           >
             {[
               { src: '/images/experiences/butterfly-wordart-opt.webp', alt: 'Butterfly Word-Art — words arranged in the shape of a butterfly' },
               { src: '/images/experiences/word-form-spiral-opt.webp', alt: 'Word-Form Spiral — words arranged in a spiral form' },
             ].map((im) => (
-              <div key={im.src} style={{ background: 'var(--cream)', border: '1px solid var(--mist)', boxShadow: '0 8px 22px rgba(28, 43, 58, 0.08)', padding: '1.5rem' }}>
+              <div key={im.src} style={{ background: 'var(--cream)', border: '1px solid var(--mist)', boxShadow: '0 8px 22px rgba(28, 43, 58, 0.08)', padding: '1rem' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={im.src}
