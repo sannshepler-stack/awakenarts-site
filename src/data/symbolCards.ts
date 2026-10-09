@@ -11,7 +11,7 @@
 //   - Each printed card carries a QR code to awakenarts.com/s/[slug], which
 //     forwards to that symbol's Portal page.
 //
-// All copy below is supplied by Susan, card by card. Nothing is invented.
+// All copy below is approved by Susan, card by card. Nothing is invented.
 // Any optional field left out simply does not render.
 //
 // A card appears on the homepage ("Begin with a Symbol") when `featured`
@@ -61,16 +61,44 @@ export interface SymbolCard {
 }
 
 export const symbolCards: SymbolCard[] = [
-  // Awaiting Susan's card copy. Example of the shape (not live):
-  // {
-  //   slug: 'lamp',
-  //   name: 'Lamp',
-  //   front: { image: '/images/symbol-cards/lamp-front.png', meanings: ['…', '…', '…'] },
-  //   back:  { meanings: ['…', '…'], scripture: { reference: 'Psalm 119:105', text: '…' } },
-  //   portal: { question: '…', next: { label: '…', href: '/guided-encounters' } },
-  //   featured: true,
-  //   prompt: '…',
-  // },
+  // PATH — the master Symbol Portal (approved by Susan, 2026-10-09).
+  // Learn → Recognize → Practice → Apply. Remaining portals follow this
+  // learning experience, each keeping its own character and meanings.
+  {
+    slug: 'path',
+    name: 'Path',
+    front: {
+      image: '/images/symbols/Path_Card_Front-opt.jpg',
+      imageAlt: 'Path — card artwork',
+      meanings: ['A journey', 'A direction chosen', 'Progress through time', 'A way others have walked'],
+      expression: '“I’m at a crossroads.” “We went our separate ways.” “She’s found her path.”',
+    },
+    back: {
+      meanings: ['Guidance', 'The way of faith', 'A life walked in trust'],
+      scripture: {
+        reference: 'Psalm 119:105',
+        text: 'Your word is a lamp for my feet, a light on my path.',
+        translation: 'NIV',
+      },
+    },
+    portal: {
+      broad: [
+        'Literally, a path is simply a way through: worn by feet, marked by stones, leading somewhere. Symbolically, it describes a life: where we have been, where we are going, and the choices along the way.',
+        'We speak in paths constantly. We stand at crossroads, take detours, lose our way, and find it again. Each phrase holds a picture of how we are moving through an experience.',
+        'A path can mean different things to different people: adventure, duty, pilgrimage, the road home, or a way someone we loved once walked.',
+      ],
+      christian: [
+        'In Scripture, the path can represent the way a person lives before God. Psalm 119:105 describes God’s word as a lamp for one’s feet and a light for one’s path, connecting the image of a journey with guidance and faith.',
+      ],
+      question: 'If your life right now were a path, what would it look like where you are standing?',
+      next: {
+        label: 'Explore the Thresholds Reflection Path',
+        href: '/journal/thresholds',
+        note: 'Take this question into writing.',
+      },
+      christianSymbol: 'path',
+    },
+  },
 ]
 
 export function getSymbolCard(slug: string): SymbolCard | undefined {
