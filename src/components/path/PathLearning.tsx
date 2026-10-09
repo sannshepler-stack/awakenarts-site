@@ -397,56 +397,120 @@ export function PathBookFeature() {
 }
 
 // A Practice of Attention (approved by Susan, 2026-10-09). Carried over
-// verbatim from /method before that page was retired. Sits between "What
-// Symbol Awareness Can Teach Us" and "Where to Continue": what you'll learn,
-// how to practice it, where to go next.
+// verbatim from /method before that page was retired. Revised the same day
+// per Susan: "blended in as the next movement of the Path, not dropped in
+// as a disconnected extra block." No divider; it continues straight from
+// the four learning categories, and the five steps are laid out as stones
+// along a path, in the same gold-numbered language as the categories above.
+const STEPS = ['Notice.', 'Become curious.', 'Remain with the image.', 'Allow recognition to emerge.', 'Do not force interpretation.']
+
 export function PathPractice() {
   const body: React.CSSProperties = {
     fontFamily: 'var(--font-body)',
     fontSize: 'var(--body-size)',
     lineHeight: 'var(--body-line)',
     color: 'var(--deep)',
-    margin: '0 0 1rem',
+    margin: '0 auto 1rem',
+    maxWidth: 680,
+    textAlign: 'center',
   }
   return (
     <section aria-labelledby="path-practice-heading" style={{ padding: '0 1.5rem var(--band-gap)' }}>
-      <div style={{ maxWidth: 640, margin: '0 auto' }}>
-        <div style={divider} aria-hidden="true" />
-        <p
-          style={{
-            fontFamily: 'var(--serif)',
-            fontStyle: 'italic',
-            fontSize: '1.35rem',
-            lineHeight: 1.45,
-            color: 'var(--gold)',
-            textAlign: 'center',
-            margin: '0 0 2rem',
-          }}
-        >
-          People tell their stories with facts. They reveal their lives through images.
-        </p>
-        <h2 id="path-practice-heading" style={sectionHeading}>
-          A Practice of Attention
-        </h2>
-        <p style={body}>
-          AwakenArts is not primarily about interpreting symbols. It is about learning to notice them. Recognition
-          arises through sustained attention, not immediate explanation.
-        </p>
-        <p style={body}>The practice itself is simple to name, if not always simple to do:</p>
-        <ol style={{ ...body, paddingLeft: '1.5rem', margin: '0 0 1.5rem' }}>
-          {['Notice.', 'Become curious.', 'Remain with the image.', 'Allow recognition to emerge.', 'Do not force interpretation.'].map(
-            (step) => (
-              <li key={step} style={{ margin: '0 0 0.35rem' }}>
-                {step}
-              </li>
-            ),
-          )}
-        </ol>
-        <p style={{ ...body, fontStyle: 'italic', color: 'var(--mid)', margin: 0 }}>
-          This practice is not new. It is understood within the historic Christian tradition of figurative language
-          and parable, where image and story have always carried what direct explanation cannot.
-        </p>
-      </div>
+      <p
+        style={{
+          fontFamily: 'var(--serif)',
+          fontStyle: 'italic',
+          fontSize: '1.35rem',
+          lineHeight: 1.45,
+          color: 'var(--gold)',
+          textAlign: 'center',
+          maxWidth: 680,
+          margin: '0 auto 1.5rem',
+        }}
+      >
+        People tell their stories with facts. They reveal their lives through images.
+      </p>
+      {/* Eyebrow per Susan, 2026-10-09. */}
+      <p className="eyebrow" style={{ justifyContent: 'center', margin: '0 0 0.75rem' }}>How AwakenArts Works</p>
+      <h2 id="path-practice-heading" style={sectionHeading}>
+        A Practice of Attention
+      </h2>
+      <p style={body}>
+        AwakenArts is not primarily about interpreting symbols. It is about learning to notice them. Recognition arises
+        through sustained attention, not immediate explanation.
+      </p>
+      <p style={{ ...body, margin: '0 auto 2.25rem' }}>
+        The practice itself is simple to name, if not always simple to do:
+      </p>
+
+      {/* The five steps as stones along a path: a thin gold line runs
+          behind them on wide screens; on phones they stack. */}
+      <ol
+        style={{
+          listStyle: 'none',
+          padding: 0,
+          maxWidth: 1040,
+          margin: '0 auto 2.25rem',
+          display: 'grid',
+          // One row of five on wider screens; a single column below ~520px
+          // (no 4 + 1 or 2 + 2 + 1 in-between).
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, max(130px, (520px - 100%) * 999)), 1fr))',
+          gap: '1.5rem 0',
+        }}
+      >
+        {STEPS.map((step, i) => (
+          <li
+            key={step}
+            style={{
+              textAlign: 'center',
+              padding: '0 0.6rem',
+              // Each stone carries its own segment of the path line; side by
+              // side they join into one continuous path.
+              backgroundImage: 'linear-gradient(var(--gold-lt), var(--gold-lt))',
+              backgroundSize: '100% 1px',
+              backgroundPosition: '0 1.1rem',
+              backgroundRepeat: 'no-repeat',
+            }}
+          >
+            <span
+              aria-hidden="true"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '2.2rem',
+                height: '2.2rem',
+                borderRadius: '50%',
+                background: 'var(--cream)',
+                border: '1px solid var(--gold)',
+                fontFamily: 'var(--sans)',
+                fontSize: '0.8rem',
+                fontWeight: 600,
+                color: 'var(--gold)',
+              }}
+            >
+              {i + 1}
+            </span>
+            <span
+              style={{
+                display: 'block',
+                fontFamily: 'var(--serif)',
+                fontSize: '1.25rem',
+                lineHeight: 1.35,
+                color: 'var(--deep)',
+                marginTop: '0.75rem',
+              }}
+            >
+              {step}
+            </span>
+          </li>
+        ))}
+      </ol>
+
+      <p style={{ ...body, fontStyle: 'italic', color: 'var(--mid)', margin: '0 auto' }}>
+        This practice is not new. It is understood within the historic Christian tradition of figurative language and
+        parable, where image and story have always carried what direct explanation cannot.
+      </p>
     </section>
   )
 }
