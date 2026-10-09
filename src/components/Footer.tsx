@@ -25,18 +25,20 @@ import FooterSocial from './FooterSocial'
  * footer is site information and closes the page.
  */
 
+// 2026-10-09, Susan: the list grew long, so it is split into two columns:
+// Explore (where the learning lives) and Continue (ways to keep going).
 const EXPLORE_LINKS = [
   { label: 'Explore', href: '/explore' },
-  // 2026-10-09, Susan: the learning Path and Christian Encounters join the footer.
   { label: 'The AwakenArts Path', href: '/awakenarts-path' },
   { label: 'Collection', href: '/collection' },
-  // 2026-10-07, Susan: the Journal needs more than one way in.
-  { label: 'The Journal', href: '/journal' },
-  // 2026-10-08, Susan: Voices (quotes) — relevance and academic interest.
-  { label: 'Voices', href: '/quotes' },
-  { label: 'Presentations & Workshops', href: '/presentations' },
   { label: 'Symbols', href: '/symbols' },
   { label: 'Christian Encounters', href: '/encounters' },
+]
+
+const CONTINUE_LINKS = [
+  { label: 'The Journal', href: '/journal' },
+  { label: 'Voices', href: '/quotes' },
+  { label: 'Presentations & Workshops', href: '/presentations' },
   { label: 'Books & Journals', href: '/books' },
   { label: 'Stay Connected', href: '/stay-connected' },
 ]
@@ -88,6 +90,17 @@ export default function Footer() {
           <h4>Explore</h4>
           <ul>
             {EXPLORE_LINKS.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href}>{l.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="footer-col">
+          <h4>Continue</h4>
+          <ul>
+            {CONTINUE_LINKS.map((l) => (
               <li key={l.href}>
                 <Link href={l.href}>{l.label}</Link>
               </li>

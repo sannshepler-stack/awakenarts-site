@@ -2870,8 +2870,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
      and asked for brand/Explore/About nearer 50%/20%/24%, with 72-88px
      between columns. 50fr/20fr/24fr at max-width 1340px and an 80px
      gap reproduces that. */
-  grid-template-columns: 50fr 20fr 24fr;
-  gap: 80px;
+  grid-template-columns: 38fr 20fr 22fr 18fr;
+  gap: 64px;
+  /* 2026-10-09, Susan: a fourth column (Explore / Continue / About) so the
+     longer link list is not overloaded. */
   max-width: 1340px;
   margin: 0 auto 3rem;
 }
