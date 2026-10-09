@@ -11,13 +11,17 @@
       "scripture": "Isaiah 40:31; Exodus 19:4; Deuteronomy 32:11",
       "note": "Eagle imagery appears in biblical passages about strength and God's care.",
       "reflection_question": "What does the image of an eagle bring to mind in your own experience?",
-      "related": "lamp;path",
+      "related": "feather",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 1,
+      "review_changes": [
+        "Related: \"lamp;path\" → \"feather\""
+      ]
     },
     {
       "name": "Feather",
@@ -39,17 +43,22 @@
       "name": "Dove",
       "also_found_as": "doves; white dove",
       "type": "biblical;literary;everyday",
-      "can_suggest": "peace;Spirit;remembrance;gentleness",
+      "can_suggest": "peace;Holy Spirit;remembrance;gentleness",
       "scripture": "Matthew 3:16; Genesis 8:11",
       "note": "The dove appears in distinct biblical scenes, including Noah's account and Jesus' baptism.",
       "reflection_question": "Which associations with the dove are meaningful to you, and why?",
-      "related": "lamp;vine",
+      "related": "water",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 2,
+      "review_changes": [
+        "\"Spirit\" clarified as \"Holy Spirit\" (Matthew 3:16)",
+        "Related: \"lamp;vine\" → \"water\""
+      ]
     },
     {
       "name": "Path",
@@ -251,13 +260,17 @@
       "scripture": "1 Corinthians 1:18; Luke 9:23",
       "note": "The cross is a central Christian symbol with rich theological and personal significance.",
       "reflection_question": "What experiences or commitments do you connect with the cross?",
-      "related": "light;path",
+      "related": "path",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 2,
+      "review_changes": [
+        "Related: \"light;path\" → \"path\""
+      ]
     },
     {
       "name": "Crown",
@@ -283,13 +296,17 @@
       "scripture": "Matthew 6:28-30",
       "note": "Jesus points to lilies in a teaching about worry and provision.",
       "reflection_question": "What ordinary beauty invites you to pay attention?",
-      "related": "flower;seed",
+      "related": "flower",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 2,
+      "review_changes": [
+        "Related: \"flower;seed\" → \"flower\""
+      ]
     },
     {
       "name": "Flower",
@@ -315,13 +332,17 @@
       "scripture": "",
       "note": "Roses carry many cultural associations, which vary by color, occasion, and person.",
       "reflection_question": "What particular rose, gift, or memory comes to mind for you?",
-      "related": "flower;lily",
+      "related": "flower",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 1,
+      "review_changes": [
+        "Related: \"flower;lily\" → \"flower\""
+      ]
     },
     {
       "name": "Butterfly",
@@ -331,13 +352,18 @@
       "scripture": "",
       "note": "The butterfly's life cycle is often used as a metaphor for change.",
       "reflection_question": "What kind of change does a butterfly bring to mind for you?",
-      "related": "flower;seed",
+      "related": "",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_changes": [
+        "Related: \"flower;seed\" → none (no genuine published connection)"
+      ],
+      "review_group": 1,
+      "search_visibility": "hidden: published AwakenArts entry takes priority"
     },
     {
       "name": "Bird",
@@ -347,13 +373,17 @@
       "scripture": "Matthew 6:26",
       "note": "Different birds have distinct cultural and biblical associations.",
       "reflection_question": "Is there a particular bird that matters to you, and what do you associate with it?",
-      "related": "dove;eagle",
+      "related": "feather",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 2,
+      "review_changes": [
+        "Related: \"dove;eagle\" → \"feather\""
+      ]
     },
     {
       "name": "Nest",
@@ -363,13 +393,17 @@
       "scripture": "Psalm 84:3",
       "note": "A nest can evoke both shelter and the preparation to leave it.",
       "reflection_question": "What does the idea of a nest bring to mind about home?",
-      "related": "dove;tree",
+      "related": "tree",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 2,
+      "review_changes": [
+        "Related: \"dove;tree\" → \"tree\""
+      ]
     },
     {
       "name": "Anchor",
@@ -379,17 +413,22 @@
       "scripture": "Hebrews 6:19",
       "note": "The letter to the Hebrews uses an anchor as an image of hope.",
       "reflection_question": "What helps you feel steady in an uncertain season?",
-      "related": "boat;path",
+      "related": "",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_changes": [
+        "Related: \"boat;path\" → none (no genuine published connection)"
+      ],
+      "review_group": 1,
+      "search_visibility": "hidden: published AwakenArts entry takes priority"
     },
     {
       "name": "Boat",
-      "also_found_as": "boats; ship; vessel",
+      "also_found_as": "boats",
       "type": "biblical;literary;everyday",
       "can_suggest": "journey;risk;community;crossing",
       "scripture": "Mark 4:35-41",
@@ -401,7 +440,11 @@
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 4,
+      "review_changes": [
+        "Removed \"ship\" (collides with Journal The Ship) and \"vessel\" (biblically also \"earthen vessel\")"
+      ]
     },
     {
       "name": "Net",
@@ -427,13 +470,17 @@
       "scripture": "Matthew 14:17-21; John 21:6",
       "note": "Fish appear in several Gospel narratives and in early Christian symbolism.",
       "reflection_question": "What associations do you bring to the image of a fish?",
-      "related": "water;net",
+      "related": "net;water",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 2,
+      "review_changes": [
+        "Related: \"water;net\" → \"net;water\""
+      ]
     },
     {
       "name": "River",
@@ -488,23 +535,28 @@
       "also_found_as": "walls; hit a wall; barrier",
       "type": "biblical;literary;everyday",
       "can_suggest": "protection;separation;limits;obstacles",
-      "scripture": "Joshua 6:20",
+      "scripture": "Nehemiah 2:17; Joshua 6:20",
       "note": "Walls may protect, divide, or stand as obstacles, depending on context.",
       "reflection_question": "Where does the image of a wall enter your own language?",
-      "related": "gate;door",
+      "related": "gate",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 3,
+      "review_changes": [
+        "Added Nehemiah 2:17 (rebuilding for protection) so Scripture covers both protection and obstacle",
+        "Related: \"gate;door\" → \"gate\""
+      ]
     },
     {
       "name": "Key",
       "also_found_as": "keys; keychain; house key",
       "type": "biblical;literary;everyday",
       "can_suggest": "access;responsibility;trust;possibility",
-      "scripture": "Matthew 16:19",
+      "scripture": "Isaiah 22:22; Revelation 3:7",
       "note": "Keys can suggest both literal access and entrusted responsibility.",
       "reflection_question": "What key or opening has special significance in your story?",
       "related": "door;gate",
@@ -513,55 +565,76 @@
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_changes": [
+        "Replaced Matthew 16:19 (read differently across traditions) with the key of David passages, which speak to opening and access",
+        "Related: kept \"door;gate\" (genuine: opening and access)"
+      ],
+      "review_group": 1,
+      "search_visibility": "hidden: published AwakenArts entry takes priority"
     },
     {
       "name": "Ring",
-      "also_found_as": "rings; wedding ring; band",
+      "also_found_as": "rings; wedding ring",
       "type": "biblical;literary;everyday",
       "can_suggest": "commitment;belonging;continuity;memory",
       "scripture": "Luke 15:22",
       "note": "Rings can express relationships or status, but individual meanings vary.",
       "reflection_question": "What story belongs to a ring you wear, keep, or remember?",
-      "related": "pearl;cross",
+      "related": "",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 1,
+      "review_changes": [
+        "Removed \"band\" (common word)",
+        "Related: \"pearl;cross\" → \"none\""
+      ]
     },
     {
       "name": "Tattoo",
-      "also_found_as": "tattoos; ink; body art",
+      "also_found_as": "tattoos; body art",
       "type": "everyday",
       "can_suggest": "identity;memory;belonging;expression",
       "scripture": "",
       "note": "Tattoo imagery can reflect personal art choices, community ties, or significant experiences.",
       "reflection_question": "If you have or admire a tattoo, what drew you to that image?",
-      "related": "flower;dove",
+      "related": "",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 5,
+      "review_changes": [
+        "Removed \"ink\" (common word)",
+        "Related: \"flower;dove\" → \"none\""
+      ]
     },
     {
       "name": "Photograph",
-      "also_found_as": "photo; family photo; picture",
+      "also_found_as": "photo; photos; family photo",
       "type": "everyday",
       "can_suggest": "memory;belonging;loss;connection",
       "scripture": "",
       "note": "Photographs can preserve moments while acquiring new meanings over time.",
       "reflection_question": "Which photograph would you choose to tell part of your story?",
-      "related": "ring;tree",
+      "related": "",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 5,
+      "review_changes": [
+        "Removed \"picture\" (common word, as in \"picture this\")",
+        "Related: \"ring;tree\" → \"none\""
+      ]
     },
     {
       "name": "Keepsake",
@@ -571,29 +644,38 @@
       "scripture": "",
       "note": "A kept object can gather meaning through its history and associations.",
       "reflection_question": "What is one object you keep, and why does it matter to you?",
-      "related": "ring;tree",
+      "related": "",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 5,
+      "review_changes": [
+        "Related: \"ring;tree\" → \"none\""
+      ]
     },
     {
       "name": "Necklace",
-      "also_found_as": "pendant; chain; locket",
+      "also_found_as": "pendant; locket",
       "type": "everyday",
       "can_suggest": "attachment;identity;memory;gift",
       "scripture": "",
       "note": "Jewelry often carries memories that are not visible to others.",
       "reflection_question": "What story might a necklace or pendant carry for you?",
-      "related": "ring;pearl",
+      "related": "",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 5,
+      "review_changes": [
+        "Removed \"chain\" (common word)",
+        "Related: \"ring;pearl\" → \"none\""
+      ]
     },
     {
       "name": "Watch",
@@ -603,13 +685,17 @@
       "scripture": "",
       "note": "A watch may serve as a practical tool and a personal keepsake.",
       "reflection_question": "Whose time, memory, or presence do you associate with a watch?",
-      "related": "keepsake;path",
+      "related": "hourglass",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 5,
+      "review_changes": [
+        "Related: \"keepsake;path\" → \"hourglass\""
+      ]
     },
     {
       "name": "Compass",
@@ -619,13 +705,17 @@
       "scripture": "",
       "note": "Compass imagery often helps people speak about direction and values.",
       "reflection_question": "What guides your decisions when the destination is unclear?",
-      "related": "path;lamp",
+      "related": "path",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 5,
+      "review_changes": [
+        "Related: \"path;lamp\" → \"path\""
+      ]
     },
     {
       "name": "Map",
@@ -635,13 +725,17 @@
       "scripture": "",
       "note": "Maps can describe places while also becoming metaphors for planning a life.",
       "reflection_question": "Where do you wish you had a clearer map?",
-      "related": "path;compass",
+      "related": "path",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 5,
+      "review_changes": [
+        "Related: \"path;compass\" → \"path\""
+      ]
     },
     {
       "name": "Mountain",
@@ -673,23 +767,31 @@
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 3,
+      "review_changes": []
     },
     {
       "name": "Desert",
-      "also_found_as": "wilderness; dry land",
+      "also_found_as": "deserts; wilderness",
       "type": "biblical;literary;everyday",
       "can_suggest": "testing;solitude;clarity;waiting",
-      "scripture": "Exodus 16:1; Matthew 4:1",
+      "scripture": "Deuteronomy 8:2; Matthew 4:1",
       "note": "Wilderness settings play varied roles in biblical accounts.",
       "reflection_question": "What does a wilderness season suggest to you?",
-      "related": "water;path",
+      "related": "water",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 3,
+      "review_changes": [
+        "Replaced Exodus 16:1 (wilderness of Sin) with Deuteronomy 8:2 (tested in the wilderness)",
+        "Removed \"dry land\" (Genesis 1:9, a different image)",
+        "Related: \"water;path\" → \"water\""
+      ]
     },
     {
       "name": "Garden",
@@ -721,7 +823,9 @@
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 4,
+      "review_changes": []
     },
     {
       "name": "Harvest",
@@ -731,29 +835,39 @@
       "scripture": "Matthew 9:37-38",
       "note": "Harvest language can connect labor, readiness, and abundance.",
       "reflection_question": "What have you been tending that may now be ready to gather?",
-      "related": "seed;fruit",
+      "related": "seed",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 4,
+      "review_changes": [
+        "Related: \"seed;fruit\" → \"seed\""
+      ]
     },
     {
       "name": "Fire",
-      "also_found_as": "flame; flames; candle flame",
+      "also_found_as": "fires",
       "type": "biblical;literary;everyday",
       "can_suggest": "warmth;testing;presence;energy",
-      "scripture": "Exodus 3:2; Acts 2:3",
+      "scripture": "Exodus 3:2; Acts 2:3; 1 Peter 1:7",
       "note": "Fire has multiple biblical contexts, including the burning bush and Pentecost.",
       "reflection_question": "What associations arise for you when you imagine a flame?",
-      "related": "light;lamp",
+      "related": "flame;light",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 3,
+      "review_changes": [
+        "Added 1 Peter 1:7 (faith tested by fire) so \"testing\" has a supporting passage",
+        "Removed \"flame; flames; candle flame\": they collide with the published Journal entry The Flame and with Candle",
+        "Related: \"light;lamp\" → \"flame;light\""
+      ]
     },
     {
       "name": "Candle",
@@ -769,7 +883,9 @@
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 3,
+      "review_changes": []
     },
     {
       "name": "Star",
@@ -779,13 +895,17 @@
       "scripture": "Matthew 2:2; Genesis 15:5",
       "note": "Stars appear as signs, as creation, and in promises in Scripture.",
       "reflection_question": "What does looking at the night sky awaken in you?",
-      "related": "light;path",
+      "related": "light",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 3,
+      "review_changes": [
+        "Related: \"light;path\" → \"light\""
+      ]
     },
     {
       "name": "Moon",
@@ -811,29 +931,38 @@
       "scripture": "Psalm 19:4-6",
       "note": "Sun imagery appears in biblical poetry and everyday language.",
       "reflection_question": "What does a sunrise mean to you at this time?",
-      "related": "light;seed",
+      "related": "light",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 3,
+      "review_changes": [
+        "Related: \"light;seed\" → \"light\""
+      ]
     },
     {
       "name": "Rainbow",
       "also_found_as": "rainbows; arc of color",
       "type": "biblical;literary;everyday",
-      "can_suggest": "promise;hope;diversity;remembrance",
+      "can_suggest": "promise;covenant;hope;remembrance",
       "scripture": "Genesis 9:12-17",
       "note": "The rainbow is a sign of covenant in the Noah narrative.",
       "reflection_question": "What promise or remembered moment do you connect to a rainbow?",
-      "related": "water;light",
+      "related": "water",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 3,
+      "review_changes": [
+        "Removed \"diversity\" (not in Genesis 9); added \"covenant\", which the passage names",
+        "Related: \"water;light\" → \"water\""
+      ]
     },
     {
       "name": "Stone",
@@ -859,13 +988,17 @@
       "scripture": "Ephesians 2:20",
       "note": "Building and cornerstone language appears in New Testament imagery.",
       "reflection_question": "What forms the foundation of your commitments?",
-      "related": "stone;tree",
+      "related": "stone",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 3,
+      "review_changes": [
+        "Related: \"stone;tree\" → \"stone\""
+      ]
     },
     {
       "name": "Threshold",
@@ -875,13 +1008,17 @@
       "scripture": "",
       "note": "A threshold marks a boundary between one place or stage and another.",
       "reflection_question": "What threshold are you approaching or remembering?",
-      "related": "gate;door",
+      "related": "door;gate",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 4,
+      "review_changes": [
+        "Related: \"gate;door\" → \"door;gate\""
+      ]
     },
     {
       "name": "Window",
@@ -920,16 +1057,21 @@
       "also_found_as": "books; open book; scripture book",
       "type": "biblical;literary;everyday",
       "can_suggest": "learning;memory;inheritance;story",
-      "scripture": "Revelation 20:12",
+      "scripture": "Malachi 3:16",
       "note": "Books and written records can embody memory and shared stories.",
       "reflection_question": "Which book has changed the way you see something?",
-      "related": "lamp;path",
+      "related": "lamp",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 4,
+      "review_changes": [
+        "Replaced Revelation 20:12 (book of judgment) with Malachi 3:16 (book of remembrance), which fits memory and story",
+        "Related: \"lamp;path\" → \"lamp\""
+      ]
     },
     {
       "name": "Table",
@@ -965,11 +1107,11 @@
     },
     {
       "name": "Sheep",
-      "also_found_as": "lamb; lambs; flock",
+      "also_found_as": "flock",
       "type": "biblical;literary;everyday",
       "can_suggest": "vulnerability;community;care;trust",
-      "scripture": "John 10:11-16; John 1:29",
-      "note": "Sheep and lamb imagery carries different meanings across Scripture.",
+      "scripture": "John 10:11-16",
+      "note": "Scripture often speaks of God's people as a flock in a shepherd's care.",
       "reflection_question": "What does the image of a flock evoke about belonging?",
       "related": "shepherd;gate",
       "status": "draft",
@@ -977,23 +1119,34 @@
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 2,
+      "review_changes": [
+        "Removed \"lamb; lambs\": the Lamb of God is a distinct Christological image",
+        "Removed John 1:29 (Lamb of God) with the lamb aliases",
+        "Note rewritten to match the remaining Scripture"
+      ]
     },
     {
       "name": "Olive Branch",
-      "also_found_as": "olive branches; olive tree branch",
+      "also_found_as": "olive branches; olive leaf",
       "type": "biblical;literary;everyday",
       "can_suggest": "peace;hope;restoration;reconciliation",
       "scripture": "Genesis 8:11",
       "note": "The olive leaf appears in the account of Noah's dove.",
       "reflection_question": "What might an olive branch evoke in a relationship you value?",
-      "related": "dove;tree",
+      "related": "",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 2,
+      "review_changes": [
+        "Added \"olive leaf\" (the Genesis 8:11 wording); removed \"olive tree branch\"",
+        "Related: \"dove;tree\" → \"none\""
+      ]
     },
     {
       "name": "Hourglass",
@@ -1019,13 +1172,17 @@
       "scripture": "",
       "note": "A strand of pearls can be both adornment and an inherited keepsake.",
       "reflection_question": "Does a piece of jewelry connect you with someone else's story?",
-      "related": "pearl;necklace",
+      "related": "pearl",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 5,
+      "review_changes": [
+        "Related: \"pearl;necklace\" → \"pearl\""
+      ]
     },
     {
       "name": "Cocoon",
@@ -1035,13 +1192,17 @@
       "scripture": "",
       "note": "A chrysalis can invite reflection on a change not yet visible.",
       "reflection_question": "What is still forming in your life?",
-      "related": "butterfly;seed",
+      "related": "butterfly",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
       "link_word_art": "/experience",
       "portal_url": "",
-      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping."
+      "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
+      "review_group": 4,
+      "review_changes": [
+        "Related: \"butterfly;seed\" → \"butterfly\""
+      ]
     }
   ]
 }
