@@ -119,13 +119,12 @@ export default function StudioPage() {
             Between silhouettes and paintings: grounds the method
             before the reader encounters the broader visual work.
         ──────────────────────────────────────────────────────── */}
-        <section className="studio-method-section" aria-label="The AwakenArts method">
+        <section className="studio-method-section" aria-label="The Language">
           <div className="studio-method-inner">
             <p className="eyebrow">The Language</p>
             <p className="studio-method-body">
-              AwakenArts approaches language as something capable of
-              shaping awareness through image, figure, metaphor, and
-              symbolic form.
+              Language can shape awareness through image, figure,
+              metaphor, and symbolic form.
             </p>
             <p className="studio-method-body">
               Throughout Scripture, poetry, and parable, language carries
@@ -136,6 +135,51 @@ export default function StudioPage() {
               The same is true of the language you use every day: the images
               inside your words shape how you see your own experience.
             </p>
+
+            {/* Image · Poem · Reflection · Conversation — carried over verbatim
+                from /method (approved 2026-10-09). Reflection and Conversation
+                link to where a visitor can take each next step. */}
+            <h2
+              style={{
+                fontFamily: 'var(--serif)',
+                fontWeight: 400,
+                fontSize: 'var(--t-card, 1.5rem)',
+                color: 'var(--deep)',
+                margin: '3rem 0 0.75rem',
+              }}
+            >
+              Image &middot; Poem &middot; Reflection &middot; Conversation
+            </h2>
+            <p className="studio-method-body">
+              Every Figure brings these forms together, each doing its own part of the work:
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0.75rem auto 0', maxWidth: '70ch', fontSize: '1.2rem', textAlign: 'left' }}>
+              {[
+                { lead: 'Image', text: 'opens recognition.' },
+                { lead: 'Poem', text: 'gives it language.' },
+                { lead: 'Reflection', text: 'allows the experience to continue.', href: '/journal', label: 'The Journal' },
+                { lead: 'Conversation', text: 'extends it into ordinary life.', href: '/presentations', label: 'Presentations & Workshops' },
+              ].map((r) => (
+                <li
+                  key={r.lead}
+                  style={{ fontFamily: 'var(--serif)', fontSize: '1em', lineHeight: 1.7, color: 'var(--deep)', margin: '0 0 0.35rem' }}
+                >
+                  <strong style={{ fontWeight: 600 }}>{r.lead}</strong> {r.text}
+                  {r.href && (
+                    <>
+                      {' '}
+                      <Link
+                        href={r.href}
+                        data-cta={`poetry-shapes-${r.lead.toLowerCase()}`}
+                        style={{ fontFamily: 'var(--sans)', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold)', whiteSpace: 'nowrap' }}
+                      >
+                        {r.label} &rarr;
+                      </Link>
+                    </>
+                  )}
+                </li>
+              ))}
+            </ul>
 
           </div>
         </section>
