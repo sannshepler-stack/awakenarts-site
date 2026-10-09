@@ -180,7 +180,7 @@ export default function SymbolsIndexPage() {
           {/* Two ways on (Susan, 2026-10-07): the symbols, and the Encounters. */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
             <Link href="/christian-symbols" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-all-christian">
-              See More Symbols
+              Explore Christian Symbols
             </Link>
             <Link href="/encounters" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-encounters">
               Experience the Encounters
