@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import type { SymbolCard } from '@/data/symbolCards'
 import { qrPath } from '@/data/symbolCards'
+import { getSymbol } from '@/data/symbols'
 
 // SymbolCardView — the two-sided Symbol Card, as printed (2026-10-05).
 // Front: broad meanings. Back: Christian meanings + Scripture + QR address.
@@ -28,6 +29,12 @@ export default function SymbolCardView({
   maxWidth?: number
 }) {
   const [turned, setTurned] = useState(false)
+  // 2026-10-09 (Susan): when finished card art exists, the art IS the front
+  // face — full card, at the art's own proportions, so it is never squeezed
+  // or cut off at the top. Name and meanings sit beside the card on the
+  // portal. Proportions come from the Christian Symbols card data.
+  const hasArt = Boolean(card.front.image)
+  const ratio = (hasArt && getSymbol(card.portal?.christianSymbol || card.slug)?.aspectRatio) || '5 / 7'
 
   return (
     <div style={{ width: '100%', maxWidth, margin: '0 auto' }}>
@@ -39,7 +46,7 @@ export default function SymbolCardView({
         style={{
           display: 'block',
           width: '100%',
-          aspectRatio: '5 / 7',
+          aspectRatio: ratio,
           position: 'relative',
           perspective: 1400,
           background: 'none',
@@ -59,6 +66,16 @@ export default function SymbolCardView({
           }}
         >
           {/* FRONT */}
+          {hasArt ? (
+            <div style={{ ...face, background: 'var(--deep)' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={card.front.image}
+                alt={card.front.imageAlt || card.name}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
+          ) : (
           <div style={{ ...face, background: 'var(--cream)', border: '1px solid var(--gold-lt)' }}>
             {card.front.image ? (
               // eslint-disable-next-line @next/next/no-img-element
@@ -86,6 +103,7 @@ export default function SymbolCardView({
               )}
             </div>
           </div>
+          )}
 
           {/* BACK */}
           <div
