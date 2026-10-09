@@ -7,13 +7,13 @@ import FormPanel from '@/components/forms/FormPanel'
 import { SYMBOLIC_FORMS } from '@/components/forms/forms-data'
 
 export const metadata: Metadata = {
-  title: 'Silhouettes — Studio — AwakenArts',
+  title: 'Silhouettes — About the Poetry Shapes — AwakenArts',
   description:
     'Symbolic figures rendered within environments built to carry meaning — the silhouette work of AwakenArts by Susan Ann Shepler.',
   alternates: { canonical: '/studio/silhouettes' },
   openGraph: {
     url: '/studio/silhouettes',
-    title: 'Silhouettes — Studio — AwakenArts',
+    title: 'Silhouettes — About the Poetry Shapes — AwakenArts',
     description:
       'Symbolic figures shaped by the environments that hold them — the silhouette work of AwakenArts.',
   },
@@ -32,7 +32,7 @@ export default function SilhouettesPage() {
         ──────────────────────────────────────────────────────── */}
         <section className="studio-opening">
           <div className="studio-opening__inner">
-            <p className="eyebrow studio-opening__eyebrow">Studio</p>
+            <p className="eyebrow studio-opening__eyebrow">About the Poetry Shapes</p>
             <h1 className="studio-opening__headline">Silhouettes</h1>
             <p className="studio-opening__subline">
               Symbols, Images, and Shapes

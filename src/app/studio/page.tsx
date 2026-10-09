@@ -7,13 +7,15 @@ import FormPanel from '@/components/forms/FormPanel'
 import { SYMBOLIC_FORMS } from '@/components/forms/forms-data'
 
 export const metadata: Metadata = {
-  title: 'Studio — AwakenArts',
+  // 2026-10-09, Susan: presented publicly as About the Poetry Shapes
+  // (address stays /studio).
+  title: 'About the Poetry Shapes — AwakenArts',
   description:
     'The Studio shows how language takes visible shape — parable and symbol given form, in the literary mode Scripture itself has always used.',
   alternates: { canonical: '/studio' },
   openGraph: {
     url: '/studio',
-    title: 'Studio — AwakenArts',
+    title: 'About the Poetry Shapes — AwakenArts',
     description:
       'Symbolic works and concrete poetry — language given visible shape through parable, image, and figure, in the work of Susan Ann Shepler.',
   },
@@ -36,7 +38,7 @@ export default function StudioPage() {
         <section className="studio-silhouettes-intro">
           <div className="studio-section__inner">
             <div className="studio-section__header">
-              <p className="eyebrow">Inside the Works</p>
+              <p className="eyebrow">About the Poetry Shapes</p>
               <h1 id="studio-silhouettes-heading">
                 Language takes<br />
                 <em>visible shape</em>

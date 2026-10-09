@@ -159,6 +159,18 @@ export default function ExplorePage() {
           <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'var(--mid)', margin: 0 }}>
             Begin with a word, memory, image, or phrase.
           </p>
+          {/* 2026-10-09, Susan: the Studio, presented as About the Poetry
+              Shapes, joins Explore beside Word Art: see how the shapes are
+              made, then make your own. */}
+          <p style={{ margin: '1.75rem 0 0' }}>
+            <Link
+              href="/studio"
+              data-cta="explore-poetry-shapes"
+              style={{ fontFamily: 'var(--sans)', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold)' }}
+            >
+              About the Poetry Shapes &rarr;
+            </Link>
+          </p>
         </section>
         <StayConnected source="explore" />
       </main>
