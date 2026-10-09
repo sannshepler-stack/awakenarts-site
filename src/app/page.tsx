@@ -4,6 +4,7 @@ import HomeBeginWithSymbol from '@/components/HomeBeginWithSymbol'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
 import HomeImageMirror, { HomeQueenAnnMirror } from '@/components/HomeImageMirror'
 import HomeSymbolSearch from '@/components/HomeSymbolSearch'
+import { getApprovedSymbolReferences } from '@/data/symbolReferences'
 import HomeCollection from '@/components/HomeCollection'
 import HomeChristianSymbols from '@/components/HomeChristianSymbols'
 import HomeBooks from '@/components/HomeBooks'
@@ -130,7 +131,7 @@ export default function HomePage() {
       {/* 2026-10-09, Susan: "What Symbols Matter to You?" — a personal
           invitation, placed before Queen Ann (right after "You already speak
           in images"). Private, in-browser search of published content only. */}
-      <HomeSymbolSearch />
+      <HomeSymbolSearch references={getApprovedSymbolReferences()} />
 
       <HomeQueenAnnMirror />
 

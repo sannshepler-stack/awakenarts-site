@@ -8,6 +8,7 @@ import { ENCOUNTER_INFO } from '@/data/encounters'
 import { JOURNAL_ENTRIES } from '@/components/journal/journal-entries'
 import { CATEGORIES } from '@/components/journal/categories'
 import { isEntryReady } from '@/components/journal/types'
+import type { SymbolReference } from '@/data/symbolReferences'
 
 // "What Symbols Matter to You?" — homepage feature (approved by Susan,
 // 2026-10-09). Placed between "An image can become a mirror" and
@@ -22,6 +23,11 @@ import { isEntryReady } from '@/components/journal/types'
 //     offer A Practice of Attention around the visitor's own words, with
 //     the Journal and Make Your Own Word Art.
 //   - Interest themes and related-symbol suggestions are a later phase.
+//   - Symbol References (2026-10-09): approved editorial references are
+//     offered AFTER published content, never instead of it. A reference is
+//     not shown when its symbol already has published AwakenArts content.
+//     Drafts never reach the browser — the homepage passes only approved,
+//     server-resolved entries in as `references`.
 
 type Result = { key: string; name: string; kind: string; line: string; href: string }
 
@@ -118,6 +124,28 @@ function search(query: string): Result[] {
   return out
 }
 
+// Published symbol keys — a reference for one of these is not shown, so
+// published AwakenArts content always takes priority.
+const PUBLISHED_KEYS = new Set(INDEX.map((i) => i.key))
+
+function searchReferences(query: string, references: SymbolReference[]): SymbolReference[] {
+  const q = normalize(query)
+  const words = q.split(' ').filter((w) => w.length >= 3 && !STOPWORDS.has(w))
+  const qSingular = q.split(' ').map(singular).join(' ')
+  const phraseIn = (phrase: string) => {
+    const re = new RegExp(`(^| )${phrase}( |$)`)
+    return re.test(q) || re.test(qSingular)
+  }
+  return references.filter((r) => {
+    if (PUBLISHED_KEYS.has(keyOf(r.name))) return false
+    return r.keys.some((raw) => {
+      const k = keyOf(raw)
+      if (!k) return false
+      return k.includes(' ') ? phraseIn(k) : words.some((w) => matches(w, k))
+    })
+  })
+}
+
 const SUGGESTIONS = ['path', 'lamp', 'vine', 'gate', 'pearl']
 
 // Three published card fronts, fanned (decorative).
@@ -153,16 +181,35 @@ const continueLinks = [
 
 const linkRow: React.CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.75rem 1.75rem', justifyContent: 'center', margin: 0 }
 
-export default function HomeSymbolSearch() {
+// A Practice of Attention — the continuation for personal exploration.
+function practiceSteps(submitted: string) {
+  return (
+    <ol style={{ margin: '0 auto 1.75rem', paddingLeft: '1.5rem', maxWidth: 520, textAlign: 'left' }}>
+      {STEPS.map(([step, q]) => {
+        const question = q(submitted)
+        return (
+          <li key={step} style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 1.6, color: 'var(--deep)', margin: '0 0 0.45rem' }}>
+            <strong style={{ fontWeight: 600 }}>{step}</strong>
+            {question ? ` ${question}` : ''}
+          </li>
+        )
+      })}
+    </ol>
+  )
+}
+
+export default function HomeSymbolSearch({ references = [] }: { references?: SymbolReference[] }) {
   const [value, setValue] = useState('')
   const [submitted, setSubmitted] = useState<string | null>(null)
   const [results, setResults] = useState<Result[]>([])
+  const [refResults, setRefResults] = useState<SymbolReference[]>([])
 
   function run(q: string) {
     const trimmed = q.trim().replace(/\s+/g, ' ')
     if (!trimmed) return
     setSubmitted(trimmed.length > 60 ? trimmed.slice(0, 57) + '…' : trimmed)
     setResults(search(trimmed))
+    setRefResults(searchReferences(trimmed, references))
   }
 
   function onSubmit(e: FormEvent) {
@@ -214,27 +261,62 @@ export default function HomeSymbolSearch() {
               </li>
             ))}
           </ul>
-          <p style={{ ...linkRow, marginTop: '2rem' }}>{continueLinks}</p>
+          {refResults.length === 0 && <p style={{ ...linkRow, marginTop: '2rem' }}>{continueLinks}</p>}
         </div>
       )}
 
-      {submitted !== null && results.length === 0 && (
+      {submitted !== null && refResults.length > 0 && (
+        <div style={{ maxWidth: 620, margin: '3rem auto 0', textAlign: 'center' }}>
+          {refResults.map((r) => (
+            <div key={r.name} style={{ margin: '0 0 2.5rem' }}>
+              <p style={{ ...label, margin: 0 }}>Symbol Reference</p>
+              <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: '1.6rem', color: 'var(--deep)', margin: '0.4rem 0 0.5rem' }}>{r.name}</h3>
+              {r.canSuggest.length > 0 && (
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 1.6, color: 'var(--mid)', margin: '0 0 0.5rem' }}>
+                  Can suggest: {r.canSuggest.join(' · ')}
+                </p>
+              )}
+              {r.scripture.length > 0 && (
+                <p style={{ ...label, fontSize: '0.66rem', margin: '0 0 0.85rem' }}>{r.scripture.join(' · ')}</p>
+              )}
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 1.6, color: 'var(--deep)', margin: '0 0 0.85rem' }}>{r.note}</p>
+              <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', lineHeight: 1.5, color: 'var(--deep)', margin: 0 }}>{r.question}</p>
+              {r.related.length > 0 && (
+                <p style={{ fontFamily: 'var(--serif)', fontSize: '1.05rem', color: 'var(--mid)', margin: '0.85rem 0 0' }}>
+                  Related:{' '}
+                  {r.related.map((rel, i) => (
+                    <span key={rel.href}>
+                      <Link href={rel.href} style={{ color: 'var(--deep)', textDecoration: 'underline', textDecorationColor: 'rgba(138, 106, 31, 0.45)', textUnderlineOffset: 4 }}>
+                        {rel.name}
+                      </Link>
+                      {i < r.related.length - 1 ? ' · ' : ''}
+                    </span>
+                  ))}
+                </p>
+              )}
+            </div>
+          ))}
+          {results.length === 0 && (
+            <>
+              <p style={{ ...label, margin: '0 0 1rem' }}>A Practice of Attention</p>
+              {practiceSteps(submitted)}
+              <p style={linkRow}>
+                {continueLinks}
+                <Link href="/experience" style={label}>Make Your Own Word Art &rarr;</Link>
+              </p>
+            </>
+          )}
+          {results.length > 0 && <p style={linkRow}>{continueLinks}</p>}
+        </div>
+      )}
+
+      {submitted !== null && results.length === 0 && refResults.length === 0 && (
         <div style={{ maxWidth: 620, margin: '3rem auto 0', textAlign: 'center' }}>
           <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.3rem', lineHeight: 1.5, color: 'var(--deep)', margin: '0 0 1.5rem' }}>
             We don&rsquo;t yet have a dedicated AwakenArts entry for &lsquo;{submitted},&rsquo; but you can begin
             exploring what it means to you.
           </p>
-          <ol style={{ margin: '0 auto 1.75rem', paddingLeft: '1.5rem', maxWidth: 520, textAlign: 'left' }}>
-            {STEPS.map(([step, q]) => {
-              const question = q(submitted)
-              return (
-                <li key={step} style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 1.6, color: 'var(--deep)', margin: '0 0 0.45rem' }}>
-                  <strong style={{ fontWeight: 600 }}>{step}</strong>
-                  {question ? ` ${question}` : ''}
-                </li>
-              )
-            })}
-          </ol>
+          {practiceSteps(submitted)}
           <p style={linkRow}>
             {continueLinks}
             <Link href="/experience" style={label}>Make Your Own Word Art &rarr;</Link>
