@@ -343,7 +343,7 @@ export function PathBookFeature() {
       <div style={divider} aria-hidden="true" />
       <div
         style={{
-          maxWidth: 720,
+          maxWidth: 760,
           margin: '0 auto',
           display: 'flex',
           flexWrap: 'wrap',
@@ -352,7 +352,7 @@ export function PathBookFeature() {
           justifyContent: 'center',
         }}
       >
-        <Link href="/about/introduction" data-cta="books-path-cover" style={{ display: 'block', width: 140, flex: '0 0 auto' }}>
+        <Link href="/about/introduction" data-cta="books-path-cover" style={{ display: 'block', width: 190, flex: '0 0 auto' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/path/when-language-shapes-a-path-cover.jpg"
@@ -377,9 +377,16 @@ export function PathBookFeature() {
             <Link href={`/awakenarts-path#${LEARNING_ANCHOR}`} data-cta="books-path-learning" style={quietLink}>
               What Symbols Can Teach &rarr;
             </Link>
-            <Link href="/about/introduction" data-cta="books-path-book" style={quietLink}>
-              Read the Introduction &rarr;
-            </Link>
+            {/* Opens the book itself (Susan, 2026-10-09). */}
+            <a
+              href="/files/path/AwakenArts_Path_Intro.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="books-path-book"
+              style={quietLink}
+            >
+              Read the Book &rarr;
+            </a>
           </p>
         </div>
       </div>
