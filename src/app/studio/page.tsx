@@ -40,8 +40,8 @@ export default function StudioPage() {
             <div className="studio-section__header">
               <p className="eyebrow">About the Poetry Shapes</p>
               <h1>
-                Language takes<br />
-                <em>visible shape</em>
+                {/* 2026-10-09, Susan: one line. */}
+                Language Takes <em>Shape</em>
               </h1>
               {/* 2026-10-09, Susan: educational opening (approved). */}
               <p className="studio-section__subtitle">
