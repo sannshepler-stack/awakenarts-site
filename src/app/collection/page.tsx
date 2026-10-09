@@ -72,6 +72,18 @@ export default function CollectionPage() {
           </div>
         </section>
 
+        {/* 2026-10-09, Susan: About the Poetry Shapes complements the
+            Collection — each figure begins as an image-shaped poem. */}
+        <section style={{ padding: '0 1.5rem var(--band-gap)', textAlign: 'center' }}>
+          <div className="path-intro-close-divider" aria-hidden="true" />
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.3rem', color: 'var(--deep)', margin: '0 0 1.25rem' }}>
+            See how the poetry shapes are made, and learn to read meaning in both the shape and the words.
+          </p>
+          <TextLinkRow center>
+            <TextLink href="/studio" cta="collection-poetry-shapes">About the Poetry Shapes</TextLink>
+          </TextLinkRow>
+        </section>
+
         {/* 2026-10-07, Susan: the Journal's entries grow from the Collection's
             works — a quiet way in from here. */}
         <section style={{ padding: '0 1.5rem var(--band-gap)', textAlign: 'center' }}>

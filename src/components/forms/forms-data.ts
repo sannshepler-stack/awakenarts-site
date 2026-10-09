@@ -2,7 +2,7 @@
 // AwakenArts · The Forms — Symbolic Forms Collection
 //
 // Single source of truth for which Forms appear on the public Forms page.
-// The /studio/silhouettes page reads from this array. Do not hardcode Forms
+// The /studio page reads from this array (Silhouettes sub-page archived 2026-10-09). Do not hardcode Forms
 // into individual pages.
 //
 // ── STILLS-ONLY DIRECTIVE (2026-06-18, Susan) ─────────────────────────────────

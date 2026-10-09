@@ -45,7 +45,6 @@ const ENTRIES: Entry[] = [
   { path: '/encounters/word',                                    changeFrequency: 'monthly', priority: 0.8 },
   { path: '/encounters/continue',                                changeFrequency: 'monthly', priority: 0.8 },
   { path: '/studio',                                             changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/studio/silhouettes',                                 changeFrequency: 'monthly', priority: 0.7 },
   // /path, /path/ann, /path/grismere, /path/ballerina, /begin, /journey
   // all permanently redirect to /studio or / — omitted from sitemap.
   // /library route renamed /poems (June 2026); theme sub-pages retired.

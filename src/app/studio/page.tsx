@@ -136,10 +136,14 @@ export default function StudioPage() {
                 alt="The Dragon — concrete-poetry form"
                 className="studio-poem-img"
                 loading="lazy"
+                // 2026-10-09: the Dragon poem is dark ink, which vanished on
+                // the dark stage. Lightened to match the Queen Ann and
+                // Grismere poems (which are light text made for this stage).
+                style={{ filter: 'invert(1) sepia(0.45) brightness(0.92)' }}
               />
             </div>
 
-            <p className="studio-dark-label">Studio Silhouettes</p>
+            <p className="studio-dark-label">Silhouettes</p>
 
             {/* ── Row 2: three silhouette panels ── */}
             <div className="studio-panels-row">
@@ -177,32 +181,10 @@ export default function StudioPage() {
           </div>
         </section>
 
-        {/* ── 2. DIGITAL ART PAINTINGS ──────────────────────────── */}
-        <section className="paintings-section" aria-labelledby="paintings-heading">
-          <div className="paintings-inner">
-            <div className="paintings-header">
-              <p className="eyebrow">Feminine Motifs</p>
-              <h2 id="paintings-heading">
-                Digital Art<br />
-                <em>Paintings</em>
-              </h2>
-            </div>
-            <div className="paintings-grid">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/gallery/ann-painting.jpg"          alt="Ann"          className="paintings-img" loading="lazy" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/gallery/candace-painting.jpg"      alt="Candace"      className="paintings-img" loading="lazy" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/gallery/may-painting.jpg"          alt="May"          className="paintings-img" loading="lazy" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/gallery/dark-girl-painting.jpg"    alt="Dark Girl"    className="paintings-img" loading="lazy" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/gallery/hawaiian-girl-painting.jpg" alt="Hawaiian Girl" className="paintings-img" loading="lazy" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/gallery/indian-girl-painting.jpg"  alt="Indian Girl"  className="paintings-img" loading="lazy" />
-            </div>
-          </div>
-        </section>
+        {/* 2026-10-09, Susan: Digital Art Paintings moved off this page.
+            Their image files were never published (public/images/gallery/
+            paintings-susan is git-ignored), so the section showed empty.
+            A home on the Collection page awaits Susan's approval. */}
 
         {/* ── CTA ── */}
         <section className="studio-cta">
