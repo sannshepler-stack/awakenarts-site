@@ -30,6 +30,8 @@ export interface SymbolReference {
   name: string
   /** Lowercased search keys: the name plus each "also found as" form. */
   keys: string[]
+  /** Lowercased phrasings that must NOT bring up this reference (e.g. "watch and pray" for Watch). */
+  excludes: string[]
   canSuggest: string[]
   scripture: string[]
   note: string
@@ -67,6 +69,7 @@ function toReference(e: RawEntry): SymbolReference {
   return {
     name: e.name,
     keys: [e.name, ...split(e.also_found_as)].map((s) => s.toLowerCase()),
+    excludes: split((e as { not_found_by?: string }).not_found_by ?? '').map((s) => s.toLowerCase()),
     canSuggest: split(e.can_suggest),
     scripture: split(e.scripture),
     note: e.note,

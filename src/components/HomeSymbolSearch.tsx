@@ -138,6 +138,7 @@ function searchReferences(query: string, references: SymbolReference[]): SymbolR
   }
   return references.filter((r) => {
     if (PUBLISHED_KEYS.has(keyOf(r.name))) return false
+    if (r.excludes.some((x) => phraseIn(normalize(x)))) return false
     return r.keys.some((raw) => {
       const k = keyOf(raw)
       if (!k) return false
