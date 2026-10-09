@@ -144,6 +144,15 @@ const label: React.CSSProperties = {
   color: 'var(--gold)',
 }
 
+// Continue-browsing links beneath every search result (Susan, 2026-10-09):
+// shown for genuine matches and for searches without a dedicated entry.
+const continueLinks = [
+  <Link key="symbols" href="/symbols" style={label}>Explore More Symbols &rarr;</Link>,
+  <Link key="journal" href="/journal" style={label}>Explore in the Journal &rarr;</Link>,
+]
+
+const linkRow: React.CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.75rem 1.75rem', justifyContent: 'center', margin: 0 }
+
 export default function HomeSymbolSearch() {
   const [value, setValue] = useState('')
   const [submitted, setSubmitted] = useState<string | null>(null)
@@ -205,6 +214,7 @@ export default function HomeSymbolSearch() {
               </li>
             ))}
           </ul>
+          <p style={{ ...linkRow, marginTop: '2rem' }}>{continueLinks}</p>
         </div>
       )}
 
@@ -225,8 +235,8 @@ export default function HomeSymbolSearch() {
               )
             })}
           </ol>
-          <p style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem 1.75rem', justifyContent: 'center', margin: 0 }}>
-            <Link href="/journal" style={label}>Continue in the Journal &rarr;</Link>
+          <p style={linkRow}>
+            {continueLinks}
             <Link href="/experience" style={label}>Make Your Own Word Art &rarr;</Link>
           </p>
         </div>
