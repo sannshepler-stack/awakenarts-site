@@ -105,17 +105,23 @@ export default function EncountersIndexPage() {
       </Link>
 
       <div className={styles.intro}>
-        <p className={styles.eyebrow}>Encounters</p>
-        <h1 className={styles.title}>Encounters</h1>
+        {/* 2026-10-09, Susan: the Encounters are expressly for a Christian
+            audience; the framing now says so. */}
+        <p className={styles.eyebrow}>Image · Scripture · Reflection</p>
+        <h1 className={styles.title}>Christian Encounters</h1>
         <p className={styles.statementPrimary}>
           Every journey begins with a single encounter.
+        </p>
+        <p className={styles.statementSecondary} style={{ margin: '0 auto 1rem', maxWidth: 620 }}>
+          Five short reflections for the Christian journey. Each pairs an image with Scripture and one movement
+          of faith: I begin, I encounter, I receive, I listen, I walk on.
         </p>
         <p className={styles.statementSecondary}>
           Begin where you are. The work will meet you there.
         </p>
       </div>
 
-      <nav className={styles.grid} aria-label="Encounters">
+      <nav className={styles.grid} aria-label="Christian Encounters">
         {ENCOUNTERS.map((e) => (
           <Link
             key={e.slug}

@@ -11,13 +11,13 @@ import type { Metadata } from 'next'
 // src/app/_archive/encounters-figures-2026-10 and redirected to /encounters.
 
 export const metadata: Metadata = {
-  title: 'Encounters — AwakenArts',
+  title: 'Christian Encounters — AwakenArts',
   description:
-    'Quiet doorways into the symbolic world of AwakenArts — image, language, Scripture, and a brief AwakenArts Echo. Journey, The Deep, The Table, The Word, Continue.',
+    'Five short reflections for the Christian journey, each pairing an image with Scripture: Journey, The Deep, The Table, The Word, Continue.',
   openGraph: {
-    title: 'Encounters — AwakenArts',
+    title: 'Christian Encounters — AwakenArts',
     description:
-      'Quiet doorways into the symbolic world of AwakenArts — image, language, Scripture, and a brief AwakenArts Echo.',
+      'Five short reflections for the Christian journey, each pairing an image with Scripture.',
   },
   robots: { index: true, follow: true },
 }
