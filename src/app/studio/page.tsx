@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   // (address stays /studio).
   title: 'About the Poetry Shapes — AwakenArts',
   description:
-    'The Studio shows how language takes visible shape — parable and symbol given form, in the literary mode Scripture itself has always used.',
+    'See how AwakenArts poetry shapes are made, and learn to read meaning in both the shape and the words.',
   alternates: { canonical: '/studio' },
   openGraph: {
     url: '/studio',
     title: 'About the Poetry Shapes — AwakenArts',
     description:
-      'Symbolic works and concrete poetry — language given visible shape through parable, image, and figure, in the work of Susan Ann Shepler.',
+      'See how AwakenArts poetry shapes are made, and learn to read meaning in both the shape and the words.',
   },
 }
 
@@ -43,11 +43,50 @@ export default function StudioPage() {
                 Language takes<br />
                 <em>visible shape</em>
               </h1>
+              {/* 2026-10-09, Susan: educational opening (approved). */}
               <p className="studio-section__subtitle">
-                The poetic works of AwakenArts are the result of a process,
-                a becoming rather than a formulation — an inseparable
-                relationship between language, image, and symbolic structure.
+                In a poetry shape, the words become the picture. You see the
+                image first, then read what it is made of, and often find
+                something you didn&rsquo;t expect. The relationship between
+                words and images may help you recognize something in your own
+                experience.
               </p>
+            </div>
+            {/* How to Read a Poetry Shape (approved 2026-10-09). Placed
+                just before the Juggling Bear, the first shape to try it on. */}
+            <div style={{ maxWidth: 640, margin: '0 auto 3rem', textAlign: 'left' }}>
+              <h2
+                style={{
+                  fontFamily: 'var(--serif)',
+                  fontWeight: 400,
+                  fontSize: 'var(--t-card, 1.5rem)',
+                  color: 'var(--deep)',
+                  textAlign: 'center',
+                  margin: '0 0 1.25rem',
+                }}
+              >
+                How to Read a Poetry Shape
+              </h2>
+              <ol style={{ margin: 0, paddingLeft: '1.5rem' }}>
+                {[
+                  ['Look at the shape first.', 'What does it remind you of?'],
+                  ['Then read the words.', 'What do they say that the shape does not?'],
+                  ['Notice where the two meet.', 'That is often where recognition begins.'],
+                ].map(([lead, text]) => (
+                  <li
+                    key={lead}
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: 'var(--body-size)',
+                      lineHeight: 'var(--body-line)',
+                      color: 'var(--deep)',
+                      margin: '0 0 0.6rem',
+                    }}
+                  >
+                    <strong style={{ fontWeight: 600 }}>{lead}</strong> {text}
+                  </li>
+                ))}
+              </ol>
             </div>
             {/* ── Juggling Bear — poem + video pair on cream ── */}
             <div className="studio-intro-bear-wrap">
@@ -130,6 +169,10 @@ export default function StudioPage() {
               meaning beyond direct explanation. It does not only describe
               reality; it also shapes how reality is recognized and understood.
             </p>
+            <p className="studio-method-body">
+              The same is true of the language you use every day: the images
+              inside your words shape how you see your own experience.
+            </p>
 
           </div>
         </section>
@@ -163,11 +206,12 @@ export default function StudioPage() {
 
         {/* ── CTA ── */}
         <section className="studio-cta">
-          <Link href="/encounters" className="path-cta__link">
-            Enter the Encounters
+          {/* 2026-10-09, Susan: closing links updated (approved). */}
+          <Link href="/experience" className="path-cta__link">
+            Make Your Own Word Art
           </Link>
-          <Link href="/gallery" className="path-cta__link path-cta__link--quiet">
-            Poems
+          <Link href="/collection" className="path-cta__link path-cta__link--quiet">
+            Explore the Collection
           </Link>
         </section>
 
