@@ -33,6 +33,7 @@ const ENTRIES: Entry[] = [
   { path: '/gallery',                                           changeFrequency: 'monthly', priority: 0.7 },
   { path: '/about',                                              changeFrequency: 'monthly', priority: 0.9 },
   { path: '/awakenarts-path',                                   changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/about/introduction',                                changeFrequency: 'monthly', priority: 0.7 },
   { path: '/foundation',                                        changeFrequency: 'monthly', priority: 0.7 },
   // Encounters architecture (2026-06-25) — /encounters is now the
   // primary entrance in its own right, not a transitional doorway, plus

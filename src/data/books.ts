@@ -136,8 +136,8 @@ export function canBuy(b: Book) {
 export const FREE_RESOURCES = [
   {
     title: 'The AwakenArts Path',
-    line: 'Poetry, Image, and Seeing Your Life',
-    href: '/awakenarts-path',
+    line: 'Read the Free Introduction',
+    href: '/about/introduction',
     image: '/images/path/when-language-shapes-a-path-cover.jpg',
     imageAlt: 'Cover of The AwakenArts Path',
   },

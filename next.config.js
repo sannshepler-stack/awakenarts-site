@@ -27,7 +27,8 @@ const nextConfig = {
       // all moved off "Primer" terminology onto "Path." This route was
       // live on main, so the redirect is permanent rather than a
       // silent removal.)
-      { source: '/primer', destination: '/awakenarts-path', permanent: true },
+      // 2026-10-09: the Primer was the book, which now lives at /about/introduction.
+      { source: '/primer', destination: '/about/introduction', permanent: true },
       // Figure Editions are now presented inside the workshop landscape,
       // rather than through a competing public Collection center.
       // 2026-10-05 rebuild: the Collection's Editions now live at /editions.

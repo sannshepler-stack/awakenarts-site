@@ -188,6 +188,15 @@ export default function AboutPage() {
                   See how Susan conducts the workshop experience.
                 </span>
               </p>
+              {/* 2026-10-09, Susan: the free book now lives under About. */}
+              <p className="about-links__item">
+                <Link href="/about/introduction" className="home-coll-cta home-coll-cta--light-surface">
+                  Read the Free Introduction
+                </Link>
+                <span className="about-links__desc">
+                  The AwakenArts Path, an illustrated introduction to the approach.
+                </span>
+              </p>
               <p className="about-links__item">
                 <Link href="/foundation" className="home-coll-cta home-coll-cta--light-surface">
                   Read the Foundation of AwakenArts

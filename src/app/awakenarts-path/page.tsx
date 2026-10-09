@@ -2,19 +2,18 @@ import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
-import ProtectedImage from '@/components/ProtectedImage'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
 import PathLearning, { PathContinue } from '@/components/path/PathLearning'
 
 export const metadata: Metadata = {
-  title: 'The AwakenArts Path — An Introduction to AwakenArts',
+  title: 'The AwakenArts Path — What Symbol Awareness Can Teach',
   // 2026-10-09, Susan: search description states what visitors will learn.
   description:
-    'What symbol awareness can teach you: how to notice the symbols you already live with, see yourself more clearly, understand others, culture, and faith, and carry reflection into everyday life. Read or download the Path free.',
+    'What symbol awareness can teach you: how to notice the symbols you already live with, see yourself more clearly, understand others, culture, and faith, and carry reflection into everyday life.',
   alternates: { canonical: '/awakenarts-path' },
   openGraph: {
     url: '/awakenarts-path',
-    title: 'The AwakenArts Path — An Introduction to AwakenArts',
+    title: 'The AwakenArts Path — What Symbol Awareness Can Teach',
     description:
       'What symbol awareness can teach you: notice the symbols you already live with, see yourself more clearly, understand others, culture, and faith, and carry reflection into everyday life.',
   },
@@ -85,22 +84,15 @@ export default function AwakenArtsPathPage() {
             so a small mismatch between this page and the document it
             introduces exists until the PDF is revisited separately. */}
         <section className="path-intro-hero">
-          <p className="eyebrow path-intro-hero__eyebrow">An Introduction to AwakenArts</p>
           <h1 className="path-intro-hero__title">The AwakenArts Path</h1>
           <p className="path-intro-hero__subtitle">
             Poetry, Image, and Seeing Your Life
           </p>
         </section>
 
-        <section className="path-intro-cover-section">
-          <ProtectedImage
-            src="/images/path/when-language-shapes-a-path-cover.jpg"
-            alt="The AwakenArts Path — cover"
-            className="path-intro-cover-img"
-            loading="eager"
-          />
-        </section>
-
+        {/* 2026-10-09, Susan: the book (cover, introduction line, Read and
+            Download) moved to its own page, /about/introduction, so this
+            page serves as the learning path. The opening paragraph stays. */}
         <section className="path-intro-about">
           {/* 2026-08-19, per the Rework Pass 2 Implementation Standard:
               prior copy asked the visitor to "learn" AwakenArts'
@@ -111,50 +103,10 @@ export default function AwakenArtsPathPage() {
               words, reflection helps without dictating meaning -- per
               Section 7's "Path / core explanation" standard. */}
           <p className="path-intro-about__body">
-            This is a short introduction to how AwakenArts works — read
-            it before your first presentation or workshop.
-          </p>
-          <p className="path-intro-about__body">
             A story or image draws you in. A poem gives it words.
             Reflection helps you see what you already sensed but hadn&rsquo;t
             quite named — without anyone telling you what it has to mean.
           </p>
-        </section>
-
-        {/* 2026-07-25, per Susan's "Primer Action System" refinement:
-            arrows removed, dark solid fill replaced with the shared
-            .path-intro-btn treatment -- Read and Download share one
-            outlined style, differing only in destination. Destinations/
-            behavior (target, download attr) unchanged.
-            2026-07-26, per Susan's "consistent gold-outline system"
-            directive: .path-intro-btn--primary / --secondary (which added
-            pale-gold-tint and plain-cream background fills on top of
-            the shared style) are removed -- both buttons now render
-            identically via bare .path-intro-btn (transparent background,
-            gold border and text, pale gold hover only, no navy/brown
-            fill in any state). Hierarchy was never meant to live in
-            fill color; width alone still distinguishes .path-intro-btn
-            from the narrower .path-intro-btn--quiet used below.
-            2026-07-27, per Susan's "no Primer anywhere" directive: labels
-            changed from "Read the Primer" / "Download the Primer" to
-            "Read the Path" / "Download the Path"; the linked file moved
-            to /files/path/AwakenArts_Path_Intro.pdf. */}
-        <section className="path-intro-actions">
-          <a
-            href="/files/path/AwakenArts_Path_Intro.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="path-intro-btn"
-          >
-            Read the Path
-          </a>
-          <a
-            href="/files/path/AwakenArts_Path_Intro.pdf"
-            download="AwakenArts_Path_Intro.pdf"
-            className="path-intro-btn"
-          >
-            Download the Path
-          </a>
         </section>
 
         <PathLearning />
