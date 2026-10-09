@@ -84,9 +84,27 @@ export default function SymbolsIndexPage() {
           </p>
         </section>
 
-        {/* Why Symbols Matter — Susan's wording, 2026-10-09. Teaches before
-            the visitor selects a first card. */}
-        <section aria-labelledby="why-symbols-matter" style={{ padding: '0 1.5rem 3rem' }}>
+        {symbolCards.length > 0 && (
+          <section aria-label="Symbol Cards" style={{ padding: '1rem 1.5rem var(--band-gap)' }}>
+            <div
+              style={{
+                maxWidth: 1080,
+                margin: '0 auto',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+                gap: '2.75rem 2rem',
+              }}
+            >
+              {symbolCards.map((card) => (
+                <SymbolTile key={card.slug} card={card} source="symbols-index" />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Why Symbols Matter — Susan's wording, 2026-10-09. Placed beneath the
+            gallery: visitors encounter the symbols first, then deepen understanding. */}
+        <section aria-labelledby="why-symbols-matter" style={{ padding: '0 1.5rem var(--band-gap)' }}>
           <div style={{ maxWidth: 640, margin: '0 auto' }}>
             <h2
               id="why-symbols-matter"
@@ -130,29 +148,11 @@ export default function SymbolsIndexPage() {
                 margin: '1.75rem 0 0',
               }}
             >
-              Choose a symbol below. Discover what it can mean, where it appears in everyday language, and what it
-              might help you recognize in your own life.
+              Every symbol offers another opportunity to recognize how images and language carry meaning in your own
+              life. Return to the collection whenever you&rsquo;re ready to explore another.
             </p>
           </div>
         </section>
-
-        {symbolCards.length > 0 && (
-          <section aria-label="Symbol Cards" style={{ padding: '1rem 1.5rem var(--band-gap)' }}>
-            <div
-              style={{
-                maxWidth: 1080,
-                margin: '0 auto',
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
-                gap: '2.75rem 2rem',
-              }}
-            >
-              {symbolCards.map((card) => (
-                <SymbolTile key={card.slug} card={card} source="symbols-index" />
-              ))}
-            </div>
-          </section>
-        )}
 
         <section
           aria-label="Symbols for the Christian Soul"
