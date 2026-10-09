@@ -39,7 +39,7 @@ export default function StudioPage() {
           <div className="studio-section__inner">
             <div className="studio-section__header">
               <p className="eyebrow">About the Poetry Shapes</p>
-              <h1 id="studio-silhouettes-heading">
+              <h1>
                 Language takes<br />
                 <em>visible shape</em>
               </h1>
@@ -110,50 +110,9 @@ export default function StudioPage() {
           </div>
         </section>
 
-        {/* ── DARK STAGE — poems and silhouettes ───────────────── */}
-        <section className="studio-silhouettes" aria-labelledby="studio-silhouettes-heading">
-          <div className="studio-section__inner">
-
-            {/* ── Row 1: three concrete-poetry images ── */}
-            <div className="studio-poems-row">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/forms/ann-text.png"
-                alt="Queen Ann — concrete-poetry form"
-                className="studio-poem-img"
-                loading="lazy"
-              />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/forms/grismere-text.png"
-                alt="Mermaid Grismere — concrete-poetry form"
-                className="studio-poem-img"
-                loading="lazy"
-              />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/forms/dragon-text.png"
-                alt="The Dragon — concrete-poetry form"
-                className="studio-poem-img"
-                loading="lazy"
-                // 2026-10-09: the Dragon poem is dark ink, which vanished on
-                // the dark stage. Lightened to match the Queen Ann and
-                // Grismere poems (which are light text made for this stage).
-                style={{ filter: 'invert(1) sepia(0.45) brightness(0.92)' }}
-              />
-            </div>
-
-            <p className="studio-dark-label">Silhouettes</p>
-
-            {/* ── Row 2: three silhouette panels ── */}
-            <div className="studio-panels-row">
-              <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'queen-ann')!} />
-              <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'mermaid-grismere')!} />
-              <FormPanel form={SYMBOLIC_FORMS.find(f => f.slug === 'the-dragon')!} />
-            </div>
-
-          </div>
-        </section>
+        {/* 2026-10-09, Susan: the dark stage (Queen Ann, Grismere and Dragon
+            poem shapes, and their silhouettes) is removed — "the bear is
+            visual enough." Images remain in public/images/forms. */}
 
         {/* ── METHOD ────────────────────────────────────────────────
             Parabolic statement — how the forms function.
