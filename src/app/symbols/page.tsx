@@ -106,6 +106,23 @@ export default function SymbolsIndexPage() {
             gallery: visitors encounter the symbols first, then deepen understanding. */}
         <section aria-labelledby="why-symbols-matter" style={{ padding: '0 1.5rem var(--band-gap)' }}>
           <div style={{ maxWidth: 784, margin: '0 auto' }}>
+            {/* 2026-10-09, Susan: the ship image (formerly the Symbols for the
+                Christian Soul section, now removed) opens this section. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/homepage/encounters-symbols-ship-v3-opt.jpg"
+              alt="A sailboat on still water at sunset, framed by trees on the shore"
+              loading="lazy"
+              style={{
+                display: 'block',
+                width: '100%',
+                aspectRatio: '16 / 8',
+                objectFit: 'cover',
+                borderRadius: 4,
+                boxShadow: '0 12px 30px rgba(28, 43, 58, 0.18)',
+                margin: '0 0 2.5rem',
+              }}
+            />
             <h2
               id="why-symbols-matter"
               style={{
@@ -151,42 +168,24 @@ export default function SymbolsIndexPage() {
               Every symbol offers another opportunity to recognize how images and language carry meaning in your own
               life. Return to the collection whenever you&rsquo;re ready to explore another.
             </p>
-          </div>
-        </section>
-
-        <section
-          aria-label="Symbols for the Christian Soul"
-          style={{ background: 'var(--warm)', padding: 'var(--band-gap) 1.5rem', textAlign: 'center' }}
-        >
-          <p className="eyebrow" style={{ justifyContent: 'center' }}>Christian Symbols</p>
-          <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '1rem 0 0.5rem' }}>
-            Symbols for the Christian Soul
-          </h2>
-          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', color: 'var(--mid)', margin: '0 0 2.25rem' }}>
-            Scripture speaks in symbols.
-          </p>
-          {/* 2026-10-07, Susan: the card fan gave the full page away (it opens
-              with the same cards). Now an invitation: one image, and a line
-              naming what waits there — the vocabulary and the Encounters. */}
-          <Link href="/christian-symbols" className="symbols-invite" data-cta="symbols-christian-invite">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/homepage/encounters-symbols-ship-v3-opt.jpg"
-              alt="A sailboat on still water at sunset, framed by trees on the shore"
-              loading="lazy"
-            />
-          </Link>
-          <div style={{ height: '2.25rem' }} />
-          {/* Two ways on (Susan, 2026-10-07): the symbols, and the Encounters. */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
-            {/* 2026-10-09, Susan: this button leads back up to the card
-                gallery on this page. */}
-            <a href="#symbol-cards" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-all-christian">
-              Explore Christian Symbols
-            </a>
-            <Link href="/encounters" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-encounters">
-              Experience the Encounters
-            </Link>
+            {/* One quiet way onward to the Christian Symbols page (vocabulary
+                and Encounters), 2026-10-09. */}
+            <p style={{ textAlign: 'center', margin: '1.5rem 0 0' }}>
+              <Link
+                href="/christian-symbols"
+                data-cta="symbols-why-christian"
+                style={{
+                  fontFamily: 'var(--sans)',
+                  fontSize: '0.8rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: 'var(--gold)',
+                }}
+              >
+                Explore Scripture&rsquo;s symbols and the Encounters &rarr;
+              </Link>
+            </p>
           </div>
         </section>
 
