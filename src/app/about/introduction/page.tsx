@@ -5,25 +5,27 @@ import Footer from '@/components/Footer'
 import ProtectedImage from '@/components/ProtectedImage'
 import { PathLearningPreview } from '@/components/path/PathLearning'
 
-// /about/introduction — A Free Introduction: the illustrated book
+// /about/introduction — An Introduction to AwakenArts: the illustrated book
 // "The AwakenArts Path" (2026-10-09, Susan).
 //
 // The book moved here from /awakenarts-path so that page can serve as the
 // educational learning path. Cover, introduction line and Read/Download
 // actions are carried over unchanged; the PDF itself is unchanged. The
-// shared title is deliberate — the eyebrow "A Free Introduction" marks this
+// shared title is deliberate — the eyebrow "An Introduction to AwakenArts"
+// (the book's own cover line; "free" wording removed per Susan 2026-10-09,
+// since free symbol cards may be offered later) marks this
 // as the book, distinct from the learning page.
 
 export const metadata: Metadata = {
-  title: 'The AwakenArts Path — A Free Introduction',
+  title: 'The AwakenArts Path — An Introduction to AwakenArts',
   description:
-    'Read or download The AwakenArts Path free: an illustrated introduction to the image, poetry, and reflection behind AwakenArts.',
+    'Read or download The AwakenArts Path, an illustrated introduction to the image, poetry, and reflection behind AwakenArts.',
   alternates: { canonical: '/about/introduction' },
   openGraph: {
     url: '/about/introduction',
-    title: 'The AwakenArts Path — A Free Introduction',
+    title: 'The AwakenArts Path — An Introduction to AwakenArts',
     description:
-      'Read or download The AwakenArts Path free: an illustrated introduction to the image, poetry, and reflection behind AwakenArts.',
+      'Read or download The AwakenArts Path, an illustrated introduction to the image, poetry, and reflection behind AwakenArts.',
     images: ['/images/path/when-language-shapes-a-path-cover.jpg'],
   },
 }
@@ -35,7 +37,7 @@ export default function FreeIntroductionPage() {
 
       <main className="path-intro-page">
         <section className="path-intro-hero">
-          <p className="eyebrow path-intro-hero__eyebrow">A Free Introduction</p>
+          <p className="eyebrow path-intro-hero__eyebrow">An Introduction to AwakenArts</p>
           <h1 className="path-intro-hero__title">The AwakenArts Path</h1>
           <p className="path-intro-hero__subtitle">Poetry, Image, and Seeing Your Life</p>
         </section>
