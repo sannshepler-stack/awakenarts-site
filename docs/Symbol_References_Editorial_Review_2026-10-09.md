@@ -1,22 +1,22 @@
-# Symbol References: Editorial Review of Searchable Entries
+# Symbol References: Editorial Review
 
-Prepared 2026-10-09. **All entries remain draft.** Approve one group at a time by changing `status` to `approved` in `src/data/symbol-references.json`.
+Updated 2026-10-09. **All 65 entries remain draft.** 34 could become newly visible in search; they will be published in groups, starting with Group 1. Three more (Butterfly, Anchor, Key) stay hidden because published AwakenArts material already covers them, and they keep their value as editorial references.
 
-Group 1 includes Butterfly, Anchor, and Key at your request. They already have published AwakenArts content, so search shows that content, not the reference. Each is shown here beside what is published, for the comparison you wanted. Approving them has no effect on search unless that priority rule changes.
+Each entry is checked for: possible associations (shown to visitors as "Can suggest", never as fixed meanings), accurate Scripture, an open-ended question, and links only to genuinely useful published material. Every visitor also gets A Practice of Attention, Explore More Symbols, Explore in the Journal, and Make Your Own Word Art.
 
-Related links listed are only those that resolve to a live published page. "Proposed changes" records every edit made to your draft.
-
-## Group 1: Worn, kept, and found in Scripture (your priority group)
+## Group 1: First approval group (7 entries)
 
 ### Eagle
 
 - **Can suggest:** strength · renewal · protection · far-reaching vision
-- **Scripture:** Isaiah 40:31 · Exodus 19:4 · Deuteronomy 32:11
+- **Scripture:** Isaiah 40:31 · Exodus 19:4 · Deuteronomy 32:11 · Job 39:29
 - **Note:** Eagle imagery appears in biblical passages about strength and God's care.
 - **Reflection question:** *What does the image of an eagle bring to mind in your own experience?*
-- **Related links:** The Feather (`/journal/transformation#entry-feather`)
+- **Related links:** none
 - **Found by:** Eagle, eagles, eagle's wings
-- **Proposed changes:** Related: "lamp;path" → "feather"
+- **Changes from your draft:** Related: "lamp;path" → "feather"; Related: "feather" → none (The Feather is about lightness and letting go, not the eagle's strength and renewal); Added Job 39:29 (the eagle seeing from afar) to support "far-reaching vision"
+- **Scripture context:** Exodus 19:4 and Deuteronomy 32:11 describe God bearing Israel "on eagles' wings". The image is about God's care and deliverance, not a quality of the eagle itself. The note already says this.
+- **Scripture context:** Job 39:29 is part of God's speech from the whirlwind on the wonders of creation, not a teaching about vision or insight.
 
 ### Rose
 
@@ -26,40 +26,8 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What particular rose, gift, or memory comes to mind for you?*
 - **Related links:** Flower (`/journal?word=flower#symbol-vocabulary`)
 - **Found by:** Rose, roses, red rose
-- **Proposed changes:** Related: "flower;lily" → "flower"
-
-### Butterfly (hidden in search)
-
-- **Can suggest:** change · fragility · beauty · emergence
-- **Scripture:** none
-- **Note:** The butterfly's life cycle is often used as a metaphor for change.
-- **Reflection question:** *What kind of change does a butterfly bring to mind for you?*
-- **Related links:** none
-- **Found by:** Butterfly, butterflies, monarch butterfly
-- **Proposed changes:** Related: "flower;seed" → none (no genuine published connection)
-- **Published now:** Journal *The Butterfly*: Butterflies often appear around change, fragility, and emerging identity.
-
-### Anchor (hidden in search)
-
-- **Can suggest:** steadiness · hope · security · commitment
-- **Scripture:** Hebrews 6:19
-- **Note:** The letter to the Hebrews uses an anchor as an image of hope.
-- **Reflection question:** *What helps you feel steady in an uncertain season?*
-- **Related links:** none
-- **Found by:** Anchor, anchors, ship anchor
-- **Proposed changes:** Related: "boat;path" → none (no genuine published connection)
-- **Published now:** Symbol Vocabulary: Hope · Steadiness · Holding (Hebrews 6:19)
-
-### Key (hidden in search)
-
-- **Can suggest:** access · responsibility · trust · possibility
-- **Scripture:** Isaiah 22:22 · Revelation 3:7
-- **Note:** Keys can suggest both literal access and entrusted responsibility.
-- **Reflection question:** *What key or opening has special significance in your story?*
-- **Related links:** Door (`/journal?word=door#symbol-vocabulary`) · Gate (`/symbols/gate`)
-- **Found by:** Key, keys, keychain, house key
-- **Proposed changes:** Replaced Matthew 16:19 (read differently across traditions) with the key of David passages, which speak to opening and access; Related: kept "door;gate" (genuine: opening and access)
-- **Published now:** Journal *The Key*: Keys often suggest access, secrecy, permission, or the possibility of opening something long closed.
+- **Changes from your draft:** Related: "flower;lily" → "flower"
+- **Scripture context:** No Scripture is listed, which is correct. Visitors may expect the "rose of Sharon" (Song of Songs 2:1) or Isaiah 35:1 ("blossom as the rose"). Both read "rose" in the KJV, but most modern translations render them as a crocus or another flower. Best left out.
 
 ### Ring
 
@@ -69,7 +37,50 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What story belongs to a ring you wear, keep, or remember?*
 - **Related links:** none
 - **Found by:** Ring, rings, wedding ring
-- **Proposed changes:** Removed "band" (common word); Related: "pearl;cross" → "none"
+- **Changes from your draft:** Removed "band" (common word); Related: "pearl;cross" → "none"
+- **Scripture context:** Luke 15:22: the father gives the returning son a ring as a sign of restored place in the family. It is not a marriage ring, so the Scripture supports "belonging" more than "commitment".
+
+### Tattoo
+
+- **Can suggest:** identity · memory · belonging · expression
+- **Scripture:** none
+- **Note:** Tattoo imagery can reflect personal art choices, community ties, or significant experiences.
+- **Reflection question:** *If you have or admire a tattoo, what drew you to that image?*
+- **Related links:** none
+- **Found by:** Tattoo, tattoos, body art
+- **Changes from your draft:** Removed "ink" (common word); Related: "flower;dove" → "none"
+- **Scripture context:** No Scripture is listed. Some Christian visitors will think of Leviticus 19:28. The neutral note avoids taking a position. Please decide whether that is the stance you want.
+
+### Photograph
+
+- **Can suggest:** memory · belonging · loss · connection
+- **Scripture:** none
+- **Note:** Photographs can preserve moments while acquiring new meanings over time.
+- **Reflection question:** *Which photograph would you choose to tell part of your story?*
+- **Related links:** none
+- **Found by:** Photograph, photo, photos, family photo
+- **Changes from your draft:** Removed "picture" (common word, as in "picture this"); Related: "ring;tree" → "none"
+
+### Keepsake
+
+- **Can suggest:** remembrance · connection · inheritance · identity
+- **Scripture:** none
+- **Note:** A kept object can gather meaning through its history and associations.
+- **Reflection question:** *What is one object you keep, and why does it matter to you?*
+- **Related links:** none
+- **Found by:** Keepsake, memento, heirloom, souvenir
+- **Changes from your draft:** Related: "ring;tree" → "none"
+
+### Watch
+
+- **Can suggest:** time · inheritance · continuity · memory
+- **Scripture:** none
+- **Note:** A watch may serve as a practical tool and a personal keepsake.
+- **Reflection question:** *Whose time, memory, or presence do you associate with a watch?*
+- **Related links:** The Hourglass (`/journal/time-and-memory#entry-hourglass`)
+- **Found by:** Watch, wristwatch, pocket watch, father's watch
+- **Changes from your draft:** Related: "keepsake;path" → "hourglass"
+- **Scripture context:** No Scripture is listed, which is correct for a timepiece. "Watch" also means vigilance in Scripture ("watch and pray", Matthew 26:41; Mark 13:37). A visitor searching in that sense would find this timepiece reference. Watch for this in testing.
 
 ## Group 2: Biblical creatures and plants
 
@@ -81,7 +92,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *Which associations with the dove are meaningful to you, and why?*
 - **Related links:** Water (`/journal?word=water#symbol-vocabulary`)
 - **Found by:** Dove, doves, white dove
-- **Proposed changes:** "Spirit" clarified as "Holy Spirit" (Matthew 3:16); Related: "lamp;vine" → "water"
+- **Changes from your draft:** "Spirit" clarified as "Holy Spirit" (Matthew 3:16); Related: "lamp;vine" → "water"
 
 ### Cross
 
@@ -91,7 +102,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What experiences or commitments do you connect with the cross?*
 - **Related links:** Path (`/symbols/path`)
 - **Found by:** Cross, crosses, crucifix
-- **Proposed changes:** Related: "light;path" → "path"
+- **Changes from your draft:** Related: "light;path" → "path"
 
 ### Lily
 
@@ -101,7 +112,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What ordinary beauty invites you to pay attention?*
 - **Related links:** Flower (`/journal?word=flower#symbol-vocabulary`)
 - **Found by:** Lily, lilies, flower lily
-- **Proposed changes:** Related: "flower;seed" → "flower"
+- **Changes from your draft:** Related: "flower;seed" → "flower"
 
 ### Bird
 
@@ -111,7 +122,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *Is there a particular bird that matters to you, and what do you associate with it?*
 - **Related links:** The Feather (`/journal/transformation#entry-feather`)
 - **Found by:** Bird, birds, songbird, flying bird
-- **Proposed changes:** Related: "dove;eagle" → "feather"
+- **Changes from your draft:** Related: "dove;eagle" → "feather"
 
 ### Nest
 
@@ -121,7 +132,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What does the idea of a nest bring to mind about home?*
 - **Related links:** Tree (`/journal?word=tree#symbol-vocabulary`)
 - **Found by:** Nest, bird nest, nesting
-- **Proposed changes:** Related: "dove;tree" → "tree"
+- **Changes from your draft:** Related: "dove;tree" → "tree"
 
 ### Fish
 
@@ -131,7 +142,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What associations do you bring to the image of a fish?*
 - **Related links:** Net (`/symbols/net`) · Water (`/journal?word=water#symbol-vocabulary`)
 - **Found by:** Fish, fishes, ichthys
-- **Proposed changes:** Related: "water;net" → "net;water"
+- **Changes from your draft:** Related: "water;net" → "net;water"
 
 ### Sheep
 
@@ -141,7 +152,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What does the image of a flock evoke about belonging?*
 - **Related links:** Shepherd (`/symbols/shepherd`) · Gate (`/symbols/gate`)
 - **Found by:** Sheep, flock
-- **Proposed changes:** Removed "lamb; lambs": the Lamb of God is a distinct Christological image; Removed John 1:29 (Lamb of God) with the lamb aliases; Note rewritten to match the remaining Scripture
+- **Changes from your draft:** Removed "lamb; lambs": the Lamb of God is a distinct Christological image; Removed John 1:29 (Lamb of God) with the lamb aliases; Note rewritten to match the remaining Scripture
 
 ### Olive Branch
 
@@ -151,7 +162,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What might an olive branch evoke in a relationship you value?*
 - **Related links:** none
 - **Found by:** Olive Branch, olive branches, olive leaf
-- **Proposed changes:** Added "olive leaf" (the Genesis 8:11 wording); removed "olive tree branch"; Related: "dove;tree" → "none"
+- **Changes from your draft:** Added "olive leaf" (the Genesis 8:11 wording); removed "olive tree branch"; Related: "dove;tree" → "none"
 
 ## Group 3: Landscape, sky, and light
 
@@ -163,7 +174,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *Where does the image of a wall enter your own language?*
 - **Related links:** Gate (`/symbols/gate`)
 - **Found by:** Wall, walls, hit a wall, barrier
-- **Proposed changes:** Added Nehemiah 2:17 (rebuilding for protection) so Scripture covers both protection and obstacle; Related: "gate;door" → "gate"
+- **Changes from your draft:** Added Nehemiah 2:17 (rebuilding for protection) so Scripture covers both protection and obstacle; Related: "gate;door" → "gate"
 
 ### Valley
 
@@ -182,7 +193,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What does a wilderness season suggest to you?*
 - **Related links:** Water (`/journal?word=water#symbol-vocabulary`)
 - **Found by:** Desert, deserts, wilderness
-- **Proposed changes:** Replaced Exodus 16:1 (wilderness of Sin) with Deuteronomy 8:2 (tested in the wilderness); Removed "dry land" (Genesis 1:9, a different image); Related: "water;path" → "water"
+- **Changes from your draft:** Replaced Exodus 16:1 (wilderness of Sin) with Deuteronomy 8:2 (tested in the wilderness); Removed "dry land" (Genesis 1:9, a different image); Related: "water;path" → "water"
 
 ### Fire
 
@@ -192,7 +203,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What associations arise for you when you imagine a flame?*
 - **Related links:** The Flame (`/journal/transformation#entry-flame`) · Light (`/journal?word=light#symbol-vocabulary`)
 - **Found by:** Fire, fires
-- **Proposed changes:** Added 1 Peter 1:7 (faith tested by fire) so "testing" has a supporting passage; Removed "flame; flames; candle flame": they collide with the published Journal entry The Flame and with Candle; Related: "light;lamp" → "flame;light"
+- **Changes from your draft:** Added 1 Peter 1:7 (faith tested by fire) so "testing" has a supporting passage; Removed "flame; flames; candle flame": they collide with the published Journal entry The Flame and with Candle; Related: "light;lamp" → "flame;light"
 
 ### Candle
 
@@ -211,7 +222,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What does looking at the night sky awaken in you?*
 - **Related links:** Light (`/journal?word=light#symbol-vocabulary`)
 - **Found by:** Star, stars, guiding star
-- **Proposed changes:** Related: "light;path" → "light"
+- **Changes from your draft:** Related: "light;path" → "light"
 
 ### Sun
 
@@ -221,7 +232,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What does a sunrise mean to you at this time?*
 - **Related links:** Light (`/journal?word=light#symbol-vocabulary`)
 - **Found by:** Sun, sunrise, sunlight, dawn
-- **Proposed changes:** Related: "light;seed" → "light"
+- **Changes from your draft:** Related: "light;seed" → "light"
 
 ### Rainbow
 
@@ -231,7 +242,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What promise or remembered moment do you connect to a rainbow?*
 - **Related links:** Water (`/journal?word=water#symbol-vocabulary`)
 - **Found by:** Rainbow, rainbows, arc of color
-- **Proposed changes:** Removed "diversity" (not in Genesis 9); added "covenant", which the passage names; Related: "water;light" → "water"
+- **Changes from your draft:** Removed "diversity" (not in Genesis 9); added "covenant", which the passage names; Related: "water;light" → "water"
 
 ### Foundation
 
@@ -241,7 +252,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What forms the foundation of your commitments?*
 - **Related links:** Stone (`/journal?word=stone#symbol-vocabulary`)
 - **Found by:** Foundation, cornerstone, building foundation
-- **Proposed changes:** Related: "stone;tree" → "stone"
+- **Changes from your draft:** Related: "stone;tree" → "stone"
 
 ## Group 4: Growth, passage, and the written word
 
@@ -253,7 +264,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *When have you felt you were crossing into unfamiliar waters?*
 - **Related links:** Water (`/journal?word=water#symbol-vocabulary`) · Anchor (`/journal?word=anchor#symbol-vocabulary`)
 - **Found by:** Boat, boats
-- **Proposed changes:** Removed "ship" (collides with Journal The Ship) and "vessel" (biblically also "earthen vessel")
+- **Changes from your draft:** Removed "ship" (collides with Journal The Ship) and "vessel" (biblically also "earthen vessel")
 
 ### Fruit
 
@@ -272,7 +283,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What have you been tending that may now be ready to gather?*
 - **Related links:** Seed (`/journal?word=seed#symbol-vocabulary`)
 - **Found by:** Harvest, harvesting, field of grain
-- **Proposed changes:** Related: "seed;fruit" → "seed"
+- **Changes from your draft:** Related: "seed;fruit" → "seed"
 
 ### Threshold
 
@@ -282,7 +293,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What threshold are you approaching or remembering?*
 - **Related links:** Door (`/journal?word=door#symbol-vocabulary`) · Gate (`/symbols/gate`)
 - **Found by:** Threshold, thresholds, doorstep, entryway
-- **Proposed changes:** Related: "gate;door" → "door;gate"
+- **Changes from your draft:** Related: "gate;door" → "door;gate"
 
 ### Book
 
@@ -292,7 +303,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *Which book has changed the way you see something?*
 - **Related links:** Lamp (`/symbols/lamp`)
 - **Found by:** Book, books, open book, scripture book
-- **Proposed changes:** Replaced Revelation 20:12 (book of judgment) with Malachi 3:16 (book of remembrance), which fits memory and story; Related: "lamp;path" → "lamp"
+- **Changes from your draft:** Replaced Revelation 20:12 (book of judgment) with Malachi 3:16 (book of remembrance), which fits memory and story; Related: "lamp;path" → "lamp"
 
 ### Cocoon
 
@@ -302,39 +313,9 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What is still forming in your life?*
 - **Related links:** The Butterfly (`/journal/transformation#entry-butterfly`)
 - **Found by:** Cocoon, chrysalis, butterfly cocoon
-- **Proposed changes:** Related: "butterfly;seed" → "butterfly"
+- **Changes from your draft:** Related: "butterfly;seed" → "butterfly"
 
-## Group 5: Everyday objects and memory
-
-### Tattoo
-
-- **Can suggest:** identity · memory · belonging · expression
-- **Scripture:** none
-- **Note:** Tattoo imagery can reflect personal art choices, community ties, or significant experiences.
-- **Reflection question:** *If you have or admire a tattoo, what drew you to that image?*
-- **Related links:** none
-- **Found by:** Tattoo, tattoos, body art
-- **Proposed changes:** Removed "ink" (common word); Related: "flower;dove" → "none"
-
-### Photograph
-
-- **Can suggest:** memory · belonging · loss · connection
-- **Scripture:** none
-- **Note:** Photographs can preserve moments while acquiring new meanings over time.
-- **Reflection question:** *Which photograph would you choose to tell part of your story?*
-- **Related links:** none
-- **Found by:** Photograph, photo, photos, family photo
-- **Proposed changes:** Removed "picture" (common word, as in "picture this"); Related: "ring;tree" → "none"
-
-### Keepsake
-
-- **Can suggest:** remembrance · connection · inheritance · identity
-- **Scripture:** none
-- **Note:** A kept object can gather meaning through its history and associations.
-- **Reflection question:** *What is one object you keep, and why does it matter to you?*
-- **Related links:** none
-- **Found by:** Keepsake, memento, heirloom, souvenir
-- **Proposed changes:** Related: "ring;tree" → "none"
+## Group 5: Everyday objects
 
 ### Necklace
 
@@ -344,17 +325,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What story might a necklace or pendant carry for you?*
 - **Related links:** none
 - **Found by:** Necklace, pendant, locket
-- **Proposed changes:** Removed "chain" (common word); Related: "ring;pearl" → "none"
-
-### Watch
-
-- **Can suggest:** time · inheritance · continuity · memory
-- **Scripture:** none
-- **Note:** A watch may serve as a practical tool and a personal keepsake.
-- **Reflection question:** *Whose time, memory, or presence do you associate with a watch?*
-- **Related links:** The Hourglass (`/journal/time-and-memory#entry-hourglass`)
-- **Found by:** Watch, wristwatch, pocket watch, father's watch
-- **Proposed changes:** Related: "keepsake;path" → "hourglass"
+- **Changes from your draft:** Removed "chain" (common word); Related: "ring;pearl" → "none"
 
 ### Compass
 
@@ -364,7 +335,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *What guides your decisions when the destination is unclear?*
 - **Related links:** Path (`/symbols/path`)
 - **Found by:** Compass, compasses, direction finder
-- **Proposed changes:** Related: "path;lamp" → "path"
+- **Changes from your draft:** Related: "path;lamp" → "path"
 
 ### Map
 
@@ -374,7 +345,7 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *Where do you wish you had a clearer map?*
 - **Related links:** Path (`/symbols/path`)
 - **Found by:** Map, maps, route map
-- **Proposed changes:** Related: "path;compass" → "path"
+- **Changes from your draft:** Related: "path;compass" → "path"
 
 ### Pearl Necklace
 
@@ -384,9 +355,44 @@ Related links listed are only those that resolve to a live published page. "Prop
 - **Reflection question:** *Does a piece of jewelry connect you with someone else's story?*
 - **Related links:** Pearl (`/symbols/pearl`)
 - **Found by:** Pearl Necklace, string of pearls, pearl jewelry
-- **Proposed changes:** Related: "pearl;necklace" → "pearl"
+- **Changes from your draft:** Related: "pearl;necklace" → "pearl"
+
+## Kept hidden: already represented in published AwakenArts material
+
+### Butterfly
+
+- **Can suggest:** change · fragility · beauty · emergence
+- **Scripture:** none
+- **Note:** The butterfly's life cycle is often used as a metaphor for change.
+- **Reflection question:** *What kind of change does a butterfly bring to mind for you?*
+- **Related links:** none
+- **Found by:** Butterfly, butterflies, monarch butterfly
+- **Changes from your draft:** Related: "flower;seed" → none (no genuine published connection)
+- **Published now:** Journal *The Butterfly*: Butterflies often appear around change, fragility, and emerging identity.
+
+### Anchor
+
+- **Can suggest:** steadiness · hope · security · commitment
+- **Scripture:** Hebrews 6:19
+- **Note:** The letter to the Hebrews uses an anchor as an image of hope.
+- **Reflection question:** *What helps you feel steady in an uncertain season?*
+- **Related links:** none
+- **Found by:** Anchor, anchors, ship anchor
+- **Changes from your draft:** Related: "boat;path" → none (no genuine published connection)
+- **Published now:** Symbol Vocabulary: Hope · Steadiness · Holding (Hebrews 6:19)
+
+### Key
+
+- **Can suggest:** access · responsibility · trust · possibility
+- **Scripture:** Isaiah 22:22 · Revelation 3:7
+- **Note:** Keys can suggest both literal access and entrusted responsibility.
+- **Reflection question:** *What key or opening has special significance in your story?*
+- **Related links:** Door (`/journal?word=door#symbol-vocabulary`) · Gate (`/symbols/gate`)
+- **Found by:** Key, keys, keychain, house key
+- **Changes from your draft:** Replaced Matthew 16:19 (read differently across traditions) with the key of David passages, which speak to opening and access; Related: kept "door;gate" (genuine: opening and access)
+- **Published now:** Journal *The Key*: Keys often suggest access, secrecy, permission, or the possibility of opening something long closed.
 
 ## Not in this review
 
-The other 28 entries that duplicate published content stay in the database as hidden source material, unchanged, for future Symbol Cards, educational writing, or marketing. Two of them still carry open editorial flags: Mirror (James 1:23–24 vs. 1 Corinthians 13:12) and Cup (Psalm 23:5 and Matthew 26:39 under one entry).
+The other 28 entries that duplicate published content stay in the database as hidden source material, unchanged. Mirror and Cup still carry open Scripture flags.
 

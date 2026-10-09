@@ -8,10 +8,10 @@
       "also_found_as": "eagles; eagle's wings",
       "type": "biblical;literary;everyday",
       "can_suggest": "strength;renewal;protection;far-reaching vision",
-      "scripture": "Isaiah 40:31; Exodus 19:4; Deuteronomy 32:11",
+      "scripture": "Isaiah 40:31; Exodus 19:4; Deuteronomy 32:11; Job 39:29",
       "note": "Eagle imagery appears in biblical passages about strength and God's care.",
       "reflection_question": "What does the image of an eagle bring to mind in your own experience?",
-      "related": "feather",
+      "related": "",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
@@ -20,7 +20,9 @@
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 1,
       "review_changes": [
-        "Related: \"lamp;path\" → \"feather\""
+        "Related: \"lamp;path\" → \"feather\"",
+        "Related: \"feather\" → none (The Feather is about lightness and letting go, not the eagle's strength and renewal)",
+        "Added Job 39:29 (the eagle seeing from afar) to support \"far-reaching vision\""
       ]
     },
     {
@@ -362,7 +364,7 @@
       "review_changes": [
         "Related: \"flower;seed\" → none (no genuine published connection)"
       ],
-      "review_group": 1,
+      "review_group": "hidden",
       "search_visibility": "hidden: published AwakenArts entry takes priority"
     },
     {
@@ -423,7 +425,7 @@
       "review_changes": [
         "Related: \"boat;path\" → none (no genuine published connection)"
       ],
-      "review_group": 1,
+      "review_group": "hidden",
       "search_visibility": "hidden: published AwakenArts entry takes priority"
     },
     {
@@ -570,7 +572,7 @@
         "Replaced Matthew 16:19 (read differently across traditions) with the key of David passages, which speak to opening and access",
         "Related: kept \"door;gate\" (genuine: opening and access)"
       ],
-      "review_group": 1,
+      "review_group": "hidden",
       "search_visibility": "hidden: published AwakenArts entry takes priority"
     },
     {
@@ -609,7 +611,7 @@
       "link_word_art": "/experience",
       "portal_url": "",
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
-      "review_group": 5,
+      "review_group": 1,
       "review_changes": [
         "Removed \"ink\" (common word)",
         "Related: \"flower;dove\" → \"none\""
@@ -630,7 +632,7 @@
       "link_word_art": "/experience",
       "portal_url": "",
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
-      "review_group": 5,
+      "review_group": 1,
       "review_changes": [
         "Removed \"picture\" (common word, as in \"picture this\")",
         "Related: \"ring;tree\" → \"none\""
@@ -651,7 +653,7 @@
       "link_word_art": "/experience",
       "portal_url": "",
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
-      "review_group": 5,
+      "review_group": 1,
       "review_changes": [
         "Related: \"ring;tree\" → \"none\""
       ]
@@ -692,7 +694,7 @@
       "link_word_art": "/experience",
       "portal_url": "",
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
-      "review_group": 5,
+      "review_group": 1,
       "review_changes": [
         "Related: \"keepsake;path\" → \"hourglass\""
       ]
