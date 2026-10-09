@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import Nav from '@/components/Nav'
-import FooterSocial from '@/components/FooterSocial'
+import WayfindingBand from '@/components/WayfindingBand'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Voices — AwakenArts',
@@ -194,73 +194,9 @@ export default function QuotesPage() {
       </div>
       </div>
 
-      {/* ── FOOTER ── */}
-      <footer className="site-footer" aria-label="Site footer">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <Link href="/" aria-label="AwakenArts home">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/brand/exports/AwakenArts-Logo-CompactHorizontal-OnNavy-1024.png"
-                alt="AwakenArts"
-                className="footer-logo"
-                width={1024}
-                height={165}
-                loading="lazy"
-              />
-            </Link>
-            <p>
-              An artistic body of work shaped through image and language.
-              The works express emotion and meaning in symbolic form, where
-              word and image reveal archetypal patterns of thought and
-              inward experience. By Susan Ann Shepler.
-            </p>
-            <FooterSocial />
-          </div>
-
-          <div className="footer-col">
-            <h4>Explore</h4>
-            <ul>
-              <li><Link href="/path">The Path</Link></li>
-              <li><Link href="/gallery">Poems</Link></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h4>The Work</h4>
-            <ul>
-              <li><Link href="/deck">Illustrated Awakening</Link></li>
-              <li>
-                <a
-                  href="https://www.amazon.com/dp/B0G4R4KTZD"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Whispers of Awareness
-                </a>
-              </li>
-              <li><Link href="/gallery">Concrete Poetry</Link></li>
-              <li><Link href="/gallery">Figures</Link></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h4>About</h4>
-            <ul>
-              <li><Link href="/about">Formation &amp; Provenance</Link></li>
-              <li><Link href="/privacy">Privacy Policy</Link></li>
-              <li><Link href="/terms">Terms of Use</Link></li>
-              <li><Link href="/disclaimer">Disclaimer</Link></li>
-              <li><Link href="/copyright">Copyright</Link></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <span>© 2026 AwakenArts · awakenarts.com · All Rights Reserved</span>
-          <span>AwakenArts is operated by Susan Ann Shepler, a Texas sole proprietor.</span>
-        </div>
-      </footer>
+      {/* 2026-10-09: standard site navigation band and footer replace the old inline footer. */}
+      <WayfindingBand />
+      <Footer />
     </>
   )
 }

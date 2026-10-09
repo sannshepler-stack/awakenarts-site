@@ -181,8 +181,9 @@ export default function AboutPage() {
                 untouched — only this inline invitation is removed. */}
             <div className="about-links">
               <p className="about-links__item">
-                <Link href="/workshops" className="home-coll-cta home-coll-cta--light-surface">
-                  Explore AwakenArts Workshops
+                {/* 2026-10-09: straight to Presentations & Workshops (was /workshops, a redirect). */}
+                <Link href="/presentations" className="home-coll-cta home-coll-cta--light-surface">
+                  Explore Presentations &amp; Workshops
                 </Link>
                 <span className="about-links__desc">
                   See how Susan conducts the workshop experience.

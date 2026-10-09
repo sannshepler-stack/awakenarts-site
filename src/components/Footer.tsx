@@ -27,6 +27,8 @@ import FooterSocial from './FooterSocial'
 
 const EXPLORE_LINKS = [
   { label: 'Explore', href: '/explore' },
+  // 2026-10-09, Susan: the learning Path and Christian Encounters join the footer.
+  { label: 'The AwakenArts Path', href: '/awakenarts-path' },
   { label: 'Collection', href: '/collection' },
   // 2026-10-07, Susan: the Journal needs more than one way in.
   { label: 'The Journal', href: '/journal' },
@@ -34,6 +36,7 @@ const EXPLORE_LINKS = [
   { label: 'Voices', href: '/quotes' },
   { label: 'Presentations & Workshops', href: '/presentations' },
   { label: 'Symbols', href: '/symbols' },
+  { label: 'Christian Encounters', href: '/encounters' },
   { label: 'Books & Journals', href: '/books' },
   { label: 'Stay Connected', href: '/stay-connected' },
 ]

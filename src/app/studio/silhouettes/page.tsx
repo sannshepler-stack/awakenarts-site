@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
-import FooterSocial from '@/components/FooterSocial'
+import WayfindingBand from '@/components/WayfindingBand'
+import Footer from '@/components/Footer'
 import FormPanel from '@/components/forms/FormPanel'
 import { SYMBOLIC_FORMS } from '@/components/forms/forms-data'
 
@@ -106,58 +107,9 @@ export default function SilhouettesPage() {
 
       </main>
 
-      {/* ── FOOTER ── */}
-      <footer className="site-footer" aria-label="Site footer">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/brand/exports/AwakenArts-Logo-CompactHorizontal-OnNavy-1024.png"
-              alt="AwakenArts"
-              className="footer-logo"
-              width={1024}
-              height={165}
-              loading="lazy"
-            />
-            <p>
-              An artistic body of work shaped through image and language.
-              The works express emotion and meaning in symbolic form, where
-              word and image reveal archetypal patterns of thought and
-              inward experience. By Susan Ann Shepler.
-            </p>
-            <FooterSocial />
-          </div>
-          <div className="footer-col">
-            <h4>Studio</h4>
-            <ul>
-              <li><Link href="/studio">Studio</Link></li>
-              <li><Link href="/studio/silhouettes">Silhouettes</Link></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>The Work</h4>
-            <ul>
-              <li><Link href="/encounters">Encounters</Link></li>
-              <li><Link href="/gallery">Poems</Link></li>
-              <li><Link href="/journal">Journal</Link></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>About</h4>
-            <ul>
-              <li><Link href="/about">Formation &amp; Provenance</Link></li>
-              <li><Link href="/privacy">Privacy Policy</Link></li>
-              <li><Link href="/terms">Terms of Use</Link></li>
-              <li><Link href="/disclaimer">Disclaimer</Link></li>
-              <li><Link href="/copyright">Copyright</Link></li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <span>© 2026 AwakenArts · awakenarts.com · All Rights Reserved</span>
-          <span>AwakenArts is operated by Susan Ann Shepler, a Texas sole proprietor.</span>
-        </div>
-      </footer>
+      {/* 2026-10-09: standard site navigation band and footer replace the old inline footer. */}
+      <WayfindingBand />
+      <Footer />
     </>
   )
 }
