@@ -242,7 +242,7 @@ export default function SymbolsIndexPage() {
                 ))}
               </ul>
               <Link href="/journal" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-journal">
-                Go to the Journal
+                The Journal Page
               </Link>
             </div>
           </div>

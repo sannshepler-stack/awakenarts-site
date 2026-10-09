@@ -92,7 +92,7 @@ export default function CollectionPage() {
             Prompts and reflections connected to the works in the Collection.
           </p>
           <TextLinkRow center>
-            <TextLink href="/journal" cta="collection-journal">Go to the Journal</TextLink>
+            <TextLink href="/journal" cta="collection-journal">The Journal Page</TextLink>
           </TextLinkRow>
         </section>
 
