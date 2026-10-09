@@ -105,7 +105,7 @@ export default function SymbolsIndexPage() {
         {/* Why Symbols Matter — Susan's wording, 2026-10-09. Placed beneath the
             gallery: visitors encounter the symbols first, then deepen understanding. */}
         <section aria-labelledby="why-symbols-matter" style={{ padding: '0 1.5rem var(--band-gap)' }}>
-          <div style={{ maxWidth: 640, margin: '0 auto' }}>
+          <div style={{ maxWidth: 784, margin: '0 auto' }}>
             <h2
               id="why-symbols-matter"
               style={{
