@@ -26,6 +26,52 @@ export default function JournalIndexPage() {
     <>
       <Nav />
 
+      {/* ── Figurative language — cream opening (2026-10-09, Susan) ───
+          Moved from /symbols. Recognizing the images in everyday speech
+          leads straight into practicing with them in the Reflection Paths.
+          Watercolor's white ground blends into cream (multiply). */}
+      <section
+        aria-labelledby="figurative-heading"
+        style={{ background: 'var(--cream)', padding: 'calc(var(--band-gap) + 1rem) 1.5rem 4rem', textAlign: 'center' }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/headers/symbols-figurative-landscape.jpg"
+          alt="A watercolor landscape: an opening in a stone wall, paths that part, and stepping stones across still water toward the sunrise"
+          style={{ display: 'block', width: '100%', maxWidth: 1180, margin: '0 auto 1.5rem', mixBlendMode: 'multiply' }}
+        />
+        <h2
+          id="figurative-heading"
+          style={{
+            fontFamily: 'var(--serif)',
+            fontWeight: 400,
+            fontSize: 'var(--t-page)',
+            color: 'var(--deep)',
+            margin: '1rem auto 1rem',
+            maxWidth: 760,
+            lineHeight: 1.1,
+          }}
+        >
+          Explore the World of Figurative Language
+        </h2>
+        <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.35rem', color: 'var(--gold)', margin: 0 }}>
+          You already speak in images. We all do.
+        </p>
+        <p
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: 'var(--body-size)',
+            lineHeight: 'var(--body-line)',
+            color: 'var(--deep)',
+            maxWidth: 640,
+            margin: '1.5rem auto 0',
+          }}
+        >
+          Each Reflection Path below begins with images like these: a doorway, a crossroads, a bridge, a mirror,
+          a key. Choose one, and write about where it appears in your own life.
+        </p>
+      </section>
+
       {/* ── Dark Journal hero ──────────────────────────────────────── */}
       <main className={styles.page}>
         <div className={styles.container}>

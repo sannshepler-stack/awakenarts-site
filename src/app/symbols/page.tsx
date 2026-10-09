@@ -13,9 +13,13 @@ import { symbolCards } from '@/data/symbolCards'
 // /christian-symbols; Journal symbol material stays in /journal. The three
 // remain distinct, per Susan.
 
+// 2026-10-09, Susan: this page is Symbols for the Christian Soul. The
+// figurative-language opening (header watercolor, heading, subtitle) moved
+// to the top of /journal.
 export const metadata: Metadata = {
-  title: 'Symbols',
-  description: 'You already speak in images. We all do. Explore the World of Figurative Language.',
+  title: 'Symbols for the Christian Soul',
+  description:
+    'Scripture speaks in symbols. Explore the symbol cards: what each can mean, where it appears in everyday language, and what it may help you recognize in your own life.',
   alternates: { canonical: '/symbols' },
 }
 
@@ -25,15 +29,6 @@ export default function SymbolsIndexPage() {
       <Nav />
       <main style={{ background: 'var(--cream)' }}>
         <section style={{ padding: 'calc(var(--band-gap) + 1rem) 1.5rem 3rem', textAlign: 'center' }}>
-          {/* Header (Susan, 2026-10-07): a watercolor of walls, a crossroads,
-              and stepping stones — the everyday figures of speech themselves.
-              White ground blends into the cream page (multiply). */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/headers/symbols-figurative-landscape.jpg"
-            alt="A watercolor landscape: an opening in a stone wall, paths that part, and stepping stones across still water toward the sunrise"
-            style={{ display: 'block', width: '100%', maxWidth: 1180, margin: '0 auto 1.5rem', mixBlendMode: 'multiply' }}
-          />
           <p className="eyebrow" style={{ justifyContent: 'center' }}>Symbols</p>
           <h1
             style={{
@@ -46,10 +41,10 @@ export default function SymbolsIndexPage() {
               lineHeight: 1.1,
             }}
           >
-            Explore the World of Figurative Language
+            Symbols for the Christian Soul
           </h1>
           <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.35rem', color: 'var(--gold)', margin: 0 }}>
-            You already speak in images. We all do.
+            Scripture speaks in symbols.
           </p>
           {/* Approved by Susan 2026-10-09: benefit-focused intro + link to The Path. */}
           <p
@@ -168,8 +163,8 @@ export default function SymbolsIndexPage() {
               Every symbol offers another opportunity to recognize how images and language carry meaning in your own
               life. Return to the collection whenever you&rsquo;re ready to explore another.
             </p>
-            {/* One quiet way onward to the Christian Symbols page (vocabulary
-                and Encounters), 2026-10-09. */}
+            {/* One quiet way onward to the Christian Symbols page and its
+                Symbol Vocabulary, 2026-10-09. Encounters keep their own page. */}
             <p style={{ textAlign: 'center', margin: '1.5rem 0 0' }}>
               <Link
                 href="/christian-symbols"
@@ -183,7 +178,7 @@ export default function SymbolsIndexPage() {
                   color: 'var(--gold)',
                 }}
               >
-                Explore Scripture&rsquo;s symbols and the Encounters &rarr;
+                Explore the Symbol Vocabulary &rarr;
               </Link>
             </p>
           </div>
