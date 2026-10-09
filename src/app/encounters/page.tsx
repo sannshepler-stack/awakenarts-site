@@ -116,6 +116,11 @@ export default function EncountersIndexPage() {
           Five short reflections for the Christian journey. Each pairs an image with Scripture and one movement
           of faith: I begin, I encounter, I receive, I listen, I walk on.
         </p>
+        {/* 2026-10-09, Susan: what a visitor may learn from the Encounters. */}
+        <p className={styles.statementSecondary} style={{ margin: '0 auto 1rem', maxWidth: 620 }}>
+          Through image, Scripture, and reflection, these encounters invite you to recognize biblical symbols,
+          consider their meaning in your own experience, and discover new ways of attending to your journey of faith.
+        </p>
         <p className={styles.statementSecondary}>
           Begin where you are. The work will meet you there.
         </p>
@@ -152,6 +157,18 @@ export default function EncountersIndexPage() {
         A free companion: the AwakenArts Encounter Journal.{' '}
         <Link href="/stay-connected" data-cta="encounters-journal-line" style={{ color: 'var(--gold-lt)', textDecoration: 'underline', textUnderlineOffset: 4, whiteSpace: 'nowrap' }}>
           Receive the Journal
+        </Link>
+      </p>
+
+      {/* 2026-10-09, Susan: connect the Encounters back to Symbols for the
+          Christian Soul — recognize the images, then explore them here. */}
+      <p style={{ textAlign: 'center', margin: '0 auto 1rem', padding: '0 1.5rem' }}>
+        <Link
+          href="/symbols"
+          data-cta="encounters-symbols"
+          style={{ fontFamily: 'var(--sans)', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold-lt)' }}
+        >
+          Explore Symbols for the Christian Soul &rarr;
         </Link>
       </p>
 
