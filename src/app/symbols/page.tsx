@@ -50,26 +50,24 @@ export default function SymbolsIndexPage() {
               recognizing biblical symbolism enriches Scripture reading,
               reflection, and faith. Replaces the general everyday-symbols
               paragraph. Link to The Path kept. */}
-          {[
-            'Scripture speaks through familiar images: lamps, paths, vines, seeds, bread, and water. These ordinary things carry meaning within the stories and teachings of the Bible.',
-            'Learning to recognize biblical symbols can deepen your understanding of Scripture and enrich the way you encounter its language in reading, reflection, and prayer.',
-            'Choose a symbol to explore its biblical meaning, consider its place in everyday life, and reflect on what it may mean to you.',
-          ].map((para, k) => (
-            <p
-              key={k}
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: 'var(--body-size)',
-                lineHeight: 'var(--body-line)',
-                color: 'var(--deep)',
-                maxWidth: 640,
-                margin: k === 0 ? '1.5rem auto 0' : '0.85rem auto 0',
-              }}
-            >
-              {para}
-            </p>
-          ))}
-          <p style={{ margin: '1.25rem 0 0' }}>
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: 'var(--body-size)',
+              lineHeight: 'var(--body-line)',
+              color: 'var(--deep)',
+              maxWidth: 760,
+              margin: '1.25rem auto 0',
+            }}
+          >
+            {/* 2026-10-09, Susan: same wording, condensed into one block. */}
+            Scripture speaks through familiar images: lamps, paths, vines, seeds, bread, and water. These ordinary
+            things carry meaning within the stories and teachings of the Bible. Learning to recognize biblical symbols
+            can deepen your understanding of Scripture and enrich the way you encounter its language in reading,
+            reflection, and prayer. Choose a symbol to explore its biblical meaning, consider its place in everyday
+            life, and reflect on what it may mean to you.
+          </p>
+          <p style={{ margin: '1rem 0 0' }}>
             <Link
               href="/awakenarts-path#what-symbol-awareness-can-teach"
               data-cta="symbols-intro-path"
