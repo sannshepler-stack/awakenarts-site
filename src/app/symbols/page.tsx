@@ -229,28 +229,9 @@ export default function SymbolsIndexPage() {
                 consider their meaning in your own experience, and discover new ways of attending to your journey of
                 faith.
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem' }}>
-                {[
-                  ['journey', 'Journey', 'I begin.'],
-                  ['deep', 'The Deep', 'I encounter.'],
-                  ['table', 'The Table', 'I receive.'],
-                  ['word', 'The Word', 'I listen.'],
-                  ['continue', 'Continue', 'I walk on.'],
-                ].map(([slug, title, mantra]) => (
-                  <li key={slug} style={{ margin: '0 0 0.4rem' }}>
-                    <Link
-                      href={`/encounters/${slug}`}
-                      data-cta={`symbols-encounter-${slug}`}
-                      style={{ fontFamily: 'var(--serif)', fontSize: '1.2rem', color: 'var(--cream)', textDecoration: 'underline', textDecorationColor: 'rgba(201, 168, 76, 0.5)', textUnderlineOffset: 5 }}
-                    >
-                      {title}
-                    </Link>
-                    <span style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.05rem', color: 'var(--gold-lt)', marginLeft: '0.75rem' }}>
-                      {mantra}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              {/* 2026-10-09, Susan: the five names are left off for balance;
+                  the Encounters page itself presents them. */}
+              <div style={{ height: '0.5rem' }} />
               <Link href="/encounters" className="home-coll-cta" data-cta="symbols-encounters" style={{ color: 'var(--gold-lt)', borderColor: 'var(--gold-lt)' }}>
                 Christian Encounters
               </Link>
