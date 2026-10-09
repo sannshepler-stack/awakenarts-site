@@ -191,6 +191,73 @@ export default function SymbolsIndexPage() {
           </div>
         </section>
 
+        {/* ── Christian Encounters (2026-10-09, Susan) ───────────────
+            Part of the Christian symbols experience: recognize the images
+            (cards above), explore them through guided reflection (here),
+            then write about them (the Journal, below). Dark, as on the
+            Encounters page. Approved wording only. */}
+        <section aria-labelledby="symbols-encounters-heading" style={{ background: 'var(--deep)', padding: 'var(--band-gap) 1.5rem' }}>
+          <div
+            style={{
+              maxWidth: 1000,
+              margin: '0 auto',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+              gap: '3rem',
+              alignItems: 'center',
+            }}
+          >
+            <Link href="/encounters" data-cta="symbols-encounters-image" style={{ display: 'block' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/encounters/journey/journey-02-web-opt.jpg"
+                alt="A golden path across open hills toward the horizon at sunset"
+                loading="lazy"
+                style={{ display: 'block', width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: 4, boxShadow: '0 12px 30px rgba(0, 0, 0, 0.35)' }}
+              />
+            </Link>
+            <div>
+              <p className="eyebrow" style={{ color: 'var(--gold-lt)' }}>Christian Encounters</p>
+              <h2
+                id="symbols-encounters-heading"
+                style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--cream)', margin: '0.75rem 0 1rem', lineHeight: 1.2 }}
+              >
+                Every journey begins with a single encounter.
+              </h2>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 'var(--body-line)', color: 'rgba(250, 246, 236, 0.88)', margin: '0 0 1.5rem' }}>
+                Through image, Scripture, and reflection, these encounters invite you to recognize biblical symbols,
+                consider their meaning in your own experience, and discover new ways of attending to your journey of
+                faith.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem' }}>
+                {[
+                  ['journey', 'Journey', 'I begin.'],
+                  ['deep', 'The Deep', 'I encounter.'],
+                  ['table', 'The Table', 'I receive.'],
+                  ['word', 'The Word', 'I listen.'],
+                  ['continue', 'Continue', 'I walk on.'],
+                ].map(([slug, title, mantra]) => (
+                  <li key={slug} style={{ margin: '0 0 0.4rem' }}>
+                    <Link
+                      href={`/encounters/${slug}`}
+                      data-cta={`symbols-encounter-${slug}`}
+                      style={{ fontFamily: 'var(--serif)', fontSize: '1.2rem', color: 'var(--cream)', textDecoration: 'underline', textDecorationColor: 'rgba(201, 168, 76, 0.5)', textUnderlineOffset: 5 }}
+                    >
+                      {title}
+                    </Link>
+                    <span style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.05rem', color: 'var(--gold-lt)', marginLeft: '0.75rem' }}>
+                      {mantra}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/encounters" className="home-coll-cta" data-cta="symbols-encounters" style={{ color: 'var(--gold-lt)', borderColor: 'var(--gold-lt)' }}>
+                Christian Encounters
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ── The Journal (2026-10-09, Susan) ─────────────────────────
             Its own section after Why Symbols Matter: from recognizing
             symbols to writing about them. Wording is the Journal page's
