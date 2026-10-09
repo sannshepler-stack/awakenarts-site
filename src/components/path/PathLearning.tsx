@@ -256,3 +256,70 @@ export function PathContinue() {
     </section>
   )
 }
+
+// Compact preview of the learning (2026-10-09, Susan: "more vital than the
+// page allows — clear, inclusive, but not overloaded"). Shows all four
+// categories with their approved benefit lines only, then links to the
+// full list on The AwakenArts Path. Used on /about/introduction.
+export function PathLearningPreview() {
+  return (
+    <section
+      aria-labelledby="learning-preview-heading"
+      style={{ padding: '3.5rem 1.5rem var(--band-gap)' }}
+    >
+      <div style={divider} aria-hidden="true" />
+      <h2 id="learning-preview-heading" style={sectionHeading}>
+        What Symbol Awareness Can Teach Us
+      </h2>
+      <ol
+        style={{
+          listStyle: 'none',
+          padding: 0,
+          maxWidth: 880,
+          margin: '2rem auto 0',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 360px), 1fr))',
+          gap: '1.75rem 3rem',
+        }}
+      >
+        {CATEGORIES.map((c, i) => (
+          <li key={c.title} style={{ display: 'flex', gap: '1rem', alignItems: 'baseline' }}>
+            <span
+              aria-hidden="true"
+              style={{ fontFamily: 'var(--sans)', fontSize: '0.8rem', fontWeight: 600, color: 'var(--gold)', minWidth: '1rem' }}
+            >
+              {i + 1}
+            </span>
+            <span>
+              <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: '1.35rem', lineHeight: 1.3, color: 'var(--deep)' }}>
+                {c.title}
+              </span>
+              <span
+                style={{
+                  display: 'block',
+                  fontFamily: 'var(--serif)',
+                  fontStyle: 'italic',
+                  fontSize: '1.05rem',
+                  lineHeight: 1.5,
+                  color: 'var(--gold)',
+                  marginTop: '0.35rem',
+                }}
+              >
+                {c.benefit}
+              </span>
+            </span>
+          </li>
+        ))}
+      </ol>
+      <p style={{ textAlign: 'center', margin: '2.5rem 0 0' }}>
+        <Link
+          href={`/awakenarts-path#${LEARNING_ANCHOR}`}
+          className="home-coll-cta home-coll-cta--light-surface"
+          data-cta="introduction-to-learning"
+        >
+          Explore What Symbol Awareness Can Teach
+        </Link>
+      </p>
+    </section>
+  )
+}

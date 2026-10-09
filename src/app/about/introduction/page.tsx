@@ -3,7 +3,7 @@ import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import ProtectedImage from '@/components/ProtectedImage'
-import TextLink, { TextLinkRow } from '@/components/TextLink'
+import { PathLearningPreview } from '@/components/path/PathLearning'
 
 // /about/introduction — A Free Introduction: the illustrated book
 // "The AwakenArts Path" (2026-10-09, Susan).
@@ -74,14 +74,7 @@ export default function FreeIntroductionPage() {
           </a>
         </section>
 
-        <section className="path-intro-close">
-          <div className="path-intro-close-divider" aria-hidden="true" />
-          <TextLinkRow center>
-            <TextLink href="/awakenarts-path#what-symbol-awareness-can-teach" cta="introduction-to-learning">
-              Explore What Symbol Awareness Can Teach
-            </TextLink>
-          </TextLinkRow>
-        </section>
+        <PathLearningPreview />
       </main>
 
       <WayfindingBand />
