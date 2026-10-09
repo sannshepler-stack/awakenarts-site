@@ -25,13 +25,14 @@ const DOORS: Door[] = [
   // destinations, with unmistakable links.
   { href: '/awakenarts-path', title: 'The AwakenArts Path', line: 'Explore What Symbol Awareness Can Teach', img: '/images/headers/symbols-figurative-landscape.jpg' },
   { href: '/about/introduction', title: 'Discover AwakenArts', line: 'Discover how poetry, image, and reflection can open new ways of seeing your own life.', img: '/images/path/when-language-shapes-a-path-cover.jpg', pos: 'center 100%' },
-  { href: '/encounters', title: 'Encounters', line: 'Every journey begins with a single encounter.', img: '/images/encounters/journey/journey-02-web-opt.jpg' },
+  { href: '/encounters', title: 'Christian Encounters', line: 'Five reflections in image and Scripture.', img: '/images/encounters/journey/journey-02-web-opt.jpg' },
   { href: '/journal', title: 'The Journal', line: 'A place to read, notice, and write — alongside works that prompted\u00A0it.', img: '/images/explore/journal-notebook.jpg' }, // notebook from the table header (Susan, 2026-10-07)
   { href: '/christian-symbols', title: 'Symbols for the Christian Soul', line: 'Scripture speaks in symbols.', img: '/images/homepage/encounters-symbols-ship-v3-opt.jpg' },
   // The Gallery returns as From the Books (2026-10-07, Susan): story images
   // from the books, so it no longer repeats the Collection.
   { href: '/gallery', title: 'From the Books', line: 'Images from the AwakenArts books.', img: '/images/gallery/where-you-stand/03-queen-ann-on-the-balcony.jpg', pos: 'center 35%' },
-  { href: '/experience', title: 'Make Your Own Word Art', line: 'Bring your own words and watch them take shape.', img: '/images/experiences/butterfly-wordart-opt.webp', dark: true },
+  // Make Your Own Word Art left the grid for its own section below
+  // (2026-10-09, Susan): something to do, not just a place to visit.
   // My Foundation now lives within the Path page (2026-10-07, Susan).
 ]
 
@@ -108,6 +109,56 @@ export default function ExplorePage() {
               </Link>
             ))}
           </div>
+        </section>
+
+        {/* ── Make Your Own Word Art (2026-10-09, Susan) ─────────────
+            Its own section, with both word-art examples, so it reads as
+            something to do rather than a place to visit. Wording reuses the
+            site's existing Word Art lines. */}
+        <section aria-labelledby="explore-word-art" style={{ background: 'var(--cream)', padding: '0 1.5rem var(--band-gap)', textAlign: 'center' }}>
+          <div aria-hidden="true" style={{ width: 64, height: 1, background: 'var(--gold)', opacity: 0.6, margin: '0 auto 3rem' }} />
+          <p className="eyebrow" style={{ justifyContent: 'center' }}>Word · Image · Form</p>
+          <h2
+            id="explore-word-art"
+            style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '1rem 0 0.75rem' }}
+          >
+            Make Your Own Word Art
+          </h2>
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.25rem', color: 'var(--mid)', margin: '0 0 2.5rem' }}>
+            Bring your own words and watch them take shape.
+          </p>
+          <div
+            style={{
+              maxWidth: 880,
+              margin: '0 auto',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+              gap: '1.5rem',
+            }}
+          >
+            {[
+              { src: '/images/experiences/butterfly-wordart-opt.webp', alt: 'Butterfly Word-Art — words arranged in the shape of a butterfly' },
+              { src: '/images/experiences/word-form-spiral-opt.webp', alt: 'Word-Form Spiral — words arranged in a spiral form' },
+            ].map((im) => (
+              <div key={im.src} style={{ background: 'var(--cream)', border: '1px solid var(--mist)', boxShadow: '0 8px 22px rgba(28, 43, 58, 0.08)', padding: '1.5rem' }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={im.src}
+                  alt={im.alt}
+                  loading="lazy"
+                  style={{ display: 'block', width: '100%', aspectRatio: '1 / 1', objectFit: 'contain' }}
+                />
+              </div>
+            ))}
+          </div>
+          <p style={{ margin: '2.5rem 0 0.75rem' }}>
+            <Link href="/experience" className="home-coll-cta home-coll-cta--light-surface" data-cta="explore-word-art">
+              Create a Word Form
+            </Link>
+          </p>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'var(--mid)', margin: 0 }}>
+            Begin with a word, memory, image, or phrase.
+          </p>
         </section>
         <StayConnected source="explore" />
       </main>
