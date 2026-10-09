@@ -51,6 +51,37 @@ export default function SymbolsIndexPage() {
           <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.35rem', color: 'var(--gold)', margin: 0 }}>
             You already speak in images. We all do.
           </p>
+          {/* Approved by Susan 2026-10-09: benefit-focused intro + link to The Path. */}
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: 'var(--body-size)',
+              lineHeight: 'var(--body-line)',
+              color: 'var(--deep)',
+              maxWidth: 640,
+              margin: '1.5rem auto 0',
+            }}
+          >
+            You already live with symbols: a wedding ring, a family photograph, a key, a path, a phrase like
+            &ldquo;I&rsquo;ve hit a wall.&rdquo; Choose a symbol to learn what it can carry, notice where it already
+            appears in your own life, and take one question with you.
+          </p>
+          <p style={{ margin: '1.25rem 0 0' }}>
+            <Link
+              href="/awakenarts-path"
+              data-cta="symbols-intro-path"
+              style={{
+                fontFamily: 'var(--sans)',
+                fontSize: '0.8rem',
+                fontWeight: 600,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: 'var(--gold)',
+              }}
+            >
+              See everything symbol awareness can teach &rarr; The AwakenArts Path
+            </Link>
+          </p>
         </section>
 
         {symbolCards.length > 0 && (
