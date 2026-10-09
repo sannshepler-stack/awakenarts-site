@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
+import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
@@ -73,6 +74,13 @@ export default function AwakenArtsPathPage() {
       <Nav />
 
       <main className="path-intro-page">
+        {/* 2026-10-09, Susan: header image — a stone path past an olive tree
+            toward the valley at sunrise. Same treatment as Explore's header. */}
+        <AtmosphericHeader
+          src="/images/headers/awakenarts-path-landscape.jpg"
+          alt="A stone path winding past an olive tree toward a misty valley and lake at sunrise"
+          fadeTo="var(--cream)"
+        />
         {/* 2026-08-19, per the Rework Pass 2 Implementation Standard:
             subtitle changed from "...the Practice of Recognition" --
             "recognition" no longer names AwakenArts' fuller model
@@ -83,7 +91,7 @@ export default function AwakenArtsPathPage() {
             Recognition") -- the PDF asset is unchanged in this pass,
             so a small mismatch between this page and the document it
             introduces exists until the PDF is revisited separately. */}
-        <section className="path-intro-hero">
+        <section className="path-intro-hero" style={{ paddingTop: '1.5rem' }}>
           <h1 className="path-intro-hero__title">The AwakenArts Path</h1>
           <p className="path-intro-hero__subtitle">
             Poetry, Image, and Seeing Your Life
