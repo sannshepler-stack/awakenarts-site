@@ -26,6 +26,8 @@
 import {
   useState,
   useCallback,
+  useEffect,
+  useRef,
   KeyboardEvent as ReactKeyboardEvent,
   MouseEvent as ReactMouseEvent,
 } from 'react'
@@ -67,6 +69,15 @@ export default function JournalIndexItem({ entry }: JournalIndexItemProps) {
 // the entry actually has prompts to reveal.
 function ReadyEntry({ entry }: { entry: JournalEntryData }) {
   const [isOpen, setIsOpen] = useState(false)
+  // A link ending in #entry-<slug> (from the homepage symbol search) opens
+  // this entry and brings it into view (2026-10-09).
+  const itemRef = useRef<HTMLLIElement>(null)
+  useEffect(() => {
+    if (window.location.hash === `#entry-${entry.slug}`) {
+      setIsOpen(true)
+      itemRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }, [entry.slug])
   const toggle = useCallback(() => setIsOpen((v) => !v), [])
   const close = useCallback(() => setIsOpen(false), [])
 
@@ -94,7 +105,7 @@ function ReadyEntry({ entry }: { entry: JournalEntryData }) {
     .join(' ')
 
   return (
-    <li className={rootClass}>
+    <li ref={itemRef} id={`entry-${entry.slug}`} className={rootClass}>
       <button
         type="button"
         className={styles.trigger}

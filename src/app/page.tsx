@@ -3,6 +3,7 @@ import Nav from '@/components/Nav'
 import HomeBeginWithSymbol from '@/components/HomeBeginWithSymbol'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
 import HomeImageMirror, { HomeQueenAnnMirror } from '@/components/HomeImageMirror'
+import HomeSymbolSearch from '@/components/HomeSymbolSearch'
 import HomeCollection from '@/components/HomeCollection'
 import HomeChristianSymbols from '@/components/HomeChristianSymbols'
 import HomeBooks from '@/components/HomeBooks'
@@ -127,6 +128,11 @@ export default function HomePage() {
       {/* Queen Ann — An image can become a mirror. White, raised to follow
           Section 2 (2026-10-07, Susan). */}
       <HomeQueenAnnMirror />
+
+      {/* 2026-10-09, Susan: "What Symbols Matter to You?" — a personal
+          invitation between the mirror and Scripture Speaks in Symbols.
+          Private, in-browser search of published content only. */}
+      <HomeSymbolSearch />
 
       {/* Christian Symbols with its boat image, on cream (2026-10-07, Susan). */}
       <HomeChristianSymbols />

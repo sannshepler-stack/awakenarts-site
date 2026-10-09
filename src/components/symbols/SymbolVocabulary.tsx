@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { SYMBOLS } from '@/data/symbols'
 
 // Symbol Vocabulary (2026-10-09, Susan: "the vocabulary is good and can
@@ -11,9 +11,20 @@ import { SYMBOLS } from '@/data/symbols'
 export default function SymbolVocabulary() {
   const [activeSlug, setActiveSlug] = useState<string | null>(null)
   const active = activeSlug ? SYMBOLS.find((s) => s.slug === activeSlug) : undefined
+  const sectionRef = useRef<HTMLElement>(null)
+
+  // Opening with ?word=<slug> (from the homepage symbol search) preselects
+  // that word and brings the vocabulary into view. Read on the client only.
+  useEffect(() => {
+    const word = new URLSearchParams(window.location.search).get('word')
+    if (word && SYMBOLS.some((s) => s.slug === word)) {
+      setActiveSlug(word)
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }, [])
 
   return (
-    <section className="symbols-vocab-section" aria-labelledby="symbols-vocab-heading">
+    <section ref={sectionRef} id="symbol-vocabulary" className="symbols-vocab-section" aria-labelledby="symbols-vocab-heading" style={{ scrollMarginTop: '6rem' }}>
       <h2 id="symbols-vocab-heading" className="symbols-vocab-heading">
         Symbol Vocabulary
       </h2>
