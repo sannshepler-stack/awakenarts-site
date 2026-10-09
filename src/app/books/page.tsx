@@ -4,13 +4,14 @@ import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import BookTile from '@/components/books/BookTile'
 import { books } from '@/data/books'
+import { PathBookFeature } from '@/components/path/PathLearning'
 
 // /books — Books & Journals (Rebuild Plan §6). Books first, as paid work;
 // free resources in their own, quieter section below.
 
 export const metadata: Metadata = {
   title: 'Books & Journals',
-  description: 'Books and Seek & Find journals by Susan Ann Shepler, with free AwakenArts resources.',
+  description: 'Books and Seek & Find journals by Susan Ann Shepler, and The AwakenArts Path, an introduction to what symbol awareness can teach.',
   alternates: { canonical: '/books' },
 }
 
@@ -44,7 +45,11 @@ export default function BooksPage() {
         </section>
 
         {/* Free Resource section removed (Susan, 2026-10-07): the Path is not a
-            book; it lives in Explore. FreeResources component kept. */}
+            book; it lives in Explore. FreeResources component kept.
+            2026-10-09, Susan: the Path book returns in its own section, on
+            this landing page only, promoting the learning path that leads
+            to the book. */}
+        <PathBookFeature />
 
         {/* Encounter Journal signup removed (Susan, 2026-10-07): it is a
             companion to the Encounters, not a book. Homepage and Explore keep it. */}
