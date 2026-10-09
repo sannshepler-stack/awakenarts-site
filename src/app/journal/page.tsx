@@ -17,6 +17,7 @@
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import TerritoryNav from '@/components/journal/TerritoryNav'
+import SymbolVocabulary from '@/components/symbols/SymbolVocabulary'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import styles from './page.module.css'
@@ -71,6 +72,13 @@ export default function JournalIndexPage() {
           a key. Choose one, and write about where it appears in your own life.
         </p>
       </section>
+
+      {/* ── Symbol Vocabulary (2026-10-09, Susan) ──────────────────
+          Moved from /symbols: the Christian symbols vocabulary begins the
+          Journal page; the Reflection Paths follow in their own section. */}
+      <div style={{ background: 'var(--cream)', paddingBottom: 'var(--band-gap)' }}>
+        <SymbolVocabulary />
+      </div>
 
       {/* ── Dark Journal hero ──────────────────────────────────────── */}
       <main className={styles.page}>

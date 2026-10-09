@@ -5,7 +5,6 @@ import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import WorldDoorways from '@/components/WorldDoorways'
 import SymbolTile from '@/components/symbols/SymbolTile'
-import SymbolVocabulary from '@/components/symbols/SymbolVocabulary'
 import { symbolCards } from '@/data/symbolCards'
 import { CATEGORIES as JOURNAL_PATHS } from '@/components/journal/categories'
 
@@ -105,11 +104,8 @@ export default function SymbolsIndexPage() {
           </section>
         )}
 
-        {/* 2026-10-09, Susan: the Symbol Vocabulary (20 words) moves here
-            from /christian-symbols, right after the eight cards. */}
-        <div style={{ paddingBottom: 'var(--band-gap)' }}>
-          <SymbolVocabulary />
-        </div>
+        {/* 2026-10-09, Susan: the Symbol Vocabulary moved on to open the
+            Journal page, so this page is not overloaded. */}
 
         {/* Why Symbols Matter — Susan's wording, 2026-10-09. Placed beneath the
             gallery: visitors encounter the symbols first, then deepen understanding. */}
