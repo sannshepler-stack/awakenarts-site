@@ -46,21 +46,29 @@ export default function SymbolsIndexPage() {
           <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.35rem', color: 'var(--gold)', margin: 0 }}>
             Scripture speaks in symbols.
           </p>
-          {/* Approved by Susan 2026-10-09: benefit-focused intro + link to The Path. */}
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: 'var(--body-size)',
-              lineHeight: 'var(--body-line)',
-              color: 'var(--deep)',
-              maxWidth: 640,
-              margin: '1.5rem auto 0',
-            }}
-          >
-            You already live with symbols: a wedding ring, a family photograph, a key, a path, a phrase like
-            &ldquo;I&rsquo;ve hit a wall.&rdquo; Choose a symbol to learn what it can carry, notice where it already
-            appears in your own life, and take one question with you.
-          </p>
+          {/* 2026-10-09, Susan: this page's own introduction, on why
+              recognizing biblical symbolism enriches Scripture reading,
+              reflection, and faith. Replaces the general everyday-symbols
+              paragraph. Link to The Path kept. */}
+          {[
+            'Scripture speaks through familiar images: lamps, paths, vines, seeds, bread, and water. These ordinary things carry meaning within the stories and teachings of the Bible.',
+            'Learning to recognize biblical symbols can deepen your understanding of Scripture and enrich the way you encounter its language in reading, reflection, and prayer.',
+            'Choose a symbol to explore its biblical meaning, consider its place in everyday life, and reflect on what it may mean to you.',
+          ].map((para, k) => (
+            <p
+              key={k}
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: 'var(--body-size)',
+                lineHeight: 'var(--body-line)',
+                color: 'var(--deep)',
+                maxWidth: 640,
+                margin: k === 0 ? '1.5rem auto 0' : '0.85rem auto 0',
+              }}
+            >
+              {para}
+            </p>
+          ))}
           <p style={{ margin: '1.25rem 0 0' }}>
             <Link
               href="/awakenarts-path#what-symbol-awareness-can-teach"
