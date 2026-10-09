@@ -49,7 +49,17 @@ export default function SymbolsPage() {
             per no-silent-deletion. */}
         <SymbolsEncounters />
 
-        <section className="symbols-continuation" aria-label="More About the Figures">
+        {/* 2026-10-09, Susan: Christian Symbols (recognize biblical imagery)
+            leads to Christian Encounters (explore it through guided
+            reflection). The four cards above still open each Encounter. */}
+        <section
+          className="symbols-continuation"
+          aria-label="Continue"
+          style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', maxWidth: 1040 }}
+        >
+          <Link href="/encounters" className="home-coll-cta home-coll-cta--light-surface" data-cta="christian-symbols-encounters">
+            Explore the Christian Encounters
+          </Link>
           <Link href="/collection" className="home-coll-cta home-coll-cta--light-surface">
             More About the Figures
           </Link>
