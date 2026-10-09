@@ -1,21 +1,22 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import ProtectedImage from '@/components/ProtectedImage'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
+import PathLearning, { PathContinue } from '@/components/path/PathLearning'
 
 export const metadata: Metadata = {
   title: 'The AwakenArts Path — An Introduction to AwakenArts',
+  // 2026-10-09, Susan: search description states what visitors will learn.
   description:
-    'The AwakenArts Path: Poetry, Image, and Seeing Your Life — an illustrated introduction to the symbolic language, images, poetry, and reflective approach behind AwakenArts. Read or download it free.',
+    'What symbol awareness can teach you: how to notice the symbols you already live with, see yourself more clearly, understand others, culture, and faith, and carry reflection into everyday life. Read or download the Path free.',
   alternates: { canonical: '/awakenarts-path' },
   openGraph: {
     url: '/awakenarts-path',
     title: 'The AwakenArts Path — An Introduction to AwakenArts',
     description:
-      'Poetry, Image, and Seeing Your Life — an illustrated introduction to the symbolic language, images, poetry, and reflective approach behind AwakenArts.',
+      'What symbol awareness can teach you: notice the symbols you already live with, see yourself more clearly, understand others, culture, and faith, and carry reflection into everyday life.',
   },
 }
 
@@ -111,7 +112,7 @@ export default function AwakenArtsPathPage() {
               Section 7's "Path / core explanation" standard. */}
           <p className="path-intro-about__body">
             This is a short introduction to how AwakenArts works — read
-            it before your first Encounter or workshop.
+            it before your first presentation or workshop.
           </p>
           <p className="path-intro-about__body">
             A story or image draws you in. A poem gives it words.
@@ -156,9 +157,16 @@ export default function AwakenArtsPathPage() {
           </a>
         </section>
 
-        {/* 2026-10-07, Susan: tie the Path and My Foundation together. Lines
+        <PathLearning />
+
+        <PathContinue />
+
+        {/* 2026-10-07, Susan: tie the Path and My Foundation together.
+            2026-10-09, Susan: moved to the end of the page, after Where to
+            Continue, so it closes the page rather than interrupting the
+            movement from learning to application. Lines
             are verbatim from /foundation; the Foundation card leaves Explore. */}
-        <section className="path-foundation" aria-labelledby="path-foundation-heading">
+        <section className="path-foundation" aria-labelledby="path-foundation-heading" style={{ paddingTop: '3.5rem' }}>
           <div className="path-intro-close-divider" aria-hidden="true" />
           <p className="eyebrow" style={{ justifyContent: 'center' }}>My Foundation</p>
           <h2 id="path-foundation-heading" className="path-foundation__line">
@@ -173,46 +181,6 @@ export default function AwakenArtsPathPage() {
           </TextLinkRow>
         </section>
 
-        {/* ── Closing ───────────────────────────────────────────────
-            2026-07-25, per Susan's "Homepage Hero and Primer Closing
-            Revision" directive: no heading, no explanatory sentence, no
-            arrow, no reference to an "Encounter Sequence" or to
-            beginning/readiness -- the visitor has already begun by
-            reading the Path. The complete closing idea, per her own
-            framing: gold line -> pause -> Experience the Encounters.
-            2026-07-25, later the same day, per her "Primer Action
-            System" refinement: the link now uses .path-intro-btn--quiet
-            (the same unified style as Read/Download, just narrower)
-            instead of .hero-invitation__title -- that treatment's own
-            underline stacked with this section's divider into a double-
-            rule effect; removed in favor of one consistent action
-            language across all three.
-            2026-07-26, per Susan's navigation-ecosystem directive: this
-            CTA was retained verbatim -- "after learning the language and
-            framework of AwakenArts, the natural next step is to enter
-            the Encounters." Encounters carries the reciprocal invitation
-            back to The Path in its own closing section (see
-            src/app/encounters/page.tsx).
-
-            2026-08-20, per Susan's directive ("Have to remove this from
-            the Path Page / name Christian Symbols and go to symbols
-            page"): destination changed from a direct link into
-            Encounters (/encounters) to Christian Symbols (/symbols).
-            Encounters is no longer a page a visitor is sent to
-            directly -- it's reached from within Symbols, via the "From
-            Symbol to Experience" transition and the Journey/Deep/
-            Table/Word card grid built there this same day (see
-            SymbolsEncounters.tsx). This closing link now hands the
-            Path's visitor to that same entry point rather than
-            bypassing it. Divider, quiet-button treatment, and the "no
-            heading/no explanation" closing philosophy above are
-            unchanged -- only the label and href move. */}
-        <section className="path-intro-close">
-          <div className="path-intro-close-divider" aria-hidden="true" />
-          <Link href="/christian-symbols" className="path-intro-btn path-intro-btn--quiet">
-            Christian Symbols
-          </Link>
-        </section>
       </main>
 
       <WayfindingBand />

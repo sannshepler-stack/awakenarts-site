@@ -68,7 +68,7 @@ export default function SymbolsIndexPage() {
           </p>
           <p style={{ margin: '1.25rem 0 0' }}>
             <Link
-              href="/awakenarts-path"
+              href="/awakenarts-path#what-symbol-awareness-can-teach"
               data-cta="symbols-intro-path"
               style={{
                 fontFamily: 'var(--sans)',

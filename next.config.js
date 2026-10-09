@@ -8,7 +8,8 @@ const nextConfig = {
     return [
       // Retired routes — all resolve to the clarified architecture.
       // /path and sub-pages → /studio (figures now live under Studio)
-      { source: '/path',           destination: '/studio', permanent: true },
+      // 2026-10-09, Susan: /path now reaches The AwakenArts Path (was /studio).
+      { source: '/path',           destination: '/awakenarts-path', permanent: true },
       { source: '/path/grismere',  destination: '/studio', permanent: true },
       { source: '/path/ballerina', destination: '/studio', permanent: true },
       { source: '/path/ann',       destination: '/studio', permanent: true },
