@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import WorldDoorways from '@/components/WorldDoorways'
 import SymbolTile from '@/components/symbols/SymbolTile'
 import { symbolCards } from '@/data/symbolCards'
+import { CATEGORIES as JOURNAL_PATHS } from '@/components/journal/categories'
 
 // /symbols — the Symbol Card collection, primary marketing entry (D10,
 // approved 2026-10-05). Each tile opens that symbol's Portal.
@@ -187,6 +188,63 @@ export default function SymbolsIndexPage() {
                 Explore the Symbol Vocabulary &rarr;
               </Link>
             </p>
+          </div>
+        </section>
+
+        {/* ── The Journal (2026-10-09, Susan) ─────────────────────────
+            Its own section after Why Symbols Matter: from recognizing
+            symbols to writing about them. Wording is the Journal page's
+            own; the five Reflection Paths link straight in. */}
+        <section aria-labelledby="symbols-journal-heading" style={{ background: 'var(--warm)', padding: 'var(--band-gap) 1.5rem' }}>
+          <div
+            style={{
+              maxWidth: 1000,
+              margin: '0 auto',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+              gap: '3rem',
+              alignItems: 'center',
+            }}
+          >
+            <Link href="/journal" data-cta="symbols-journal-image" style={{ display: 'block' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/explore/journal-notebook.jpg"
+                alt="An open journal notebook on a table beside AwakenArts figures"
+                loading="lazy"
+                style={{ display: 'block', width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: 4, boxShadow: '0 12px 30px rgba(28, 43, 58, 0.15)' }}
+              />
+            </Link>
+            <div>
+              <p className="eyebrow">The Journal</p>
+              <h2
+                id="symbols-journal-heading"
+                style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '0.75rem 0 1rem', lineHeight: 1.2 }}
+              >
+                A place to read, notice, and write
+              </h2>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 'var(--body-line)', color: 'var(--deep)', margin: '0 0 1.5rem' }}>
+                Reflections and journaling prompts that walk alongside particular works in the Collection — a place to
+                slow down, notice what comes up, and write it down before it passes.
+              </p>
+              <p className="eyebrow" style={{ margin: '0 0 0.75rem' }}>Reflection Paths</p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem 1.25rem' }}>
+                {JOURNAL_PATHS.map((c) => (
+                  <li key={c.slug}>
+                    <Link
+                      href={`/journal/${c.slug}`}
+                      data-cta={`symbols-journal-${c.slug}`}
+                      style={{ fontFamily: 'var(--serif)', fontSize: '1.2rem', color: 'var(--deep)', textDecoration: 'underline', textDecorationColor: 'rgba(138, 106, 31, 0.45)', textUnderlineOffset: 5 }}
+                    >
+                      {c.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/journal" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-journal">
+                Go to the Journal
+              </Link>
+            </div>
           </div>
         </section>
 
