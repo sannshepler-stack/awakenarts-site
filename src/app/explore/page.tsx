@@ -4,7 +4,6 @@ import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import StayConnected from '@/components/StayConnected'
-import AtmosphericHeader from '@/components/AtmosphericHeader'
 
 // /explore — "Discover AwakenArts" hub (Rebuild Plan §1, 2026-10-05).
 // Gathers the reflective pages under one doorway. Every line below is that
@@ -23,7 +22,7 @@ type Door = { href: string; title: string; line?: string; img: string; pos?: str
 const DOORS: Door[] = [
   // 2026-10-09, Susan: the learning Path and the free book are separate
   // destinations, with unmistakable links.
-  { href: '/awakenarts-path', title: 'The AwakenArts Path', line: 'Explore What Symbol Awareness Can Teach', img: '/images/headers/symbols-figurative-landscape.jpg' },
+  { href: '/awakenarts-path', title: 'The AwakenArts Path', line: 'Explore What Symbol Awareness Can Teach', img: '/images/headers/awakenarts-path-landscape.jpg', pos: 'center 60%' },
   { href: '/about/introduction', title: 'Discover AwakenArts', line: 'Discover how poetry, image, and reflection can open new ways of seeing your own life.', img: '/images/path/when-language-shapes-a-path-cover.jpg', pos: 'center 100%' },
   { href: '/encounters', title: 'Christian Encounters', line: 'Five reflections in image and Scripture.', img: '/images/encounters/journey/journey-02-web-opt.jpg' },
   { href: '/journal', title: 'The Journal', line: 'A place to read, notice, and write — alongside works that prompted\u00A0it.', img: '/images/explore/journal-notebook.jpg' }, // notebook from the table header (Susan, 2026-10-07)
@@ -43,11 +42,18 @@ export default function ExplorePage() {
       <main style={{ background: 'var(--cream)' }}>
         {/* 2026-10-07, Susan: the poetry manuscript (language) opens Explore;
             the figures table moved to /presentations. */}
-        <AtmosphericHeader
-          src="/images/headers/poetry-manuscript.jpg"
-          alt="An open manuscript of poetry on a writing desk in soft light"
-          fadeTo="var(--cream)"
-        />
+        {/* 2026-10-09, Susan: the watercolor of walls, a crossroads, and
+            stepping stones (also the Journal's header) now opens Explore,
+            beneath "When Language Shapes a Path". White ground blends into
+            the cream page (multiply), as on the Journal. */}
+        <div style={{ padding: 'calc(var(--band-gap) + 1rem) 1.5rem 0' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/headers/symbols-figurative-landscape.jpg"
+            alt="A watercolor landscape: an opening in a stone wall, paths that part, and stepping stones across still water toward the sunrise"
+            style={{ display: 'block', width: '100%', maxWidth: 1180, margin: '0 auto', mixBlendMode: 'multiply' }}
+          />
+        </div>
         <section style={{ padding: '2rem 1.5rem 3.75rem', textAlign: 'center' }}>
           <p className="eyebrow" style={{ justifyContent: 'center' }}>Explore</p>
           <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-page)', lineHeight: 1.15, color: 'var(--deep)', margin: '1rem 0 0' }}>
