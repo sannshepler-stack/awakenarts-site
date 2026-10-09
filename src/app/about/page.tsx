@@ -180,24 +180,8 @@ export default function AboutPage() {
                 route, its assets, and its robots.txt disallow entry are
                 untouched — only this inline invitation is removed. */}
             <div className="about-links">
-              <p className="about-links__item">
-                {/* 2026-10-09: straight to Presentations & Workshops (was /workshops, a redirect). */}
-                <Link href="/presentations" className="home-coll-cta home-coll-cta--light-surface">
-                  Explore Presentations &amp; Workshops
-                </Link>
-                <span className="about-links__desc">
-                  See how Susan conducts the workshop experience.
-                </span>
-              </p>
-              {/* 2026-10-09, Susan: the introduction book now lives under About. */}
-              <p className="about-links__item">
-                <Link href="/about/introduction" className="home-coll-cta home-coll-cta--light-surface">
-                  Read the Introduction
-                </Link>
-                <span className="about-links__desc">
-                  The AwakenArts Path, an illustrated introduction to the approach.
-                </span>
-              </p>
+              {/* 2026-10-09, Susan: "Use Foundations only" — the Presentations
+                  and Introduction links were removed from here. */}
               <p className="about-links__item">
                 <Link href="/foundation" className="home-coll-cta home-coll-cta--light-surface">
                   Read the Foundation of AwakenArts
