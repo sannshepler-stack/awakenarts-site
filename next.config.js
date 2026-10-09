@@ -51,6 +51,9 @@ const nextConfig = {
       // 2026-10-09: /studio/silhouettes repeated /studio's poems and
       // silhouettes; archived in src/app/_archive/studio-silhouettes-2026-10.
       { source: '/studio/silhouettes', destination: '/studio', permanent: true },
+      // 2026-10-09: /method retired; its content lives on The AwakenArts
+      // Path and About the Poetry Shapes (archived in src/app/_archive/retired-2026-10).
+      { source: '/method', destination: '/awakenarts-path', permanent: true },
       { source: '/workshops', destination: '/presentations', permanent: true },
       { source: '/presentations-workshops', destination: '/presentations', permanent: true },
       // 2026-10-05 (Susan): Guided Encounters are presentations. The old
