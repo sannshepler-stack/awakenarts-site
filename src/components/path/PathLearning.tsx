@@ -317,7 +317,7 @@ export function PathLearningPreview() {
           className="home-coll-cta home-coll-cta--light-surface"
           data-cta="introduction-to-learning"
         >
-          Explore What Symbol Awareness Can Teach
+          What Symbols Can Teach
         </Link>
       </p>
     </section>
@@ -325,89 +325,62 @@ export function PathLearningPreview() {
 }
 
 // Books landing page section (2026-10-09, Susan): the introduction book in
-// its own section, promoting the learning path that leads to it. Cover,
-// the approved learning introduction, the four category titles, then the
-// learning first and the book second. Approved wording only.
+// its own quiet section, promoting the learning path that leads to it.
+// Revised the same day: "don't overwhelm the for-sale books" — small cover,
+// one line, two text links, on the page's own cream (no band, no list).
+const quietLink: React.CSSProperties = {
+  fontFamily: 'var(--sans)',
+  fontSize: '0.8rem',
+  fontWeight: 600,
+  letterSpacing: '0.12em',
+  textTransform: 'uppercase',
+  color: 'var(--gold)',
+}
+
 export function PathBookFeature() {
   return (
-    <section
-      aria-labelledby="path-book-heading"
-      style={{ background: 'var(--warm)', padding: 'var(--band-gap) 1.5rem' }}
-    >
+    <section aria-labelledby="path-book-heading" style={{ padding: '0 1.5rem var(--band-gap)' }}>
+      <div style={divider} aria-hidden="true" />
       <div
         style={{
-          maxWidth: 960,
+          maxWidth: 720,
           margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
-          gap: '3rem',
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '2rem',
           alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
-        <Link href="/about/introduction" data-cta="books-path-cover" style={{ display: 'block', maxWidth: 320, margin: '0 auto' }}>
+        <Link href="/about/introduction" data-cta="books-path-cover" style={{ display: 'block', width: 140, flex: '0 0 auto' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/path/when-language-shapes-a-path-cover.jpg"
             alt="Cover of The AwakenArts Path"
             loading="lazy"
-            style={{ display: 'block', width: '100%', boxShadow: '0 14px 34px rgba(28, 43, 58, 0.2)' }}
+            style={{ display: 'block', width: '100%', boxShadow: '0 8px 20px rgba(28, 43, 58, 0.15)' }}
           />
         </Link>
-        <div>
+        <div style={{ flex: '1 1 320px' }}>
           <p className="eyebrow">An Introduction to AwakenArts</p>
           <h2
             id="path-book-heading"
-            style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '0.75rem 0 1rem' }}
+            style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-card, 1.5rem)', color: 'var(--deep)', margin: '0.5rem 0 0.6rem' }}
           >
             The AwakenArts Path
           </h2>
-          <p
-            style={{
-              fontFamily: 'var(--serif)',
-              fontStyle: 'italic',
-              fontSize: '1.2rem',
-              lineHeight: 1.5,
-              color: 'var(--mid)',
-              margin: '0 0 1.5rem',
-            }}
-          >
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', lineHeight: 1.5, color: 'var(--mid)', margin: '0 0 1.1rem' }}>
             You already live with symbols. Along this path, you&rsquo;ll learn to notice them, understand what they
             carry, and use them to see your own story more clearly.
           </p>
-          <ol style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem' }}>
-            {CATEGORIES.map((c, i) => (
-              <li
-                key={c.title}
-                style={{
-                  display: 'flex',
-                  gap: '0.85rem',
-                  alignItems: 'baseline',
-                  fontFamily: 'var(--serif)',
-                  fontSize: '1.2rem',
-                  lineHeight: 1.4,
-                  color: 'var(--deep)',
-                  margin: '0 0 0.55rem',
-                }}
-              >
-                <span aria-hidden="true" style={{ fontFamily: 'var(--sans)', fontSize: '0.78rem', fontWeight: 600, color: 'var(--gold)' }}>
-                  {i + 1}
-                </span>
-                {c.title}
-              </li>
-            ))}
-          </ol>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-            <Link
-              href={`/awakenarts-path#${LEARNING_ANCHOR}`}
-              className="home-coll-cta home-coll-cta--light-surface"
-              data-cta="books-path-learning"
-            >
-              Explore What Symbol Awareness Can Teach
+          <p style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem 1.75rem', margin: 0 }}>
+            <Link href={`/awakenarts-path#${LEARNING_ANCHOR}`} data-cta="books-path-learning" style={quietLink}>
+              What Symbols Can Teach &rarr;
             </Link>
-            <Link href="/about/introduction" className="home-coll-cta home-coll-cta--light-surface" data-cta="books-path-book">
-              Read the Introduction
+            <Link href="/about/introduction" data-cta="books-path-book" style={quietLink}>
+              Read the Introduction &rarr;
             </Link>
-          </div>
+          </p>
         </div>
       </div>
     </section>
