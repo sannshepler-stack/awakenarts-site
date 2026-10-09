@@ -4,7 +4,7 @@ import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import TextLink, { TextLinkRow } from '@/components/TextLink'
-import PathLearning, { PathContinue } from '@/components/path/PathLearning'
+import PathLearning, { PathContinue, PathPractice } from '@/components/path/PathLearning'
 
 export const metadata: Metadata = {
   title: 'The AwakenArts Path — What Symbol Awareness Can Teach',
@@ -118,6 +118,8 @@ export default function AwakenArtsPathPage() {
         </section>
 
         <PathLearning />
+
+        <PathPractice />
 
         <PathContinue />
 

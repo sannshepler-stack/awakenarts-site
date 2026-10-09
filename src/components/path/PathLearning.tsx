@@ -395,3 +395,58 @@ export function PathBookFeature() {
     </section>
   )
 }
+
+// A Practice of Attention (approved by Susan, 2026-10-09). Carried over
+// verbatim from /method before that page was retired. Sits between "What
+// Symbol Awareness Can Teach Us" and "Where to Continue": what you'll learn,
+// how to practice it, where to go next.
+export function PathPractice() {
+  const body: React.CSSProperties = {
+    fontFamily: 'var(--font-body)',
+    fontSize: 'var(--body-size)',
+    lineHeight: 'var(--body-line)',
+    color: 'var(--deep)',
+    margin: '0 0 1rem',
+  }
+  return (
+    <section aria-labelledby="path-practice-heading" style={{ padding: '0 1.5rem var(--band-gap)' }}>
+      <div style={{ maxWidth: 640, margin: '0 auto' }}>
+        <div style={divider} aria-hidden="true" />
+        <p
+          style={{
+            fontFamily: 'var(--serif)',
+            fontStyle: 'italic',
+            fontSize: '1.35rem',
+            lineHeight: 1.45,
+            color: 'var(--gold)',
+            textAlign: 'center',
+            margin: '0 0 2rem',
+          }}
+        >
+          People tell their stories with facts. They reveal their lives through images.
+        </p>
+        <h2 id="path-practice-heading" style={sectionHeading}>
+          A Practice of Attention
+        </h2>
+        <p style={body}>
+          AwakenArts is not primarily about interpreting symbols. It is about learning to notice them. Recognition
+          arises through sustained attention, not immediate explanation.
+        </p>
+        <p style={body}>The practice itself is simple to name, if not always simple to do:</p>
+        <ol style={{ ...body, paddingLeft: '1.5rem', margin: '0 0 1.5rem' }}>
+          {['Notice.', 'Become curious.', 'Remain with the image.', 'Allow recognition to emerge.', 'Do not force interpretation.'].map(
+            (step) => (
+              <li key={step} style={{ margin: '0 0 0.35rem' }}>
+                {step}
+              </li>
+            ),
+          )}
+        </ol>
+        <p style={{ ...body, fontStyle: 'italic', color: 'var(--mid)', margin: 0 }}>
+          This practice is not new. It is understood within the historic Christian tradition of figurative language
+          and parable, where image and story have always carried what direct explanation cannot.
+        </p>
+      </div>
+    </section>
+  )
+}
