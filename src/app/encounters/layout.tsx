@@ -6,9 +6,9 @@ import type { Metadata } from 'next'
 // It's indexed, and its own page introduces the five encounters
 // (Journey, The Deep, The Table, The Word, Continue) directly.
 //
-// The figure-tied routes set aside by this change (dragon, vase, queen,
-// butterfly, continuum, and the retired mermaid redirect) keep their own
-// noindex metadata / robots.ts disallow rules — see those files.
+// The figure-tied routes (dragon, vase, queen, butterfly, continuum,
+// mermaid) were retired 2026-10-09: archived in
+// src/app/_archive/encounters-figures-2026-10 and redirected to /encounters.
 
 export const metadata: Metadata = {
   title: 'Encounters — AwakenArts',

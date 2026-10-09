@@ -40,6 +40,14 @@ const nextConfig = {
       { source: '/editions/:slug/purchase', destination: '/collection/:slug', permanent: false },
       { source: '/editions/:path*', destination: '/collection/:path*', permanent: false },
       // 2026-10-05: workshops are part of Presentations & Workshops, not Guided Encounters.
+      // 2026-10-09, Susan: the Figure video encounters are retired
+      // (archived in src/app/_archive/encounters-figures-2026-10).
+      { source: '/encounters/dragon',    destination: '/encounters', permanent: true },
+      { source: '/encounters/vase',      destination: '/encounters', permanent: true },
+      { source: '/encounters/queen',     destination: '/encounters', permanent: true },
+      { source: '/encounters/butterfly', destination: '/encounters', permanent: true },
+      { source: '/encounters/mermaid',   destination: '/encounters', permanent: true },
+      { source: '/encounters/continuum', destination: '/encounters', permanent: true },
       { source: '/workshops', destination: '/presentations', permanent: true },
       { source: '/presentations-workshops', destination: '/presentations', permanent: true },
       // 2026-10-05 (Susan): Guided Encounters are presentations. The old

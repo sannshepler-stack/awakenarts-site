@@ -30,11 +30,9 @@ const ALLOWED_BOTS = [
   'DuckAssistBot',
 ]
 
-// Encounters architecture (2026-06-25): the figure-tied encounters
-// (dragon, vase/Bowls, queen, butterfly, continuum) and the old Mermaid
-// route (now a redirect into /encounters/journey) are all set aside —
-// not deleted, just unlinked from the new index — so they stay
-// disallowed rather than indexed as standalone results.
+// 2026-10-09: the figure-tied encounters (dragon, vase, queen, butterfly,
+// continuum, mermaid) are retired and redirect to /encounters, so they no
+// longer need disallow rules.
 //
 // Unlisted Page System (2026-06-27): pages built and live on the site
 // but deliberately left out of Nav/WayfindingBand/Footer, reachable only
@@ -42,12 +40,6 @@ const ALLOWED_BOTS = [
 // engines don't surface them early. See AwakenArts_Site_Architecture.md
 // -> "Unlisted Page System" for the full convention.
 const DISALLOWED_PATHS = [
-  '/encounters/vase',
-  '/encounters/dragon',
-  '/encounters/queen',
-  '/encounters/butterfly',
-  '/encounters/continuum',
-  '/encounters/mermaid',
   '/facilitator-orientation',
   '/sketchbook',
   '/files/workshops/',
