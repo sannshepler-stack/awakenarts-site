@@ -84,6 +84,58 @@ export default function SymbolsIndexPage() {
           </p>
         </section>
 
+        {/* Why Symbols Matter — Susan's wording, 2026-10-09. Teaches before
+            the visitor selects a first card. */}
+        <section aria-labelledby="why-symbols-matter" style={{ padding: '0 1.5rem 3rem' }}>
+          <div style={{ maxWidth: 640, margin: '0 auto' }}>
+            <h2
+              id="why-symbols-matter"
+              style={{
+                fontFamily: 'var(--serif)',
+                fontWeight: 400,
+                fontSize: 'var(--t-section)',
+                color: 'var(--deep)',
+                textAlign: 'center',
+                margin: '0 0 1.5rem',
+              }}
+            >
+              Why Symbols Matter
+            </h2>
+            {[
+              'A wedding ring is more than jewelry. A family photograph is more than a picture. A gate can represent welcome, protection, or exclusion. Ordinary objects carry memories, values, relationships, and experiences that matter to us.',
+              'We also speak in symbols without noticing. We reach a crossroads, open a door, carry a burden, or find our way.',
+              'Learning to recognize these images can help us understand how we express ourselves, remember what matters, and see familiar experiences from another perspective.',
+            ].map((para, k) => (
+              <p
+                key={k}
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: 'var(--body-size)',
+                  lineHeight: 'var(--body-line)',
+                  color: 'var(--deep)',
+                  margin: '0 0 1rem',
+                }}
+              >
+                {para}
+              </p>
+            ))}
+            <p
+              style={{
+                fontFamily: 'var(--serif)',
+                fontStyle: 'italic',
+                fontSize: '1.2rem',
+                lineHeight: 1.5,
+                color: 'var(--mid)',
+                textAlign: 'center',
+                margin: '1.75rem 0 0',
+              }}
+            >
+              Choose a symbol below. Discover what it can mean, where it appears in everyday language, and what it
+              might help you recognize in your own life.
+            </p>
+          </div>
+        </section>
+
         {symbolCards.length > 0 && (
           <section aria-label="Symbol Cards" style={{ padding: '1rem 1.5rem var(--band-gap)' }}>
             <div
