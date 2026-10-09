@@ -269,7 +269,7 @@ export default function SymbolsIndexPage() {
                 id="symbols-journal-heading"
                 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '0.75rem 0 1rem', lineHeight: 1.2 }}
               >
-                A place to read, notice, and write
+                Read, Notice, and Write
               </h2>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 'var(--body-line)', color: 'var(--deep)', margin: '0 0 1.5rem' }}>
                 Reflections and journaling prompts that walk alongside particular works in the Collection — a place to
