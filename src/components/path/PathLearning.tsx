@@ -68,9 +68,11 @@ const CATEGORIES: Category[] = [
 ]
 
 const CONTINUE = [
-  { label: 'Symbols', href: '/symbols', text: 'Recognize the meanings in everyday images, one card at a time.' },
+  // 2026-10-09, Susan: Symbols and Christian Symbols led to the same
+  // experience; Christian Encounters takes the second place.
+  { label: 'Symbols', href: '/symbols', text: 'Read Scripture’s images with fresh attention, one card at a time.' },
+  { label: 'Christian Encounters', href: '/encounters', text: 'Five reflections in image and Scripture.' },
   { label: 'Journal', href: '/journal', text: 'Practice reflection with prompts for thresholds, change, memory, and identity.' },
-  { label: 'Christian Symbols', href: '/christian-symbols', text: 'Read Scripture’s images with fresh attention.' },
   { label: 'Presentations', href: '/presentations', text: 'Explore the work in conversation with others.' },
 ]
 

@@ -218,7 +218,7 @@ export default function HomeChristianSymbols({ prelude }: { prelude?: React.Reac
               moved to the Christian Symbols page; not needed here. */}
 
           <div className="home-recognition__cta home-recognition__cta--after-image">
-            <TextLink href="/christian-symbols" cta="home-christian-symbols">Explore Christian Symbols</TextLink>
+            <TextLink href="/symbols" cta="home-christian-symbols">Explore Christian Symbols</TextLink>
           </div>
 
           {/* 2026-09-02, per Susan's "can you do this with the matthew

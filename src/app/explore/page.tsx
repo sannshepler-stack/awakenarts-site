@@ -26,7 +26,7 @@ const DOORS: Door[] = [
   { href: '/about/introduction', title: 'Discover AwakenArts', line: 'Discover how poetry, image, and reflection can open new ways of seeing your own life.', img: '/images/path/when-language-shapes-a-path-cover.jpg', pos: 'center 100%' },
   { href: '/encounters', title: 'Christian Encounters', line: 'Five reflections in image and Scripture.', img: '/images/encounters/journey/journey-02-web-opt.jpg' },
   { href: '/journal', title: 'The Journal', line: 'A place to read, notice, and write — alongside works that prompted\u00A0it.', img: '/images/explore/journal-notebook.jpg' }, // notebook from the table header (Susan, 2026-10-07)
-  { href: '/christian-symbols', title: 'Symbols for the Christian Soul', line: 'Scripture speaks in symbols.', img: '/images/homepage/encounters-symbols-ship-v3-opt.jpg' },
+  { href: '/symbols', title: 'Symbols for the Christian Soul', line: 'Scripture speaks in symbols.', img: '/images/homepage/encounters-symbols-ship-v3-opt.jpg' },
   // The Gallery returns as From the Books (2026-10-07, Susan): story images
   // from the books, so it no longer repeats the Collection.
   { href: '/gallery', title: 'From the Books', line: 'Images from the AwakenArts books.', img: '/images/gallery/where-you-stand/03-queen-ann-on-the-balcony.jpg', pos: 'center 35%' },
