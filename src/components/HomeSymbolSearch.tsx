@@ -120,6 +120,13 @@ function search(query: string): Result[] {
 
 const SUGGESTIONS = ['path', 'lamp', 'vine', 'gate', 'pearl']
 
+// Three published card fronts, fanned (decorative).
+const FAN = [
+  { src: '/images/symbols/Lamp_Card_Front-opt.jpg', left: '2%', rotate: -12, z: 1 },
+  { src: '/images/symbols/Pearl_Card_Front-opt.jpg', left: '52%', rotate: 12, z: 2 },
+  { src: '/images/symbols/Gate_Card_Front-opt.jpg', left: '27%', rotate: 0, z: 3 },
+]
+
 const STEPS: [string, (s: string) => string | null][] = [
   ['Notice.', (s) => `Where does “${s}” appear in your life?`],
   ['Become curious.', () => 'What first drew you to it?'],
@@ -154,159 +161,205 @@ export default function HomeSymbolSearch() {
     run(value)
   }
 
+  // Results and the not-found response sit beneath the invitation, in open
+  // space rather than inside a box (Susan, 2026-10-09: "everything doesn't
+  // have to fit inside the same box").
+  const resultsBlock = (
+    <div aria-live="polite" style={{ maxWidth: 1040, margin: '0 auto' }}>
+      {submitted !== null && results.length > 0 && (
+        <div style={{ marginTop: '3rem' }}>
+          <p style={{ ...label, margin: '0 0 1.25rem', textAlign: 'center' }}>Found in AwakenArts</p>
+          <ul
+            style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
+              gap: '1rem',
+            }}
+          >
+            {results.map((r) => (
+              <li key={r.key}>
+                <Link
+                  href={r.href}
+                  style={{
+                    display: 'block',
+                    height: '100%',
+                    boxSizing: 'border-box',
+                    textDecoration: 'none',
+                    background: '#fff',
+                    borderTop: '2px solid var(--gold)',
+                    boxShadow: '0 8px 22px rgba(28, 43, 58, 0.08)',
+                    padding: '1rem 1.2rem 1.15rem',
+                  }}
+                >
+                  <span style={{ ...label, display: 'block', fontSize: '0.66rem' }}>{r.kind}</span>
+                  <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: '1.35rem', color: 'var(--deep)', margin: '0.3rem 0 0.2rem' }}>
+                    {r.name} <span aria-hidden="true" style={{ color: 'var(--gold)' }}>→</span>
+                  </span>
+                  <span style={{ display: 'block', fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.5, color: 'var(--mid)' }}>
+                    {r.line}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {submitted !== null && results.length === 0 && (
+        <div style={{ maxWidth: 620, margin: '3rem auto 0', textAlign: 'center' }}>
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.3rem', lineHeight: 1.5, color: 'var(--deep)', margin: '0 0 1.5rem' }}>
+            We don&rsquo;t yet have a dedicated AwakenArts entry for &lsquo;{submitted},&rsquo; but you can begin
+            exploring what it means to you.
+          </p>
+          <ol style={{ margin: '0 auto 1.75rem', paddingLeft: '1.5rem', maxWidth: 520, textAlign: 'left' }}>
+            {STEPS.map(([step, q]) => {
+              const question = q(submitted)
+              return (
+                <li key={step} style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 1.6, color: 'var(--deep)', margin: '0 0 0.45rem' }}>
+                  <strong style={{ fontWeight: 600 }}>{step}</strong>
+                  {question ? ` ${question}` : ''}
+                </li>
+              )
+            })}
+          </ol>
+          <p style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem 1.75rem', justifyContent: 'center', margin: 0 }}>
+            <Link href="/journal" style={label}>Continue in the Journal &rarr;</Link>
+            <Link href="/experience" style={label}>Make Your Own Word Art &rarr;</Link>
+          </p>
+        </div>
+      )}
+    </div>
+  )
+
   return (
     <section aria-labelledby="symbol-search-heading" style={{ background: 'var(--cream)', padding: 'var(--band-gap) 1.5rem' }}>
       <div
         style={{
-          maxWidth: 680,
+          maxWidth: 1040,
           margin: '0 auto',
-          border: '1px solid var(--gold-lt)',
-          borderRadius: 6,
-          padding: 'clamp(1.75rem, 5vw, 3rem) clamp(1.25rem, 5vw, 3rem)',
-          textAlign: 'center',
-          background: 'var(--cream)',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 360px), 1fr))',
+          gap: '3rem 4rem',
+          alignItems: 'center',
         }}
       >
-        <p className="eyebrow" style={{ justifyContent: 'center' }}>A Personal Invitation</p>
-        <h2
-          id="symbol-search-heading"
-          style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '0.85rem 0 0.75rem', lineHeight: 1.2 }}
-        >
-          What Symbols Matter to You?
-        </h2>
-        <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.15rem', lineHeight: 1.5, color: 'var(--mid)', margin: '0 auto 1.75rem', maxWidth: 560 }}>
-          An image you wear, an object you treasure, a symbol from Scripture, or something that keeps appearing in your
-          life.
-        </p>
-
-        <form
-          role="search"
-          onSubmit={onSubmit}
-          style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'stretch', gap: '0.75rem', justifyContent: 'center' }}
-        >
-          <label htmlFor="symbol-search-input" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap' }}>
-            Type a symbol
-          </label>
-          <input
-            id="symbol-search-input"
-            type="search"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            placeholder="Type a symbol…"
-            autoComplete="off"
-            maxLength={120}
-            style={{
-              flex: '1 1 240px',
-              maxWidth: 400,
-              minWidth: 0,
-              height: 'auto',
-              boxSizing: 'border-box',
-              fontFamily: 'var(--serif)',
-              fontSize: '1.15rem',
-              color: 'var(--deep)',
-              background: '#fff',
-              border: '1px solid var(--gold-lt)',
-              borderRadius: 3,
-              padding: '0.8rem 1rem',
-            }}
-          />
-          <button
-            type="submit"
-            className="home-coll-cta home-coll-cta--light-surface"
-            style={{ cursor: 'pointer', background: 'transparent', flex: '0 0 auto', width: 'auto', margin: 0 }}
-          >
-            Explore
-          </button>
-        </form>
-
-        <p style={{ margin: '1rem 0 0', fontFamily: 'var(--serif)', fontSize: '1.05rem', color: 'var(--mid)' }}>
-          Try:{' '}
-          {SUGGESTIONS.map((s, i) => (
-            <span key={s}>
-              <button
-                type="button"
-                onClick={() => {
-                  setValue(s)
-                  run(s)
-                }}
-                style={{
-                  background: 'none',
-                  border: 0,
-                  padding: 0,
-                  cursor: 'pointer',
-                  fontFamily: 'inherit',
-                  fontSize: 'inherit',
-                  color: 'var(--deep)',
-                  textDecoration: 'underline',
-                  textDecorationColor: 'rgba(138, 106, 31, 0.45)',
-                  textUnderlineOffset: 4,
-                }}
-              >
-                {s}
-              </button>
-              {i < SUGGESTIONS.length - 1 ? ' · ' : ''}
-            </span>
+        {/* Embellishment: three of the published symbol cards, fanned like a
+            hand of cards — what is waiting inside. Decorative. */}
+        <div aria-hidden="true" style={{ position: 'relative', width: '86%', maxWidth: 380, aspectRatio: '1 / 0.8', margin: '0 auto' }}>
+          {FAN.map((f) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              key={f.src}
+              src={f.src}
+              alt=""
+              loading="lazy"
+              style={{
+                position: 'absolute',
+                top: '6%',
+                left: f.left,
+                width: '46%',
+                aspectRatio: '5 / 7',
+                maxHeight: '88%',
+                objectFit: 'cover',
+                borderRadius: 8,
+                transform: `rotate(${f.rotate}deg)`,
+                transformOrigin: 'bottom center',
+                boxShadow: '0 14px 30px rgba(28, 43, 58, 0.22)',
+                zIndex: f.z,
+              }}
+            />
           ))}
-        </p>
+        </div>
 
-        {/* Results, in place. aria-live announces them to screen readers. */}
-        <div aria-live="polite" style={{ textAlign: 'left' }}>
-          {submitted !== null && results.length > 0 && (
-            <div style={{ marginTop: '2.25rem', borderTop: '1px solid var(--gold-lt)', paddingTop: '1.5rem' }}>
-              <p style={{ ...label, margin: '0 0 1rem', textAlign: 'center' }}>Found in AwakenArts</p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                {results.map((r) => (
-                  <li key={r.key} style={{ margin: '0 0 0.75rem' }}>
-                    <Link
-                      href={r.href}
-                      style={{
-                        display: 'block',
-                        textDecoration: 'none',
-                        background: '#fff',
-                        border: '1px solid var(--mist, #e6dfd2)',
-                        borderRadius: 4,
-                        padding: '0.9rem 1.1rem',
-                      }}
-                    >
-                      <span style={{ ...label, display: 'block', fontSize: '0.66rem' }}>{r.kind}</span>
-                      <span style={{ display: 'block', fontFamily: 'var(--serif)', fontSize: '1.3rem', color: 'var(--deep)', margin: '0.2rem 0 0.15rem' }}>
-                        {r.name} <span aria-hidden="true" style={{ color: 'var(--gold)' }}>→</span>
-                      </span>
-                      <span style={{ display: 'block', fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.5, color: 'var(--mid)' }}>
-                        {r.line}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+        <div style={{ textAlign: 'left' }}>
+          <p className="eyebrow">A Personal Invitation</p>
+          <h2
+            id="symbol-search-heading"
+            style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '0.85rem 0 0.75rem', lineHeight: 1.15 }}
+          >
+            What Symbols Matter to You?
+          </h2>
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', lineHeight: 1.5, color: 'var(--mid)', margin: '0 0 1.75rem', maxWidth: 480 }}>
+            An image you wear, an object you treasure, a symbol from Scripture, or something that keeps appearing in your
+            life.
+          </p>
 
-          {submitted !== null && results.length === 0 && (
-            <div style={{ marginTop: '2.25rem', borderTop: '1px solid var(--gold-lt)', paddingTop: '1.5rem' }}>
-              <p style={{ fontFamily: 'var(--serif)', fontSize: '1.2rem', lineHeight: 1.5, color: 'var(--deep)', margin: '0 0 1.25rem', textAlign: 'center' }}>
-                We don&rsquo;t yet have a dedicated AwakenArts entry for &lsquo;{submitted},&rsquo; but you can begin
-                exploring what it means to you.
-              </p>
-              <ol style={{ margin: '0 auto 1.5rem', paddingLeft: '1.5rem', maxWidth: 520 }}>
-                {STEPS.map(([step, q]) => {
-                  const question = q(submitted)
-                  return (
-                    <li key={step} style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 1.6, color: 'var(--deep)', margin: '0 0 0.45rem' }}>
-                      <strong style={{ fontWeight: 600 }}>{step}</strong>
-                      {question ? ` ${question}` : ''}
-                    </li>
-                  )
-                })}
-              </ol>
-              <p style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem 1.75rem', justifyContent: 'center', margin: 0 }}>
-                <Link href="/journal" style={label}>Continue in the Journal &rarr;</Link>
-                <Link href="/experience" style={label}>Make Your Own Word Art &rarr;</Link>
-              </p>
-            </div>
-          )}
+          <form
+            role="search"
+            onSubmit={onSubmit}
+            style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'stretch', gap: '0.75rem', maxWidth: 480 }}
+          >
+            <label htmlFor="symbol-search-input" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap' }}>
+              Type a symbol
+            </label>
+            <input
+              id="symbol-search-input"
+              type="search"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              placeholder="Type a symbol…"
+              autoComplete="off"
+              maxLength={120}
+              style={{
+                flex: '1 1 220px',
+                minWidth: 0,
+                height: 'auto',
+                boxSizing: 'border-box',
+                fontFamily: 'var(--serif)',
+                fontSize: '1.15rem',
+                color: 'var(--deep)',
+                background: '#fff',
+                border: 0,
+                borderBottom: '1px solid var(--gold)',
+                borderRadius: 0,
+                padding: '0.8rem 0.25rem',
+              }}
+            />
+            <button
+              type="submit"
+              className="home-coll-cta home-coll-cta--light-surface"
+              style={{ cursor: 'pointer', background: 'transparent', flex: '0 0 auto', width: 'auto', margin: 0 }}
+            >
+              Explore
+            </button>
+          </form>
+
+          <p style={{ margin: '1rem 0 0', fontFamily: 'var(--serif)', fontSize: '1.05rem', color: 'var(--mid)' }}>
+            Try:{' '}
+            {SUGGESTIONS.map((s, i) => (
+              <span key={s}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setValue(s)
+                    run(s)
+                  }}
+                  style={{
+                    background: 'none',
+                    border: 0,
+                    padding: 0,
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    fontSize: 'inherit',
+                    color: 'var(--deep)',
+                    textDecoration: 'underline',
+                    textDecorationColor: 'rgba(138, 106, 31, 0.45)',
+                    textUnderlineOffset: 4,
+                  }}
+                >
+                  {s}
+                </button>
+                {i < SUGGESTIONS.length - 1 ? ' · ' : ''}
+              </span>
+            ))}
+          </p>
         </div>
       </div>
+
+      {resultsBlock}
     </section>
   )
 }
