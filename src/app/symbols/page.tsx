@@ -85,7 +85,7 @@ export default function SymbolsIndexPage() {
         </section>
 
         {symbolCards.length > 0 && (
-          <section aria-label="Symbol Cards" style={{ padding: '1rem 1.5rem var(--band-gap)' }}>
+          <section id="symbol-cards" aria-label="Symbol Cards" style={{ padding: '1rem 1.5rem var(--band-gap)', scrollMarginTop: '5rem' }}>
             <div
               style={{
                 maxWidth: 1080,
@@ -179,9 +179,11 @@ export default function SymbolsIndexPage() {
           <div style={{ height: '2.25rem' }} />
           {/* Two ways on (Susan, 2026-10-07): the symbols, and the Encounters. */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
-            <Link href="/christian-symbols" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-all-christian">
+            {/* 2026-10-09, Susan: this button leads back up to the card
+                gallery on this page. */}
+            <a href="#symbol-cards" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-all-christian">
               Explore Christian Symbols
-            </Link>
+            </a>
             <Link href="/encounters" className="home-coll-cta home-coll-cta--light-surface" data-cta="symbols-encounters">
               Experience the Encounters
             </Link>
