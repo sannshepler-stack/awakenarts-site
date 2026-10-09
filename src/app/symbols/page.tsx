@@ -5,6 +5,7 @@ import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import WorldDoorways from '@/components/WorldDoorways'
 import SymbolTile from '@/components/symbols/SymbolTile'
+import SymbolVocabulary from '@/components/symbols/SymbolVocabulary'
 import { symbolCards } from '@/data/symbolCards'
 import { CATEGORIES as JOURNAL_PATHS } from '@/components/journal/categories'
 
@@ -104,6 +105,12 @@ export default function SymbolsIndexPage() {
           </section>
         )}
 
+        {/* 2026-10-09, Susan: the Symbol Vocabulary (20 words) moves here
+            from /christian-symbols, right after the eight cards. */}
+        <div style={{ paddingBottom: 'var(--band-gap)' }}>
+          <SymbolVocabulary />
+        </div>
+
         {/* Why Symbols Matter — Susan's wording, 2026-10-09. Placed beneath the
             gallery: visitors encounter the symbols first, then deepen understanding. */}
         <section aria-labelledby="why-symbols-matter" style={{ padding: '0 1.5rem var(--band-gap)' }}>
@@ -169,24 +176,6 @@ export default function SymbolsIndexPage() {
             >
               Every symbol offers another opportunity to recognize how images and language carry meaning in your own
               life. Return to the collection whenever you&rsquo;re ready to explore another.
-            </p>
-            {/* One quiet way onward to the Christian Symbols page and its
-                Symbol Vocabulary, 2026-10-09. Encounters keep their own page. */}
-            <p style={{ textAlign: 'center', margin: '1.5rem 0 0' }}>
-              <Link
-                href="/christian-symbols"
-                data-cta="symbols-why-christian"
-                style={{
-                  fontFamily: 'var(--sans)',
-                  fontSize: '0.8rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  color: 'var(--gold)',
-                }}
-              >
-                Explore the Symbol Vocabulary &rarr;
-              </Link>
             </p>
           </div>
         </section>
