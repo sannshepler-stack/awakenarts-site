@@ -1,6 +1,6 @@
 # Symbol References: Group 2 Review
 
-Biblical creatures and plants. Prepared 2026-10-10. **All eight remain draft.**
+Biblical creatures and plants. Prepared 2026-10-10. **Approved by Susan 2026-10-10.**
 
 Throughout: Scripture is cited for its own context, and personal and cultural associations sit under "Can suggest", never presented as what Scripture says.
 
@@ -77,9 +77,9 @@ Throughout: Scripture is cited for its own context, and personal and cultural as
 
 ## Sheep
 
-- **Can suggest:** belonging · being known · vulnerability · being sought
+- **Can suggest:** belonging · being known · being sought · vulnerability · exclusion · individuality
 - **Scripture:** John 10:11-16 · Luke 15:4-7
-- **Note:** Scripture often speaks of God's people as a flock in a shepherd's care.
+- **Note:** Scripture often speaks of God's people as a flock in a shepherd's care. The everyday phrase "black sheep" is not from Scripture; it names someone who stands apart from the family or group.
 - **Reflection question:** *What does the image of a flock evoke about belonging?*
 - **Related links:** Shepherd (`/symbols/shepherd`) · Gate (`/symbols/gate`)
 - **Found by:** Sheep, flock, lost sheep, black sheep
@@ -100,6 +100,6 @@ Throughout: Scripture is cited for its own context, and personal and cultural as
 
 ## For your judgment
 
-- **Cross and Dove** are major Christian symbols. A broad reference serves them for now, but each may deserve an illustrated Symbol Card later.
+- **Cross and Dove** remain candidates for illustrated Symbol Cards, to be developed in the separate digital card project.
 - **Sheep** keeps "black sheep" (decided 2026-10-10). The everyday idiom about exclusion meets the reflection on belonging, and it also has a life in Christian song.
 
