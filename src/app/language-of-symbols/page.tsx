@@ -121,13 +121,15 @@ export default function LanguageOfSymbolsPage() {
     <>
       <Nav />
       <main style={{ background: 'var(--cream)' }}>
-        {/* Header: the poetry manuscript, so the page opens on language. */}
+        {/* Header (Susan, 2026-10-10): the desk of AwakenArts figures and an
+            open journal, formerly on the Presentations card. Shown at its own
+            panoramic proportions, uncropped. */}
         <div style={{ padding: 'calc(var(--band-gap) + 1rem) 1.5rem 0' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/headers/poetry-manuscript.jpg"
-            alt="A handwritten poetry manuscript"
-            style={{ display: 'block', width: '100%', maxWidth: 1180, maxHeight: 420, objectFit: 'cover', margin: '0 auto' }}
+            src="/images/headers/gallery-desk.jpg"
+            alt="AwakenArts figure images and an open journal spread across a desk"
+            style={{ display: 'block', width: '100%', maxWidth: 1180, height: 'auto', margin: '0 auto' }}
           />
         </div>
 

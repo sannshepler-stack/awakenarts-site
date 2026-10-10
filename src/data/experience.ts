@@ -32,7 +32,7 @@ export interface ExperienceCategory {
   img: string
   /** CSS object-position for photographs. */
   pos?: string
-  /** True for a portrait Symbol Card image, shown whole rather than cropped. */
+  /** True for portrait artwork (a Symbol Card, a figure), shown whole rather than cropped. */
   card?: boolean
   offerings: ExperienceOffering[]
 }
@@ -69,7 +69,10 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
     title: 'Presentations',
     line: 'Presentations and workshops for groups, in person.',
     href: '/presentations',
-    img: '/images/headers/gallery-desk.jpg',
+    // Mermaid Grismere, from the Grismere presentation page: the one
+    // presentation offered so far (Susan, 2026-10-10).
+    img: '/images/editions/grismere-figure.jpg',
+    card: true,
     offerings: [],
   },
   {
