@@ -183,27 +183,52 @@ export default function LanguageOfSymbolsPage() {
           </div>
         </section>
 
-        <section aria-labelledby="experience-guide" style={{ padding: '0 1.5rem var(--band-gap)', textAlign: 'center' }}>
+        {/* Your Guide (Susan, 2026-10-10). Same pattern as the homepage
+            About section: the approved portrait, round, beside the text. */}
+        <section aria-labelledby="experience-guide" style={{ padding: '0 1.5rem var(--band-gap)' }}>
           <div aria-hidden="true" style={{ width: 64, height: 1, background: 'var(--gold)', opacity: 0.6, margin: '0 auto 3rem' }} />
-          <p className="eyebrow" style={{ justifyContent: 'center' }}>Your Guide</p>
-          <h2
-            id="experience-guide"
-            style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '1rem 0 1rem' }}
-          >
-            Susan Ann Shepler
-          </h2>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 'var(--body-line)', color: 'var(--deep)', maxWidth: 'var(--measure-poetic, 640px)', margin: '0 auto' }}>
-            Susan&rsquo;s educational foundation includes a BA in English and Spanish, an MA in Spiritual Psychology, and a
-            two-year certification as a Transformative Language Artist.
-          </p>
-          <p style={{ margin: '1.75rem 0 0' }}>
-            <Link
-              href="/about"
-              style={{ fontFamily: 'var(--sans)', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold)' }}
-            >
-              About Susan &rarr;
-            </Link>
-          </p>
+          <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '2.5rem', alignItems: 'center', justifyContent: 'center' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/about/susan-ann-shepler-opt.jpg"
+              alt="Susan Ann Shepler"
+              loading="lazy"
+              style={{ width: 200, height: 200, objectFit: 'cover', objectPosition: '50% 35%', borderRadius: '50%', border: '1px solid var(--gold-lt)', flex: '0 0 auto' }}
+            />
+            <div style={{ flex: '1 1 380px' }}>
+              <p className="eyebrow">Your Guide</p>
+              <h2
+                id="experience-guide"
+                style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '0.8rem 0 0.35rem' }}
+              >
+                Susan Ann Shepler
+              </h2>
+              <p style={{ fontFamily: 'var(--sans)', fontSize: '0.78rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--gold)', margin: '0 0 1.25rem' }}>
+                Author &middot; Artist &middot; Educator
+              </p>
+              <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', lineHeight: 1.5, color: 'var(--deep)', margin: '0 0 1rem' }}>
+                My work begins with language&mdash;how words carry meaning, how metaphor gives experience expression, and
+                how poetry can become an image.
+              </p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 'var(--body-line)', color: 'var(--deep)', margin: '0 0 1rem' }}>
+                My background in English and Spanish, Spiritual Psychology, and Transformative Language Artistry informs
+                the way I approach symbolic language. Through AwakenArts, I bring together poetry, original imagery, and
+                guided reflection to create opportunities for learning and personal discovery.
+              </p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 'var(--body-line)', color: 'var(--deep)', margin: 0 }}>
+                I invite you to explore the language of symbols, recognize its presence in everyday life, and discover new
+                ways of understanding and expressing your own experiences.
+              </p>
+              <p style={{ margin: '1.5rem 0 0' }}>
+                <Link
+                  href="/about"
+                  style={{ fontFamily: 'var(--sans)', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold)' }}
+                >
+                  About Susan &rarr;
+                </Link>
+              </p>
+            </div>
+          </div>
         </section>
 
         <StayConnected source="language-of-symbols" />
