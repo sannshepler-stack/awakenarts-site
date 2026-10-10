@@ -151,7 +151,7 @@ export default function LanguageOfSymbolsPage() {
           <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-page)', lineHeight: 1.15, color: 'var(--deep)', margin: '1rem 0 0' }}>
             Experience the Language of Symbols
           </h1>
-          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.25rem', lineHeight: 1.5, color: 'var(--mid)', maxWidth: 620, margin: '1.5rem auto 0' }}>
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.25rem', lineHeight: 1.5, color: 'var(--mid)', maxWidth: 760, margin: '1.5rem auto 0' }}>
             Language is the foundation of AwakenArts education. Through poetry, metaphor, symbolic imagery, and
             reflection, discover how language carries meaning&mdash;and learn to recognize its presence in your own life.
           </p>
