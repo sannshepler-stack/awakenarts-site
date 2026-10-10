@@ -13,7 +13,7 @@ export function PresentationTile({ p }: { p: Presentation }) {
     >
       {p.image && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={p.image} alt={p.imageAlt || ''} loading="lazy" style={{ width: '100%', aspectRatio: '3 / 2', objectFit: 'cover', display: 'block', marginBottom: '1.1rem' }} />
+        <img src={p.image} alt={p.imageAlt || ''} loading="lazy" style={{ width: '100%', aspectRatio: '3 / 2', objectFit: 'cover', objectPosition: p.imagePosition || 'center', display: 'block', marginBottom: '1.1rem' }} />
       )}
       {(p.format || p.length) && (
         <span style={{ ...labelStyle, display: 'block', fontSize: '0.72rem' }}>

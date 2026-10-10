@@ -47,6 +47,8 @@ export interface Presentation {
    *  artwork, once Susan supplies one). */
   image?: string
   imageAlt?: string
+  /** CSS object-position for the cropped tile image, e.g. 'center 30%'. Default: centered. */
+  imagePosition?: string
   /** Related book or free resource. */
   related?: { label: string; href: string }
   /** Short pitch shown on a related Edition's page — Susan's wording. */
@@ -86,6 +88,8 @@ export const PRESENTATIONS: Presentation[] = [
     audiences: ['Libraries', 'Clubs', 'Community Groups'],
     image: '/images/editions/grismere-figure.jpg',
     imageAlt: 'Grismere — the figure artwork',
+    // Keep her head and hair in the 3:2 tile (Susan, 2026-10-10).
+    imagePosition: 'center 30%',
     editions: ['grismere'],
     // 2026-10-08, Susan: attendees first. No date yet, so "Notify Me".
     // When a date is set: mode 'register' + event { when, where,
