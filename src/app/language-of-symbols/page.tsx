@@ -69,7 +69,7 @@ function CategoryCard({ c }: { c: ExperienceCategory }) {
         gap: c.img2 ? '0.4rem' : 0,
         width: '100%',
         aspectRatio: '16 / 10',
-        background: 'var(--warm)',
+        background: c.bg || 'var(--warm)',
         padding: c.card ? '0.5rem' : 0,
         boxSizing: 'border-box',
         minHeight: 0,

@@ -36,6 +36,8 @@ export interface ExperienceCategory {
   /** CSS object-position for photographs. */
   pos?: string
   /** True for portrait artwork (a Symbol Card, a figure), shown whole rather than cropped. */
+  /** Background behind the image(s), e.g. 'var(--deep)' for transparent word art. Default: warm. */
+  bg?: string
   card?: boolean
   offerings: ExperienceOffering[]
 }
@@ -102,6 +104,7 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
     img: '/images/experiences/butterfly-wordart-opt.webp',
     img2: '/images/experiences/word-form-spiral-opt.webp',
     card: true,
+    bg: 'var(--deep)',
     offerings: [],
   },
 ]
