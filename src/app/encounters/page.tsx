@@ -164,7 +164,7 @@ export default function EncountersIndexPage() {
           Christian Soul — recognize the images, then explore them here. */}
       <p style={{ textAlign: 'center', margin: '0 auto 1rem', padding: '0 1.5rem' }}>
         <Link
-          href="/symbols"
+          href="/christian-symbols"
           data-cta="encounters-symbols"
           style={{ fontFamily: 'var(--sans)', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold-lt)' }}
         >
