@@ -52,9 +52,9 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
     title: 'Guided Courses',
     line: 'Learning to work with symbolic language, one lesson at a time.',
     emptyNote: 'Coming soon',
-    img: '/images/symbols/Lamp_Card_Front-opt.jpg',
-    img2: '/images/symbols/Path_Card_Front-opt.jpg',
-    card: true,
+    // Five illustrated Symbol Cards on a sunlit table (Susan, 2026-10-10).
+    img: '/images/experience/guided-courses-cards.jpg',
+    pos: 'center 55%',
     offerings: [
       {
         // Draft: hidden until lessons, Symbol Cards, Kit delivery and
