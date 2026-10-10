@@ -543,7 +543,7 @@
       "also_found_as": "walls; hit a wall; barrier",
       "type": "biblical;literary;everyday",
       "can_suggest": "protection;separation;limits;obstacles",
-      "scripture": "Nehemiah 2:17; Joshua 6:20",
+      "scripture": "Nehemiah 2:17; Joshua 6:20; Ephesians 2:14",
       "note": "Walls may protect, divide, or stand as obstacles, depending on context.",
       "reflection_question": "Where does the image of a wall enter your own language?",
       "related": "gate",
@@ -556,7 +556,8 @@
       "review_group": 3,
       "review_changes": [
         "Added Nehemiah 2:17 (rebuilding for protection) so Scripture covers both protection and obstacle",
-        "Related: \"gate;door\" → \"gate\""
+        "Related: \"gate;door\" → \"gate\"",
+        "Added Ephesians 2:14 (the dividing wall broken down) so \"separation\" has a supporting passage"
       ]
     },
     {
@@ -765,11 +766,11 @@
     },
     {
       "name": "Valley",
-      "also_found_as": "valleys; low valley",
+      "also_found_as": "valleys; valley of the shadow",
       "type": "biblical;literary;everyday",
-      "can_suggest": "difficulty;rest;transition;humility",
+      "can_suggest": "difficulty;passing through;accompaniment;low places;fertile ground",
       "scripture": "Psalm 23:4",
-      "note": "Valleys can evoke both difficult journeys and fertile places.",
+      "note": "In Psalm 23 the valley is a place walked through, not lived in, and the psalmist is not alone there. In everyday speech a valley is a low point; on the land it is often the most fertile ground.",
       "reflection_question": "When has a valley represented something significant for you?",
       "related": "path;mountain",
       "status": "draft",
@@ -779,16 +780,20 @@
       "portal_url": "",
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 3,
-      "review_changes": []
+      "review_changes": [
+        "\"rest; transition; humility\" were not supported by Psalm 23:4 → \"passing through; accompaniment\" (from the psalm) and \"low places; fertile ground\" (everyday)",
+        "Note now separates the psalm from everyday and agricultural meanings",
+        "Removed \"low valley\"; added \"valley of the shadow\""
+      ]
     },
     {
       "name": "Desert",
       "also_found_as": "deserts; wilderness",
       "type": "biblical;literary;everyday",
-      "can_suggest": "testing;solitude;clarity;waiting",
-      "scripture": "Deuteronomy 8:2; Matthew 4:1",
-      "note": "Wilderness settings play varied roles in biblical accounts.",
-      "reflection_question": "What does a wilderness season suggest to you?",
+      "can_suggest": "testing;solitude;waiting;being led;encounter",
+      "scripture": "Deuteronomy 8:2; Matthew 4:1; Hosea 2:14",
+      "note": "In Scripture the wilderness is a place of testing and of being led, and sometimes of tender encounter. In everyday speech, people describe hard or empty stretches of life as desert or wilderness seasons.",
+      "reflection_question": "What does a desert or wilderness bring to mind for you?",
       "related": "water",
       "status": "draft",
       "link_symbols": "/symbols",
@@ -800,7 +805,11 @@
       "review_changes": [
         "Replaced Exodus 16:1 (wilderness of Sin) with Deuteronomy 8:2 (tested in the wilderness)",
         "Removed \"dry land\" (Genesis 1:9, a different image)",
-        "Related: \"water;path\" → \"water\""
+        "Related: \"water;path\" → \"water\"",
+        "Added Hosea 2:14 (\"I will lead her into the wilderness and speak tenderly\") so the wilderness is not only testing",
+        "\"clarity\" (cultural) → \"being led\" (Deuteronomy 8:2) and \"encounter\" (Hosea 2:14)",
+        "Note now distinguishes the biblical wilderness from the everyday phrase",
+        "Question no longer assumes the visitor has had a \"wilderness season\""
       ]
     },
     {
@@ -863,8 +872,8 @@
       "type": "biblical;literary;everyday",
       "can_suggest": "warmth;testing;presence;energy",
       "scripture": "Exodus 3:2; Acts 2:3; 1 Peter 1:7",
-      "note": "Fire has multiple biblical contexts, including the burning bush and Pentecost.",
-      "reflection_question": "What associations arise for you when you imagine a flame?",
+      "note": "In Scripture fire marks God's presence (the burning bush, Pentecost) and the testing of faith. Warmth and energy are everyday associations.",
+      "reflection_question": "What associations arise for you when you imagine a fire?",
       "related": "flame;light",
       "status": "draft",
       "link_symbols": "/symbols",
@@ -876,7 +885,9 @@
       "review_changes": [
         "Added 1 Peter 1:7 (faith tested by fire) so \"testing\" has a supporting passage",
         "Removed \"flame; flames; candle flame\": they collide with the published Journal entry The Flame and with Candle",
-        "Related: \"light;lamp\" → \"flame;light\""
+        "Related: \"light;lamp\" → \"flame;light\"",
+        "\"flame\" → \"fire\" so the question matches the entry (flame belongs to the Journal entry The Flame)",
+        "Note now distinguishes biblical presence and testing from everyday warmth and energy"
       ]
     },
     {
@@ -885,7 +896,7 @@
       "type": "everyday;literary",
       "can_suggest": "remembrance;prayer;presence;hope",
       "scripture": "",
-      "note": "Lighting a candle can mark memory or attention in many settings.",
+      "note": "Lighting a candle can mark memory, prayer, or attention in many settings. Older English Bibles say \"candle\" where modern translations say \"lamp.\"",
       "reflection_question": "When has a small light helped mark a meaningful moment?",
       "related": "lamp;light",
       "status": "draft",
@@ -895,14 +906,16 @@
       "portal_url": "",
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 3,
-      "review_changes": []
+      "review_changes": [
+        "Note adds the translation point (KJV \"candle\" = lamp), so the absence of Scripture is explained, not hidden"
+      ]
     },
     {
       "name": "Star",
-      "also_found_as": "stars; guiding star",
+      "also_found_as": "stars; guiding star; north star",
       "type": "biblical;literary;everyday",
-      "can_suggest": "wonder;guidance;hope;distance",
-      "scripture": "Matthew 2:2; Genesis 15:5",
+      "can_suggest": "wonder;guidance;promise;hope;distance",
+      "scripture": "Matthew 2:2; Genesis 15:5; Psalm 8:3-4",
       "note": "Stars appear as signs, as creation, and in promises in Scripture.",
       "reflection_question": "What does looking at the night sky awaken in you?",
       "related": "light",
@@ -914,7 +927,10 @@
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 3,
       "review_changes": [
-        "Related: \"light;path\" → \"light\""
+        "Related: \"light;path\" → \"light\"",
+        "Added Psalm 8:3-4 so \"wonder\" has a supporting passage",
+        "Added \"north star\", a common everyday image of guidance",
+        "Added \"promise\" (Genesis 15:5, descendants as many as the stars)"
       ]
     },
     {
@@ -938,8 +954,8 @@
       "also_found_as": "sunrise; sunlight; dawn",
       "type": "biblical;literary;everyday",
       "can_suggest": "renewal;warmth;beginning;clarity",
-      "scripture": "Psalm 19:4-6",
-      "note": "Sun imagery appears in biblical poetry and everyday language.",
+      "scripture": "Psalm 19:4-6; Malachi 4:2",
+      "note": "Biblical poetry praises the sun as part of creation and uses sunrise as an image of healing. In everyday speech, a new dawn often means a fresh start.",
       "reflection_question": "What does a sunrise mean to you at this time?",
       "related": "light",
       "status": "draft",
@@ -950,7 +966,9 @@
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 3,
       "review_changes": [
-        "Related: \"light;seed\" → \"light\""
+        "Related: \"light;seed\" → \"light\"",
+        "Added Malachi 4:2 (\"the sun of righteousness will rise with healing\") so \"renewal\" has a supporting passage",
+        "Note now separates biblical poetry from everyday use"
       ]
     },
     {
@@ -959,9 +977,9 @@
       "type": "biblical;literary;everyday",
       "can_suggest": "promise;covenant;hope;remembrance",
       "scripture": "Genesis 9:12-17",
-      "note": "The rainbow is a sign of covenant in the Noah narrative.",
+      "note": "In Genesis the rainbow is the sign of God's covenant after the flood, and God says, \"I will remember.\" The rainbow has gathered other cultural meanings since.",
       "reflection_question": "What promise or remembered moment do you connect to a rainbow?",
-      "related": "water",
+      "related": "",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
@@ -971,7 +989,9 @@
       "review_group": 3,
       "review_changes": [
         "Removed \"diversity\" (not in Genesis 9); added \"covenant\", which the passage names",
-        "Related: \"water;light\" → \"water\""
+        "Related: \"water;light\" → \"water\"",
+        "Note adds that \"remembrance\" comes from the passage itself (Genesis 9:15-16), and acknowledges later cultural meanings without naming them",
+        "Related: \"water\" → none (the flood waters are not what the published Water entry teaches: life, renewal, thirst)"
       ]
     },
     {
@@ -995,9 +1015,9 @@
       "also_found_as": "cornerstone; building foundation",
       "type": "biblical;literary;everyday",
       "can_suggest": "stability;commitment;support;beginning",
-      "scripture": "Ephesians 2:20",
-      "note": "Building and cornerstone language appears in New Testament imagery.",
-      "reflection_question": "What forms the foundation of your commitments?",
+      "scripture": "Matthew 7:24-25; Ephesians 2:20",
+      "note": "Jesus speaks of a house built on rock, and the New Testament calls Christ the cornerstone. In everyday speech a foundation is whatever we build a life on.",
+      "reflection_question": "What has served as a foundation in your life?",
       "related": "stone",
       "status": "draft",
       "link_symbols": "/symbols",
@@ -1007,7 +1027,10 @@
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 3,
       "review_changes": [
-        "Related: \"stone;tree\" → \"stone\""
+        "Related: \"stone;tree\" → \"stone\"",
+        "Added Matthew 7:24-25 (the house on the rock) for \"stability\"",
+        "Question no longer assumes particular \"commitments\"",
+        "Note now names both passages and the everyday sense"
       ]
     },
     {
