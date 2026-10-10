@@ -41,7 +41,7 @@ export const books: Book[] = [
     title: 'Shape, Symbol & Story',
     subtitle: 'Journeys to Awareness',
     tagline: 'The images came first. Understanding came after.',
-    status: 'coming',
+    status: 'available',
     // Source: SHAPE_SYMBOL_STORY/output/Shape_Symbol_Story_COVER_FRONT_PRINT_v02.png (6 × 9 print front)
     cover: '/images/books/shape-symbol-story-cover.jpg',
     coverAlt: 'Cover of Shape, Symbol & Story by Susan Ann Shepler',
@@ -58,12 +58,23 @@ export const books: Book[] = [
       { src: '/images/books/samples/sss-p11.jpg', alt: 'Shape, Symbol & Story — The Story of the Dragon' },
       { src: '/images/books/samples/sss-p52.jpg', alt: 'Shape, Symbol & Story — poppies: Memory, Sleep, Awakening' },
     ],
+    // 2026-10-10: ISBN and price verified by Susan in Bowker and KDP; link is
+    // the live paperback listing (checked on Amazon the same day).
+    details: [
+      { label: 'Format', value: 'Paperback, 6 × 9 in' },
+      { label: 'Publisher', value: 'AwakenArts' },
+      { label: 'ISBN', value: '979-8-9975058-1-3' },
+      { label: 'Price', value: '$19.99' },
+    ],
+    buyUrl: 'https://www.amazon.com/dp/B0HMHJFDR7',
+    buyLabel: 'Buy on Amazon',
+    linkConfirmed: true,
   },
   {
     slug: 'where-you-stand',
     title: 'Where You Stand',
     subtitle: 'A Seek & Find Journal',
-    status: 'coming',
+    status: 'available',
     // Source: KINGS & QUEENS/REVISION_2026-09-26/Where_You_Stand_FRONT_COVER_for_ISBN_2026-09-28.jpg
     cover: '/images/books/where-you-stand-cover.jpg',
     coverAlt: 'Cover of Where You Stand: A Seek & Find Journal',
@@ -79,21 +90,26 @@ export const books: Book[] = [
       // replaced with the new p23 road-ahead image from the Second Edition.
       { src: '/images/gallery/where-you-stand/16-the-road-ahead-olive-hillside.jpg', alt: 'Where You Stand — a stone path winding past an olive tree toward the hills at sunrise' },
     ],
-    // 2026-10-08, Susan: Second Edition is the version on the site. While KDP
-    // processes it the page reads "Coming soon."; once live, set buyUrl to the
-    // Second Edition's Amazon page and linkConfirmed: true.
+    // 2026-10-10, Susan (Bowker + KDP verified): the live paperback is
+    // ISBN 979-8-9975058-0-6. ISBN 979-8-9975058-2-0 is a separate Bowker
+    // record ("…A Seek & Find Journal of Story, Symbol, and Reflection") and
+    // must not be shown here or on any other book.
     details: [
       { label: 'Format', value: 'Paperback, 8.5 × 11 in' },
-      { label: 'Edition', value: 'Second edition' },
-      { label: 'ISBN', value: '979-8-9975058-2-0' },
+      { label: 'Publisher', value: 'AwakenArts' },
+      { label: 'ISBN', value: '979-8-9975058-0-6' },
+      { label: 'Price', value: '$18.99' },
     ],
+    buyUrl: 'https://www.amazon.com/dp/B0HHZZ55GG',
+    buyLabel: 'Buy on Amazon',
+    linkConfirmed: true,
   },
   {
     slug: 'whispers-of-awareness',
     title: 'Whispers of Awareness',
     subtitle: 'Awakening Through Art, Stories, and Symbols',
     subtitleLines: ['Awakening Through', 'Art, Stories, and Symbols'],
-    status: 'coming',
+    status: 'available',
     // Source: AARTS PROJECTS/WHISPERS 2ND EDITION KDP/WhispersCover.jpg (2026-10-02)
     cover: '/images/books/whispers-of-awareness-cover.jpg',
     coverAlt: 'Cover of Whispers of Awareness by Susan Ann Shepler',
@@ -114,13 +130,16 @@ export const books: Book[] = [
     details: [
       { label: 'Format', value: 'Paperback, 6 × 9 in, full color' },
       { label: 'Edition', value: 'Second edition' },
+      { label: 'Publisher', value: 'AwakenArts' },
       { label: 'ISBN', value: '979-8-9975058-3-7' },
+      { label: 'Price', value: '$18.99' },
     ],
-    // First-edition Amazon link already on the site (/quotes). Held until
-    // Susan confirms which edition's link belongs here (D5).
-    buyUrl: 'https://www.amazon.com/dp/B0G4R4KTZD',
+    // 2026-10-10: live second-edition paperback (ISBN 979-8-9975058-3-7).
+    // Replaces B0G4R4KTZD, the out-of-print first edition listed on Amazon
+    // as "Whispers of Awakening" (Independently published, different ISBN).
+    buyUrl: 'https://www.amazon.com/dp/B0HMG41N3P',
     buyLabel: 'Buy on Amazon',
-    linkConfirmed: false,
+    linkConfirmed: true,
   },
 ]
 
