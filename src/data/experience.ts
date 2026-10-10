@@ -104,7 +104,6 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
     img: '/images/experiences/butterfly-wordart-opt.webp',
     img2: '/images/experiences/word-form-spiral-opt.webp',
     card: true,
-    bg: 'var(--deep)',
     offerings: [],
   },
 ]
