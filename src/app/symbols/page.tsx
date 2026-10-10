@@ -77,7 +77,7 @@ export default function SymbolsIndexPage() {
                 color: 'var(--gold)',
               }}
             >
-              See everything symbol awareness can teach &rarr; The AwakenArts Path
+              What Awareness Can Teach &rarr;
             </Link>
             <Link
               href="/christian-symbols"
