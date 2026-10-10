@@ -1,6 +1,6 @@
 # Symbol References: Group 3 Review
 
-Landscape, sky, and light. Prepared 2026-10-10. **Approved by Susan and published 2026-10-10** after final checks, including the Scripture corrections, open questions, and the five teaching examples.
+Landscape, sky, and light. Prepared 2026-10-10. **Approved by Susan and published 2026-10-10** after final checks, including the Scripture corrections and open questions.
 
 Each entry is checked against three questions: (1) Does each Scripture reference support the specific association? (2) Are everyday, literary, and biblical meanings clearly distinguished? (3) Does the question invite exploration without prescribing an interpretation?
 
@@ -116,18 +116,6 @@ Each entry is checked against three questions: (1) Does each Scripture reference
 - **Supported by Scripture:** stability (Matthew 7:24-25); Christ as cornerstone (Ephesians 2:20)
 - **Everyday or literary:** support, beginning, commitment
 - **Changes from your draft:** Related: "stone;tree" → "stone"; Added Matthew 7:24-25 (the house on the rock) for "stability"; Question no longer assumes particular "commitments"; Note now names both passages and the everyday sense
-
-## For the course: *Learning to Work with Symbols*
-
-Group 3 offers several ready teaching examples, one per principle, following Learn → Recognize → Practice → Apply:
-
-- **Scripture has a context** (Valley): the psalm's valley is walked through, with company. The everyday "low point" is a different, valid association.
-- **Familiar language already carries symbols** (Wall): "hit a wall" is a symbol most people use without noticing.
-- **One passage, many later meanings** (Rainbow): Genesis gives one meaning, and culture has added others since.
-- **Translation shapes what we see** (Candle): "candle" in older Bibles is a lamp in newer ones.
-- **Opposites belong together** (Valley with Mountain, Desert with Water): the related links let participants practice independently.
-
-Participants could learn the principle, examine the symbol, then use the homepage search and the Journal to practice on their own.
 
 ## Search decision: "valley of the shadow"
 
