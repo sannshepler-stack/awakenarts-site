@@ -10,7 +10,7 @@ import { CATEGORIES } from '@/components/journal/categories'
 import { isEntryReady } from '@/components/journal/types'
 import type { SymbolReference } from '@/data/symbolReferences'
 
-// "What Symbols Matter to You?" — homepage feature (approved by Susan,
+// "What Symbols Are Meaningful to You?" — homepage feature (approved by Susan,
 // 2026-10-09). Placed between "An image can become a mirror" and
 // "Scripture Speaks in Symbols".
 //
@@ -148,13 +148,6 @@ function searchReferences(query: string, references: SymbolReference[]): SymbolR
 }
 
 const SUGGESTIONS = ['path', 'lamp', 'vine', 'gate', 'pearl']
-
-// Three published card fronts, fanned (decorative).
-const FAN = [
-  { src: '/images/symbols/Lamp_Card_Front-opt.jpg', left: '2%', rotate: -12, z: 1 },
-  { src: '/images/symbols/Pearl_Card_Front-opt.jpg', left: '52%', rotate: 12, z: 2 },
-  { src: '/images/symbols/Gate_Card_Front-opt.jpg', left: '27%', rotate: 0, z: 3 },
-]
 
 const STEPS: [string, (s: string) => string | null][] = [
   ['Notice.', (s) => `Where does “${s}” appear in your life?`],
@@ -328,54 +321,32 @@ export default function HomeSymbolSearch({ references = [] }: { references?: Sym
   )
 
   return (
-    <section aria-labelledby="symbol-search-heading" style={{ background: 'var(--cream)', padding: 'var(--band-gap) 1.5rem' }}>
-      <div
-        style={{
-          maxWidth: 1040,
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 360px), 1fr))',
-          gap: '3rem 4rem',
-          alignItems: 'center',
-        }}
-      >
-        {/* Embellishment: three of the published symbol cards, fanned like a
-            hand of cards — what is waiting inside. Decorative. */}
-        <div aria-hidden="true" style={{ position: 'relative', width: '86%', maxWidth: 380, aspectRatio: '1 / 0.8', margin: '0 auto' }}>
-          {FAN.map((f) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              key={f.src}
-              src={f.src}
-              alt=""
-              loading="lazy"
-              style={{
-                position: 'absolute',
-                top: '6%',
-                left: f.left,
-                width: '46%',
-                aspectRatio: '5 / 7',
-                maxHeight: '88%',
-                objectFit: 'cover',
-                borderRadius: 8,
-                transform: `rotate(${f.rotate}deg)`,
-                transformOrigin: 'bottom center',
-                boxShadow: '0 14px 30px rgba(28, 43, 58, 0.22)',
-                zIndex: f.z,
-              }}
-            />
-          ))}
-        </div>
+    <section aria-labelledby="symbol-search-heading" style={{ background: 'var(--cream)', padding: '0 0 var(--band-gap)' }}>
+      {/* One atmospheric header image across the feature — the AwakenArts
+          world the visitor enters (Susan, 2026-10-10: replaces the fanned
+          card spread, which read as a product display and competed with the
+          search). Decorative; no text sits on the image. */}
+      <picture>
+        <source media="(max-width: 900px)" srcSet="/images/homepage/symbol-invitation-header-1200.jpg" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/homepage/symbol-invitation-header.jpg"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          style={{ display: 'block', width: '100%', aspectRatio: '3 / 1', minHeight: 220, objectFit: 'cover', objectPosition: '30% center' }}
+        />
+      </picture>
 
-        <div style={{ textAlign: 'left' }}>
-          <p className="eyebrow">A Personal Invitation</p>
+      <div style={{ maxWidth: 760, margin: '0 auto', padding: 'calc(var(--band-gap) * 0.75) 1.5rem 0', textAlign: 'center' }}>
+          <p className="eyebrow" style={{ justifyContent: 'center' }}>A Personal Invitation</p>
           <h2
             id="symbol-search-heading"
             style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '0.85rem 0 0.75rem', lineHeight: 1.15 }}
           >
-            What Symbols Matter to You?
+            What Symbols Are Meaningful to You?
           </h2>
-          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', lineHeight: 1.5, color: 'var(--mid)', margin: '0 0 1.75rem', maxWidth: 480 }}>
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', lineHeight: 1.5, color: 'var(--mid)', margin: '0 auto 1.75rem', maxWidth: 480 }}>
             An image you wear, an object you treasure, a symbol from Scripture, or something that keeps appearing in your
             life.
           </p>
@@ -383,7 +354,7 @@ export default function HomeSymbolSearch({ references = [] }: { references?: Sym
           <form
             role="search"
             onSubmit={onSubmit}
-            style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'stretch', gap: '0.75rem', maxWidth: 480 }}
+            style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'stretch', justifyContent: 'center', gap: '0.75rem', maxWidth: 480, margin: '0 auto' }}
           >
             <label htmlFor="symbol-search-input" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap' }}>
               Type a symbol
@@ -449,10 +420,9 @@ export default function HomeSymbolSearch({ references = [] }: { references?: Sym
               </span>
             ))}
           </p>
-        </div>
       </div>
 
-      {resultsBlock}
+      <div style={{ padding: '0 1.5rem' }}>{resultsBlock}</div>
     </section>
   )
 }

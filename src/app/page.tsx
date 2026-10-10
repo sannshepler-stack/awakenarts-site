@@ -128,7 +128,7 @@ export default function HomePage() {
 
       {/* Queen Ann — An image can become a mirror. White, raised to follow
           Section 2 (2026-10-07, Susan). */}
-      {/* 2026-10-09, Susan: "What Symbols Matter to You?" — a personal
+      {/* 2026-10-09, Susan: "What Symbols Are Meaningful to You?" — a personal
           invitation, placed before Queen Ann (right after "You already speak
           in images"). Private, in-browser search of published content only. */}
       <HomeSymbolSearch references={getApprovedSymbolReferences()} />

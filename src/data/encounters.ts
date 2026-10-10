@@ -1,6 +1,6 @@
 // The five Christian Encounters, as data (2026-10-09).
 //
-// Used by the homepage "What Symbols Matter to You?" search. Every field is
+// Used by the homepage "What Symbols Are Meaningful to You?" search. Every field is
 // copied from the Encounter pages themselves (src/app/encounters/*); nothing
 // is new. `keywords` lists only symbol words that genuinely appear in each
 // Encounter's own title or Scripture, so a search matches real content.
