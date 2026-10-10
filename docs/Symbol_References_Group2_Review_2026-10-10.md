@@ -101,5 +101,5 @@ Throughout: Scripture is cited for its own context, and personal and cultural as
 ## For your judgment
 
 - **Cross and Dove** are major Christian symbols. A broad reference serves them for now, but each may deserve an illustrated Symbol Card later.
-- **Sheep** now finds "black sheep". It is an everyday idiom about exclusion that meets the reflection on belonging well. Keep it, or limit Sheep to biblical phrasing?
+- **Sheep** keeps "black sheep" (decided 2026-10-10). The everyday idiom about exclusion meets the reflection on belonging, and it also has a life in Christian song.
 
