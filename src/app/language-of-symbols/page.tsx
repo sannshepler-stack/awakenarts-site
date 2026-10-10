@@ -86,12 +86,20 @@ function CategoryCard({ c }: { c: ExperienceCategory }) {
   )
   const arrow = <span aria-hidden="true" style={{ opacity: 0.55 }}>→</span>
   // Keep the arrow with the title's last word, so it never wraps alone.
-  const words = c.title.split(' ')
+  // A title may set its own line break with "\n" (e.g. Make Your Own / Word Art).
+  const lines = c.title.split('\n')
+  const last = lines[lines.length - 1].split(' ')
   const withArrow = (
     <>
-      {words.slice(0, -1).join(' ')}{' '}
+      {lines.slice(0, -1).map((l) => (
+        <span key={l}>
+          {l}
+          <br />
+        </span>
+      ))}
+      {last.slice(0, -1).join(' ')}{last.length > 1 ? ' ' : ''}
       <span style={{ whiteSpace: 'nowrap' }}>
-        {words[words.length - 1]} {arrow}
+        {last[last.length - 1]} {arrow}
       </span>
     </>
   )
@@ -132,7 +140,7 @@ function CategoryCard({ c }: { c: ExperienceCategory }) {
             {withArrow}
           </Link>
         ) : (
-          <span style={titleStyle}>{c.title}</span>
+          <span style={titleStyle}>{c.title.replace('\n', ' ')}</span>
         ),
       )}
     </div>

@@ -96,7 +96,7 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
   {
     // Sixth card (Susan, 2026-10-10): something to do, not only to read.
     // Line and images reused from the Explore page's Word Art section.
-    title: 'Make Your Own Word Art',
+    title: 'Make Your Own\nWord Art',
     line: 'Bring your own words and watch them take shape.',
     href: '/experience',
     img: '/images/experiences/butterfly-wordart-opt.webp',
