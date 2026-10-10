@@ -91,11 +91,14 @@ export const books: Book[] = [
       { src: '/images/gallery/where-you-stand/16-the-road-ahead-olive-hillside.jpg', alt: 'Where You Stand — a stone path winding past an olive tree toward the hills at sunrise' },
     ],
     // 2026-10-10, Susan (Bowker + KDP verified): the live paperback is
-    // ISBN 979-8-9975058-0-6. ISBN 979-8-9975058-2-0 is a separate Bowker
+    // ISBN 979-8-9975058-0-6, and KDP shows the Second Edition interior and
+    // cover files uploaded to it — so the Second Edition cover, samples and
+    // description stay. ISBN 979-8-9975058-2-0 is a separate Bowker
     // record ("…A Seek & Find Journal of Story, Symbol, and Reflection") and
     // must not be shown here or on any other book.
     details: [
       { label: 'Format', value: 'Paperback, 8.5 × 11 in' },
+      { label: 'Edition', value: 'Second edition' },
       { label: 'Publisher', value: 'AwakenArts' },
       { label: 'ISBN', value: '979-8-9975058-0-6' },
       { label: 'Price', value: '$18.99' },
