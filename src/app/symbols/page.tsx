@@ -18,9 +18,9 @@ import { CATEGORIES as JOURNAL_PATHS } from '@/components/journal/categories'
 // figurative-language opening (header watercolor, heading, subtitle) moved
 // to the top of /journal.
 export const metadata: Metadata = {
-  title: 'Symbols for the Christian Soul',
+  title: 'The Language of Symbols',
   description:
-    'Scripture speaks in symbols. Explore the symbol cards: what each can mean, where it appears in everyday language, and what it may help you recognize in your own life.',
+    'Symbols are part of the language we live with every day: in familiar expressions, literature, poetry, art, cultural traditions, and Scripture. Explore the AwakenArts Symbol Cards.',
   alternates: { canonical: '/symbols' },
 }
 
@@ -42,33 +42,33 @@ export default function SymbolsIndexPage() {
               lineHeight: 1.1,
             }}
           >
-            Symbols for the Christian Soul
+            The Language of Symbols
           </h1>
-          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.35rem', color: 'var(--gold)', margin: 0 }}>
-            Scripture speaks in symbols.
-          </p>
-          {/* 2026-10-09, Susan: this page's own introduction, on why
-              recognizing biblical symbolism enriches Scripture reading,
-              reflection, and faith. Replaces the general everyday-symbols
-              paragraph. Link to The Path kept. */}
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: 'var(--body-size)',
-              lineHeight: 'var(--body-line)',
-              color: 'var(--deep)',
-              maxWidth: 760,
-              margin: '1.25rem auto 0',
-            }}
-          >
-            {/* 2026-10-09, Susan: same wording, condensed into one block. */}
-            Scripture speaks through familiar images: lamps, paths, vines, seeds, bread, and water. These ordinary
-            things carry meaning within the stories and teachings of the Bible. Learning to recognize biblical symbols
-            can deepen your understanding of Scripture and enrich the way you encounter its language in reading,
-            reflection, and prayer. Choose a symbol to explore its biblical meaning, consider its place in everyday
-            life, and reflect on what it may mean to you.
-          </p>
-          <p style={{ margin: '1rem 0 0' }}>
+          {/* 2026-10-10, Susan: SYMBOLS is broad again: everyday language,
+              literature, culture and Scripture. "The Language of Symbols"
+              (vocabulary, associations, contexts) complements EXPERIENCE
+              ("Experience the Language of Symbols": guided learning). The
+              Christian material stays here and at /christian-symbols. */}
+          {[
+            'Symbols are part of the language we live with every day. They appear in familiar expressions, literature, poetry, art, cultural traditions, and Scripture.',
+            "A symbol can carry different associations depending on its context. A lamp may illuminate a room, suggest understanding, or represent God\u2019s guidance in a biblical passage. Recognizing these distinctions helps us appreciate how language and imagery give shape to meaning.",
+            'Explore the AwakenArts Symbol Cards to discover how familiar images speak through everyday language, cultural associations, and biblical traditions. Each card offers an invitation to look more closely, consider its context, and reflect on what it may mean in your own experience.',
+          ].map((t, i) => (
+            <p
+              key={i}
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: 'var(--body-size)',
+                lineHeight: 'var(--body-line)',
+                color: 'var(--deep)',
+                maxWidth: 760,
+                margin: i === 0 ? '1.25rem auto 0' : '1rem auto 0',
+              }}
+            >
+              {t}
+            </p>
+          ))}
+          <p style={{ margin: '1.5rem 0 0', display: 'flex', flexWrap: 'wrap', gap: '0.75rem 2rem', justifyContent: 'center' }}>
             <Link
               href="/awakenarts-path#what-symbol-awareness-can-teach"
               data-cta="symbols-intro-path"
@@ -82,6 +82,20 @@ export default function SymbolsIndexPage() {
               }}
             >
               See everything symbol awareness can teach &rarr; The AwakenArts Path
+            </Link>
+            <Link
+              href="/christian-symbols"
+              data-cta="symbols-intro-christian-symbols"
+              style={{
+                fontFamily: 'var(--sans)',
+                fontSize: '0.8rem',
+                fontWeight: 600,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: 'var(--gold)',
+              }}
+            >
+              Christian Symbols &rarr;
             </Link>
           </p>
         </section>
