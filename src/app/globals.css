@@ -13770,3 +13770,23 @@ a.studio-entry-panel:hover .studio-entry-panel__img {
   text-decoration-color: rgba(138, 106, 31, 0.45);
 }
 .stay-connected-link:hover { text-decoration-color: currentColor; }
+
+/* Homepage symbol invitation — atmospheric image faded into cream behind
+   the eyebrow, heading and search (Susan, 2026-10-10). A media query is
+   needed for the stronger phone fade, so this lives here, not inline. */
+.symbol-invite-bg {
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(to bottom, rgba(250,246,236,0.10) 0%, rgba(250,246,236,0.55) 38%, rgba(250,246,236,0.92) 62%, #FAF6EC 80%),
+    url(/images/homepage/symbol-invitation-header.jpg);
+  background-repeat: no-repeat;
+  background-position: top center, 30% top;
+  background-size: 100% 100%, cover;
+}
+@media (max-width: 700px) {
+  .symbol-invite-bg {
+    background-image:
+      linear-gradient(to bottom, rgba(250,246,236,0.05) 0%, rgba(250,246,236,0.70) 24%, rgba(250,246,236,0.94) 40%, #FAF6EC 58%),
+      url(/images/homepage/symbol-invitation-header-1200.jpg);
+  }
+}

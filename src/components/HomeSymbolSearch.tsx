@@ -322,23 +322,12 @@ export default function HomeSymbolSearch({ references = [] }: { references?: Sym
 
   return (
     <section aria-labelledby="symbol-search-heading" style={{ background: 'var(--cream)', padding: '0 0 var(--band-gap)' }}>
-      {/* One atmospheric header image across the feature — the AwakenArts
-          world the visitor enters (Susan, 2026-10-10: replaces the fanned
-          card spread, which read as a product display and competed with the
-          search). Decorative; no text sits on the image. */}
-      <picture>
-        <source media="(max-width: 900px)" srcSet="/images/homepage/symbol-invitation-header-1200.jpg" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/homepage/symbol-invitation-header.jpg"
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          style={{ display: 'block', width: '100%', aspectRatio: '3 / 1', minHeight: 220, objectFit: 'cover', objectPosition: '30% center' }}
-        />
-      </picture>
-
-      <div style={{ maxWidth: 760, margin: '0 auto', padding: 'calc(var(--band-gap) * 0.75) 1.5rem 0', textAlign: 'center' }}>
+      {/* The invitation sits over the AwakenArts world: one atmospheric
+          image, faded into the cream so the text and search rest on light
+          (Susan, 2026-10-10). The image belongs to the invitation area only,
+          so it holds still when results appear below. */}
+      <div className="symbol-invite-bg">
+      <div style={{ maxWidth: 760, margin: '0 auto', padding: 'clamp(10rem, 20vw, 17rem) 1.5rem 0', textAlign: 'center' }}>
           <p className="eyebrow" style={{ justifyContent: 'center' }}>A Personal Invitation</p>
           <h2
             id="symbol-search-heading"
@@ -421,6 +410,7 @@ export default function HomeSymbolSearch({ references = [] }: { references?: Sym
               </span>
             ))}
           </p>
+      </div>
       </div>
 
       <div style={{ padding: '0 1.5rem' }}>{resultsBlock}</div>
