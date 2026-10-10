@@ -32,6 +32,13 @@ export interface SymbolReference {
   keys: string[]
   /** Lowercased phrasings that must NOT bring up this reference (e.g. "watch and pray" for Watch). */
   excludes: string[]
+  /**
+   * Phrases this reference owns outright (e.g. "valley of the shadow" for
+   * Valley). The words inside them are not searched against published
+   * content, so a biblical phrase is not confused with a Journal entry that
+   * uses one of its words differently.
+   */
+  claims: string[]
   canSuggest: string[]
   scripture: string[]
   note: string
@@ -70,6 +77,7 @@ function toReference(e: RawEntry): SymbolReference {
     name: e.name,
     keys: [e.name, ...split(e.also_found_as)].map((s) => s.toLowerCase()),
     excludes: split((e as { not_found_by?: string }).not_found_by ?? '').map((s) => s.toLowerCase()),
+    claims: split((e as { claims_phrases?: string }).claims_phrases ?? '').map((s) => s.toLowerCase()),
     canSuggest: split(e.can_suggest),
     scripture: split(e.scripture),
     note: e.note,

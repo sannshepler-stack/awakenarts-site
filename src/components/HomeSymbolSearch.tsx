@@ -147,6 +147,16 @@ function searchReferences(query: string, references: SymbolReference[]): SymbolR
   })
 }
 
+// Published content, with any phrase claimed by an approved reference
+// (e.g. "valley of the shadow") set aside first.
+function searchPublished(query: string, references: SymbolReference[]): Result[] {
+  let q = normalize(query)
+  for (const phrase of references.flatMap((r) => r.claims)) {
+    q = q.replace(new RegExp(`(^| )${normalize(phrase)}(?= |$)`, 'g'), ' ')
+  }
+  return search(q)
+}
+
 const SUGGESTIONS = ['path', 'lamp', 'vine', 'gate', 'pearl']
 
 const STEPS: [string, (s: string) => string | null][] = [
@@ -202,7 +212,7 @@ export default function HomeSymbolSearch({ references = [] }: { references?: Sym
     const trimmed = q.trim().replace(/\s+/g, ' ')
     if (!trimmed) return
     setSubmitted(trimmed.length > 60 ? trimmed.slice(0, 57) + '…' : trimmed)
-    setResults(search(trimmed))
+    setResults(searchPublished(trimmed, references))
     setRefResults(searchReferences(trimmed, references))
   }
 

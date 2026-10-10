@@ -1,6 +1,6 @@
 # Symbol References: Group 3 Review
 
-Landscape, sky, and light. Prepared 2026-10-10. **All nine remain draft.**
+Landscape, sky, and light. Prepared 2026-10-10. **Approved by Susan 2026-10-10**, including the Scripture corrections, open questions, and the five teaching examples.
 
 Each entry is checked against three questions: (1) Does each Scripture reference support the specific association? (2) Are everyday, literary, and biblical meanings clearly distinguished? (3) Does the question invite exploration without prescribing an interpretation?
 
@@ -129,6 +129,6 @@ Group 3 offers several ready teaching examples, one per principle, following Lea
 
 Participants could learn the principle, examine the symbol, then use the homepage search and the Journal to practice on their own.
 
-## For your judgment
+## Search decision: "valley of the shadow"
 
-- **"valley of the shadow"** finds the Valley reference *and* the published Journal entry *The Shadow*, which appears first because published content takes priority. The psalm's "shadow" (deep darkness) and the Journal's shadow are different ideas. This could confuse a visitor, or it could be a fruitful juxtaposition. If you prefer, I can keep *The Shadow* from appearing for this phrase.
+Decided 2026-10-10. "valley of the shadow" and "shadow of death" belong to the Valley reference and its treatment of Psalm 23:4. The Journal entry *The Shadow* no longer appears for these phrases, but still answers searches for "shadow" itself. Both entries keep their content unchanged; only the search matching was adjusted.
