@@ -30,6 +30,8 @@ export interface ExperienceCategory {
   /** Shown when the category has no page and no available offerings yet. */
   emptyNote?: string
   img: string
+  /** Optional second image, shown beside the first so the pair fills the box. */
+  img2?: string
   /** CSS object-position for photographs. */
   pos?: string
   /** True for portrait artwork (a Symbol Card, a figure), shown whole rather than cropped. */
@@ -51,6 +53,7 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
     line: 'Learning to work with symbolic language, one lesson at a time.',
     emptyNote: 'Coming soon',
     img: '/images/symbols/Lamp_Card_Front-opt.jpg',
+    img2: '/images/symbols/Path_Card_Front-opt.jpg',
     card: true,
     offerings: [
       {
@@ -72,6 +75,8 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
     // Mermaid Grismere, from the Grismere presentation page: the one
     // presentation offered so far (Susan, 2026-10-10).
     img: '/images/editions/grismere-figure.jpg',
+    // The Grismere word figure: the poem in the mermaid's shape, shown whole.
+    img2: '/images/experience/grismere-word-figure.webp',
     card: true,
     offerings: [],
   },

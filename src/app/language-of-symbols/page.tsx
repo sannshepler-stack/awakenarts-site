@@ -53,23 +53,36 @@ const box: React.CSSProperties = { display: 'flex', flexDirection: 'column', tex
 // inside it, so the category itself is not wrapped in a link.
 function CategoryCard({ c }: { c: ExperienceCategory }) {
   const offerings = availableOfferings(c)
+  const imgStyle = (single: boolean): React.CSSProperties => ({
+    display: 'block',
+    width: single ? '100%' : '50%',
+    height: '100%',
+    objectFit: c.card ? 'contain' : 'cover',
+    objectPosition: c.pos || 'center',
+    minWidth: 0,
+  })
+  // One image, or two side by side so a pair of portrait works fills the box.
   const image = (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={c.img}
-      alt=""
-      loading="lazy"
+    <span
       style={{
-        display: 'block',
+        display: 'flex',
+        gap: c.img2 ? '0.4rem' : 0,
         width: '100%',
         aspectRatio: '16 / 10',
-        objectFit: c.card ? 'contain' : 'cover',
-        objectPosition: c.pos || 'center',
         background: 'var(--warm)',
-        padding: c.card ? '0.9rem' : 0,
+        padding: c.card ? '0.5rem' : 0,
         boxSizing: 'border-box',
+        minHeight: 0,
+        overflow: 'hidden',
       }}
-    />
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={c.img} alt="" loading="lazy" style={imgStyle(!c.img2)} />
+      {c.img2 && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={c.img2} alt="" loading="lazy" style={imgStyle(false)} />
+      )}
+    </span>
   )
   const arrow = <span aria-hidden="true" style={{ opacity: 0.55 }}>→</span>
   const showNote = !c.href && offerings.length === 0 && c.emptyNote
