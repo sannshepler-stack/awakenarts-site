@@ -2,6 +2,10 @@
 
 > **Read this file first. Then read `AWAKENARTS_CURRENT_MATERIALS.md`, the authoritative current-working-set map. For workshop, Dragon, Companion/facilitator, participant-material, and workshop-related website work, read the New AwakenArts Paradigm (`/Users/sashe/Desktop/Dragon Pass One.docx`) and `AwakenArts_Dragon_Paradigm_Audit_and_Map.md` before older standards. Consult `AwakenArts_Documentation_Map.md` for non-conflicting subordinate guidance, but do not let its earlier Edition-led architecture silently override current governance.**
 
+## Education materials relocated — October 10, 2026
+
+Draft teaching and course materials live outside this public repository, in `~/Desktop/AARTS PROJECTS/EDUCATION/Experience the Language of Symbols/`. Seven files named in the governance notes below now live there, among them the Teaching Path Development Brief, the Facilitation Method Research and the Dragon Workshop Blueprint. See the table at the top of `AwakenArts_Documentation_Map.md`. Keep this repository to approved website-facing material and integration code. Do not add course drafts, and do not publish course enrollment or payments until Susan approves the materials and delivery.
+
 ## Goal 8 governance correction — August 20, 2026
 
 **AwakenArts, A Path of Stones.** The AwakenArts works themselves provide the substantive places of encounter — an image-poem is not assigned significance to make it useful; it is investigated because it may contain meaning beyond the creator's immediate conscious awareness. Working Program movement (not yet frozen, must keep being tested against Jung's individuation and materially different works): IMAGE → LANGUAGE → RECOGNITION → AWARENESS → INTEGRATION → WHOLENESS → CONNECTION.

@@ -10,6 +10,22 @@ The documents in each tier below are listed in consultation order — what to re
 
 ---
 
+## Relocated to the Education Folder (2026-10-10)
+
+Per Susan, draft teaching and course materials no longer live in this public repository. These seven files were moved, unchanged and under the same filenames, to `~/Desktop/AARTS PROJECTS/EDUCATION/Experience the Language of Symbols/`. Any reference to them elsewhere in these documents now points there. Their full history remains in Git.
+
+| File | New location |
+|---|---|
+| `AwakenArts_Teaching_Path_Development_Brief.md` | `01 - Educator Study & Research/` |
+| `AwakenArts_Facilitation_Method_Research.md` | `01 - Educator Study & Research/` |
+| `AwakenArts_Participant_Value_Audit_Findings.docx` | `01 - Educator Study & Research/` |
+| `AwakenArts_Workshop_Curriculum.docx` | `02 - Course Curriculum/` (the public download in `public/files/workshops/` is a separate copy and stays) |
+| `Dragon_Workshop_Blueprint_New_Paradigm.md` | `02 - Course Curriculum/` |
+| `Dragon_Workshop_Development.docx` | `02 - Course Curriculum/` |
+| `Dragon_Workshop_Presentation.pptx` | `07 - Presentations/` |
+
+The six publicly downloadable workshop files in `public/files/workshops/` remain in place.
+
 ## The Charter — Read Before Anything Else
 
 **`AwakenArts_Production_Charter.md`** — *Governing document. Version 1.0. Issued 2026-07-27. Includes Addendum A, appended the same day.*
