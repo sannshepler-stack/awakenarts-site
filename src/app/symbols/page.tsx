@@ -49,25 +49,21 @@ export default function SymbolsIndexPage() {
               (vocabulary, associations, contexts) complements EXPERIENCE
               ("Experience the Language of Symbols": guided learning). The
               Christian material stays here and at /christian-symbols. */}
-          {[
-            'Symbols are part of the language we live with every day. They appear in familiar expressions, literature, poetry, art, cultural traditions, and Scripture.',
-            "A symbol can carry different associations depending on its context. A lamp may illuminate a room, suggest understanding, or represent God\u2019s guidance in a biblical passage. Recognizing these distinctions helps us appreciate how language and imagery give shape to meaning.",
-            'Explore the AwakenArts Symbol Cards to discover how familiar images speak through everyday language, cultural associations, and biblical traditions. Each card offers an invitation to look more closely, consider its context, and reflect on what it may mean in your own experience.',
-          ].map((t, i) => (
-            <p
-              key={i}
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: 'var(--body-size)',
-                lineHeight: 'var(--body-line)',
-                color: 'var(--deep)',
-                maxWidth: 760,
-                margin: i === 0 ? '1.25rem auto 0' : '1rem auto 0',
-              }}
-            >
-              {t}
-            </p>
-          ))}
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: 'var(--body-size)',
+              lineHeight: 'var(--body-line)',
+              color: 'var(--deep)',
+              maxWidth: 760,
+              margin: '1.25rem auto 0',
+            }}
+          >
+            Symbols are part of the language we live with every day&mdash;in familiar expressions, literature, poetry,
+            art, cultural traditions, and Scripture. Their meaning depends on context: a lamp may light a room, suggest
+            understanding, or represent God&rsquo;s guidance. Explore the AwakenArts Symbol Cards to look more closely and
+            reflect on what each image may mean in your own experience.
+          </p>
           <p style={{ margin: '1.5rem 0 0', display: 'flex', flexWrap: 'wrap', gap: '0.75rem 2rem', justifyContent: 'center' }}>
             <Link
               href="/awakenarts-path#what-symbol-awareness-can-teach"
