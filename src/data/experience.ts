@@ -55,9 +55,11 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
     offerings: [
       {
         // Draft: hidden until lessons, Symbol Cards, Kit delivery and
-        // checkout are approved. No route exists yet.
-        title: 'Experience the Language of Symbols: Four Weeks',
-        line: 'One lesson and one illustrated Symbol Card each week.',
+        // checkout are approved. No route exists yet. Wording approved by
+        // Susan for when it is ready (2026-10-10). The price ($25) and an
+        // enrollment link are added only when the course is complete.
+        title: 'Experience the Language of Symbols \u2014 A Four-Week Guided Course',
+        line: 'Four weekly lessons, four illustrated Symbol Cards, and opportunities for personal reflection.',
         href: '/courses/language-of-symbols',
         status: 'draft',
       },

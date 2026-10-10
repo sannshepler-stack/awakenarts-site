@@ -137,8 +137,8 @@ export default function LanguageOfSymbolsPage() {
             Experience the Language of Symbols
           </h1>
           <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.25rem', lineHeight: 1.5, color: 'var(--mid)', maxWidth: 620, margin: '1.5rem auto 0' }}>
-            Language is the foundation of AwakenArts education. Our approach brings together metaphor, poetry, symbolic
-            imagery, reflection, and creative expression.
+            Language is the foundation of AwakenArts education. Through poetry, metaphor, symbolic imagery, and
+            reflection, discover how language carries meaning&mdash;and learn to recognize its presence in your own life.
           </p>
         </section>
 
