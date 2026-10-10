@@ -380,6 +380,7 @@ export default function HomeSymbolSearch({ references = [] }: { references?: Sym
                 borderBottom: '1px solid var(--gold)',
                 borderRadius: 0,
                 padding: '0.8rem 0.25rem',
+                textAlign: 'center',
               }}
             />
             <button
