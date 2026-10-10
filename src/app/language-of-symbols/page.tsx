@@ -85,6 +85,16 @@ function CategoryCard({ c }: { c: ExperienceCategory }) {
     </span>
   )
   const arrow = <span aria-hidden="true" style={{ opacity: 0.55 }}>→</span>
+  // Keep the arrow with the title's last word, so it never wraps alone.
+  const words = c.title.split(' ')
+  const withArrow = (
+    <>
+      {words.slice(0, -1).join(' ')}{' '}
+      <span style={{ whiteSpace: 'nowrap' }}>
+        {words[words.length - 1]} {arrow}
+      </span>
+    </>
+  )
   const showNote = !c.href && offerings.length === 0 && c.emptyNote
   const body = (title: React.ReactNode) => (
     <span style={{ display: 'block', padding: '1.4rem 1.5rem 1.6rem', flex: 1 }}>
@@ -109,7 +119,7 @@ function CategoryCard({ c }: { c: ExperienceCategory }) {
     return (
       <Link href={c.href} data-cta={`experience-${c.href.slice(1)}`} style={box}>
         {image}
-        {body(<span style={titleStyle}>{c.title} {arrow}</span>)}
+        {body(<span style={titleStyle}>{withArrow}</span>)}
       </Link>
     )
   }
@@ -119,7 +129,7 @@ function CategoryCard({ c }: { c: ExperienceCategory }) {
       {body(
         c.href ? (
           <Link href={c.href} data-cta={`experience-${c.href.slice(1)}`} style={{ ...titleStyle, textDecoration: 'none' }}>
-            {c.title} {arrow}
+            {withArrow}
           </Link>
         ) : (
           <span style={titleStyle}>{c.title}</span>

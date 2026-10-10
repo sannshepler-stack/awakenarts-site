@@ -1,7 +1,8 @@
 // Experience the Language of Symbols — /language-of-symbols (Susan, 2026-10-10).
 //
 // Two levels:
-//   - CATEGORIES: the five permanent educational paths. They always appear.
+//   - CATEGORIES: the permanent educational paths (five, plus Make Your Own
+//     Word Art as a sixth, 2026-10-10). They always appear.
 //   - offerings: individual courses, presentations or practices inside a
 //     category. Only offerings with status 'available' appear on the site.
 //
@@ -83,13 +84,24 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
     line: 'Read, notice, and write, then shape your own words into form.',
     href: '/journal',
     img: '/images/explore/journal-notebook.jpg',
-    offerings: [{ title: 'Make Your Own Word Art', href: '/experience', status: 'available' }],
+    offerings: [],
   },
   {
     title: 'Christian Encounters',
     line: 'Five reflections in image and Scripture.',
     href: '/encounters',
     img: '/images/encounters/journey/journey-02-web-opt.jpg',
+    offerings: [],
+  },
+  {
+    // Sixth card (Susan, 2026-10-10): something to do, not only to read.
+    // Line and images reused from the Explore page's Word Art section.
+    title: 'Make Your Own Word Art',
+    line: 'Bring your own words and watch them take shape.',
+    href: '/experience',
+    img: '/images/experiences/butterfly-wordart-opt.webp',
+    img2: '/images/experiences/word-form-spiral-opt.webp',
+    card: true,
     offerings: [],
   },
 ]
