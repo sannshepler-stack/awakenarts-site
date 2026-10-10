@@ -72,11 +72,9 @@ export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
     title: 'Presentations',
     line: 'Presentations and workshops for groups, in person.',
     href: '/presentations',
-    // Mermaid Grismere, from the Grismere presentation page: the one
-    // presentation offered so far (Susan, 2026-10-10).
-    img: '/images/editions/grismere-figure.jpg',
-    // The Grismere word figure: the poem in the mermaid's shape, shown whole.
-    img2: '/images/experience/grismere-word-figure.webp',
+    // Grismere, painted figure beside the word figure, both framed
+    // (Susan, 2026-10-10). Shown whole: the poem must never be cropped.
+    img: '/images/experience/grismere-spread.jpg',
     card: true,
     offerings: [],
   },
