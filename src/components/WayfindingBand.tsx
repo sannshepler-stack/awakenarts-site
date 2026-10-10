@@ -51,9 +51,8 @@ import styles from './WayfindingBand.module.css'
 
 const PRIMARY_LINKS = [
   { label: 'Explore', href: '/explore' },
-  { label: 'Collection', href: '/collection' },
-  { label: 'Presentations', href: '/presentations' },
   { label: 'Symbols', href: '/symbols' },
+  { label: 'Experience', href: '/language-of-symbols' },
   { label: 'Books', href: '/books' },
   { label: 'About', href: '/about' },
 ]

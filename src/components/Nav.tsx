@@ -28,10 +28,11 @@ const links = [
   // SYMBOLS · BOOKS · ABOUT (Editions = the works; Guided Encounters
   // are presentations, under Presentations). The Path, Journal and the other
   // reflective pages are gathered under Explore. Earlier history: git 9d3746a.
+  // 2026-10-10, Susan: EXPERIENCE replaces Presentations (still linked from
+  // the Experience page and the footer); Collection stays in the footer.
   { label: 'Explore', href: '/explore', cta: false },
-  { label: 'Collection', href: '/collection', cta: false },
-  { label: 'Presentations', href: '/presentations', cta: false },
   { label: 'Symbols', href: '/symbols', cta: false },
+  { label: 'Experience', href: '/language-of-symbols', cta: false },
   { label: 'Books', href: '/books', cta: false },
   { label: 'About', href: '/about', cta: false },
 ]

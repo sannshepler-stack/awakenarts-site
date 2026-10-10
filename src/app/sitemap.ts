@@ -55,6 +55,7 @@ const ENTRIES: Entry[] = [
   // /quotes — Scripture and the Christian literary tradition; part of
   // the site's foundational interpretive framework (June 2026).
   { path: '/quotes',                                             changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/language-of-symbols',                                changeFrequency: 'monthly', priority: 0.8 },
   { path: '/experience',                                         changeFrequency: 'monthly', priority: 0.6 },
   { path: '/privacy',                                            changeFrequency: 'yearly',  priority: 0.2 },
   { path: '/terms',                                              changeFrequency: 'yearly',  priority: 0.2 },

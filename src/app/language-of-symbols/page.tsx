@@ -1,0 +1,182 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import Nav from '@/components/Nav'
+import WayfindingBand from '@/components/WayfindingBand'
+import Footer from '@/components/Footer'
+import StayConnected from '@/components/StayConnected'
+import { EXPERIENCE_CATEGORIES, availableOfferings, type ExperienceCategory } from '@/data/experience'
+
+// /language-of-symbols — "Experience the Language of Symbols" (Susan,
+// 2026-10-10). The EXPERIENCE item in the main navigation; it replaces
+// Presentations there, and the Presentations page stays where it is,
+// linked from here. /experience stays the Make Your Own Word Art page,
+// which five other pages already link to.
+//
+// Language first: symbols, poetry, imagery and reflection are ways of
+// encountering meaning. Patterns reused from /explore (door cards, eyebrow,
+// page-title scale, StayConnected, WayfindingBand).
+//
+// The five permanent categories and their offerings come from
+// src/data/experience.ts. Only offerings marked 'available' appear; the
+// four-week course stays a draft there until Susan approves the lessons,
+// Symbol Cards, Kit delivery and checkout.
+
+export const metadata: Metadata = {
+  title: 'Experience the Language of Symbols',
+  description:
+    'AwakenArts education begins with language: metaphor, poetry, symbolic imagery, reflection, and creative expression.',
+  alternates: { canonical: '/language-of-symbols' },
+}
+
+const titleStyle: React.CSSProperties = {
+  display: 'block',
+  fontFamily: 'var(--serif)',
+  fontSize: 'var(--t-card)',
+  lineHeight: 1.25,
+  color: 'var(--deep)',
+}
+
+const goldLink: React.CSSProperties = {
+  fontFamily: 'var(--sans)',
+  fontSize: '0.72rem',
+  fontWeight: 600,
+  letterSpacing: '0.12em',
+  textTransform: 'uppercase',
+  color: 'var(--gold)',
+  textDecoration: 'none',
+}
+
+const box: React.CSSProperties = { display: 'flex', flexDirection: 'column', textDecoration: 'none', border: '1px solid var(--mist)', background: '#fff' }
+
+// One permanent category. With no available offerings it is a single link
+// (or, without a page, a quiet card). Available offerings appear as links
+// inside it, so the category itself is not wrapped in a link.
+function CategoryCard({ c }: { c: ExperienceCategory }) {
+  const offerings = availableOfferings(c)
+  const image = (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={c.img}
+      alt=""
+      loading="lazy"
+      style={{
+        display: 'block',
+        width: '100%',
+        aspectRatio: '16 / 10',
+        objectFit: c.card ? 'contain' : 'cover',
+        objectPosition: c.pos || 'center',
+        background: 'var(--warm)',
+        padding: c.card ? '0.9rem' : 0,
+        boxSizing: 'border-box',
+      }}
+    />
+  )
+  const arrow = <span aria-hidden="true" style={{ opacity: 0.55 }}>→</span>
+  const showNote = !c.href && offerings.length === 0 && c.emptyNote
+  const body = (title: React.ReactNode) => (
+    <span style={{ display: 'block', padding: '1.4rem 1.5rem 1.6rem', flex: 1 }}>
+      {showNote && <span style={{ ...goldLink, display: 'block', fontSize: '0.66rem', marginBottom: '0.4rem' }}>{c.emptyNote}</span>}
+      {title}
+      <span style={{ display: 'block', fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--mid)', marginTop: '0.6rem' }}>
+        {c.line}
+      </span>
+      {offerings.length > 0 && (
+        <span style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '1rem' }}>
+          {offerings.map((o) => (
+            <Link key={o.href} href={o.href} style={goldLink}>
+              {o.title} &rarr;
+            </Link>
+          ))}
+        </span>
+      )}
+    </span>
+  )
+
+  if (c.href && offerings.length === 0) {
+    return (
+      <Link href={c.href} data-cta={`experience-${c.href.slice(1)}`} style={box}>
+        {image}
+        {body(<span style={titleStyle}>{c.title} {arrow}</span>)}
+      </Link>
+    )
+  }
+  return (
+    <div style={box}>
+      {c.href ? <Link href={c.href} tabIndex={-1} aria-hidden="true">{image}</Link> : image}
+      {body(
+        c.href ? (
+          <Link href={c.href} data-cta={`experience-${c.href.slice(1)}`} style={{ ...titleStyle, textDecoration: 'none' }}>
+            {c.title} {arrow}
+          </Link>
+        ) : (
+          <span style={titleStyle}>{c.title}</span>
+        ),
+      )}
+    </div>
+  )
+}
+
+export default function LanguageOfSymbolsPage() {
+  return (
+    <>
+      <Nav />
+      <main style={{ background: 'var(--cream)' }}>
+        {/* Header: the poetry manuscript, so the page opens on language. */}
+        <div style={{ padding: 'calc(var(--band-gap) + 1rem) 1.5rem 0' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/headers/poetry-manuscript.jpg"
+            alt="A handwritten poetry manuscript"
+            style={{ display: 'block', width: '100%', maxWidth: 1180, maxHeight: 420, objectFit: 'cover', margin: '0 auto' }}
+          />
+        </div>
+
+        <section style={{ padding: '2rem 1.5rem 3.75rem', textAlign: 'center' }}>
+          <p className="eyebrow" style={{ justifyContent: 'center' }}>Experience</p>
+          <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-page)', lineHeight: 1.15, color: 'var(--deep)', margin: '1rem 0 0' }}>
+            Experience the Language of Symbols
+          </h1>
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.25rem', lineHeight: 1.5, color: 'var(--mid)', maxWidth: 620, margin: '1.5rem auto 0' }}>
+            Language is the foundation of AwakenArts education. Our approach brings together metaphor, poetry, symbolic
+            imagery, reflection, and creative expression.
+          </p>
+        </section>
+
+        <section aria-label="Ways to experience AwakenArts" style={{ padding: '0 1.5rem var(--band-gap)' }}>
+          <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>
+            {EXPERIENCE_CATEGORIES.map((c) => (
+              <CategoryCard key={c.title} c={c} />
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="experience-guide" style={{ padding: '0 1.5rem var(--band-gap)', textAlign: 'center' }}>
+          <div aria-hidden="true" style={{ width: 64, height: 1, background: 'var(--gold)', opacity: 0.6, margin: '0 auto 3rem' }} />
+          <p className="eyebrow" style={{ justifyContent: 'center' }}>Your Guide</p>
+          <h2
+            id="experience-guide"
+            style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 'var(--t-section)', color: 'var(--deep)', margin: '1rem 0 1rem' }}
+          >
+            Susan Ann Shepler
+          </h2>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 'var(--body-line)', color: 'var(--deep)', maxWidth: 'var(--measure-poetic, 640px)', margin: '0 auto' }}>
+            Susan&rsquo;s educational foundation includes a BA in English and Spanish, an MA in Spiritual Psychology, and a
+            two-year certification as a Transformative Language Artist.
+          </p>
+          <p style={{ margin: '1.75rem 0 0' }}>
+            <Link
+              href="/about"
+              style={{ fontFamily: 'var(--sans)', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold)' }}
+            >
+              About Susan &rarr;
+            </Link>
+          </p>
+        </section>
+
+        <StayConnected source="language-of-symbols" />
+      </main>
+      <WayfindingBand />
+      <Footer />
+    </>
+  )
+}

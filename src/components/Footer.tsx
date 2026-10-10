@@ -30,6 +30,7 @@ import FooterSocial from './FooterSocial'
 const EXPLORE_LINKS = [
   { label: 'Explore', href: '/explore' },
   { label: 'The AwakenArts Path', href: '/awakenarts-path' },
+  { label: 'Experience the Language of Symbols', href: '/language-of-symbols' },
   { label: 'Collection', href: '/collection' },
   { label: 'Symbols', href: '/symbols' },
   { label: 'Christian Encounters', href: '/encounters' },
