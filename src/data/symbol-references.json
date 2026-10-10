@@ -46,10 +46,10 @@
       "also_found_as": "doves; white dove",
       "type": "biblical;literary;everyday",
       "can_suggest": "peace;Holy Spirit;remembrance;gentleness",
-      "scripture": "Matthew 3:16; Genesis 8:11",
+      "scripture": "Matthew 3:16; Genesis 8:11; Matthew 10:16",
       "note": "The dove appears in distinct biblical scenes, including Noah's account and Jesus' baptism.",
       "reflection_question": "Which associations with the dove are meaningful to you, and why?",
-      "related": "water",
+      "related": "",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
@@ -58,8 +58,8 @@
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 2,
       "review_changes": [
-        "\"Spirit\" clarified as \"Holy Spirit\" (Matthew 3:16)",
-        "Related: \"lamp;vine\" → \"water\""
+        "Added Matthew 10:16 (\"innocent as doves\") so \"gentleness\" has a supporting passage",
+        "Related: \"water\" → none (the link was to the setting of the scenes, not to what the dove suggests)"
       ]
     },
     {
@@ -258,9 +258,9 @@
       "name": "Cross",
       "also_found_as": "crosses; crucifix",
       "type": "biblical;everyday",
-      "can_suggest": "faith;sacrifice;hope;commitment",
+      "can_suggest": "faith;sacrifice;redemption;hope;discipleship",
       "scripture": "1 Corinthians 1:18; Luke 9:23",
-      "note": "The cross is a central Christian symbol with rich theological and personal significance.",
+      "note": "For Christians, the cross is the place of Christ's death and the sign of redemption; many also wear or keep one as a personal sign of faith.",
       "reflection_question": "What experiences or commitments do you connect with the cross?",
       "related": "path",
       "status": "draft",
@@ -271,7 +271,8 @@
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 2,
       "review_changes": [
-        "Related: \"light;path\" → \"path\""
+        "Note rewritten: names what the cross is in Christian faith, and its personal use, without denominational emphasis",
+        "\"commitment\" → \"discipleship\" (Luke 9:23, take up the cross and follow); added \"redemption\" (1 Corinthians 1:18)"
       ]
     },
     {
@@ -292,7 +293,7 @@
     },
     {
       "name": "Lily",
-      "also_found_as": "lilies; flower lily",
+      "also_found_as": "lilies; easter lily",
       "type": "biblical;literary;everyday",
       "can_suggest": "beauty;care;transience;hope",
       "scripture": "Matthew 6:28-30",
@@ -307,7 +308,7 @@
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 2,
       "review_changes": [
-        "Related: \"flower;seed\" → \"flower\""
+        "Removed \"flower lily\"; added \"easter lily\", a common search"
       ]
     },
     {
@@ -369,10 +370,10 @@
     },
     {
       "name": "Bird",
-      "also_found_as": "birds; songbird; flying bird",
+      "also_found_as": "birds; songbird; sparrow; sparrows",
       "type": "biblical;literary;everyday",
-      "can_suggest": "freedom;vulnerability;home;perspective",
-      "scripture": "Matthew 6:26",
+      "can_suggest": "freedom;vulnerability;care;home;perspective",
+      "scripture": "Matthew 6:26; Matthew 10:29-31",
       "note": "Different birds have distinct cultural and biblical associations.",
       "reflection_question": "Is there a particular bird that matters to you, and what do you associate with it?",
       "related": "feather",
@@ -384,15 +385,17 @@
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 2,
       "review_changes": [
-        "Related: \"dove;eagle\" → \"feather\""
+        "Removed \"flying bird\"; added \"sparrow\", which Scripture names directly",
+        "Added Matthew 10:29-31 (sparrows) so \"vulnerability\" has a supporting passage",
+        "Added \"care\" (Matthew 6:26, the Father feeds them)"
       ]
     },
     {
       "name": "Nest",
-      "also_found_as": "bird nest; nesting",
+      "also_found_as": "nests; bird nest; nesting; empty nest",
       "type": "biblical;literary;everyday",
       "can_suggest": "shelter;care;home;beginnings",
-      "scripture": "Psalm 84:3",
+      "scripture": "Psalm 84:3; Deuteronomy 32:11",
       "note": "A nest can evoke both shelter and the preparation to leave it.",
       "reflection_question": "What does the idea of a nest bring to mind about home?",
       "related": "tree",
@@ -404,7 +407,8 @@
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 2,
       "review_changes": [
-        "Related: \"dove;tree\" → \"tree\""
+        "Added \"empty nest\", the everyday phrase that carries the note's \"preparation to leave\"",
+        "Added Deuteronomy 32:11 (the eagle stirs up its nest) to support the leaving the note describes"
       ]
     },
     {
@@ -468,11 +472,11 @@
       "name": "Fish",
       "also_found_as": "fishes; ichthys",
       "type": "biblical;literary;everyday",
-      "can_suggest": "faith;provision;community;abundance",
-      "scripture": "Matthew 14:17-21; John 21:6",
+      "can_suggest": "provision;abundance;calling;Christian identity",
+      "scripture": "Matthew 14:17-21; John 21:6; Matthew 4:19",
       "note": "Fish appear in several Gospel narratives and in early Christian symbolism.",
       "reflection_question": "What associations do you bring to the image of a fish?",
-      "related": "net;water",
+      "related": "net",
       "status": "draft",
       "link_symbols": "/symbols",
       "link_journal": "/journal",
@@ -481,7 +485,9 @@
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 2,
       "review_changes": [
-        "Related: \"water;net\" → \"net;water\""
+        "\"faith; community\" → \"calling\" (Matthew 4:19) and \"Christian identity\" (the ichthys sign)",
+        "Added Matthew 4:19 (\"fishers of men\") for \"calling\"",
+        "Related: kept Net (Matthew 13:47, the net that gathers fish of every kind); removed Water"
       ]
     },
     {
@@ -1111,10 +1117,10 @@
     },
     {
       "name": "Sheep",
-      "also_found_as": "flock",
+      "also_found_as": "flock; lost sheep; black sheep",
       "type": "biblical;literary;everyday",
-      "can_suggest": "vulnerability;community;care;trust",
-      "scripture": "John 10:11-16",
+      "can_suggest": "belonging;being known;vulnerability;being sought",
+      "scripture": "John 10:11-16; Luke 15:4-7",
       "note": "Scripture often speaks of God's people as a flock in a shepherd's care.",
       "reflection_question": "What does the image of a flock evoke about belonging?",
       "related": "shepherd;gate",
@@ -1126,9 +1132,9 @@
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 2,
       "review_changes": [
-        "Removed \"lamb; lambs\": the Lamb of God is a distinct Christological image",
-        "Removed John 1:29 (Lamb of God) with the lamb aliases",
-        "Note rewritten to match the remaining Scripture"
+        "Added the familiar idioms \"lost sheep\" and \"black sheep\"",
+        "Added Luke 15:4-7 (the lost sheep)",
+        "\"community; care; trust\" → \"belonging; being known; being sought\": the sheep's side of the Shepherd card"
       ]
     },
     {
@@ -1138,7 +1144,7 @@
       "can_suggest": "peace;hope;restoration;reconciliation",
       "scripture": "Genesis 8:11",
       "note": "The olive leaf appears in the account of Noah's dove.",
-      "reflection_question": "What might an olive branch evoke in a relationship you value?",
+      "reflection_question": "Is there a relationship where an olive branch might be offered or received?",
       "related": "",
       "status": "draft",
       "link_symbols": "/symbols",
@@ -1148,8 +1154,7 @@
       "link_review": "Portal URL intentionally empty: Claude to resolve from published registry; related names need mapping.",
       "review_group": 2,
       "review_changes": [
-        "Added \"olive leaf\" (the Genesis 8:11 wording); removed \"olive tree branch\"",
-        "Related: \"dove;tree\" → \"none\""
+        "Question reworded so it does not assume a strained relationship"
       ]
     },
     {
