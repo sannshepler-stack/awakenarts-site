@@ -67,7 +67,7 @@ export default function CopyrightPage() {
         <h2 className="legal-page__subheading">Permission and Notices</h2>
         <p className="legal-page__body">
           For permission requests or a good-faith copyright concern, contact{' '}
-          <a href="mailto:susan@shepler.us" className="legal-page__link">susan@shepler.us</a>{' '}
+          <a href="mailto:info@awakenarts.com" className="legal-page__link">info@awakenarts.com</a>{' '}
           and identify the work, location, requested use, and your contact information.
         </p>
 

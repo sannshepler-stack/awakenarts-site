@@ -71,7 +71,7 @@ export function getGuidedEncounter(slug: string) {
   return guidedEncounters.find((g) => g.slug === slug)
 }
 
-export const INQUIRY_EMAIL = 'susan@shepler.us'
+export const INQUIRY_EMAIL = 'info@awakenarts.com'
 
 /** "Grismere" → "the Grismere Edition"; "The Dragon" → "the Dragon Edition". */
 export function editionPhrase(title: string) {

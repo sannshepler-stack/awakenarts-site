@@ -76,7 +76,7 @@ export default function PrivacyPage() {
       <p>
         If you have questions about this Privacy Policy, contact:
         <br />
-        susan@shepler.us
+        info@awakenarts.com
       </p>
 
       <p className="legal-updated">Last updated: 2026</p>
