@@ -8,7 +8,7 @@ import Nav from '@/components/Nav'
 // Educational and Non-Clinical Disclaimer draft from
 // `02-Website-Legal-Documents.md`, Section A, verbatim except for its
 // two placeholders ([BUSINESS EMAIL], [MONTH DAY, YEAR]), which are
-// filled with Susan's approved interim facts: susan@shepler.us (replaced 2026-10-11 by info@awakenarts.com) and an
+// filled with Susan's approved interim facts: info@awakenarts.com and an
 // effective date of July 15, 2026. No liability-limitation language
 // appears here -- that remains attorney-review-gated per the standard
 // and is not part of this page.
