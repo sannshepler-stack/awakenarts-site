@@ -211,7 +211,7 @@ export default function LanguageOfSymbolsPage() {
                 how poetry can become an image.
               </p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--body-size)', lineHeight: 'var(--body-line)', color: 'var(--deep)', margin: '0 0 1rem' }}>
-                My background in English and Spanish, Spiritual Psychology, and Transformative Language Artistry informs
+                My background in English and Spanish, Counseling, and Transformative Language Artistry informs
                 the way I approach symbolic language. Through AwakenArts, I bring together poetry, original imagery, and
                 guided reflection to create opportunities for learning and personal discovery.
               </p>

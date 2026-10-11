@@ -159,7 +159,7 @@ export default function AboutPage() {
 
             <h2 className="about-h2">About Susan Ann Shepler</h2>
             <p className="about-body about-body--quiet">
-              Susan Ann Shepler holds a Master of Arts in Counseling Psychology from
+              Susan Ann Shepler holds a Master of Arts in Counseling from
               Webster University. She is a Certified Transformative Language Artist
               through the Transformative Language Arts Network and a Certified
               Journal Instructor through the Center for Journal Therapy in Denver,
