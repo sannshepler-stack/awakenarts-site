@@ -11,7 +11,7 @@ import PoemEnlarge from '@/components/PoemEnlarge'
 /** Section 2 — "You already speak in images." */
 export default function HomeImageMirror() {
   return (
-    <section aria-labelledby="image-mirror-heading" style={{ background: 'var(--deep)', padding: '4rem 1.5rem 4.25rem', textAlign: 'center' }}>
+    <section aria-labelledby="image-mirror-heading" style={{ background: 'var(--deep)', padding: '4.5rem 1.5rem 5.75rem', textAlign: 'center' }}>
       <div style={{ maxWidth: 1000, margin: '0 auto' }}>
         <p className="eyebrow" style={{ justifyContent: 'center', color: 'var(--gold-lt)' }}>AwakenArts, The Stories that Shape Us</p>
         <h2
@@ -29,6 +29,23 @@ export default function HomeImageMirror() {
           <span className="section2-examples__item section2-examples__item--mid">&ldquo;I&rsquo;m at a crossroads.&rdquo;</span>
           <span className="section2-examples__sep" aria-hidden="true">·</span>
           <span className="section2-examples__item section2-examples__item--last">&ldquo;It became a stepping stone.&rdquo;</span>
+        </p>
+        {/* Bridge line (2026-10-14, Susan): from figurative language into lived
+            symbols; prepares "What Symbols Are Meaningful to You?" below.
+            Not a heading — muted gold, a step below the section heading. */}
+        <p
+          style={{
+            fontFamily: 'var(--serif)',
+            fontWeight: 400,
+            fontSize: 'calc(var(--t-section) * 0.78)',
+            lineHeight: 1.3,
+            color: 'var(--gold-lt)',
+            maxWidth: 760,
+            margin: '2.75rem auto 0',
+            ...({ textWrap: 'balance' } as React.CSSProperties),
+          }}
+        >
+          Some symbols are inherited. Some are encountered. Some are chosen.
         </p>
       </div>
     </section>
