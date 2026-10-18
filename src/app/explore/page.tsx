@@ -186,7 +186,7 @@ export default function ExplorePage() {
         {/* 2026-10-18, Susan: a way to write, just below Stay Connected. */}
         <ContactSection
           source="explore"
-          line="Questions, a response to something you found here, or interest in a presentation for your group:"
+          line="If an image here spoke to you, or you\u2019d like to bring AwakenArts to your group, Susan would love to hear from you."
           subject="A note from Explore"
           background="var(--cream)"
         />
