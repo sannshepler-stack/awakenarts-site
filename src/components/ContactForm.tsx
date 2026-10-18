@@ -1,65 +1,110 @@
 'use client'
 
-import { useState } from 'react'
-import { FORMSPREE_FORM_ID, CONTACT_FORM_LIVE } from '@/data/contact'
+import { useRef, useState } from 'react'
+import HCaptcha from '@hcaptcha/react-hcaptcha'
+import {
+  CONTACT_FORM_LIVE,
+  WEB3FORMS_ACCESS_KEY,
+  WEB3FORMS_HCAPTCHA_SITEKEY,
+} from '@/data/contact'
 
-// ContactForm — name, email, message, and an on-page thank-you
-// (Susan, 2026-10-18). For visitors who simply want to write, without
-// opening a mail app.
-//
-// The site cannot send email itself, so messages go through Formspree,
-// which forwards each one to info@awakenarts.com. Settings live in
-// src/data/contact.ts.
+// ContactForm — Name, Email, Subject, Message, with an on-page thank-you
+// (Susan, 2026-10-18). Sends through Web3Forms (free plan); the recipient
+// address is bound to the access key on Web3Forms' side and never appears
+// here. Spam protection: hCaptcha + the `botcheck` honeypot. Settings and
+// the reasoning behind them live in src/data/contact.ts.
 
 type Status = 'idle' | 'submitting' | 'done'
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export default function ContactForm({ source }: { source: string }) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
+  const [captchaToken, setCaptchaToken] = useState('')
   const [status, setStatus] = useState<Status>('idle')
   const [error, setError] = useState('')
+  const captchaRef = useRef<HCaptcha>(null)
 
   if (!CONTACT_FORM_LIVE) return null
+
+  function resetCaptcha() {
+    setCaptchaToken('')
+    captchaRef.current?.resetCaptcha()
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setError('')
 
-    if (!name.trim() || !email.trim() || !message.trim()) {
-      setError('Please fill in your name, email, and message.')
+    if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
+      setError('Please fill in your name, email, subject, and message.')
       return
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+    if (!EMAIL_RE.test(email.trim())) {
       setError('Please enter a valid email address.')
       return
     }
-    if (!FORMSPREE_FORM_ID) {
-      setError('The form is not connected yet (Formspree code still to be added).')
+    if (!captchaToken) {
+      setError('Please complete the verification above the Send button.')
+      return
+    }
+    if (!WEB3FORMS_ACCESS_KEY) {
+      setError('The contact form is not connected yet. Please try again later.')
       return
     }
 
-    const honeypot = (e.currentTarget.elements.namedItem('_gotcha') as HTMLInputElement | null)?.value
+    // Honeypot: a hidden checkbox people never see. If a bot ticks it,
+    // Web3Forms rejects the submission.
+    const botcheck = (e.currentTarget.elements.namedItem('botcheck') as HTMLInputElement | null)?.checked ?? false
+
     setStatus('submitting')
+    let res: Response
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+      res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `AwakenArts: ${subject.trim()}`,
+          from_name: 'AwakenArts Website',
           name: name.trim(),
           email: email.trim(),
           message: message.trim(),
           page: source,
-          _subject: `AwakenArts message from ${name.trim()}`,
-          _gotcha: honeypot || '',
+          botcheck,
+          'h-captcha-response': captchaToken,
         }),
       })
-      if (!res.ok) throw new Error(String(res.status))
-      setStatus('done')
     } catch {
       setStatus('idle')
-      setError(`Your message couldn’t be sent just now. Please try again in a moment.`)
+      resetCaptcha()
+      setError('We couldn’t reach the message service. Please check your connection and try again.')
+      return
     }
+
+    let data: { success?: boolean; message?: string } = {}
+    try {
+      data = await res.json()
+    } catch {
+      // Fall through to the generic message below.
+    }
+
+    if (res.ok && data.success) {
+      setStatus('done')
+      return
+    }
+
+    console.error('[contact] Web3Forms rejected the message', { status: res.status, message: data.message })
+    setStatus('idle')
+    resetCaptcha()
+    setError(
+      /captcha/i.test(data.message ?? '')
+        ? 'The verification didn’t go through. Please complete it again and resend.'
+        : 'Your message couldn’t be sent just now. Please try again in a moment.'
+    )
   }
 
   if (status === 'done') {
@@ -100,6 +145,17 @@ export default function ContactForm({ source }: { source: string }) {
         />
       </div>
       <div className="form-field">
+        <label htmlFor={fieldId('subject')}>Subject</label>
+        <input
+          id={fieldId('subject')}
+          type="text"
+          name="subject"
+          value={subject}
+          onChange={(e) => setSubject(e.target.value)}
+          required
+        />
+      </div>
+      <div className="form-field">
         <label htmlFor={fieldId('message')}>Message</label>
         <textarea
           id={fieldId('message')}
@@ -111,8 +167,22 @@ export default function ContactForm({ source }: { source: string }) {
         />
       </div>
 
-      {/* Spam trap: hidden from people, filled in by bots. */}
-      <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
+      {/* Honeypot (Web3Forms `botcheck`): hidden from people. */}
+      <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
+
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <HCaptcha
+          ref={captchaRef}
+          sitekey={WEB3FORMS_HCAPTCHA_SITEKEY}
+          reCaptchaCompat={false}
+          onVerify={(token) => {
+            setCaptchaToken(token)
+            setError('')
+          }}
+          onExpire={() => setCaptchaToken('')}
+          onError={() => setCaptchaToken('')}
+        />
+      </div>
 
       {error && (
         <p role="alert" style={{ color: '#7B2D3E', fontSize: '.88rem', margin: 0 }}>{error}</p>
