@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import StayConnected from '@/components/StayConnected'
+import ContactSection from '@/components/ContactSection'
 
 // /explore — "Discover AwakenArts" hub (Rebuild Plan §1, 2026-10-05).
 // Gathers the reflective pages under one doorway. Every line below is that
@@ -182,6 +183,13 @@ export default function ExplorePage() {
           </p>
         </section>
         <StayConnected source="explore" />
+        {/* 2026-10-18, Susan: a way to write, just below Stay Connected. */}
+        <ContactSection
+          source="explore"
+          line="Questions, a response to something you found here, or interest in a presentation for your group:"
+          subject="A note from Explore"
+          background="var(--cream)"
+        />
       </main>
       <WayfindingBand />
       <Footer />
