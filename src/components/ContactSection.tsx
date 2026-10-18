@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { INQUIRY_EMAIL } from '@/data/guidedEncounters'
+import ContactForm from '@/components/ContactForm'
 
 // ContactSection — the reusable Contact band (Susan, 2026-10-18).
 //
@@ -20,6 +21,7 @@ export default function ContactSection({
   line,
   subject,
   background = 'var(--warm)',
+  form = false,
 }: {
   /** Where this band sits, for click tracking (data-cta). */
   source: string
@@ -28,6 +30,8 @@ export default function ContactSection({
   /** Pre-filled email subject. */
   subject: string
   background?: string
+  /** Show the contact form (name, email, message) above the email link. */
+  form?: boolean
 }) {
   const href = `mailto:${INQUIRY_EMAIL}?subject=${encodeURIComponent(subject)}`
   return (
@@ -63,6 +67,16 @@ export default function ContactSection({
         >
           {line}
         </p>
+        {form && (
+          <div style={{ margin: '0 auto 1.75rem', maxWidth: 480 }}>
+            <ContactForm source={source} />
+          </div>
+        )}
+        {form && (
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'var(--mid)', margin: '0 0 0.4rem' }}>
+            Or write directly:
+          </p>
+        )}
         <a
           href={href}
           data-cta={`${source}-contact-email`}

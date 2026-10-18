@@ -2433,6 +2433,23 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   outline: none;
   border-color: var(--gold);
 }
+/* Message box on the contact form (2026-10-18), matching the inputs. */
+.form-field textarea {
+  padding: .75rem 1rem;
+  border: 1px solid var(--mist);
+  border-radius: 3px;
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.6;
+  background: #f5f0e8;
+  color: var(--deep);
+  resize: vertical;
+  transition: border-color .2s;
+}
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
 .btn-submit {
   padding: .85rem 1.5rem;
   background: var(--deep);

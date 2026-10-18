@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import { INQUIRY_EMAIL } from '@/data/guidedEncounters'
+import ContactForm from '@/components/ContactForm'
 
 // /contact — added 2026-10-18 at Susan's request. There was no contact
 // page before because info@awakenarts.com had not yet been created and
@@ -75,6 +76,19 @@ export default function ContactPage() {
               you, you are welcome to write.
             </p>
 
+            <div style={{ maxWidth: 480, margin: '0 auto 2rem' }}>
+              <ContactForm source="contact-page" />
+            </div>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.95rem',
+                color: 'var(--mid)',
+                margin: '0 0 0.4rem',
+              }}
+            >
+              Or write directly:
+            </p>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
               data-cta="contact-email"

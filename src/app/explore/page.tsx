@@ -196,6 +196,7 @@ export default function ExplorePage() {
           }
           subject="A note from Explore"
           background="var(--cream)"
+          form
         />
       </main>
       <WayfindingBand />
