@@ -191,8 +191,9 @@ export default function ExplorePage() {
               Thank you for visiting AwakenArts.
               <br />
               Bring an AwakenArts Presentation to your Group.
-              <br />
-              Questions or comments? Contact AwakenArts.
+              <span style={{ display: 'block', marginTop: '1.1rem' }}>
+                Questions or comments? Contact AwakenArts.
+              </span>
             </>
           }
           subject="A note from Explore"
