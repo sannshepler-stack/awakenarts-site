@@ -28,6 +28,7 @@ const ENTRIES: Entry[] = [
   ...['shape-symbol-and-story', 'where-you-stand', 'whispers-of-awareness'].map((s) => ({
     path: `/books/${s}`, changeFrequency: 'monthly' as const, priority: 0.75,
   })),
+  { path: '/contact',                                           changeFrequency: 'yearly',  priority: 0.5 },
   { path: '/stay-connected',                                    changeFrequency: 'yearly',  priority: 0.5 },
   { path: '/christian-symbols',                                 changeFrequency: 'monthly', priority: 0.8 },
   { path: '/gallery',                                           changeFrequency: 'monthly', priority: 0.7 },

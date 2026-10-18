@@ -42,6 +42,8 @@ const CONTINUE_LINKS = [
   { label: 'Presentations & Workshops', href: '/presentations' },
   { label: 'Books & Journals', href: '/books' },
   { label: 'Stay Connected', href: '/stay-connected' },
+  // 2026-10-18, Susan: the site had no way to reach her.
+  { label: 'Contact', href: '/contact' },
 ]
 
 const ABOUT_LINKS = [
