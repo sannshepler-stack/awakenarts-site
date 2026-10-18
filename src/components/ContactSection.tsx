@@ -23,8 +23,8 @@ export default function ContactSection({
 }: {
   /** Where this band sits, for click tracking (data-cta). */
   source: string
-  /** One sentence suited to the page. */
-  line: string
+  /** One sentence suited to the page (may include a line break). */
+  line: React.ReactNode
   /** Pre-filled email subject. */
   subject: string
   background?: string
