@@ -190,7 +190,9 @@ export default function ExplorePage() {
             <>
               Thank you for visiting AwakenArts.
               <br />
-              Bring an AwakenArts Presentation to your Group. Questions or comments? Contact AwakenArts.
+              Bring an AwakenArts Presentation to your Group.
+              <br />
+              Questions or comments? Contact AwakenArts.
             </>
           }
           subject="A note from Explore"
