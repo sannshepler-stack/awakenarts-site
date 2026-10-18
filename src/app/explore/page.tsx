@@ -188,8 +188,6 @@ export default function ExplorePage() {
           source="explore"
           line={
             <>
-              Thank you for visiting.
-              <br />
               Questions or comments? Contact AwakenArts.
               <span style={{ display: 'block', marginTop: '1.1rem' }}>
                 Bring a Presentation to your Group.
