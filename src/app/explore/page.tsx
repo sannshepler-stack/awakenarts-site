@@ -190,9 +190,9 @@ export default function ExplorePage() {
             <>
               Thank you for visiting AwakenArts.
               <br />
-              Bring an AwakenArts Presentation to your Group.
+              Questions or comments? Contact AwakenArts.
               <span style={{ display: 'block', marginTop: '1.1rem' }}>
-                Questions or comments? Contact AwakenArts.
+                Bring an AwakenArts Presentation to your Group.
               </span>
             </>
           }
