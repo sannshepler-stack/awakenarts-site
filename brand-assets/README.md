@@ -404,6 +404,9 @@ stem. They showed at larger sizes. The leaf veins and the white highlight on
 the curved stem are intentional and unchanged. Removed from every
 emblem-only SVG (vector master, both favicon masters, both `favicon.svg`),
 then every emblem, social, watermark and favicon PNG/ICO was re-rendered from
-the corrected sources at its existing size and recipe. The logo lockups
-(Full/Compact/Stacked, Primary, Monogram) still carry the same three
-fragments — pending a decision.
+the corrected sources at its existing size and recipe. The same three fragments
+were then removed from every logo lockup that contains the emblem (the three
+logo vector masters and all logo SVGs in `public/images/brand/`, including the
+single-color Gold/Navy/Black variants), and every logo PNG export in
+`png-exports/` and `public/images/brand/exports/` was re-rendered. `source-svg/`
+is left untouched as the frozen 2026-07-14 reference archive.
