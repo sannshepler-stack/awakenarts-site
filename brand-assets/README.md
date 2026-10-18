@@ -394,3 +394,16 @@ Non-approved, historical assets kept for reference only — never referenced by 
   mockups against the actual footer navy (`--deep: #1C2B3A`) at both a
   1200px desktop width and a 390px mobile width before replacing the
   live SVG.
+
+## Emblem cleanup (2026-10-18)
+
+Three stray near-white fragments were removed from the emblem artwork (path
+indices 28, 67, 74 of 93): a white sliver inside the A's apex, a white fleck
+at the stem fork, and a white wedge where the A's right stroke meets the
+stem. They showed at larger sizes. The leaf veins and the white highlight on
+the curved stem are intentional and unchanged. Removed from every
+emblem-only SVG (vector master, both favicon masters, both `favicon.svg`),
+then every emblem, social, watermark and favicon PNG/ICO was re-rendered from
+the corrected sources at its existing size and recipe. The logo lockups
+(Full/Compact/Stacked, Primary, Monogram) still carry the same three
+fragments — pending a decision.
