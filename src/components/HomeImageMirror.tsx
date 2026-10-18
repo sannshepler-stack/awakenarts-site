@@ -3,7 +3,9 @@ import PoemEnlarge from '@/components/PoemEnlarge'
 // Homepage Sections 2 and 3 (2026-10-07, Susan) — two sections rather than
 // one squeezed into columns.
 //   2: AWAKENARTS, THE STORIES THAT SHAPE US · "You already speak in images.
-//      We all do." as the headline · "Sometimes an image stays with you." ·
+//      We all do." as the headline · "Listen to how we describe our own lives:"
+//      (2026-10-18, Susan: replaced "Sometimes an image stays with you." so the
+//      line leads into the three phrases) ·
 //      the three phrases.
 //   3: sky header · QUEEN ANN · "An image can become a mirror." (reflection) ·
 //      the Queen Ann poem and figure, with Enlarge the poem.
@@ -21,7 +23,7 @@ export default function HomeImageMirror() {
           You already speak in images. We all do.
         </h2>
         <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 'var(--hero-statement)', lineHeight: 1.3, color: 'rgba(250, 246, 236, 0.85)', margin: '0 0 1.6rem' }}>
-          Sometimes an image stays with you.
+          Listen to how we describe our own lives:
         </p>
         <p className="section2-examples section2-examples--on-dark">
           <span className="section2-examples__item">&ldquo;We&rsquo;ve put up walls.&rdquo;</span>
