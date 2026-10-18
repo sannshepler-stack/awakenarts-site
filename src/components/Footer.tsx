@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import FooterSocial from './FooterSocial'
-import { INQUIRY_EMAIL } from '@/data/guidedEncounters'
 
 /*
  * Footer — the permanent AwakenArts Standard Footer.
@@ -88,13 +87,6 @@ export default function Footer() {
             and journals offering ways to continue.
           </p>
           <FooterSocial />
-          {/* 2026-10-18, Susan: the public contact address, in gold, below
-              the social wordmarks. */}
-          <p className="footer-email">
-            <a href={`mailto:${INQUIRY_EMAIL}`} data-cta="footer-email">
-              {INQUIRY_EMAIL}
-            </a>
-          </p>
         </div>
 
         <div className="footer-col">

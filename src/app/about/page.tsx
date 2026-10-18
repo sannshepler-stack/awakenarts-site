@@ -4,7 +4,6 @@ import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
-import { INQUIRY_EMAIL } from '@/data/guidedEncounters'
 
 export const metadata: Metadata = {
   title: 'About — AwakenArts',
@@ -72,7 +71,8 @@ export default function AboutPage() {
               Certified Journal Instructor (CJT)
             </p>
             {/* 2026-10-18, Susan: contact sits right after the credentials,
-                now that info@awakenarts.com is confirmed. */}
+                now that info@awakenarts.com is confirmed. Links to /contact
+                rather than showing the address (spam harvesting). */}
             <p
               style={{
                 fontFamily: 'var(--sans)',
@@ -82,14 +82,13 @@ export default function AboutPage() {
                 margin: '0.9rem 0 0',
               }}
             >
-              Contact:{' '}
-              <a
-                href={`mailto:${INQUIRY_EMAIL}?subject=${encodeURIComponent('A note to Susan')}`}
+              <Link
+                href="/contact"
                 data-cta="about-credentials-contact"
                 style={{ color: 'var(--gold)', textDecoration: 'none', borderBottom: '1px solid var(--gold-accent)' }}
               >
-                {INQUIRY_EMAIL}
-              </a>
+                Contact Susan
+              </Link>
             </p>
           </div>
 

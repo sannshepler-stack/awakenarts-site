@@ -1,7 +1,8 @@
 'use client'
 
+import Link from 'next/link'
+
 import { useState } from 'react'
-import { INQUIRY_EMAIL } from '@/data/guidedEncounters'
 
 // PresentationSignup — the attendee form on a presentation page
 // (2026-10-08, Susan: attendees first). Name and email only.
@@ -88,7 +89,7 @@ export default function PresentationSignup({
             : `We’ll let you know at ${email.trim()} when the next ${shortTitle} presentation is scheduled.`}
         </p>
         <p style={{ fontFamily: 'var(--font-body)', color: 'var(--mid)', margin: '0.9rem 0 0' }}>
-          Questions? Write to <a href={`mailto:${INQUIRY_EMAIL}`} style={{ color: 'var(--gold)' }}>{INQUIRY_EMAIL}</a>.
+          Questions? <Link href="/contact" style={{ color: 'var(--gold)' }}>Send Susan a message</Link>.
         </p>
       </div>
     )

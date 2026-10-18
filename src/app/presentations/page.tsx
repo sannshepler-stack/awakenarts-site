@@ -6,7 +6,6 @@ import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
 import { Facilitator, LeadList, bodyStyle, h2Style, labelStyle } from '@/components/guided/GuidedParts'
 import { PresentationTile } from '@/components/presentations/PresentationParts'
-import { INQUIRY_EMAIL } from '@/data/guidedEncounters'
 import {
   ABOUT_WORKSHOPS,
   PRESENTATIONS,
@@ -120,10 +119,10 @@ export default function PresentationsPage() {
               Recognition is rarely a solitary experience. It deepens as we learn to see alongside others.
             </p>
             <p style={bodyStyle}>
-              To bring a presentation or workshop to your library, club, retreat, or community group, write to Susan at{' '}
-              <a href={`mailto:${INQUIRY_EMAIL}?subject=${encodeURIComponent('Hosting a presentation')}`} data-cta="presentations-host-email" style={{ color: 'var(--gold)' }}>
-                {INQUIRY_EMAIL}
-              </a>
+              To bring a presentation or workshop to your library, club, retreat, or community group,{' '}
+              <Link href="/contact" data-cta="presentations-host-contact" style={{ color: 'var(--gold)' }}>
+                send Susan a message
+              </Link>
               .
             </p>
           </div>

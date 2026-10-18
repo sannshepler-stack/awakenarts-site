@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { INQUIRY_EMAIL } from '@/data/guidedEncounters'
+import { CONTACT_FORM_LIVE } from '@/data/contact'
 import ContactForm from '@/components/ContactForm'
 
 // ContactSection — the reusable Contact band (Susan, 2026-10-18).
@@ -13,13 +13,14 @@ import ContactForm from '@/components/ContactForm'
 // (below Stay Connected), Books, and each presentation page. About carries a one-line contact under Susan's
 // credentials instead (her choice, 2026-10-18). /presentations already carries its
 // own "Host a Presentation" line, and /contact is the standalone page.
-// Each placement passes a line suited to that page and a mailto subject,
-// so Susan can see at a glance where a message came from.
+// Each placement passes a line suited to that page. The address itself is
+// not shown here (only on /contact), to keep it from harvesting bots:
+// the section shows the contact form where requested and live, and
+// otherwise a link to /contact.
 
 export default function ContactSection({
   source,
   line,
-  subject,
   background = 'var(--warm)',
   form = false,
 }: {
@@ -27,13 +28,11 @@ export default function ContactSection({
   source: string
   /** One sentence suited to the page (may include a line break). */
   line: React.ReactNode
-  /** Pre-filled email subject. */
-  subject: string
   background?: string
-  /** Show the contact form (name, email, message) above the email link. */
+  /** Show the contact form (name, email, message) in place of the link. */
   form?: boolean
 }) {
-  const href = `mailto:${INQUIRY_EMAIL}?subject=${encodeURIComponent(subject)}`
+  const showForm = form && CONTACT_FORM_LIVE
   return (
     <section
       aria-labelledby={`contact-${source}`}
@@ -67,32 +66,20 @@ export default function ContactSection({
         >
           {line}
         </p>
-        {form && (
-          <div style={{ margin: '0 auto 1.75rem', maxWidth: 480 }}>
+        {showForm ? (
+          <div style={{ margin: '0 auto', maxWidth: 480 }}>
             <ContactForm source={source} />
           </div>
+        ) : (
+          <Link
+            href="/contact"
+            className="btn-submit"
+            data-cta={`${source}-contact-link`}
+            style={{ display: 'inline-block', textDecoration: 'none' }}
+          >
+            Send a Message
+          </Link>
         )}
-        {form && (
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'var(--mid)', margin: '0 0 0.4rem' }}>
-            Or write directly:
-          </p>
-        )}
-        <a
-          href={href}
-          data-cta={`${source}-contact-email`}
-          style={{
-            display: 'inline-block',
-            fontFamily: 'var(--serif)',
-            fontSize: 'clamp(1.2rem, 4vw, 1.45rem)',
-            color: 'var(--gold)',
-            textDecoration: 'none',
-            borderBottom: '1px solid var(--gold-accent)',
-            paddingBottom: '0.15rem',
-            wordBreak: 'break-word',
-          }}
-        >
-          {INQUIRY_EMAIL}
-        </a>
       </div>
     </section>
   )

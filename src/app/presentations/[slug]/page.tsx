@@ -196,7 +196,6 @@ export default function PresentationPage({ params }: { params: { slug: string } 
         <ContactSection
           source={`presentation-${p.slug}`}
           line={`To bring ${p.shortTitle || p.title} to your library, club, retreat, or community group, or to ask a question:`}
-          subject={`About the ${p.shortTitle || p.title} presentation`}
           background="#fff"
         />
       </main>

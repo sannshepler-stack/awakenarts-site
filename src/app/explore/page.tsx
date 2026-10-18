@@ -194,7 +194,6 @@ export default function ExplorePage() {
               </span>
             </>
           }
-          subject="A note from Explore"
           background="var(--cream)"
           form
         />

@@ -58,7 +58,6 @@ export default function BooksPage() {
         <ContactSection
           source="books"
           line="Questions about the books and journals, or bulk orders for a group or class:"
-          subject="About the books"
         />
       </main>
       <WayfindingBand />

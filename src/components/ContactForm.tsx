@@ -1,23 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import { INQUIRY_EMAIL } from '@/data/guidedEncounters'
+import { FORMSPREE_FORM_ID, CONTACT_FORM_LIVE } from '@/data/contact'
 
 // ContactForm — name, email, message, and an on-page thank-you
 // (Susan, 2026-10-18). For visitors who simply want to write, without
 // opening a mail app.
 //
 // The site cannot send email itself, so messages go through Formspree,
-// which forwards each one to info@awakenarts.com. No DNS or Microsoft 365
-// changes are involved. FORMSPREE_FORM_ID is the short code at the end of
-// the form's endpoint in the Formspree dashboard
-// (https://formspree.io/f/<FORM_ID>). It is public by design, so it lives
-// here rather than in an environment variable.
-//
-// Until the ID is filled in, the form shows only in local development (so
-// Susan can review it at localhost) and is hidden on the live site, where
-// the email link beside it still works.
-export const FORMSPREE_FORM_ID = ''
+// which forwards each one to info@awakenarts.com. Settings live in
+// src/data/contact.ts.
 
 type Status = 'idle' | 'submitting' | 'done'
 
@@ -28,7 +20,7 @@ export default function ContactForm({ source }: { source: string }) {
   const [status, setStatus] = useState<Status>('idle')
   const [error, setError] = useState('')
 
-  if (!FORMSPREE_FORM_ID && process.env.NODE_ENV === 'production') return null
+  if (!CONTACT_FORM_LIVE) return null
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -66,7 +58,7 @@ export default function ContactForm({ source }: { source: string }) {
       setStatus('done')
     } catch {
       setStatus('idle')
-      setError(`Your message couldn’t be sent just now. Please try again, or write to ${INQUIRY_EMAIL}.`)
+      setError(`Your message couldn’t be sent just now. Please try again in a moment.`)
     }
   }
 
