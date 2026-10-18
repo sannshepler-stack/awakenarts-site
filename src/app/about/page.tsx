@@ -4,7 +4,7 @@ import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
-import ContactSection from '@/components/ContactSection'
+import { INQUIRY_EMAIL } from '@/data/guidedEncounters'
 
 export const metadata: Metadata = {
   title: 'About — AwakenArts',
@@ -70,6 +70,26 @@ export default function AboutPage() {
               Artist · Writer · MA Counseling<br />
               Certified Transformative Language Artist (TLAN)<br />
               Certified Journal Instructor (CJT)
+            </p>
+            {/* 2026-10-18, Susan: contact sits right after the credentials,
+                now that info@awakenarts.com is confirmed. */}
+            <p
+              style={{
+                fontFamily: 'var(--sans)',
+                fontSize: '0.95rem',
+                letterSpacing: '0.02em',
+                color: 'var(--mid)',
+                margin: '0.9rem 0 0',
+              }}
+            >
+              Contact:{' '}
+              <a
+                href={`mailto:${INQUIRY_EMAIL}?subject=${encodeURIComponent('A note to Susan')}`}
+                data-cta="about-credentials-contact"
+                style={{ color: 'var(--gold)', textDecoration: 'none', borderBottom: '1px solid var(--gold-accent)' }}
+              >
+                {INQUIRY_EMAIL}
+              </a>
             </p>
           </div>
 
@@ -196,12 +216,6 @@ export default function AboutPage() {
 
         </main>
       </div>
-
-      <ContactSection
-        source="about"
-        line="To write to Susan about the work, a presentation, or something here that spoke to you:"
-        subject="A note to Susan"
-      />
 
       <WayfindingBand />
       <Footer />

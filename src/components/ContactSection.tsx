@@ -8,8 +8,9 @@ import { INQUIRY_EMAIL } from '@/data/guidedEncounters'
 // now the one public contact address; s.ann@awakenarts.com stays off the
 // site for Susan's direct replies.
 //
-// Placed only where a visitor is most likely to want to write: About,
-// Books, and each presentation page. /presentations already carries its
+// Placed only where a visitor is most likely to want to write: Books and
+// each presentation page. About carries a one-line contact under Susan's
+// credentials instead (her choice, 2026-10-18). /presentations already carries its
 // own "Host a Presentation" line, and /contact is the standalone page.
 // Each placement passes a line suited to that page and a mailto subject,
 // so Susan can see at a glance where a message came from.
