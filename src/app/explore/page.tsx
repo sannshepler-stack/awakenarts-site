@@ -192,7 +192,7 @@ export default function ExplorePage() {
               <br />
               Questions or comments? Contact AwakenArts.
               <span style={{ display: 'block', marginTop: '1.1rem' }}>
-                Bring an AwakenArts Presentation to your Group.
+                Bring a Presentation to your Group.
               </span>
             </>
           }
