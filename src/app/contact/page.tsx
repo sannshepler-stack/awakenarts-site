@@ -3,13 +3,15 @@ import Link from 'next/link'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
+import { INQUIRY_EMAIL } from '@/data/guidedEncounters'
 
-// /contact — added 2026-10-18 at Susan's request (the site had no contact
-// page). info@awakenarts.com is the one public contact address; it is an
+// /contact — added 2026-10-18 at Susan's request. There was no contact
+// page before because info@awakenarts.com had not yet been created and
+// confirmed. info@awakenarts.com is the one public contact address; it is an
 // alias of the s.ann@awakenarts.com mailbox, which stays off the site and
 // is kept for Susan's direct, personal replies.
 
-const CONTACT_EMAIL = 'info@awakenarts.com'
+const CONTACT_EMAIL = INQUIRY_EMAIL
 
 export const metadata: Metadata = {
   title: 'Contact — AwakenArts',

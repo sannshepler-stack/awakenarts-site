@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
+import ContactSection from '@/components/ContactSection'
 import BookTile from '@/components/books/BookTile'
 import { books } from '@/data/books'
 import { PathBookFeature } from '@/components/path/PathLearning'
@@ -53,6 +54,12 @@ export default function BooksPage() {
 
         {/* Encounter Journal signup removed (Susan, 2026-10-07): it is a
             companion to the Encounters, not a book. Homepage and Explore keep it. */}
+
+        <ContactSection
+          source="books"
+          line="Questions about the books and journals, or bulk orders for a group or class:"
+          subject="About the books"
+        />
       </main>
       <WayfindingBand />
       <Footer />

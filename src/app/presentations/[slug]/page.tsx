@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
+import ContactSection from '@/components/ContactSection'
 import { Facilitator, bodyStyle, h2Style, labelStyle } from '@/components/guided/GuidedParts'
 import { PresentationTile } from '@/components/presentations/PresentationParts'
 import PresentationSignup from '@/components/presentations/PresentationSignup'
@@ -191,6 +192,13 @@ export default function PresentationPage({ params }: { params: { slug: string } 
             </div>
           </section>
         )}
+
+        <ContactSection
+          source={`presentation-${p.slug}`}
+          line={`To bring ${p.shortTitle || p.title} to your library, club, retreat, or community group, or to ask a question:`}
+          subject={`About the ${p.shortTitle || p.title} presentation`}
+          background="#fff"
+        />
       </main>
       <WayfindingBand />
       <Footer />

@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import AtmosphericHeader from '@/components/AtmosphericHeader'
 import WayfindingBand from '@/components/WayfindingBand'
 import Footer from '@/components/Footer'
+import ContactSection from '@/components/ContactSection'
 
 export const metadata: Metadata = {
   title: 'About — AwakenArts',
@@ -195,6 +196,12 @@ export default function AboutPage() {
 
         </main>
       </div>
+
+      <ContactSection
+        source="about"
+        line="To write to Susan about the work, a presentation, or something here that spoke to you:"
+        subject="A note to Susan"
+      />
 
       <WayfindingBand />
       <Footer />
