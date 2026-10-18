@@ -47,7 +47,7 @@ export default function HomeImageMirror() {
             ...({ textWrap: 'balance' } as React.CSSProperties),
           }}
         >
-          Some symbols are inherited. Some are encountered. Some are chosen.
+          Some symbols are inherited, some encountered, some chosen.
         </p>
       </div>
     </section>
